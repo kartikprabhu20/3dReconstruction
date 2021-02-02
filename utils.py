@@ -9,29 +9,9 @@ import scipy.io as sio
 import trimesh
 import os
 
-def load_obj(filename):
-    """Load vertices from .obj wavefront format file."""
-    # vertices = []
-    # with open(filename, 'r') as mesh:
-    #     for line in mesh:
-    #         data = line.split()
-    #         if len(data) > 0 and data[0] == 'v':
-    #             vertices.append(data[1:])
-    mesh = trimesh.load(filename)
-    return mesh
-
-# def load_mat(filename):
-#     matstruct_contents = sio.loadmat(filename)
-#     return matstruct_contents
-#
-# def load_off(filename):
-#     mesh = trimesh.exchange.off.load_off(filename)
-#     return mesh
-#
-# def load_binvox(filename):
-#     mesh = trimesh.exchange.binvox.load_binvox(filename)
-#     return mesh
-
+def load_mat(filename):
+    matstruct_contents = sio.loadmat(filename)
+    return matstruct_contents
 
 def load(filename):
     '''
@@ -62,7 +42,7 @@ if __name__ == '__main__':
     print(mesh_off)
 
     mesh_binvox = load(datapath_binvox)
-    mesh_binvox.show()
+    # mesh_binvox.show()
     print(mesh_binvox)
 
 
