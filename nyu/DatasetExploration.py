@@ -104,9 +104,9 @@ def nyu_np_files():
 
     depth = np.load(os.path.join("/Users/apple/OVGU/Thesis/Dataset/nyu_test/", 'eigen_test_depth.npy'))
     depth = np.clip(np.load(os.path.join("/Users/apple/OVGU/Thesis/Dataset/nyu_test/", 'eigen_test_depth.npy')), 1.0, 10.0) / 10 * 255
-
     img_depth = Image.fromarray(depth[0].astype(np.uint8)[:,:], mode='L')
     img_depth.show()
+
     rgba_img = colored_depthmap(depth[0])
     print(rgba_img.shape)
     img_depth = Image.fromarray(rgba_img.astype(np.uint8))
@@ -146,10 +146,31 @@ def nyu_mat_files():
     io.imshow(depth_/4.0)
     io.show()
 
+def nyu_jpg_files():
+    rgb = Image.open(os.path.join("/Users/apple/OVGU/Thesis/Dataset/nyu_data/nyu2_train/study_0004_out/", '3.jpg'))
+    # img = Image.fromarray(rgb.astype(np.uint8), mode = 'RGB')
+    rgb.show()
+
+    depth = Image.open(os.path.join("/Users/apple/OVGU/Thesis/Dataset/nyu_data/nyu2_train/study_0004_out/", '3.png'))
+    # depth = np.clip(np.asarray(depth), 1.0, 10.0) / 10 * 255
+    # depth = Image.fromarray(depth.astype(np.uint8)[:,:], mode='L')
+    depth.show()
+
+    depth1 = np.asarray(depth)
+    print(depth1.shape)
+    rgba_img = colored_depthmap(depth)
+    print(rgba_img.shape)
+    img_depth = Image.fromarray(rgba_img.astype(np.uint8))
+    img_depth.show()
+
 if __name__ == '__main__':
     # nyu_mat_files()
 
     # nyu_np_files()
+
+    nyu_jpg_files()
+
+
 
 
 
