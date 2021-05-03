@@ -6,6 +6,7 @@
 """
 import numpy as np
 import scipy.io as sio
+import torch
 import trimesh
 import os
 
@@ -28,8 +29,18 @@ def load_mat_pix3d(filename, key='voxel'):
     :return:
     '''
     matstruct_contents = sio.loadmat(filename)
+    print(matstruct_contents)
     mesh_mat = matstruct_contents[key]
     return trimesh.voxel.VoxelGrid(mesh_mat)
+
+def save_mat_to_nparray(filename,outfile, key='voxel'):
+    data = mat_to_array(filename,key='voxel')
+    np.save(outfile, data)
+
+def mat_to_array(filename,key='voxel'):
+    matstruct_contents = sio.loadmat(filename)
+    mesh_mat = matstruct_contents[key]
+    return np.array(mesh_mat)
 
 def load(filename):
     '''
@@ -50,14 +61,17 @@ if __name__ == '__main__':
     datapath_off = '/Users/apple/OVGU/Thesis/Dataset/ModelNet40_small/bed/test/bed_0516.off'
     datapath_binvox = '/Users/apple/OVGU/Thesis/Dataset/ShapeNetVox32/02691156/1a04e3eab45ca15dd86060f189eb133/model.binvox'
 
-    front = '/Users/apple/OVGU/Thesis/Dataset/3D-FUTURE-model_editedSmall/3D-FUTURE-model/0a5a346c-cc3b-4280-b358-ccd1c4d8a865/normalized_model.obj'
-    mesh_obj = load(front)
-    mesh_obj.show()
+    # front = '/Users/apple/OVGU/Thesis/Dataset/3D-FUTURE-model_editedSmall/3D-FUTURE-model/0a5a346c-cc3b-4280-b358-ccd1c4d8a865/normalized_model.obj'
+    # mesh_obj = load(front)
+    # mesh_obj.show()
     # print(mesh_obj)
 
     # mesh_mat = load_mat_pix3d(datapath_mat)
     # mesh_mat.show()
     # print(mesh_mat)
+
+    # save_mat_to_nparray(datapath_mat,"/Users/apple/Desktop/datapath_mat")
+    # print(torch.tensor(mat_to_array(datapath_mat)))
 
     # mesh_mat = load_mat_shapenet(datapath_mat2)
     # mesh_mat.show()

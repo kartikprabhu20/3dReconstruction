@@ -39,7 +39,7 @@ def get_occluded_Histogram(root_path):
 
 def get_classes(root_path):
     #return ["bed","bookcase","chair","desk","sofa","table","wardrobe"]
-    return [class_folder for class_folder in os.listdir(root_path+"/img/") if not class_folder.startswith('.')]
+    return [class_folder for class_folder in os.listdir(root_path) if not class_folder.startswith('.')]
 
 def split_to_classes(json_path, root_path):
     labels = get_classes(root_path)
@@ -148,7 +148,7 @@ if __name__ == '__main__':
     # split_to_classes(pix3d_json_path,root_path)
 
     ##Histogram test
-    # getHistogram("/Users/apple/OVGU/Thesis/Dataset/pix3d/img/")
+    getHistogram("/Users/apple/OVGU/Thesis/Dataset/pix3d/img/")
 
     #Save occluded json
     # save_occluded_json(root_path)
@@ -167,9 +167,9 @@ if __name__ == '__main__':
     # mesh_mat.show()
 
     #mode_path
-    model_path = get_model(root_path,"chair","0002.png")
-    mesh_mat = load(model_path)
-    mesh_mat.show()
+    # model_path = get_model(root_path,"chair","0002.png")
+    # mesh_mat = load(model_path)
+    # mesh_mat.show()
 
 
 
