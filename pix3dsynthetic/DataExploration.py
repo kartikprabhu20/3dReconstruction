@@ -51,7 +51,7 @@ def delete_unusedfile(root_path):
 
 def get_classes(root_path):
     #return ["bed","bookcase","chair","desk","sofa","table","wardrobe"]
-    return [class_folder for class_folder in os.listdir(root_path+"/model/") if not class_folder.startswith('.')]
+    return [class_folder for class_folder in os.listdir(root_path+"/models/") if not class_folder.startswith('.')]
 
 def getHistogram_fromarray(root_path, arrayList):
     labels = get_classes(root_path)
@@ -74,7 +74,7 @@ def get_all_models_classwise(root_path):
         class_array = []
         model_array = []
 
-        labelPath = os.path.join(root_path+"model/", label)
+        labelPath = os.path.join(root_path+"models/", label)
         for folder in os.listdir(labelPath):
             if folder =='.DS_Store':
                 continue
@@ -141,6 +141,16 @@ def save_train_test_split(xtrain, ytrain, xtest, ytest):
     open_file.close()
 
 def save_model_split(models_train, labels_train, models_test, labels_test):
+    '''
+    example of models:'IKEA_DOMBAS', 'IKEA_PAX_2', 'IKEA_HEMNES'
+    example of labels:'wardrobe', 'chair', 'desk'
+
+    :param models_train:
+    :param labels_train:
+    :param models_test:
+    :param labels_test:
+    :return:
+    '''
     file_name = "model_split.p"
     open_file = open(file_name, "wb")
     pickle.dump({'models_train':models_train, 'labels_train': labels_train,
@@ -148,15 +158,13 @@ def save_model_split(models_train, labels_train, models_test, labels_test):
             ,open(file_name, "wb"))
     open_file.close()
 
-def get_train_test_split(root_path,model_train,label_train,models_test,labels_test):
+def generate_train_test_split(root_path,model_train,label_train,models_test,labels_test):
 
     train_imgs = []
     train_output = []
 
     test_imgs = []
     test_output = []
-
-    i = 0
 
     imgs_path = os.path.join(root_path,"imgs")
     for i in range(0,len(model_train)):
@@ -166,7 +174,7 @@ def get_train_test_split(root_path,model_train,label_train,models_test,labels_te
             train_output.append(model_folder)
 
     for i in range(0,len(models_test)):
-        model_folder = label_train[i]+"/"+model_train[i]
+        model_folder = labels_test[i]+"/"+models_test[i]
         for file in os.listdir(os.path.join(imgs_path,model_folder)):
             test_imgs.append(model_folder+'/'+file)
             test_output.append(model_folder)
@@ -178,7 +186,7 @@ def get_model_split(filePath):
     x = pickle_file['models_train']
     y = pickle_file['labels_train']
     xt = pickle_file['models_test']
-    yt = pickle_file['labels_train']
+    yt = pickle_file['labels_test']
 
     return  x,y,xt,yt
 
@@ -227,12 +235,26 @@ if __name__ == '__main__':
 #########################################################
     root_path = '/Users/apple/OVGU/Thesis/SynthDataset1/'
     # label_list, model_list = get_all_models_classwise(root_path)
-    #
     # x,y,xt,yt = split_dataset(model_list,label_list)
+    # print(x)
+    # print(y)
+    # print(xt)
+    # print(yt)
+    # # print(len(x))
+    # # print(len(xt))
     # save_model_split(x,y,xt,yt)
-
+    #
     # model_train,label_train,models_test,labels_test = get_model_split("model_split.p") # gives only model, to get images of each model next line
-    # x,y,xt,yt = get_train_test_split(root_path,model_train,label_train,models_test,labels_test)
+    # print(model_train)
+    # print(label_train)
+    # print(models_test)
+    # print(labels_test)
+    # x,y,xt,yt = generate_train_test_split(root_path,model_train,label_train,models_test,labels_test)
+    # print(x)
+    # print(y)
+    # # print(xt)
+    # print(len(x))
+    # print(len(xt))
     # save_train_test_split(x,y,xt,yt)
 #########################################################
 

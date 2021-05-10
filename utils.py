@@ -17,7 +17,20 @@ from typing import Optional
 
 from Logging import Logger
 from pytorch3d.io.utils import _open_file
+from skimage.filters import threshold_otsu
 
+def create_binary(predicted, logger):
+
+    predicted = predicted.cpu().data.numpy()
+
+    try:
+        thresh = threshold_otsu(predicted)
+        predicted_binary = (predicted > thresh).astype(int)
+    except Exception as error:
+        logger.exception(error)
+        predicted_binary = (predicted > 0.5).astype(int)  # exception will be thrown only if input image seems to have just one color 1.0.
+
+    return torch.tensor(predicted_binary, dtype=torch.uint8)
 
 def load_mat_shapenet(filename, key='input'):
     '''
@@ -61,24 +74,6 @@ def load(filename):
     '''
     mesh = trimesh.load(filename)
     return mesh
-
-def write_summary(writer, logger, index, original, reconstructed, focalTverskyLoss, diceLoss, diceScore, iou):
-    """
-    Method to write summary to the tensorboard.
-    index: global_index for the visualisation
-    original,reconstructer: cubified voxels [channel, Height, Width]
-    Losses: all losses used as metric
-    """
-    print('Writing Summary...')
-    writer.add_scalar('FocalTverskyLoss', focalTverskyLoss, index)
-    writer.add_scalar('DiceLoss', diceLoss, index)
-    writer.add_scalar('DiceScore', diceScore, index)
-    writer.add_scalar('IOU', iou, index)
-
-    writer.add_mesh('label', vertices=original.verts_list()[0][None,], faces=original.faces_list()[0][None,])
-    writer.add_mesh('reconstructed', vertices=reconstructed.verts_list()[0][None,], faces=reconstructed.faces_list()[0][None,])
-    # writer.add_image('diff', np.moveaxis(create_diff_mask(reconstructed,original,logger), -1, 0), index) #create_diff_mask is of the format HXWXC, but CXHXW is needed
-
 
 def save_obj(
         f,
@@ -150,20 +145,6 @@ def _save(f, verts, faces,decimal_places) -> None:
 
     f.write(lines)
 
-def save_model(CHECKPOINT_PATH, state, best_metric = False,filename='checkpoint'):
-    """
-    Method to save model
-    """
-    print('Saving model...')
-    if not os.path.exists(CHECKPOINT_PATH):
-        os.mkdir(CHECKPOINT_PATH)
-        if best_metric:
-            if not os.path.exists(CHECKPOINT_PATH + 'best_metric/'):
-                CHECKPOINT_PATH = CHECKPOINT_PATH + 'best_metric/'
-                os.mkdir(CHECKPOINT_PATH)
-    torch.save(state, CHECKPOINT_PATH + filename + str(state['epoch']) + '.pth')
-
-
 if __name__ == '__main__':
 
     datapath_obj = '/Users/apple/OVGU/Thesis/Dataset/pix3d/model/bed/IKEA_BEDDINGE/model.obj'
@@ -189,6 +170,23 @@ if __name__ == '__main__':
     mesh_mat = torch.ones(128,128,128)[None,]
     print(mesh_mat.shape)
     mesh_mat = cubify(mesh_mat, thresh=0.5)
+
+    def write_summary(self,writer, logger, index, original, reconstructed, focalTverskyLoss, diceLoss, diceScore, iou):
+        """
+        Method to write summary to the tensorboard.
+        index: global_index for the visualisation
+        original,reconstructer: cubified voxels [channel, Height, Width]
+        Losses: all losses used as metric
+        """
+        print('Writing Summary...')
+        writer.add_scalar('FocalTverskyLoss', focalTverskyLoss, index)
+        writer.add_scalar('DiceLoss', diceLoss, index)
+        writer.add_scalar('DiceScore', diceScore, index)
+        writer.add_scalar('IOU', iou, index)
+
+        writer.add_mesh('label', vertices=original.verts_list()[0][None,], faces=original.faces_list()[0][None,])
+        writer.add_mesh('reconstructed', vertices=reconstructed.verts_list()[0][None,], faces=reconstructed.faces_list()[0][None,])
+        # writer.add_image('diff', np.moveaxis(create_diff_mask(reconstructed,original,logger), -1, 0), index) #create_diff_mask is of the format HXWXC, but CXHXW is needed
 
     print(type(mesh_mat))
     save_obj("/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/test.obj",verts=mesh_mat.verts_list()[0], faces=mesh_mat.faces_list()[0])

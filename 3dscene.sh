@@ -23,7 +23,7 @@ scontrol show Job $SLURM_JOBID  # show slurm-command and more for DBG
 #can supply either no argument, only first or both arguments
 
 #Default Parameters
-programROOT=/nfs1/kprabhu/3dReconstruction
+programROOT=/nfs1/kprabhu/3dReconstruction1
 pythonMain=pipeline.py
 
 echo $programROOT

@@ -16,7 +16,7 @@ import numpy as np
 import pickle
 import cv2
 from PIL import Image
-import config
+import Baseconfig
 
 from random import seed
 from random import randint
@@ -47,12 +47,11 @@ class SyntheticPix3d(Dataset):
         self.transform = transforms.ToTensor()
 
     def __getitem__(self, idx):
-        idx = 121
         img_path = os.path.join(self.dataset_img_path,self.input_paths[idx])
         output_model_path = os.path.join(os.path.join(self.dataset_models_path,self.output_paths[idx]),
                                          "model.obj" if self.config.is_mesh else "voxel.mat")
-        print(str(idx)+":img_path:"+img_path)
-        print(str(idx)+":output_model_path:"+output_model_path)
+        # print(str(idx)+":img_path:"+img_path)
+        # print(str(idx)+":output_model_path:"+output_model_path)
 
         input_img = self.transform(self.read_img(img_path))
         input_stack = input_img
@@ -75,7 +74,7 @@ class SyntheticPix3d(Dataset):
         if self.config.is_mesh:
             output_model = load(output_model_path)
         else:
-            output_model = torch.tensor(mat_to_array(output_model_path))
+            output_model = torch.tensor(mat_to_array(output_model_path), dtype=torch.float32)
             # print(output_model.shape)
 
         return input_stack, output_model
@@ -88,11 +87,10 @@ class SyntheticPix3d(Dataset):
         return img
 
     def __len__(self):
-        # return 4
         return len(self.input_paths)
 
 if __name__ == '__main__':
-    config = config.config
+    config = Baseconfig.config
 
     train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split("/Users/apple/OVGU/Thesis/code/3dReconstruction/pix3dsynthetic/train_test_split.p")
     traindataset = SyntheticPix3d(config,train_img_list,train_model_list)

@@ -17,6 +17,7 @@ class Dice(nn.Module):
     def __init__(self, smooth=1):
         super(Dice, self).__init__()
         self.smooth = smooth
+        self.dicescore = 0
 
     def forward(self, y_pred, y_true):
         y_pred_f = torch.flatten(y_pred)
@@ -25,7 +26,11 @@ class Dice(nn.Module):
         union = torch.sum(y_true_f + y_pred_f)
         dice_score = (2. * intersection + self.smooth) / (union + self.smooth)
         dice_loss = 1 - dice_score
-        return dice_loss, dice_score
+        self.dicescore = dice_score
+        return dice_loss
+
+    def get_dice_score(self):
+        return self.dicescore
 
 
 class IOU(nn.Module):

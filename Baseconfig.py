@@ -10,7 +10,13 @@ from sys import platform
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_01'
+class LossTypes:
+    BCE="bce"
+    DICE="dice"
+    FOCAL_TVERSKY="ftloss"
+    IOU="iou"
+
+cfg.main_name = 'test_10'
 cfg.platform = platform
 
 if platform == "darwin":
@@ -19,27 +25,27 @@ if platform == "darwin":
     cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
     cfg.home_path = "/Users/apple/Desktop/"
     cfg.num_workers = 0
-    cfg.batch_size = 4
+    cfg.batch_size = 8
 else:
-    cfg.root_path ='/nfs1/kprabhu/3dReconstruction/'
+    cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
     cfg.dataset_path ='/nfs1/kprabhu/SynthDataset1/'
     cfg.output_path = "/nfs1/kprabhu/outputs/"
     cfg.home_path = "/nfs1/kprabhu/"
     cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
-    cfg.num_workers = 8
-    cfg.batch_size = 40
+    cfg.num_workers = 10
+    cfg.batch_size = 32
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
 cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_validation/'
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
 
-cfg.num_epochs = 1000
-cfg.learning_rate = 0.1
+cfg.num_epochs = 400
+cfg.learning_rate = 0.01
 
 cfg.is_mesh = False
-cfg.include_depthmaps = False
-cfg.include_masks = False
+cfg.include_depthmaps = True
+cfg.include_masks = True
 
 cfg.in_channels = 3
 if cfg.include_depthmaps:
@@ -49,4 +55,5 @@ if cfg.include_masks:
 
 cfg.resize = True
 cfg.size = [512,512]
+cfg.train_loss_type = LossTypes.BCE
 
