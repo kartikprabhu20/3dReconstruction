@@ -12,18 +12,13 @@ from pytorch3d.ops import cubify
 
 import Baseconfig
 import numpy as np
-import torchvision.transforms as transforms
 
 from Logging import Logger
-from Losses import Dice, IOU, FocalTverskyLoss, BCE
+from ModelManager import ModelManager
 from basepipeline import BasePipeline
-from models.pix2voxel import pix2vox
-from models.unet3d import U_Net
 from pix3dsynthetic.DataExploration import get_train_test_split
 from pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3d
 from torch.utils.tensorboard import SummaryWriter
-
-from utils import save_obj, create_binary
 
 torch.manual_seed(2020)
 np.random.seed(2020)
@@ -52,7 +47,7 @@ class Pipeline(BasePipeline):
 
                 # Transfer to GPU
                 self.logger.debug('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
-                # print('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
+                print('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
                 if self.config.platform != "darwin":
                     local_batch, local_labels = local_batch.cuda(), local_labels.cuda()
                 # print(local_batch.shape)
@@ -70,6 +65,7 @@ class Pipeline(BasePipeline):
                 bceloss = self.bce(output, local_labels)
                 diceloss = self.dice(output, local_labels)
                 dicescore = self.dice.get_dice_score()
+                iou = self.iou(output,local_labels)
 
                 self.logger.info("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + "Training..." +
                              "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss),)
@@ -83,10 +79,9 @@ class Pipeline(BasePipeline):
 
                 if training_batch_index % 50 == 0:  # Save best metric evaluation weights
                     with torch.no_grad():
-                        self.write_summary(self.writer_training, training_batch_index, cubify(local_labels, thresh=0.5),
-                                  cubify(torch.sigmoid(output), thresh=0.5),
-                                  # 6 because in some cases we have padded with 5 which returns background
-                                  bceloss,diceloss, dicescore, 0)
+                        self.write_summary(self.writer_training, index=training_batch_index, input_image=local_batch[0][0:3],
+                                  original=cubify(local_labels[0][None,:], thresh=0.5),reconstructed=cubify(torch.sigmoid(output), thresh=0.5),
+                                  bceloss=bceloss,diceLoss=diceloss,diceScore=dicescore,iou=iou)
 
                 if self.config.platform == "darwin":
                     if training_batch_index % 20 == 0:
@@ -134,13 +129,12 @@ class Pipeline(BasePipeline):
 
         with torch.no_grad():
             for index, (batch, labels) in enumerate(data_loader):
-                no_items += self.config.batch_size
+                no_items += 1
                 # Transfer to GPU
                 if self.config.platform != "darwin":
                     batch, labels = batch.cuda(), labels.cuda()
 
                 outputs = self.model(batch)
-                # binloss += bceLoss(outputs, labels)
                 # outputs = torch.sigmoid(outputs)
 
                 bceloss += self.bce(outputs, labels).detach().item()
@@ -152,8 +146,6 @@ class Pipeline(BasePipeline):
                 jaccardIndex += self.iou(outputs, labels).detach().item()
 
         #Average the losses
-        bceloss = bceloss/no_items
-        # floss = floss/no_items
         bceloss = bceloss/no_items
         dloss = dloss /no_items
         dscore = dscore / no_items
@@ -174,8 +166,9 @@ class Pipeline(BasePipeline):
               "\n IOU:" + str(jaccardIndex))
 
         with torch.no_grad():
-            self.write_summary(writer, epoch, cubify(labels[0][None,:],thresh=0.5), cubify(torch.sigmoid(outputs)[0][None,:],thresh=0.5)
-                          , bceloss, dloss, dscore, jaccardIndex)
+            self.write_summary(writer, index=epoch, input_image=batch[0][0:3],
+                               original=cubify(labels[0][None,:],thresh=0.5),reconstructed=cubify(torch.sigmoid(outputs)[0][None,:],thresh=0.5),
+                               bceloss=bceloss,diceLoss=dloss,diceScore=dscore,iou=jaccardIndex)
 
         if epoch % 20 == 0 or epoch == self.num_epochs-1:
             self.save_intermediate_obj(istrain=False,training_batch_index=epoch,local_labels=labels,output=outputs)
@@ -208,7 +201,7 @@ if __name__ == '__main__':
     MODEL_NAME = config.main_name
     ROOT_PATH = config.root_path
     OUTPUT_PATH = config.output_path
-    LOGGER_PATH = OUTPUT_PATH +MODEL_NAME
+    LOGGER_PATH = OUTPUT_PATH + MODEL_NAME
 
 
     logger = Logger(MODEL_NAME, LOGGER_PATH).get_logger()
@@ -221,8 +214,7 @@ if __name__ == '__main__':
     writer_training = SummaryWriter(config.tensorboard_train)
     writer_validating = SummaryWriter(config.tensorboard_validation)
 
-    # model = U_Net()
-    model = pix2vox(in_channel=config.in_channels)
+    model = ModelManager(config).get_Model(config.model_type)
     if config.platform != "darwin":
         model.cuda()
 

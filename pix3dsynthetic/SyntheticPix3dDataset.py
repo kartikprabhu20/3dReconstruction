@@ -6,8 +6,6 @@
 """
 
 import os
-
-import pandas as pd
 import torch
 import torch.utils.data
 import torchvision.transforms as transforms
@@ -87,6 +85,8 @@ class SyntheticPix3d(Dataset):
         return img
 
     def __len__(self):
+        if self.config.platform != "darwin":
+            return 2 #debug
         return len(self.input_paths)
 
 if __name__ == '__main__':
@@ -102,6 +102,7 @@ if __name__ == '__main__':
         print(input_batch.shape)
         print(input_label.shape)
 
+        print(input_batch[0][0:3].shape)
         break
 
 

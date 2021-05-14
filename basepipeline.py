@@ -54,7 +54,7 @@ class BasePipeline:
                 np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy", output[0].cpu().data.numpy())
                 np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
 
-    def write_summary(self,writer, index, original, reconstructed, focalTverskyLoss, diceLoss, diceScore, iou):
+    def write_summary(self,writer, index, input_image, original, reconstructed, bceloss, diceLoss, diceScore, iou):
         """
         Method to write summary to the tensorboard.
         index: global_index for the visualisation
@@ -62,13 +62,14 @@ class BasePipeline:
         Losses: all losses used as metric
         """
         print('Writing Summary...')
-        writer.add_scalar('BCELoss', focalTverskyLoss, index)
+        writer.add_scalar('BCELoss', bceloss, index)
         writer.add_scalar('DiceLoss', diceLoss, index)
         writer.add_scalar('DiceScore', diceScore, index)
         writer.add_scalar('IOU', iou, index)
+        writer.add_image('input_image', input_image, index)
+        writer.add_mesh('label', vertices=original.verts_list()[0][None,], faces=original.faces_list()[0][None,], global_step=index)
+        writer.add_mesh('reconstructed', vertices=reconstructed.verts_list()[0][None,], faces=reconstructed.faces_list()[0][None,], global_step=index)
 
-        writer.add_mesh('label', vertices=original.verts_list()[0][None,], faces=original.faces_list()[0][None,])
-        writer.add_mesh('reconstructed', vertices=reconstructed.verts_list()[0][None,], faces=reconstructed.faces_list()[0][None,])
         # writer.add_image('diff', np.moveaxis(create_diff_mask(reconstructed,original,logger), -1, 0), index) #create_diff_mask is of the format HXWXC, but CXHXW is needed
 
     def save_model(self,CHECKPOINT_PATH, state, best_metric = False,filename='checkpoint'):

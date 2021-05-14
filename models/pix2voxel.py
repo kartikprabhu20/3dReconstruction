@@ -19,12 +19,12 @@ class BaseModel(nn.Module):
                     m.weight.data.fill_(1)
 
 class Encoder(BaseModel):
-    def __init__(self, in_channel = 3):
+    def __init__(self,config, in_channel = 3):
         super(Encoder, self).__init__()
 
         # Layer Definition
         self.conv1 = torch.nn.Sequential(torch.nn.Conv2d(in_channel, 3, kernel_size=1))
-        vgg16_bn = torchvision.models.vgg16_bn(pretrained=True)
+        vgg16_bn = torchvision.models.vgg16_bn(pretrained=config.pix2vox_pretrained_vgg)
         self.vgg = torch.nn.Sequential(*list(vgg16_bn.features.children()))[:27]
         self.layer1 = torch.nn.Sequential(
             torch.nn.Conv2d(512, 512, kernel_size=3),
@@ -44,8 +44,8 @@ class Encoder(BaseModel):
         )
 
         # Don't update params in VGG16
-        # for param in vgg16_bn.parameters():
-        #     param.requires_grad = False
+        for param in vgg16_bn.parameters():
+            param.requires_grad = config.pix2vox_update_vgg
 
         self.weight_init()
 
@@ -154,13 +154,96 @@ class Decoder(BaseModel):
         # print(gen_volume[:,0,:].shape)
         return gen_volume[:,0,:]
 
-class pix2vox(BaseModel):
-    def __init__(self, in_channel=3):
-        super(pix2vox, self).__init__()
-        self.model = torch.nn.Sequential(
-            Encoder(in_channel=in_channel),
-            Decoder())
+class Refiner(torch.nn.Module):
+    def __init__(self):
+        super(Refiner, self).__init__()
 
+        # Layer Definition
+        self.layer1 = torch.nn.Sequential(
+            torch.nn.Conv3d(1, 32, kernel_size=4, padding=2),
+            torch.nn.BatchNorm3d(32),
+            torch.nn.LeakyReLU(.2),
+            torch.nn.MaxPool3d(kernel_size=2)
+        )
+        self.layer2 = torch.nn.Sequential(
+            torch.nn.Conv3d(32, 64, kernel_size=4, padding=2),
+            torch.nn.BatchNorm3d(64),
+            torch.nn.LeakyReLU(.2),
+            torch.nn.MaxPool3d(kernel_size=2)
+        )
+        self.layer3 = torch.nn.Sequential(
+            torch.nn.Conv3d(64, 128, kernel_size=4, padding=2),
+            torch.nn.BatchNorm3d(128),
+            torch.nn.LeakyReLU(.2),
+            torch.nn.MaxPool3d(kernel_size=2)
+        )
+
+        self.layer3_2 = torch.nn.Sequential(
+            torch.nn.Conv3d(128, 256, kernel_size=4, padding=2),
+            torch.nn.BatchNorm3d(256),
+            torch.nn.LeakyReLU(.2),
+            torch.nn.MaxPool3d(kernel_size=2)
+        )
+
+        self.layer4 = torch.nn.Sequential(
+            torch.nn.Linear(256*8*8*8, 2048),
+            torch.nn.ReLU()
+        )
+        self.layer5 = torch.nn.Sequential(
+            torch.nn.Linear(2048, 256*8*8*8),
+            torch.nn.ReLU()
+        )
+
+        self.layer6_2 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(256, 128, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(128),
+            torch.nn.ReLU()
+        )
+
+        self.layer6 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(128, 64, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(64),
+            torch.nn.ReLU()
+        )
+        self.layer7 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(64, 32, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(32),
+            torch.nn.ReLU()
+        )
+        self.layer8 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(32, 1, kernel_size=4, stride=2, padding=1),
+            torch.nn.Sigmoid()
+        )
+
+    def forward(self, coarse_volumes):
+        volumes_128_l = coarse_volumes.view((-1, 1, 128, 128, 128)) # torch.Size([batch_size, 1, 32, 32, 32])
+        volumes_64_l = self.layer1(volumes_128_l) # torch.Size([batch_size, 32, 16, 16, 16])
+        volumes_32_l = self.layer2(volumes_64_l)  # torch.Size([batch_size, 64, 8, 8, 8])
+        volumes_16_l = self.layer3(volumes_32_l)
+        volumes_8_l = self.layer3_2(volumes_16_l)
+
+        flatten_features = self.layer4(volumes_8_l.view(-1, 256*8*8*8))# torch.Size([batch_size, 2048])
+        flatten_features = self.layer5(flatten_features)  # torch.Size([batch_size, 8192])
+
+        volumes_2_r = volumes_8_l + flatten_features.view(-1, 256, 8, 8, 8)
+        volumes_4_r = volumes_16_l + self.layer6_2(volumes_2_r) # torch.Size([batch_size, 128, 4, 4, 4])
+        volumes_8_r = volumes_32_l + self.layer6(volumes_4_r) # torch.Size([batch_size, 64, 8, 8, 8])
+        volumes_16_r = volumes_64_l + self.layer7(volumes_8_r) # torch.Size([batch_size, 32, 16, 16, 16])
+        volumes_32_r = (volumes_128_l + self.layer8(volumes_16_r)) * 0.5 # torch.Size([batch_size, 1, 32, 32, 32])
+
+        return volumes_32_r.view((-1, 128, 128,128))
+
+class pix2vox(BaseModel):
+    def __init__(self, config):
+        super(pix2vox, self).__init__()
+
+        modules = [Encoder(config=config,in_channel=config.in_channels),
+                   Decoder()]
+
+        if config.pix2vox_refiner:
+            modules.append(Refiner())
+
+        self.model = nn.Sequential(*modules)
         self.weight_init()
 
     def forward(self, x):
