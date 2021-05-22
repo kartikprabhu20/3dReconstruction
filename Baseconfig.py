@@ -22,24 +22,27 @@ class DatasetType:
     PIX3D = "pix3d"
     PIX3DSYNTHETIC1 = "pix3dsynthetic1"
 
-cfg.main_name = 'test_13'
+cfg.main_name = 'test_18'
 cfg.platform = platform
+cfg.apex = True
+cfg.apex_mode = "O1"
 
-if platform == "darwin":
+if platform == "darwin": #local mac
     cfg.root_path = '/Users/apple/OVGU/Thesis/code/3dReconstruction'
     cfg.dataset_path ='/Users/apple/OVGU/Thesis/SynthDataset1'
     cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
     cfg.home_path = "/Users/apple/Desktop/"
     cfg.num_workers = 0
     cfg.batch_size = 4
+    cfg.apex = False
 else:
     cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
     cfg.dataset_path ='/nfs1/kprabhu/SynthDataset1/'
     cfg.output_path = "/nfs1/kprabhu/outputs/"
     cfg.home_path = "/nfs1/kprabhu/"
     cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
-    cfg.num_workers = 10
-    cfg.batch_size = 32
+    cfg.num_workers = 8
+    cfg.batch_size = 40
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
@@ -47,13 +50,13 @@ cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/te
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
 
 cfg.num_epochs = 400
-cfg.learning_rate = 0.01
+cfg.learning_rate = 0.001
 
 cfg.is_mesh = False
 cfg.include_depthmaps = True
 cfg.include_masks = True
 
-cfg.in_channels = 3
+cfg.in_channels = 3 #rgb
 if cfg.include_depthmaps:
     cfg.in_channels += 1
 if cfg.include_masks:
@@ -61,13 +64,15 @@ if cfg.include_masks:
 
 cfg.resize = True
 cfg.size = [512,512]
-cfg.train_loss_type = LossTypes.BCE
-
+cfg.train_loss_type = LossTypes.DICE
+cfg.save_mesh = 40
 
 ########## Model Config################
 cfg.model_type = ModelManager.PIX2VOXEL
 
-cfg.pix2vox_refiner = True
 cfg.pix2vox_pretrained_vgg = True
 cfg.pix2vox_update_vgg = False
+cfg.pix2vox_refiner = False
+
+########## Model Config################
 

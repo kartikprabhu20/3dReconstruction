@@ -20,6 +20,10 @@ from pix3dsynthetic.DataExploration import get_train_test_split
 from pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3d
 from torch.utils.tensorboard import SummaryWriter
 
+# Added for Apex
+import apex
+from apex import amp
+
 torch.manual_seed(2020)
 np.random.seed(2020)
 LOWEST_LOSS = 1
@@ -48,7 +52,7 @@ class Pipeline(BasePipeline):
                 # Transfer to GPU
                 self.logger.debug('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
                 print('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
-                if self.config.platform != "darwin":
+                if self.config.platform != "darwin": #no nvidia on mac!!!
                     local_batch, local_labels = local_batch.cuda(), local_labels.cuda()
                 # print(local_batch.shape)
                 # print(local_labels.shape)
@@ -62,36 +66,41 @@ class Pipeline(BasePipeline):
                 # print(output.shape)
 
                 training_loss = self.train_loss(output, local_labels)
-                bceloss = self.bce(output, local_labels)
+                # bceloss = self.bce(output, local_labels)
+                bceloss = 0
                 diceloss = self.dice(output, local_labels)
                 dicescore = self.dice.get_dice_score()
                 iou = self.iou(output,local_labels)
 
-                self.logger.info("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + "Training..." +
-                             "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss),)
-                # print("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + "Training..." +
-                #       "\n diceloss:" + str(diceloss))
+                # print("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + " Training..." +
+                #       "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss))
 
-                # Calculating gradients
-                training_loss.backward()
-                torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1)
-                self.optimizer.step()
+                if training_batch_index % 25 == 0:  # Save best metric evaluation weights
+                    self.logger.info("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + " Training..." +
+                                     "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss))
 
-                if training_batch_index % 50 == 0:  # Save best metric evaluation weights
-                    with torch.no_grad():
-                        self.write_summary(self.writer_training, index=training_batch_index, input_image=local_batch[0][0:3],
-                                  original=cubify(local_labels[0][None,:], thresh=0.5),reconstructed=cubify(torch.sigmoid(output), thresh=0.5),
-                                  bceloss=bceloss,diceLoss=diceloss,diceScore=dicescore,iou=iou)
+                    self.write_summary(self.writer_training, index=training_batch_index, input_image=local_batch[0][0:3],
+                                           original=cubify(local_labels[0][None,:], thresh=0.5),reconstructed=cubify(torch.sigmoid(output), thresh=0.5),
+                                           bceloss=bceloss,diceLoss=diceloss,diceScore=dicescore,iou=iou, writeMesh=False)
 
-                if self.config.platform == "darwin":
+                if self.config.platform == "darwin": #debug
                     if training_batch_index % 20 == 0:
                         self.save_intermediate_obj(istrain=True,training_batch_index=training_batch_index,local_labels=local_labels,output=output)
 
+                # Calculating gradients
+                if self.with_apex:
+                    with amp.scale_loss(training_loss, self.optimizer) as scaled_loss:
+                        scaled_loss.backward()
+                    torch.nn.utils.clip_grad_norm_(amp.master_params(self.optimizer), 1)
+                else:
+                    training_loss.backward()
+                    torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1)
+
+                self.optimizer.step()
+
                 training_batch_index += 1
-
                 # Initialising the average loss metrics
-                total_training_loss += training_loss.detach().item()
-
+                total_training_loss += training_loss.detach()
 
             # Calculate the average loss per batch in one epoch
             total_training_loss /= (batch_index + 1.0)
@@ -131,19 +140,19 @@ class Pipeline(BasePipeline):
             for index, (batch, labels) in enumerate(data_loader):
                 no_items += 1
                 # Transfer to GPU
-                if self.config.platform != "darwin":
+                if self.config.platform != "darwin": #no nvidia on mac!!!
                     batch, labels = batch.cuda(), labels.cuda()
 
                 outputs = self.model(batch)
                 # outputs = torch.sigmoid(outputs)
 
-                bceloss += self.bce(outputs, labels).detach().item()
+                # bceloss += self.bce(outputs, labels).detach().item()
                 # floss += self.focalTverskyLoss(outputs, labels).detach().item()
                 dl = self.dice(outputs, labels)
                 ds = self.dice.get_dice_score()
-                dloss += dl.detach().item()
-                dscore += ds.detach().item()
-                jaccardIndex += self.iou(outputs, labels).detach().item()
+                dloss += dl.detach()
+                dscore += ds.detach()
+                jaccardIndex += self.iou(outputs, labels).detach()
 
         #Average the losses
         bceloss = bceloss/no_items
@@ -165,12 +174,13 @@ class Pipeline(BasePipeline):
               "\n DiceScore:" + str(dscore) +
               "\n IOU:" + str(jaccardIndex))
 
+        saveMesh = (epoch % self.config.save_mesh == 0)
         with torch.no_grad():
             self.write_summary(writer, index=epoch, input_image=batch[0][0:3],
                                original=cubify(labels[0][None,:],thresh=0.5),reconstructed=cubify(torch.sigmoid(outputs)[0][None,:],thresh=0.5),
-                               bceloss=bceloss,diceLoss=dloss,diceScore=dscore,iou=jaccardIndex)
+                               bceloss=bceloss,diceLoss=dloss,diceScore=dscore,iou=jaccardIndex,writeMesh=saveMesh)
 
-        if epoch % 20 == 0 or epoch == self.num_epochs-1:
+        if saveMesh or epoch == self.num_epochs-1:
             self.save_intermediate_obj(istrain=False,training_batch_index=epoch,local_labels=labels,output=outputs)
 
         if validation:#save only for validation
@@ -215,17 +225,21 @@ if __name__ == '__main__':
     writer_validating = SummaryWriter(config.tensorboard_validation)
 
     model = ModelManager(config).get_Model(config.model_type)
-    if config.platform != "darwin":
+    if config.platform != "darwin": #no nvidia on mac!!!
         model.cuda()
-
     optimizer = torch.optim.Adam(model.parameters(), lr=config.learning_rate)
+
+    if config.apex:
+        # amp.register_float_function(torch, 'sigmoid') #As the error message suggests, you could e.g. change the criterion to nn.BCEWithLogitsLoss and remove the sigmoid, register the sigmoid as a float function, or disable the warning.
+        model, optimizer = amp.initialize(model, optimizer, opt_level=config.apex_mode)
+
 
     traindataset = SyntheticPix3d(config,train_img_list,train_model_list)
     train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=True,
                                                num_workers=config.num_workers)
 
     testdataset = SyntheticPix3d(config,test_img_list,test_model_list)
-    test_loader = torch.utils.data.DataLoader(testdataset, batch_size=config.batch_size, shuffle=True,
+    test_loader = torch.utils.data.DataLoader(testdataset, batch_size=config.batch_size, shuffle=False,
                                            num_workers=config.num_workers)
 
     pipeline = Pipeline(model=model,optimizer=optimizer,config=config,train_loader= train_loader,test_loader=test_loader,logger=logger, writer_training= writer_training, writer_validating=writer_validating)

@@ -85,7 +85,7 @@ class SyntheticPix3d(Dataset):
         return img
 
     def __len__(self):
-        if self.config.platform != "darwin":
+        if self.config.platform == "darwin":
             return 2 #debug
         return len(self.input_paths)
 

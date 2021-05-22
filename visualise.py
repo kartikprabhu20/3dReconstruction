@@ -44,9 +44,9 @@ class Visualise_model():
         make_dot(output)
 
 if __name__ == '__main__':
-    model_name = "test_13"
-    epoch ="240"
-    path = '/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/test_13/'
+    model_name = "test_18"
+    epoch ="0"
+    path = '/Users/apple/OVGU/Thesis/code/3dReconstruction/'
     datapath_np = path+model_name+'_'+epoch+'_val_output.npy'
 
     vis = Visualise(datapath_np)

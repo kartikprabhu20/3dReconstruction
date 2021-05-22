@@ -10,6 +10,7 @@ import torch
 from pytorch3d.ops import cubify
 import numpy as np
 
+import Baseconfig
 from Losses import Dice, BCE, FocalTverskyLoss, IOU
 from Baseconfig import LossTypes
 from utils import create_binary, save_obj
@@ -27,7 +28,9 @@ class BasePipeline:
         self.checkpoint_path = config.checkpoint_path
         self.config = config
         self.train_loss = self.get_loss(config.train_loss_type)
+        self.train_loss_is_bce = config.train_loss_type == Baseconfig.LossType.BCE
         self.num_epochs = config.num_epochs
+        self.with_apex = config.apex
 
     def get_loss(self,loss_type):
         switcher = {
@@ -45,16 +48,12 @@ class BasePipeline:
             output_mesh = cubify(torch.sigmoid(output)[0][None,:],thresh=0.5)
             label_mesh = cubify(local_labels[0][None,:],thresh=0.5)
 
-            save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.obj",verts=output_mesh.verts_list()[0], faces=output_mesh.faces_list()[0])
-            save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_original.obj",verts=label_mesh.verts_list()[0], faces=label_mesh.faces_list()[0])
-            if self.config.platform == "darwin":
-                np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy", output[0].detach().numpy())
-                np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].detach().numpy())
-            else:
-                np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy", output[0].cpu().data.numpy())
-                np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
+            # save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.obj",verts=output_mesh.verts_list()[0], faces=output_mesh.faces_list()[0])
+            # save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.obj",verts=label_mesh.verts_list()[0], faces=label_mesh.faces_list()[0])
+            np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy", output[0].cpu().data.numpy())
+            np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
 
-    def write_summary(self,writer, index, input_image, original, reconstructed, bceloss, diceLoss, diceScore, iou):
+    def write_summary(self,writer, index, input_image, original, reconstructed, bceloss, diceLoss, diceScore, iou, writeMesh = False):
         """
         Method to write summary to the tensorboard.
         index: global_index for the visualisation
@@ -67,8 +66,10 @@ class BasePipeline:
         writer.add_scalar('DiceScore', diceScore, index)
         writer.add_scalar('IOU', iou, index)
         writer.add_image('input_image', input_image, index)
-        writer.add_mesh('label', vertices=original.verts_list()[0][None,], faces=original.faces_list()[0][None,], global_step=index)
-        writer.add_mesh('reconstructed', vertices=reconstructed.verts_list()[0][None,], faces=reconstructed.faces_list()[0][None,], global_step=index)
+
+        if writeMesh:
+            writer.add_mesh('label', vertices=original.verts_list()[0][None,], faces=original.faces_list()[0][None,], global_step=index)
+            writer.add_mesh('reconstructed', vertices=reconstructed.verts_list()[0][None,], faces=reconstructed.faces_list()[0][None,], global_step=index)
 
         # writer.add_image('diff', np.moveaxis(create_diff_mask(reconstructed,original,logger), -1, 0), index) #create_diff_mask is of the format HXWXC, but CXHXW is needed
 

@@ -185,13 +185,28 @@ class Refiner(torch.nn.Module):
             torch.nn.MaxPool3d(kernel_size=2)
         )
 
+        self.layer3_3 = torch.nn.Sequential(
+            torch.nn.Conv3d(256, 512, kernel_size=4, padding=2),
+            torch.nn.BatchNorm3d(512),
+            torch.nn.LeakyReLU(.2),
+            torch.nn.MaxPool3d(kernel_size=2)
+        )
+
         self.layer4 = torch.nn.Sequential(
-            torch.nn.Linear(256*8*8*8, 2048),
+            torch.nn.Linear(512*4*4*4, 512),
             torch.nn.ReLU()
         )
+
         self.layer5 = torch.nn.Sequential(
-            torch.nn.Linear(2048, 256*8*8*8),
+            torch.nn.Linear(512, 512*4*4*4),
             torch.nn.ReLU()
+        )
+
+
+        self.layer6_3 = torch.nn.Sequential(
+        torch.nn.ConvTranspose3d(512, 256, kernel_size=4, stride=2, padding=1),
+        torch.nn.BatchNorm3d(256),
+        torch.nn.ReLU()
         )
 
         self.layer6_2 = torch.nn.Sequential(
@@ -221,17 +236,19 @@ class Refiner(torch.nn.Module):
         volumes_32_l = self.layer2(volumes_64_l)  # torch.Size([batch_size, 64, 8, 8, 8])
         volumes_16_l = self.layer3(volumes_32_l)
         volumes_8_l = self.layer3_2(volumes_16_l)
+        volumes_4_l = self.layer3_3(volumes_8_l)
 
-        flatten_features = self.layer4(volumes_8_l.view(-1, 256*8*8*8))# torch.Size([batch_size, 2048])
+        flatten_features = self.layer4(volumes_4_l.view(-1, 512*4*4*4))# torch.Size([batch_size, 2048])
         flatten_features = self.layer5(flatten_features)  # torch.Size([batch_size, 8192])
 
-        volumes_2_r = volumes_8_l + flatten_features.view(-1, 256, 8, 8, 8)
-        volumes_4_r = volumes_16_l + self.layer6_2(volumes_2_r) # torch.Size([batch_size, 128, 4, 4, 4])
-        volumes_8_r = volumes_32_l + self.layer6(volumes_4_r) # torch.Size([batch_size, 64, 8, 8, 8])
-        volumes_16_r = volumes_64_l + self.layer7(volumes_8_r) # torch.Size([batch_size, 32, 16, 16, 16])
-        volumes_32_r = (volumes_128_l + self.layer8(volumes_16_r)) * 0.5 # torch.Size([batch_size, 1, 32, 32, 32])
+        volumes_4_r = volumes_4_l + flatten_features.view(-1, 512, 4, 4, 4)
+        volumes_8_r = volumes_8_l + self.layer6_3(volumes_4_r)
+        volumes_16_r = volumes_16_l + self.layer6_2(volumes_8_r) # torch.Size([batch_size, 128, 4, 4, 4])
+        volumes_32_r = volumes_32_l + self.layer6(volumes_16_r) # torch.Size([batch_size, 64, 8, 8, 8])
+        volumes_64_r = volumes_64_l + self.layer7(volumes_32_r) # torch.Size([batch_size, 32, 16, 16, 16])
+        volumes_128_r = (volumes_128_l + self.layer8(volumes_64_r)) * 0.5 # torch.Size([batch_size, 1, 32, 32, 32])
 
-        return volumes_32_r.view((-1, 128, 128,128))
+        return volumes_128_r.view((-1, 128, 128,128))
 
 class pix2vox(BaseModel):
     def __init__(self, config):
