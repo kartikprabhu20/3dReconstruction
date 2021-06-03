@@ -4,8 +4,6 @@
     @author: Kartik Prabhu
 
 """
-import os
-import sys
 import torch
 import torch.utils.data
 from pytorch3d.ops import cubify
@@ -13,30 +11,32 @@ from pytorch3d.ops import cubify
 import Baseconfig
 import numpy as np
 
-from Logging import Logger
-from ModelManager import ModelManager
+import ModelManager
+from DatasetManager import DatasetManager
 from basepipeline import BasePipeline
-from pix3dsynthetic.DataExploration import get_train_test_split
-from pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3d
-from torch.utils.tensorboard import SummaryWriter
 
 # Added for Apex
 import apex
 from apex import amp
 
-torch.manual_seed(2020)
-np.random.seed(2020)
+SEED = 2021
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+torch.cuda.manual_seed(SEED)
+torch.manual_seed(SEED)
+np.random.seed(SEED)
+
 LOWEST_LOSS = 1
 
-class Pipeline(BasePipeline):
-    def __init__(self,model,optimizer, config, logger, train_loader,test_loader,writer_training, writer_validating):
-        super(Pipeline,self).__init__(model,optimizer, config, logger, train_loader,test_loader,writer_training, writer_validating)
+class ReconstructionPipeline(BasePipeline):
+    def __init__(self,model,optimizer, config,datasetManager):
+        super(ReconstructionPipeline, self).__init__(model, optimizer, config, datasetManager)
 
         # Losses
-        self.dice = self.get_loss(Baseconfig.LossTypes.DICE)
-        self.focalTverskyLoss = self.get_loss(Baseconfig.LossTypes.FOCAL_TVERSKY)
-        self.iou = self.get_loss(Baseconfig.LossTypes.IOU)
-        self.bce = self.get_loss(Baseconfig.LossTypes.BCE)
+        self.dice = self.get_loss(ModelManager.LossTypes.DICE)
+        self.focalTverskyLoss = self.get_loss(ModelManager.LossTypes.FOCAL_TVERSKY)
+        self.iou = self.get_loss(ModelManager.LossTypes.IOU)
+        self.bce = self.get_loss(ModelManager.LossTypes.BCE)
 
 
     def train(self):
@@ -47,7 +47,7 @@ class Pipeline(BasePipeline):
             self.model.train()  # make sure to assign mode:train, because in validation, mode is assigned as eval
             total_training_loss = 0
             batch_index = 0
-            for batch_index, (local_batch, local_labels) in enumerate(train_loader):
+            for batch_index, (local_batch, local_labels) in enumerate(self.train_loader):
 
                 # Transfer to GPU
                 self.logger.debug('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
@@ -160,7 +160,7 @@ class Pipeline(BasePipeline):
         dscore = dscore / no_items
         jaccardIndex = jaccardIndex / no_items
         process = ' Validation' if validation else ' Testing'
-        logger.info("Epoch:" + str(epoch) + process + "..." +
+        self.logger.info("Epoch:" + str(epoch) + process + "..." +
                 "\n focalTverskyLoss:" + str(floss) +
                 "\n binloss:" + str(bceloss) +
                 "\n DiceLoss:" + str(dloss) +
@@ -193,7 +193,7 @@ class Pipeline(BasePipeline):
             global LOWEST_LOSS
             if LOWEST_LOSS > dloss:  # Save best metric evaluation weights
                 LOWEST_LOSS = dloss
-                logger.info('Best metric... @ epoch:' + str(epoch) + ' Current Lowest loss:' + str(LOWEST_LOSS))
+                self.logger.info('Best metric... @ epoch:' + str(epoch) + ' Current Lowest loss:' + str(LOWEST_LOSS))
 
                 self.save_model(self.checkpoint_path, {
                 'epoch': 'best',
@@ -208,39 +208,7 @@ if __name__ == '__main__':
     config = Baseconfig.config
     print("configuration: " + str(config))
 
-    MODEL_NAME = config.main_name
-    ROOT_PATH = config.root_path
-    OUTPUT_PATH = config.output_path
-    LOGGER_PATH = OUTPUT_PATH + MODEL_NAME
+    model, optimizer = ModelManager.ModelManager(config).get_Model(config.model_type)
 
-
-    logger = Logger(MODEL_NAME, LOGGER_PATH).get_logger()
-    logger.info("configuration: " + str(config))
-
-    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(ROOT_PATH+"/pix3dsynthetic/train_test_split.p")
-    # print(train_img_list)
-    # print(test_img_list)
-
-    writer_training = SummaryWriter(config.tensorboard_train)
-    writer_validating = SummaryWriter(config.tensorboard_validation)
-
-    model = ModelManager(config).get_Model(config.model_type)
-    if config.platform != "darwin": #no nvidia on mac!!!
-        model.cuda()
-    optimizer = torch.optim.Adam(model.parameters(), lr=config.learning_rate)
-
-    if config.apex:
-        # amp.register_float_function(torch, 'sigmoid') #As the error message suggests, you could e.g. change the criterion to nn.BCEWithLogitsLoss and remove the sigmoid, register the sigmoid as a float function, or disable the warning.
-        model, optimizer = amp.initialize(model, optimizer, opt_level=config.apex_mode)
-
-
-    traindataset = SyntheticPix3d(config,train_img_list,train_model_list)
-    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=True,
-                                               num_workers=config.num_workers)
-
-    testdataset = SyntheticPix3d(config,test_img_list,test_model_list)
-    test_loader = torch.utils.data.DataLoader(testdataset, batch_size=config.batch_size, shuffle=False,
-                                           num_workers=config.num_workers)
-
-    pipeline = Pipeline(model=model,optimizer=optimizer,config=config,train_loader= train_loader,test_loader=test_loader,logger=logger, writer_training= writer_training, writer_validating=writer_validating)
+    pipeline = ReconstructionPipeline(model=model, optimizer=optimizer, config=config, datasetManager=DatasetManager(config))
     pipeline.train()

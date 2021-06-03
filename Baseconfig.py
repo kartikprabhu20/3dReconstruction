@@ -7,25 +7,17 @@
 from easydict import EasyDict as edict
 from sys import platform
 
-from ModelManager import ModelManager
+from DatasetManager import LabelType, DatasetType
+from ModelManager import OptimizerType, ModelType, LossTypes
+from PipelineManager import PipelineType
 
 cfg = edict()
 config = cfg
 
-class LossTypes:
-    BCE="bce"
-    DICE="dice"
-    FOCAL_TVERSKY="ftloss"
-    IOU="iou"
-
-class DatasetType:
-    PIX3D = "pix3d"
-    PIX3DSYNTHETIC1 = "pix3dsynthetic1"
-
-cfg.main_name = 'test_18'
+cfg.main_name = 'test_23'
 cfg.platform = platform
-cfg.apex = True
-cfg.apex_mode = "O1"
+cfg.apex = False
+cfg.apex_mode = "O2"
 
 if platform == "darwin": #local mac
     cfg.root_path = '/Users/apple/OVGU/Thesis/code/3dReconstruction'
@@ -42,7 +34,7 @@ else:
     cfg.home_path = "/nfs1/kprabhu/"
     cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
     cfg.num_workers = 8
-    cfg.batch_size = 40
+    cfg.batch_size = 24
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
@@ -50,11 +42,14 @@ cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/te
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
 
 cfg.num_epochs = 400
-cfg.learning_rate = 0.001
+cfg.learning_rate = 0.0001
 
+####### INPUT-OUTPUT CONFIG #######
+cfg.include_depthmaps = False
+cfg.include_masks = False
 cfg.is_mesh = False
-cfg.include_depthmaps = True
-cfg.include_masks = True
+cfg.label_type = LabelType.NPY
+cfg.voxel_size = 32 #32,64 or 128
 
 cfg.in_channels = 3 #rgb
 if cfg.include_depthmaps:
@@ -64,15 +59,20 @@ if cfg.include_masks:
 
 cfg.resize = True
 cfg.size = [512,512]
+####### INPUT-OUTPUT CONFIG #######
+
 cfg.train_loss_type = LossTypes.DICE
 cfg.save_mesh = 40
 
 ########## Model Config################
-cfg.model_type = ModelManager.PIX2VOXEL
+cfg.pipeline_type = PipelineType.RECONSTRUCTION
+cfg.dataset_type =  DatasetType.PIX3DSYNTHETIC1
+cfg.model_type = ModelType.PIX2VOXEL
+cfg.optimizer_type = OptimizerType.ADAM
 
 cfg.pix2vox_pretrained_vgg = True
-cfg.pix2vox_update_vgg = False
-cfg.pix2vox_refiner = False
+cfg.pix2vox_update_vgg = True
+cfg.pix2vox_refiner = True
 
 ########## Model Config################
 

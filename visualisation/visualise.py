@@ -6,18 +6,13 @@
 """
 import torch
 import trimesh
-import glob
 import os
 import numpy as np
 from pytorch3d.ops import cubify
+from skimage.filters import threshold_otsu
 from torchviz import make_dot
 
-from Baseconfig import config
-from models.pix2voxel import pix2vox
-from pix3dsynthetic.DataExploration import get_train_test_split
-from pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3d
 from utils import save_obj
-
 
 
 class Visualise():
@@ -31,6 +26,11 @@ class Visualise():
 
     def np_to_mesh(self):
         mesh_np = np.load(self.file_path)
+        print(mesh_np.shape)
+        thresh = threshold_otsu(mesh_np)
+        print(thresh)
+        mesh_np = (mesh_np > thresh).astype(int)
+        print(mesh_np)
         mesh_mat = torch.tensor(mesh_np)[None,]
         mesh_mat = cubify(mesh_mat, thresh=0.5)
         return mesh_mat
@@ -44,9 +44,10 @@ class Visualise_model():
         make_dot(output)
 
 if __name__ == '__main__':
-    model_name = "test_18"
-    epoch ="0"
+    model_name = "test_22"
+    epoch ="80"
     path = '/Users/apple/OVGU/Thesis/code/3dReconstruction/'
+    # path ='/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/test_18/'
     datapath_np = path+model_name+'_'+epoch+'_val_output.npy'
 
     vis = Visualise(datapath_np)
@@ -138,3 +139,4 @@ if __name__ == '__main__':
 #     ax.voxels(voxels, facecolors=colors, edgecolor='k')
 #
 #     plt.show()
+########################################################

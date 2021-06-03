@@ -12,7 +12,7 @@ import os
 import numpy as np
 import cv2
 
-from utils import load_mat_pix3d, load
+from utils import load_mat_pix3d
 
 
 def getHistogram(root_path):
@@ -80,7 +80,7 @@ def get_train_test_split():
     TRAIN_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
                                    'splits/pix3d_train.npy')
     TEST_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
-                              'splits/pix3d_test.npy')
+                                  'splits/pix3d_test.npy')
     train = np.load(TRAIN_SPLIT_IDX)
     test = np.load(TEST_SPLIT_IDX)
     return train, test
@@ -148,7 +148,7 @@ if __name__ == '__main__':
     # split_to_classes(pix3d_json_path,root_path)
 
     ##Histogram test
-    getHistogram("/Users/apple/OVGU/Thesis/Dataset/pix3d/img/")
+    # getHistogram("/Users/apple/OVGU/Thesis/Dataset/pix3d/img/")
 
     #Save occluded json
     # save_occluded_json(root_path)
@@ -163,8 +163,10 @@ if __name__ == '__main__':
 
     #voxel_path
     # voxel_path = get_voxel(root_path,"chair","0002.png")
-    # mesh_mat = load_mat_pix3d(voxel_path)
-    # mesh_mat.show()
+    voxel_path = '/Users/apple/OVGU/Thesis/SynthDataset1/models/chair/IKEA_HERMAN/voxel.mat'
+
+    mesh_mat = load_mat_pix3d(voxel_path)
+    mesh_mat.show()
 
     #mode_path
     # model_path = get_model(root_path,"chair","0002.png")

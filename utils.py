@@ -18,6 +18,9 @@ from typing import Optional
 from Logging import Logger
 from pytorch3d.io.utils import _open_file
 from skimage.filters import threshold_otsu
+import torch.nn.functional as F
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
 
 def create_binary(predicted, logger):
 
@@ -145,55 +148,56 @@ def _save(f, verts, faces,decimal_places) -> None:
 
     f.write(lines)
 
+def interpolate_and_save(filename,outpath,size=64, key='voxel',scale_factor=1,mode='bilinear'):
+    data = mat_to_array(filename,key=key)
+    data = torch.tensor(data)
+    # print(data.shape)
+    data = data[None,None,]
+    # print(data.shape)
+    output = F.interpolate(input= data, size=(size,size,size),mode=mode)
+    # print(output.shape)
+    voxel_path = os.path.join(outpath,"voxel_"+str(size))
+    np.save(voxel_path, output[0][0].numpy())
+
+
+
+# mesh = np_to_mesh(outfile+"_"+str(size)+".npy")
+    # save_obj(outfile+"_"+str(size)+".obj",verts=mesh.verts_list()[0], faces=mesh.faces_list()[0])
+
+
+def np_to_mesh(file_path):
+    mesh_np = np.load(file_path)
+    print(mesh_np.shape)
+    mesh_mat = torch.tensor(mesh_np)[None,]
+    mesh_mat = cubify(mesh_mat, thresh=0.5)
+    return mesh_mat
+
+def save_volume_views(volume, save_dir, index):
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    volume = volume.squeeze().__ge__(0.5)
+    fig = plt.figure()
+    ax = fig.gca(projection=Axes3D.name)
+    ax.set_aspect('equal')
+    ax.voxels(volume, edgecolor="k")
+
+    save_path = os.path.join(save_dir, 'voxels' + index + '.png')
+    plt.savefig(save_path, bbox_inches='tight')
+    plt.close()
+
 if __name__ == '__main__':
 
     datapath_obj = '/Users/apple/OVGU/Thesis/Dataset/pix3d/model/bed/IKEA_BEDDINGE/model.obj'
-    datapath_mat = '/Users/apple/OVGU/Thesis/SynthDataset1/models/wardrobe/IKEA_PAX_2/voxel.mat'
+    datapath_mat = '/Users/apple/OVGU/Thesis/Dataset/pix3d/model/chair/IKEA_HERMAN/voxel.mat'
     datapath_mat2 = '/Users/apple/OVGU/Thesis/Dataset/ShapeNet/val_voxels/000081/model.mat'
 
     datapath_off = '/Users/apple/OVGU/Thesis/Dataset/ModelNet40_small/bed/test/bed_0516.off'
-    datapath_binvox = '/Users/apple/OVGU/Thesis/Dataset/ShapeNetVox32/02691156/1a04e3eab45ca15dd86060f189eb133/model.binvox'
-
+    datapath_binvox = '/Users/apple/OVGU/Thesis/SynthDataset1/models/chair/IKEA_HERMAN/model_2.binvox'
     # front = '/Users/apple/OVGU/Thesis/Dataset/3D-FUTURE-model_editedSmall/3D-FUTURE-model/0a5a346c-cc3b-4280-b358-ccd1c4d8a865/normalized_model.obj'
-    # mesh_obj = load(front)
-    # mesh_obj.show()
-    # print(mesh_obj)
 
-    mesh_mat = load_mat_pix3d(datapath_mat)
-    # mesh_mat.show()
+    ##############################################################################
 
-    writer_training = SummaryWriter("/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/test/")
-    LOGGER_PATH = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/" + "MODEL_NAME"+'.log'
-    logger = Logger("MODEL_NAME", LOGGER_PATH).get_logger()
-
-    # mesh_mat = torch.tensor(mat_to_array(datapath_mat))[None,]
-    mesh_mat = torch.ones(128,128,128)[None,]
-    print(mesh_mat.shape)
-    mesh_mat = cubify(mesh_mat, thresh=0.5)
-
-    def write_summary(self,writer, logger, index, original, reconstructed, focalTverskyLoss, diceLoss, diceScore, iou):
-        """
-        Method to write summary to the tensorboard.
-        index: global_index for the visualisation
-        original,reconstructer: cubified voxels [channel, Height, Width]
-        Losses: all losses used as metric
-        """
-        print('Writing Summary...')
-        writer.add_scalar('FocalTverskyLoss', focalTverskyLoss, index)
-        writer.add_scalar('DiceLoss', diceLoss, index)
-        writer.add_scalar('DiceScore', diceScore, index)
-        writer.add_scalar('IOU', iou, index)
-
-        writer.add_mesh('label', vertices=original.verts_list()[0][None,], faces=original.faces_list()[0][None,])
-        writer.add_mesh('reconstructed', vertices=reconstructed.verts_list()[0][None,], faces=reconstructed.faces_list()[0][None,])
-        # writer.add_image('diff', np.moveaxis(create_diff_mask(reconstructed,original,logger), -1, 0), index) #create_diff_mask is of the format HXWXC, but CXHXW is needed
-
-    print(type(mesh_mat))
-    save_obj("/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/test.obj",verts=mesh_mat.verts_list()[0], faces=mesh_mat.faces_list()[0])
-    write_summary(writer_training, logger, 0, mesh_mat,
-                  mesh_mat,
-                  # 6 because in some cases we have padded with 5 which returns background
-                  1, 1, 0, 0)
 
     # save_mat_to_nparray(datapath_mat,"/Users/apple/Desktop/datapath_mat")
     # print(torch.tensor(mat_to_array(datapath_mat)))
@@ -207,10 +211,11 @@ if __name__ == '__main__':
     # print(mesh_off)
     #
     # mesh_binvox = load(datapath_binvox)
-    # # mesh_binvox.show()
+    # mesh_binvox.show()
     # print(mesh_binvox)
 
-
-
-
-
+    ##############################################################################
+    # interpolate_and_save(datapath_mat,"/Users/apple/Desktop/datapath_mat2",size=32, mode='nearest')
+    # interpolate_and_save(datapath_mat,"/Users/apple/Desktop/datapath_mat2",size=64,mode='nearest')
+    # interpolate_and_save(datapath_mat,"/Users/apple/Desktop/datapath_mat2",size=128,mode='nearest')
+    ##############################################################################

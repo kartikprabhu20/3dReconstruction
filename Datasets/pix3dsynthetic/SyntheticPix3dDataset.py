@@ -11,20 +11,29 @@ import torch.utils.data
 import torchvision.transforms as transforms
 from torch.utils.data import Dataset
 import numpy as np
-import pickle
-import cv2
 from PIL import Image
 import Baseconfig
 
 from random import seed
-from random import randint
 
-from pix3dsynthetic.DataExploration import get_train_test_split
-from utils import load_mat_pix3d, mat_to_array, load
+from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
+from Datasets.pix3dsynthetic.DataExploration import get_train_test_split
+from utils import mat_to_array, load
 
 torch.manual_seed(2020)
 np.random.seed(2020)
 seed(2020)
+
+class SyntheticPix3dDataset(BaseDataset):
+    def __init__(self,config):
+        self.config=config
+        self.train_img_list,self.train_model_list,self.test_img_list,self.test_model_list = get_train_test_split(self.config.root_path+"/Datasets/pix3dsynthetic/train_test_split.p")
+
+    def get_trainset(self):
+        return SyntheticPix3d(self.config,self.train_img_list,self.train_model_list)
+
+    def get_testset(self):
+        return SyntheticPix3d(self.config,self.test_img_list,self.test_model_list)
 
 
 class SyntheticPix3d(Dataset):
@@ -44,10 +53,15 @@ class SyntheticPix3d(Dataset):
         self.size = config.size
         self.transform = transforms.ToTensor()
 
+
     def __getitem__(self, idx):
         img_path = os.path.join(self.dataset_img_path,self.input_paths[idx])
-        output_model_path = os.path.join(os.path.join(self.dataset_models_path,self.output_paths[idx]),
-                                         "model.obj" if self.config.is_mesh else "voxel.mat")
+        if self.config.is_mesh:
+            output_model_path = os.path.join(os.path.join(self.dataset_models_path,self.output_paths[idx]),
+                                         "model.obj")
+        else:
+            output_model_path = os.path.join(os.path.join(self.dataset_models_path,self.output_paths[idx]),
+                                 "voxel_"+str(self.config.voxel_size)+".npy" if self.config.label_type == Baseconfig.LabelType.NPY else "voxel.mat")
         # print(str(idx)+":img_path:"+img_path)
         # print(str(idx)+":output_model_path:"+output_model_path)
 
@@ -72,8 +86,12 @@ class SyntheticPix3d(Dataset):
         if self.config.is_mesh:
             output_model = load(output_model_path)
         else:
-            output_model = torch.tensor(mat_to_array(output_model_path), dtype=torch.float32)
-            # print(output_model.shape)
+            if self.config.label_type == Baseconfig.LabelType.NPY:
+                output_model = torch.tensor(np.load(output_model_path), dtype=torch.float32)
+            else:
+                output_model = torch.tensor(mat_to_array(output_model_path), dtype=torch.float32)
+
+        # print(output_model.shape)
 
         return input_stack, output_model
 
@@ -86,13 +104,14 @@ class SyntheticPix3d(Dataset):
 
     def __len__(self):
         if self.config.platform == "darwin":
-            return 2 #debug
+            return 128 #debug
         return len(self.input_paths)
 
 if __name__ == '__main__':
     config = Baseconfig.config
 
-    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split("/Users/apple/OVGU/Thesis/code/3dReconstruction/pix3dsynthetic/train_test_split.p")
+    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+        "/Datasets/pix3dsynthetic/train_test_split.p")
     traindataset = SyntheticPix3d(config,train_img_list,train_model_list)
     train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=True,
                                                num_workers=8)

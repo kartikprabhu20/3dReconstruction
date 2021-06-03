@@ -7,13 +7,15 @@
 import os
 import shutil
 
+from utils import interpolate_and_save
+
 
 class Utility:
 
     # def __init__(self):
 
     def get_classes(self, root_path):
-        return [class_folder for class_folder in os.listdir(root_path+"/model/") if not class_folder.startswith('.')]
+        return [class_folder for class_folder in os.listdir(root_path+"/models/") if not class_folder.startswith('.')]
 
 
     def copy_files_to_destination(self,root_path,destination_path):
@@ -50,7 +52,7 @@ class Utility:
             if not os.path.exists(destination_model_label_path):
                 os.mkdir(destination_model_label_path)
 
-            labelPath = os.path.join(root_path +"model/", label)
+            labelPath = os.path.join(root_path +"models/", label)
 
             for folder in os.listdir(labelPath):
                 if folder =='.DS_Store':
@@ -89,9 +91,27 @@ class Utility:
                                 shutil.copyfile(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_mask_path, str(i)+".png"))
 
 
+    def generate_voxels(self,root_path):
+        for label in self.get_classes(root_path):
+            labelPath = os.path.join(root_path +"models/", label)
+            for folder in os.listdir(labelPath):
+                if folder =='.DS_Store':
+                    continue
+
+                model_folder_path = os.path.join(labelPath, folder)
+                voxel_path = os.path.join(model_folder_path,"voxel.mat")
+
+                interpolate_and_save(voxel_path,model_folder_path,size=32, mode='nearest')
+                interpolate_and_save(voxel_path,model_folder_path,size=64,mode='nearest')
+                interpolate_and_save(voxel_path,model_folder_path,size=128,mode='nearest')
+
 if __name__ == '__main__':
     root_path = '/Users/apple/OVGU/Thesis/Dataset/pix3d/'
     destination_path = '/Users/apple/OVGU/Thesis/SynthDataset2/'
 
+    # root = "/Users/apple/OVGU/Thesis/SynthDataset1/"
+    root='/nfs1/kprabhu/SynthDataset1/'
+
     #Copy file
-    Utility().copy_files_to_destination(root_path=root_path,destination_path=destination_path)
+    # Utility().copy_files_to_destination(root_path=root_path,destination_path=destination_path)
+    Utility().generate_voxels(root_path=root)

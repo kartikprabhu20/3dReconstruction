@@ -9,28 +9,46 @@ import os
 import torch
 from pytorch3d.ops import cubify
 import numpy as np
+from skimage.filters import threshold_otsu
+from torch.utils.tensorboard import SummaryWriter
 
 import Baseconfig
+import ModelManager
+from Logging import Logger
 from Losses import Dice, BCE, FocalTverskyLoss, IOU
-from Baseconfig import LossTypes
+from ModelManager import LossTypes
 from utils import create_binary, save_obj
 
 
 class BasePipeline:
-    def __init__(self,model,optimizer, config, logger, train_loader,test_loader,writer_training, writer_validating):
-        self.logger = logger
-        self.train_loader = train_loader
-        self.test_loader = test_loader
+    def __init__(self,model,optimizer, config,datasetManager):
+        self.config = config
+        self.setup_logger()
+        self.setup_dataloaders(datasetManager)
+
         self.model = model
         self.optimizer = optimizer
-        self.writer_training = writer_training
-        self.writer_validating = writer_validating
         self.checkpoint_path = config.checkpoint_path
-        self.config = config
         self.train_loss = self.get_loss(config.train_loss_type)
-        self.train_loss_is_bce = config.train_loss_type == Baseconfig.LossType.BCE
+        self.train_loss_is_bce = config.train_loss_type == ModelManager.LossTypes.BCE
         self.num_epochs = config.num_epochs
         self.with_apex = config.apex
+
+    def setup_dataloaders(self,datasetManager):
+        dataset = datasetManager.get_dataset(self.config.dataset_type)
+        traindataset = dataset.get_trainset()
+        self.train_loader = torch.utils.data.DataLoader(traindataset, batch_size=self.config.batch_size, shuffle=True,
+                                               num_workers=self.config.num_workers)
+        testdataset = dataset.get_testset()
+        self.test_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
+                                              num_workers=self.config.num_workers)
+
+    def setup_logger(self):
+        self.logger = Logger(self.config.main_name, self.config.output_path + self.config.main_name).get_logger()
+        self.logger.info("configuration: " + str(self.config))
+
+        self.writer_training = SummaryWriter(self.config.tensorboard_train)
+        self.writer_validating = SummaryWriter(self.config.tensorboard_validation)
 
     def get_loss(self,loss_type):
         switcher = {
@@ -45,13 +63,22 @@ class BasePipeline:
         process = "train" if istrain else "val"
         with torch.no_grad():
 
-            output_mesh = cubify(torch.sigmoid(output)[0][None,:],thresh=0.5)
+
+            output_path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy"
+            #Pytorch error to cubify output from model, need to save it in np and then convert
+            np.save(output_path, output[0].cpu().data.numpy())
+            np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
+
+            mesh_np = np.load(output_path)
+            thresh = threshold_otsu(mesh_np)
+            print(thresh)
+            mesh_np = (mesh_np > thresh).astype(int)
+            mesh_mat = torch.tensor(mesh_np)[None,]
+            output_mesh = cubify(mesh_mat, thresh=0.5)
             label_mesh = cubify(local_labels[0][None,:],thresh=0.5)
 
-            # save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.obj",verts=output_mesh.verts_list()[0], faces=output_mesh.faces_list()[0])
-            # save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.obj",verts=label_mesh.verts_list()[0], faces=label_mesh.faces_list()[0])
-            np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy", output[0].cpu().data.numpy())
-            np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
+            save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.obj",verts=output_mesh.verts_list()[0], faces=output_mesh.faces_list()[0])
+            save_obj(self.checkpoint_path +self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.obj",verts=label_mesh.verts_list()[0], faces=label_mesh.faces_list()[0])
 
     def write_summary(self,writer, index, input_image, original, reconstructed, bceloss, diceLoss, diceScore, iou, writeMesh = False):
         """
