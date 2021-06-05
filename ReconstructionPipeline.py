@@ -52,7 +52,7 @@ class ReconstructionPipeline(BasePipeline):
                 # Transfer to GPU
                 self.logger.debug('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
                 print('Epoch: {} Batch Index: {}'.format(epoch, batch_index))
-                if self.config.platform != "darwin": #no nvidia on mac!!!
+                if torch.cuda.is_available():
                     local_batch, local_labels = local_batch.cuda(), local_labels.cuda()
                 # print(local_batch.shape)
                 # print(local_labels.shape)
@@ -78,9 +78,8 @@ class ReconstructionPipeline(BasePipeline):
                 if training_batch_index % 25 == 0:  # Save best metric evaluation weights
                     self.logger.info("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + " Training..." +
                                      "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss))
-
-                    self.write_summary(self.writer_training, index=training_batch_index, input_image=local_batch[0][0:3],
-                                           original=cubify(local_labels[0][None,:], thresh=0.5),reconstructed=cubify(torch.sigmoid(output), thresh=0.5),
+                    self.write_summary(self.writer_training, index=training_batch_index, input_image=local_batch[0][0],
+                                        input_voxel= local_labels[0], output_voxel=output[0],
                                            bceloss=bceloss,diceLoss=diceloss,diceScore=dicescore,iou=iou, writeMesh=False)
 
                 if self.config.platform == "darwin": #debug
@@ -111,7 +110,7 @@ class ReconstructionPipeline(BasePipeline):
             print("Epoch:" + str(epoch) + " Average Training..." +
                   "\n total_training_loss:" + str(total_training_loss))
 
-            if self.config.platform != "darwin":
+            if torch.cuda.is_available():
                 torch.cuda.empty_cache()  # to avoid memory errors
 
             self.validate_or_test(epoch)
@@ -140,12 +139,14 @@ class ReconstructionPipeline(BasePipeline):
             for index, (batch, labels) in enumerate(data_loader):
                 no_items += 1
                 # Transfer to GPU
-                if self.config.platform != "darwin": #no nvidia on mac!!!
+                if torch.cuda.is_available():#no nvidia on mac!!!
                     batch, labels = batch.cuda(), labels.cuda()
 
+                # print(batch.shape)
+                # print(labels.shape)
                 outputs = self.model(batch)
                 # outputs = torch.sigmoid(outputs)
-
+                # print(outputs.shape)
                 # bceloss += self.bce(outputs, labels).detach().item()
                 # floss += self.focalTverskyLoss(outputs, labels).detach().item()
                 dl = self.dice(outputs, labels)
@@ -176,8 +177,8 @@ class ReconstructionPipeline(BasePipeline):
 
         saveMesh = (epoch % self.config.save_mesh == 0)
         with torch.no_grad():
-            self.write_summary(writer, index=epoch, input_image=batch[0][0:3],
-                               original=cubify(labels[0][None,:],thresh=0.5),reconstructed=cubify(torch.sigmoid(outputs)[0][None,:],thresh=0.5),
+            self.write_summary(writer, index=epoch, input_image=batch[0][0],
+                               input_voxel= labels[0], output_voxel=outputs[0],
                                bceloss=bceloss,diceLoss=dloss,diceScore=dscore,iou=jaccardIndex,writeMesh=saveMesh)
 
         if saveMesh or epoch == self.num_epochs-1:
@@ -186,8 +187,8 @@ class ReconstructionPipeline(BasePipeline):
         if validation:#save only for validation
             self.save_model(self.checkpoint_path, {
             'epoch': 'last',  # Let is always overwrite, we need just the last checkpoint and best checkpoint(saved below)
-            'state_dict': model.state_dict(),
-            'optimizer': optimizer.state_dict()
+            'state_dict': self.model.state_dict(),
+            'optimizer': self.optimizer.state_dict()
             })
 
             global LOWEST_LOSS
@@ -197,8 +198,8 @@ class ReconstructionPipeline(BasePipeline):
 
                 self.save_model(self.checkpoint_path, {
                 'epoch': 'best',
-                'state_dict': model.state_dict(),
-                'optimizer': optimizer.state_dict()}, best_metric=True)
+                'state_dict': self.model.state_dict(),
+                'optimizer': self.optimizer.state_dict()}, best_metric=True)
 
         del batch, labels,dloss,dscore,jaccardIndex,bceloss,floss  # garbage collection, else training wont have any memory left
 

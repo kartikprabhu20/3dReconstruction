@@ -14,7 +14,7 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_23'
+cfg.main_name = 'test_25'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
@@ -25,7 +25,7 @@ if platform == "darwin": #local mac
     cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
     cfg.home_path = "/Users/apple/Desktop/"
     cfg.num_workers = 0
-    cfg.batch_size = 4
+    cfg.batch_size = 8
     cfg.apex = False
 else:
     cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
@@ -58,11 +58,11 @@ if cfg.include_masks:
     cfg.in_channels += 1
 
 cfg.resize = True
-cfg.size = [512,512]
+cfg.size = [224,224]
 ####### INPUT-OUTPUT CONFIG #######
 
 cfg.train_loss_type = LossTypes.DICE
-cfg.save_mesh = 40
+cfg.save_mesh = 1
 
 ########## Model Config################
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
@@ -75,4 +75,24 @@ cfg.pix2vox_update_vgg = True
 cfg.pix2vox_refiner = True
 
 ########## Model Config################
+
+
+#
+# Training
+#
+cfg.TRAIN                                   = edict()
+cfg.TRAIN.BRIGHTNESS                        = .4
+cfg.TRAIN.CONTRAST                          = .4
+cfg.TRAIN.SATURATION                        = .4
+cfg.TRAIN.NOISE_STD                         = .1
+cfg.TRAIN.RANDOM_BG_COLOR_RANGE             = [[225, 255], [225, 255], [225, 255]]
+# cfg.TRAIN.ENCODER_LR_MILESTONES             = [150]
+# cfg.TRAIN.DECODER_LR_MILESTONES             = [150]
+# cfg.TRAIN.REFINER_LR_MILESTONES             = [150]
+# cfg.TRAIN.MERGER_LR_MILESTONES              = [150]
+cfg.TRAIN.BETAS                             = (.9, .999)
+cfg.TRAIN.MOMENTUM                          = .9
+cfg.TRAIN.GAMMA                             = .5
+cfg.TRAIN.SAVE_FREQ                         = 10            # weights will be overwritten every save_freq epoch
+cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 

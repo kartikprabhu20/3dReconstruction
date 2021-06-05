@@ -6,6 +6,8 @@
 """
 
 import os
+
+import cv2
 import torch
 import torch.utils.data
 import torchvision.transforms as transforms
@@ -16,6 +18,7 @@ import Baseconfig
 
 from random import seed
 
+import transform_utils
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
 from Datasets.pix3dsynthetic.DataExploration import get_train_test_split
 from utils import mat_to_array, load
@@ -51,7 +54,7 @@ class SyntheticPix3d(Dataset):
 
         self.resize = config.resize
         self.size = config.size
-        self.transform = transforms.ToTensor()
+        self.transform = transform_utils.ToTensor()
 
 
     def __getitem__(self, idx):
@@ -96,15 +99,28 @@ class SyntheticPix3d(Dataset):
         return input_stack, output_model
 
     def read_img(self, path, type='RGB'):
-        with Image.open(path) as img:
-            img = img.convert(type)# convert('L') if it's a gray scale image
-            if self.resize:
-                img = img.resize((self.size[0],self.size[1]), Image.ANTIALIAS)
+        # with Image.open(path) as img:
+        #     img = img.convert(type)# convert('L') if it's a gray scale image
+        #     if self.resize:
+        #         img = img.resize((self.size[0],self.size[1]), Image.ANTIALIAS)
+
+        img = cv2.imread(path, cv2.IMREAD_UNCHANGED).astype(np.float32)
+
+        if self.resize:
+            img = cv2.resize(img, (self.size[0],self.size[1]), interpolation = cv2.INTER_AREA)
+
+        if len(img.shape) > 1:
+            img = img / 255.
+        if len(img.shape) < 3:
+            print('[WARN] It seems the image file %s is grayscale.' % (path))
+            img = np.stack((img, ) * 3, -1)
+
+        img = np.asarray([img])
         return img
 
     def __len__(self):
-        if self.config.platform == "darwin":
-            return 128 #debug
+        # if self.config.platform == "darwin":
+        #     return 8 #debug
         return len(self.input_paths)
 
 if __name__ == '__main__':
