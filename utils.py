@@ -186,6 +186,11 @@ def save_volume_views(volume, save_dir, index):
     plt.savefig(save_path, bbox_inches='tight')
     plt.close()
 
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters())
+
+
 if __name__ == '__main__':
 
     datapath_obj = '/Users/apple/OVGU/Thesis/Dataset/pix3d/model/bed/IKEA_BEDDINGE/model.obj'
@@ -219,3 +224,4 @@ if __name__ == '__main__':
     # interpolate_and_save(datapath_mat,"/Users/apple/Desktop/datapath_mat2",size=64,mode='nearest')
     # interpolate_and_save(datapath_mat,"/Users/apple/Desktop/datapath_mat2",size=128,mode='nearest')
     ##############################################################################
+

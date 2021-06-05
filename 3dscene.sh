@@ -24,7 +24,7 @@ scontrol show Job $SLURM_JOBID  # show slurm-command and more for DBG
 
 #Default Parameters
 programROOT=/nfs1/kprabhu/3dReconstruction1
-pythonMain=pipeline.py
+pythonMain=executor.py
 
 echo $programROOT
 echo $pythonMain

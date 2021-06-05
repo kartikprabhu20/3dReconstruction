@@ -14,7 +14,7 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_25'
+cfg.main_name = 'test_26'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
@@ -34,14 +34,14 @@ else:
     cfg.home_path = "/nfs1/kprabhu/"
     cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
     cfg.num_workers = 8
-    cfg.batch_size = 24
+    cfg.batch_size = 40
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
 cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_validation/'
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
 
-cfg.num_epochs = 400
+cfg.num_epochs = 500
 cfg.learning_rate = 0.0001
 
 ####### INPUT-OUTPUT CONFIG #######
@@ -62,7 +62,7 @@ cfg.size = [224,224]
 ####### INPUT-OUTPUT CONFIG #######
 
 cfg.train_loss_type = LossTypes.DICE
-cfg.save_mesh = 1
+cfg.save_mesh = 2
 
 ########## Model Config################
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
@@ -73,6 +73,7 @@ cfg.optimizer_type = OptimizerType.ADAM
 cfg.pix2vox_pretrained_vgg = True
 cfg.pix2vox_update_vgg = True
 cfg.pix2vox_refiner = True
+cfg.pix2vox_merger = True
 
 ########## Model Config################
 

@@ -16,8 +16,11 @@ from DatasetManager import DatasetManager
 from basepipeline import BasePipeline
 
 # Added for Apex
-import apex
-from apex import amp
+try:
+    import apex
+    from apex import amp
+except ImportError:
+    print("No apex")
 
 SEED = 2021
 np.random.seed(SEED)
@@ -60,17 +63,18 @@ class ReconstructionPipeline(BasePipeline):
                 # Clear gradients
                 self.optimizer.zero_grad()
 
-                output = self.model(local_batch)
-                # output = torch.sigmoid(output)
-                # print(output)
-                # print(output.shape)
+                dec_generated_volumes, ref_generated_volumes = self.model(local_batch)
+                encoder_loss = self.train_loss(dec_generated_volumes, local_labels) * 10
+                refiner_loss = self.train_loss(ref_generated_volumes, local_labels)* 10 if self.config.pix2vox_refiner else encoder_loss
 
-                training_loss = self.train_loss(output, local_labels)
-                # bceloss = self.bce(output, local_labels)
+                # dec_generated_volumes = torch.sigmoid(dec_generated_volumes)
+
+                training_loss = refiner_loss
+                # bceloss = self.bce(dec_generated_volumes, local_labels)
                 bceloss = 0
-                diceloss = self.dice(output, local_labels)
+                diceloss = self.dice(ref_generated_volumes, local_labels) if self.config.pix2vox_refiner else self.dice(dec_generated_volumes, local_labels)
                 dicescore = self.dice.get_dice_score()
-                iou = self.iou(output,local_labels)
+                iou = self.iou(ref_generated_volumes, local_labels) if self.config.pix2vox_refiner else self.iou(dec_generated_volumes, local_labels)
 
                 # print("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + " Training..." +
                 #       "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss))
@@ -79,20 +83,32 @@ class ReconstructionPipeline(BasePipeline):
                     self.logger.info("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + " Training..." +
                                      "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss))
                     self.write_summary(self.writer_training, index=training_batch_index, input_image=local_batch[0][0],
-                                        input_voxel= local_labels[0], output_voxel=output[0],
+                                        input_voxel= local_labels[0], output_voxel=dec_generated_volumes[0],
                                            bceloss=bceloss,diceLoss=diceloss,diceScore=dicescore,iou=iou, writeMesh=False)
 
                 if self.config.platform == "darwin": #debug
                     if training_batch_index % 20 == 0:
-                        self.save_intermediate_obj(istrain=True,training_batch_index=training_batch_index,local_labels=local_labels,output=output)
+                        self.save_intermediate_obj(istrain=True,training_batch_index=training_batch_index,local_labels=local_labels,output=dec_generated_volumes)
 
                 # Calculating gradients
-                if self.with_apex:
-                    with amp.scale_loss(training_loss, self.optimizer) as scaled_loss:
-                        scaled_loss.backward()
+                if self.with_apex and torch.cuda.is_available():
+                    if self.config.pix2vox_refiner:
+                        with amp.scale_loss(training_loss, self.optimizer) as scaled_loss:
+                            with amp.scale_loss(encoder_loss, self.optimizer) as scaled_encoder_loss:
+                                scaled_loss.backward()
+                                scaled_encoder_loss.backward(retain_graph=True)
+                    else:
+                        with amp.scale_loss(training_loss, self.optimizer) as scaled_loss:
+                            scaled_loss.backward()
+
+
                     torch.nn.utils.clip_grad_norm_(amp.master_params(self.optimizer), 1)
                 else:
-                    training_loss.backward()
+                    if self.config.pix2vox_refiner:
+                        encoder_loss.backward(retain_graph=True)
+                        training_loss.backward()
+                    else:
+                        encoder_loss.backward()
                     torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1)
 
                 self.optimizer.step()

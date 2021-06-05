@@ -9,6 +9,8 @@ import torch
 import torchvision.models
 import torch.nn as nn
 
+import utils
+
 class BaseModel(nn.Module):
     def weight_init(self):
         for block in self._modules:
@@ -220,6 +222,74 @@ class Refiner(BaseModel):
 
         return volumes_32_r.view((-1, self.voxel_size, self.voxel_size, self.voxel_size))
 
+
+class Merger(BaseModel):
+    def __init__(self, config):
+        super(Merger, self).__init__()
+        self.cfg = config
+
+        # Layer Definition
+        self.layer1 = torch.nn.Sequential(
+            torch.nn.Conv3d(9, 16, kernel_size=3, padding=1),
+            torch.nn.BatchNorm3d(16),
+            torch.nn.LeakyReLU(0.2)
+        )
+        self.layer2 = torch.nn.Sequential(
+            torch.nn.Conv3d(16, 8, kernel_size=3, padding=1),
+            torch.nn.BatchNorm3d(8),
+            torch.nn.LeakyReLU(0.2)
+        )
+        self.layer3 = torch.nn.Sequential(
+            torch.nn.Conv3d(8, 4, kernel_size=3, padding=1),
+            torch.nn.BatchNorm3d(4),
+            torch.nn.LeakyReLU(0.2)
+        )
+        self.layer4 = torch.nn.Sequential(
+            torch.nn.Conv3d(4, 2, kernel_size=3, padding=1),
+            torch.nn.BatchNorm3d(2),
+            torch.nn.LeakyReLU(0.2)
+        )
+        self.layer5 = torch.nn.Sequential(
+            torch.nn.Conv3d(2, 1, kernel_size=3, padding=1),
+            torch.nn.BatchNorm3d(1),
+            torch.nn.LeakyReLU(0.2)
+        )
+
+        self.weight_init()
+
+    def forward(self, raw_features, coarse_volumes):
+        n_views_rendering = coarse_volumes.size(1)
+        raw_features = torch.split(raw_features, 1, dim=1)
+        volume_weights = []
+
+        for i in range(n_views_rendering):
+            raw_feature = torch.squeeze(raw_features[i], dim=1)
+            # print(raw_feature.size())       # torch.Size([batch_size, 9, 32, 32, 32])
+
+            volume_weight = self.layer1(raw_feature)
+            # print(volume_weight.size())     # torch.Size([batch_size, 16, 32, 32, 32])
+            volume_weight = self.layer2(volume_weight)
+            # print(volume_weight.size())     # torch.Size([batch_size, 8, 32, 32, 32])
+            volume_weight = self.layer3(volume_weight)
+            # print(volume_weight.size())     # torch.Size([batch_size, 4, 32, 32, 32])
+            volume_weight = self.layer4(volume_weight)
+            # print(volume_weight.size())     # torch.Size([batch_size, 2, 32, 32, 32])
+            volume_weight = self.layer5(volume_weight)
+            # print(volume_weight.size())     # torch.Size([batch_size, 1, 32, 32, 32])
+
+            volume_weight = torch.squeeze(volume_weight, dim=1)
+            # print(volume_weight.size())     # torch.Size([batch_size, 32, 32, 32])
+            volume_weights.append(volume_weight)
+
+        volume_weights = torch.stack(volume_weights).permute(1, 0, 2, 3, 4).contiguous()
+        volume_weights = torch.softmax(volume_weights, dim=1)
+        # print(volume_weights.size())        # torch.Size([batch_size, n_views, 32, 32, 32])
+        # print(coarse_volumes.size())        # torch.Size([batch_size, n_views, 32, 32, 32])
+        coarse_volumes = coarse_volumes * volume_weights
+        coarse_volumes = torch.sum(coarse_volumes, dim=1)
+
+        return torch.clamp(coarse_volumes, min=0, max=1)
+
 class pix2vox(BaseModel):
     def __init__(self, config):
         super(pix2vox, self).__init__()
@@ -227,24 +297,29 @@ class pix2vox(BaseModel):
         self.encoder = Encoder(config=config,in_channel=config.in_channels)
         self.decoder = Decoder(config=config)
 
+        print('Parameters in Encoder: %d.' % (utils.count_parameters(self.encoder)))
+        print('Parameters in Decoder: %d.' % (utils.count_parameters(self.decoder)))
+
         if config.pix2vox_refiner:
             self.refiner = Refiner(config=config)
+            print('Parameters in Refiner: %d.' % (utils.count_parameters(self.refiner)))
+
+        if config.pix2vox_merger:
+            self.merger =  Merger(config=config)
+            print('Parameters in Merger: %d.' % (utils.count_parameters(self.merger)))
 
     def forward(self, x):
         image_features = self.encoder(x)
-        raw_features, generated_volumes = self.decoder(image_features)
+        dec_raw_features, dec_generated_volumes = self.decoder(image_features)
 
-        # if self.config.NETWORK.USE_MERGER and epoch_idx >= cfg.TRAIN.EPOCH_START_USE_MERGER:
-        #     generated_volumes = merger(raw_features, generated_volumes)
-        # else:
-        #     generated_volumes = torch.mean(generated_volumes, dim=1)
+        if self.config.pix2vox_merger:
+            dec_generated_volumes = self.merger(dec_raw_features, dec_generated_volumes)
+        else:
+            dec_generated_volumes = torch.mean(dec_generated_volumes, dim=1)
 
-        # if cfg.NETWORK.USE_REFINER and epoch_idx >= cfg.TRAIN.EPOCH_START_USE_REFINER:
         if self.config.pix2vox_refiner:
-            generated_volumes = self.refiner(generated_volumes)
-        #     refiner_loss = bce_loss(generated_volumes, ground_truth_volumes) * 10
-        # else:
-        #     refiner_loss = encoder_loss
-        # print("generated_volumes")
-        # print(generated_volumes.shape)
-        return generated_volumes
+            ref_generated_volumes = self.refiner(dec_generated_volumes)
+        else:
+            ref_generated_volumes = None
+
+        return dec_generated_volumes,ref_generated_volumes

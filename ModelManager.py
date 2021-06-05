@@ -6,8 +6,12 @@
 """
 from models.pix2voxel import pix2vox
 # Added for Apex
-import apex
-from apex import amp
+try:
+    import apex
+    from apex import amp
+except ImportError:
+    print("No apex")
+
 import torch
 
 class ModelType:
@@ -37,7 +41,7 @@ class ModelManager:
             self.model.cuda()
         optimizer = self.get_optimiser(self.config.optimizer_type)
 
-        if self.config.apex:
+        if self.config.apex and torch.cuda.is_available():
             amp.register_float_function(torch, 'sigmoid') #As the error message suggests, you could e.g. change the criterion to nn.BCEWithLogitsLoss and remove the sigmoid, register the sigmoid as a float function, or disable the warning.
             self.model, optimizer = amp.initialize(self.model, optimizer, opt_level=self.config.apex_mode)
 
