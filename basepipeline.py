@@ -74,11 +74,10 @@ class BasePipeline:
         buf = io.BytesIO()
         plt.savefig(buf, format='png')
         plt.axis('off')
-
         if savefig:
             plt.savefig(path)
         buf.seek(0)
-
+        plt.close('all')
         return buf
 
     def plot_to_tensor(self, plot_buf):
@@ -128,13 +127,14 @@ class BasePipeline:
         writer.add_scalar('DiceLoss', diceLoss, index)
         writer.add_scalar('DiceScore', diceScore, index)
         writer.add_scalar('IOU', iou, index)
-        writer.add_image('input_image', input_image, index)
 
         if writeMesh:
+            writer.add_image('input_image', input_image, index)
+            writer.add_image('input_voxels', self.plot_to_tensor(self.gen_plot(input_voxel.detach().cpu().numpy())), index)
+
             output_np = output_voxel.detach().cpu().numpy()
             output_np = (output_np > threshold_otsu(output_np)).astype(int)
             output = torch.tensor(output_np)
-            writer.add_image('input_voxels', self.plot_to_tensor(self.gen_plot(input_voxel.detach().cpu().numpy())), index)
             writer.add_image('output_voxels', self.plot_to_tensor(self.gen_plot(output)), index)
 
         # if writeMesh:
