@@ -160,16 +160,24 @@ class ReconstructionPipeline(BasePipeline):
 
                 # print(batch.shape)
                 # print(labels.shape)
-                outputs = self.model(batch)
+
+                dec_generated_volumes, ref_generated_volumes = self.model(batch)
                 # outputs = torch.sigmoid(outputs)
                 # print(outputs.shape)
                 # bceloss += self.bce(outputs, labels).detach().item()
                 # floss += self.focalTverskyLoss(outputs, labels).detach().item()
+
+                encoder_loss = self.train_loss(dec_generated_volumes, labels) * 10
+                refiner_loss = self.train_loss(ref_generated_volumes, labels)* 10 if self.config.pix2vox_refiner else encoder_loss
+                training_loss = refiner_loss
+                # bceloss = self.bce(dec_generated_volumes, local_labels)
+                bceloss = 0
+                outputs = ref_generated_volumes
                 dl = self.dice(outputs, labels)
                 ds = self.dice.get_dice_score()
+                jaccardIndex += self.iou(outputs, labels)
                 dloss += dl.detach()
                 dscore += ds.detach()
-                jaccardIndex += self.iou(outputs, labels).detach()
 
         #Average the losses
         bceloss = bceloss/no_items
