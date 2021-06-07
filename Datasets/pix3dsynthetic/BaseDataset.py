@@ -13,3 +13,6 @@ class BaseDataset(object):
 
     def get_testset(self):
         pass
+
+    def get_train_test_split(self,filePath):
+        pass

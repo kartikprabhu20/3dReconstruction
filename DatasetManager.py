@@ -4,6 +4,7 @@
     @author: Kartik Prabhu
 
 """
+from Datasets.pix3d.Pix3dDataset import Pix3dDataset
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
 from Datasets.pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3dDataset
 
@@ -23,7 +24,7 @@ class DatasetManager():
     def get_dataset(self, dataset_type) -> BaseDataset:
 
         switcher = {
-            # DatasetType.PIX3D: (self.config),
+            DatasetType.PIX3D: Pix3dDataset(self.config),
             DatasetType.PIX3DSYNTHETIC1: SyntheticPix3dDataset(config=self.config)
         }
         return switcher.get(dataset_type, SyntheticPix3dDataset(config=self.config))

@@ -26,3 +26,16 @@ class ToTensor(object):
 
         # put it from HWC to CHW format
         return tensor.float()
+
+
+class Normalize(object):
+    def __init__(self, mean, std):
+        self.mean = mean
+        self.std = std
+
+    def __call__(self, images):
+        assert (isinstance(images, np.ndarray))
+        images -= self.mean
+        images /= self.std
+
+        return images

@@ -88,7 +88,8 @@ class ReconstructionPipeline(BasePipeline):
 
                 if self.config.platform == "darwin": #debug
                     if training_batch_index % 20 == 0:
-                        self.save_intermediate_obj(istrain=True,training_batch_index=training_batch_index,local_labels=local_labels,output=dec_generated_volumes)
+                        self.save_intermediate_obj(istrain=True, training_batch_index=training_batch_index, local_labels=local_labels,
+                                                   outputs=ref_generated_volumes if self.config.pix2vox_refiner else dec_generated_volumes)
 
                 # Calculating gradients
                 if self.with_apex and torch.cuda.is_available():
@@ -172,7 +173,8 @@ class ReconstructionPipeline(BasePipeline):
                 training_loss = refiner_loss
                 # bceloss = self.bce(dec_generated_volumes, local_labels)
                 bceloss = 0
-                outputs = ref_generated_volumes
+                outputs = ref_generated_volumes if self.config.pix2vox_refiner else dec_generated_volumes
+
                 dl = self.dice(outputs, labels)
                 ds = self.dice.get_dice_score()
                 jaccardIndex += self.iou(outputs, labels)
@@ -206,7 +208,7 @@ class ReconstructionPipeline(BasePipeline):
                                bceloss=bceloss,diceLoss=dloss,diceScore=dscore,iou=jaccardIndex,writeMesh=saveMesh)
 
         if saveMesh or epoch == self.num_epochs-1:
-            self.save_intermediate_obj(istrain=False,training_batch_index=epoch,local_labels=labels,output=outputs)
+            self.save_intermediate_obj(istrain=False, training_batch_index=epoch, local_labels=labels, outputs=outputs)
 
         if validation:#save only for validation
             self.save_model(self.checkpoint_path, {

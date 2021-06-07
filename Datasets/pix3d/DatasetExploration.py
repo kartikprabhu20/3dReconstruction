@@ -38,8 +38,8 @@ def get_occluded_Histogram(root_path):
     plt.show()
 
 def get_classes(root_path):
-    #return ["bed","bookcase","chair","desk","sofa","table","wardrobe"]
-    return [class_folder for class_folder in os.listdir(root_path) if not class_folder.startswith('.')]
+    # return ["bed","bookcase","chair","desk","sofa","table","wardrobe"]
+    return [class_folder for class_folder in os.listdir(root_path+'/model/') if not class_folder.startswith('.')]
 
 def split_to_classes(json_path, root_path):
     labels = get_classes(root_path)
@@ -76,7 +76,7 @@ def save_occluded_json(root_path):
         with open(root_path + label+"_occluded.json", 'w') as fp:
             json.dump(occluded_config, fp)
 
-def get_train_test_split():
+def get_train_test_indices():
     TRAIN_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
                                    'splits/pix3d_train.npy')
     TEST_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
@@ -87,7 +87,7 @@ def get_train_test_split():
 
 def get_train_test_histogram(root_path,json_path):
     y = json.load(open(json_path))
-    train, test = get_train_test_split()
+    train, test = get_train_test_indices()
     labels = get_classes(root_path)
 
     train_list = [0] * len(get_classes(root_path))
@@ -137,6 +137,38 @@ def get_model(root_path, category, image):
             return os.path.join(root_path, item["model"])
     return None
 
+def get_train_test_splits(json_path):
+    """
+    :param filePath: pix3d.json path in dataset folder
+    :return:
+    """
+
+    y = json.load(open(json_path))
+    train, test = get_train_test_indices()
+    # # print(y)
+    # print(train)
+    # print(test)
+    train_img_list = []
+    train_model_list= []
+    train_category_list = []
+    test_img_list = []
+    test_model_list = []
+    test_category_list = []
+
+    for i in train:
+        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+            train_img_list.append(y[i]['img'])
+            train_model_list.append(y[i]['voxel'])
+            train_category_list.append(y[i]['category'])
+
+    for i in test:
+        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+            test_img_list.append(y[i]['img'])
+            test_model_list.append(y[i]['voxel'])
+            test_category_list.append(y[i]['category'])
+
+    return train_img_list,train_model_list,test_img_list,test_model_list,train_category_list,test_category_list
+
 if __name__ == '__main__':
 
     pix3d_json_path = '/Users/apple/OVGU/Thesis/Dataset/pix3d/pix3d.json'
@@ -159,19 +191,22 @@ if __name__ == '__main__':
     #edge images
     # save_edge_images(root_path)
 
+    # print(get_classes(root_path))
     # get_train_test_histogram(root_path,pix3d_json_path)
-
+##############################################################################################
     #voxel_path
     # voxel_path = get_voxel(root_path,"chair","0002.png")
-    voxel_path = '/Users/apple/OVGU/Thesis/SynthDataset1/models/chair/IKEA_HERMAN/voxel.mat'
-
-    mesh_mat = load_mat_pix3d(voxel_path)
-    mesh_mat.show()
+    # voxel_path = '/Users/apple/OVGU/Thesis/SynthDataset1/models/chair/IKEA_HERMAN/voxel.mat'
+    #
+    # mesh_mat = load_mat_pix3d(voxel_path)
+    # mesh_mat.show()
 
     #mode_path
     # model_path = get_model(root_path,"chair","0002.png")
     # mesh_mat = load(model_path)
     # mesh_mat.show()
 
+##############################################################################################
+    get_train_test_splits(pix3d_json_path)
 
 

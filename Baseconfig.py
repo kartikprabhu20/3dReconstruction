@@ -14,34 +14,12 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_26'
+cfg.main_name = 'test_30'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
 
-if platform == "darwin": #local mac
-    cfg.root_path = '/Users/apple/OVGU/Thesis/code/3dReconstruction'
-    cfg.dataset_path ='/Users/apple/OVGU/Thesis/SynthDataset1'
-    cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
-    cfg.home_path = "/Users/apple/Desktop/"
-    cfg.num_workers = 0
-    cfg.batch_size = 8
-    cfg.apex = False
-else:
-    cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
-    cfg.dataset_path ='/nfs1/kprabhu/SynthDataset1/'
-    cfg.output_path = "/nfs1/kprabhu/outputs/"
-    cfg.home_path = "/nfs1/kprabhu/"
-    cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
-    cfg.num_workers = 8
-    cfg.batch_size = 40
-
-
-cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
-cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_validation/'
-cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
-
-cfg.num_epochs = 500
+cfg.num_epochs = 2000
 cfg.learning_rate = 0.0001
 
 ####### INPUT-OUTPUT CONFIG #######
@@ -62,11 +40,19 @@ cfg.size = [224,224]
 ####### INPUT-OUTPUT CONFIG #######
 
 cfg.train_loss_type = LossTypes.DICE
-cfg.save_mesh = 2
+cfg.save_mesh = 20
+cfg.save_count = 10 # <batch_size
 
 ########## Model Config################
+
+# Dataset
+#
+cfg.DATASET                                 = edict()
+cfg.DATASET.MEAN                            = [0.485, 0.456, 0.406]
+cfg.DATASET.STD                             = [0.229, 0.224, 0.225]
+
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
-cfg.dataset_type =  DatasetType.PIX3DSYNTHETIC1
+cfg.dataset_type =  DatasetType.PIX3D
 cfg.model_type = ModelType.PIX2VOXEL
 cfg.optimizer_type = OptimizerType.ADAM
 
@@ -97,3 +83,26 @@ cfg.TRAIN.GAMMA                             = .5
 cfg.TRAIN.SAVE_FREQ                         = 10            # weights will be overwritten every save_freq epoch
 cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 
+
+########## Paths #################
+if platform == "darwin": #local mac
+    cfg.root_path = '/Users/apple/OVGU/Thesis/code/3dReconstruction'
+    cfg.dataset_path ='/Users/apple/OVGU/Thesis/SynthDataset1' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/Users/apple/OVGU/Thesis/Dataset/pix3d'
+    cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
+    cfg.home_path = "/Users/apple/Desktop/"
+    cfg.num_workers = 0
+    cfg.batch_size = 8
+    cfg.apex = False
+else:
+    cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
+    cfg.dataset_path ='/nfs1/kprabhu/SynthDataset1/' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/nfs1/kprabhu/pix3d/'
+    cfg.output_path = "/nfs1/kprabhu/outputs/"
+    cfg.home_path = "/nfs1/kprabhu/"
+    cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
+    cfg.num_workers = 8
+    cfg.batch_size = 80
+
+
+cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
+cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_validation/'
+cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"

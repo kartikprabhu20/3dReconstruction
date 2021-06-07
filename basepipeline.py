@@ -17,12 +17,13 @@ from torchvision.transforms import ToTensor
 
 import Baseconfig
 import ModelManager
+import transform_utils
 from Logging import Logger
 from Losses import Dice, BCE, FocalTverskyLoss, IOU
 from ModelManager import LossTypes
 from utils import create_binary, save_obj
 import matplotlib.pyplot as plt
-
+from torchvision import transforms
 
 class BasePipeline:
     def __init__(self,model,optimizer, config,datasetManager):
@@ -40,10 +41,21 @@ class BasePipeline:
 
     def setup_dataloaders(self,datasetManager):
         dataset = datasetManager.get_dataset(self.config.dataset_type)
-        traindataset = dataset.get_trainset()
+
+        train_transforms = transforms.Compose([
+            transform_utils.Normalize(mean=self.config.DATASET.MEAN, std=self.config.DATASET.STD),
+            transform_utils.ToTensor(),
+        ])
+
+        traindataset = dataset.get_trainset(transforms=train_transforms)
         self.train_loader = torch.utils.data.DataLoader(traindataset, batch_size=self.config.batch_size, shuffle=True,
                                                num_workers=self.config.num_workers, pin_memory=True)
-        testdataset = dataset.get_testset()
+
+        test_transforms = transforms.Compose([
+            transform_utils.Normalize(mean=self.config.DATASET.MEAN, std=self.config.DATASET.STD),
+            transform_utils.ToTensor(),
+        ])
+        testdataset = dataset.get_testset(transforms=test_transforms)
         self.test_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
                                               num_workers=self.config.num_workers,pin_memory=True,)
 
@@ -84,21 +96,22 @@ class BasePipeline:
         image = PIL.Image.open(plot_buf)
         return  ToTensor()(image)
 
-    def save_intermediate_obj(self,istrain,training_batch_index,local_labels,output):
+    def save_intermediate_obj(self, istrain, training_batch_index, local_labels, outputs):
         process = "train" if istrain else "val"
         with torch.no_grad():
 
             output_path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy"
             #Pytorch error to cubify output from model, need to save it in np and then convert
-            np.save(output_path, output[0].cpu().data.numpy())
+            np.save(output_path, outputs[0].cpu().data.numpy())
             np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
 
-            output_np = output[0].detach().cpu().numpy()
-            output_np = (output_np > threshold_otsu(output_np)).astype(int)
-            output = torch.tensor(output_np)
-
-            self.gen_plot(local_labels[0],savefig=True,path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.png")
-            self.gen_plot(output,savefig=True,path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.png")
+            save_count = min(self.config.save_count,self.config.batch_size)
+            for i in range(0,save_count):
+                self.gen_plot(local_labels[i],savefig=True,path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original_"+str(i)+".png")
+                output_np = outputs[i].detach().cpu().numpy()
+                output_np = (output_np > threshold_otsu(output_np)).astype(int)
+                output = torch.tensor(output_np)
+                self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_output_" + str(i) + ".png")
 
             # mesh_np = np.load(output_path)
             # thresh = threshold_otsu(mesh_np)

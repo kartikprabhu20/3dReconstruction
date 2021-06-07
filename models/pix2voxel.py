@@ -113,6 +113,8 @@ class Decoder(BaseModel):
         image_features = image_features.permute(1, 0, 2, 3, 4).contiguous()
         # print(image_features.shape)
         image_features = torch.split(image_features, 1, dim=0)
+        # print("image_features")
+        # print(image_features[0].shape)
         gen_volumes = []
         raw_features = []
 

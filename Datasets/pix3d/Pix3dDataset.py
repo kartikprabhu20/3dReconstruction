@@ -1,139 +1,188 @@
 """
 
-    Created on 15/01/21 9:38 PM
+    Created on 23/04/21 10:13 AM
     @author: Kartik Prabhu
 
 """
-
-
+import json
 import os
 
+import cv2
 import torch
 import torch.utils.data
 from torch.utils.data import Dataset
 import numpy as np
+from torchvision.transforms import transforms
+
+import Baseconfig
+import transform_utils
+
+from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
+from Datasets.pix3dsynthetic.DataExploration import get_train_test_split
+from utils import mat_to_array, load
+
 from random import seed
-from random import randint
-
-
 torch.manual_seed(2020)
 np.random.seed(2020)
 seed(2020)
 
+class Pix3dDataset(BaseDataset):
+    def __init__(self,config):
+        self.config=config
+        self.train_img_list,self.train_model_list,self.test_img_list,self.test_model_list,_,_ = self.get_train_test_split(self.config.dataset_path+"/pix3d.json")
 
-class Pix3dDataset(Dataset):
-    """
-    Pix3dDataset - Custom dataset used to get images and 3d models.
+    def get_trainset(self, transforms=None):
+        return Pix3d(self.config,self.train_img_list,self.train_model_list, transforms=transforms)
 
-    patch_size : Size of a 3d voxel to be used for training (Note: Ideal selection would have a number which is iteratively divisible by 2, to avoid upsampling problems)
-    dir_path : Folder path for  images
-    label_dir_path : Folder path for the ground truth images
-    """
+    def get_testset(self, transforms=None):
+        return Pix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms)
 
-    def __init__(self,logger, dir_path, label_dir_path):
-        self.logger = logger
+    def get_train_test_split(self,filePath):
+        """
+        :param filePath: pix3d.json path in dataset folder
+        :return:
+        """
+        y = json.load(open(filePath))
+        train, test = self.get_train_test_indices()
+        # # print(y)
+        # print(train)
+        # print(test)
+        train_img_list = []
+        train_model_list= []
+        train_category_list = []
+        test_img_list = []
+        test_model_list = []
+        test_category_list = []
 
-        # Constants
-        self.IMAGE_FILE_NAME = "imageFilename"
-        self.LABEL_FILE_NAME = "labelFilename"
-        self.STARTINDEX_DEPTH = "startIndex_depth"
-        self.STARTINDEX_LENGTH = "startIndex_length"
-        self.STARTINDEX_WIDTH = "startIndex_width"
+        for i in train:
+            if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+                train_img_list.append(y[i]['img'])
+                train_model_list.append(y[i]['model' if self.config.is_mesh else 'voxel'])
+                train_category_list.append(y[i]['category'])
 
-        self.trans = transforms.ToTensor()  # used to convert tiffimagefile to tensor
-        dataDict = { self.IMAGE_FILE_NAME: [], self.LABEL_FILE_NAME: [], self.STARTINDEX_DEPTH: [],self.STARTINDEX_LENGTH: [],self.STARTINDEX_WIDTH: []}
+        for i in test:
+            if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+                test_img_list.append(y[i]['img'])
+                test_model_list.append(y[i]['model' if self.config.is_mesh else 'voxel'])
+                test_category_list.append(y[i]['category'])
 
-        column_names = [ self.IMAGE_FILE_NAME, self.LABEL_FILE_NAME, self.STARTINDEX_DEPTH, self.STARTINDEX_LENGTH,self.STARTINDEX_WIDTH]
-        self.data = pd.DataFrame(columns=column_names)
+        return train_img_list,train_model_list,test_img_list,test_model_list,train_category_list,test_category_list
 
-        for imageFileName in self.image_names:  # Parallelly read image file and groundtruth
-            if not imageFileName or 'nfs' in imageFileName:
-                continue
+    def get_train_test_indices(self):
+        TRAIN_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
+                                       'splits/pix3d_train.npy')
+        TEST_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
+                                  'splits/pix3d_test.npy')
+        train = np.load(TRAIN_SPLIT_IDX)
+        test = np.load(TEST_SPLIT_IDX)
+        return train, test
 
-            imageFile = nibabel.load(os.path.join(dir_path, imageFileName)) # shape (Length X Width X Depth X Channels)
-            header_shape = imageFile.header.get_data_shape()
-            n_depth,n_length,n_width = header_shape[2],header_shape[0],header_shape[1] # gives depth which is no. of slices
 
-            depth_i =0
-            for depth_index in range(int((n_depth-patch_size)/stride_depth)+1):  # iterate through the whole image voxel, and extract patch
-                length_i = 0
-                # print("depth")
-                # print(depth_i)
-                for length_index in range(int((n_length-patch_size)/stride_length)+1):
-                    width_i = 0
-                    # print("length")
-                    # print(length_i)
 
-                    for width_index in range(int((n_width - patch_size)/stride_width)+1):
-                        # print("width")
-                        # print(width_i)
-                        dataDict[self.IMAGE_FILE_NAME].append(os.path.join(dir_path, imageFileName))
-                        dataDict[self.LABEL_FILE_NAME].append(os.path.join(label_dir_path, imageFileName))
-                        dataDict[self.STARTINDEX_DEPTH].append(depth_i)
-                        dataDict[self.STARTINDEX_LENGTH].append(length_i)
-                        dataDict[self.STARTINDEX_WIDTH].append(width_i)
-                        width_i += stride_width
-                    length_i += stride_length
-                depth_i += stride_depth
+class Pix3d(Dataset):
+    def __init__(self,config,input_paths,output_paths, transforms=None):
+        self.input_paths = input_paths
+        self.output_paths = output_paths
+        self.config = config
 
-        self.data = pd.DataFrame.from_dict(dataDict)
-        print(len(self.data))
+        #paths
+        self.dataset_path = config.dataset_path
 
-    def __len__(self):
-        return self.size
+        self.resize = config.resize
+        self.size = config.size
+        self.transform = transforms
+
 
     def __getitem__(self, idx):
-        '''
-        imageFilename: 0
-        labelFilename: 1
-        startIndex_depth : 2
-        startIndex_length : 3
-        startIndex_width : 4
+        img_path = os.path.join(self.dataset_path,self.input_paths[idx])
+        if self.config.is_mesh:
+            output_model_path = os.path.join(self.dataset_path,self.output_paths[idx])
+        else:
+            output_model_path = os.path.join(self.dataset_path,self.output_paths[idx])
+            if self.config.label_type == Baseconfig.LabelType.NPY:
+                output_model_path = output_model_path.replace("voxel.mat","voxel_"+str(self.config.voxel_size)+".npy")
+        # print(str(idx)+":img_path:"+img_path)
+        # print(str(idx)+":output_model_path:"+output_model_path)
 
-        '''
+        input_img = self.read_img(img_path)
+        input_stack = input_img
 
-        index  = randint(0,len(self.data)-1)
+        # if self.config.include_depthmaps:
+        #     depthmap_path = os.path.join(self.dataset_depthmap_path,self.input_paths[idx])
+        #     input_depth = self.read_img(depthmap_path,type='L')
+        #     input_stack = np.vstack((input_stack, input_depth))
 
-        images = nibabel.load(self.data.iloc[index, 0])
-        groundTruthImages = nibabel.load(self.data.iloc[index, 1])
+        if self.config.include_masks:
+            mask_path = os.path.join(self.dataset_path,self.input_paths[idx])
+            input_mask = self.read_img(mask_path,type='L')
+            input_stack = np.vstack((input_stack, input_mask))
 
-        startIndex_depth = self.data.iloc[index, 2]
-        startIndex_length = self.data.iloc[index, 3]
-        startIndex_width = self.data.iloc[index, 4]
 
-        voxel = images.dataobj[startIndex_length:startIndex_length+self.patch_size, startIndex_width:startIndex_width+self.patch_size, startIndex_depth:startIndex_depth+self.patch_size,0]
-        slices = np.moveaxis(np.array(voxel),-1, 0).astype(np.float32) #get slices in range, convert to array, change axis of depth (because nibabel gives LXWXD, but we need in DXLXW)
-        patch =  torch.from_numpy(slices)
-        patch = patch/torch.max(patch)# normalisation
+        input_stack = self.transform(input_stack)
+        # input_stack =input_stack[None, :]
+        # if self.config.include_edges:
 
-        target_voxel = groundTruthImages.dataobj[startIndex_length:startIndex_length+self.patch_size, startIndex_width:startIndex_width+self.patch_size, startIndex_depth:startIndex_depth+self.patch_size,0]
-        target_slices = np.moveaxis(np.array(target_voxel), -1, 0).astype( np.float32)  # get slices in range, convert to array, change axis of depth (because nibabel gives LXWXD, but we need in DXLXW)
-        targetPatch = torch.from_numpy(target_slices)
-        # targetPatch = targetPatch/255.0
-        targetPatch = torch.where(torch.eq(targetPatch, 2), 0 * torch.ones_like(targetPatch), targetPatch)#convert all 2's to 0's (2 means background, so make it 0)
+        # print(input_stack.shape)
 
-        #Checking if the entire input voxel or the segmentation mask is black
-        while (torch.sum(patch)==0 or torch.sum(targetPatch)==0 ):
-            index  = randint(0,len(self.data)-1)
-            images = nibabel.load(self.data.iloc[index, 0])
-            groundTruthImages = nibabel.load(self.data.iloc[index, 1])
+        if self.config.is_mesh:
+            output_model = load(output_model_path)
+        else:
+            if self.config.label_type == Baseconfig.LabelType.NPY:
+                output_model = torch.tensor(np.load(output_model_path), dtype=torch.float32)
+            else:
+                output_model = torch.tensor(mat_to_array(output_model_path), dtype=torch.float32)
 
-            startIndex_depth = self.data.iloc[index, 2]
-            startIndex_length = self.data.iloc[index, 3]
-            startIndex_width = self.data.iloc[index, 4]
+        # print(output_model.shape)
 
-            voxel = images.dataobj[startIndex_length:startIndex_length+self.patch_size, startIndex_width:startIndex_width+self.patch_size, startIndex_depth:startIndex_depth+self.patch_size,0]
-            slices = np.moveaxis(np.array(voxel),-1, 0).astype(np.float32) #get slices in range, convert to array, change axis of depth (because nibabel gives LXWXD, but we need in DXLXW)
-            patch =  torch.from_numpy(slices)
-            patch = patch/torch.max(patch)# normalisation
+        return input_stack, output_model
 
-            #no need of padding with voxel size is 64x64x64
+    def read_img(self, path, type='RGB'):
+        # with Image.open(path) as img:
+        #     img = img.convert(type)# convert('L') if it's a gray scale image
+        #     if self.resize:
+        #         img = img.resize((self.size[0],self.size[1]), Image.ANTIALIAS)
 
-            target_voxel = groundTruthImages.dataobj[startIndex_length:startIndex_length+self.patch_size, startIndex_width:startIndex_width+self.patch_size, startIndex_depth:startIndex_depth+self.patch_size,0]
-            target_slices = np.moveaxis(np.array(target_voxel), -1, 0).astype( np.float32)  # get slices in range, convert to array, change axis of depth (because nibabel gives LXWXD, but we need in DXLXW)
-            targetPatch = torch.from_numpy(target_slices)
-            # targetPatch = targetPatch/255.0
-            targetPatch = torch.where(torch.eq(targetPatch, 2), 0 * torch.ones_like(targetPatch), targetPatch)#convert all 2's to 0's (2 means background, so make it 0)
+        img = cv2.imread(path, cv2.IMREAD_UNCHANGED).astype(np.float32)
 
-        return patch, targetPatch
+        if self.resize:
+            img = cv2.resize(img, (self.size[0],self.size[1]), interpolation = cv2.INTER_AREA)
+
+        if len(img.shape) > 1:
+            img = img / 255. #normalise
+        if len(img.shape) < 3:
+            print('[WARN] It seems the image file %s is grayscale.' % (path))
+            img = np.stack((img, ) * 3, -1)
+
+        img = np.asarray([img])
+        return img
+
+    def __len__(self):
+        # if self.config.platform == "darwin":
+        #     return 8 #debug
+        return len(self.input_paths)
+
+if __name__ == '__main__':
+    config = Baseconfig.config
+
+    train_transforms = transforms.Compose([
+        transform_utils.Normalize(mean=config.DATASET.MEAN, std=config.DATASET.STD),
+        transform_utils.ToTensor(),
+    ])
+    traindataset = Pix3dDataset(config).get_trainset(train_transforms)
+    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=True,
+                                           num_workers=8)
+
+    testdataset = Pix3dDataset(config).get_testset(train_transforms)
+
+    for batch_index, (input_batch, input_label) in enumerate(train_loader):
+        # input_batch, input_label = input_batch[:, None, :].cuda(), input_label[:, None, :].cuda()
+        print(input_batch.shape)
+        print(input_label.shape)
+
+        print(input_batch[0][0:3].shape)
+        break
+
+
+
+
 
