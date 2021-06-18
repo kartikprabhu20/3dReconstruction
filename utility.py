@@ -4,6 +4,7 @@
     @author: Kartik Prabhu
 
 """
+import glob
 import os
 import shutil
 
@@ -99,7 +100,13 @@ class Utility:
                     continue
 
                 model_folder_path = os.path.join(labelPath, folder)
+
                 voxel_path = os.path.join(model_folder_path,"voxel.mat")
+                if not os.path.isfile(voxel_path) :
+                    for fileName in os.listdir(model_folder_path):
+                        if fileName.endswith(".mat"):
+                            os.rename(os.path.join(model_folder_path,fileName), voxel_path)
+                            break
 
                 interpolate_and_save(voxel_path,model_folder_path,size=32, mode='nearest')
                 interpolate_and_save(voxel_path,model_folder_path,size=64,mode='nearest')
@@ -111,8 +118,8 @@ if __name__ == '__main__':
 
     # root = "/Users/apple/OVGU/Thesis/SynthDataset1/"
     # root='/nfs1/kprabhu/SynthDataset1/'
-    root = '/Users/apple/OVGU/Thesis/Dataset/pix3d/'
-    # root='/nfs1/kprabhu/pix3d/'
+    # root = '/Users/apple/OVGU/Thesis/Dataset/pix3d/'
+    root='/nfs1/kprabhu/pix3d/'
 
     #Copy file
     # Utility().copy_files_to_destination(root_path=root_path,destination_path=destination_path)

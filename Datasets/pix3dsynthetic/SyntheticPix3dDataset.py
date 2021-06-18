@@ -16,7 +16,6 @@ import numpy as np
 import Baseconfig
 
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
-from Datasets.pix3dsynthetic.DataExploration import get_train_test_split
 from utils import mat_to_array, load
 
 from random import seed
@@ -26,6 +25,7 @@ seed(2020)
 
 class SyntheticPix3dDataset(BaseDataset):
     def __init__(self,config):
+        print("SyntheticPix3dDataset")
         self.config=config
         self.train_img_list,self.train_model_list,self.test_img_list,self.test_model_list = self.get_train_test_split(self.config.root_path+"/Datasets/pix3dsynthetic/train_test_split.p")
 
@@ -63,7 +63,10 @@ class SyntheticPix3d(Dataset):
 
 
     def __getitem__(self, idx):
+
         img_path = os.path.join(self.dataset_img_path,self.input_paths[idx])
+        taxonomy_id =  self.input_paths[idx].split('/')[0] # 'chair/IKEA_EKENAS/11.png' = chair
+
         if self.config.is_mesh:
             output_model_path = os.path.join(os.path.join(self.dataset_models_path,self.output_paths[idx]),
                                          "model.obj")
@@ -72,7 +75,6 @@ class SyntheticPix3d(Dataset):
                                  "voxel_"+str(self.config.voxel_size)+".npy" if self.config.label_type == Baseconfig.LabelType.NPY else "voxel.mat")
         # print(str(idx)+":img_path:"+img_path)
         # print(str(idx)+":output_model_path:"+output_model_path)
-
         input_img = self.read_img(img_path)
         input_stack = input_img
 
@@ -103,7 +105,7 @@ class SyntheticPix3d(Dataset):
 
         # print(output_model.shape)
 
-        return input_stack, output_model
+        return taxonomy_id,input_stack, output_model
 
     def read_img(self, path, type='RGB'):
         # with Image.open(path) as img:

@@ -14,13 +14,13 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_30'
+cfg.main_name = 'test_37'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
 
 cfg.num_epochs = 2000
-cfg.learning_rate = 0.0001
+cfg.learning_rate = 0.001
 
 ####### INPUT-OUTPUT CONFIG #######
 cfg.include_depthmaps = False
@@ -37,11 +37,13 @@ if cfg.include_masks:
 
 cfg.resize = True
 cfg.size = [224,224]
+cfg.crop_size = [128,128]
+
 ####### INPUT-OUTPUT CONFIG #######
 
-cfg.train_loss_type = LossTypes.DICE
+cfg.train_loss_type = LossTypes.BCE
 cfg.save_mesh = 20
-cfg.save_count = 10 # <batch_size
+cfg.save_count = 4 # <batch_size
 
 ########## Model Config################
 
@@ -52,7 +54,7 @@ cfg.DATASET.MEAN                            = [0.485, 0.456, 0.406]
 cfg.DATASET.STD                             = [0.229, 0.224, 0.225]
 
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
-cfg.dataset_type =  DatasetType.PIX3D
+cfg.dataset_type = DatasetType.PIX3D
 cfg.model_type = ModelType.PIX2VOXEL
 cfg.optimizer_type = OptimizerType.ADAM
 
@@ -68,21 +70,37 @@ cfg.pix2vox_merger = True
 # Training
 #
 cfg.TRAIN                                   = edict()
+cfg.TRAIN.RESUME_TRAIN                      = False
+cfg.TRAIN.NUM_WORKER                        = 4             # number of data workers
+cfg.TRAIN.NUM_EPOCHES                       = 250
 cfg.TRAIN.BRIGHTNESS                        = .4
 cfg.TRAIN.CONTRAST                          = .4
 cfg.TRAIN.SATURATION                        = .4
 cfg.TRAIN.NOISE_STD                         = .1
 cfg.TRAIN.RANDOM_BG_COLOR_RANGE             = [[225, 255], [225, 255], [225, 255]]
-# cfg.TRAIN.ENCODER_LR_MILESTONES             = [150]
-# cfg.TRAIN.DECODER_LR_MILESTONES             = [150]
-# cfg.TRAIN.REFINER_LR_MILESTONES             = [150]
-# cfg.TRAIN.MERGER_LR_MILESTONES              = [150]
+cfg.TRAIN.POLICY                            = 'adam'        # available options: sgd, adam
+cfg.TRAIN.EPOCH_START_USE_REFINER           = 0
+cfg.TRAIN.EPOCH_START_USE_MERGER            = 0
+cfg.TRAIN.ENCODER_LEARNING_RATE             = 1e-3
+cfg.TRAIN.DECODER_LEARNING_RATE             = 1e-3
+cfg.TRAIN.REFINER_LEARNING_RATE             = 1e-3
+cfg.TRAIN.MERGER_LEARNING_RATE              = 1e-4
+cfg.TRAIN.ENCODER_LR_MILESTONES             = [150]
+cfg.TRAIN.DECODER_LR_MILESTONES             = [150]
+cfg.TRAIN.REFINER_LR_MILESTONES             = [150]
+cfg.TRAIN.MERGER_LR_MILESTONES              = [150]
 cfg.TRAIN.BETAS                             = (.9, .999)
 cfg.TRAIN.MOMENTUM                          = .9
 cfg.TRAIN.GAMMA                             = .5
 cfg.TRAIN.SAVE_FREQ                         = 10            # weights will be overwritten every save_freq epoch
 cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 
+#
+# Testing options
+#
+cfg.TEST                                    = edict()
+cfg.TEST.RANDOM_BG_COLOR_RANGE              = [[240, 240], [240, 240], [240, 240]]
+cfg.TEST.VOXEL_THRESH                       = [.2, .3, .4, .5, .6, .7]
 
 ########## Paths #################
 if platform == "darwin": #local mac
@@ -100,7 +118,7 @@ else:
     cfg.home_path = "/nfs1/kprabhu/"
     cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
     cfg.num_workers = 8
-    cfg.batch_size = 80
+    cfg.batch_size = 88
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'

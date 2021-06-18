@@ -19,6 +19,7 @@ class ModelType:
 
 class OptimizerType:
     ADAM = "adam"
+    SGD = "sgd"
 
 class LossTypes:
     BCE="bce"

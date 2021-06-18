@@ -10,6 +10,7 @@ import os
 import cv2
 import torch
 import torch.utils.data
+from PIL import Image
 from torch.utils.data import Dataset
 import numpy as np
 from torchvision.transforms import transforms
@@ -18,7 +19,6 @@ import Baseconfig
 import transform_utils
 
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
-from Datasets.pix3dsynthetic.DataExploration import get_train_test_split
 from utils import mat_to_array, load
 
 from random import seed
@@ -29,13 +29,21 @@ seed(2020)
 class Pix3dDataset(BaseDataset):
     def __init__(self,config):
         self.config=config
-        self.train_img_list,self.train_model_list,self.test_img_list,self.test_model_list,_,_ = self.get_train_test_split(self.config.dataset_path+"/pix3d.json")
+        self.train_img_list,self.train_model_list,self.test_img_list,\
+        self.test_model_list,self.train_category_list,self.test_category_list\
+            = self.get_train_test_split(self.config.dataset_path+"/pix3d.json")
 
     def get_trainset(self, transforms=None):
         return Pix3d(self.config,self.train_img_list,self.train_model_list, transforms=transforms)
 
     def get_testset(self, transforms=None):
         return Pix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms)
+
+    def get_img_trainset(self, transforms=None):
+        return Pix3d_Img(self.config,self.train_img_list,self.train_category_list)
+
+    def get_img_testset(self,transforms=None):
+        return Pix3d_Img(self.config,self.train_img_list,self.test_category_list)
 
     def get_train_test_split(self,filePath):
         """
@@ -95,12 +103,15 @@ class Pix3d(Dataset):
 
     def __getitem__(self, idx):
         img_path = os.path.join(self.dataset_path,self.input_paths[idx])
+        taxonomy_id = self.input_paths[idx].split('/')[1] # img/bed/0008.png = bed
         if self.config.is_mesh:
             output_model_path = os.path.join(self.dataset_path,self.output_paths[idx])
         else:
             output_model_path = os.path.join(self.dataset_path,self.output_paths[idx])
+            output_model_path = os.path.dirname(os.path.abspath(output_model_path))
             if self.config.label_type == Baseconfig.LabelType.NPY:
-                output_model_path = output_model_path.replace("voxel.mat","voxel_"+str(self.config.voxel_size)+".npy")
+                output_model_path = os.path.join(output_model_path,"voxel_"+str(self.config.voxel_size)+".npy")
+                # output_model_path.replace("voxel.mat","voxel_"+str(self.config.voxel_size)+".npy")
         # print(str(idx)+":img_path:"+img_path)
         # print(str(idx)+":output_model_path:"+output_model_path)
 
@@ -128,13 +139,13 @@ class Pix3d(Dataset):
             output_model = load(output_model_path)
         else:
             if self.config.label_type == Baseconfig.LabelType.NPY:
-                output_model = torch.tensor(np.load(output_model_path), dtype=torch.float32)
+                 output_model = torch.tensor(np.load(output_model_path), dtype=torch.float32)
             else:
                 output_model = torch.tensor(mat_to_array(output_model_path), dtype=torch.float32)
 
         # print(output_model.shape)
 
-        return input_stack, output_model
+        return taxonomy_id,input_stack, output_model
 
     def read_img(self, path, type='RGB'):
         # with Image.open(path) as img:
@@ -145,21 +156,60 @@ class Pix3d(Dataset):
         img = cv2.imread(path, cv2.IMREAD_UNCHANGED).astype(np.float32)
 
         if self.resize:
-            img = cv2.resize(img, (self.size[0],self.size[1]), interpolation = cv2.INTER_AREA)
+            img = cv2.resize(img, (self.size[0],self.size[1]), interpolation = cv2.INTER_AREA)/ 255.
 
-        if len(img.shape) > 1:
-            img = img / 255. #normalise
+
         if len(img.shape) < 3:
             print('[WARN] It seems the image file %s is grayscale.' % (path))
             img = np.stack((img, ) * 3, -1)
+        elif img.shape[2] > 3:
+            img = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
 
         img = np.asarray([img])
         return img
 
     def __len__(self):
-        # if self.config.platform == "darwin":
-        #     return 8 #debug
+        if self.config.platform == "darwin":
+            return 16 #debug
         return len(self.input_paths)
+
+
+class Pix3d_Img(Dataset):
+    def __init__(self, config, input_paths, labels, customtransforms=None):
+        self.input_paths = input_paths
+        self.labels = labels
+        self.config = config
+
+        #paths
+        self.dataset_path = config.dataset_path
+
+        self.resize = config.resize
+        self.size = config.size
+        self.transform = transforms.Compose(
+            [
+                transforms.Resize((224, 224)),
+                transforms.RandomCrop((224, 224)),
+                transforms.ToTensor(),
+                transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
+            ]
+        )
+
+    def __getitem__(self, idx):
+        img_path = os.path.join(self.dataset_path,self.input_paths[idx])
+
+        input_img = self.read_img(img_path)
+        input_stack = self.transform(input_img)
+
+        return input_stack, self.labels[idx]
+
+    def read_img(self, path, type='RGB'):
+        img =Image.open(path).convert("RGB")
+        return img
+
+    def __len__(self):
+        # return 10
+        return len(self.input_paths)
+
 
 if __name__ == '__main__':
     config = Baseconfig.config
@@ -169,18 +219,18 @@ if __name__ == '__main__':
         transform_utils.ToTensor(),
     ])
     traindataset = Pix3dDataset(config).get_trainset(train_transforms)
-    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=True,
+    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=4, shuffle=True,
                                            num_workers=8)
 
     testdataset = Pix3dDataset(config).get_testset(train_transforms)
 
     for batch_index, (input_batch, input_label) in enumerate(train_loader):
         # input_batch, input_label = input_batch[:, None, :].cuda(), input_label[:, None, :].cuda()
-        print(input_batch.shape)
-        print(input_label.shape)
+        # print(input_batch.shape)
+        # print(input_label.shape)
 
-        print(input_batch[0][0:3].shape)
-        break
+        # print(input_batch[0][0:3].shape)
+        print("test")
 
 
 
