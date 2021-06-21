@@ -17,13 +17,13 @@ class PipelineManager:
     def __init__(self, config):
         self.config = config
         self.datasetManager = DatasetManager(config)
-        self.model, self.optimizer = ModelManager(config).get_Model(config.model_type)
+        # self.model, self.optimizer = ModelManager(config).get_Model(config.model_type)
 
 
     def get_pipeline(self, pipeline_type):
         switcher = {
-            PipelineType.RECONSTRUCTION: ReconstructionPipeline(model=self.model, optimizer=self.optimizer,config=self.config, datasetManager=self.datasetManager),
+            PipelineType.RECONSTRUCTION: ReconstructionPipeline(config=self.config, datasetManager=self.datasetManager),
             # PipelineType.AUTOENCODER:
         }
-        return switcher.get(pipeline_type, ReconstructionPipeline(model=self.model, optimizer=self.optimizer,config=self.config, datasetManager=self.datasetManager))
+        return switcher.get(pipeline_type, ReconstructionPipeline(config=self.config, datasetManager=self.datasetManager))
 

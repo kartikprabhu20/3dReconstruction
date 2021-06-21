@@ -11,6 +11,7 @@ import pickle
 import cv2
 import torch
 import torch.utils.data
+from PIL import Image
 from torch.utils.data import Dataset
 import numpy as np
 import Baseconfig
@@ -34,6 +35,12 @@ class SyntheticPix3dDataset(BaseDataset):
 
     def get_testset(self, transforms=None):
         return SyntheticPix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms)
+
+    def get_img_trainset(self, transforms=None):
+        return SyntheticPix3d_Img(self.config,self.train_img_list,customtransforms=transforms)
+
+    def get_img_testset(self,transforms=None):
+        return SyntheticPix3d_Img(self.config,self.train_img_list,customtransforms=transforms)
 
     def get_train_test_split(self,filePath):
         pickle_file = pickle.load(open(filePath, "rb" ))
@@ -130,6 +137,37 @@ class SyntheticPix3d(Dataset):
     def __len__(self):
         # if self.config.platform == "darwin":
         #     return 8 #debug
+        return len(self.input_paths)
+
+class SyntheticPix3d_Img(Dataset):
+    def __init__(self, config, input_paths, customtransforms=None):
+        self.dataset_path = config.dataset_path
+        self.dataset_img_path = os.path.join(self.dataset_path,"imgs")
+
+        self.input_paths = input_paths
+        self.config = config
+
+        #paths
+        self.dataset_path = config.dataset_path
+
+        self.resize = config.resize
+        self.size = config.size
+        self.transform = customtransforms
+
+    def __getitem__(self, idx):
+        img_path = os.path.join(self.dataset_img_path,self.input_paths[idx])
+        taxonomy_id =  self.input_paths[idx].split('/')[0]
+        input_img = self.read_img(img_path)
+        input_stack = self.transform(input_img) if not self.transform == None else input_img
+
+        return input_stack, taxonomy_id
+
+    def read_img(self, path, type='RGB'):
+        img =Image.open(path).convert("RGB")
+        return img
+
+    def __len__(self):
+        # return 10
         return len(self.input_paths)
 
 if __name__ == '__main__':

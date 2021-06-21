@@ -40,10 +40,10 @@ class Pix3dDataset(BaseDataset):
         return Pix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms)
 
     def get_img_trainset(self, transforms=None):
-        return Pix3d_Img(self.config,self.train_img_list,self.train_category_list)
+        return Pix3d_Img(self.config,self.train_img_list,self.train_category_list,customtransforms=transforms)
 
     def get_img_testset(self,transforms=None):
-        return Pix3d_Img(self.config,self.train_img_list,self.test_category_list)
+        return Pix3d_Img(self.config,self.train_img_list,self.test_category_list,customtransforms=transforms)
 
     def get_train_test_split(self,filePath):
         """
@@ -185,14 +185,7 @@ class Pix3d_Img(Dataset):
 
         self.resize = config.resize
         self.size = config.size
-        self.transform = transforms.Compose(
-            [
-                transforms.Resize((224, 224)),
-                transforms.RandomCrop((224, 224)),
-                transforms.ToTensor(),
-                transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
-            ]
-        )
+        self.transform = customtransforms
 
     def __getitem__(self, idx):
         img_path = os.path.join(self.dataset_path,self.input_paths[idx])

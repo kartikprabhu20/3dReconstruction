@@ -54,7 +54,7 @@ cfg.DATASET.MEAN                            = [0.485, 0.456, 0.406]
 cfg.DATASET.STD                             = [0.229, 0.224, 0.225]
 
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
-cfg.dataset_type = DatasetType.PIX3D
+cfg.dataset_type = DatasetType.PIX3DSYNTHETIC1
 cfg.model_type = ModelType.PIX2VOXEL
 cfg.optimizer_type = OptimizerType.ADAM
 
@@ -118,7 +118,7 @@ else:
     cfg.home_path = "/nfs1/kprabhu/"
     cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
     cfg.num_workers = 8
-    cfg.batch_size = 88
+    cfg.batch_size = 112
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'

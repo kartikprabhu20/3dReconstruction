@@ -27,13 +27,11 @@ import transform_utils
 # from torchvision import transforms
 
 class BasePipeline:
-    def __init__(self,model,optimizer, config,datasetManager):
+    def __init__(self, config,datasetManager):
         self.config = config
         self.setup_logger()
         self.setup_dataloaders(datasetManager)
 
-        self.model = model
-        self.optimizer = optimizer
         self.checkpoint_path = config.checkpoint_path
         self.train_loss = self.get_loss(config.train_loss_type)
         self.train_loss_is_bce = config.train_loss_type == ModelManager.LossTypes.BCE

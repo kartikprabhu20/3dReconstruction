@@ -39,8 +39,8 @@ best_iou = -1
 best_epoch = -1
 
 class ReconstructionPipeline(BasePipeline):
-    def __init__(self,model,optimizer, config,datasetManager):
-        super(ReconstructionPipeline, self).__init__(model, optimizer, config, datasetManager)
+    def __init__(self, config,datasetManager):
+        super(ReconstructionPipeline, self).__init__(config, datasetManager)
 
         # Losses
         self.dice = self.get_loss(ModelManager.LossTypes.DICE)
@@ -50,7 +50,6 @@ class ReconstructionPipeline(BasePipeline):
 
     def train(self):
         self.logger.debug("Training...")
-        del self.model
 
         # Set up networks
         encoder = Encoder(config=self.config,in_channel=self.config.in_channels)
@@ -114,10 +113,10 @@ class ReconstructionPipeline(BasePipeline):
                                                                gamma=self.config.TRAIN.GAMMA)
 
         if torch.cuda.is_available():
-            encoder = torch.nn.DataParallel(encoder).cuda()
-            decoder = torch.nn.DataParallel(decoder).cuda()
-            refiner = torch.nn.DataParallel(refiner).cuda()
-            merger = torch.nn.DataParallel(merger).cuda()
+            encoder = encoder.cuda()
+            decoder = decoder.cuda()
+            refiner = refiner.cuda()
+            merger = merger.cuda()
 
         training_batch_index = 0
 
@@ -249,8 +248,6 @@ class ReconstructionPipeline(BasePipeline):
 
             self.validate_or_test(epoch,encoder,decoder,refiner,merger,encoder_solver,decoder_solver,refiner_solver,merger_solver)
 
-        return self.model
-
     def validate_or_test(self,epoch,encoder=None,
                          decoder=None,
                          refiner=None,
@@ -335,10 +332,9 @@ class ReconstructionPipeline(BasePipeline):
                 encoder_losses.update(encoder_loss.item())
                 refiner_losses.update(refiner_loss.item())
 
-                for i in range(0, self.config.batch_size):
+                for i in range(0, batch.shape[0]):
                     sample_iou = []
                     for th in self.config.TEST.VOXEL_THRESH:
-                        print(outputs.shape)
                         _volume = torch.ge(outputs[i], th).float()
                         sample_iou.append(self.iou(_volume, labels[i]).item())
 
@@ -418,29 +414,29 @@ class ReconstructionPipeline(BasePipeline):
 
         # Print header
         self.logger.info('============================ TEST RESULTS ============================')
-        self.logger.info('Taxonomy\t #Sample\t', end='')
+        self.logger.info('Taxonomy\t #Sample\t\n')
         for th in self.config.TEST.VOXEL_THRESH:
-            self.logger.info('t=%.2f' % th, end='\t')
-        self.logger.info()
+            self.logger.info('t=%.2f \t' % th)
+        self.logger.info(" ======================================================================")
         # Print body
         for taxonomy_id in test_iou_dict:
-            self.logger.info(taxonomy_id+":", end='\t')
-            self.logger.info('%d' % test_iou_dict[taxonomy_id]['n_samples'], end='\t')
+            self.logger.info(taxonomy_id+":\t")
+            self.logger.info('%d \t' % test_iou_dict[taxonomy_id]['n_samples'])
             for ti in test_iou_dict[taxonomy_id]['iou']:
-                self.logger.info('%.4f' % ti, end='\t')
-            self.logger.info()
+                self.logger.info('%.4f \t' % ti)
+            self.logger.info(" ======================================================================")
 
         # Print mean IoU for each threshold
         mean_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
-        self.logger.info('Overall:', end='\t')
-        self.logger.info('%d' % n_samples, end='\t')
+        self.logger.info('Overall:\t')
+        self.logger.info('%d \t' % n_samples)
         for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
             for taxonomy_id in test_iou_dict:
                 mean_iou[i] += test_iou_dict[taxonomy_id]['iou'][i]
 
         mean_iou  = np.divide(mean_iou, n_samples)
         for mi in mean_iou:
-            self.logger.info('%.4f' % mi, end='\t')
+            self.logger.info('%.4f \t' % mi)
 
         # print('============================ TEST RESULTS ============================')
         # print('Taxonomy\t #Sample\t', end='')
@@ -480,7 +476,7 @@ if __name__ == '__main__':
 
     model, optimizer = ModelManager.ModelManager(config).get_Model(config.model_type)
 
-    pipeline = ReconstructionPipeline(model=model, optimizer=optimizer, config=config, datasetManager=DatasetManager(config))
+    pipeline = ReconstructionPipeline(config=config, datasetManager=DatasetManager(config))
     encoder = Encoder(config=config,in_channel=config.in_channels)
     decoder = Decoder(config=config)
     refiner = Refiner(config=config)
