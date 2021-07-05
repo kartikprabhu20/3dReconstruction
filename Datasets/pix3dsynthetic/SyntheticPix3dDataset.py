@@ -176,7 +176,7 @@ class SyntheticPix3d_Img(Dataset):
         for taxonomy in self.unique_labels():
             count = 0
             for i in range(0, self.__len__()):
-                taxonomy_id = self.input_paths[i].split('/')[1] # img/bed/0008.png = bed
+                taxonomy_id = self.input_paths[i].split('/')[0] # img/bed/0008.png = bed
                 if(taxonomy_id==taxonomy):
                     count+=1
 
@@ -190,7 +190,7 @@ class SyntheticPix3d_Img(Dataset):
     def unique_labels(self):
         taxonomies = []
         for i in range(0,self.__len__()):
-            taxonomies.append(self.input_paths[i].split('/')[1])
+            taxonomies.append(self.input_paths[i].split('/')[0])
         unique_taxonomy = set(taxonomies)
         return unique_taxonomy
 

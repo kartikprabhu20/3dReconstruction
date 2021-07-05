@@ -155,24 +155,23 @@ if __name__ == '__main__':
 
     images_per_category = 50
     config.dataset_path ='/Users/apple/OVGU/Thesis/Dataset/pix3d'
-    pix3dtestdataset = Pix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_category)
+    pix3dtestdataset = Pix3dDataset(config).get_img_trainset(transform1,images_per_category=images_per_category)
     pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=images_per_category * len(pix3dtestdataset.unique_labels()), shuffle=True,
                                            num_workers=0)
     pix3dIter =  iter(pix3d_test_loader)
-
     config.dataset_path ='/Users/apple/OVGU/Thesis/SynthDataset1'
-    synthpix3dtestdataset = SyntheticPix3dDataset(config).get_img_testset(transform1,imagesPerCategory=images_per_category)
-    synth_pix3d_test_loader = torch.utils.data.DataLoader(synthpix3dtestdataset, batch_size=images_per_category * len(pix3dtestdataset.unique_labels()), shuffle=True,
+    synthpix3dtestdataset = SyntheticPix3dDataset(config).get_img_trainset(transform1,imagesPerCategory=images_per_category)
+    synth_pix3d_test_loader = torch.utils.data.DataLoader(synthpix3dtestdataset, batch_size=images_per_category * len(synthpix3dtestdataset.unique_labels()), shuffle=True,
                                                     num_workers=0)
     print(synthpix3dtestdataset.__len__())
     print(pix3dtestdataset.__len__())
 
     synthIter =  iter(synth_pix3d_test_loader)
     synth_images, local_labels = next(synthIter)
-    computeTSNEProjectionOfLatentSpace_targets(synth_images,local_labels,pretrained_model,title="S2R:3D-FREE", transform= transform)
+    computeTSNEProjectionOfLatentSpace_targets(synth_images,local_labels,pretrained_model,title="S2R:3D-FREE", transform= transform,classes=len(synthpix3dtestdataset.unique_labels()))
 
     pix3d_images, local_labels2 = next(pix3dIter)
-    computeTSNEProjectionOfLatentSpace_targets(pix3d_images,local_labels2,pretrained_model,title="Pix3D", transform= transform)
+    computeTSNEProjectionOfLatentSpace_targets(pix3d_images,local_labels2,pretrained_model,title="Pix3D", transform= transform,classes=len(pix3dtestdataset.unique_labels()))
 
     images = torch.cat([synth_images, pix3d_images], axis=0)
     labels = local_labels+ local_labels2
