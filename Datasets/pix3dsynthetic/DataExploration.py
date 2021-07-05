@@ -199,6 +199,25 @@ def get_train_test_split(filePath):
 
     return x,y,xt,yt
 
+def get_train_test_histogram(root_path,train_img_list,test_img_list):
+    labels = get_classes(root_path)
+
+    train_list = [0] * len(get_classes(root_path))
+    test_list = [0] * len(get_classes(root_path))
+
+    for i in range(len(train_img_list)):
+        train_list[labels.index(train_img_list[i].split('/')[0])] += 1
+
+    for i in range(len(test_img_list)):
+        test_list[labels.index(test_img_list[i].split('/')[0])] += 1
+
+    xticks = [i for i in range(len(labels))]
+    plt.bar(xticks, train_list, color='b', width=0.9)
+    plt.bar(xticks, test_list, bottom=train_list, color='g', width=0.9)
+    plt.xticks(xticks, labels)
+    plt.legend(['train','test'])
+    plt.show()
+
 if __name__ == '__main__':
     # depth = np.clip(np.load("/Users/apple/OVGU/Thesis/images/pix3dsynthetic/test_depth.png"), 1.0, 10.0) / 10 * 255
     # depth = Image.open("/Users/apple/OVGU/Thesis/images/synthetic/test_depth.png").convert('L')
@@ -259,4 +278,10 @@ if __name__ == '__main__':
 #########################################################
 
 
+    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+        "/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3dsynthetic/train_test_split.p")
+
+    get_train_test_histogram(root_path,train_img_list,test_img_list)
+
+#########################################################
 

@@ -17,6 +17,7 @@ import numpy as np
 import Baseconfig
 
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
+from Datasets.pix3dsynthetic.DataExploration import get_train_test_split
 from utils import mat_to_array, load
 
 from random import seed
@@ -36,11 +37,11 @@ class SyntheticPix3dDataset(BaseDataset):
     def get_testset(self, transforms=None):
         return SyntheticPix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms)
 
-    def get_img_trainset(self, transforms=None):
-        return SyntheticPix3d_Img(self.config,self.train_img_list,customtransforms=transforms)
+    def get_img_trainset(self, transforms=None,imagesPerCategory=0):
+        return SyntheticPix3d_Img(self.config,self.train_img_list,customtransforms=transforms,imagesPerCategory=imagesPerCategory)
 
-    def get_img_testset(self,transforms=None):
-        return SyntheticPix3d_Img(self.config,self.train_img_list,customtransforms=transforms)
+    def get_img_testset(self,transforms=None,imagesPerCategory=0):
+        return SyntheticPix3d_Img(self.config,self.test_img_list,customtransforms=transforms,imagesPerCategory=imagesPerCategory)
 
     def get_train_test_split(self,filePath):
         pickle_file = pickle.load(open(filePath, "rb" ))
@@ -140,7 +141,7 @@ class SyntheticPix3d(Dataset):
         return len(self.input_paths)
 
 class SyntheticPix3d_Img(Dataset):
-    def __init__(self, config, input_paths, customtransforms=None):
+    def __init__(self, config, input_paths, customtransforms=None,imagesPerCategory=0):
         self.dataset_path = config.dataset_path
         self.dataset_img_path = os.path.join(self.dataset_path,"imgs")
 
@@ -154,6 +155,9 @@ class SyntheticPix3d_Img(Dataset):
         self.size = config.size
         self.transform = customtransforms
 
+        if imagesPerCategory != 0:
+            self.init_nimages_per_category(imagesPerCategory)
+
     def __getitem__(self, idx):
         img_path = os.path.join(self.dataset_img_path,self.input_paths[idx])
         taxonomy_id =  self.input_paths[idx].split('/')[0]
@@ -165,6 +169,30 @@ class SyntheticPix3d_Img(Dataset):
     def read_img(self, path, type='RGB'):
         img =Image.open(path).convert("RGB")
         return img
+
+    def init_nimages_per_category(self, num):
+        inputPaths = []
+        labels = []
+        for taxonomy in self.unique_labels():
+            count = 0
+            for i in range(0, self.__len__()):
+                taxonomy_id = self.input_paths[i].split('/')[1] # img/bed/0008.png = bed
+                if(taxonomy_id==taxonomy):
+                    count+=1
+
+                    inputPaths.append(self.input_paths[i])
+
+                    if count == num:
+                        break
+
+        self.input_paths = inputPaths
+
+    def unique_labels(self):
+        taxonomies = []
+        for i in range(0,self.__len__()):
+            taxonomies.append(self.input_paths[i].split('/')[1])
+        unique_taxonomy = set(taxonomies)
+        return unique_taxonomy
 
     def __len__(self):
         # return 10

@@ -33,17 +33,17 @@ class Pix3dDataset(BaseDataset):
         self.test_model_list,self.train_category_list,self.test_category_list\
             = self.get_train_test_split(self.config.dataset_path+"/pix3d.json")
 
-    def get_trainset(self, transforms=None):
-        return Pix3d(self.config,self.train_img_list,self.train_model_list, transforms=transforms)
+    def get_trainset(self, transforms=None,images_per_category=0):
+        return Pix3d(self.config,self.train_img_list,self.train_model_list, transforms=transforms,imagesPerCategory=images_per_category)
 
-    def get_testset(self, transforms=None):
-        return Pix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms)
+    def get_testset(self, transforms=None,images_per_category=0):
+        return Pix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms,imagesPerCategory=images_per_category)
 
-    def get_img_trainset(self, transforms=None):
-        return Pix3d_Img(self.config,self.train_img_list,self.train_category_list,customtransforms=transforms)
+    def get_img_trainset(self, transforms=None,images_per_category=0):
+        return Pix3d_Img(self.config,self.train_img_list,self.train_category_list,customtransforms=transforms,imagesPerCategory=images_per_category)
 
-    def get_img_testset(self,transforms=None):
-        return Pix3d_Img(self.config,self.train_img_list,self.test_category_list,customtransforms=transforms)
+    def get_img_testset(self,transforms=None,images_per_category=0):
+        return Pix3d_Img(self.config,self.test_img_list,self.test_category_list,customtransforms=transforms,imagesPerCategory=images_per_category)
 
     def get_train_test_split(self,filePath):
         """
@@ -66,13 +66,13 @@ class Pix3dDataset(BaseDataset):
             if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
                 train_img_list.append(y[i]['img'])
                 train_model_list.append(y[i]['model' if self.config.is_mesh else 'voxel'])
-                train_category_list.append(y[i]['category'])
+                train_category_list.append(y[i]['category']+'_pix3d')
 
         for i in test:
             if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
                 test_img_list.append(y[i]['img'])
                 test_model_list.append(y[i]['model' if self.config.is_mesh else 'voxel'])
-                test_category_list.append(y[i]['category'])
+                test_category_list.append(y[i]['category']+'_pix3d')
 
         return train_img_list,train_model_list,test_img_list,test_model_list,train_category_list,test_category_list
 
@@ -88,17 +88,20 @@ class Pix3dDataset(BaseDataset):
 
 
 class Pix3d(Dataset):
-    def __init__(self,config,input_paths,output_paths, transforms=None):
+    def __init__(self,config,input_paths,output_paths, transforms=None, imagesPerCategory=0):
         self.input_paths = input_paths
         self.output_paths = output_paths
-        self.config = config
 
+        self.config = config
         #paths
         self.dataset_path = config.dataset_path
 
         self.resize = config.resize
         self.size = config.size
         self.transform = transforms
+
+        if imagesPerCategory != 0:
+            self.init_nimages_per_category(imagesPerCategory)
 
 
     def __getitem__(self, idx):
@@ -169,13 +172,41 @@ class Pix3d(Dataset):
         return img
 
     def __len__(self):
-        if self.config.platform == "darwin":
-            return 16 #debug
+        # if self.config.platform == "darwin":
+        #     return 16 #debug
         return len(self.input_paths)
+
+    def unique_labels(self):
+        taxonomies = []
+        for i in range(0,self.__len__()):
+            taxonomies.append(self.input_paths[i].split('/')[1])
+
+        unique_taxonomy = list(set(taxonomies))
+        return unique_taxonomy
+
+    def init_nimages_per_category(self, num):
+        inputPaths = []
+        outputPaths = []
+        for taxonomy in self.unique_labels():
+            count = 0
+            for i in range(0, self.__len__()):
+                taxonomy_id = self.input_paths[i].split('/')[1] # img/bed/0008.png = bed
+                if(taxonomy_id==taxonomy):
+                    count+=1
+
+                    inputPaths.append(self.input_paths[i])
+                    outputPaths.append(self.output_paths[i])
+
+
+                    if count == num:
+                        break
+
+        self.input_paths = inputPaths
+        self.output_paths = outputPaths
 
 
 class Pix3d_Img(Dataset):
-    def __init__(self, config, input_paths, labels, customtransforms=None):
+    def __init__(self, config, input_paths, labels, customtransforms=None, imagesPerCategory=0):
         self.input_paths = input_paths
         self.labels = labels
         self.config = config
@@ -186,6 +217,9 @@ class Pix3d_Img(Dataset):
         self.resize = config.resize
         self.size = config.size
         self.transform = customtransforms
+
+        if imagesPerCategory != 0:
+            self.init_nimages_per_category(imagesPerCategory)
 
     def __getitem__(self, idx):
         img_path = os.path.join(self.dataset_path,self.input_paths[idx])
@@ -199,9 +233,36 @@ class Pix3d_Img(Dataset):
         img =Image.open(path).convert("RGB")
         return img
 
+    def init_nimages_per_category(self, num):
+        inputPaths = []
+        labels = []
+        for taxonomy in self.unique_labels():
+            count = 0
+            for i in range(0, self.__len__()):
+                taxonomy_id = self.input_paths[i].split('/')[1] # img/bed/0008.png = bed
+                if(taxonomy_id==taxonomy):
+                    count+=1
+
+                    inputPaths.append(os.path.join(self.dataset_path,self.input_paths[i]))
+                    labels.append(self.labels[i])
+
+                    if count == num:
+                        break
+
+        self.input_paths = inputPaths
+        self.labels = labels
+
+    def unique_labels(self):
+        taxonomies = []
+        for i in range(0,self.__len__()):
+            taxonomies.append(self.input_paths[i].split('/')[1])
+        unique_taxonomy = set(taxonomies)
+        return unique_taxonomy
+
     def __len__(self):
         # return 10
         return len(self.input_paths)
+
 
 
 if __name__ == '__main__':
@@ -211,19 +272,22 @@ if __name__ == '__main__':
         transform_utils.Normalize(mean=config.DATASET.MEAN, std=config.DATASET.STD),
         transform_utils.ToTensor(),
     ])
-    traindataset = Pix3dDataset(config).get_trainset(train_transforms)
-    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=4, shuffle=True,
+    config.dataset_path ='/Users/apple/OVGU/Thesis/Dataset/pix3d'
+
+    traindataset = Pix3dDataset(config).get_trainset(train_transforms,images_per_category=10)
+    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=5, shuffle=True,
                                            num_workers=8)
+    print(traindataset.__len__())
+    print(traindataset.unique_labels())
+    testdataset = Pix3dDataset(config).get_testset(train_transforms,images_per_category=10)
 
-    testdataset = Pix3dDataset(config).get_testset(train_transforms)
-
-    for batch_index, (input_batch, input_label) in enumerate(train_loader):
+    for batch_index, (taxonomy_id,input_batch, input_label) in enumerate(train_loader):
         # input_batch, input_label = input_batch[:, None, :].cuda(), input_label[:, None, :].cuda()
         # print(input_batch.shape)
         # print(input_label.shape)
 
         # print(input_batch[0][0:3].shape)
-        print("test")
+        print(taxonomy_id)
 
 
 
