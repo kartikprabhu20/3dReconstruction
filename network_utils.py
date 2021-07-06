@@ -52,6 +52,23 @@ def save_checkpoints(cfg, file_path, epoch_idx, encoder, encoder_solver, decoder
 
     torch.save(checkpoint,  file_path + 'checkpoint_' + epoch_idx + '.pth')
 
+def load_checkpoint(cfg,encoder,encoder_solver,decoder,decoder_solver,
+                    refiner=None,refiner_solver=None,merger=None,merger_solver=None):
+    checkpoint = torch.load(cfg.checkpoint_path+'checkpoint_best.pth',map_location=torch.device('cpu'))
+    encoder.load_state_dict(checkpoint['encoder_state_dict'])
+    # encoder_solver.load_state_dict(checkpoint['encoder_solver_state_dict'])
+    decoder.load_state_dict(checkpoint['decoder_state_dict'])
+    # decoder_solver.load_state_dict(checkpoint['decoder_solver_state_dict'])
+
+    if cfg.pix2vox_refiner:
+        refiner.load_state_dict(checkpoint['refiner_state_dict'])
+        # refiner_solver.load_state_dict(checkpoint['refiner_solver_state_dict'])
+    if cfg.pix2vox_merger:
+        merger.load_state_dict(checkpoint['merger_state_dict'])
+        # merger_solver.load_state_dict(checkpoint['merger_solver_state_dict'])
+
+    return encoder,encoder_solver,decoder,decoder_solver,refiner,refiner_solver,merger,merger_solver
+
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""

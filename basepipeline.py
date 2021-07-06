@@ -9,6 +9,7 @@ import os
 
 import PIL
 import torch
+from torchvision.utils import save_image
 from pytorch3d.ops import cubify
 import numpy as np
 from skimage.filters import threshold_otsu
@@ -69,8 +70,13 @@ class BasePipeline:
 
 
         testdataset = dataset.get_testset(transforms=test_transforms)
+        self.validation_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
+                                                             num_workers=self.config.num_workers, pin_memory=True)
+
+        testdataset = dataset.get_testset(transforms=test_transforms,images_per_category=self.config.test_images_per_category)
         self.test_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
-                                              num_workers=self.config.num_workers,pin_memory=True,)
+                                                       num_workers=self.config.num_workers, pin_memory=True)
+
 
     def setup_logger(self):
         self.logger = Logger(self.config.main_name, self.config.output_path + self.config.main_name).get_logger()
@@ -109,8 +115,7 @@ class BasePipeline:
         image = PIL.Image.open(plot_buf)
         return  ToTensor()(image)
 
-    def save_intermediate_obj(self, istrain, training_batch_index, local_labels, outputs):
-        process = "train" if istrain else "val"
+    def save_intermediate_obj(self, training_batch_index,input_images, local_labels, outputs, process = "val"):
         with torch.no_grad():
 
             output_path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy"
@@ -125,6 +130,8 @@ class BasePipeline:
                 output_np = (output_np > threshold_otsu(output_np)).astype(int)
                 output = torch.tensor(output_np)
                 self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_output_" + str(i) + ".png")
+
+                save_image(input_images[i],self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_input_" + str(i) + ".png")
 
             # mesh_np = np.load(output_path)
             # thresh = threshold_otsu(mesh_np)

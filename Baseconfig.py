@@ -18,6 +18,7 @@ cfg.main_name = 'test_37'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
+cfg.load_model = False #For direct testing
 
 cfg.num_epochs = 2000
 cfg.learning_rate = 0.001
@@ -54,7 +55,7 @@ cfg.DATASET.MEAN                            = [0.485, 0.456, 0.406]
 cfg.DATASET.STD                             = [0.229, 0.224, 0.225]
 
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
-cfg.dataset_type = DatasetType.PIX3DSYNTHETIC1
+cfg.dataset_type = DatasetType.PIX3D
 cfg.model_type = ModelType.PIX2VOXEL
 cfg.optimizer_type = OptimizerType.ADAM
 
@@ -101,6 +102,7 @@ cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 cfg.TEST                                    = edict()
 cfg.TEST.RANDOM_BG_COLOR_RANGE              = [[240, 240], [240, 240], [240, 240]]
 cfg.TEST.VOXEL_THRESH                       = [.2, .3, .4, .5, .6, .7]
+cfg.test_images_per_category = 10
 
 ########## Paths #################
 if platform == "darwin": #local mac
@@ -109,7 +111,7 @@ if platform == "darwin": #local mac
     cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
     cfg.home_path = "/Users/apple/Desktop/"
     cfg.num_workers = 0
-    cfg.batch_size = 8
+    cfg.batch_size = 1
     cfg.apex = False
 else:
     cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'

@@ -48,84 +48,94 @@ class ReconstructionPipeline(BasePipeline):
         self.iou = self.get_loss(ModelManager.LossTypes.IOU)
         self.bce = self.get_loss(ModelManager.LossTypes.BCE)
 
-    def train(self):
-        self.logger.debug("Training...")
+        self.init_models(load_model=config.load_model)
 
+    def init_models(self,load_model):
         # Set up networks
-        encoder = Encoder(config=self.config,in_channel=self.config.in_channels)
-        decoder = Decoder(config=self.config)
-        encoder.apply(network_utils.init_weights)
-        decoder.apply(network_utils.init_weights)
+        self.encoder = Encoder(config=self.config,in_channel=self.config.in_channels)
+        self.decoder = Decoder(config=self.config)
+        self.encoder.apply(network_utils.init_weights)
+        self.decoder.apply(network_utils.init_weights)
 
-        print('Parameters in Encoder: %d.' % (utils.count_parameters(encoder)))
-        print('Parameters in Decoder: %d.' % (utils.count_parameters(decoder)))
+        print('Parameters in Encoder: %d.' % (utils.count_parameters(self.encoder)))
+        print('Parameters in Decoder: %d.' % (utils.count_parameters(self.decoder)))
 
         # if config.pix2vox_refiner:
-        refiner = Refiner(config=self.config)
-        refiner.apply(network_utils.init_weights)
-        print('Parameters in Refiner: %d.' % (utils.count_parameters(refiner)))
+        self.refiner = Refiner(config=self.config)
+        self.refiner.apply(network_utils.init_weights)
+        print('Parameters in Refiner: %d.' % (utils.count_parameters(self.refiner)))
 
         # if config.pix2vox_merger:
-        merger =  Merger(config=self.config)
-        print('Parameters in Merger: %d.' % (utils.count_parameters(merger)))
-        merger.apply(network_utils.init_weights)
+        self.merger =  Merger(config=self.config)
+        print('Parameters in Merger: %d.' % (utils.count_parameters(self.merger)))
+        self.merger.apply(network_utils.init_weights)
 
         # Set up solver
         if self.config.optimizer_type == ModelManager.OptimizerType.ADAM:
-            encoder_solver = torch.optim.Adam(filter(lambda p: p.requires_grad, encoder.parameters()),
-                                          lr=self.config.TRAIN.ENCODER_LEARNING_RATE,
-                                          betas=self.config.TRAIN.BETAS)
-            decoder_solver = torch.optim.Adam(decoder.parameters(),
-                                          lr=self.config.TRAIN.DECODER_LEARNING_RATE,
-                                          betas=self.config.TRAIN.BETAS)
-            refiner_solver = torch.optim.Adam(refiner.parameters(),
-                                          lr=self.config.TRAIN.REFINER_LEARNING_RATE,
-                                          betas=self.config.TRAIN.BETAS)
-            merger_solver = torch.optim.Adam(merger.parameters(), lr=self.config.TRAIN.MERGER_LEARNING_RATE, betas=self.config.TRAIN.BETAS)
+            self.encoder_solver = torch.optim.Adam(filter(lambda p: p.requires_grad, self.encoder.parameters()),
+                                                   lr=self.config.TRAIN.ENCODER_LEARNING_RATE,
+                                                   betas=self.config.TRAIN.BETAS)
+            self.decoder_solver = torch.optim.Adam(self.decoder.parameters(),
+                                                   lr=self.config.TRAIN.DECODER_LEARNING_RATE,
+                                                   betas=self.config.TRAIN.BETAS)
+            self.refiner_solver = torch.optim.Adam(self.refiner.parameters(),
+                                                   lr=self.config.TRAIN.REFINER_LEARNING_RATE,
+                                                   betas=self.config.TRAIN.BETAS)
+            self.merger_solver = torch.optim.Adam(self.merger.parameters(), lr=self.config.TRAIN.MERGER_LEARNING_RATE, betas=self.config.TRAIN.BETAS)
         elif self.config.optimizer_type == ModelManager.OptimizerType.SGD:
-            encoder_solver = torch.optim.SGD(filter(lambda p: p.requires_grad, encoder.parameters()),
-                                         lr=self.config.TRAIN.ENCODER_LEARNING_RATE,
-                                         momentum=self.config.TRAIN.MOMENTUM)
-            decoder_solver = torch.optim.SGD(decoder.parameters(),
-                                         lr=self.config.TRAIN.DECODER_LEARNING_RATE,
-                                         momentum=self.config.TRAIN.MOMENTUM)
-            refiner_solver = torch.optim.SGD(refiner.parameters(),
-                                         lr=self.config.TRAIN.REFINER_LEARNING_RATE,
-                                         momentum=self.config.TRAIN.MOMENTUM)
-            merger_solver = torch.optim.SGD(merger.parameters(),
-                                        lr=self.config.TRAIN.MERGER_LEARNING_RATE,
-                                        momentum=self.config.TRAIN.MOMENTUM)
+            self.encoder_solver = torch.optim.SGD(filter(lambda p: p.requires_grad, self.encoder.parameters()),
+                                                  lr=self.config.TRAIN.ENCODER_LEARNING_RATE,
+                                                  momentum=self.config.TRAIN.MOMENTUM)
+            self.decoder_solver = torch.optim.SGD(self.decoder.parameters(),
+                                                  lr=self.config.TRAIN.DECODER_LEARNING_RATE,
+                                                  momentum=self.config.TRAIN.MOMENTUM)
+            self.refiner_solver = torch.optim.SGD(self.refiner.parameters(),
+                                                  lr=self.config.TRAIN.REFINER_LEARNING_RATE,
+                                                  momentum=self.config.TRAIN.MOMENTUM)
+            self.merger_solver = torch.optim.SGD(self.merger.parameters(),
+                                                 lr=self.config.TRAIN.MERGER_LEARNING_RATE,
+                                                 momentum=self.config.TRAIN.MOMENTUM)
         else:
             raise Exception('[FATAL] %s Unknown optimizer %s.' % (dt.now(), self.config.TRAIN.POLICY))
 
+        if load_model:
+            encoder,encoder_solver,decoder,decoder_solver,\
+            refiner,refiner_solver,merger,merger_solver = network_utils.load_checkpoint(self.config,self.encoder,self.encoder_solver,self.decoder,
+                                                                                  self.decoder_solver,self.refiner,self.refiner_solver,self.merger,self.merger_solver)
+
+    def train(self):
+        self.logger.debug("Training...")
+
+
+
         # Set up learning rate scheduler to decay learning rates dynamically
-        encoder_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(encoder_solver,
+        encoder_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.encoder_solver,
                                                                 milestones=self.config.TRAIN.ENCODER_LR_MILESTONES,
                                                                 gamma=self.config.TRAIN.GAMMA)
-        decoder_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(decoder_solver,
+        decoder_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.decoder_solver,
                                                                 milestones=self.config.TRAIN.DECODER_LR_MILESTONES,
                                                                 gamma=self.config.TRAIN.GAMMA)
-        refiner_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(refiner_solver,
+        refiner_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.refiner_solver,
                                                                 milestones=self.config.TRAIN.REFINER_LR_MILESTONES,
                                                                 gamma=self.config.TRAIN.GAMMA)
-        merger_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(merger_solver,
+        merger_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.merger_solver,
                                                                milestones=self.config.TRAIN.MERGER_LR_MILESTONES,
                                                                gamma=self.config.TRAIN.GAMMA)
 
         if torch.cuda.is_available():
-            encoder = encoder.cuda()
-            decoder = decoder.cuda()
-            refiner = refiner.cuda()
-            merger = merger.cuda()
+            self.encoder = self.encoder.cuda()
+            self.decoder = self.decoder.cuda()
+            self.refiner = self.refiner.cuda()
+            self.merger = self.merger.cuda()
 
         training_batch_index = 0
 
         for epoch in range(self.num_epochs):
             # self.model.train()  # make sure to assign mode:train, because in validation, mode is assigned as eval
-            encoder.train()
-            decoder.train()
-            refiner.train()
-            merger.train()
+            self.encoder.train()
+            self.decoder.train()
+            self.refiner.train()
+            self.merger.train()
             total_training_loss = 0
             batch_index = 0
             for batch_index, (taxonomy_id, local_batch, local_labels) in enumerate(self.train_loader):
@@ -139,10 +149,10 @@ class ReconstructionPipeline(BasePipeline):
                 # print(local_labels.shape)
 
                 # Clear gradients
-                encoder.zero_grad()
-                decoder.zero_grad()
-                refiner.zero_grad()
-                merger.zero_grad()
+                self.encoder.zero_grad()
+                self.decoder.zero_grad()
+                self.refiner.zero_grad()
+                self.merger.zero_grad()
 
                 # dec_generated_volumes, ref_generated_volumes = self.model(local_batch)
                 # encoder_loss = self.train_loss(dec_generated_volumes, local_labels) * 10
@@ -151,17 +161,17 @@ class ReconstructionPipeline(BasePipeline):
                 # dec_generated_volumes = torch.sigmoid(dec_generated_volumes)
 
                 # Train the encoder, decoder, refiner, and merger
-                image_features = encoder(local_batch)
-                raw_features, dec_generated_volumes = decoder(image_features)
+                image_features = self.encoder(local_batch)
+                raw_features, dec_generated_volumes = self.decoder(image_features)
 
                 if self.config.pix2vox_merger:
-                    dec_generated_volumes = merger(raw_features, dec_generated_volumes)
+                    dec_generated_volumes = self.merger(raw_features, dec_generated_volumes)
                 else:
                     dec_generated_volumes = torch.mean(dec_generated_volumes, dim=1)
                 encoder_loss = self.bce(dec_generated_volumes, local_labels) * 10
 
                 if self.config.pix2vox_refiner:
-                    ref_generated_volumes = refiner(dec_generated_volumes)
+                    ref_generated_volumes = self.refiner(dec_generated_volumes)
                     refiner_loss = self.bce(ref_generated_volumes, local_labels) * 10
                 else:
                     refiner_loss = encoder_loss
@@ -187,7 +197,7 @@ class ReconstructionPipeline(BasePipeline):
 
                 if self.config.platform == "darwin": #debug
                     if training_batch_index % 20 == 0:
-                        self.save_intermediate_obj(istrain=True, training_batch_index=training_batch_index, local_labels=local_labels,
+                        self.save_intermediate_obj(process="Train", training_batch_index=training_batch_index, input_images=local_batch,local_labels=local_labels,
                                                    outputs=ref_generated_volumes if self.config.pix2vox_refiner else dec_generated_volumes)
 
                 if self.config.pix2vox_refiner:
@@ -196,10 +206,10 @@ class ReconstructionPipeline(BasePipeline):
                 else:
                     encoder_loss.backward()
 
-                encoder_solver.step()
-                decoder_solver.step()
-                refiner_solver.step()
-                merger_solver.step()
+                self.encoder_solver.step()
+                self.decoder_solver.step()
+                self.refiner_solver.step()
+                self.merger_solver.step()
 
                 # Calculating gradients
                 # if self.with_apex and torch.cuda.is_available():
@@ -246,7 +256,7 @@ class ReconstructionPipeline(BasePipeline):
             if torch.cuda.is_available():
                 torch.cuda.empty_cache()  # to avoid memory errors
 
-            self.validate_or_test(epoch,encoder,decoder,refiner,merger,encoder_solver,decoder_solver,refiner_solver,merger_solver)
+            self.validate_or_test(epoch,self.encoder,self.decoder,self.refiner,self.merger,self.encoder_solver,self.decoder_solver,self.refiner_solver,self.merger_solver)
 
     def validate_or_test(self,epoch,encoder=None,
                          decoder=None,
@@ -272,9 +282,9 @@ class ReconstructionPipeline(BasePipeline):
         encoder_losses = network_utils.AverageMeter()
         refiner_losses = network_utils.AverageMeter()
         # self.model.eval()
-        data_loader = self.test_loader
+        data_loader = self.validation_loader
         writer = self.writer_validating
-        n_samples = len(self.test_loader)
+        n_samples = len(self.validation_loader)
 
         # Switch models to evaluation mode
         encoder.eval()
@@ -370,7 +380,7 @@ class ReconstructionPipeline(BasePipeline):
                                bceloss=bceloss,diceLoss=dloss,diceScore=dscore,iou=jaccardIndex,writeMesh=saveMesh)
 
         if saveMesh or epoch == self.num_epochs-1:
-            self.save_intermediate_obj(istrain=False, training_batch_index=epoch, local_labels=labels, outputs=outputs)
+            self.save_intermediate_obj(training_batch_index=epoch,input_images=batch, local_labels=labels, outputs=outputs)
 
         global LOWEST_LOSS
         global best_iou
@@ -464,9 +474,35 @@ class ReconstructionPipeline(BasePipeline):
         #     print('%.4f' % mi, end='\t')
 
 
+    def test(self):
+        data_loader = self.test_loader
 
+        # Switch models to evaluation mode
+        self.encoder.eval()
+        self.decoder.eval()
+        self.refiner.eval()
+        self.merger.eval()
 
+        with torch.no_grad():
+            for index, (taxonomy_ids, batch, labels) in enumerate(data_loader):
+                # Transfer to GPU
+                if torch.cuda.is_available():#no nvidia on mac!!!
+                    batch, labels = batch.cuda(), labels.cuda()
 
+                image_features = self.encoder(batch)
+                raw_features, generated_volume = self.decoder(image_features)
+
+                if self.config.pix2vox_merger:
+                    generated_volume = self.merger(raw_features, generated_volume)
+                else:
+                    generated_volume = torch.mean(generated_volume, dim=1)
+
+                if self.config.pix2vox_refiner:
+                    generated_volume = self.refiner(generated_volume)
+
+                outputs = generated_volume
+
+                self.save_intermediate_obj(training_batch_index=index,input_images=batch, local_labels=labels, outputs=outputs, process = "test")
 
 
 if __name__ == '__main__':
