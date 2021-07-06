@@ -8,10 +8,10 @@
 
 class BaseDataset(object):
 
-    def get_trainset(self):
+    def get_trainset(self, transforms=None,images_per_category=0):
         pass
 
-    def get_testset(self):
+    def get_testset(self, transforms=None,images_per_category=0):
         pass
 
     def get_train_test_split(self,filePath):

@@ -15,10 +15,12 @@ from PIL import Image
 from torch.utils.data import Dataset
 import numpy as np
 import Baseconfig
+import transform_utils
 
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
 from Datasets.pix3dsynthetic.DataExploration import get_train_test_split
 from utils import mat_to_array, load
+from torchvision.transforms import transforms
 
 from random import seed
 torch.manual_seed(2020)
@@ -31,17 +33,17 @@ class SyntheticPix3dDataset(BaseDataset):
         self.config=config
         self.train_img_list,self.train_model_list,self.test_img_list,self.test_model_list = self.get_train_test_split(self.config.root_path+"/Datasets/pix3dsynthetic/train_test_split.p")
 
-    def get_trainset(self, transforms=None):
-        return SyntheticPix3d(self.config,self.train_img_list,self.train_model_list, transforms=transforms)
+    def get_trainset(self, transforms=None,images_per_category=0):
+        return SyntheticPix3d(self.config,self.train_img_list,self.train_model_list, transforms=transforms,imagesPerCategory=images_per_category)
 
-    def get_testset(self, transforms=None):
-        return SyntheticPix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms)
+    def get_testset(self, transforms=None,images_per_category=0):
+        return SyntheticPix3d(self.config,self.test_img_list,self.test_model_list, transforms=transforms,imagesPerCategory=images_per_category)
 
-    def get_img_trainset(self, transforms=None,imagesPerCategory=0):
-        return SyntheticPix3d_Img(self.config,self.train_img_list,customtransforms=transforms,imagesPerCategory=imagesPerCategory)
+    def get_img_trainset(self, transforms=None,images_per_category=0):
+        return SyntheticPix3d_Img(self.config,self.train_img_list,customtransforms=transforms,imagesPerCategory=images_per_category)
 
-    def get_img_testset(self,transforms=None,imagesPerCategory=0):
-        return SyntheticPix3d_Img(self.config,self.test_img_list,customtransforms=transforms,imagesPerCategory=imagesPerCategory)
+    def get_img_testset(self,transforms=None,images_per_category=0):
+        return SyntheticPix3d_Img(self.config,self.test_img_list,customtransforms=transforms,imagesPerCategory=images_per_category)
 
     def get_train_test_split(self,filePath):
         pickle_file = pickle.load(open(filePath, "rb" ))
@@ -53,7 +55,7 @@ class SyntheticPix3dDataset(BaseDataset):
         return x,y,xt,yt
 
 class SyntheticPix3d(Dataset):
-    def __init__(self,config,input_paths,output_paths, transforms=None):
+    def __init__(self,config,input_paths,output_paths, transforms=None,imagesPerCategory=0):
         self.input_paths = input_paths
         self.output_paths = output_paths
         self.config = config
@@ -68,6 +70,9 @@ class SyntheticPix3d(Dataset):
         self.resize = config.resize
         self.size = config.size
         self.transform = transforms
+
+        if imagesPerCategory != 0:
+            self.init_nimages_per_category(imagesPerCategory)
 
 
     def __getitem__(self, idx):
@@ -114,6 +119,33 @@ class SyntheticPix3d(Dataset):
         # print(output_model.shape)
 
         return taxonomy_id,input_stack, output_model
+
+    def unique_labels(self):
+        taxonomies = []
+        for i in range(0,self.__len__()):
+            taxonomies.append(self.input_paths[i].split('/')[0])
+
+        unique_taxonomy = list(set(taxonomies))
+        return unique_taxonomy
+
+    def init_nimages_per_category(self, num):
+        inputPaths = []
+        outputPaths = []
+        for taxonomy in self.unique_labels():
+            count = 0
+            for i in range(0, self.__len__()):
+                taxonomy_id = self.input_paths[i].split('/')[0]
+                if(taxonomy_id==taxonomy):
+                    count+=1
+
+                    inputPaths.append(self.input_paths[i])
+                    outputPaths.append(self.output_paths[i])
+
+                    if count == num:
+                        break
+
+        self.input_paths = inputPaths
+        self.output_paths = outputPaths
 
     def read_img(self, path, type='RGB'):
         # with Image.open(path) as img:
@@ -201,19 +233,25 @@ class SyntheticPix3d_Img(Dataset):
 if __name__ == '__main__':
     config = Baseconfig.config
 
-    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+    train_transforms = transforms.Compose([
+        transform_utils.Normalize(mean=config.DATASET.MEAN, std=config.DATASET.STD),
+        transform_utils.ToTensor(),
+    ])
+    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(config.root_path+
         "/Datasets/pix3dsynthetic/train_test_split.p")
-    traindataset = SyntheticPix3d(config,train_img_list,train_model_list)
+    traindataset = SyntheticPix3d(config,train_img_list,train_model_list,transforms=train_transforms,imagesPerCategory=10)
     train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=True,
                                                num_workers=8)
+    print(traindataset.__len__())
+    print(train_loader.__len__())
 
-    for batch_index, (input_batch, input_label) in enumerate(train_loader):
+    for batch_index, (taxonomy,input_batch, input_label) in enumerate(train_loader):
         # input_batch, input_label = input_batch[:, None, :].cuda(), input_label[:, None, :].cuda()
-        print(input_batch.shape)
-        print(input_label.shape)
-
-        print(input_batch[0][0:3].shape)
-        break
+        # print(input_batch.shape)
+        # print(input_label.shape)
+        #
+        # print(input_batch[0][0:3].shape)
+        print(taxonomy)
 
 
 

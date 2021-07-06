@@ -95,8 +95,8 @@ class AutoencoderPipeline(BasePipeline):
 
                 if self.config.platform == "darwin": #debug
                     if training_batch_index % 20 == 0:
-                        self.save_intermediate_obj(istrain=True, training_batch_index=training_batch_index, local_labels=local_labels,
-                                                   outputs=ref_generated_volumes if self.config.pix2vox_refiner else dec_generated_volumes)
+                        self.save_intermediate_obj(training_batch_index=training_batch_index, local_labels=local_labels,
+                                                   outputs=ref_generated_volumes if self.config.pix2vox_refiner else dec_generated_volumes, process = "train")
 
                 # Calculating gradients
                 if self.with_apex and torch.cuda.is_available():
@@ -156,7 +156,7 @@ class AutoencoderPipeline(BasePipeline):
         bceloss,floss,dloss,dscore,jaccardIndex = 0,0,0,0,0
         no_items = 0
         self.model.eval()
-        data_loader = self.test_loader
+        data_loader = self.validation_loader
         writer = self.writer_validating
 
         with torch.no_grad():
@@ -215,7 +215,7 @@ class AutoencoderPipeline(BasePipeline):
                                bceloss=bceloss,diceLoss=dloss,diceScore=dscore,iou=jaccardIndex,writeMesh=saveMesh)
 
         if saveMesh or epoch == self.num_epochs-1:
-            self.save_intermediate_obj(istrain=False, training_batch_index=epoch, local_labels=labels, outputs=outputs)
+            self.save_intermediate_obj(training_batch_index=epoch, local_labels=labels, outputs=outputs)
 
         if validation:#save only for validation
             self.save_model(self.checkpoint_path, {
