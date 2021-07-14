@@ -13,6 +13,7 @@ import numpy as np
 import cv2
 
 from utils import load_mat_pix3d
+from sklearn.model_selection import train_test_split
 
 
 def getHistogram(root_path):
@@ -25,6 +26,7 @@ def getHistogram(root_path):
     plt.bar(xticks, height=y)
     plt.xticks(xticks, labels)
     plt.show()
+
 
 def get_occluded_Histogram(root_path):
     labels = get_classes(root_path)
@@ -62,6 +64,75 @@ def split_to_classes(json_path, root_path):
             json.dump(image_config, fp)
         category = y[j]['category']
 
+def get_all_model_names(json_path):
+    y = json.load(open(json_path))
+    category = y[0]['category']
+
+    model_names = set()
+    for i in range(0, len(y)):
+        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+            mode_name = y[i]['model'].split("/")[2]
+            model_names.add(mode_name)
+
+    print(model_names)
+    print(len(model_names))
+    return model_names
+
+def get_model_names_histogram(json_path):
+    y = json.load(open(json_path))
+    model_names = list(get_all_model_names(json_path))
+    model_list = [0] * len(model_names)
+
+    for i in range(len(y)):
+        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+             model_list[model_names.index( y[i]['model'].split("/")[2])] += 1
+
+    xticks = [i for i in range(len(model_names))]
+    plt.bar(xticks, model_list, color='b')
+    plt.title("Models in pix3D")
+    # plt.xticks(xticks, model_names)
+    # plt.legend(['Mode'])
+    plt.show()
+
+def get_all_indices_grouped(json_path):
+    y = json.load(open(json_path))
+    model_names = list(get_all_model_names(json_path))
+    indices_list = []
+
+    for model_name in model_names:
+        model_indices = []
+        for i in range(len(y)):
+             if model_name == y[i]['model'].split("/")[2]:
+                model_indices.append(i)
+
+        indices_list.append(model_indices)
+    print(indices_list)
+    return indices_list
+
+def train_test_split_json(json_path):
+    indices_list = get_all_indices_grouped(json_path)
+
+    train_indices = []
+    test_indices = []
+
+    for i in range(0,len(indices_list)):
+        # print(indices_list[i])
+        # print(len(indices_list[i]))
+
+        if len(indices_list[i]) < 2:
+            train_indices += indices_list[i]
+        else:
+            x_train, x_test = train_test_split(indices_list[i],train_size = 0.7, shuffle=True)
+            train_indices += x_train
+            test_indices += x_test
+
+    with open('/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3d/splits/pix3d_train_2.npy', 'wb') as f:
+        np.save(f, np.array(train_indices))
+    with open('/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3d/splits/pix3d_test_2.npy', 'wb') as f:
+        np.save(f, np.array(test_indices))
+
+
+
 
 def save_occluded_json(root_path):
     labels = get_classes(root_path)
@@ -76,18 +147,41 @@ def save_occluded_json(root_path):
         with open(root_path + label+"_occluded.json", 'w') as fp:
             json.dump(occluded_config, fp)
 
-def get_train_test_indices():
-    TRAIN_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
-                                   'splits/pix3d_train.npy')
-    TEST_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
-                                  'splits/pix3d_test.npy')
-    train = np.load(TRAIN_SPLIT_IDX)
-    test = np.load(TEST_SPLIT_IDX)
+def get_train_test_indices(train_file, test_file):
+    train = np.load(train_file)
+    test = np.load(test_file)
     return train, test
 
-def get_train_test_histogram(root_path,json_path):
+def get_train_test_model_names_histogram(json_path,train_file, test_file):
     y = json.load(open(json_path))
-    train, test = get_train_test_indices()
+    model_names = list(get_all_model_names(json_path))
+    train, test = get_train_test_indices(train_file, test_file)
+    print(len(train))
+    print(len(test))
+    print(len(model_names))
+
+    train_list = [0] * len(model_names)
+    test_list = [0] * len(model_names)
+
+    for i in train:
+        train_list[model_names.index(y[i]['model'].split("/")[2])] += 1
+
+    for i in test:
+        test_list[model_names.index(y[i]['model'].split("/")[2])] += 1
+
+    print(len(train_list))
+    print(len(test_list))
+
+    xticks = [i for i in range(len(model_names))]
+    plt.bar(xticks, train_list, color='b')
+    plt.bar(xticks, test_list, bottom=train_list, color='g')
+    # plt.xticks(xticks, model_names)
+    plt.legend(['train','test'])
+    plt.show()
+
+def get_train_test_histogram(root_path,json_path,train_file, test_file):
+    y = json.load(open(json_path))
+    train, test = get_train_test_indices(train_file, test_file)
     labels = get_classes(root_path)
 
     train_list = [0] * len(get_classes(root_path))
@@ -192,7 +286,9 @@ if __name__ == '__main__':
     # save_edge_images(root_path)
 
     # print(get_classes(root_path))
-    # get_train_test_histogram(root_path,pix3d_json_path)
+    # get_train_test_histogram(root_path,pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_train.npy'),
+    #                          os.path.join(os.path.dirname(__file__),'splits/pix3d_test.npy'))
+
 ##############################################################################################
     #voxel_path
     # voxel_path = get_voxel(root_path,"chair","0002.png")
@@ -207,6 +303,10 @@ if __name__ == '__main__':
     # mesh_mat.show()
 
 ##############################################################################################
-    get_train_test_splits(pix3d_json_path)
+    # get_train_test_splits(pix3d_json_path)
 
-
+##############################################################################################
+    # get_model_names_histogram(pix3d_json_path)
+    # train_test_split_json(pix3d_json_path)
+    get_train_test_model_names_histogram(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_train_2.npy'),
+                                         os.path.join(os.path.dirname(__file__),'splits/pix3d_test_2.npy'))

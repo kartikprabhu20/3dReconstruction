@@ -31,7 +31,7 @@ class Pix3dDataset(BaseDataset):
         self.config=config
         self.train_img_list,self.train_model_list,self.test_img_list,\
         self.test_model_list,self.train_category_list,self.test_category_list\
-            = self.get_train_test_split(self.config.dataset_path+"/pix3d.json")
+            = self.get_train_test_split_indices(self.config.dataset_path+"/pix3d.json",self.config.pix3d.train_indices,self.config.pix3d.test_indices )
 
     def get_trainset(self, transforms=None,images_per_category=0):
         return Pix3d(self.config,self.train_img_list,self.train_model_list, transforms=transforms,imagesPerCategory=images_per_category)
@@ -45,13 +45,13 @@ class Pix3dDataset(BaseDataset):
     def get_img_testset(self,transforms=None,images_per_category=0):
         return Pix3d_Img(self.config,self.test_img_list,self.test_category_list,customtransforms=transforms,imagesPerCategory=images_per_category)
 
-    def get_train_test_split(self,filePath):
+    def get_train_test_split_indices(self,filePath, train_indices_path,test_indices_path):
         """
         :param filePath: pix3d.json path in dataset folder
         :return:
         """
         y = json.load(open(filePath))
-        train, test = self.get_train_test_indices()
+        train, test = self.get_train_test_indices(train_indices_path,test_indices_path)
         # # print(y)
         # print(train)
         # print(test)
@@ -76,11 +76,9 @@ class Pix3dDataset(BaseDataset):
 
         return train_img_list,train_model_list,test_img_list,test_model_list,train_category_list,test_category_list
 
-    def get_train_test_indices(self):
-        TRAIN_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
-                                       'splits/pix3d_train.npy')
-        TEST_SPLIT_IDX = os.path.join(os.path.dirname(__file__),
-                                  'splits/pix3d_test.npy')
+    def get_train_test_indices(self,train_indices_path,test_indices_path):
+        TRAIN_SPLIT_IDX = os.path.join(os.path.dirname(__file__),train_indices_path)
+        TEST_SPLIT_IDX = os.path.join(os.path.dirname(__file__),test_indices_path)
         train = np.load(TRAIN_SPLIT_IDX)
         test = np.load(TEST_SPLIT_IDX)
         return train, test

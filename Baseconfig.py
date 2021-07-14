@@ -126,3 +126,7 @@ else:
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
 cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_validation/'
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
+
+cfg.pix3d                                   = edict()
+cfg.pix3d.train_indices = cfg.root_path + '/pix3d/splits/pix3d_train_2'
+cfg.pix3d.test_indices = cfg.root_path + '/pix3d/splits/pix3d_test_2'

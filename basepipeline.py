@@ -131,7 +131,7 @@ class BasePipeline:
                 output = torch.tensor(output_np)
                 self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_output_" + str(i) + ".png")
 
-                save_image(input_images[i],self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_input_" + str(i) + ".png")
+                save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_input_" + str(i) + ".png")
 
             # mesh_np = np.load(output_path)
             # thresh = threshold_otsu(mesh_np)

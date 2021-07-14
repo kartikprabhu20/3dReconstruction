@@ -16,3 +16,6 @@ class BaseDataset(object):
 
     def get_train_test_split(self,filePath):
         pass
+
+    def get_train_test_split_indices(self,filePath,train_indices_path,test_indices_path):
+        pass
