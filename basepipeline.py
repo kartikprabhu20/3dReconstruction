@@ -45,7 +45,7 @@ class BasePipeline:
 
         train_transforms = transform_utils.Compose([
             transform_utils.RandomCrop(IMG_SIZE, CROP_SIZE),
-            transform_utils.RandomBackground(self.config.TRAIN.RANDOM_BG_COLOR_RANGE),
+            # transform_utils.RandomBackground(self.config.TRAIN.RANDOM_BG_COLOR_RANGE),
             transform_utils.ColorJitter(self.config.TRAIN.BRIGHTNESS, self.config.TRAIN.CONTRAST, self.config.TRAIN.SATURATION),
             transform_utils.RandomNoise(self.config.TRAIN.NOISE_STD),
             transform_utils.Normalize(mean=self.config.DATASET.MEAN, std=self.config.DATASET.STD),
@@ -56,7 +56,7 @@ class BasePipeline:
 
         test_transforms = transform_utils.Compose([
              transform_utils.CenterCrop(IMG_SIZE, CROP_SIZE),
-             transform_utils.RandomBackground(self.config.TEST.RANDOM_BG_COLOR_RANGE),
+             # transform_utils.RandomBackground(self.config.TEST.RANDOM_BG_COLOR_RANGE),
              transform_utils.Normalize(mean=self.config.DATASET.MEAN, std=self.config.DATASET.STD),
              transform_utils.ToTensor(),
          ])

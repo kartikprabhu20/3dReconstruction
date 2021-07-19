@@ -14,11 +14,11 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_37'
+cfg.main_name = 'test_42'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
-cfg.load_model = False #For direct testing
+cfg.load_model = True #For direct testing
 
 cfg.num_epochs = 2000
 cfg.learning_rate = 0.001
@@ -60,7 +60,7 @@ cfg.model_type = ModelType.PIX2VOXEL
 cfg.optimizer_type = OptimizerType.ADAM
 
 cfg.pix2vox_pretrained_vgg = True
-cfg.pix2vox_update_vgg = True
+cfg.pix2vox_update_vgg = False
 cfg.pix2vox_refiner = True
 cfg.pix2vox_merger = True
 
@@ -78,7 +78,7 @@ cfg.TRAIN.BRIGHTNESS                        = .4
 cfg.TRAIN.CONTRAST                          = .4
 cfg.TRAIN.SATURATION                        = .4
 cfg.TRAIN.NOISE_STD                         = .1
-cfg.TRAIN.RANDOM_BG_COLOR_RANGE             = [[225, 255], [225, 255], [225, 255]]
+# cfg.TRAIN.RANDOM_BG_COLOR_RANGE             = [[225, 255], [225, 255], [225, 255]]
 cfg.TRAIN.POLICY                            = 'adam'        # available options: sgd, adam
 cfg.TRAIN.EPOCH_START_USE_REFINER           = 0
 cfg.TRAIN.EPOCH_START_USE_MERGER            = 0
@@ -100,7 +100,7 @@ cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 # Testing options
 #
 cfg.TEST                                    = edict()
-cfg.TEST.RANDOM_BG_COLOR_RANGE              = [[240, 240], [240, 240], [240, 240]]
+# cfg.TEST.RANDOM_BG_COLOR_RANGE              = [[240, 240], [240, 240], [240, 240]]
 cfg.TEST.VOXEL_THRESH                       = [.2, .3, .4, .5, .6, .7]
 cfg.test_images_per_category = 10
 
@@ -128,5 +128,5 @@ cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/te
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
 
 cfg.pix3d                                   = edict()
-cfg.pix3d.train_indices = cfg.root_path + '/pix3d/splits/pix3d_train_2'
-cfg.pix3d.test_indices = cfg.root_path + '/pix3d/splits/pix3d_test_2'
+cfg.pix3d.train_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_train_2.npy'
+cfg.pix3d.test_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_test_2.npy'
