@@ -4,6 +4,8 @@
     @author: Kartik Prabhu
 
 """
+import os
+
 import torch
 import torch.utils.data
 from pytorch3d.ops import cubify
@@ -20,6 +22,7 @@ from basepipeline import BasePipeline
 # Added for Apex
 from models.pix2voxel import Encoder, Decoder, Refiner, Merger
 from datetime import datetime as dt
+from torchvision.utils import save_image
 
 try:
     import apex
@@ -474,8 +477,8 @@ class ReconstructionPipeline(BasePipeline):
         #     print('%.4f' % mi, end='\t')
 
 
-    def test(self):
-        data_loader = self.test_loader
+    def test(self, empty_test = False):
+        data_loader = self.empty_loader if empty_test else self.test_loader
 
         # Switch models to evaluation mode
         self.encoder.eval()
@@ -502,7 +505,45 @@ class ReconstructionPipeline(BasePipeline):
 
                 outputs = generated_volume
 
-                self.save_intermediate_obj(training_batch_index=index,input_images=batch, local_labels=labels, outputs=outputs, process = "test")
+                self.save_intermediate_obj(training_batch_index=index,input_images=batch, local_labels=labels, outputs=outputs, process = "empty" if empty_test else "test", threshold=self.config.TEST.VOXEL_THRESH_IMAGE)
+
+    def empty_test(self):
+        data_loader = self.empty_loader
+
+        # Switch models to evaluation mode
+        self.encoder.eval()
+        self.decoder.eval()
+        self.refiner.eval()
+        self.merger.eval()
+
+        with torch.no_grad():
+            for index, batch in enumerate(data_loader):
+                # Transfer to GPU
+                if torch.cuda.is_available():#no nvidia on mac!!!
+                    batch = batch.cuda()
+
+                image_features = self.encoder(batch)
+                raw_features, generated_volume = self.decoder(image_features)
+
+                if self.config.pix2vox_merger:
+                    generated_volume = self.merger(raw_features, generated_volume)
+                else:
+                    generated_volume = torch.mean(generated_volume, dim=1)
+
+                if self.config.pix2vox_refiner:
+                    generated_volume = self.refiner(generated_volume)
+
+                outputs = generated_volume
+
+                output_path = self.checkpoint_path + self.config.main_name+"_"+ str(index)+"_"+"empty"+"_output.npy"
+
+                output_np = outputs[0].detach().cpu().numpy()
+                output_np = output_np > 0.2
+                output = torch.tensor(output_np)
+                self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(index) + "_" + "empty" + "_output_" + str(index) + ".png")
+
+                # save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(index) + "_" + "empty" + "_input_" + str(index) + ".png")
+
 
 
 if __name__ == '__main__':

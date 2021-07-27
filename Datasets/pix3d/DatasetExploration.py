@@ -14,7 +14,7 @@ import cv2
 
 from utils import load_mat_pix3d
 from sklearn.model_selection import train_test_split
-
+from sklearn.utils import resample
 
 def getHistogram(root_path):
     labels = get_classes(root_path)
@@ -72,7 +72,7 @@ def get_all_model_names(json_path):
     for i in range(0, len(y)):
         if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
             mode_name = y[i]['model'].split("/")[2]
-            model_names.add(mode_name)
+            model_names.add(y[i]['category']+"/"+mode_name)
 
     print(model_names)
     print(len(model_names))
@@ -85,7 +85,7 @@ def get_model_names_histogram(json_path):
 
     for i in range(len(y)):
         if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
-             model_list[model_names.index( y[i]['model'].split("/")[2])] += 1
+             model_list[model_names.index(y[i]['category']+"/"+ y[i]['model'].split("/")[2])] += 1
 
     xticks = [i for i in range(len(model_names))]
     plt.bar(xticks, model_list, color='b')
@@ -102,11 +102,11 @@ def get_all_indices_grouped(json_path):
     for model_name in model_names:
         model_indices = []
         for i in range(len(y)):
-             if model_name == y[i]['model'].split("/")[2]:
+             if model_name.split("/")[1] == y[i]['model'].split("/")[2]:
                 model_indices.append(i)
 
         indices_list.append(model_indices)
-    print(indices_list)
+    # print(indices_list)
     return indices_list
 
 def train_test_split_json(json_path):
@@ -125,6 +125,10 @@ def train_test_split_json(json_path):
             x_train, x_test = train_test_split(indices_list[i],train_size = 0.7, shuffle=True)
             train_indices += x_train
             test_indices += x_test
+
+    print(train_indices)
+    print(test_indices)
+
 
     with open('/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3d/splits/pix3d_train_2.npy', 'wb') as f:
         np.save(f, np.array(train_indices))
@@ -156,18 +160,21 @@ def get_train_test_model_names_histogram(json_path,train_file, test_file):
     y = json.load(open(json_path))
     model_names = list(get_all_model_names(json_path))
     train, test = get_train_test_indices(train_file, test_file)
-    print(len(train))
-    print(len(test))
-    print(len(model_names))
+
+    # print(len(train))
+    # print(len(test))
+    # print(len(model_names))
+
+    #print(len(list(set(train) & set(test)))) #confirm no intersections
 
     train_list = [0] * len(model_names)
     test_list = [0] * len(model_names)
 
     for i in train:
-        train_list[model_names.index(y[i]['model'].split("/")[2])] += 1
+        train_list[model_names.index(y[i]['category']+"/"+y[i]['model'].split("/")[2])] += 1
 
     for i in test:
-        test_list[model_names.index(y[i]['model'].split("/")[2])] += 1
+        test_list[model_names.index(y[i]['category']+"/"+y[i]['model'].split("/")[2])] += 1
 
     print(len(train_list))
     print(len(test_list))
@@ -175,6 +182,7 @@ def get_train_test_model_names_histogram(json_path,train_file, test_file):
     xticks = [i for i in range(len(model_names))]
     plt.bar(xticks, train_list, color='b')
     plt.bar(xticks, test_list, bottom=train_list, color='g')
+    plt.title("Train-Test split of Models in pix3D")
     # plt.xticks(xticks, model_names)
     plt.legend(['train','test'])
     plt.show()
@@ -199,21 +207,35 @@ def get_train_test_model_names_histogram_json(json_path,train_file, test_file):
 
     for i in range(len(train_annotations)):
         if not(category_list[train_annotations[i]['category_id']-1]=='misc' or category_list[train_annotations[i]['category_id']-1]=='tool'):
-            train_list[model_names.index(train_annotations[i]['model'].split("/")[2])] += 1
+            train_list[model_names.index(category_list[train_annotations[i]['category_id']-1]+"/"+train_annotations[i]['model'].split("/")[2])] += 1
 
     for i in range(len(test_annotations)):
         if not(category_list[test_annotations[i]['category_id']-1]=='misc' or category_list[test_annotations[i]['category_id']-1]=='tool'):
-            test_list[model_names.index(test_annotations[i]['model'].split("/")[2])] += 1
-
-    # print(len(train_list))
-    # print(len(test_list))
+            test_list[model_names.index(category_list[test_annotations[i]['category_id']-1] +"/"+ test_annotations[i]['model'].split("/")[2])] += 1
 
     xticks = [i for i in range(len(model_names))]
     plt.bar(xticks, train_list, color='b')
     plt.bar(xticks, test_list, bottom=train_list, color='g')
+    plt.title("Train-Test split of Models in pix3D")
     # plt.xticks(xticks, model_names)
     plt.legend(['train','test'])
     plt.show()
+
+def upsampling(final_train_img_list,final_train_model_list,final_train_category_list,upsample):
+    # print([len(cat_list) for cat_list in final_train_category_list])
+    num_to_upsample = max([len(cat_list) for cat_list in final_train_category_list])
+
+    train_img_list = []
+    train_model_list= []
+    train_category_list = []
+    for i in range(len(final_train_category_list)):
+        img_list,model_list, category_list = resample(final_train_img_list[i],final_train_model_list[i], final_train_category_list[i], random_state=123,
+                                                      n_samples= num_to_upsample if upsample else len(final_train_category_list[i]))
+        train_img_list.append(img_list)
+        train_model_list.append(model_list)
+        train_category_list.append(category_list)
+
+    return train_img_list,train_model_list,train_category_list
 
 def get_train_test_histogram(root_path,json_path,train_file, test_file):
     y = json.load(open(json_path))
@@ -238,37 +260,61 @@ def get_train_test_histogram(root_path,json_path,train_file, test_file):
     plt.legend(['train','test'])
     plt.show()
 
-def get_train_test_histogram_json(root_path,train_file, test_file):
+def get_train_test_histogram_json(root_path,train_file, test_file, upsample):
     categories = json.load(open(train_file))['categories']
     category_list = [categories[i]['name'] for i in range(len(categories))]
+
     used_categories = category_list.copy()
     used_categories.remove('misc')
     used_categories.remove('tool')
 
     train_annotations = json.load(open(train_file))['annotations']
     test_annotations = json.load(open(test_file))['annotations']
+    train_images = json.load(open(train_file))['images']
+    test_images = json.load(open(test_file))['images']
 
     train_list = [0] * len(category_list)
     test_list = [0] * len(category_list)
 
-    for i in range(len(train_annotations)):
-        # if not(category_list[train_annotations[i]['category_id']-1]=='misc' or category_list[train_annotations[i]['category_id']-1]=='tool'):
-        train_list[train_annotations[i]['category_id']-1] += 1
+    final_train_img_list = []
+    final_train_model_list = []
+    final_train_category_list = []
+
+    for category in used_categories:
+        train_img_list = []
+        train_model_list= []
+        train_category_list = []
+
+        for i in range(len(train_annotations)):
+            if category_list[train_annotations[i]['category_id']-1]==category:
+                train_img_list.append(train_images[i]['img'])
+                train_model_list.append(train_annotations[i]['voxel'])
+                train_category_list.append(category_list[train_annotations[i]['category_id']-1]+'_pix3d')
+
+        final_train_img_list.append(train_img_list)
+        final_train_model_list.append(train_model_list)
+        final_train_category_list.append(train_category_list)
+
+    train_img_list,train_model_list,train_category_list = upsampling(final_train_img_list,final_train_model_list,final_train_category_list,upsample)
+    # print(train_category_list)
+    train_list = [len(cat_list) for cat_list in train_category_list]
+    # print(train_list)
 
     for i in range(len(test_annotations)):
         # if not(category_list[test_annotations[i]['category_id']-1]=='misc' or category_list[test_annotations[i]['category_id']-1]=='tool'):
         test_list[test_annotations[i]['category_id']-1] += 1
 
-    del train_list[category_list.index('misc')]
+    # del train_list[category_list.index('misc')]
     del test_list[category_list.index('misc')]
     del category_list[category_list.index('misc')]
-    del train_list[category_list.index('tool')]
+    # del train_list[category_list.index('tool')]
     del test_list[category_list.index('tool')]
 
     xticks = [i for i in range(len(used_categories))]
     plt.bar(xticks, train_list, color='b', width=0.9)
     plt.bar(xticks, test_list, bottom=train_list, color='g', width=0.9)
     plt.xticks(xticks, used_categories)
+    plt.title("Train-Test split of Classes in pix3D")
     plt.legend(['train','test'])
     plt.show()
 
@@ -301,14 +347,14 @@ def get_model(root_path, category, image):
             return os.path.join(root_path, item["model"])
     return None
 
-def get_train_test_splits(json_path):
+def get_train_test_splits(json_path,train_file, test_file):
     """
     :param filePath: pix3d.json path in dataset folder
     :return:
     """
 
     y = json.load(open(json_path))
-    train, test = get_train_test_indices()
+    train, test = get_train_test_indices(train_file, test_file)
     # # print(y)
     # print(train)
     # print(test)
@@ -373,16 +419,21 @@ if __name__ == '__main__':
     # mesh_mat.show()
 
 ##############################################################################################
-    # get_train_test_splits(pix3d_json_path)
+    # train_img_list,train_model_list,test_img_list, \
+    # test_model_list,train_category_list,test_category_list \
+    #     = get_train_test_splits(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_train_2.npy'),
+    #                                      os.path.join(os.path.dirname(__file__),'splits/pix3d_test_2.npy'))
+
+    # test_model_list,train_model_list, train_category_list = resample(test_model_list,train_model_list, train_category_list, random_state=0)
 
 ##############################################################################################
     # get_model_names_histogram(pix3d_json_path)
-    # train_test_split_json(pix3d_json_path)
+    # # train_test_split_json(pix3d_json_path)
     # get_train_test_model_names_histogram(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_train_2.npy'),
     #                                      os.path.join(os.path.dirname(__file__),'splits/pix3d_test_2.npy'))
 
-    # get_train_test_model_names_histogram_json(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_train.json'),
-    #                                      os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'))
+    get_train_test_model_names_histogram_json(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_train.json'),
+                                         os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'))
 
     get_train_test_histogram_json(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_train.json'),
-                                  os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'))
+                                  os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'), upsample=False)

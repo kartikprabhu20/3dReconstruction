@@ -19,6 +19,7 @@ from torchvision.transforms import ToTensor
 import Baseconfig
 import ModelManager
 import transform_utils
+from DatasetManager import DatasetType
 from Logging import Logger
 from Losses import Dice, BCE, FocalTverskyLoss, IOU
 from ModelManager import LossTypes
@@ -77,6 +78,14 @@ class BasePipeline:
         self.test_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
                                                        num_workers=self.config.num_workers, pin_memory=True)
 
+        empty_dataset = datasetManager.get_dataset(DatasetType.EMPTY)
+        emptydataset = empty_dataset.get_img_testset(transforms=test_transforms,images_per_category=self.config.test_images_per_category)
+        self.empty_loader = torch.utils.data.DataLoader(emptydataset, batch_size=self.config.batch_size, shuffle=False,
+                                                       num_workers=self.config.num_workers, pin_memory=True)
+
+        print(emptydataset.__len__())
+
+
 
     def setup_logger(self):
         self.logger = Logger(self.config.main_name, self.config.output_path + self.config.main_name).get_logger()
@@ -115,7 +124,7 @@ class BasePipeline:
         image = PIL.Image.open(plot_buf)
         return  ToTensor()(image)
 
-    def save_intermediate_obj(self, training_batch_index,input_images, local_labels, outputs, process = "val"):
+    def save_intermediate_obj(self, training_batch_index,input_images, local_labels, outputs, process = "val", threshold = 0):
         with torch.no_grad():
 
             output_path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy"
@@ -127,7 +136,7 @@ class BasePipeline:
             for i in range(0,save_count):
                 self.gen_plot(local_labels[i],savefig=True,path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original_"+str(i)+".png")
                 output_np = outputs[i].detach().cpu().numpy()
-                output_np = (output_np > threshold_otsu(output_np)).astype(int)
+                output_np = output_np > (threshold_otsu(output_np).astype(int) if threshold==0 else threshold)
                 output = torch.tensor(output_np)
                 self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_output_" + str(i) + ".png")
 

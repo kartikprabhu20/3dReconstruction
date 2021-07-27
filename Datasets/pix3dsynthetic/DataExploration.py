@@ -51,7 +51,11 @@ def delete_unusedfile(root_path):
 
 def get_classes(root_path):
     #return ["bed","bookcase","chair","desk","sofa","table","wardrobe"]
-    return [class_folder for class_folder in os.listdir(root_path+"/models/") if not class_folder.startswith('.')]
+    return get_classes_path(root_path+"/models/")
+
+def get_classes_path(path):
+    #return ["bed","bookcase","chair","desk","sofa","table","wardrobe"]
+    return [class_folder for class_folder in os.listdir(path) if not class_folder.startswith('.')]
 
 def getHistogram_fromarray(root_path, arrayList):
     labels = get_classes(root_path)
@@ -70,13 +74,13 @@ def get_all_models_classwise(root_path):
     class_list = []
     models_list = []
 
-    for label in get_classes(root_path):
+    for label in get_classes_path(os.path.join(root_path,"imgs")):
         class_array = []
         model_array = []
 
         labelPath = os.path.join(root_path+"models/", label)
         for folder in os.listdir(labelPath):
-            if folder =='.DS_Store':
+            if folder =='.DS_Store' or folder =='._.DS_Store':
                 continue
 
             class_array.append(label)
@@ -132,15 +136,15 @@ def split_dataset(input,output):
     return final_train_img,final_train_y,final_test_img,final_test_y
 
 
-def save_train_test_split(xtrain, ytrain, xtest, ytest):
-    file_name = "train_test_split.p"
+def save_train_test_split(xtrain, ytrain, xtest, ytest, fileNmae = "train_test_split.p"):
+    file_name = fileNmae
 
     open_file = open(file_name, "wb")
     pickle.dump({'train_x':xtrain, 'train_y': ytrain, 'test_x': xtest, 'test_y': ytest}
                 ,open(file_name, "wb"))
     open_file.close()
 
-def save_model_split(models_train, labels_train, models_test, labels_test):
+def save_model_split(models_train, labels_train, models_test, labels_test, file_name):
     '''
     example of models:'IKEA_DOMBAS', 'IKEA_PAX_2', 'IKEA_HEMNES'
     example of labels:'wardrobe', 'chair', 'desk'
@@ -151,7 +155,7 @@ def save_model_split(models_train, labels_train, models_test, labels_test):
     :param labels_test:
     :return:
     '''
-    file_name = "model_split.p"
+    file_name = file_name
     open_file = open(file_name, "wb")
     pickle.dump({'models_train':models_train, 'labels_train': labels_train,
                  'models_test':models_test, 'labels_test': labels_test}
@@ -178,6 +182,27 @@ def generate_train_test_split(root_path,model_train,label_train,models_test,labe
         for file in os.listdir(os.path.join(imgs_path,model_folder)):
             test_imgs.append(model_folder+'/'+file)
             test_output.append(model_folder)
+
+    return train_imgs, train_output, test_imgs, test_output
+
+def generate_train_test_split_modelwise(root_path,model_train,label_train,models_test,labels_test):
+
+    train_imgs = []
+    train_output = []
+
+    test_imgs = []
+    test_output = []
+
+    imgs_path = os.path.join(root_path,"imgs")
+    for i in range(0,len(model_train)):
+        img = label_train[i]+"/"+model_train[i]
+        train_imgs.append(img)
+        train_output.append( label_train[i]+"/"+model_train[i].split('/')[0])
+
+    for i in range(0,len(models_test)):
+        img = labels_test[i]+"/"+models_test[i]
+        test_imgs.append(img)
+        test_output.append(labels_test[i]+"/"+models_test[i].split('/')[0])
 
     return train_imgs, train_output, test_imgs, test_output
 
@@ -215,6 +240,81 @@ def get_train_test_histogram(root_path,train_img_list,test_img_list):
     plt.bar(xticks, train_list, color='b', width=0.9)
     plt.bar(xticks, test_list, bottom=train_list, color='g', width=0.9)
     plt.xticks(xticks, labels)
+    plt.title("Train-Test split of Models in S2R:3DFREE_V1")
+    plt.legend(['train','test'])
+    plt.show()
+
+
+def get_all_model_names(root_path):
+
+    model_path = os.path.join(root_path,"models")
+    model_names = set()
+    for label in get_classes(root_path):
+        labelPath = os.path.join(model_path,label)
+        for folder in os.listdir(labelPath):
+            model_names.add(label+"/"+folder)
+
+    # print(model_names)
+    # print(len(model_names))
+    return model_names
+
+def get_model_names_histogram(root_path):
+    imgs_path = os.path.join(root_path,"imgs")
+    model_names = list(get_all_model_names(root_path))
+    model_list = [0] * len(model_names)
+
+    for label in get_classes_path(imgs_path):
+        labelPath = os.path.join(imgs_path,label)
+        for folder in os.listdir(labelPath):
+            model_list[model_names.index(folder)] += len(os.listdir(os.path.join(labelPath,folder)))
+
+    xticks = [i for i in range(len(model_names))]
+    plt.bar(xticks, model_list, color='b')
+    plt.title("Models in s2r3dfree")
+    # plt.xticks(xticks, model_names)
+    # plt.legend(['Mode'])
+    plt.show()
+
+def get_all_models_grouped(root_path):
+    models_list = []
+    labels_list = []
+
+    model_path = os.path.join(root_path,"imgs")
+    for label in get_classes_path(os.path.join(root_path,"imgs")) :
+        labelPath = os.path.join(model_path,label)
+        for model in os.listdir(labelPath):
+            if model == ".DS_Store":
+                continue
+            model_indices = [model+'/'+file for file in os.listdir(os.path.join(labelPath,model))]
+            labels = [label for file in os.listdir(os.path.join(labelPath,model))]
+            models_list.append(model_indices)
+            labels_list.append(labels)
+    # print(indices_list)
+    return labels_list,models_list
+
+def get_train_test_model_names_histogram(root_path,train_model_list,test_model_list):
+
+    model_names = list(get_all_model_names(root_path))
+
+    print(len(list(set(train_model_list) & set(test_model_list)))) #confirm no intersections
+
+    train_list = [0] * len(model_names)
+    test_list = [0] * len(model_names)
+
+    for model in train_model_list:
+        train_list[model_names.index(model)] += 1
+
+    for model in test_model_list:
+        test_list[model_names.index(model)] += 1
+
+    print(len(train_list))
+    print(len(test_list))
+
+    xticks = [i for i in range(len(model_names))]
+    plt.bar(xticks, train_list, color='b')
+    plt.bar(xticks, test_list, bottom=train_list, color='g')
+    # plt.xticks(xticks, model_names)
+    plt.title("Train-Test split of Models in S2R:3DFREE_V1")
     plt.legend(['train','test'])
     plt.show()
 
@@ -252,7 +352,7 @@ if __name__ == '__main__':
 
 
 #########################################################
-    root_path = '/Users/apple/OVGU/Thesis/SynthDataset1/'
+    # root_path = '/Users/apple/OVGU/Thesis/SynthDataset1/'
     # label_list, model_list = get_all_models_classwise(root_path)
     # x,y,xt,yt = split_dataset(model_list,label_list)
     # print(x)
@@ -278,10 +378,48 @@ if __name__ == '__main__':
 #########################################################
 
 
-    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
-        "/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3dsynthetic/train_test_split.p")
-
-    get_train_test_histogram(root_path,train_img_list,test_img_list)
+    # train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+    #     "/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3dsynthetic/train_test_split.p")
+    #
+    # get_train_test_histogram(root_path,train_img_list,test_img_list)
 
 #########################################################
 
+    root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1/'
+    print(get_all_model_names(root_path))
+    # get_model_names_histogram(root_path)
+
+
+#########################################################
+    # root_path = '/Volumes/Prabhu/thesis/s2r3dfree_v1/'
+    # root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1/'
+    # label_list, model_list = get_all_models_classwise(root_path)
+    # x,y,xt,yt = split_dataset(model_list,label_list)
+    # file_name = "model_split_v1.p"
+    # save_model_split(x,y,xt,yt, file_name)
+    #
+    # model_train,label_train,models_test,labels_test = get_model_split(file_name) # gives only model, to get images of each model next line
+    # x,y,xt,yt = generate_train_test_split(root_path,model_train,label_train,models_test,labels_test)
+    # save_train_test_split(x,y,xt,yt,"train_test_split_classeswise_v1.p")
+    #
+    # train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+    #     "/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3dsynthetic/train_test_split_classeswise_v1.p")
+    # print(train_img_list[0])
+    # print(train_model_list[0])
+    # get_train_test_histogram(root_path,train_img_list,test_img_list)
+    # get_train_test_model_names_histogram(root_path,train_model_list,test_model_list)
+
+#########################################################
+
+    # label_list, img_list = get_all_models_grouped(root_path)
+    # x,y,xt,yt = split_dataset(img_list,label_list)
+    # x,y,xt,yt = generate_train_test_split_modelwise(root_path,x,y,xt,yt)
+    # save_train_test_split(x,y,xt,yt,"train_test_split_modelwise_v1.p")
+    #
+    # train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+    #     "/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3dsynthetic/train_test_split_modelwise_v1.p")
+    #
+    # get_train_test_histogram(root_path,train_img_list,test_img_list)
+    # get_train_test_model_names_histogram(root_path,train_model_list,test_model_list)
+
+    #########################################################

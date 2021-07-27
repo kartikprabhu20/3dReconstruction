@@ -7,6 +7,7 @@
 import glob
 import os
 import shutil
+import fnmatch
 
 from utils import interpolate_and_save
 
@@ -23,35 +24,18 @@ class Utility:
         if not os.path.exists(destination_path):
             os.mkdir(destination_path)
 
-        destination_img_path = destination_path +"/imgs"
-        destination_masks_path = destination_path +"/masks"
-        destination_depth_path = destination_path +"/depthmaps"
-        destination_model_path = destination_path +"/model"
-
-        if not os.path.exists(destination_img_path):
-            os.mkdir(destination_img_path)
-        if not os.path.exists(destination_masks_path):
-            os.mkdir(destination_masks_path)
-        if not os.path.exists(destination_depth_path):
-            os.mkdir(destination_depth_path)
-        if not os.path.exists(destination_model_path):
-            os.mkdir(destination_model_path)
-
+        destination_img_path = self.make_folder(destination_path +"/imgs")
+        destination_masks_path = self.make_folder(destination_path +"/masks")
+        destination_depth_path = self.make_folder(destination_path +"/depthmaps")
+        destination_model_path = self.make_folder(destination_path +"/model")
+        destination_normal_path = self.make_folder(destination_path +"/normal")
 
         for label in self.get_classes(root_path,model_folderName):
-            destination_img_label_path = os.path.join(destination_img_path,label)
-            destination_masks_label_path = os.path.join(destination_masks_path,label)
-            destination_depth_label_path = os.path.join(destination_depth_path,label)
-            destination_model_label_path = os.path.join(destination_model_path,label)
-
-            if not os.path.exists(destination_img_label_path):
-                os.mkdir(destination_img_label_path)
-            if not os.path.exists(destination_masks_label_path):
-                os.mkdir(destination_masks_label_path)
-            if not os.path.exists(destination_depth_label_path):
-                os.mkdir(destination_depth_label_path)
-            if not os.path.exists(destination_model_label_path):
-                os.mkdir(destination_model_label_path)
+            destination_img_label_path = self.make_folder(os.path.join(destination_img_path,label))
+            destination_masks_label_path = self.make_folder(os.path.join(destination_masks_path,label))
+            destination_depth_label_path = self.make_folder(os.path.join(destination_depth_path,label))
+            destination_model_label_path = self.make_folder(os.path.join(destination_model_path,label))
+            destination_normal_label_path = self.make_folder(os.path.join(destination_normal_path,label))
 
             labelPath = os.path.join(root_path +model_folderName+"/", label)
 
@@ -59,38 +43,52 @@ class Utility:
                 if folder =='.DS_Store':
                     continue
 
-                destination_folder_img_path = os.path.join(destination_img_label_path,folder)
-                destination_folder_mask_path = os.path.join(destination_masks_label_path,folder)
-                destination_folder_depth_path = os.path.join(destination_depth_label_path,folder)
-                destination_folder_model_path = os.path.join(destination_model_label_path,folder)
+                destination_folder_img_path = self.make_folder(os.path.join(destination_img_label_path,folder))
+                destination_folder_mask_path = self.make_folder(os.path.join(destination_masks_label_path,folder))
+                destination_folder_depth_path = self.make_folder(os.path.join(destination_depth_label_path,folder))
+                destination_folder_model_path = self.make_folder(os.path.join(destination_model_label_path,folder))
+                destination_folder_normal_path = self.make_folder(os.path.join(destination_normal_label_path,folder))
 
-                if not os.path.exists(destination_folder_img_path):
-                    os.mkdir(destination_folder_img_path)
-                if not os.path.exists(destination_folder_depth_path):
-                    os.mkdir(destination_folder_depth_path)
-                if not os.path.exists(destination_folder_mask_path):
-                    os.mkdir(destination_folder_mask_path)
-                if not os.path.exists(destination_folder_model_path):
-                    os.mkdir(destination_folder_model_path)
+                # model_folder_path = os.path.join(labelPath, folder)
+                # shutil.copyfile(os.path.join(model_folder_path,"model.obj"), os.path.join(destination_folder_model_path, "model.obj"))
+                # shutil.copyfile(os.path.join(model_folder_path,"voxel.mat"), os.path.join(destination_folder_model_path, "voxel.mat"))
 
-                model_folder_path = os.path.join(labelPath, folder)
-                shutil.copyfile(os.path.join(model_folder_path,"model.obj"), os.path.join(destination_folder_model_path, "model.obj"))
-                shutil.copyfile(os.path.join(model_folder_path,"voxel.mat"), os.path.join(destination_folder_model_path, "voxel.mat"))
+                # imgFolderPath  = os.path.join(labelPath, folder+'/img/')
+                imgFolderPath  = os.path.join(labelPath, folder)
 
-                imgFolderPath  = os.path.join(labelPath, folder+'/img/')
+                print(imgFolderPath)
+                fileCount = len(fnmatch.filter(os.listdir(imgFolderPath), '*.png'))
+                print(fileCount/5)
 
-                for filename in os.listdir(imgFolderPath):
-                    for i in range(1,16):
-                        if filename.__contains__(str(i)):
-                            if filename.__contains__("img"):
-                                shutil.copyfile(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_img_path, str(i)+".png"))
+                subscripts = ["_img","_normals","_id","_depth","_layer"]
+                for i in range(0,int(fileCount/5)):
+                    for sub in subscripts:
+                        filename = str(i)+sub+".png"
+                        print(filename)
 
+                        try:
+                            if filename.__contains__(str(i)):
+                                if filename.__contains__("img"):
+                                    # shutil.copyfile(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_img_path, str(i)+".png"))
+                                    shutil.move(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_img_path, str(i)+".png"))
                             if filename.__contains__("depth"):
-                                shutil.copyfile(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_depth_path, str(i)+".png"))
+                                shutil.move(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_depth_path, str(i)+".png"))
 
                             if filename.__contains__("layer"):
-                                shutil.copyfile(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_mask_path, str(i)+".png"))
+                                shutil.move(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_mask_path, str(i)+".png"))
 
+                            if filename.__contains__("normal"):
+                                shutil.move(os.path.join(imgFolderPath,filename), os.path.join(destination_folder_normal_path, str(i)+".png"))
+
+                            if filename.__contains__("id"):
+                                os.rename(os.path.join(imgFolderPath,filename), os.path.join(imgFolderPath, str(i)+".png"))
+                        except:
+                            print("error in "+ filename)
+
+    def make_folder(self, path):
+        if not os.path.exists(path):
+            os.mkdir(path)
+        return path
 
     def generate_voxels(self,root_path,model_foldername='models'):
         for label in self.get_classes(root_path,model_foldername):
@@ -113,14 +111,14 @@ class Utility:
                 interpolate_and_save(voxel_path,model_folder_path,size=128,mode='nearest')
 
 if __name__ == '__main__':
-    root_path = '/Users/apple/OVGU/Thesis/Dataset/pix3d/'
-    destination_path = '/Users/apple/OVGU/Thesis/SynthDataset2/'
+    root_path = '/Users/apple/OVGU/Thesis/s2r3dfree'
+    destination_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1/'
 
     # root = "/Users/apple/OVGU/Thesis/SynthDataset1/"
     # root='/nfs1/kprabhu/SynthDataset1/'
     # root = '/Users/apple/OVGU/Thesis/Dataset/pix3d/'
-    root='/nfs1/kprabhu/pix3d/'
+    # root='/nfs1/kprabhu/pix3d/'
 
     #Copy file
-    # Utility().copy_files_to_destination(root_path=root_path,destination_path=destination_path)
-    Utility().generate_voxels(root_path=root, model_foldername='model')
+    Utility().copy_files_to_destination(root_path=root_path,destination_path=destination_path,model_folderName="")
+    # Utility().generate_voxels(root_path=root, model_foldername='model')
