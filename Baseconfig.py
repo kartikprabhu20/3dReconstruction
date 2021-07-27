@@ -133,3 +133,6 @@ cfg.pix3d                                   = edict()
 cfg.pix3d.train_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_s1_train.json'
 cfg.pix3d.test_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_s1_test.json'
 cfg.upsample = True
+
+cfg.s2r3dfree                                   = edict()
+cfg.s2r3dfree.train_test_split = cfg.root_path+"/Datasets/pix3dsynthetic/train_test_split.p"
