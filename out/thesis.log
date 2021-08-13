@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  3 AUG 2021 09:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  13 AUG 2021 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -94,24 +94,58 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \Gin@req@height=\dimen147
 \Gin@req@width=\dimen148
 )
+(/usr/local/texlive/2021/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen149
+\captionmargin@=\dimen150
+\captionwidth=\dimen151
+\caption@tempdima=\dimen152
+\caption@indent=\dimen153
+\caption@parindent=\dimen154
+\caption@hangindent=\dimen155
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count193
+\c@continuedfloat=\count194
+)
+\c@KVtest=\count195
+\sf@farskip=\skip49
+\sf@captopadj=\dimen156
+\sf@capskip=\skip50
+\sf@nearskip=\skip51
+\c@subfigure=\count196
+\c@subfigure@save=\count197
+\c@lofdepth=\count198
+\c@subtable=\count199
+\c@subtable@save=\count266
+\c@lotdepth=\count267
+\sf@top=\skip52
+\sf@bottom=\skip53
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
 \MT@toks=\toks19
-\MT@count=\count193
+\MT@count=\count268
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen149
+\MT@outer@kern=\dimen157
 LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
-\MT@listname@count=\count194
+\MT@listname@count=\count269
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2021/03/14 v2.8c Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip49
+\MT@outer@space=\skip54
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -120,27 +154,27 @@ File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip50
-\bibsep=\skip51
+\bibhang=\skip55
+\bibsep=\skip56
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count195
+\c@NAT@ctr=\count270
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count196
+\etb@tempcnta=\count271
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip52
-\f@nch@O@elh=\skip53
-\f@nch@O@erh=\skip54
-\f@nch@O@olh=\skip55
-\f@nch@O@orh=\skip56
-\f@nch@O@elf=\skip57
-\f@nch@O@erf=\skip58
-\f@nch@O@olf=\skip59
-\f@nch@O@orf=\skip60
+\f@nch@headwidth=\skip57
+\f@nch@O@elh=\skip58
+\f@nch@O@erh=\skip59
+\f@nch@O@olh=\skip60
+\f@nch@O@orh=\skip61
+\f@nch@O@elf=\skip62
+\f@nch@O@erf=\skip63
+\f@nch@O@olf=\skip64
+\f@nch@O@orf=\skip65
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -155,18 +189,18 @@ Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen150
+\col@sep=\dimen158
 \ar@mcellbox=\box47
-\extrarowheight=\dimen151
+\extrarowheight=\dimen159
 \NC@list=\toks20
-\extratabsurround=\skip61
-\backup@length=\skip62
+\extratabsurround=\skip66
+\backup@length=\skip67
 \ar@cellbox=\box48
 )
 \everycr=\toks21
-\minrowclearance=\skip63
+\minrowclearance=\skip68
 )
-\rownum=\count197
+\rownum=\count272
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -179,40 +213,40 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen152
-\lightrulewidth=\dimen153
-\cmidrulewidth=\dimen154
-\belowrulesep=\dimen155
-\belowbottomsep=\dimen156
-\aboverulesep=\dimen157
-\abovetopsep=\dimen158
-\cmidrulesep=\dimen159
-\cmidrulekern=\dimen160
-\defaultaddspace=\dimen161
-\@cmidla=\count198
-\@cmidlb=\count199
-\@aboverulesep=\dimen162
-\@belowrulesep=\dimen163
-\@thisruleclass=\count266
-\@lastruleclass=\count267
-\@thisrulewidth=\dimen164
+\heavyrulewidth=\dimen160
+\lightrulewidth=\dimen161
+\cmidrulewidth=\dimen162
+\belowrulesep=\dimen163
+\belowbottomsep=\dimen164
+\aboverulesep=\dimen165
+\abovetopsep=\dimen166
+\cmidrulesep=\dimen167
+\cmidrulekern=\dimen168
+\defaultaddspace=\dimen169
+\@cmidla=\count273
+\@cmidlb=\count274
+\@aboverulesep=\dimen170
+\@belowrulesep=\dimen171
+\@thisruleclass=\count275
+\@lastruleclass=\count276
+\@thisrulewidth=\dimen172
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen165
-\TX@old@table=\dimen166
-\TX@old@col=\dimen167
-\TX@target=\dimen168
-\TX@delta=\dimen169
-\TX@cols=\count268
+\TX@col@width=\dimen173
+\TX@old@table=\dimen174
+\TX@old@col=\dimen175
+\TX@target=\dimen176
+\TX@delta=\dimen177
+\TX@cols=\count277
 \TX@ftn=\toks22
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip64
-\multirow@cntb=\count269
-\multirow@dima=\skip65
-\bigstrutjot=\dimen170
+\multirow@colwidth=\skip69
+\multirow@cntb=\count278
+\multirow@dima=\skip70
+\bigstrutjot=\dimen178
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
@@ -222,23 +256,23 @@ Package: mathtools 2021/03/18 v1.25 mathematical typesetting tools
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count270
-\calc@Bcount=\count271
-\calc@Adimen=\dimen171
-\calc@Bdimen=\dimen172
-\calc@Askip=\skip66
-\calc@Bskip=\skip67
+\calc@Acount=\count279
+\calc@Bcount=\count280
+\calc@Adimen=\dimen179
+\calc@Bdimen=\dimen180
+\calc@Askip=\skip71
+\calc@Bskip=\skip72
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count272
-\calc@Cskip=\skip68
+\calc@Ccount=\count281
+\calc@Cskip=\skip73
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip69
+\@mathmargin=\skip74
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -247,49 +281,49 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
-\ex@=\dimen173
+\ex@=\dimen181
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen174
+\pmbraise@=\dimen182
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count273
+\inf@bad=\count282
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count274
-\leftroot@=\count275
+\uproot@=\count283
+\leftroot@=\count284
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count276
-\DOTSCASE@=\count277
+\classnum@=\count285
+\DOTSCASE@=\count286
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box49
 \strutbox@=\box50
-\big@size=\dimen175
+\big@size=\dimen183
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count278
-\c@MaxMatrixCols=\count279
+\macc@depth=\count287
+\c@MaxMatrixCols=\count288
 \dotsspace@=\muskip16
-\c@parentequation=\count280
-\dspbrk@lvl=\count281
+\c@parentequation=\count289
+\dspbrk@lvl=\count290
 \tag@help=\toks24
-\row@=\count282
-\column@=\count283
-\maxfields@=\count284
+\row@=\count291
+\column@=\count292
+\maxfields@=\count293
 \andhelp@=\toks25
-\eqnshift@=\dimen176
-\alignsep@=\dimen177
-\tagshift@=\dimen178
-\tagwidth@=\dimen179
-\totwidth@=\dimen180
-\lineht@=\dimen181
+\eqnshift@=\dimen184
+\alignsep@=\dimen185
+\tagshift@=\dimen186
+\tagwidth@=\dimen187
+\totwidth@=\dimen188
+\lineht@=\dimen189
 \@envbody=\toks26
-\multlinegap=\skip70
-\multlinetaggap=\skip71
+\multlinegap=\skip75
+\multlinetaggap=\skip76
 \mathdisplay@stack=\toks27
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
@@ -298,17 +332,17 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count285
-\l_MT_multwidth_dim=\dimen182
-\origjot=\skip72
-\l_MT_shortvdotswithinadjustabove_dim=\dimen183
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen184
-\l_MT_above_intertext_sep=\dimen185
-\l_MT_below_intertext_sep=\dimen186
-\l_MT_above_shortintertext_sep=\dimen187
-\l_MT_below_shortintertext_sep=\dimen188
+\g_MT_multlinerow_int=\count294
+\l_MT_multwidth_dim=\dimen190
+\origjot=\skip77
+\l_MT_shortvdotswithinadjustabove_dim=\dimen191
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen192
+\l_MT_above_intertext_sep=\dimen193
+\l_MT_below_intertext_sep=\dimen194
+\l_MT_above_shortintertext_sep=\dimen195
+\l_MT_below_shortintertext_sep=\dimen196
 \xmathstrut@box=\box51
-\xmathstrut@dim=\dimen189
+\xmathstrut@dim=\dimen197
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
@@ -317,9 +351,9 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks30
 \thm@notefont=\toks31
 \thm@headpunct=\toks32
-\thm@preskip=\skip73
-\thm@postskip=\skip74
-\thm@headsep=\skip75
+\thm@preskip=\skip78
+\thm@postskip=\skip79
+\thm@headsep=\skip80
 \dth@everypar=\toks33
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -347,8 +381,8 @@ Package: tcolorbox 2020/10/09 version 4.42 text color boxes
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
 \pgfutil@everybye=\toks34
-\pgfutil@tempdima=\dimen190
-\pgfutil@tempdimb=\dimen191
+\pgfutil@tempdima=\dimen198
+\pgfutil@tempdimb=\dimen199
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
@@ -372,26 +406,26 @@ Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
 ode.tex
 \pgfkeys@tmptoks=\toks37
 ))
-\pgf@x=\dimen192
-\pgf@y=\dimen193
-\pgf@xa=\dimen194
-\pgf@ya=\dimen195
-\pgf@xb=\dimen196
-\pgf@yb=\dimen197
-\pgf@xc=\dimen198
-\pgf@yc=\dimen199
-\pgf@xd=\dimen256
-\pgf@yd=\dimen257
+\pgf@x=\dimen256
+\pgf@y=\dimen257
+\pgf@xa=\dimen258
+\pgf@ya=\dimen259
+\pgf@xb=\dimen260
+\pgf@yb=\dimen261
+\pgf@xc=\dimen262
+\pgf@yc=\dimen263
+\pgf@xd=\dimen264
+\pgf@yd=\dimen265
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count286
-\c@pgf@countb=\count287
-\c@pgf@countc=\count288
-\c@pgf@countd=\count289
+\c@pgf@counta=\count295
+\c@pgf@countb=\count296
+\c@pgf@countc=\count297
+\c@pgf@countd=\count298
 \t@pgf@toka=\toks38
 \t@pgf@tokb=\toks39
 \t@pgf@tokc=\toks40
-\pgf@sys@id@count=\count290
+\pgf@sys@id@count=\count299
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
@@ -409,8 +443,8 @@ File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfsyssoftpath@smallbuffer@items=\count291
-\pgfsyssoftpath@bigbuffer@items=\count292
+\pgfsyssoftpath@smallbuffer@items=\count300
+\pgfsyssoftpath@bigbuffer@items=\count301
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -422,8 +456,8 @@ Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen258
-\pgfmath@count=\count293
+\pgfmath@dimen=\dimen266
+\pgfmath@count=\count302
 \pgfmath@box=\box53
 \pgfmath@toks=\toks41
 \pgfmath@stack@operand=\toks42
@@ -448,37 +482,37 @@ code.tex)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count294
+\c@pgfmathroundto@lastzeros=\count303
 )) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
 File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@picminx=\dimen259
-\pgf@picmaxx=\dimen260
-\pgf@picminy=\dimen261
-\pgf@picmaxy=\dimen262
-\pgf@pathminx=\dimen263
-\pgf@pathmaxx=\dimen264
-\pgf@pathminy=\dimen265
-\pgf@pathmaxy=\dimen266
-\pgf@xx=\dimen267
-\pgf@xy=\dimen268
-\pgf@yx=\dimen269
-\pgf@yy=\dimen270
-\pgf@zx=\dimen271
-\pgf@zy=\dimen272
+\pgf@picminx=\dimen267
+\pgf@picmaxx=\dimen268
+\pgf@picminy=\dimen269
+\pgf@picmaxy=\dimen270
+\pgf@pathminx=\dimen271
+\pgf@pathmaxx=\dimen272
+\pgf@pathminy=\dimen273
+\pgf@pathmaxy=\dimen274
+\pgf@xx=\dimen275
+\pgf@xy=\dimen276
+\pgf@yx=\dimen277
+\pgf@yy=\dimen278
+\pgf@zx=\dimen279
+\pgf@zy=\dimen280
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
 ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@path@lastx=\dimen273
-\pgf@path@lasty=\dimen274
+\pgf@path@lastx=\dimen281
+\pgf@path@lasty=\dimen282
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
 File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@shorten@end@additional=\dimen275
-\pgf@shorten@start@additional=\dimen276
+\pgf@shorten@end@additional=\dimen283
+\pgf@shorten@start@additional=\dimen284
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
@@ -486,19 +520,19 @@ File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \pgfpic=\box54
 \pgf@hbox=\box55
 \pgf@layerbox@main=\box56
-\pgf@picture@serial@count=\count295
+\pgf@picture@serial@count=\count304
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgflinewidth=\dimen277
+\pgflinewidth=\dimen285
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
 File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@pt@x=\dimen278
-\pgf@pt@y=\dimen279
-\pgf@pt@temp=\dimen280
+\pgf@pt@x=\dimen286
+\pgf@pt@y=\dimen287
+\pgf@pt@temp=\dimen288
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
 e.tex
@@ -515,14 +549,14 @@ File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
 File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfarrowsep=\dimen281
+\pgfarrowsep=\dimen289
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
 e.tex
 File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@max=\dimen282
-\pgf@sys@shading@range@num=\count296
-\pgf@shadingcount=\count297
+\pgf@max=\dimen290
+\pgf@sys@shading@range@num=\count305
+\pgf@shadingcount=\count306
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -561,8 +595,8 @@ File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
 Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@nodesepstart=\dimen283
-\pgf@nodesepend=\dimen284
+\pgf@nodesepstart=\dimen291
+\pgf@nodesepend=\dimen292
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
@@ -583,9 +617,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box60
 \tcb@lowerbox=\box61
 \tcb@phantombox=\box62
-\c@tcbbreakpart=\count298
-\c@tcblayer=\count299
-\c@tcolorbox@number=\count300
+\c@tcbbreakpart=\count307
+\c@tcblayer=\count308
+\c@tcolorbox@number=\count309
 \tcb@temp=\box63
 \tcb@temp=\box64
 \tcb@temp=\box65
@@ -596,58 +630,55 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen285
-\captionmargin@=\dimen286
-\captionwidth=\dimen287
-\caption@tempdima=\dimen288
-\caption@indent=\dimen289
-\caption@parindent=\dimen290
-\caption@hangindent=\dimen291
-Package caption Info: Standard document class detected.
-)
-\c@caption@flags=\count301
-\c@continuedfloat=\count302
-)
-\c@subfigure=\count303
-\c@subtable=\count304
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/silence/silence.sty
+/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty:62: Package
+ subcaption Error: This package can't be used in cooperation
+(subcaption)                with the subfig package.
+
+See the subcaption package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 \subcaption@CheckCompatibility
+                                   
+If you do not understand this error, please take a closer look
+at the documentation of the `subcaption' package, especially the
+section about errors.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/silence/silence.sty
 Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
 sages
-\sl@Save=\count305
-\sl@StateNumber=\count306
-\sl@MessageCount=\count307
-\sl@Casualties=\count308
+\sl@Save=\count310
+\sl@StateNumber=\count311
+\sl@MessageCount=\count312
+\sl@Casualties=\count313
 \sl@Filter=\toks46
 \sl@Message=\toks47
 \sl@UnexpandedMessage=\toks48
 \sl@Mess@ge=\toks49
-\sl@WarningCount=\count309
-\sl@WarningNumber=\count310
-\sl@WarningCasualties=\count311
+\sl@WarningCount=\count314
+\sl@WarningNumber=\count315
+\sl@WarningCasualties=\count316
 \sl@TempBOW=\toks50
 \sl@BankOfWarnings=\toks51
 LaTeX Info: Redefining \GenericWarning on input line 433.
-\sl@ErrorCount=\count312
-\sl@ErrorNumber=\count313
-\sl@ErrorCasualties=\count314
+\sl@ErrorCount=\count317
+\sl@ErrorNumber=\count318
+\sl@ErrorCasualties=\count319
 \sl@TempBOE=\toks52
 \sl@BankOfErrors=\toks53
 LaTeX Info: Redefining \GenericError on input line 601.
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip76
-\enit@outerparindent=\dimen292
+\labelindent=\skip81
+\enit@outerparindent=\dimen293
 \enit@toks=\toks54
 \enit@inbox=\box67
-\enit@count@id=\count315
-\enitdp@description=\count316
+\enit@count@id=\count320
+\enitdp@description=\count321
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/libertine/biolinum.sty
 Package: biolinum 2020/03/26 (Bob Tennent) Supports Biolinum fonts for all LaTe
@@ -667,7 +698,7 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks55
 \XKV@tempa@toks=\toks56
 )
-\XKV@depth=\count317
+\XKV@depth=\count322
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
@@ -691,7 +722,7 @@ LaTeX Info: Redefining \textulc on input line 49.
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/marginnote/marginnote.sty
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
-\c@mn@abspage=\count318
+\c@mn@abspage=\count323
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
@@ -703,8 +734,8 @@ Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
 Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen293
-\pgffor@skip=\dimen294
+\pgffor@iter=\dimen294
+\pgffor@skip=\dimen295
 \pgffor@stack=\toks57
 \pgffor@toks=\toks58
 ))
@@ -715,57 +746,57 @@ Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count319
-\pgfplotmarksize=\dimen295
+\pgf@plot@mark@count=\count324
+\pgfplotmarksize=\dimen296
 )
-\tikz@lastx=\dimen296
-\tikz@lasty=\dimen297
-\tikz@lastxsaved=\dimen298
-\tikz@lastysaved=\dimen299
-\tikz@lastmovetox=\dimen300
-\tikz@lastmovetoy=\dimen301
-\tikzleveldistance=\dimen302
-\tikzsiblingdistance=\dimen303
+\tikz@lastx=\dimen297
+\tikz@lasty=\dimen298
+\tikz@lastxsaved=\dimen299
+\tikz@lastysaved=\dimen300
+\tikz@lastmovetox=\dimen301
+\tikz@lastmovetoy=\dimen302
+\tikzleveldistance=\dimen303
+\tikzsiblingdistance=\dimen304
 \tikz@figbox=\box68
 \tikz@figbox@bg=\box69
 \tikz@tempbox=\box70
 \tikz@tempbox@bg=\box71
-\tikztreelevel=\count320
-\tikznumberofchildren=\count321
-\tikznumberofcurrentchild=\count322
-\tikz@fig@count=\count323
+\tikztreelevel=\count325
+\tikznumberofchildren=\count326
+\tikznumberofcurrentchild=\count327
+\tikz@fig@count=\count328
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count324
-\pgfmatrixcurrentcolumn=\count325
-\pgf@matrix@numberofcolumns=\count326
+\pgfmatrixcurrentrow=\count329
+\pgfmatrixcurrentcolumn=\count330
+\pgf@matrix@numberofcolumns=\count331
 )
-\tikz@expandcount=\count327
+\tikz@expandcount=\count332
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 )))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count328
+\lst@mode=\count333
 \lst@gtempboxa=\box72
 \lst@token=\toks59
-\lst@length=\count329
-\lst@currlwidth=\dimen304
-\lst@column=\count330
-\lst@pos=\count331
-\lst@lostspace=\dimen305
-\lst@width=\dimen306
-\lst@newlines=\count332
-\lst@lineno=\count333
-\lst@maxwidth=\dimen307
+\lst@length=\count334
+\lst@currlwidth=\dimen305
+\lst@column=\count335
+\lst@pos=\count336
+\lst@lostspace=\dimen306
+\lst@width=\dimen307
+\lst@newlines=\count337
+\lst@lineno=\count338
+\lst@maxwidth=\dimen308
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count334
-\lst@skipnumbers=\count335
+\c@lstnumber=\count339
+\lst@skipnumbers=\count340
 \lst@framebox=\box73
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
@@ -775,7 +806,7 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count336
+\c@float@type=\count341
 \float@exts=\toks60
 \float@box=\box74
 \@float@everytoks=\toks61
@@ -783,8 +814,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen308
-\c@nlinenum=\count337
+\rotheadsize=\dimen309
+\c@nlinenum=\count342
 \TeXr@lab=\toks62
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/adjustbox/adjustbox.sty
@@ -801,34 +832,34 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box76
 )
-\tc@llx=\dimen309
-\tc@lly=\dimen310
-\tc@urx=\dimen311
-\tc@ury=\dimen312
+\tc@llx=\dimen310
+\tc@lly=\dimen311
+\tc@urx=\dimen312
+\tc@ury=\dimen313
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen313
-\adjbox@Height=\dimen314
-\adjbox@Depth=\dimen315
-\adjbox@Totalheight=\dimen316
-\adjbox@pwidth=\dimen317
-\adjbox@pheight=\dimen318
-\adjbox@pdepth=\dimen319
-\adjbox@ptotalheight=\dimen320
+\adjbox@Width=\dimen314
+\adjbox@Height=\dimen315
+\adjbox@Depth=\dimen316
+\adjbox@Totalheight=\dimen317
+\adjbox@pwidth=\dimen318
+\adjbox@pheight=\dimen319
+\adjbox@pdepth=\dimen320
+\adjbox@ptotalheight=\dimen321
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count338
+\c@checkoddpage=\count343
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box77
-\sift@deathcycles=\count339
-\@vwid@loff=\dimen321
-\@vwid@roff=\dimen322
+\sift@deathcycles=\count344
+\@vwid@loff=\dimen322
+\@vwid@roff=\dimen323
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/datatool/datatool.sty
 Package: datatool 2019/09/27 v2.32 (NLCT)
@@ -841,7 +872,7 @@ Package: xfor 2009/02/05 v1.05 (NLCT)
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count340
+\c@su@anzahl=\count345
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2019/09/27 v2.32 (NLCT)
@@ -855,19 +886,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count341
+\actioncount=\count346
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count342
-\FP@xia=\count343
-\FP@xib=\count344
-\FP@xfa=\count345
-\FP@xfb=\count346
-\FP@rega=\count347
-\FP@regb=\count348
-\FP@regs=\count349
-\FP@times=\count350
+\FP@xs=\count347
+\FP@xia=\count348
+\FP@xib=\count349
+\FP@xfa=\count350
+\FP@xfb=\count351
+\FP@rega=\count352
+\FP@regb=\count353
+\FP@regs=\count354
+\FP@times=\count355
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -886,7 +917,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count351
+\FPseed=\count356
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -898,31 +929,31 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks63
-\@dtl@tmpcount=\count352
-\dtl@tmplength=\skip77
-\dtl@sortresult=\count353
-\@dtl@numgrpsepcount=\count354
-\@dtl@datatype=\count355
-\dtl@codeA=\count356
-\dtl@codeB=\count357
-\@dtl@foreach@level=\count358
+\@dtl@tmpcount=\count357
+\dtl@tmplength=\skip82
+\dtl@sortresult=\count358
+\@dtl@numgrpsepcount=\count359
+\@dtl@datatype=\count360
+\dtl@codeA=\count361
+\dtl@codeB=\count362
+\@dtl@foreach@level=\count363
 )
-\dtlcolumnnum=\count359
-\dtlrownum=\count360
+\dtlcolumnnum=\count364
+\dtlrownum=\count365
 \@dtl@before=\toks64
 \@dtl@after=\toks65
 \@dtl@colhead=\toks66
 \dtlcurrentrow=\toks67
 \dtlbeforerow=\toks68
 \dtlafterrow=\toks69
-\dtlforeachlevel=\count361
-\c@DTLrowi=\count362
-\c@DTLrowii=\count363
-\c@DTLrowiii=\count364
-\c@DTLrow=\count365
-\dtl@rowi=\count366
-\dtl@rowii=\count367
-\dtl@rowiii=\count368
+\dtlforeachlevel=\count366
+\c@DTLrowi=\count367
+\c@DTLrowii=\count368
+\c@DTLrowiii=\count369
+\c@DTLrow=\count370
+\dtl@rowi=\count371
+\dtl@rowii=\count372
+\dtl@rowiii=\count373
 \@dtl@curi=\toks70
 \@dtl@previ=\toks71
 \@dtl@nexti=\toks72
@@ -932,7 +963,7 @@ Package: fp-eval 1995/04/03
 \@dtl@curiii=\toks76
 \@dtl@previii=\toks77
 \@dtl@nextiii=\toks78
-\@dtl@elements=\count369
+\@dtl@elements=\count374
 \@dtl@list=\toks79
 \@dtl@rowa=\toks80
 \@dtl@rowb=\toks81
@@ -940,22 +971,22 @@ Package: fp-eval 1995/04/03
 \@dtl@toksB=\toks83
 \@dtl@write=\write6
 \@dtl@read=\read4
-\dtl@entrycr=\count370
-\dtl@omitlines=\count371
+\dtl@entrycr=\count375
+\dtl@omitlines=\count376
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2021/03/24 3.56 The Babel package
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2021/03/24 3.56 Babel common definitions
-\babel@savecnt=\count372
-\U@D=\dimen323
+\babel@savecnt=\count377
+\U@D=\dimen324
 \l@babelnohyphens=\language87
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read5
 )
-\bbl@dirlevel=\count373
+\bbl@dirlevel=\count378
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
@@ -1021,9 +1052,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen324
-\Hy@linkcounter=\count374
-\Hy@pagecounter=\count375
+\@linkdim=\dimen325
+\Hy@linkcounter=\count379
+\Hy@pagecounter=\count380
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
@@ -1039,7 +1070,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count376
+\Hy@SavedSpaceFactor=\count381
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
@@ -1082,16 +1113,16 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 ))
-\c@Hy@tempcnt=\count377
+\c@Hy@tempcnt=\count382
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen325
+\XeTeXLinkMargin=\dimen326
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 )
-\Fld@menulength=\count378
-\Field@Width=\dimen326
-\Fld@charsize=\dimen327
+\Fld@menulength=\count383
+\Field@Width=\dimen327
+\Fld@charsize=\dimen328
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -1107,17 +1138,17 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count379
-\c@Item=\count380
-\c@Hfootnote=\count381
+\Hy@abspage=\count384
+\c@Item=\count385
+\c@Hfootnote=\count386
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
-\Fld@listcount=\count382
-\c@bookmark@seq@number=\count383
-\Hy@SectionHShift=\skip78
+\Fld@listcount=\count387
+\c@bookmark@seq@number=\count388
+\Hy@SectionHShift=\skip83
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2020/03/19 v4.46 (NLCT)
@@ -1145,9 +1176,9 @@ Package: translator 2020-08-03 v1.12c Easy translation of strings in LaTeX
 lish.ldf
 File: glossaries-english.ldf 2014/11/23 v1.0
 )
-\gls@level=\count384
+\gls@level=\count389
 \@gls@tmpb=\toks86
-\gls@tmplen=\skip79
+\gls@tmplen=\skip84
 \glskeylisttok=\toks87
 \glslabeltok=\toks88
 \glsshorttok=\toks89
@@ -1160,83 +1191,85 @@ Package: glossary-hypernav 2020/03/19 v4.46 (NLCT)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
 ty
 Package: glossary-list 2020/03/19 v4.46 (NLCT)
-\glslistdottedwidth=\skip80
+\glslistdottedwidth=\skip85
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
 ty
 Package: glossary-long 2020/03/19 v4.46 (NLCT)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip81
-\LTright=\skip82
-\LTpre=\skip83
-\LTpost=\skip84
-\LTchunksize=\count385
-\LTcapwidth=\dimen328
+\LTleft=\skip86
+\LTright=\skip87
+\LTpre=\skip88
+\LTpost=\skip89
+\LTchunksize=\count390
+\LTcapwidth=\dimen329
 \LT@head=\box78
 \LT@firsthead=\box79
 \LT@foot=\box80
 \LT@lastfoot=\box81
-\LT@cols=\count386
-\LT@rows=\count387
-\c@LT@tables=\count388
-\c@LT@chunks=\count389
+\LT@cols=\count391
+\LT@rows=\count392
+\c@LT@tables=\count393
+\c@LT@chunks=\count394
 \LT@p@ftn=\toks91
 )
-\glsdescwidth=\skip85
-\glspagelistwidth=\skip86
+\glsdescwidth=\skip90
+\glspagelistwidth=\skip91
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-super.
 sty
 Package: glossary-super 2020/03/19 v4.46 (NLCT)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
-\c@tracingst=\count390
-\ST@wd=\dimen329
-\ST@rightskip=\skip87
-\ST@leftskip=\skip88
-\ST@parfillskip=\skip89
-\ST@pageleft=\dimen330
-\ST@headht=\dimen331
-\ST@tailht=\dimen332
-\ST@pagesofar=\dimen333
-\ST@pboxht=\dimen334
-\ST@lineht=\dimen335
-\ST@prevht=\dimen336
-\ST@toadd=\dimen337
-\ST@dimen=\dimen338
+\c@tracingst=\count395
+\ST@wd=\dimen330
+\ST@rightskip=\skip92
+\ST@leftskip=\skip93
+\ST@parfillskip=\skip94
+\ST@pageleft=\dimen331
+\ST@headht=\dimen332
+\ST@tailht=\dimen333
+\ST@pagesofar=\dimen334
+\ST@pboxht=\dimen335
+\ST@lineht=\dimen336
+\ST@prevht=\dimen337
+\ST@toadd=\dimen338
+\ST@dimen=\dimen339
 \ST@pbox=\box82
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
 ty
 Package: glossary-tree 2020/03/19 v4.46 (NLCT)
-\glstreeindent=\skip90
+\glstreeindent=\skip95
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/morewrites/morewrites.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2021-02-18 L3 programming layer (loader) 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count391
+\l__color_backend_stack_int=\count396
 \l__pdf_internal_box=\box83
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/morewrites/primargs.sty
 Package: primargs 2018/12/29 Parsing arguments of primitives
 )
 Package: morewrites 2018/12/29 Always room for a new write
-\g__morewrites_later_int=\count392
-\l__morewrites_user_int=\count393
+\g__morewrites_later_int=\count397
+\l__morewrites_user_int=\count398
 \g__morewrites_iow=\write7
 \g__morewrites_ior=\read6
-\g__morewrites_group_level_int=\count394
+\g__morewrites_group_level_int=\count399
 \g__morewrites_shipout_box=\box84
-\l__morewrites_collect_next_int=\count395
-\g__morewrites_alloc_write_int=\count396
+\l__morewrites_collect_next_int=\count400
+\g__morewrites_alloc_write_int=\count401
 )
-\chapnolen=\skip91
-\chapparlen=\skip92
+\chapnolen=\skip96
+\chapparlen=\skip97
 \chapno=\box85
 
+\bibdata{literature/thesis}
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.bbl)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.42'
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
@@ -1256,8 +1289,8 @@ Library (tcolorbox): 'tcbskins.code.tex' version '4.42'
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.42'
 ))
-\c@tcb@cnt@definition=\count397
-\c@tcb@cnt@theorem=\count398
+\c@tcb@cnt@definition=\count402
+\c@tcb@cnt@theorem=\count403
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1314,6 +1347,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
+Package nag Info: Attempting subfig hack.
+Package nag Info: OK, equivalent to subfig 1.3, redefining \sf@@@subfloat.
 Package nag Info: pgf.sty is broken: disabling dollar check on input line 79.
 Package nag Info: Command \RaggedLeft not defined, skipping amendment on input 
 line 79.
@@ -1356,16 +1391,16 @@ Package nag Info: Command \RaggedRight not defined, skipping amendment on input
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count399
-\scratchdimen=\dimen339
+\scratchcounter=\count404
+\scratchdimen=\dimen340
 \scratchbox=\box90
-\nofMPsegments=\count400
-\nofMParguments=\count401
+\nofMPsegments=\count405
+\nofMParguments=\count406
 \everyMPshowfont=\toks92
-\MPscratchCnt=\count402
-\MPscratchDim=\dimen340
-\MPnumerator=\count403
-\makeMPintoPDFobject=\count404
+\MPscratchCnt=\count407
+\MPscratchDim=\dimen341
+\MPnumerator=\count408
+\makeMPintoPDFobject=\count409
 \everyMPtoPDFconversion=\toks93
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1376,6 +1411,18 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
+)
+Package caption Info: supertabular package is loaded.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Info: Redefining \microtypecontext on input line 79.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -1392,20 +1439,9 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: float package is loaded.
-Package caption Info: hyperref package is loaded.
-Package caption Info: listings package is loaded.
-Package caption Info: longtable package is loaded.
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
-)
-Package caption Info: supertabular package is loaded.
-Package caption Info: End \AtBeginDocument code.
-\c@mv@tabular=\count405
-\c@mv@boldtabular=\count406
-\c@lstlisting=\count407
+\c@mv@tabular=\count410
+\c@mv@boldtabular=\count411
+\c@lstlisting=\count412
 Package hyperref Info: Link coloring ON on input line 79.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1418,7 +1454,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count408
+\c@section@level=\count413
 )
 LaTeX Info: Redefining \ref on input line 79.
 LaTeX Info: Redefining \pageref on input line 79.
@@ -1435,7 +1471,7 @@ Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
 t line 79.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
 line 79.
-<files//ovgu.pdf, id=179, 277.00789pt x 45.76799pt>
+<files//ovgu.pdf, id=220, 277.00789pt x 45.76799pt>
 File: files//ovgu.pdf Graphic file (type pdf)
 <use files//ovgu.pdf>
 Package pdftex.def Info: files//ovgu.pdf  used on input line 97.
@@ -1676,6 +1712,8 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 
 \openout7 = `thesis.mw'.
 
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 12.0pt on input line 35.
 )
 \tf@toc=\write25
 \openout7 = `thesis.toc'.
@@ -1689,7 +1727,23 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.lof
 
-Package natbib Warning: Citation `pix3d' on page ix undefined on input line 5.
+Package natbib Warning: Citation `gartnerreport' on page ix undefined on input 
+line 3.
+
+
+Package natbib Warning: Citation `Hoang2019ADL' on page ix undefined on input l
+ine 4.
+
+
+Package natbib Warning: Citation `pix3d' on page ix undefined on input line 7.
+
+
+Package natbib Warning: Citation `Xie_2019' on page ix undefined on input line 
+9.
+
+
+Package natbib Warning: Citation `Han2021ImageBased3O' on page ix undefined on 
+input line 10.
 
 )
 \tf@lof=\write26
@@ -1836,10 +1890,75 @@ Package natbib Warning: Citation `pix3d' on page ix undefined on input line 5.
 
 (./text/introduction.tex
 Chapter 1.
+
+Package natbib Warning: Citation `gartnerreport' on page 1 undefined on input l
+ine 14.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-cha
+rt.jpg, id=406, 1407.75937pt x 831.105pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartne
+r-chart.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner
+-chart.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/intro/Gartner-chart.jpg  used on input line 19.
+(pdftex.def)             Requested size: 426.79135pt x 251.95851pt.
+
+Package natbib Warning: Citation `gartnerreport' on page 1 undefined on input l
+ine 20.
+
+
+Package natbib Warning: Citation `gartnerreport' on page 1 undefined on input l
+ine 20.
+
+
+Package natbib Warning: Citation `deng2019accurate' on page 1 undefined on inpu
+t line 28.
+
+
+Package natbib Warning: Citation `Guo20173DFaceNetRD' on page 1 undefined on in
+put line 28.
+
+
+Package natbib Warning: Citation `9210569' on page 1 undefined on input line 28
+.
+
+
+Package natbib Warning: Citation `richardson20163d' on page 1 undefined on inpu
+t line 28.
+
+
+Package natbib Warning: Citation `Richardson2017LearningDF' on page 1 undefined
+ on input line 28.
+
+
+Package natbib Warning: Citation `Denninger20203DSR' on page 1 undefined on inp
+ut line 29.
+
+
+Package natbib Warning: Citation `Song2017SemanticSC' on page 1 undefined on in
+put line 29.
+
+
+Package natbib Warning: Citation `LiSilhouetteAssisted3O' on page 1 undefined o
+n input line 29.
+
+
+Package natbib Warning: Citation `Shin20193DSR' on page 1 undefined on input li
+ne 29.
+
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 10.
+(Font)              scaled to size 17.28pt on input line 34.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 10.
+(Font)              scaled to size 17.28pt on input line 34.
+
+Package natbib Warning: Citation `Li2017PredictionRF' on page 1 undefined on in
+put line 42.
+
+
+Package natbib Warning: Citation `DBLP:journals/corr/abs-1802-03601' on page 1 
+undefined on input line 45.
+
 \openout7 = `thesis.mw'.
 
 [1
@@ -1852,6 +1971,59 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 
 \openout7 = `thesis.mw'.
 
+
+
+Package natbib Warning: Citation `tobin2017domain' on page 2 undefined on input
+ line 49.
+
+
+Package natbib Warning: Citation `li2016fpnn' on page 2 undefined on input line
+ 60.
+
+\openout7 = `thesis.mw'.
+
+[2 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-
+chart.jpg>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepresent
+ation.png, id=417, 3679.7475pt x 1340.00626pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepr
+esentation.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepre
+sentation.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/intro/3drepresentation.png  used on input line 71.
+(pdftex.def)             Requested size: 426.79135pt x 155.41629pt.
+
+
+Package natbib Warning: Citation `Hoang2019ADL' on page 3 undefined on input li
+ne 73.
+
+
+Package natbib Warning: Citation `Hoang2019ADL' on page 3 undefined on input li
+ne 73.
+
+
+Package natbib Warning: Citation `10.5555/983334' on page 3 undefined on input 
+line 77.
+
+
+Package natbib Warning: Citation `chang2015shapenet' on page 3 undefined on inp
+ut line 91.
+
+
+Package natbib Warning: Citation `Fu20203DFRONT3F' on page 3 undefined on input
+ line 91.
+
+\openout7 = `thesis.mw'.
+
+[3 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepres
+entation.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -1862,6 +2034,10 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+
+[4] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -1875,7 +2051,7 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 )
 \openout7 = `thesis.mw'.
 
- [2]
+ [5]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
@@ -1887,6 +2063,18 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 
 
 (./text/related_work.tex
+\openout7 = `thesis.mw'.
+
+ [6
+
+
+
+
+]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+
 Chapter 2.
 
 Overfull \hbox (30.04813pt too wide) in paragraph at lines 9--13
@@ -1894,15 +2082,14 @@ Overfull \hbox (30.04813pt too wide) in paragraph at lines 9--13
 Openrooms,Hyperism,3dfront,NVIDIA
  []
 
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 14.4pt on input line 19.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
+(Font)              scaled to size 14.4pt on input line 19.
 )
 \openout7 = `thesis.mw'.
 
- [3
-
-
-
-
-] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [7] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -1931,7 +2118,7 @@ Openrooms,Hyperism,3dfront,NVIDIA
 (./text/concept.tex
 \openout7 = `thesis.mw'.
 
- [4
+ [8
 
 
 
@@ -1943,61 +2130,44 @@ Openrooms,Hyperism,3dfront,NVIDIA
 
 Chapter 3.
 
-Package natbib Warning: Citation `pix3d' on page 5 undefined on input line 9.
+Package natbib Warning: Citation `pix3d' on page 9 undefined on input line 6.
 
 
-Package natbib Warning: Citation `Lim2013ParsingIO' on page 5 undefined on inpu
-t line 11.
+Package natbib Warning: Citation `Lim2013ParsingIO' on page 9 undefined on inpu
+t line 8.
 
 
-Package natbib Warning: Citation `pix3d' on page 5 undefined on input line 13.
+Package natbib Warning: Citation `pix3d' on page 9 undefined on input line 10.
 
-./text/concept.tex:16: You can't use `macro parameter character #' in horizonta
-l mode.
-l.16 ...s from Pix3D, leaving out "misc and tools#
-                                                   classes, which were signi...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 19.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 19.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_histo
-gram.png, id=363, 462.528pt x 346.896pt>
+gram.png, id=463, 462.528pt x 346.896pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 histogram.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_h
 istogram.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/pix3d/pix3d_histogram.png  used on input line 26.
-(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
+images/pix3d/pix3d_histogram.png  used on input line 30.
+(pdftex.def)             Requested size: 192.05846pt x 170.71628pt.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 30.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_model
+s_histogram.png, id=464, 1040.688pt x 624.4128pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
+models_histogram.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_m
+odels_histogram.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/pix3d/pix3d_models_histogram.png  used on input line 31.
+(pdftex.def)             Requested size: 192.04788pt x 170.70886pt.
 
-Overfull \hbox (35.7355pt too wide) in paragraph at lines 26--27
- [][] 
- []
+Package natbib Warning: Citation `pix3d' on page 9 undefined on input line 32.
 
 
-Package natbib Warning: Citation `pix3d' on page 5 undefined on input line 27.
-
-
-Package natbib Warning: Citation `pix3d' on page 5 undefined on input line 27.
-
-\openout7 = `thesis.mw'.
-
-[5] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
+Package natbib Warning: Citation `pix3d' on page 9 undefined on input line 32.
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
+[9] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -2008,31 +2178,209 @@ Package natbib Warning: Citation `pix3d' on page 5 undefined on input line 27.
 
 \openout7 = `thesis.mw'.
 
- [6 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_h
-istogram.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_5.jpg
+, id=472, 1027.84pt x 770.88pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
+5.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_5
+.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/pix3d/pix3d_5.jpg  used on input line 43.
+(pdftex.def)             Requested size: 170.71393pt x 128.02486pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2.png
+, id=473, 273.02pt x 205.76875pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
+2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2
+.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/pix3d/pix3d_2.png  used on input line 44.
+(pdftex.def)             Requested size: 170.71393pt x 128.6648pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6.jpg
+, id=474, 1606.0pt x 1204.5pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
+6.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6
+.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/pix3d/pix3d_6.jpg  used on input line 45.
+(pdftex.def)             Requested size: 170.71393pt x 128.02927pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4.png
+, id=475, 1066.98625pt x 757.83125pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
+4.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4
+.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/pix3d/pix3d_4.png  used on input line 46.
+(pdftex.def)             Requested size: 170.71393pt x 121.24391pt.
+
+
+Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 10 undefined 
+on input line 52.
+
+
+Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 10 undefined 
+on input line 54.
+
+
+Package natbib Warning: Citation `chang2015shapenet' on page 10 undefined on in
+put line 55.
+
+\openout7 = `thesis.mw'.
+
+[10 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_h
+istogram.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix
+3d/pix3d_models_histogram.png>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [11 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
+5.jpg> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3
+d_2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/imag
+es/pix3d/pix3d_6.jpg> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/im
+ages/pix3d/pix3d_4.png (PNG copy)>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 
 
-Package natbib Warning: Citation `handa2015scenenet' on page 7 undefined on inp
-ut line 44.
+Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 12 undefined 
+on input line 91.
 
 
-Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 7 undefined o
-n input line 46.
+Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 12 undefined 
+on input line 106.
 
 
-Package natbib Warning: Citation `chang2015shapenet' on page 7 undefined on inp
-ut line 47.
+Package natbib Warning: Citation `Xie_2019' on page 12 undefined on input line 
+114.
 
 
-Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 7 undefined o
-n input line 53.
+Package natbib Warning: Citation `simonyan2015deep' on page 12 undefined on inp
+ut line 118.
+
+
+Package natbib Warning: Citation `Deng2009ImageNetAL' on page 12 undefined on i
+nput line 118.
+
+\openout7 = `thesis.mw'.
+
+[12] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+
+Package natbib Warning: Citation `Han2021ImageBased3O' on page 13 undefined on 
+input line 124.
+
+
+Package natbib Warning: Citation `Xie_2019' on page 13 undefined on input line 
+125.
+
+
+Package natbib Warning: Citation `popov2020corenet' on page 13 undefined on inp
+ut line 127.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox.p
+ng, id=499, 1371.1225pt x 463.7325pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
+vox.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2v
+ox.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/concept/pix2vox.png  used on input line 138.
+(pdftex.def)             Requested size: 426.79135pt x 144.34288pt.
+
+Package natbib Warning: Citation `Xie_2019' on page 13 undefined on input line 
+139.
+
+
+Package natbib Warning: Citation `Xie_2019' on page 13 undefined on input line 
+139.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/survey.pn
+g, id=500, 718.685pt x 410.53375pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surv
+ey.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surve
+y.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/concept/survey.png  used on input line 145.
+(pdftex.def)             Requested size: 426.79135pt x 243.80392pt.
+
+Package natbib Warning: Citation `Han2021ImageBased3O' on page 13 undefined on 
+input line 147.
+
+
+Package natbib Warning: Citation `Han2021ImageBased3O' on page 13 undefined on 
+input line 147.
+
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/it' in size <17.28> not
+ available
+(Font)              Font shape `T1/LinuxBiolinumT-TLF/b/sl' tried instead on in
+put line 151.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/sl' will be
+(Font)              scaled to size 17.28pt on input line 151.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 151.
 
 )
 \openout7 = `thesis.mw'.
 
- [7] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [13 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
+vox.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -2045,29 +2393,29 @@ n input line 53.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+[14 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surve
+y.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout2 = `text/implementation.aux'.
 
 
 (./text/implementation.tex
-\openout7 = `thesis.mw'.
-
- [8
-
-
-
-
-]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-
 Chapter 4.
 )
 \openout7 = `thesis.mw'.
 
- [9] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [15
+
+
+
+
+] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -2092,7 +2440,7 @@ Chapter 4.
 (./text/evaluation.tex
 \openout7 = `thesis.mw'.
 
- [10
+ [16
 
 
 
@@ -2106,7 +2454,7 @@ Chapter 5.
 )
 \openout7 = `thesis.mw'.
 
- [11] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [17] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -2139,7 +2487,7 @@ Chapter 5.
 (./text/conclusion.tex
 \openout7 = `thesis.mw'.
 
- [12
+ [18
 
 
 
@@ -2153,7 +2501,7 @@ Chapter 6.
 )
 \openout7 = `thesis.mw'.
 
- [13] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [19] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -2178,7 +2526,7 @@ Chapter 6.
 (./text/appendix.tex
 \openout7 = `thesis.mw'.
 
- [14
+ [20
 
 
 
@@ -2189,12 +2537,12 @@ Chapter 6.
 
 \dtldb@nodes=\toks94
 \dtlkeys@nodes=\toks95
-\dtlrows@nodes=\count409
-\dtlcols@nodes=\count410
+\dtlrows@nodes=\count414
+\dtlcols@nodes=\count415
 )
 \openout7 = `thesis.mw'.
 
- [15]
+ [21]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
@@ -2208,7 +2556,7 @@ Chapter 6.
 (./text/tutorial.tex
 \openout7 = `thesis.mw'.
 
- [16
+ [22
 
 
 
@@ -2219,32 +2567,220 @@ Chapter 6.
 
 
 Appendix B.
-Package marginnote Info: Margin note 35.1 is on absolute page 35 on input line 
+Package marginnote Info: Margin note 41.1 is on absolute page 41 on input line 
 8.
 Package marginnote Info: xpos seems to be 423.88315pt on input line 8.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 14.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 47.
 
-Package natbib Warning: Citation `Heradio2016Bibliometric' on page 17 undefined
+./text/tutorial.tex:42: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42     \begin{subfigure}
+                          {0.29\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./text/tutorial.tex:42: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.42     \begin{subfigure}{0.29\textwidth}
+                                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./text/tutorial.tex:42: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.42     \begin{subfigure}{0.29\textwidth}
+                                          
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./text/tutorial.tex:48: LaTeX Error: \begin{figure} on input line 41 ended by \
+end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48     \end{subfigure}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./text/tutorial.tex:49: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49     \begin{subfigure}
+                          {0.21\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./text/tutorial.tex:49: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.49     \begin{subfigure}{0.21\textwidth}
+                                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./text/tutorial.tex:49: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.49     \begin{subfigure}{0.21\textwidth}
+                                          
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./text/tutorial.tex:59: LaTeX Error: \begin{figure} on input line 41 ended by \
+end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59     \end{subfigure}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./text/tutorial.tex:60: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.60     \begin{subfigure}
+                          {0.19\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./text/tutorial.tex:60: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.60     \begin{subfigure}{0.19\textwidth}
+                                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./text/tutorial.tex:60: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.60     \begin{subfigure}{0.19\textwidth}
+                                          
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./text/tutorial.tex:68: LaTeX Error: \begin{figure} on input line 41 ended by \
+end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68     \end{subfigure}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./text/tutorial.tex:69: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69     \begin{subfigure}
+                          {0.26\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./text/tutorial.tex:69: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.69     \begin{subfigure}{0.26\textwidth}
+                                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./text/tutorial.tex:69: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.69     \begin{subfigure}{0.26\textwidth}
+                                          
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./text/tutorial.tex:81: LaTeX Error: \begin{figure} on input line 41 ended by \
+end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81     \end{subfigure}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package natbib Warning: Citation `Heradio2016Bibliometric' on page 23 undefined
  on input line 87.
 
 
-Package natbib Warning: Citation `Heradio2016Bibliometric' on page 17 undefined
+Package natbib Warning: Citation `Heradio2016Bibliometric' on page 23 undefined
  on input line 87.
 
 
-Package natbib Warning: Citation `pix3d' on page 17 undefined on input line 88.
+Package natbib Warning: Citation `pix3d' on page 23 undefined on input line 88.
 
 
 
-Package natbib Warning: Citation `Lim2013ParsingIO' on page 17 undefined on inp
+Package natbib Warning: Citation `Lim2013ParsingIO' on page 23 undefined on inp
 ut line 88.
 
 \openout7 = `thesis.mw'.
 
-[17] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+[23] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -2265,17 +2801,33 @@ ut line 88.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [24]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 )
 \openout7 = `thesis.mw'.
 
- [18]
+ [25]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
 
+ [26
+
+
+
+]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 
@@ -2283,10 +2835,7 @@ ut line 88.
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.ind)
 \openout7 = `thesis.mw'.
 
- [19
-
-
-
+ [27
 
 
 ]
@@ -2369,6 +2918,14 @@ No complaints by nag.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 )
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/related_work.aux
 \openout7 = `thesis.mw'.
@@ -2401,6 +2958,58 @@ No complaints by nag.
 
 )
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/concept.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -2567,11 +3176,30 @@ No complaints by nag.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 ))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 \openout7 = `thesis.out'.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9E8970B789574FBB40D7108EBEC15257;7369.
+(rerunfilecheck)             Checksum: 10BF0249293A0D5F24B582B23B407FC7;9868.
 \openout7 = `thesis.idx'.
 
 \openout7 = `thesis.glo'.
@@ -2590,34 +3218,35 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 
  ) 
 Here is how much of TeX's memory you used:
- 40629 strings out of 478994
- 758645 string characters out of 5858185
- 1241789 words of memory out of 5000000
- 56652 multiletter control sequences out of 15000+600000
- 520417 words of font info for 407 fonts, out of 8000000 for 9000
+ 40977 strings out of 478994
+ 769223 string characters out of 5858185
+ 1251297 words of memory out of 5000000
+ 56823 multiletter control sequences out of 15000+600000
+ 534429 words of font info for 504 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,18n,116p,1010b,967s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 117i,17n,116p,1010b,918s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc
 }</usr/local/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.
 pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinBiolinu
 mTB.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinBio
-linumTI.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmb10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
-sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
-cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loc
-al/texlive/2021/texmf-dist/fonts/type1/public/wasy-type1/wasy8.pfb>
+linumTBO.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/libertine/L
+inBiolinumTI.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmb10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
+.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
+r/local/texlive/2021/texmf-dist/fonts/type1/public/wasy-type1/wasy8.pfb>
 Output written on /Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.pdf
- (37 pages, 342852 bytes).
+ (45 pages, 2844154 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 486 compressed objects within 5 object streams
- 130 named destinations out of 1000 (max. 500000)
- 103285 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 693 PDF objects out of 1000 (max. 8388607)
+ 607 compressed objects within 7 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 94194 words of extra memory for PDF output out of 106986 (max. 10000000)
 
