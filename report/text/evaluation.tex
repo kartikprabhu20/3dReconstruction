@@ -1,0 +1,25 @@
+\chapter{\iftoggle{german}{Evaluierung}{Evaluation}}\label{ch:evaluation}
+
+\section{Domain gaps - Qualitative}
+Visualize domain gap between S2R:3D-FREE and real image(pix3d)
+Visualize domain gap between other synthetic dataset like 3dfront, scenenet
+tsne
+
+\section{Domain gaps - Quantitative}
+Maximum Mean Discrepancy
+Kullback-Leibler divergence
+
+\section{Performance}
+
+Performance of model trained on synthetic dataset by testing model with real dataset(pix3d)
+Qualitative: Voxel output comparisons
+Quantitative: IOU, Dice
+
+\section{Domain shift technique}
+
+Compare the differences in domain shift of models learnt on S2R:3D-FREE and a traditional domain shift learning.
+
+\section{Ablation study on chairs}
+Check if randomising textures of chair and background helps improve performance.  Example: Create dataset with constant room texture vs randomising texture,
+Check if lighting helps (indoor, outdoor). Example: Create a dataset with constant lighting(only outdoor lighting) vs indoor lighting.
+Iou per category: as in https://arxiv.org/pdf/1905.03678.pdf

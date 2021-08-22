@@ -1,0 +1,209 @@
+\documentclass[
+    % final, % any \todo{<x>} commands are removed
+    % print, % removes link color for print version
+    % german % to switch language to German
+]{thesis}
+
+% A lot of important packages are loaded in the thesis.cls file, check first whether they are already loaded if you need a package.
+% \usepackage{...}
+
+% Change this to your needs.
+\newcommand{\university}{Otto-von-Guericke University Magdeburg}
+\newcommand{\school}{Faculty of Computer Science}
+\newcommand{\logo}{\includegraphics[trim=0mm 0mm 50mm 0mm,clip,height=3cm]{ovgu}}
+\newcommand{\advisorone}{Prof. X}
+\newcommand{\departmentone}{}
+\newcommand{\universityone}{National Aeronautics and Space Administration}
+\newcommand{\advisortwo}{Dr. No}
+\newcommand{\departmenttwo}{Department of Technical and Business Information Systems}
+\newcommand{\universitytwo}{Otto-von-Guericke University Magdeburg}
+\newcommand{\advisorthree}{}
+\newcommand{\departmentthree}{}
+\newcommand{\universitythree}{}
+\newcommand{\thesiskind}{Master's Thesis}
+\newcommand{\theforename}{Kartik}
+\newcommand{\thesurname}{Prabhu}
+\newcommand{\thetitle}{Synth2Real : 3D-Furniture Reconstruction in Ersatz Environment \\ (S2R:3D-FREE)}
+\newcommand{\thedate}{October 15, 2021}
+\newcommand{\theyear}{2021}
+\newcommand{\signatureplace}{Magdeburg}
+\newcommand{\signaturedate}{15th October 2021}
+
+% Here, you can define acronyms for consistent usage in your text like this:
+% \acro{key}{XYZ}{Correctly Capitalized Acronym}{all lowercase acronym}
+% cite with \gls{key}, \Gls{key} (at the start of a sentence), \glspl{key} (plural form), \gls{key} (plural at start of sentence)
+% Only the acronyms you actually use in the text are shown in the list of acronyms.
+\newcommand{\acro}[4]{\newacronym[description=#3]{#1}{#2}{#4}}
+\newcommand{\makeacronyms}{
+    \acro{spl}{SPL}{Software Product Line}{software product line}
+    \acro{fol}{FOL}{First-Order Logic}{first-order logic}
+    \acro{slr}{SLR}{Systematic Literature Review}{systematic literature review}
+    % ...
+}
+
+% For some theses a list of symbols can be nice. For example usage, see below.
+\newcommand{\category}[3]{\newglossaryentry{_#2}{type=symbol, name={#3}, description={}, sort={#1}}}
+\newcommand{\sym}[5]{\newglossaryentry{#3}{type=symbol, name={\ensuremath{#4}}, sort={#2}, description={#5}, parent=_#1}}
+\newcommand{\makesymbols}{
+    \category{1}{general}{General}
+    \category{2}{logic}{First-Order and Dynamic Logic}
+    \sym{general}{1}{subst}{\alpha[x \backslash y]}{Substitution of $x$ in $\alpha$ with $y$}
+    \sym{general}{2}{power}{\mathcal{P}(A)}{Power set of a set $A$}
+    \sym{general}{3}{restrict}{f|_{A'}}{Restriction of a function $f \colon A \to B$ to a smaller domain $A' \subseteq A$}
+    \sym{logic}{1}{pand}{A \pand B}{Formalization of the sentence ``\emph{P} and \emph{Q}''}
+    % ...
+}
+
+% These are custom commands (or macros). They are useful for example for mathematical notations that you use often.
+\newcommand{\todots}{\todo{[...]}} % mark as todo
+\newcommand{\eg}{e.g.,\ } % abbreviates "for example, ..."
+\newcommand{\ie}{i.e.,\ } % abbreviates "that is, ..."
+\newcommand{\cf}[1]{(cf.~\autoref{#1})} % abbreviates "(confer ...)"
+\newcommand{\myparagraph}[1]{\noindent \textit{\biolinum #1}.} % starts a little subparagraph
+\newcommand{\m}[1]{\ensuremath{\mathit{#1}}} % write some text both in- and outside of math mode
+\newcommand{\pand}{\wedge} % logical conjunction
+\newcommand{\por}{\vee} % logical disjunction
+\newcommand{\pnot}{\neg} % logical negation
+\newcommand{\pequals}{\leftrightarrow} % logical equality
+\newcommand{\pimplies}{\rightarrow} % logical implication
+\newcommand{\defeq}{\vcentcolon=} % defining equals sign
+\newcommand{\RQ}[1]{\ensuremath{\text{RQ}_{#1}}} % research question
+
+% document
+\hypersetup{pdfauthor={\theforename\ \thesurname}, pdftitle={\thetitle}}
+\makeindex
+\makeglossaries
+\makeacronyms
+\makesymbols
+
+\begin{document}
+
+\frontmatter
+\renewcommand{\proofname}{\itshape\biolinum{Proof}} % only relevant if you use the proof environment
+\newcommand{\theauthor}{\theforename\ \thesurname}
+\newcommand{\theauthorrev}{\thesurname,\ \theforename}
+\graphicspath{{files/}}
+\pagenumbering{roman}
+
+% the first page - you can change this by setting the commands at the beginning of this file
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\university}\\[0.4cm]
+        {\school}\\[2.0cm]
+        \hbox{}\hfill
+        \begin{minipage}[t]{\textwidth}
+            \begin{center}
+                \logo
+            \end{center}
+        \end{minipage}
+        \hfill\hbox{}
+        \ \\[0.4cm]
+        {\large \thesiskind \\[1cm]}
+        {\LARGE\bfseries\biolinum \thetitle \\[1cm]}
+        {\iftoggle{german}{Autor}{Author}:}\\[0.4cm]
+        {\large \theauthor}\\[0.8cm]
+        {\large\thedate}\\[0.8cm]
+    \end{center}
+    \vspace*{\fill}
+    {\iftoggle{german}{Betreuer}{Advisors}:}\\[0.3cm]
+    \ifdefempty{\advisorone}{}{{\large\advisorone}\\[0.1cm]}
+    \ifdefempty{\departmentone}{}{{\departmentone}\\[0.1cm]}
+    \ifdefempty{\universityone}{}{{\universityone}\\[0.3cm]}
+    \ifdefempty{\advisortwo}{}{{\large\advisortwo}\\[0.1cm]}
+    \ifdefempty{\departmenttwo}{}{{\departmenttwo}\\[0.1cm]}
+    \ifdefempty{\universitytwo}{}{{\universitytwo}\\[0.3cm]}
+    \ifdefempty{\advisorthree}{}{{\large\advisorthree}\\[0.1cm]}
+    \ifdefempty{\departmentthree}{}{{\departmentthree}\\[0.1cm]}
+    \ifdefempty{\universitythree}{}{{\universitythree}}
+\end{titlepage}
+
+% the second page
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{minipage}{15.0cm}
+    \textbf{\theauthorrev:}\\
+    \emph{\thetitle\\}
+    \thesiskind, \university, \theyear.
+\end{minipage}
+\newpage
+
+\iftoggle{german}{\chapter*{Zusammenfassung}}{\chapter*{Abstract}}
+
+Besides the title, the abstract is the most important part of your thesis, as most readers will only read title and abstract.
+Your goal is to advertise the rest of the thesis for potential readers.
+For that, you briefly explain what you are focusing on in the thesis.
+With a misleading abstract, you will miss interested readers and maybe even attract readers with wrong assumptions about your work which will stop reading soon.
+The abstract should describe the general area as well as the most interesting insights of the work.
+It is crucial to find the right level of abstraction and length.
+An abstract typically consists of one paragraph that is significantly shorter than the introduction.
+
+Abstracts typically follow the same structure.
+You start by describing the research area as well as the general and the specific problem you are focusing on.
+Then, you outline how you approach the problem in terms of concepts and evaluations.
+Finally, you close with the most interesting insights that you gained and why they are relevant for the research area.
+
+\blankpage
+
+\iftoggle{german}{\chapter*{Danksagungen}}{\chapter*{Acknowledgments}}
+
+If you want to, you can thank your advisors and/or anyone else who supported you during the thesis in some way.
+
+% table of contents
+\blankpage
+{\parskip 0pt \pdfbookmark{\contentsname}{\contentsname}\chapterheadfont \tableofcontents}
+\blankpage
+% remove this if you do not want a list of figures, tables, or listings
+\listoffigures
+\listoftables
+\lstlistoflistings
+% remove this if you do not want a list of symbols or acronyms
+\glsaddall[types={symbol}]
+\printglossary[type=acronym,
+    title=\iftoggle{german}{Abkürzungsverzeichnis}{List of Acronyms},
+    toctitle=\iftoggle{german}{Abkürzungsverzeichnis}{List of Acronyms}]
+\printglossary[type=symbol,style=supergroup]
+
+\mainmatter
+\pagenumbering{arabic}
+% Here comes the main text of your thesis.
+% Change this as you like - every thesis looks different, this is only an example.
+\include{text/introduction}
+\include{text/related_work}
+\include{text/concept}
+\include{text/implementation}
+\include{text/evaluation}
+\include{text/conclusion}
+\appendix
+\include{text/appendix}
+\include{text/tutorial}
+
+% Usually, you will create your bibliography with BibTeX files, which can be exported from many literature management tools. For an example, see thesis.bib.
+\cleardoublepage
+\phantomsection
+\bibliographystyle{literature/plainnat}
+\bibliography{literature/thesis}
+
+\cleardoublepage
+\backmatter
+\phantomsection
+\printindex
+
+% You need to sign this when submitting your thesis to the examination office.
+\thispagestyle{empty}
+\vspace*{38\baselineskip}
+\hbox to \textwidth{\hrulefill}
+\par
+
+\iftoggle{german}{
+    Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+    Weiterhin wurde die Arbeit bisher weder in einem anderen Prüfungsverfahren vorgelegt noch anderweitig veröffentlicht.
+    Textpassagen, die wörtlich oder dem Sinn nach auf anderen Quellen beruhen, sind als solche kenntlich gemacht.}{
+    I herewith assure that I wrote the present thesis independently, that the thesis has not been partially or fully submitted as graded academic work and that I have used no other means than the ones indicated.
+    I have indicated all parts of the work in which sources are used according to their wording or to their meaning.}
+
+\signatureplace, \signaturedate
+
+\clearpage
+
+\end{document}
