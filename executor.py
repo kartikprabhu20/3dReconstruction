@@ -14,5 +14,7 @@ if __name__ == '__main__':
 
     pipeline = PipelineManager(config).get_pipeline(pipeline_type=config.pipeline_type)
     pipeline.train()
-    pipeline.test() #TODO: for now only used for images, calculate metric too
+    pipeline.validate()
+    pipeline.test()
     pipeline.empty_test()
+    pipeline.realdata_test()
