@@ -10,7 +10,9 @@ import shutil
 import fnmatch
 
 from utils import interpolate_and_save
-
+from VoxelInterpolation import convert
+import matplotlib.pyplot as plt
+import io
 
 class Utility:
 
@@ -110,11 +112,38 @@ class Utility:
                 interpolate_and_save(voxel_path,model_folder_path,size=64,mode='nearest')
                 interpolate_and_save(voxel_path,model_folder_path,size=128,mode='nearest')
 
-if __name__ == '__main__':
-    root_path = '/Users/apple/OVGU/Thesis/s2r3dfree'
-    destination_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1/'
+    def generate_voxels_2(self,root_path,outputPath,thresh,model_foldername='models'):
 
-    # root = "/Users/apple/OVGU/Thesis/SynthDataset1/"
+        self.make_folder(outputPath)
+        for label in self.get_classes(root_path,model_foldername):
+            if  label=='chair' or label=='bed' or label=='wardrobe'or label=='desk': #TODO: remove this check
+                continue
+
+            labelPath = os.path.join(root_path + model_foldername+"/", label)
+            self.make_folder(os.path.join(outputPath, label))
+            for folder in os.listdir(labelPath):
+                if folder =='.DS_Store' :
+                    continue
+
+                model_folder_path = os.path.join(labelPath, folder)
+                output_folder_path = os.path.join(os.path.join(outputPath, label),folder)
+                self.make_folder(output_folder_path)
+                voxel_path = os.path.join(model_folder_path,"voxel.mat")
+                if not os.path.isfile(voxel_path) :
+                    for fileName in os.listdir(model_folder_path):
+                        if fileName.endswith(".mat"):
+                            os.rename(os.path.join(model_folder_path,fileName), voxel_path)
+                            break
+
+                convert(voxel_path,output_folder_path,thresh, size=(32,32,32))
+                convert(voxel_path,output_folder_path,thresh, size=(64,64,64))
+                convert(voxel_path,output_folder_path,thresh, size=(128,128,128))
+
+if __name__ == '__main__':
+    root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1_1'
+    destination_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1_1_final/'
+
+    root = "/Users/apple/OVGU/Thesis/SynthDataset1/"
     # root='/nfs1/kprabhu/SynthDataset1/'
     # root = '/Users/apple/OVGU/Thesis/Dataset/pix3d/'
     # root='/nfs1/kprabhu/pix3d/'
@@ -122,3 +151,5 @@ if __name__ == '__main__':
     #Copy file
     Utility().copy_files_to_destination(root_path=root_path,destination_path=destination_path,model_folderName="")
     # Utility().generate_voxels(root_path=root, model_foldername='model')
+
+    # Utility().generate_voxels_2(root_path=root, outputPath=destination_path, thresh=0.1,model_foldername='models')

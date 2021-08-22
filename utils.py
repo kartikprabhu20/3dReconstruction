@@ -9,6 +9,7 @@ import scipy.io as sio
 import torch
 import trimesh
 import os
+import io
 
 from iopath import PathManager
 from pytorch3d.ops import cubify
@@ -160,7 +161,6 @@ def interpolate_and_save(filename,outpath,size=64, key='voxel',scale_factor=1,mo
     np.save(voxel_path, output[0][0].numpy())
 
 
-
 # mesh = np_to_mesh(outfile+"_"+str(size)+".npy")
     # save_obj(outfile+"_"+str(size)+".obj",verts=mesh.verts_list()[0], faces=mesh.faces_list()[0])
 
@@ -190,6 +190,22 @@ def save_volume_views(volume, save_dir, index):
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters())
 
+def gen_plot(voxels, savefig = False, path = None):
+    """Create a pyplot plot and save to buffer."""
+    ax = plt.figure().add_subplot(projection='3d')
+    ax.voxels(voxels,facecolors='gray',edgecolor='k')
+    ax.grid(False)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_zticks([])
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    plt.axis('off')
+    if savefig:
+        plt.savefig(path)
+    buf.seek(0)
+    plt.close('all')
+    return buf
 
 if __name__ == '__main__':
 
@@ -225,3 +241,9 @@ if __name__ == '__main__':
     # interpolate_and_save(datapath_mat,"/Users/apple/Desktop/datapath_mat2",size=128,mode='nearest')
     ##############################################################################
 
+    datapath_mat = '/Users/apple/OVGU/Thesis/Dataset/pix3d/model/chair/IKEA_BERNHARD/voxel.mat'
+    outpath = '/Users/apple/OVGU/Thesis/2/'
+    interpolate_and_save(datapath_mat,outpath,size=32,mode='trilinear')
+    model_npy = np.load(outpath+"voxel_"+str(32)+".npy")
+    model_npy = model_npy > 0
+    gen_plot(model_npy, savefig=True, path = outpath + "voxel" + str(32) + ".png")
