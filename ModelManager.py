@@ -5,6 +5,8 @@
 
 """
 from models.pix2voxel import pix2vox
+from models.pix2voxpp import pix2voxpp
+
 # Added for Apex
 try:
     import apex
@@ -16,6 +18,7 @@ import torch
 
 class ModelType:
     PIX2VOXEL = "pix2voxel"
+    PIX2VOXELPP = "pix2voxel++"
 
 class OptimizerType:
     ADAM = "adam"
@@ -33,11 +36,11 @@ class ModelManager:
         self.config = config
 
     def get_Model(self, model_type):
-        switcher = {
-            ModelType.PIX2VOXEL: pix2vox(self.config),
-        }
+        if model_type==ModelType.PIX2VOXEL:
+            self.model = pix2vox(self.config)
+        elif  model_type==ModelType.PIX2VOXELPP:
+            self.model = pix2voxpp(self.config)
 
-        self.model = switcher.get(model_type, pix2vox(self.config))
         if torch.cuda.is_available():#no nvidia on mac!!!
             self.model.cuda()
         optimizer = self.get_optimiser(self.config.optimizer_type)

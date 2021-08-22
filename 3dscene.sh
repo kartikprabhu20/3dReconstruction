@@ -6,7 +6,7 @@
 #SBATCH --mem-per-cpu=5500    # main MB per task? max. 500GB/80=6GB
 #SBATCH --ntasks-per-node 1   # bigger for mpi-tasks (max 40)
 #SBATCH --cpus-per-task 10     # max 10/GPU CPU-threads needed (physcores*2)
-#SBATCH --time 167:59:00 # set 0h59min walltime
+#SBATCH --time 167:59:00 # set 0h59min walltime 167:59:00 max
 ## outcommended (does not work at the moment, ToDo):
 
 exec 2>&1      # send errors into stdout stream

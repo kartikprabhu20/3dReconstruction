@@ -14,7 +14,8 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_48'
+cfg.main_name = 'test_57'
+cfg.pretrained_name = 'test_57'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
@@ -56,10 +57,10 @@ cfg.DATASET.STD                             = [0.229, 0.224, 0.225]
 
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
 cfg.dataset_type = DatasetType.PIX3DSYNTHETIC1
-cfg.model_type = ModelType.PIX2VOXEL
+cfg.model_type = ModelType.PIX2VOXELPP
 cfg.optimizer_type = OptimizerType.ADAM
 
-cfg.pix2vox_pretrained_vgg = True
+cfg.pix2vox_pretrained_encoder = True
 cfg.pix2vox_update_vgg = True
 cfg.pix2vox_refiner = True
 cfg.pix2vox_merger = True
@@ -86,13 +87,13 @@ cfg.TRAIN.ENCODER_LEARNING_RATE             = 1e-3
 cfg.TRAIN.DECODER_LEARNING_RATE             = 1e-3
 cfg.TRAIN.REFINER_LEARNING_RATE             = 1e-3
 cfg.TRAIN.MERGER_LEARNING_RATE              = 1e-4
-cfg.TRAIN.ENCODER_LR_MILESTONES             = [150]
-cfg.TRAIN.DECODER_LR_MILESTONES             = [150]
-cfg.TRAIN.REFINER_LR_MILESTONES             = [150]
-cfg.TRAIN.MERGER_LR_MILESTONES              = [150]
+cfg.TRAIN.ENCODER_LR_MILESTONES             = [100,200,300,400,500]
+cfg.TRAIN.DECODER_LR_MILESTONES             = [100,200,300,400,500]
+cfg.TRAIN.REFINER_LR_MILESTONES             = [100,200,300,400,500]
+cfg.TRAIN.MERGER_LR_MILESTONES              = [100,200,300,400,500]
 cfg.TRAIN.BETAS                             = (.9, .999)
 cfg.TRAIN.MOMENTUM                          = .9
-cfg.TRAIN.GAMMA                             = .5
+cfg.TRAIN.GAMMA                             = .05
 cfg.TRAIN.SAVE_FREQ                         = 10            # weights will be overwritten every save_freq epoch
 cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 
@@ -101,38 +102,42 @@ cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 #
 cfg.TEST                                    = edict()
 # cfg.TEST.RANDOM_BG_COLOR_RANGE              = [[240, 240], [240, 240], [240, 240]]
-cfg.TEST.VOXEL_THRESH                       = [.2, .3, .4, .5, .6, .7]
+cfg.TEST.VOXEL_THRESH                       = [.1, .2, .3, .4, .5, .6, .7]
 cfg.test_images_per_category = 10
 cfg.TEST.VOXEL_THRESH_IMAGE                       = 0.2
 
 ########## Paths #################
 if platform == "darwin": #local mac
     cfg.root_path = '/Users/apple/OVGU/Thesis/code/3dReconstruction'
-    cfg.dataset_path ='/Users/apple/OVGU/Thesis/SynthDataset1' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/Users/apple/OVGU/Thesis/Dataset/pix3d'
+    cfg.dataset_path ='/Users/apple/OVGU/Thesis/s2r3dfree_v1' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/Users/apple/OVGU/Thesis/Dataset/pix3d'
     cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
     cfg.home_path = "/Users/apple/Desktop/"
     cfg.empty_data_path = "/Users/apple/OVGU/Thesis/empty_room_img/"
+    cfg.real_data_path = "/Users/apple/OVGU/Thesis/Dataset/pix3d/"
     cfg.num_workers = 0
     cfg.batch_size = 1
     cfg.apex = False
 else:
     cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
-    cfg.dataset_path ='/nfs1/kprabhu/SynthDataset1/' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/nfs1/kprabhu/pix3d/'
+    cfg.dataset_path ='/nfs1/kprabhu/s2r3dfree_v1_2/' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/nfs1/kprabhu/pix3d/'
     cfg.output_path = "/nfs1/kprabhu/outputs/"
     cfg.home_path = "/nfs1/kprabhu/"
     cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
+    cfg.pretrained_checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.pretrained_name +"/"
+    cfg.empty_data_path = "/nfs1/kprabhu/empty_room_img/"
+    cfg.real_data_path = '/nfs1/kprabhu/pix3d/'
     cfg.num_workers = 8
-    cfg.batch_size = 40
+    cfg.batch_size = 80
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
 cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_validation/'
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
-
+cfg.pretrained_checkpoint_path = cfg.output_path + cfg.pretrained_name + "/"
 cfg.pix3d                                   = edict()
-cfg.pix3d.train_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_s1_train.json'
-cfg.pix3d.test_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_s1_test.json'
-cfg.upsample = True
+cfg.pix3d.train_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_train_2.npy'
+cfg.pix3d.test_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_test_2.npy'
+cfg.upsample = False
 
 cfg.s2r3dfree                                   = edict()
-cfg.s2r3dfree.train_test_split = cfg.root_path+"/Datasets/pix3dsynthetic/train_test_split.p"
+cfg.s2r3dfree.train_test_split = cfg.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_v1_2.p"

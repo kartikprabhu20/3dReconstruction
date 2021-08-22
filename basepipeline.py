@@ -30,6 +30,7 @@ import transform_utils
 
 class BasePipeline:
     def __init__(self, config,datasetManager):
+        self.datasetManager = datasetManager
         self.config = config
         self.setup_logger()
         self.setup_dataloaders(datasetManager)
@@ -55,7 +56,7 @@ class BasePipeline:
             transform_utils.ToTensor(),
         ])
 
-        test_transforms = transform_utils.Compose([
+        self.test_transforms = transform_utils.Compose([
              transform_utils.CenterCrop(IMG_SIZE, CROP_SIZE),
              # transform_utils.RandomBackground(self.config.TEST.RANDOM_BG_COLOR_RANGE),
              transform_utils.Normalize(mean=self.config.DATASET.MEAN, std=self.config.DATASET.STD),
@@ -69,23 +70,9 @@ class BasePipeline:
         self.train_loader = torch.utils.data.DataLoader(traindataset, batch_size=self.config.batch_size, shuffle=True,
                                                num_workers=self.config.num_workers, pin_memory=True)
 
-
-        testdataset = dataset.get_testset(transforms=test_transforms)
+        testdataset = dataset.get_testset(transforms=self.test_transforms)
         self.validation_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
                                                              num_workers=self.config.num_workers, pin_memory=True)
-
-        testdataset = dataset.get_testset(transforms=test_transforms,images_per_category=self.config.test_images_per_category)
-        self.test_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
-                                                       num_workers=self.config.num_workers, pin_memory=True)
-
-        empty_dataset = datasetManager.get_dataset(DatasetType.EMPTY)
-        emptydataset = empty_dataset.get_img_testset(transforms=test_transforms,images_per_category=self.config.test_images_per_category)
-        self.empty_loader = torch.utils.data.DataLoader(emptydataset, batch_size=self.config.batch_size, shuffle=False,
-                                                       num_workers=self.config.num_workers, pin_memory=True)
-
-        print(emptydataset.__len__())
-
-
 
     def setup_logger(self):
         self.logger = Logger(self.config.main_name, self.config.output_path + self.config.main_name).get_logger()
@@ -125,23 +112,25 @@ class BasePipeline:
         return  ToTensor()(image)
 
     def save_intermediate_obj(self, training_batch_index,input_images, local_labels, outputs, process = "val", threshold = 0):
-        with torch.no_grad():
+        try:
+            with torch.no_grad():
+                output_path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy"
+                #Pytorch error to cubify output from model, need to save it in np and then convert
+                np.save(output_path, outputs[0].cpu().data.numpy())
+                np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
 
-            output_path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_output.npy"
-            #Pytorch error to cubify output from model, need to save it in np and then convert
-            np.save(output_path, outputs[0].cpu().data.numpy())
-            np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
+                save_count = min(self.config.save_count,self.config.batch_size)
+                for i in range(0,save_count):
+                    self.gen_plot(local_labels[i],savefig=True,path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original_"+str(i)+".png")
+                    output_np = outputs[i].detach().cpu().numpy()
+                    output_np = (output_np > (threshold_otsu(output_np) if threshold==0 else threshold)).astype(int)
+                    output = torch.tensor(output_np)
+                    self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_output_" + str(i) + ".png")
 
-            save_count = min(self.config.save_count,self.config.batch_size)
-            for i in range(0,save_count):
-                self.gen_plot(local_labels[i],savefig=True,path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original_"+str(i)+".png")
-                output_np = outputs[i].detach().cpu().numpy()
-                output_np = output_np > (threshold_otsu(output_np).astype(int) if threshold==0 else threshold)
-                output = torch.tensor(output_np)
-                self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_output_" + str(i) + ".png")
-
-                save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_input_" + str(i) + ".png")
-
+                    save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_input_" + str(i) + ".png")
+        except:
+            print(save_count)
+            print("exception while save_intermediate_obj")
             # mesh_np = np.load(output_path)
             # thresh = threshold_otsu(mesh_np)
             # print(thresh)

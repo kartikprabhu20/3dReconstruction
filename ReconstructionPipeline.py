@@ -16,7 +16,7 @@ import numpy as np
 import ModelManager
 import network_utils
 import utils
-from DatasetManager import DatasetManager
+from DatasetManager import DatasetManager, DatasetType
 from basepipeline import BasePipeline
 
 # Added for Apex
@@ -51,12 +51,13 @@ class ReconstructionPipeline(BasePipeline):
         self.iou = self.get_loss(ModelManager.LossTypes.IOU)
         self.bce = self.get_loss(ModelManager.LossTypes.BCE)
 
+        self.pix2vox,_ = ModelManager.ModelManager(self.config).get_Model(self.config.model_type)
         self.init_models(load_model=config.load_model)
 
     def init_models(self,load_model):
         # Set up networks
-        self.encoder = Encoder(config=self.config,in_channel=self.config.in_channels)
-        self.decoder = Decoder(config=self.config)
+        self.encoder = self.pix2vox.encoder
+        self.decoder = self.pix2vox.decoder
         self.encoder.apply(network_utils.init_weights)
         self.decoder.apply(network_utils.init_weights)
 
@@ -64,12 +65,12 @@ class ReconstructionPipeline(BasePipeline):
         print('Parameters in Decoder: %d.' % (utils.count_parameters(self.decoder)))
 
         # if config.pix2vox_refiner:
-        self.refiner = Refiner(config=self.config)
+        self.refiner = self.pix2vox.refiner
         self.refiner.apply(network_utils.init_weights)
         print('Parameters in Refiner: %d.' % (utils.count_parameters(self.refiner)))
 
         # if config.pix2vox_merger:
-        self.merger =  Merger(config=self.config)
+        self.merger =  self.pix2vox.merger
         print('Parameters in Merger: %d.' % (utils.count_parameters(self.merger)))
         self.merger.apply(network_utils.init_weights)
 
@@ -102,8 +103,8 @@ class ReconstructionPipeline(BasePipeline):
             raise Exception('[FATAL] %s Unknown optimizer %s.' % (dt.now(), self.config.TRAIN.POLICY))
 
         if load_model:
-            encoder,encoder_solver,decoder,decoder_solver,\
-            refiner,refiner_solver,merger,merger_solver = network_utils.load_checkpoint(self.config,self.encoder,self.encoder_solver,self.decoder,
+            self.encoder,self.encoder_solver,self.decoder,self.decoder_solver,\
+            self.refiner,self.refiner_solver,self.merger,self.merger_solver = network_utils.load_checkpoint(self.config,self.encoder,self.encoder_solver,self.decoder,
                                                                                   self.decoder_solver,self.refiner,self.refiner_solver,self.merger,self.merger_solver)
 
     def train(self):
@@ -260,6 +261,9 @@ class ReconstructionPipeline(BasePipeline):
                 torch.cuda.empty_cache()  # to avoid memory errors
 
             self.validate_or_test(epoch,self.encoder,self.decoder,self.refiner,self.merger,self.encoder_solver,self.decoder_solver,self.refiner_solver,self.merger_solver)
+
+            if epoch % self.config.save_mesh == 0:
+                self.realdata_test()
 
     def validate_or_test(self,epoch,encoder=None,
                          decoder=None,
@@ -426,7 +430,7 @@ class ReconstructionPipeline(BasePipeline):
             # print("\n")
 
         # Print header
-        self.logger.info('============================ TEST RESULTS ============================')
+        self.logger.info('============================ Validation RESULTS ============================')
         self.logger.info('Taxonomy\t #Sample\t\n')
         for th in self.config.TEST.VOXEL_THRESH:
             self.logger.info('t=%.2f \t' % th)
@@ -476,16 +480,24 @@ class ReconstructionPipeline(BasePipeline):
         # for mi in mean_iou:
         #     print('%.4f' % mi, end='\t')
 
+    def validate(self):
+        self.validate_or_test(0,self.encoder,self.decoder,self.refiner,self.merger,self.encoder_solver,self.decoder_solver,self.refiner_solver,self.merger_solver)
+
 
     def test(self, empty_test = False):
-        data_loader = self.empty_loader if empty_test else self.test_loader
+        dataset = self.datasetManager.get_dataset(self.config.dataset_type)
+        testdataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
+        data_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
+                                               num_workers=self.config.num_workers, pin_memory=True)
 
+        n_samples = len(data_loader)
         # Switch models to evaluation mode
         self.encoder.eval()
         self.decoder.eval()
         self.refiner.eval()
         self.merger.eval()
 
+        test_iou_dict = dict()
         with torch.no_grad():
             for index, (taxonomy_ids, batch, labels) in enumerate(data_loader):
                 # Transfer to GPU
@@ -507,8 +519,55 @@ class ReconstructionPipeline(BasePipeline):
 
                 self.save_intermediate_obj(training_batch_index=index,input_images=batch, local_labels=labels, outputs=outputs, process = "empty" if empty_test else "test", threshold=self.config.TEST.VOXEL_THRESH_IMAGE)
 
+                for i in range(0, batch.shape[0]):
+                    sample_iou = []
+                    for th in self.config.TEST.VOXEL_THRESH:
+                        _volume = torch.ge(outputs[i], th).float()
+                        sample_iou.append(self.iou(_volume, labels[i]).item())
+
+                    if taxonomy_ids[i] not in test_iou_dict:
+                        test_iou_dict[taxonomy_ids[i]] = {'n_samples': 0, 'iou': [0] * len(self.config.TEST.VOXEL_THRESH)}
+                    test_iou_dict[taxonomy_ids[i]]['n_samples'] += 1
+                    test_iou_dict[taxonomy_ids[i]]['iou']  = [a + b for a, b in zip(test_iou_dict[taxonomy_ids[i]]['iou'], sample_iou)]
+
+        # Output testing results
+        for taxonomy_id in test_iou_dict:
+            test_iou_dict[taxonomy_id]['iou']  = np.divide(test_iou_dict[taxonomy_id]['iou'], test_iou_dict[taxonomy_id]['n_samples'])
+            # print(test_iou_dict[taxonomy_id]['iou'])
+            # print("\n")
+
+        # Print header
+        self.logger.info('============================ TEST RESULTS ============================')
+        self.logger.info('Taxonomy\t #Sample\t\n')
+        for th in self.config.TEST.VOXEL_THRESH:
+            self.logger.info('t=%.2f \t' % th)
+        self.logger.info(" ======================================================================")
+        # Print body
+        for taxonomy_id in test_iou_dict:
+            self.logger.info(taxonomy_id+":\t")
+            self.logger.info('%d \t' % test_iou_dict[taxonomy_id]['n_samples'])
+            for ti in test_iou_dict[taxonomy_id]['iou']:
+                self.logger.info('%.4f \t' % ti)
+            self.logger.info(" ======================================================================")
+
+        # Print mean IoU for each threshold
+        mean_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
+        self.logger.info('Overall:\t')
+        self.logger.info('%d \t' % n_samples)
+        for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
+            for taxonomy_id in test_iou_dict:
+                mean_iou[i] += test_iou_dict[taxonomy_id]['iou'][i]
+
+        mean_iou  = np.divide(mean_iou, n_samples)
+        for mi in mean_iou:
+            self.logger.info('%.4f \t' % mi)
+
     def empty_test(self):
-        data_loader = self.empty_loader
+
+        empty_dataset = self.datasetManager.get_dataset(DatasetType.EMPTY)
+        emptydataset = empty_dataset.get_img_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
+        data_loader = torch.utils.data.DataLoader(emptydataset, batch_size=self.config.batch_size, shuffle=False,
+                                                        num_workers=self.config.num_workers, pin_memory=True)
 
         # Switch models to evaluation mode
         self.encoder.eval()
@@ -544,6 +603,87 @@ class ReconstructionPipeline(BasePipeline):
 
                 # save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(index) + "_" + "empty" + "_input_" + str(index) + ".png")
 
+    def realdata_test(self):
+        self.config.dataset_path = self.config.real_data_path
+        dataset = self.datasetManager.get_dataset(DatasetType.PIX3D)
+        dataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
+        data_loader = torch.utils.data.DataLoader(dataset, batch_size=self.config.batch_size, shuffle=False,
+                                                  num_workers=self.config.num_workers, pin_memory=True)
+        n_samples = len(data_loader)
+        # Switch models to evaluation mode
+        self.encoder.eval()
+        self.decoder.eval()
+        self.refiner.eval()
+        self.merger.eval()
+
+        test_iou_dict = dict()
+        with torch.no_grad():
+            for index, (taxonomy_ids, batch, labels) in enumerate(data_loader):
+                # Transfer to GPU
+                if torch.cuda.is_available():#no nvidia on mac!!!
+                    batch, labels = batch.cuda(), labels.cuda()
+
+                image_features = self.encoder(batch)
+                raw_features, generated_volume = self.decoder(image_features)
+
+                if self.config.pix2vox_merger:
+                    generated_volume = self.merger(raw_features, generated_volume)
+                else:
+                    generated_volume = torch.mean(generated_volume, dim=1)
+
+                if self.config.pix2vox_refiner:
+                    generated_volume = self.refiner(generated_volume)
+
+                outputs = generated_volume
+
+                output_path = self.checkpoint_path + self.config.main_name+"_"+ str(index)+"_"+"empty"+"_output.npy"
+
+                output_np = outputs[0].detach().cpu().numpy()
+                output_np = output_np > 0.2
+                output = torch.tensor(output_np)
+
+                for i in range(0, batch.shape[0]):
+                    sample_iou = []
+                    for th in self.config.TEST.VOXEL_THRESH:
+                        _volume = torch.ge(outputs[i], th).float()
+                        sample_iou.append(self.iou(_volume, labels[i]).item())
+
+                    if taxonomy_ids[i] not in test_iou_dict:
+                        test_iou_dict[taxonomy_ids[i]] = {'n_samples': 0, 'iou': [0] * len(self.config.TEST.VOXEL_THRESH)}
+                    test_iou_dict[taxonomy_ids[i]]['n_samples'] += 1
+                    test_iou_dict[taxonomy_ids[i]]['iou']  = [a + b for a, b in zip(test_iou_dict[taxonomy_ids[i]]['iou'], sample_iou)]
+
+        # Output testing results
+        for taxonomy_id in test_iou_dict:
+            test_iou_dict[taxonomy_id]['iou']  = np.divide(test_iou_dict[taxonomy_id]['iou'], test_iou_dict[taxonomy_id]['n_samples'])
+            # print(test_iou_dict[taxonomy_id]['iou'])
+            # print("\n")
+
+        # Print header
+        self.logger.info('============================ REAL DATA RESULTS ============================')
+        self.logger.info('Taxonomy\t #Sample\t\n')
+        for th in self.config.TEST.VOXEL_THRESH:
+            self.logger.info('t=%.2f \t' % th)
+        self.logger.info(" ======================================================================")
+        # Print body
+        for taxonomy_id in test_iou_dict:
+            self.logger.info(taxonomy_id+":\t")
+            self.logger.info('%d \t' % test_iou_dict[taxonomy_id]['n_samples'])
+            for ti in test_iou_dict[taxonomy_id]['iou']:
+                self.logger.info('%.4f \t' % ti)
+            self.logger.info(" ======================================================================")
+
+        # Print mean IoU for each threshold
+        mean_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
+        self.logger.info('Overall:\t')
+        self.logger.info('%d \t' % n_samples)
+        for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
+            for taxonomy_id in test_iou_dict:
+                mean_iou[i] += test_iou_dict[taxonomy_id]['iou'][i]
+
+        mean_iou  = np.divide(mean_iou, n_samples)
+        for mi in mean_iou:
+            self.logger.info('%.4f \t' % mi)
 
 
 if __name__ == '__main__':

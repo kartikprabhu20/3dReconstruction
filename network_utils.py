@@ -54,7 +54,7 @@ def save_checkpoints(cfg, file_path, epoch_idx, encoder, encoder_solver, decoder
 
 def load_checkpoint(cfg,encoder,encoder_solver,decoder,decoder_solver,
                     refiner=None,refiner_solver=None,merger=None,merger_solver=None):
-    checkpoint = torch.load(cfg.checkpoint_path+'checkpoint_best.pth',map_location=torch.device('cpu'))
+    checkpoint = torch.load(cfg.pretrained_checkpoint_path+'checkpoint_best.pth',map_location=torch.device('cpu'))
     encoder.load_state_dict(checkpoint['encoder_state_dict'])
     # encoder_solver.load_state_dict(checkpoint['encoder_solver_state_dict'])
     decoder.load_state_dict(checkpoint['decoder_state_dict'])
