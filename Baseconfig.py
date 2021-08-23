@@ -21,7 +21,7 @@ cfg.apex = False
 cfg.apex_mode = "O2"
 cfg.load_model = False #For direct testing
 
-cfg.num_epochs = 2000
+cfg.num_epochs = 800
 cfg.learning_rate = 0.001
 
 ####### INPUT-OUTPUT CONFIG #######

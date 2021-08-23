@@ -263,7 +263,7 @@ class ReconstructionPipeline(BasePipeline):
             self.validate_or_test(epoch,self.encoder,self.decoder,self.refiner,self.merger,self.encoder_solver,self.decoder_solver,self.refiner_solver,self.merger_solver)
 
             if epoch % self.config.save_mesh == 0:
-                self.realdata_test()
+                self.realdata_test(epoch)
 
     def validate_or_test(self,epoch,encoder=None,
                          decoder=None,
@@ -603,7 +603,7 @@ class ReconstructionPipeline(BasePipeline):
 
                 # save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(index) + "_" + "empty" + "_input_" + str(index) + ".png")
 
-    def realdata_test(self):
+    def realdata_test(self, epoch):
         self.config.dataset_path = self.config.real_data_path
         dataset = self.datasetManager.get_dataset(DatasetType.PIX3D)
         dataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
@@ -615,6 +615,10 @@ class ReconstructionPipeline(BasePipeline):
         self.decoder.eval()
         self.refiner.eval()
         self.merger.eval()
+
+        self.logger.info('============================ REAL DATA RESULTS ============================')
+
+        bceloss,floss,dloss,dscore,jaccardIndex = 0,0,0,0,0
 
         test_iou_dict = dict()
         with torch.no_grad():
@@ -636,11 +640,12 @@ class ReconstructionPipeline(BasePipeline):
 
                 outputs = generated_volume
 
-                output_path = self.checkpoint_path + self.config.main_name+"_"+ str(index)+"_"+"empty"+"_output.npy"
-
-                output_np = outputs[0].detach().cpu().numpy()
-                output_np = output_np > 0.2
-                output = torch.tensor(output_np)
+                bceloss + self.bce(outputs, labels)
+                dl = self.dice(outputs, labels)
+                ds = self.dice.get_dice_score()
+                jaccardIndex += self.iou(outputs, labels)
+                dloss += dl.detach()
+                dscore += ds.detach()
 
                 for i in range(0, batch.shape[0]):
                     sample_iou = []
@@ -653,6 +658,26 @@ class ReconstructionPipeline(BasePipeline):
                     test_iou_dict[taxonomy_ids[i]]['n_samples'] += 1
                     test_iou_dict[taxonomy_ids[i]]['iou']  = [a + b for a, b in zip(test_iou_dict[taxonomy_ids[i]]['iou'], sample_iou)]
 
+        #Average the losses
+        bceloss = bceloss/n_samples
+        dloss = dloss /n_samples
+        dscore = dscore / n_samples
+        jaccardIndex = jaccardIndex / n_samples
+        process = 'Realdataset_test'
+        self.logger.info("Epoch:" + str(epoch) + process + "..." +
+                         "\n focalTverskyLoss:" + str(floss) +
+                         "\n binloss:" + str(bceloss) +
+                         "\n DiceLoss:" + str(dloss) +
+                         "\n DiceScore:" + str(dscore) +
+                         "\n IOU:" + str(jaccardIndex))
+
+        print("Epoch:" + str(epoch) + process + "..." +
+              "\n focalTverskyLoss:" + str(floss) +
+              "\n binloss:" + str(bceloss) +
+              "\n DiceLoss:" + str(dloss) +
+              "\n DiceScore:" + str(dscore) +
+              "\n IOU:" + str(jaccardIndex))
+
         # Output testing results
         for taxonomy_id in test_iou_dict:
             test_iou_dict[taxonomy_id]['iou']  = np.divide(test_iou_dict[taxonomy_id]['iou'], test_iou_dict[taxonomy_id]['n_samples'])
@@ -660,7 +685,6 @@ class ReconstructionPipeline(BasePipeline):
             # print("\n")
 
         # Print header
-        self.logger.info('============================ REAL DATA RESULTS ============================')
         self.logger.info('Taxonomy\t #Sample\t\n')
         for th in self.config.TEST.VOXEL_THRESH:
             self.logger.info('t=%.2f \t' % th)
