@@ -263,7 +263,7 @@ class ReconstructionPipeline(BasePipeline):
             self.validate_or_test(epoch,self.encoder,self.decoder,self.refiner,self.merger,self.encoder_solver,self.decoder_solver,self.refiner_solver,self.merger_solver)
 
             if epoch % self.config.save_mesh == 0:
-                self.realdata_test(epoch)
+                self.realdata_test(epoch=epoch)
 
     def validate_or_test(self,epoch,encoder=None,
                          decoder=None,
@@ -543,22 +543,24 @@ class ReconstructionPipeline(BasePipeline):
             self.logger.info('t=%.2f \t' % th)
         self.logger.info(" ======================================================================")
         # Print body
+        total_samples = 0
         for taxonomy_id in test_iou_dict:
             self.logger.info(taxonomy_id+":\t")
             self.logger.info('%d \t' % test_iou_dict[taxonomy_id]['n_samples'])
+            total_samples += test_iou_dict[taxonomy_id]['n_samples']
             for ti in test_iou_dict[taxonomy_id]['iou']:
                 self.logger.info('%.4f \t' % ti)
             self.logger.info(" ======================================================================")
 
         # Print mean IoU for each threshold
-        mean_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
+        sum_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
         self.logger.info('Overall:\t')
         self.logger.info('%d \t' % n_samples)
         for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
             for taxonomy_id in test_iou_dict:
-                mean_iou[i] += test_iou_dict[taxonomy_id]['iou'][i]
+                sum_iou[i] += test_iou_dict[taxonomy_id]['iou'][i] * test_iou_dict[taxonomy_id]['n_samples']
 
-        mean_iou  = np.divide(mean_iou, n_samples)
+        mean_iou  = np.divide(sum_iou, total_samples)
         for mi in mean_iou:
             self.logger.info('%.4f \t' % mi)
 
@@ -603,7 +605,7 @@ class ReconstructionPipeline(BasePipeline):
 
                 # save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(index) + "_" + "empty" + "_input_" + str(index) + ".png")
 
-    def realdata_test(self, epoch):
+    def realdata_test(self, epoch=0):
         self.config.dataset_path = self.config.real_data_path
         dataset = self.datasetManager.get_dataset(DatasetType.PIX3D)
         dataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
@@ -690,22 +692,25 @@ class ReconstructionPipeline(BasePipeline):
             self.logger.info('t=%.2f \t' % th)
         self.logger.info(" ======================================================================")
         # Print body
+
+        total_samples = 0
         for taxonomy_id in test_iou_dict:
             self.logger.info(taxonomy_id+":\t")
             self.logger.info('%d \t' % test_iou_dict[taxonomy_id]['n_samples'])
+            total_samples += test_iou_dict[taxonomy_id]['n_samples']
             for ti in test_iou_dict[taxonomy_id]['iou']:
                 self.logger.info('%.4f \t' % ti)
             self.logger.info(" ======================================================================")
 
         # Print mean IoU for each threshold
-        mean_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
+        sum_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
         self.logger.info('Overall:\t')
         self.logger.info('%d \t' % n_samples)
         for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
             for taxonomy_id in test_iou_dict:
-                mean_iou[i] += test_iou_dict[taxonomy_id]['iou'][i]
+                sum_iou[i] += test_iou_dict[taxonomy_id]['iou'][i] * test_iou_dict[taxonomy_id]['n_samples']
 
-        mean_iou  = np.divide(mean_iou, n_samples)
+        mean_iou  = np.divide(sum_iou, total_samples)
         for mi in mean_iou:
             self.logger.info('%.4f \t' % mi)
 

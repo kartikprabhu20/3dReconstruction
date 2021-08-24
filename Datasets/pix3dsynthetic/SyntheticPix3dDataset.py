@@ -29,19 +29,20 @@ seed(2020)
 
 
 class SyntheticPix3dDataset(BaseDataset):
-    def __init__(self, config):
+    def __init__(self, config, logger=None):
         print("SyntheticPix3dDataset")
+        self.logger = logger
         self.config = config
         self.train_img_list, self.train_model_list, self.test_img_list, self.test_model_list = self.get_train_test_split(
             self.config.s2r3dfree.train_test_split)
 
     def get_trainset(self, transforms=None, images_per_category=0):
         return SyntheticPix3d(self.config, self.train_img_list, self.train_model_list, transforms=transforms,
-                              imagesPerCategory=images_per_category)
+                              imagesPerCategory=images_per_category, logger=self.logger)
 
     def get_testset(self, transforms=None, images_per_category=0):
         return SyntheticPix3d(self.config, self.test_img_list, self.test_model_list, transforms=transforms,
-                              imagesPerCategory=images_per_category)
+                              imagesPerCategory=images_per_category,logger=self.logger)
 
     def get_img_trainset(self, transforms=None, images_per_category=0):
         return SyntheticPix3d_Img(self.config, self.train_img_list, customtransforms=transforms,
@@ -62,10 +63,11 @@ class SyntheticPix3dDataset(BaseDataset):
 
 
 class SyntheticPix3d(Dataset):
-    def __init__(self, config, input_paths, output_paths, transforms=None, imagesPerCategory=0):
+    def __init__(self, config, input_paths, output_paths, transforms=None, imagesPerCategory=0,logger=None):
         self.input_paths = input_paths
         self.output_paths = output_paths
         self.config = config
+        self.logger=logger
 
         # paths
         self.dataset_path = config.dataset_path
@@ -92,8 +94,11 @@ class SyntheticPix3d(Dataset):
         else:
             output_model_path = os.path.join(os.path.join(self.dataset_models_path, self.output_paths[idx]),
                                              "voxel_" + str(self.config.voxel_size) + ".npy" if self.config.label_type == Baseconfig.LabelType.NPY else "voxel.mat")
-        # print(str(idx)+":img_path:"+img_path)
-        # print(str(idx)+":output_model_path:"+output_model_path)
+
+        # if self.logger != None:
+        #     self.logger.info(str(idx)+":img_path:"+img_path)
+        #     self.logger.info(str(idx)+":output_model_path:"+output_model_path)
+
         input_img = self.read_img(img_path)
         input_stack = input_img
 
@@ -158,18 +163,24 @@ class SyntheticPix3d(Dataset):
         #     if self.resize:
         #         img = img.resize((self.size[0],self.size[1]), Image.ANTIALIAS)
 
-        img = cv2.imread(path, cv2.IMREAD_UNCHANGED).astype(np.float32)
 
-        if self.resize:
-            img = cv2.resize(img, (self.size[0], self.size[1]), interpolation=cv2.INTER_AREA)
+        try:
+            img = cv2.imread(path, cv2.IMREAD_UNCHANGED).astype(np.float32)
 
-        if len(img.shape) > 1:
-            img = img / 255.
-        if len(img.shape) < 3:
-            print('[WARN] It seems the image file %s is grayscale.' % (path))
-            img = np.stack((img,) * 3, -1)
+            if self.resize:
+                img = cv2.resize(img, (self.size[0], self.size[1]), interpolation=cv2.INTER_AREA)
+
+            if len(img.shape) > 1:
+                img = img / 255.
+            if len(img.shape) < 3:
+                print('[WARN] It seems the image file %s is grayscale.' % (path))
+                img = np.stack((img,) * 3, -1)
+
+        except:
+            self.logger.info("error in path: "+ path)
 
         img = np.asarray([img])
+
         return img
 
     def __len__(self):

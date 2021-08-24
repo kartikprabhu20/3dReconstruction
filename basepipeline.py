@@ -64,7 +64,7 @@ class BasePipeline:
          ])
 
 
-        dataset = datasetManager.get_dataset(self.config.dataset_type)
+        dataset = datasetManager.get_dataset(self.config.dataset_type,logger=self.logger)
 
         traindataset = dataset.get_trainset(transforms=train_transforms)
         self.train_loader = torch.utils.data.DataLoader(traindataset, batch_size=self.config.batch_size, shuffle=True,

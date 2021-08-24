@@ -24,15 +24,15 @@ class DatasetManager():
     def __init__(self,config):
         self.config = config
 
-    def get_dataset(self, dataset_type) -> BaseDataset:
+    def get_dataset(self, dataset_type, logger=None) -> BaseDataset:
         if DatasetType.PIX3DSYNTHETIC1 == dataset_type:
-            return SyntheticPix3dDataset(config=self.config)
+            return SyntheticPix3dDataset(config=self.config,logger=logger)
         elif DatasetType.PIX3D == dataset_type:
             return Pix3dDataset(config=self.config)
         elif DatasetType.EMPTY == dataset_type:
             return EmptyDataset(config=self.config)
 
-        return SyntheticPix3dDataset(config=self.config)
+        return SyntheticPix3dDataset(config=self.config,logger=logger)
 
 if __name__ == '__main__':
     switcher = {

@@ -36,7 +36,7 @@ if [ $# -gt 0 ]; then
     fi
     if [ $# == 2 ]; then
         pythonMain=$1
-        programROOT=/nfs1/kprabhu/3dReconstruction/$2
+        programROOT=/nfs1/kprabhu/3dReconstruction1/$2
     fi
 fi
 
