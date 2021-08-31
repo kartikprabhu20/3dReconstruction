@@ -3,18 +3,26 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces A graph showing how synthetic dataset will evolve overtime ~\cite {gartnerreport}\relax }}{2}{figure.caption.11}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces 3D representation of Standford bunny model.(left to right) Point cloud, voel and mesh ~\cite {Hoang2019ADL} \relax }}{3}{figure.caption.12}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A collection of photorealistic synthetic datasets. The first colomn of each row indicates the dataset name followed by randomly selected images from the same dataset.\relax }}{9}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.\relax }}{10}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Distribution of pix3D~\cite {pix3d} images(left), unique models(right)\relax }}{12}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Sample RGB images from pix3D\relax }}{13}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Network architecture for pix2vox~\cite {Xie_2019}\relax }}{15}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces A survey conducted by ~\cite {Han2021ImageBased3O}, proves that Pix2Vox is considerably a good 3D reconstruction model. {\color {red} \emph {replace this figure with better one}}\relax }}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Distribution of pix3D~\cite {pix3d} images(left), unique models(right)\relax }}{14}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sample RGB images from pix3D\relax }}{15}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Network architecture for pix2vox~\cite {Xie_2019}\relax }}{18}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Network architecture for pix2vox++~\cite {Xie_2020}\relax }}{18}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces A survey conducted by ~\cite {Han2021ImageBased3O}, proves that Pix2Vox is considerably a good 3D reconstruction model. {\color {red} \emph {replace this figure with better one}}\relax }}{18}{figure.caption.19}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample images with different camera viewpoints of same object with a constant scene.\relax }}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sample images with different lighting and shadows conditions\relax }}{21}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Sample images with different textures for same scene.\relax }}{21}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.\relax }}{21}{figure.caption.23}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces T-SNE visualisation for images from various photo-realistic synthetic dataset.\relax }}{24}{figure.caption.24}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Caption in the list of figures}}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Caption in the list of figures}}{27}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces {{List}}\relax }}{26}{figure.caption.19}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces {{List}, {Ordered}}\relax }}{26}{figure.caption.19}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces {{List}, {Set}}\relax }}{26}{figure.caption.19}%
-\contentsline {figure}{\numberline {B.4}{\ignorespaces {{List}, {Ordered}, {Set}}\relax }}{26}{figure.caption.19}%
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Drawing with tables and TikZ}}{26}{figure.caption.19}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces {{List}}\relax }}{30}{figure.caption.27}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces {{List}, {Ordered}}\relax }}{30}{figure.caption.27}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces {{List}, {Set}}\relax }}{30}{figure.caption.27}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces {{List}, {Ordered}, {Set}}\relax }}{30}{figure.caption.27}%
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Drawing with tables and TikZ}}{30}{figure.caption.27}%

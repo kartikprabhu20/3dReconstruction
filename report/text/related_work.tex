@@ -10,7 +10,7 @@ While ~\cite{dai2017scannet,} are real-world datasets, ~\cite{Fu20203DFRONT3F,Ha
 The real-world dataset are gathered from live scans.
 The synthetic dataset can either bet manually configured by a professional or automated by a programmer.
 
-\subsubsection{Indoor synthetic datasets}
+\subsection{Indoor synthetic datasets}
 Alibaba group introduced 3D-FRONT~\cite{Fu20203DFRONT3F} which stands for 3D Furnished Rooms with layOuts and semaNTics dataset which comprises of
 synthetic indoor scenes designed under the supervision of professionals.
 It consists of 18,968 rooms and 13,151 textured furnitures.
@@ -60,19 +60,85 @@ The focus of the simulator is providing the agent with sensor data and allowing 
 At the foundation level Habitat-sim uses Magnum graphics
 middleware library~\footnote{https://magnum.graphics/} which supports cross-platform on various hardware configuration.
 
+\begin{figure}
+\begin{tabular}{llll}
+    3D FRONT & \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/3dfront_1} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/3dfront_2} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/3dfront_3}\\
 
-\subsubsection{Tools to create synthetic datasets}
+    AI2THOR & \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/ai2thor_01} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/ai2thor_02} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/ai2thor_03}\\
 
-BlenderProc: Reducing the Reality Gap with Photorealistic Rendering ~\cite{denninger2019blenderproc}
+    Hypersim & \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/hypersim_01} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/hypersim_02} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/hypersim_03}\\
+
+    InteriorNet & \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/interiornet_01} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/interiornet_02} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/interiornet_03}\\
+
+    OpenRooms & \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/openrooms_01} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/openrooms_02} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/openrooms_03}\\
+
+    SceneNet & \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/scenenet_1} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/scenenet_2} &
+    \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/scenenet_3}\\
+
+\end{tabular}
+\caption{A collection of photorealistic synthetic datasets. The first colomn of each row indicates the dataset name followed by randomly selected images from the same dataset.}
+\label{fig:photorealistic images comparison}
+\end{figure}
+
+\subsection{Tools to create synthetic datasets}
+
+BlenderProc: Reducing the Reality Gap with Photorealistic Rendering ~\cite{denninger2019blenderproc} is a python based pipeline to create synthetic dataset.
+As the name suggests, the key underlying framework is Blender ~\cite{blender}, which is a 3D modelling and rendering package.
+Like most of the synthetic data generation tools it provides with rgb, depth maps, normals, semantic segmentation.
+Figure ~\ref{fig:Blenderproc samples} is a collection of sample images generated using BlenderPoc.
+As far as we searched for synthetic data generation tools, Blenderproc supports maximum number of existing dataset.
+Ikea~\cite{Lim2013ParsingIO}, Pix3d~\cite{pix3d}, Shapenet~\cite{chang2015shapenet},3DFront~\cite{Fu20203DFRONT3F} Replica~\cite{Straub2019TheRD}, SunCG~\cite{Xiao2013SUN3DAD} are some of the popular dataset it supports.
+It also has some combinations of these datasets like ShapeNet with SunCG or SceneNet.
+Even though it supports rendering of Pix3D dataset, the model is rendered without any background.
+One extreme advantage of this toolkit, is that it is opensource and hence a wider open community to contribute.
+
+\begin{figure}
+    \begin{tabular}{llll}
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_1} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_depth_1} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instance_1} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_1}\\
+
+
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_2} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_depth_2} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instance_2} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_2}\\
+
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_3} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_depth_3} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instance_3} &
+        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_3}\\
+
+    \end{tabular}
+    \caption{Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.}
+    \label{fig:Blenderproc samples}
+\end{figure}
 
 NVIDIA developed a Deep learning Dataset Synthesizer (NDDS) ~\cite{to2018ndds} in the form of a plugin for Unreal Engine 4(UE4).
 The plugin can synthesize images,per-pixel segmentation, depth, object 3D pose, 2D/3D bounding box, keypoints, and custom stencils.
 It even supports domain randomisation of objects, lighting, camera position, poses and textures.
-Leveraging the asynchronous-multithreaded frames, data was generated at high rates(50–100 Hz) for Falling Things (FAT) ~\cite{tremblay2018falling} dataset.
+Leveraging the asynchronous-multithreaded frames, data was generated at high rates(50\–100 Hz) for Falling Things (FAT) ~\cite{tremblay2018falling} dataset.
 
-SynthDet: An end-to-end object detection pipeline using synthetic data
+"SynthDet: An end-to-end object detection pipeline using synthetic data" ~\cite{synthdet2020}, is an open source project supported by Unity technologies using Unity Engine.
+This is an ML pipeline which uses 63 categories of common objects(example: cereal box, cady, cartons, etc) as synthetic objects to generate 2D bounding boxes.
+This project was highly influenced by ~\cite{hinterstoisser2019annotation}, where in they use synthetic 3D models with randomised background to generate synthetic dataset for object detection task.
+With domain randomisation the author of ~\cite{hinterstoisser2019annotation} proved that no real data or mixed training is required for Deep Learning model to perform significantly.
 
-UnrealCV ~\cite{qiu2017unrealcv}
+UnrealCV ~\cite{qiu2017unrealcv} is open source project built upon Unreal Engine 4 (UE4) ~\cite{unrealengine}).
+It supports some pre-built indoor architectures available on the asset store, which are unfortunately paid versions.
+Along with this limitation, the plugin only creates depthmaps, normals and segmentation masks, with no mapping to 3D models.
 
 \todo{A table to explain diffs between various methods( only if 3D-FREE has more advantage)}
 
@@ -80,9 +146,9 @@ UnrealCV ~\cite{qiu2017unrealcv}
 Voxel based, mesh based
 Pix2vox,OctNet,Mesh rcnn,Pixel2Mesh,Occupancy networks, etc
 
-\section{Domain adaptation}\label{ss:domain_adaptation}
+\section{Domain Randomisation}\label{s:domain randomisation}
 Discuss other methods used to mitigate domain shift
 Example: distance learning, subspace matching
 
-\subsection{GAN based style transfer}\label{ss:gan_based_styletransfer}
+\subsection{GAN based style transfer}\label{s:gan_based_styletransfer}
 
