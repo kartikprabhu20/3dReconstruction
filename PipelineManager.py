@@ -7,10 +7,13 @@
 from DatasetManager import DatasetManager
 from ModelManager import ModelManager
 from ReconstructionPipeline import ReconstructionPipeline
+from Synth2RealPipeline import Synth2RealPipeline
+
 
 class PipelineType:
     RECONSTRUCTION = "RECONSTRUCTION"
     AUTOENCODER = "AUTOENCODER"
+    CYCLEGAN = "CYCLEGAN"
 
 class PipelineManager:
 
@@ -21,9 +24,10 @@ class PipelineManager:
 
 
     def get_pipeline(self, pipeline_type):
-        switcher = {
-            PipelineType.RECONSTRUCTION: ReconstructionPipeline(config=self.config, datasetManager=self.datasetManager),
-            # PipelineType.AUTOENCODER:
-        }
-        return switcher.get(pipeline_type, ReconstructionPipeline(config=self.config, datasetManager=self.datasetManager))
 
+        if pipeline_type == PipelineType.RECONSTRUCTION:
+            return  ReconstructionPipeline(config=self.config, datasetManager=self.datasetManager)
+        elif pipeline_type == PipelineType.CYCLEGAN:
+            return Synth2RealPipeline(config=self.config, datasetManager=self.datasetManager)
+
+        return  ReconstructionPipeline(config=self.config, datasetManager=self.datasetManager)

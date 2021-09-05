@@ -9,12 +9,14 @@ from Datasets.pix3d.Pix3dDataset import Pix3dDataset
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
 from Datasets.pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3dDataset
 from Datasets.EmptyDataset import EmptyDataset
+from Datasets.synth2real.Synth2realDataset import Synth2RealDataset
 
 
 class DatasetType:
     PIX3D = "pix3d"
     PIX3DSYNTHETIC1 = "pix3dsynthetic1"
     EMPTY = "empty"
+    SYNTH2REAL = "synth2real"
 
 class LabelType:
     MAT = "mat"
@@ -29,6 +31,8 @@ class DatasetManager():
             return SyntheticPix3dDataset(config=self.config,logger=logger)
         elif DatasetType.PIX3D == dataset_type:
             return Pix3dDataset(config=self.config)
+        elif DatasetType.SYNTH2REAL == dataset_type:
+            return Synth2RealDataset(config=self.config)
         elif DatasetType.EMPTY == dataset_type:
             return EmptyDataset(config=self.config)
 
