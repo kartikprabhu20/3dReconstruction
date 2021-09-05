@@ -41,6 +41,9 @@ LOWEST_LOSS = 1
 best_iou = -1
 best_epoch = -1
 
+best_real_iou = -1
+best_real_epoch = -1
+
 class ReconstructionPipeline(BasePipeline):
     def __init__(self, config,datasetManager):
         super(ReconstructionPipeline, self).__init__(config, datasetManager)
@@ -436,22 +439,24 @@ class ReconstructionPipeline(BasePipeline):
             self.logger.info('t=%.2f \t' % th)
         self.logger.info(" ======================================================================")
         # Print body
+        total_samples = 0
         for taxonomy_id in test_iou_dict:
             self.logger.info(taxonomy_id+":\t")
             self.logger.info('%d \t' % test_iou_dict[taxonomy_id]['n_samples'])
+            total_samples += test_iou_dict[taxonomy_id]['n_samples']
             for ti in test_iou_dict[taxonomy_id]['iou']:
                 self.logger.info('%.4f \t' % ti)
             self.logger.info(" ======================================================================")
 
         # Print mean IoU for each threshold
-        mean_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
+        sum_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
         self.logger.info('Overall:\t')
         self.logger.info('%d \t' % n_samples)
         for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
             for taxonomy_id in test_iou_dict:
-                mean_iou[i] += test_iou_dict[taxonomy_id]['iou'][i]
+                sum_iou[i] += test_iou_dict[taxonomy_id]['iou'][i] * test_iou_dict[taxonomy_id]['n_samples']
 
-        mean_iou  = np.divide(mean_iou, n_samples)
+        mean_iou  = np.divide(sum_iou, total_samples)
         for mi in mean_iou:
             self.logger.info('%.4f \t' % mi)
 
@@ -608,7 +613,7 @@ class ReconstructionPipeline(BasePipeline):
     def realdata_test(self, epoch=0):
         self.config.dataset_path = self.config.real_data_path
         dataset = self.datasetManager.get_dataset(DatasetType.PIX3D)
-        dataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
+        dataset = dataset.get_testset(transforms=self.test_transforms)
         data_loader = torch.utils.data.DataLoader(dataset, batch_size=self.config.batch_size, shuffle=False,
                                                   num_workers=self.config.num_workers, pin_memory=True)
         n_samples = len(data_loader)
@@ -704,15 +709,33 @@ class ReconstructionPipeline(BasePipeline):
 
         # Print mean IoU for each threshold
         sum_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
-        self.logger.info('Overall:\t')
+        self.logger.info('Real Overall:\t')
         self.logger.info('%d \t' % n_samples)
         for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
             for taxonomy_id in test_iou_dict:
                 sum_iou[i] += test_iou_dict[taxonomy_id]['iou'][i] * test_iou_dict[taxonomy_id]['n_samples']
 
+        current_best = -1
         mean_iou  = np.divide(sum_iou, total_samples)
         for mi in mean_iou:
+            current_best = mi if current_best < mi else current_best
             self.logger.info('%.4f \t' % mi)
+
+        global best_real_iou
+        global best_real_epoch
+
+
+        if best_real_iou < current_best:  # Save best metric evaluation weights
+            best_real_iou = current_best
+            best_real_epoch = epoch
+            self.logger.info('Real Best metric... @ epoch:' + str(best_real_epoch) + ' Current Lowest loss:' + str(LOWEST_LOSS))
+            self.logger.info('Real Best metric... @ epoch:' + str(best_real_epoch) + ' Current best_iou:' + str(best_iou))
+
+
+            network_utils.save_checkpoints(self.config, self.checkpoint_path,
+                                           'real', self.encoder, self.encoder_solver, self.decoder, self.decoder_solver,
+                                           self.refiner, self.refiner_solver, self.merger, self.merger_solver, best_iou, best_epoch)
+
 
 
 if __name__ == '__main__':
