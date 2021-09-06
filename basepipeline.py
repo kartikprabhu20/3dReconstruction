@@ -68,11 +68,11 @@ class BasePipeline:
 
         traindataset = dataset.get_trainset(transforms=train_transforms)
         self.train_loader = torch.utils.data.DataLoader(traindataset, batch_size=self.config.batch_size, shuffle=True,
-                                               num_workers=self.config.num_workers, pin_memory=True)
+                                               num_workers=self.config.num_workers)
 
         testdataset = dataset.get_testset(transforms=self.test_transforms)
         self.validation_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
-                                                             num_workers=self.config.num_workers, pin_memory=True)
+                                                             num_workers=self.config.num_workers)
 
     def setup_logger(self):
         self.logger = Logger(self.config.main_name, self.config.output_path + self.config.main_name).get_logger()

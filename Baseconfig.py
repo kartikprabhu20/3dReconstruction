@@ -14,8 +14,8 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_65'
-cfg.pretrained_name = 'test_65'
+cfg.main_name = 'test_67'
+cfg.pretrained_name = 'test_67'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
@@ -57,7 +57,7 @@ cfg.DATASET.STD                             = [0.229, 0.224, 0.225]
 
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
 cfg.dataset_type = DatasetType.MIXEDPIX3D
-cfg.model_type = ModelType.PIX2VOXEL
+cfg.model_type = ModelType.PIX2VOXELPP
 cfg.optimizer_type = OptimizerType.ADAM
 
 cfg.pix2vox_pretrained_encoder = True
@@ -102,15 +102,15 @@ cfg.TRAIN.UPDATE_N_VIEWS_RENDERING          = False
 #
 cfg.TEST                                    = edict()
 # cfg.TEST.RANDOM_BG_COLOR_RANGE              = [[240, 240], [240, 240], [240, 240]]
-cfg.TEST.VOXEL_THRESH                       = [0.05, .1, .2, .3, .4, .5, .6, .7]
-cfg.test_images_per_category = 10
+cfg.TEST.VOXEL_THRESH                       = [0.05, 0.075, .1, .2, .3, .4, .5, .6, .7]
+cfg.test_images_per_category = 100
 cfg.TEST.VOXEL_THRESH_IMAGE                       = 0.1
 cfg.real_images_per_category = 100
 
 ########## Paths #################
 if platform == "darwin": #local mac
     cfg.root_path = '/Users/apple/OVGU/Thesis/code/3dReconstruction'
-    cfg.dataset_path ='/Users/apple/OVGU/Thesis/s2r3dfree_v1' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/Users/apple/OVGU/Thesis/Dataset/pix3d'
+    cfg.dataset_path ='/Users/apple/OVGU/Thesis/s2r3dfree_v3' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/Users/apple/OVGU/Thesis/Dataset/pix3d'
     cfg.output_path = "/Users/apple/OVGU/Thesis/code/3dReconstruction/outputs/"
     cfg.home_path = "/Users/apple/Desktop/"
     cfg.empty_data_path = "/Users/apple/OVGU/Thesis/empty_room_img/"
@@ -128,13 +128,14 @@ else:
     cfg.empty_data_path = "/nfs1/kprabhu/empty_room_img/"
     cfg.real_data_path = '/nfs1/kprabhu/pix3d/'
     cfg.num_workers = 8
-    cfg.batch_size = 64
+    cfg.batch_size = 128
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
 cfg.tensorboard_validation = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_validation/'
 cfg.checkpoint_path = cfg.output_path + cfg.main_name + "/"
 cfg.pretrained_checkpoint_path = cfg.output_path + cfg.pretrained_name + "/"
+
 cfg.pix3d                                   = edict()
 cfg.pix3d.train_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_train_2.npy'
 cfg.pix3d.test_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_test_2.npy'
@@ -143,7 +144,6 @@ cfg.upsample = False
 cfg.s2r3dfree                                   = edict()
 cfg.s2r3dfree.train_test_split = cfg.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_v3.p"
 
-
 cfg.mixedtrain                                    = edict()
 cfg.mixedtrain.ratio                              = 0.25
 if platform == "darwin": #local mac
@@ -151,5 +151,5 @@ if platform == "darwin": #local mac
     cfg.mixedtrain.synth_dataset_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v3'
 else:
     cfg.mixedtrain.real_dataset_path = '/nfs1/kprabhu/pix3d/'
-    cfg.mixedtrain.synth_dataset_path = '/nfs1/kprabhu/s2r3dfree_v3/'
+    cfg.mixedtrain.synth_dataset_path = '/nfs1/kprabhu/s2r3dfree_v1/'
 

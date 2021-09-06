@@ -178,6 +178,10 @@ class MixedPix3D(Dataset):
         self.real_input_paths,self.real_output_paths  = self.shuffle(real_input_paths,real_output_paths)
         self.synth_input_paths,self.synth_output_paths  = self.shuffle(synth_input_paths,synth_output_paths)
 
+        # print("lengths")
+        # print(len(self.real_input_paths))
+        # print(len(self.synth_input_paths))
+
         # print("paths 0:")
         # print(self.real_input_paths[0])
         # print(self.real_output_paths[0])
@@ -218,8 +222,8 @@ class MixedPix3D(Dataset):
         # print("idx:"+str(idx))
         if (idx) % self.config.batch_size < ((1-self.ratio) * self.config.batch_size):
             index  = idx - int(self.config.batch_size  * self.ratio) * int((idx)/self.config.batch_size)
+            index = index % len(self.synth_input_paths)
             # print("synth index:" + str(index))
-
             img_path = os.path.join(self.synth_dataset_img_path, self.synth_input_paths[index])
             taxonomy_id = self.synth_input_paths[index].split('/')[0]
             output_model_path = os.path.join(os.path.join(self.synth_dataset_models_path, self.synth_output_paths[index]),
@@ -227,6 +231,7 @@ class MixedPix3D(Dataset):
 
         else:
             index  = idx - int(self.config.batch_size  * (1-self.ratio)) * int(1+(idx)/self.config.batch_size)
+            index = index % len(self.real_input_paths)
             # print("real index:" + str(index))
 
             img_path = os.path.join(self.real_dataset_path,self.real_input_paths[index])
@@ -357,7 +362,7 @@ if __name__ == '__main__':
     ])
 
     traindataset = MixedPix3DDataset(config).get_trainset(transforms=train_transforms)
-    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=False,
+    train_loader = torch.utils.data.DataLoader(traindataset, batch_size=config.batch_size, shuffle=True,
                                                num_workers=1)
     print(traindataset.__len__())
     print(train_loader.__len__())

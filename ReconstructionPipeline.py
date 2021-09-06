@@ -493,7 +493,7 @@ class ReconstructionPipeline(BasePipeline):
         dataset = self.datasetManager.get_dataset(self.config.dataset_type)
         testdataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
         data_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
-                                               num_workers=self.config.num_workers, pin_memory=True)
+                                               num_workers=self.config.num_workers)
 
         n_samples = len(data_loader)
         # Switch models to evaluation mode
@@ -615,7 +615,7 @@ class ReconstructionPipeline(BasePipeline):
         dataset = self.datasetManager.get_dataset(DatasetType.PIX3D)
         dataset = dataset.get_testset(transforms=self.test_transforms)
         data_loader = torch.utils.data.DataLoader(dataset, batch_size=self.config.batch_size, shuffle=False,
-                                                  num_workers=self.config.num_workers, pin_memory=True)
+                                                  num_workers=self.config.num_workers)
         n_samples = len(data_loader)
         # Switch models to evaluation mode
         self.encoder.eval()
