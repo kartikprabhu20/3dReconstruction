@@ -1,10 +1,10 @@
 """
 
-    Created on 05/09/21 8:35 PM 
+    Created on 05/09/21 8:35 PM
     @author: Kartik Prabhu
 
 """
-
+import torch
 from easydict import EasyDict as edict
 from sys import platform
 
@@ -15,8 +15,8 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_cycle_1'
-cfg.pretrained_name = 'test_cycle_1'
+cfg.main_name = 'test_cycle_2'
+cfg.pretrained_name = 'test_cycle_2'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
@@ -119,7 +119,7 @@ if platform == "darwin": #local mac
     cfg.num_workers = 0
     cfg.batch_size = 1
     cfg.apex = False
-    cfg.device = 'cpu'
+    cfg.device = "cuda" if torch.cuda.is_available() else "cpu"
 
 else:
     cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
@@ -131,8 +131,8 @@ else:
     cfg.empty_data_path = "/nfs1/kprabhu/empty_room_img/"
     cfg.real_data_path = '/nfs1/kprabhu/pix3d/'
     cfg.num_workers = 8
-    cfg.batch_size = 128
-    cfg.device = 'cuda'
+    cfg.batch_size = 64
+    cfg.device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 cfg.tensorboard_train = cfg.output_path + cfg.main_name  + '/tensorboard/tensorboard_training/'
@@ -157,7 +157,7 @@ if platform == "darwin": #local mac
     inputpath ='/Users/apple/OVGU/Thesis/s2r3dfree_v1/imgs/'
     outputpath = '/Users/apple/OVGU/Thesis/Dataset/pix3d/img/'
 else:
-    inputpath ='/nfs1/kprabhu/s2r3dfree_v1/imgs/'
+    inputpath ='/nfs1/kprabhu/s2r3dfree_v4/imgs/'
     outputpath = '/nfs1/kprabhu/pix3d/img/'
 
 cfg.SYNTH2REAL.inputPath                   = inputpath

@@ -22,6 +22,8 @@ from torchvision.transforms import transforms
 
 class BasePipeline2(BasePipeline):
     def __init__(self, config,datasetManager):
+        torch.cuda.empty_cache()
+
         self.datasetManager = datasetManager
         self.config = config
         self.setup_logger()
@@ -95,6 +97,8 @@ class Synth2RealPipeline(BasePipeline2):
         self.recon_criterion = nn.L1Loss()
 
         self.display_step = self.config.save_mesh
+        self.checkpoint_path = self.config.checkpoint_path
+
 
     def train(self):
 

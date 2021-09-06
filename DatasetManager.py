@@ -5,6 +5,7 @@
 
 """
 import Baseconfig
+from Datasets.MixedPix3DDataset import MixedPix3DDataset
 from Datasets.pix3d.Pix3dDataset import Pix3dDataset
 from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
 from Datasets.pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3dDataset
@@ -17,6 +18,7 @@ class DatasetType:
     PIX3DSYNTHETIC1 = "pix3dsynthetic1"
     EMPTY = "empty"
     SYNTH2REAL = "synth2real"
+    MIXEDPIX3D = "mixedpix3d"
 
 class LabelType:
     MAT = "mat"
@@ -33,6 +35,8 @@ class DatasetManager():
             return Pix3dDataset(config=self.config)
         elif DatasetType.SYNTH2REAL == dataset_type:
             return Synth2RealDataset(config=self.config)
+        elif DatasetType.MIXEDPIX3D == dataset_type:
+            return MixedPix3DDataset(config=self.config)
         elif DatasetType.EMPTY == dataset_type:
             return EmptyDataset(config=self.config)
 
