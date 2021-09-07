@@ -4,35 +4,34 @@
     @author: Kartik Prabhu
 
 """
+import pickle
+
 import torch
 
 import Baseconfig
 import transform_utils
-from Datasets.pix3dsynthetic.BaseDataset import BaseDataset
-import json
+from Datasets.pix3d.Pix3dDataset import Pix3dDataset
+
 import os
 import numpy as np
 import cv2
-from Datasets.pix3dsynthetic.SyntheticPix3dDataset import SyntheticPix3dDataset
 from utils import mat_to_array, load
 from torch.utils.data import Dataset
-from torchvision.transforms import transforms
-from sklearn.utils import resample
 
 
-class MixedPix3DDataset(SyntheticPix3dDataset):
+class MixedPix3DDataset(Pix3dDataset):
     def __init__(self,config, logger=None):
         self.config=config
         self.logger = logger
 
         if self.config.pix3d.train_indices.endswith('.npy'):
-            self.pix3d_train_img_list,self.pix3d_train_model_list,self.pix3d_test_img_list, \
-            self.pix3d_test_model_list,self.pix3d_train_category_list,self.pix3d_test_category_list \
+            self.pix3d_train_img_list,self.pix3d_train_model_list,self.test_img_list, \
+            self.test_model_list,self.pix3d_train_category_list,self.test_category_list \
                 = self.get_train_test_split_npy(self.config.mixedtrain.real_dataset_path + "/pix3d.json", self.config.pix3d.train_indices,
                                                 self.config.pix3d.test_indices, upsample=self.config.upsample)
         else:
-            self.pix3d_train_img_list,self.pix3d_train_model_list,self.pix3d_test_img_list, \
-            self.pix3d_test_model_list,self.pix3d_train_category_list,self.pix3d_test_category_list \
+            self.pix3d_train_img_list,self.pix3d_train_model_list,self.test_img_list, \
+            self.test_model_list,self.pix3d_train_category_list,self.test_category_list \
                 = self.get_train_test_split_json(self.config.pix3d.train_indices,self.config.pix3d.test_indices, upsample=self.config.upsample)
 
 
@@ -45,129 +44,19 @@ class MixedPix3DDataset(SyntheticPix3dDataset):
                           self.synth_train_img_list, self.synth_train_model_list,
                           transforms=transforms, imagesPerCategory=images_per_category, logger=self.logger)
 
-    def get_testset(self, transforms=None, images_per_category=0):
-        return MixedPix3D(self.config, self.pix3d_test_img_list, self.pix3d_test_model_list,
-                          self.synth_test_img_list, self.synth_test_model_list,
-                          transforms=transforms, imagesPerCategory=images_per_category, logger=self.logger)
+    # def get_testset(self, transforms=None, images_per_category=0):
+    #     return MixedPix3D(self.config, self.pix3d_test_img_list, self.pix3d_test_model_list,
+    #                       self.synth_test_img_list, self.synth_test_model_list,
+    #                       transforms=transforms, imagesPerCategory=images_per_category, logger=self.logger)
 
-    def get_train_test_split_npy(self, filePath, train_indices_path, test_indices_path, upsample=False):
-        """
-        :param filePath: pix3d.json path in dataset folder
-        :return:
-        """
-        y = json.load(open(filePath))
-        train, test = self.get_train_test_indices(train_indices_path,test_indices_path)
-        # # print(y)
-        # print(train)
-        # print(test)
+    def get_train_test_split(self, filePath):
+        pickle_file = pickle.load(open(filePath, "rb"))
+        x = pickle_file['train_x']
+        y = pickle_file['train_y']
+        xt = pickle_file['test_x']
+        yt = pickle_file['test_y']
 
-        categories = []
-        for i in train:
-            if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
-                categories.append(y[i]['category'])
-
-        final_train_img_list = []
-        final_train_model_list = []
-        final_train_category_list = []
-
-        for category in set(categories):
-            train_img_list = []
-            train_model_list= []
-            train_category_list = []
-
-            for i in train:
-                if y[i]['category']==category:
-                    train_img_list.append(y[i]['img'])
-                    train_model_list.append(y[i]['model' if self.config.is_mesh else 'voxel'])
-                    train_category_list.append(y[i]['category']+'_pix3d')
-
-            final_train_img_list.append(train_img_list)
-            final_train_model_list.append(train_model_list)
-            final_train_category_list.append(train_category_list)
-
-        train_img_list,train_model_list,train_category_list = self.upsampling(final_train_img_list,final_train_model_list,final_train_category_list,upsample)
-
-        test_img_list = []
-        test_model_list = []
-        test_category_list = []
-
-        for i in test:
-            if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
-                test_img_list.append(y[i]['img'])
-                test_model_list.append(y[i]['model' if self.config.is_mesh else 'voxel'])
-                test_category_list.append(y[i]['category']+'_pix3d')
-
-        return train_img_list,train_model_list,test_img_list,test_model_list,train_category_list,test_category_list
-
-    def get_train_test_split_json(self,train_json_path,test_json_path, upsample=False):
-        categories = json.load(open(train_json_path))['categories']
-        category_list = [categories[i]['name'] for i in range(len(categories))]
-
-        train_annotations = json.load(open(train_json_path))['annotations']
-        test_annotations = json.load(open(test_json_path))['annotations']
-        train_images = json.load(open(train_json_path))['images']
-        test_images = json.load(open(test_json_path))['images']
-
-        final_train_img_list = []
-        final_train_model_list = []
-        final_train_category_list = []
-
-        for category in set(category_list):
-            if category =='misc' or category =='tool':
-                continue
-
-            train_img_list = []
-            train_model_list= []
-            train_category_list = []
-
-            for i in range(len(train_annotations)):
-                if category_list[train_annotations[i]['category_id']-1]==category:
-                    train_img_list.append(train_images[i]['img'])
-                    train_model_list.append(train_annotations[i]['model' if self.config.is_mesh else 'voxel'])
-                    train_category_list.append(category_list[train_annotations[i]['category_id']-1]+'_pix3d')
-
-            final_train_img_list.append(train_img_list)
-            final_train_model_list.append(train_model_list)
-            final_train_category_list.append(train_category_list)
-
-        train_img_list,train_model_list,train_category_list = self.upsampling(final_train_img_list,final_train_model_list,final_train_category_list,upsample)
-
-
-        test_img_list = []
-        test_model_list = []
-        test_category_list = []
-        for i in range(len(test_annotations)):
-            if not(category_list[test_annotations[i]['category_id']-1]=='misc' or category_list[test_annotations[i]['category_id']-1]=='tool'):
-                test_img_list.append(test_images[i]['img'])
-                test_model_list.append(test_annotations[i]['model' if self.config.is_mesh else 'voxel'])
-                test_category_list.append(category_list[test_annotations[i]['category_id']-1]+'_pix3d')
-
-
-        return train_img_list,train_model_list,test_img_list,test_model_list,train_category_list,test_category_list
-
-    def get_train_test_indices(self,train_indices_path,test_indices_path):
-        TRAIN_SPLIT_IDX = os.path.join(os.path.dirname(__file__),train_indices_path)
-        TEST_SPLIT_IDX = os.path.join(os.path.dirname(__file__),test_indices_path)
-        train = np.load(TRAIN_SPLIT_IDX)
-        test = np.load(TEST_SPLIT_IDX)
-        return train, test
-
-    def upsampling(self,final_train_img_list,final_train_model_list,final_train_category_list,upsample):
-        # print([len(cat_list) for cat_list in final_train_category_list])
-        num_to_upsample = max([len(cat_list) for cat_list in final_train_category_list])
-
-        train_img_list = []
-        train_model_list= []
-        train_category_list = []
-        for i in range(len(final_train_category_list)):
-            img_list,model_list, category_list = resample(final_train_img_list[i],final_train_model_list[i], final_train_category_list[i], random_state=123,
-                                                          n_samples= num_to_upsample if upsample else len(final_train_category_list[i]))
-            train_img_list = train_img_list + img_list
-            train_model_list = train_model_list + model_list
-            train_category_list = train_category_list + category_list
-
-        return train_img_list,train_model_list,train_category_list
-
+        return x, y, xt, yt
 
 class MixedPix3D(Dataset):
     def __init__(self, config, real_input_paths, real_output_paths, synth_input_paths, synth_output_paths, transforms=None, imagesPerCategory=0,logger=None):

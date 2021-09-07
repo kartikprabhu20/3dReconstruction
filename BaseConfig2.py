@@ -131,7 +131,7 @@ else:
     cfg.empty_data_path = "/nfs1/kprabhu/empty_room_img/"
     cfg.real_data_path = '/nfs1/kprabhu/pix3d/'
     cfg.num_workers = 8
-    cfg.batch_size = 64
+    cfg.batch_size = 32
     cfg.device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
@@ -157,8 +157,17 @@ if platform == "darwin": #local mac
     inputpath ='/Users/apple/OVGU/Thesis/s2r3dfree_v1/imgs/'
     outputpath = '/Users/apple/OVGU/Thesis/Dataset/pix3d/img/'
 else:
-    inputpath ='/nfs1/kprabhu/s2r3dfree_v4/imgs/'
+    inputpath ='/nfs1/kprabhu/s2r3dfree_v3/imgs/'
     outputpath = '/nfs1/kprabhu/pix3d/img/'
 
 cfg.SYNTH2REAL.inputPath                   = inputpath
 cfg.SYNTH2REAL.outputpath                   = outputpath
+
+cfg.mixedtrain                                    = edict()
+cfg.mixedtrain.ratio                              = 0.25
+if platform == "darwin": #local mac
+    cfg.mixedtrain.real_dataset_path = "/Users/apple/OVGU/Thesis/Dataset/pix3d/"
+    cfg.mixedtrain.synth_dataset_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v3'
+else:
+    cfg.mixedtrain.real_dataset_path = '/nfs1/kprabhu/pix3d/'
+    cfg.mixedtrain.synth_dataset_path = '/nfs1/kprabhu/s2r3dfree_v1/'

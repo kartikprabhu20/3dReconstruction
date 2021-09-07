@@ -40,7 +40,7 @@ class BasePipeline2(BasePipeline):
 
         traindataset = self.dataset .get_trainset(transforms=transform)
         self.train_dataloader = torch.utils.data.DataLoader(traindataset, batch_size=self.config.batch_size, shuffle=True,
-                                                                           num_workers=self.config.num_workers, pin_memory=True)
+                                                                           num_workers=self.config.num_workers)
 
     def setup_logger(self):
         self.logger = Logger(self.config.main_name, self.config.output_path + self.config.main_name).get_logger()
