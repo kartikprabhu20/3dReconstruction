@@ -12,12 +12,13 @@ These data can be created in abundance and hence are frontrunners for Deep Learn
 Synthetic approaches are also means of getting data which might be difficult to collect and annotate in real world.
 Further more, companies have realised that synthetic data are a necessity not just for task which are inconvinient to annotate, but also for improving the performance of existing models.
 In a research article published by Gartner ~\cite{gartnerreport}, they claim that by 2030, synthetic datasets will overshadow real dataset in all domains.
-The progression of synthetic data generation is predicted to be as shown in \ref{fig:Gartner research on synthetic dataset}
+The progression of synthetic data generation is predicted to be as shown in \ref{fig:Gartner research on synthetic dataset}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-chart}
-    \caption{A graph showing how synthetic dataset will evolve overtime ~\cite{gartnerreport}}
+    \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-chart_2}
+    \caption{A graph showing how synthetic dataset will evolve overtime. The research graph shows that synthetic dataset will overshadow the existing real dataset ~\cite{gartnerreport}.}
+    Source: Research article from Gartner on "Synthetic Data Is the Future of AI" ~\cite{gartnerreport}}
     \label{fig:Gartner research on synthetic dataset}
 \end{figure}
 
@@ -54,7 +55,8 @@ Some of the features that can be randomised in a synthetic dataset are textures,
 
 \section{Volumetric representations of 3D shapes}
 The universal representation of images in computer graphics is via pixels.
-But unlike 2D, 3D data can be represented in various formats like voxels, mesh and point clouds. A sample of thes 3 formats is shown in ~\ref{fig:3d representation}.
+But unlike 2D, 3D data can be represented in various formats like voxels, mesh and point clouds.
+A sample of thes 3 formats is shown in ~\ref{fig:3d representation}.
 Each of the representation have its own sets of advantages and disadvantages.
 Voxels, which is short for Volumetric Pixels is a 3D-grid of pixels of constant size.
 As indicated in ~\cite{li2016fpnn}, the main advantage of voxels is that Convolution Neural Networks can be easily applied to 3D as in 2D.
@@ -64,12 +66,11 @@ This form of representation is far more compact at granular level depending on t
 Point clouds on the other hand are collection of 3D points with (x,y,z) coordinates on the surface of the object.
 The collection of points determines detailing the 3D object representation. But in both these cases CNN is not directly applicable.
 In this thesis we will be dealing with voxel based models as the focus is on performance of synthetic data rather than the model or the 3d representation itself.
-\todo{add an image with 3 types of represntations.}
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepresentation}
-    \caption{3D representation of Standford bunny model.(left to right) Point cloud, voel and mesh ~\cite{Hoang2019ADL}
+    \caption{3D representation of Standford bunny model.(left to right) Point cloud, voxel and mesh ~\cite{Hoang2019ADL}
     \label{fig:3d representation}}
 \end{figure}
 \section{GameEngines}
@@ -104,43 +105,56 @@ Further, we can check if these photorealisitc synthetic data can be used for 3D 
 The following research questions will be answered:
 \begin{enumerate}
     \item Are game engines a good medium to create photorealistic synthetic dataset?
-    \todo{\begin{enumerate}
-        \item Experiment: Conduct a survey on real vs synthetic. Use dataset like Pix3d(real), blender proc, unity, 3d-front (synthetic)
-        \item Depending on the survey, the most real dataset will be considered as baseline and other datasets will be compared to it.
-    \end{enumerate} }
+
+    This will be evaluated with a survey to comparing images from real dataset, generate dataset and other proclaimed photorealistic datasets.
+%    \todo{\begin{enumerate}
+%        \item Experiment: Conduct a survey on real vs synthetic. Use dataset like Pix3d(real), blender proc, unity, 3d-front (synthetic)
+%        \item Depending on the survey, the most real dataset will be considered as baseline and other datasets will be compared to it.
+%    \end{enumerate} }
     \item Can Ersatz environment from a game engine like Unity replace real data for training in 3d reconstruction task?
-    \todo{\begin{enumerate}
-            \item Train on s2r:3dfree data, test on pix3d
-        \end{enumerate}}
+
+    Using the dataset created using Unity game engine, a single-view image to 3d reconstruction of furniture will be trained and tested on real image dataset.
+
+%    \todo{\begin{enumerate}
+%            \item Train on s2r:3dfree data, test on pix3d
+%        \end{enumerate}}
     \item To what extent can the performance of model Pre-trained with real dataset improved with Synthetic dataset from game engine,
             with size of synthetic dataset being 10\todo{(depends on how much data is generated)} times that of real dataset?
-    \todo{\begin{enumerate}
-            \item pretrained on pix3d, continue training on s2r:3dfree
-            \item Mix training
-    \end{enumerate}}
+
+    Using the dataset created using Unity game engine to train a single-view image to 3d reconstruction of furniture fine tuned with real dataset will let us know if the performance is enhanced.
+    Further an ablation study on chair dataset to check if domain randomisation works.
+
+%    \todo{\begin{enumerate}
+%            \item pretrained on pix3d, continue training on s2r:3dfree
+%            \item Mix training
+%    \end{enumerate}}
     \item \todo{(optional: Can the photorealism of synthetic image further be enhanced using domain adaptation/GAN techniques?)}
 \end{enumerate}
 
-\todo{Overall dataset experiments:
-    \begin{enumerate}
-          \item Ablation study on chairs, conduct all above mentioned experiments only on chairs as it has highest number of 3d models available
-          \item Finetune chair dataset and check if dataset can be improved to get better results
-          \item Scoremaps on voxel output to see if the probabilty of voxel is high in required region and to see which region is least to give possible explaination fo low IOU
-\end{enumerate}}
+%\todo{Overall dataset experiments:
+%    \begin{enumerate}
+%          \item Ablation study on chairs, conduct all above mentioned experiments only on chairs as it has highest number of 3d models available
+%          \item Finetune chair dataset and check if dataset can be improved to get better results
+%          \item Scoremaps on voxel output to see if the probabilty of voxel is high in required region and to see which region is least to give possible explaination fo low IOU
+%\end{enumerate}}
+
+\section{Contributions of this Thesis}\label{ss:contributions}
+\begin{itemize}
+    \item A unity based framework to create synthetic dataset with domain randomisation.
+    The tool supports both automated and manual image creation.
+    \item A survey of photorealism to check if Game engine produce quality synthetic dataset.
+    \item Provide a new dataset which can be used for 3d reconstruction tasks, or Synthetic to real domain adaptation tasks. This includes RGB, normal, depthmaps and semantic segmentation images.
+\end{itemize}
+
 
 \section{Structure of this Thesis}
 
 The rest of this thesis is structured as follows:
 
 \begin{itemize}
-    \item \autoref{ch:related_work}, we visit some of the related work on synthetic data generation and state of the art 3d reconstruction networks.
-
-    \item \autoref{ch:concept} deals with concepts and design choices.
-x
-    \item In \autoref{ch:implementation}, we discuss in detail the 3DScene tool developed using Unity game engine for creating ersatz environment.
-
-    \item  \autoref{ch:evaluation} is dedicated to reviewing and discussing evaluation results obtained by comparison of synthetic and real dataset.
-
+    \item In \autoref{ch:related_work}, we visit some of the related work on synthetic data generation and state of the art 3d reconstruction networks.
+    \item \autoref{ch:concept} deals with concepts and design choices. We will discuss in detail the choices for dataset and model selection for 3d reconstruction.
+    \item In \autoref{ch:implementation}, we discuss in detail the 3DScene tool developed using Unity game engine for creating ersatz environment. In the deeplearning side, we will discuss the pipeline design for 3D reconstruction task.
+    \item \autoref{ch:evaluation} is dedicated to reviewing and discussing evaluation results obtained by comparison of synthetic and real dataset from the survey conducted and Deep learning based 3D reconstruction task.
     \item Finally in \autoref{ch:conclusion}, we conclude this thesis with results of the study, highlight few limitations and discuss future improvements.
-
 \end{itemize}

@@ -1,6 +1,6 @@
 \chapter{\iftoggle{german}{Implementierung}{Implementation}}\label{ch:implementation}
 
-\section{3D-Scene framework}
+\section{3D-Scene framework}\label{s:3D-Scene framework}
 
 3D-Scene is a Unity based application used in editor mode written in CSharp programming language.
 The First step of the application is to import existing .obj files for 3D models, along with 3D models of rooms.
@@ -36,26 +36,51 @@ But as of now, the multi-process uses Coroutines which is still a sequential ope
 To our estimate even the Multi-threaded pipeline runs 1.5 times faster than Single room pipeline.
 
 \subsection{Scenes from SceneNet}
+For the rooms in our ersatz environments we utilize scenes provided by SceneNet ~\cite{McCormac:etal:ICCV2017}.
+SceneNet has made 25 rooms available for public.
+We only use scenes of type Bedroom(11), Kitchen(1), Living room(6) and office(7).
+Figure ~\ref{fig:Scene Types} shows different types of scenes utilised to generate synthetic dataset.
+These scenes are further modified by adding few more objects of categories present in Pix3D, so that we get more variations in the dataset.
+The distribution of furnitures matching the category of Pix3D in the scenes are as shown in figrue ~\ref{fig:distribution of scenes}.
+Each scene is replaced for every snap we take for the dataset we create at random.
 
 
+\begin{figure}[!ht]
+    \centering
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_bedroom}}\quad
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_livingroom}}\\
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_kitchen}}\quad
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_office}}
+    \caption{Sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office}
+    \label{fig:Scene Types}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[][]{\includegraphics[width=.45\textwidth,height=6cm]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes}}\quad
+    \subfloat[][]{\includegraphics[width=.45\textwidth,height=6cm]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet}}\\
+    \caption{(a)Distribution of types ofs scenes, (b) Distribution of objects matching the categories of pix3d in scenes}
+    \label{fig:distribution of scenes}
+\end{figure}
 
 \subsection{Camera ViewPoints}
 
 The distance of camera from the target object is a configurable entity.
 The user can set the minimum and maximum distance to the target object for the camera to be placed.
-The program will then randomly select a point within this range. Similarly the height of the camera can be configured by the user.
+The program will then randomly select a point within this range.
+Similarly the height of the camera can be configured by the user.
 The camera is programed to always look towards the target object and will be changed if the object is not in the frame.
 This is acheived by passing a ray and determining if the center of the target object is visible.
-To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera poisiton and make sure that the camera is in front of the target object withing an angle of 60 degrees.
+To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera poisiton and make sure that the camera is in front of the target object within an angle of 60 degrees.
 Figure ~\ref{fig:Camera viewpoints} shows samples of different camera view points on a constant object and scene.
 
 \begin{figure}
-    \begin{tabular}{llll}
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera1} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera2} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera3} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera4}\\
-    \end{tabular}
+    \centering
+    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera1}
+    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera2}\\
+    \vspace{0.1cm}
+    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera3}
+    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera4}\\
     \caption{Sample images with different camera viewpoints of same object with a constant scene.}
     \label{fig:Camera viewpoints}
 \end{figure}
@@ -63,14 +88,14 @@ Figure ~\ref{fig:Camera viewpoints} shows samples of different camera view point
 \subsection{Lightings and Shadows}
 
 We consider lighting to be a key component of the photorealism.
-The shadows formed with different lighting condition enchance the photorealism of the images.
+The shadows formed with different lighting condition enhance the photorealism of the images.
 For this purpose we use 3 types of lights offered in Unity.
 
-\begin{enumerate}
+\begin{itemize}
     \item Point light
     \item Spot light
     \item Sunlight
-\end{enumerate}
+\end{itemize}
 
 Point lights act as indoor lights for the room the range of which can be varied.
 We pre-define 6 light patterns for a room with cuboid shape.
@@ -81,48 +106,102 @@ Both point and spot-light have color variation along with varing brightness.
 Sunlight is the default light settings in Unity.
 This is specifically effective when the room has windows forming more realistic shadows.
 In this case, we modulate the brightness and the angle at which the rays are emitted, which simulates different times of the day.
+Additional to these different types of light, we give ceilings the property of light with limited brightness as we observed that the entire room does not lit up for single light source.
+This is similar to what BlenderProc ~\cite{denninger2019blenderproc} does for all scenarios.
+Samples of different lighting condition and shadows with varying color is displayed in figure ~\ref{fig:Lighting and shadows}.
 
-Another randomised entity is the skybox. Skybox acts as the outdoor scenes
+Another randomised entity is the skybox.
+Skybox acts as the outdoor scene for a given room.
+For each of the pipeline, skybox changes for every snap taken.
+This simulates different outdoor places and weather scenarios, thus providing more randomisation for rooms have open doors and windows.
+Samples for different skyboxes are as shown in figure ~\ref{fig:skybox samples}.
 
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1}
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2}\\
+%    \vspace{0.1cm}
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting3}
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting4}\\
+%    \caption{Sample images with different lighting and shadows conditions}
+%    \label{fig:Lighting and shadows}
+%\end{figure}
 
 \begin{figure}
+    \centering
     \begin{tabular}{llll}
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting3} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting4}\\
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting3} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting4}\\
+
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting5} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting6} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting7} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting8}\\
     \end{tabular}
-    \caption{Sample images with different lighting and shadows conditions}
+    \caption{Sample images with different lighting and shadows conditions.First row is samples for light with different intensity and direction. Second row is differnt color for light.}
     \label{fig:Lighting and shadows}
 \end{figure}
 
 \subsection{Randomised Texture}
 
-\todo add distribution of textures from the folder
+The objects in the scene are renamed to standard objects seen in day-to-day life.
+The textures are grouped together to these names as folder names.
+A total of 982 texture images, some of which are just JPG or PNG images, while there are few texutres from cctextures.com with more details like normals, displacement and roughness.
+This makes the textures more realistic.
+Distribution of textures used for randomisation of scenes is as shown in figure ~\ref{fig:Distribution of textures}, with categories of Pix3d having higher number of images.
+Each scene is randomised for every snap taken of the target object.
+Samples of texture randomisation of background in the scene with target object in the focus is as shown in figure ~\ref{fig:Texture Randomisation}.
+Randomising outdoor environment is important in cases where we have open doors and windows.
+Unity provides a wrapper for scenes called skyboxes.
+This is something of a globe around the room under observation.
+This gives us varying outdoor environment for the scene with sceneray at the horizon.
+We randomize 10 skyboxes to achieve this. Samples of skybox is as shown in figure ~\ref{fig:skybox samples}.
+
 
 \begin{figure}
-    \begin{tabular}{llll}
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture1} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture2} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture3} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture4}\\
-    \end{tabular}
+    \centering
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture2}\\
+    \vspace{0.1cm}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture3}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture4}\\
     \caption{Sample images with different textures for same scene.}
     \label{fig:Texture Randomisation}
 \end{figure}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures}
+    \caption{Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.}
+    \label{fig:Distribution of textures}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{tabular}{llll}
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_1} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_2} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_3} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_4}\\
+    \end{tabular}
+    \caption{Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.}
+    \label{fig:skybox samples}
+\end{figure}
 
 \subsection{Replacing target Objects}
 
 \begin{figure}
+    \centering
     \begin{tabular}{llll}
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_1} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_depth_1} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instance_1} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_1}\\
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_1} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_2} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_3} &
+        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_4}\\
     \end{tabular}
-    \caption{Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.}
-    \label{fig:Replacing target objects}
+    \caption{Samples for different skyboxes which change the outdoor environment for the scenes.}
+    \label{fig:skybox samples2}
 \end{figure}
 
 Replacing models, lighting(indoor and outdoor), randomisation of texture, camera distance, camera angles, outdoor skybox,
@@ -138,5 +217,5 @@ Mixed precision using apex
 If mixed precision helped performance, memory, speed, evaluation metric
 
 
-\section{Implement a domain adaptation technique}
-To serve as a proof if more domain gap reduction is needed
+%\section{Implement a domain adaptation technique}{}
+%To serve as a proof if more domain gap reduction is needed.

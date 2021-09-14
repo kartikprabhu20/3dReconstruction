@@ -1,16 +1,18 @@
 \chapter{\iftoggle{german}{Verwandte Arbeiten}{Related Work}}\label{ch:related_work}
 
+In this chapter we discuss the previous contributions to indoor synthetic datasets ~\ref{ss:Indoor synthetic datasets}, what tasks each of the dataset supports and some of the disadvantages of each dataset.
+Further we discuss on the available tools which support creation of indoor dataset ~\ref{ss:tools to create synthetic}.
 
-\section{Indoor datasets}\label{ss:indoor scenes}
+\section{Indoor datasets}\label{s:indoor dataset}
 
 Indoor scene dataset has been in the rise with increasing interest in scene processing understanding ~\cite{dai2017scannet,Silberman2012IndoorSA,Xiao2013SUN3DAD,Hua2016SceneNNAS,Armeni20163DSP,chang2017matterport3d,Handa2016UnderstandingRI,InteriorNet18,li2021openrooms,zheng2020structured3d,Roberts2020HypersimAP,McCormac:etal:ICCV2017}.
 Synthetic dataset is not something new in the world of machine learning.
-As researchers realised the disadvantages of real dataset,focus was shifted to synthetic dataset.
+As researchers realised the disadvantages of real dataset, focus was shifted to synthetic dataset.
 While ~\cite{dai2017scannet,} are real-world datasets, ~\cite{Fu20203DFRONT3F,Handa2016UnderstandingRI,McCormac:etal:ICCV2017,Roberts2020HypersimAP} are synthetically produced.
 The real-world dataset are gathered from live scans.
-The synthetic dataset can either bet manually configured by a professional or automated by a programmer.
+The synthetic dataset can either bet manually configured by a professional or automated by a programmer using a tool.
 
-\subsection{Indoor synthetic datasets}
+\subsection{Indoor synthetic datasets}\label{ss:Indoor synthetic datasets}
 Alibaba group introduced 3D-FRONT~\cite{Fu20203DFRONT3F} which stands for 3D Furnished Rooms with layOuts and semaNTics dataset which comprises of
 synthetic indoor scenes designed under the supervision of professionals.
 It consists of 18,968 rooms and 13,151 textured furnitures.
@@ -19,7 +21,7 @@ This is discussed in detail in ~\ref{ss:SceneNet} section.
 
 SunCG ~\cite{Song2017SemanticSC} was a key dataset for scene understanding.
 The dataset contained over 45,000 variations of scenes with realistic room layout created manually.
-Each scene was semantically labeld and also provided with volumetric ground truth data.
+Each scene was semantically labeled and also provided with volumetric ground truth data.
 The datset has also been used for task like depth estimation, semantic scene completion, SLAM, indoor navigation, etc.
 Unfortunately due to legal issues \footnote{https://futurism.com/tech-suing-facebook-princeton-data} the dataset has been made publically unavailable which has left a void in the field.
 
@@ -91,7 +93,7 @@ middleware library~\footnote{https://magnum.graphics/} which supports cross-plat
 \label{fig:photorealistic images comparison}
 \end{figure}
 
-\subsection{Tools to create synthetic datasets}
+\subsection{Tools to create synthetic datasets}\label{ss:tools to create synthetic}
 
 BlenderProc: Reducing the Reality Gap with Photorealistic Rendering ~\cite{denninger2019blenderproc} is a python based pipeline to create synthetic dataset.
 As the name suggests, the key underlying framework is Blender ~\cite{blender}, which is a 3D modelling and rendering package.
@@ -139,6 +141,8 @@ With domain randomisation the author of ~\cite{hinterstoisser2019annotation} pro
 UnrealCV ~\cite{qiu2017unrealcv} is open source project built upon Unreal Engine 4 (UE4) ~\cite{unrealengine}).
 It supports some pre-built indoor architectures available on the asset store, which are unfortunately paid versions.
 Along with this limitation, the plugin only creates depthmaps, normals and segmentation masks, with no mapping to 3D models.
+Another tool based on Unreal engine is UnrealROX+\cite{martinezgonzalez2021unrealrox}.
+This pluggin design is based on UnrealCV and provides similar data.
 
 \todo{A table to explain diffs between various methods( only if 3D-FREE has more advantage)}
 
@@ -150,5 +154,5 @@ Pix2vox,OctNet,Mesh rcnn,Pixel2Mesh,Occupancy networks, etc
 Discuss other methods used to mitigate domain shift
 Example: distance learning, subspace matching
 
-\subsection{GAN based style transfer}\label{s:gan_based_styletransfer}
+\section{GAN based style transfer}\label{s:gan_based_styletransfer}
 

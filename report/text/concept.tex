@@ -1,8 +1,8 @@
 \chapter{\iftoggle{german}{Konzept}{Concept}}\label{ch:concept}
 
-In this section we discuss about dataset and design choice,\todo and the rationale behind reducing the domain gap.
+In this section we discuss about the dataset and design choice,\todo and the rationale behind reducing the domain gap.
 
-\section{Pix3D: A large-scale benchmark}\label{ss:Pix3D}
+\section{Pix3D: A large-scale benchmark}\label{s:Pix3D}
 In ~\cite{pix3d}, a large-scale benchmark for 2D-3D alignment was introduced.
 The raw images from web search engines were collected and labelled keypoints were used to align the 2D images with the corresponding 3D shapes.
 The 3D models are extension from IKEA dataset~\cite{Lim2013ParsingIO}, which is a collection of high-quality IKEA furniture.
@@ -59,7 +59,14 @@ We then replace the class under observation with a corresponding model from Pix3
 
 \section{Unity based pipeline}\label{ss:Unity Pipeline}
 Unity game engine is used for creating the synthetic dataset.
-Unity is a cross-platform game engine, the basic version of which is available for free.
+The reasons for selecting Unity as our platform for the application are:
+\begin{enumerate}
+    \item Cross-platform game engine and hence can be used on an Operating system.
+    \item The basic version is available for free.
+    \item Provides all the necessary tools to create an ersatz environment with well maintained documentation.
+    \item An active developer community.
+\item \end{enumerate}
+
 There is no official comparison between Unreal Engine and Unity engine to have a deciding factor.
 The selection of unity engine was purely individual choice and ease of use.
 But both these game engines have ability to create realistic looking scenes which can be used for synthetic dataset generation.
@@ -85,7 +92,7 @@ With this, we acheived different background for target object, and the target ob
 Lighting plays an important role in photorealism. If the lighting is not setup correctly the synthetic dataset will never seem to be photorealistic.
 Unity offers wide variety of lighting like global light which acts like the sunlight, and various indoor lighting systems.
 Ideally we should make the luminous objects like lamps, chandlier, bulbs etc be the source of light for indoor scenes, but we observed that the room does not lit up uniformly which makes in less photorealistic.
-Hence we use some pre-determined lighting settings which will be further discussed in implementation section. \todo{mention section}.
+Hence we use some pre-determined lighting settings which will be further discussed in implementation section ~\ref{s:3D-Scene framework}.
 
 \subsubsection{Randomised textures}
 SceneNet ~\cite{McCormac:etal:ICCV2017} also provides with textures for different categories in the scene.
@@ -105,7 +112,7 @@ S2R:3D-FREE dataset, which stands for Synth2Real: 3-Dimensional Furniture Recons
 We utilize the avalaibilty of 3D models of rooms and furntitures from these 2 dataset to create an ersatz environment using Unity as our framework.
 We randomise the indoor scenes from SceneNet ~\cite{McCormac:etal:ICCV2017} along with textures provided by them with some additional complex textures.
 The other option would have been to use the shapenet as the target model, but in this case we would not be having a real dataset to compare to.
-Ideally a model trained on shapenet should also perform well with a real dataset like pix3d, but we decided to have a synthetic dataset based on pix3d itseld for better comparison.
+Ideally a model trained on shapenet should also perform well with a real dataset like pix3d, but we decided to have a synthetic dataset based on pix3d itself for better comparison.
 
 
 \section{3D reconstruction pipeline}
@@ -161,3 +168,8 @@ But since the 2 architecture are relatable, it would be interesting to compare t
 
 \section{Domain adaptation with Gan \todo{if we decide to go with this approach}}
 
+\section{Training}
+\todo re-write
+\cite{seib2020mixing} proved mixed training with synthetic and real dataset improves the performance. They used 40\% mixing ratio
+
+\cite{2018LearningIC} used mixing ratios for classification task for each of the minibatches and observed 5-13\% improvement in performance.
