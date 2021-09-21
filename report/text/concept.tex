@@ -6,7 +6,7 @@ In this section we discuss about the dataset and design choice,\todo and the rat
 In ~\cite{pix3d}, a large-scale benchmark for 2D-3D alignment was introduced.
 The raw images from web search engines were collected and labelled keypoints were used to align the 2D images with the corresponding 3D shapes.
 The 3D models are extension from IKEA dataset~\cite{Lim2013ParsingIO}, which is a collection of high-quality IKEA furniture.
-The dataset also provides with masks and the keypoints for the object under observation.
+The dataset also provides with binary mask and the keypoints for the object under observation.
 For adding more images to the IKEA dataset, the authors of ~\cite{pix3d} conducted manual web search on Google, Bing, and Baidu, using Ikea model name as keywords.
 to get around 104,220 images which were further filtered by removing irrelevant images with the help of Amazon Mechanical Turk (AMT) workers.
 After this manual experiment the total images in Pix3D, only 14,600 images were selected for the 219 Ikea models.
@@ -22,7 +22,7 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
 \begin{enumerate}
     \item For Deep Learning approaches, we need large-scale data and 14,600 might not be sufficient.
     \item The orientation of object is not randomised.
-    \item The dataset does not provide 2.5D information (i.e. depth and normal) which can be crucial for 3D learning.
+    \item The dataset does not provide 2.5D information (i.e.\ depth and normal) which can be crucial for 3D learning.
 \end{enumerate}
 
 \begin{figure}[!ht]
@@ -33,10 +33,12 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
     \label{fig:pix3d_histogram}
 \end{figure}
 
-\subsection{Why Pix3D?}{s: Why pix3d}
-    Pix3D is a collection of indoor scenes with complex background, varying light conditions with shadows, reflective surfaces and even varying occlusion levels
-    .Each image comprises of collection of objects in the scene, but only one object from the catagory is annotated. It is a perfect example of having limited real world data.
-    And since 3D models are available for each furniture,a synthetic data can be generated in abundance from those models.
+\subsection{Why Pix3D?}\label{subsec:why-pix3d?}
+Pix3D is a collection of indoor scenes with complex background, varying light conditions with shadows, reflective surfaces and even varying occlusion levels.
+Each image comprises a collection of objects in the scene, but only one object from the catagory is annotated.
+It is a perfect example of having limited real world data.
+Since 3D models are available for each furniture,a synthetic data can be generated in abundance from those models.
+Samples from Pix2D are as shown in figure ~\ref{fig:Pix3D samples}.
 
 \begin{figure}[!ht]
     \centering
@@ -48,22 +50,23 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
     \label{fig:Pix3D samples}
 \end{figure}
 
-\section{Role of SceneNet}\label{s:SceneNet}
-    SceneNet ~\cite{McCormac:etal:ICCV2017} is a large collection photorealistic indoor scene trajectories.
-    The dataset provides with images and videos of indoor scene which can be used for tasks like SLAM, semantic and instance segmentation,
+\section{Role of SceneNet}\label{sec:role-of-scenenet}
+SceneNet ~\cite{McCormac:etal:ICCV2017} is a large collection photorealistic indoor scene trajectories.
+The dataset provides with images and videos of indoor scene which can be used for tasks like SLAM, semantic and instance segmentation,
 object detection and further enhanced for other vision problems like optical flow depth and pose estimation ~\cite{McCormac:etal:ICCV2017}).
 They use ShapeNet~\cite{chang2015shapenet} models to occupy 57 indoor scenes which gives the scene unlimited configurations.
 Unfortunately there is no mapping from scene to 3D model for tasks like 3D reconstructions.
-In our approach, we utilize the scene provided by SceneNet as layout for our indoor scenes. This includes initial shapenet models with furniture placement.
+In our approach, we utilize the scene provided by SceneNet as layout for our indoor scenes.
+This includes initial shapenet models with furniture placement.
 We then replace the class under observation with a corresponding model from Pix3D.
 
-\section{Unity based pipeline}\label{s:Unity Pipeline}
+\section{Unity based pipeline}\label{sec:unity-based-pipeline}
 Unity game engine is used for creating the synthetic dataset.
 The reasons for selecting Unity as our platform for the application are:
 \begin{enumerate}
     \item Cross-platform game engine and hence can be used on an Operating system.
     \item The basic version is available for free.
-    \item Provides all the necessary tools to create an ersatz environment with well maintained documentation.
+    \item Provides all the necessary tools to create an ersatz environment with a well maintained documentation.
     \item An active developer community.
 \end{enumerate}
 
@@ -73,26 +76,28 @@ But both these game engines have ability to create realistic looking scenes whic
 With Unity game engine, the available scenes from scenenet and 3D models from pix3d can be imported to form an ersatz environment.
 Further domain randomisation can be applied to create a dataset of photorealistic images and 2.5D data like normal, depthmaps, masks.
 
-\subsection{Domain Randomisation with Unity Engine}\label{s:Domain Randomisation with unity engine}
+\subsection{Domain Randomisation with Unity Engine}\label{subsec:domain-randomisation-with-unity-engine}
 In this section we discuss what kind of domain randomisation is applied for the dataset creation.
-\subsubsection{Scenes from scenenet}
-As discussed in section ~\ref{s:SceneNet}, SceneNet provides wide variety of indoor scenes which includes bedrooms, bathroom, living room, kitchen and office.
-For our case, we did not consider bathroom as the class under observations are furnitures and we rarely have any furnitures in the bathroom.
-For the rest of the scenes we have a pre-determined setup given by scenenet. We use 25 scenes in total as basic rooms for our target object to be place.
+\subsubsection{Scenes from scenenet}\label{subsubsec:scenes-from-scenenet}
+As discussed in section ~\ref{sec:role-of-scenenet}, SceneNet provides wide variety of indoor scenes which includes bedrooms, bathroom, living room, kitchen and office.
+For our case, we did not consider the bathroom, as the categories under observations are furnitures which we rarely see in the bathroom.
+For the rest of the scenes we have a pre-determined setup given by scenenet.
+We use 25 scenes in total as basic rooms for our target object to be place.
 And with further randomisation we feel this should be sufficient to check if unity can produce a useful dataset.
 
 \subsubsection{Camera Viewpoints}
 The position and orientation of camera gives us the most randomisation in this setup.
 The minimum and maximum distance can be chosen by the user for the camera to be places from the target object.
 A random point can be selected in this range as the position for the camera.
-As for the orientation of the camera, we can make the camera to always look at the target object, irrespiective of the position.
-With this, we acheived different background for target object, and the target object itself appears to be in different position and orientation.
+As for the orientation of the camera, we can make the camera to always look at the target object, irrespective of the position.
+With this, we achieved different background for target object, and the target object itself appears to be in different position and orientation.
 
 \subsubsection{Lighting and shadows}
-Lighting plays an important role in photorealism. If the lighting is not setup correctly the synthetic dataset will never seem to be photorealistic.
+Lighting plays an important role in photorealism.
+If the lighting is not setup correctly the synthetic dataset will never seem to be photorealistic.
 Unity offers wide variety of lighting like global light which acts like the sunlight, and various indoor lighting systems.
-Ideally we should make the luminous objects like lamps, chandlier, bulbs etc be the source of light for indoor scenes, but we observed that the room does not lit up uniformly which makes in less photorealistic.
-Hence we use some pre-determined lighting settings which will be further discussed in implementation section ~\ref{s:3D-Scene framework}.
+Ideally we should make the luminous objects like lamps, chandelier, bulbs etc be the source of light for indoor scenes, but we observed that the room does not lit up uniformly which makes in less photorealistic.
+Hence we use some pre-determined lighting settings which will be further discussed in implementation section ~\ref{sec:3d-scene-framework}.
 
 \subsubsection{Randomised textures}
 SceneNet ~\cite{McCormac:etal:ICCV2017} also provides with textures for different categories in the scene.
@@ -106,24 +111,43 @@ The scale of the target object is made to match the scale of the category object
 For example if the length of the length of the category object in the scene is the least amonth length,width and height, then the target object is scaled to match this length.
 This makes the target object blend in with the scene.
 
-\section{S2R:3D-FREE, a Pix3D based sythetic dataset}
+\section{S2R:3D-FREE, a Pix3D based sythetic dataset}\label{sec:s2r:3d-free-a-pix3d-based-sythetic-dataset}
 
 S2R:3D-FREE dataset, which stands for Synth2Real: 3-Dimensional Furniture Reconstruction from Ersatz Environment, is a combination of SceneNet and Pix3D dataset.
-We utilize the avalaibilty of 3D models of rooms and furntitures from these 2 dataset to create an ersatz environment using Unity as our framework.
+We utilize the availibility of 3D models of rooms and furnitures from these 2 dataset to create an ersatz environment using Unity as our framework.
 We randomise the indoor scenes from SceneNet ~\cite{McCormac:etal:ICCV2017} along with textures provided by them with some additional complex textures.
 The other option would have been to use the shapenet as the target model, but in this case we would not be having a real dataset to compare to.
 Ideally a model trained on shapenet should also perform well with a real dataset like pix3d, but we decided to have a synthetic dataset based on pix3d itself for better comparison.
 
-
-\section{3D reconstruction pipeline}\label{s:3D reconstruction pipeline}
+\section{3D reconstruction}\label{sec:3D reconstruction}
 Now that we discussed on how the dataset will be created, we move to the deep learning aspect of this thesis.
+3D reconstruction is the task to convert a 2-Dimensional RGB image into a known 3D representation of the model under observation.
+For voxel-based approach, the 3D model space is discritized to obtain 3D voxel grid $X$.
+Let $I = \{I_k \mid k = 1,2,\dots n\}$ with n$\geq$1 be a set of single view RGB images with atleast one object $X$.
+3D reconstruction can be defined as a task to learn a function $f(\theta)$ such that the objective function $L(I) = d(f(\theta),X)$ is minimised.
+$\theta$ is the parameters of predictor function $f$., \b($d$) is a distance measure between real shape X and shape predicted by $f(\theta)$,
+
+In this thesis we consider an architecture which consists of encoder and decoder.
+As discussed in ~\cite{Han2021ImageBased3O}, an encoder maps a 2D image into a latent space by converting pixel grid into feature vectors.
+If we formulate the problem, feature vector $v= Enc(I) \in X$, where $Enc$ is the encoder function and $I$ is the input image and $X$ is the latent space.
+An encoder is a good mapping function if for given images of same category $I = \{I_k \mid k = 1,2,\dots c\}$, the feature vectors $v = \{v_k \mid k = 1,2,\dots c\}$ are close together in given latent space $X$
+irrespective of the extrinsic parameters like textures,background, camera positions,etc.
+
+Decoder is an expansive network, which converts a feature vector from the latent space into a 3D voxel grid.
+$V = \{g(x_k) \forall k \in X$\}, for any vector in latent space $X$ the decoder should be able to create a 3D voxel model from $V$.
+If the images are encoded perfectly, a small change in feature vector will give rise to a small variation in the 3D voxel.
+
+\section{3D reconstruction pipeline}\label{sec:3D reconstruction pipeline}
+We create a pipeline for processing the above mentioned 3D reconstruction task.
+The backbone of the pipeline is the base model and the dataset being used to train.
+In this section we discuss the model used as a base and the rationale behind its selection.
 
 \subsection{Pix2Vox and Pix2Vox++}
 The architecture of pix2vox ~\cite{Xie_2019} as in ~\ref{fig:pix2vox architecture}.
 The network consists of 4 modules: Encoder, Decoder, Merger and Refiner.
 Merger plays significant part when it comes to multi-view reconstruction of 3d objects.
-But we focus on single-view 3d reconstruction and hence merger will not influence the output significantly.
-As Encoder, pix2vox has utilised VGG16 network ~\cite{simonyan2015deep} pre-trained on ImageNet ~\cite{Deng2009ImageNetAL}.
+As we focus on single-view 3d reconstruction the merger module will not influence the output significantly.
+As Encoder, pix2vox has utilizes VGG16 network ~\cite{simonyan2015deep} pre-trained on ImageNet ~\cite{Deng2009ImageNetAL}.
 Decoder is an expansive network which converts 2D embeddings to 3D voxel grid.
 Refiner is an auto-encoder which takes the 3D output from the merger and produces more refined final output.
 A second paper based on pix2vox was titled Pix2Vox++ ~\cite{Xie_2020}.
@@ -142,9 +166,10 @@ Another reason for selecting pix2vox model is that the backbone of the architect
 hence the embeddings generated from this encoder can help in visualising the domain space of both Pix3D (real images) and S2R:3DFREE(synthetic images).
 As mentioned above, for pix2vox++ the Resnet is the backbone encoder which has 25\% lesser parameters and 5\% lesser inference time compared to VGG.
 In addition, the author even proved that Pix2vox++ performs 1.5\% better than pix2vox.
+The architecture of pix2vox++ is as shown in figure ~\ref{fig:pix2voxpp architecture}.
 Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the model, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
 Hence the selection of the model was not of utmost importance.
-But since the 2 architecture are relatable, it would be interesting to compare the results for 3d Reconstuction task.
+But since the 2 architecture are relatable, it would be interesting to compare the results for 3D Reconstuction task.
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox}

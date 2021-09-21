@@ -17,7 +17,7 @@ Alibaba group introduced 3D-FRONT~\cite{Fu20203DFRONT3F} which stands for 3D Fur
 synthetic indoor scenes designed under the supervision of professionals.
 It consists of 18,968 rooms and 13,151 textured furnitures.
 SceneNet~\cite{McCormac:etal:ICCV2017} is a large collection of photorealistic images and trajectories.
-This is discussed in detail in ~\ref{s:SceneNet} section.
+This is discussed in detail in ~\ref{sec:role-of-scenenet} section.
 
 SunCG ~\cite{Song2017SemanticSC} was a key dataset for scene understanding.
 The dataset contained over 45,000 variations of scenes with realistic room layout created manually.
@@ -150,19 +150,69 @@ Another tool based on Unreal engine is UnrealROX+\cite{martinezgonzalez2021unrea
 This pluggin design is based on UnrealCV and provides similar data.
 
 \section{State of the art for 3d-reconstruction}\label{sec:state_of_the_art}
-Voxel based, mesh based
-Pix2vox,OctNet,Mesh rcnn,Pixel2Mesh,Occupancy networks, etc
 
 3D reconstruction task is on the rise with improvement in technologies like Augmented and virtual reality.
 Scene understanding becomes important for these technologies to succeed.
 As discussed in ~\ref{sec:Volumetric representation}, 3D models can be represented as voxels,meshes or point clouds.
-Each of the representations have been explored for reconstuction and this section explores some of the approaches.
+Each of the representations have been explored for reconstruction and this section explores some approaches.
+
+The task can either be applied to \b{multi-view, or a single view image}.
+~\cite{Kar2017LearningAM, choy20163d, Yang_2019, huang2018deepmvs, Paschalidou2018RayNetLV, Xie_2019, Xie_2020}, are architectures based on multiple input images of same images from different views to learn the underlying 3D structure.
+~\cite{Kar2017LearningAM, choy20163d} are architectures based on Recurrent Neural Networks (RNN) and have the disadvantage of memory, long-term dependencies and long inference time.
+~\cite{Yang_2019, huang2018deepmvs, Paschalidou2018RayNetLV} explore different ways of pooling(attentional, max and average pooling respectively) to aggregate the feature vectors from different views.
+The pooling method tend to capture only partial information with loss in detailing.
+
+For single-view reconstruction we have architectures like ~\cite{wu2017marrnet,z-gan, Yang_219, wu2018learning, popov2020corenet}.
+~\cite{wu2017marrnet} predicts the 3D structure by estimating 2.5D properties like surface normals, segmentation and depths.
+~\cite{wu2018learning} is extension of MarrNet which proposes a network to preserve the naturalness of the surface.
+Inspired by generative models~\cite{Goodfellow2014GenerativeAN,kingma2014autoencoding}, many 3D reconstruction architectures were published ~\cite{z-gan, Yang_219,wu2017learning,Lunz2020InverseGG}.
+Both ~\cite{Xie_2019, Xie_2020} also have the capability to predict 3D structure from a single view image.
+
+To overcome the memory issues caused by 3D voxels many new architectures have also been proposed
+~\cite{tatarchenko2017octree,Richter2018MatryoshkaNP,Mescheder2019OccupancyNL,Gkioxari2019MeshR, wang2018pixel2mesh,groueix2018atlasnet,pan2019deep}.
+These are approaches that are based out of oct-tree, meshes, occupancy of voxel, etc.
+Occupancy networks are a implicit way of representing 3D surface as decision boundary using network as a deep learning classifier.
+For mesh-based reconstruction, a template mesh such as an ellipsoid is deformed to get the structure of 3D model.
+For the Oct-tree based reconstruction, as the name itself suggest, instead of 3D voxels the models are discretized in Oct-Tree representation.
+This further makes it memory and compute efficient providing higher resolution than 3D voxel representation.
+
+Supervision is another factor to consider for 3D reconstruction tasks.
+There are method based on \b{3D-Supervision or 2D-Supervision}.
+~\cite{Xie_2019,Xie_2020,wu2017marrnet,groueix2018atlasnet,pan2019deep, chen2019learning} are few of the 3D-supervision based architecture.
+For all these architectures it is necessary to either have the 3D voxel grid or 3D mesh for supervised training.
+For models described in ~\cite{Lunz2020InverseGG,henderson2019learning}, the 3D reconstruction only needs 2D supervision like silhouette,
+One might argue that for 3D supervision we need large number of 3D models designed and created by professional artists.
+With the advent of Virtual and Augmented realities, 3D models are which are available to public are increasing exponentially, which might resolve the issue.
+
+
+\section{Mitigating domain shift}\label{sec:mitigating_domain_shift}
+
+
+In ~\cite{nowruzi2019real}, the author tries to find how much of real data is required with synthetic dataset to increase the performance of object detection task.
+A study was conducted by training various object detection models on mixed data containing different ratios of real and synthetic dataset.
+The four ratios considered for mixed training were, 0\%,90\%,95\%,97.5\% of synthtic data to real data.
+Another study was conducted by fine tuning a model pre-trained on a synthetic dataset with different quantity of real dataset.
+They observed that fine-tuning with limited real dataset is better than mixed training with synthetic dataset.
+
+The idea of domain randomisation is that among the set of training images from synthetic dataset, real images appears to be one of the variations.
+Thus, testing with real world images should give comparable performance.
+~\cite{tobin2017domain} used this principle for small objects detection task used for robotics.
+This paper tries different parameters in domain randomisation like lights, camera viewpoints, textures and further combines domain randomisation with domain adaptation.
+
+~\cite{Tremblay2018TrainingDN} explores domain randomisation on real-world object detection.
+The author also proposes a new approach of domain randomisation where in random 3d objects called "flying distractors" are randomly placed in the scene,
+so that the model learns to ignore objects which are not of interest.
+A focused ablation study with individual domain randomisation parameter was also conducted to understand its contribution.
+The parameters included lights, textures, data augmentation and flying distractor as mentioned above.
+
+~\cite{prakash2020structured} introduces Structured domain randomisation, where in the structure and context is preserved for the problem at hand while creating synthetic images.
+Example: A road is randomly placed with parameters like curvature, lighting and camera position.
+With this as context, the pedestrian walk, road lanes, etc are generated.
+After these 2 steps, the objects such as cars, cyclists, houses, buildings are placed in the scene.
+As ablation study, the author changes domain randomisation parameters and checks the performance on car detection task.
 
 
 
-\section{Domain Randomisation}\label{sec:domain-randomisation}
-Discuss other methods used to mitigate domain shift
-Example: distance learning, subspace matching
 
 \section{GAN based style transfer}\label{sec:gan_based_styletransfer}
 

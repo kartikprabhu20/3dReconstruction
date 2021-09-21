@@ -85,16 +85,6 @@
 	year={2018}
 }
 
-
-@misc{handa2015scenenet,
-	title={SceneNet: Understanding Real World Indoor Scenes With Synthetic Data},
-	author={Ankur Handa and Viorica Patraucean and Vijay Badrinarayanan and Simon Stent and Roberto Cipolla},
-	year={2015},
-	eprint={1511.07041},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
-}
-
 @article{McCormac:etal:ICCV2017,
 	author = {John McCormac and
 			  Ankur Handa and
@@ -193,15 +183,6 @@
 	author={Jia Zheng and Junfei Zhang and Jing Li and Rui Tang and Shenghua Gao and Zihan Zhou},
 	year={2020},
 	eprint={1908.00222},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
-}
-
-@misc{song2016semantic,
-	title={Semantic Scene Completion from a Single Depth Image},
-	author={Shuran Song and Fisher Yu and Andy Zeng and Angel X. Chang and Manolis Savva and Thomas Funkhouser},
-	year={2016},
-	eprint={1611.08974},
 	archivePrefix={arXiv},
 	primaryClass={cs.CV}
 }
@@ -340,7 +321,7 @@ url = {http://www.blender.org},
 	key = {value},title={3D Face Reconstruction From Single 2D Image Using Distinctive Features},
 	key = {value},year={2020},
 	key = {value},volume={8},
-	key = {value},number={},
+%	key = {value},number={},
 	key = {value},pages={180681-180689},
 	key = {value},doi={10.1109/ACCESS.2020.3028106}}
 
@@ -435,9 +416,213 @@ url = {http://www.blender.org},
 
 ///////////////////////2d pose estimation end
 
-///////////////////////mesh reconstruction start
+/////////////////////// reconstruction start
+@article{Mescheder2019OccupancyNL,
+	title={Occupancy Networks: Learning 3D Reconstruction in Function Space},
+	author={Lars M. Mescheder and Michael Oechsle and Michael Niemeyer and S. Nowozin and Andreas Geiger},
+	journal={2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+	year={2019},
+	pages={4455-4465}
+}
 
-///////////////////////mesh reconstruction end
+@inproceedings{Kar2017LearningAM,
+	title={Learning a Multi-View Stereo Machine},
+	author={Abhishek Kar and Christian H{\"a}ne and Jitendra Malik},
+	booktitle={NIPS},
+	year={2017}
+}
+
+@inproceedings{choy20163d,
+	title={3D-R2N2: A Unified Approach for Single and Multi-view 3D Object Reconstruction},
+	author={Choy, Christopher B and Xu, Danfei and Gwak, JunYoung and Chen, Kevin and Savarese, Silvio},
+	booktitle = {Proceedings of the European Conference on Computer Vision ({ECCV})},
+	year={2016}
+}
+
+@article{Yang_2019,
+	title={Robust Attentional Aggregation of Deep Feature Sets for Multi-view 3D Reconstruction},
+	volume={128},
+	ISSN={1573-1405},
+	url={http://dx.doi.org/10.1007/s11263-019-01217-w},
+	DOI={10.1007/s11263-019-01217-w},
+	number={1},
+	journal={International Journal of Computer Vision},
+	publisher={Springer Science and Business Media LLC},
+	author={Yang, Bo and Wang, Sen and Markham, Andrew and Trigoni, Niki},
+	year={2019},
+	month={Aug},
+	pages={53–73}
+}
+@misc{huang2018deepmvs,
+	title={DeepMVS: Learning Multi-view Stereopsis},
+	author={Po-Han Huang and Kevin Matzen and Johannes Kopf and Narendra Ahuja and Jia-Bin Huang},
+	year={2018},
+	eprint={1804.00650},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@article{Paschalidou2018RayNetLV,
+	title={RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials},
+	author={Despoina Paschalidou and Ali O. Ulusoy and Carolin Schmitt and L. Gool and Andreas Geiger},
+	journal={2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+	year={2018},
+	pages={3897-3906}
+}
+
+@misc{wu2017marrnet,
+	title={MarrNet: 3D Shape Reconstruction via 2.5D Sketches},
+	author={Jiajun Wu and Yifan Wang and Tianfan Xue and Xingyuan Sun and William T Freeman and Joshua B Tenenbaum},
+	year={2017},
+	eprint={1711.03129},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@InProceedings{z-gan,
+	author="Knyaz, Vladimir A.
+and Kniaz, Vladimir V.
+and Remondino, Fabio",
+	editor="Leal-Taix{\'e}, Laura
+and Roth, Stefan",
+	title="Image-to-Voxel Model Translation with Conditional Adversarial Networks",
+	booktitle="Computer Vision -- ECCV 2018 Workshops",
+	year="2019",
+	publisher="Springer International Publishing",
+	address="Cham",
+	pages="601--618",
+	abstract="We present a single-view voxel model prediction method that uses generative adversarial networks. Our method utilizes correspondences between 2D silhouettes and slices of a camera frustum to predict a voxel model of a scene with multiple object instances. We exploit pyramid shaped voxel and a generator network with skip connections between 2D and 3D feature maps. We collected two datasets VoxelCity and VoxelHome to train our framework with 36,416 images of 28 scenes with ground-truth 3D models, depth maps, and 6D object poses. We made the datasets publicly available (http://www.zefirus.org/Z{\_}GAN). We evaluate our framework on 3D shape datasets to show that it delivers robust 3D scene reconstruction results that compete with and surpass state-of-the-art in a scene reconstruction with multiple non-rigid objects.",
+	isbn="978-3-030-11009-3"
+}
+
+@article{Yang_219,
+	title={Dense 3D Object Reconstruction from a Single Depth View},
+	volume={41},
+	ISSN={1939-3539},
+	url={http://dx.doi.org/10.1109/TPAMI.2018.2868195},
+	DOI={10.1109/tpami.2018.2868195},
+	number={12},
+	journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	publisher={Institute of Electrical and Electronics Engineers (IEEE)},
+	author={Yang, Bo and Rosa, Stefano and Markham, Andrew and Trigoni, Niki and Wen, Hongkai},
+	year={2019},
+	month={Dec},
+	pages={2820–2834}
+}
+
+@misc{wu2018learning,
+	title={Learning Shape Priors for Single-View 3D Completion and Reconstruction},
+	author={Jiajun Wu and Chengkai Zhang and Xiuming Zhang and Zhoutong Zhang and William T. Freeman and Joshua B. Tenenbaum},
+	year={2018},
+	eprint={1809.05068},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@inproceedings{Goodfellow2014GenerativeAN,
+	title={Generative Adversarial Nets},
+	author={I. Goodfellow and Jean Pouget-Abadie and Mehdi Mirza and Bing Xu and David Warde-Farley and Sherjil Ozair and Aaron C. Courville and Yoshua Bengio},
+	booktitle={NIPS},
+	year={2014}
+}
+
+@misc{wu2017learning,
+	title={Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling},
+	author={Jiajun Wu and Chengkai Zhang and Tianfan Xue and William T. Freeman and Joshua B. Tenenbaum},
+	year={2017},
+	eprint={1610.07584},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@misc{kingma2014autoencoding,
+	title={Auto-Encoding Variational Bayes},
+	author={Diederik P Kingma and Max Welling},
+	year={2014},
+	eprint={1312.6114},
+	archivePrefix={arXiv},
+	primaryClass={stat.ML}
+}
+
+@misc{tatarchenko2017octree,
+	title={Octree Generating Networks: Efficient Convolutional Architectures for High-resolution 3D Outputs},
+	author={Maxim Tatarchenko and Alexey Dosovitskiy and Thomas Brox},
+	year={2017},
+	eprint={1703.09438},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@article{Richter2018MatryoshkaNP,
+	title={Matryoshka Networks: Predicting 3D Geometry via Nested Shape Layers},
+	author={Stephan R. Richter and S. Roth},
+	journal={2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+	year={2018},
+	pages={1936-1944}
+}
+
+@article{Gkioxari2019MeshR,
+	title={Mesh R-CNN},
+	author={Georgia Gkioxari and Jitendra Malik and Justin Johnson},
+	journal={2019 IEEE/CVF International Conference on Computer Vision (ICCV)},
+	year={2019},
+	pages={9784-9794}
+}
+
+@misc{wang2018pixel2mesh,
+	title={Pixel2Mesh: Generating 3D Mesh Models from Single RGB Images},
+	author={Nanyang Wang and Yinda Zhang and Zhuwen Li and Yanwei Fu and Wei Liu and Yu-Gang Jiang},
+	year={2018},
+	eprint={1804.01654},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@article{Lunz2020InverseGG,
+	title={Inverse Graphics GAN: Learning to Generate 3D Shapes from Unstructured 2D Data},
+	author={Sebastian Lunz and Yingzhen Li and A. Fitzgibbon and Nate Kushman},
+	journal={ArXiv},
+	year={2020},
+	volume={abs/2002.12674}
+}
+
+@misc{groueix2018atlasnet,
+	title={AtlasNet: A Papier-M\^ach\'e Approach to Learning 3D Surface Generation},
+	author={Thibault Groueix and Matthew Fisher and Vladimir G. Kim and Bryan C. Russell and Mathieu Aubry},
+	year={2018},
+	eprint={1802.05384},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@misc{pan2019deep,
+	title={Deep Mesh Reconstruction from Single RGB Images via Topology Modification Networks},
+	author={Junyi Pan and Xiaoguang Han and Weikai Chen and Jiapeng Tang and Kui Jia},
+	year={2019},
+	eprint={1909.00321},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+@misc{chen2019learning,
+	title={Learning Implicit Fields for Generative Shape Modeling},
+	author={Zhiqin Chen and Hao Zhang},
+	year={2019},
+	eprint={1812.02822},
+	archivePrefix={arXiv},
+	primaryClass={cs.GR}
+}
+
+@misc{henderson2019learning,
+	title={Learning single-image 3D reconstruction by generative modelling of shape, pose and shading},
+	author={Paul Henderson and Vittorio Ferrari},
+	year={2019},
+	eprint={1901.06447},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
+///////////////////////reconstruction end
 
 ///////////////////////Domain adaptation synth to real  start
 @article{Bi2019DeepCS,
@@ -506,6 +691,16 @@ url = {http://www.blender.org},
 	archivePrefix={arXiv},
 	primaryClass={cs.CV}
 }
+
+@misc{prakash2020structured,
+	title={Structured Domain Randomization: Bridging the Reality Gap by Context-Aware Synthetic Data},
+	author={Aayush Prakash and Shaad Boochoon and Mark Brophy and David Acuna and Eric Cameracci and Gavriel State and Omer Shapira and Stan Birchfield},
+	year={2020},
+	eprint={1810.10093},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
+}
+
 ///////////////////////Domain adaptation synth to real  end
 
 ///////////////////////Gameengine start
@@ -520,8 +715,6 @@ url = {http://www.blender.org},
 ///////////////////////Gameengine end
 
 ///////////////////////Domain adaptation synth to real gan  start
-
-
 
 @article{Wang2018HighResolutionIS,
 	title={High-Resolution Image Synthesis and Semantic Manipulation with Conditional GANs},
@@ -714,9 +907,5 @@ url = {http://www.blender.org},
 	primaryClass={cs.CV}
 }
 
-@inproceedings{2018LearningIC,
-	title={Learning image classifiers from (limited) real and (abundant) synthetic data},
-	author={},
-	year={2018}
-}
+
 //////////////////evaluation end

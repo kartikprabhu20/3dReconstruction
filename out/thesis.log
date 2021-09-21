@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  20 SEP 2021 22:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  21 SEP 2021 20:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1471,7 +1471,7 @@ Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
 t line 79.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
 line 79.
-<files//ovgu.pdf, id=260, 277.00789pt x 45.76799pt>
+<files//ovgu.pdf, id=268, 277.00789pt x 45.76799pt>
 File: files//ovgu.pdf Graphic file (type pdf)
 <use files//ovgu.pdf>
 Package pdftex.def Info: files//ovgu.pdf  used on input line 97.
@@ -1713,7 +1713,7 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 \openout7 = `thesis.mw'.
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 38.
+(Font)              scaled to size 12.0pt on input line 39.
 )
 \tf@toc=\write25
 \openout7 = `thesis.toc'.
@@ -1909,7 +1909,7 @@ Package natbib Warning: Citation `gartnerreport' on page 1 undefined on input l
 ine 14.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-cha
-rt_2.png, id=506, 1155.31625pt x 843.15pt>
+rt_2.png, id=516, 1155.31625pt x 843.15pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartne
 r-chart_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner
@@ -2009,7 +2009,7 @@ Package natbib Warning: Citation `li2016fpnn' on page 3 undefined on input line
  66.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepresent
-ation.png, id=520, 3679.7475pt x 1340.00626pt>
+ation.png, id=530, 3679.7475pt x 1340.00626pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepr
 esentation.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepre
@@ -2096,14 +2096,6 @@ entation.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 (./text/related_work.tex
 Chapter 2.
 
-LaTeX Warning: Reference `subsec:indoor-synthetic-datasets' on page 7 undefined
- on input line 3.
-
-
-LaTeX Warning: Reference `subsec:tools-to-create-synthetic' on page 7 undefined
- on input line 4.
-
-
 Package natbib Warning: Citation `dai2017scannet' on page 7 undefined on input 
 line 8.
 
@@ -2154,9 +2146,6 @@ n input line 8.
 
 Package natbib Warning: Citation `dai2017scannet' on page 7 undefined on input 
 line 11.
-
-
-Package natbib Warning: Citation `' on page 7 undefined on input line 11.
 
 
 Package natbib Warning: Citation `Fu20203DFRONT3F' on page 7 undefined on input
@@ -2281,94 +2270,12 @@ ine 60.
 Package natbib Warning: Citation `Straub2019TheRD' on page 8 undefined on input
  line 60.
 
+\openout7 = `thesis.mw'.
 
-./text/related_work.tex:67: Package xkeyval Error: `valign' undefined in famili
-es `Gin'.
+[8] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
 
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.67 ...es/realistic_images_relatedwork/3dfront_1}
-                                                   &
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/3dfront_1.jpg, id=559, 1204.5pt x 1204.5pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/3dfront_1.jpg Graphic file (type jpg)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/3dfront_1.jpg>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/3dfront_1.jpg  used on input line 67.
-(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-
-./text/related_work.tex:68: Package xkeyval Error: `valign' undefined in famili
-es `Gin'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.68 ...es/realistic_images_relatedwork/3dfront_2}
-                                                   &
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/3dfront_2.jpg, id=560, 1204.5pt x 1204.5pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/3dfront_2.jpg Graphic file (type jpg)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/3dfront_2.jpg>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/3dfront_2.jpg  used on input line 68.
-(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-
-./text/related_work.tex:69: Package xkeyval Error: `valign' undefined in famili
-es `Gin'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.69 ...es/realistic_images_relatedwork/3dfront_3}
-                                                  \\
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/3dfront_3.jpg, id=561, 1204.5pt x 1204.5pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/3dfront_3.jpg Graphic file (type jpg)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/3dfront_3.jpg>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/3dfront_3.jpg  used on input line 69.
-(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
-
-./text/related_work.tex:71: Package xkeyval Error: `valign' undefined in famili
-es `Gin'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.71 ...s/realistic_images_relatedwork/ai2thor_01}
-                                                   &
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/ai2thor_01.png, id=562, 1178.4025pt x 589.20125pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/ai2thor_01.png Graphic file (type png)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/ai2thor_01.png>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/ai2thor_01.png  used on input line 71.
-(pdftex.def)             Requested size: 85.35696pt x 42.67778pt.
 
 ./text/related_work.tex:72: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2377,20 +2284,20 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.72 ...s/realistic_images_relatedwork/ai2thor_02}
+l.72 ...es/realistic_images_relatedwork/3dfront_1}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/ai2thor_02.png, id=563, 713.66624pt x 539.01375pt>
+relatedwork/3dfront_1.jpg, id=577, 1204.5pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/ai2thor_02.png Graphic file (type png)
+ages_relatedwork/3dfront_1.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/ai2thor_02.png>
+ges_relatedwork/3dfront_1.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/ai2thor_02.png  used on input line 72.
-(pdftex.def)             Requested size: 85.35696pt x 64.46501pt.
+images/realistic_images_relatedwork/3dfront_1.jpg  used on input line 72.
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
 
 ./text/related_work.tex:73: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2399,42 +2306,42 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 ...s/realistic_images_relatedwork/ai2thor_03}
-                                                  \\
+l.73 ...es/realistic_images_relatedwork/3dfront_2}
+                                                   &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/ai2thor_03.png, id=564, 712.6625pt x 539.01375pt>
+relatedwork/3dfront_2.jpg, id=578, 1204.5pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/ai2thor_03.png Graphic file (type png)
+ages_relatedwork/3dfront_2.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/ai2thor_03.png>
+ges_relatedwork/3dfront_2.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/ai2thor_03.png  used on input line 73.
-(pdftex.def)             Requested size: 85.35696pt x 64.55548pt.
+images/realistic_images_relatedwork/3dfront_2.jpg  used on input line 73.
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
 
-./text/related_work.tex:75: Package xkeyval Error: `valign' undefined in famili
+./text/related_work.tex:74: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.75 .../realistic_images_relatedwork/hypersim_01}
-                                                   &
+l.74 ...es/realistic_images_relatedwork/3dfront_3}
+                                                  \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/hypersim_01.jpg, id=565, 740.0448pt x 555.0336pt>
+relatedwork/3dfront_3.jpg, id=579, 1204.5pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/hypersim_01.jpg Graphic file (type jpg)
+ages_relatedwork/3dfront_3.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/hypersim_01.jpg>
+ges_relatedwork/3dfront_3.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/hypersim_01.jpg  used on input line 75.
-(pdftex.def)             Requested size: 85.35696pt x 64.0096pt.
+images/realistic_images_relatedwork/3dfront_3.jpg  used on input line 74.
+(pdftex.def)             Requested size: 85.35696pt x 85.35284pt.
 
 ./text/related_work.tex:76: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2443,20 +2350,20 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 .../realistic_images_relatedwork/hypersim_02}
+l.76 ...s/realistic_images_relatedwork/ai2thor_01}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/hypersim_02.jpg, id=566, 740.0448pt x 555.0336pt>
+relatedwork/ai2thor_01.png, id=580, 1178.4025pt x 589.20125pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/hypersim_02.jpg Graphic file (type jpg)
+ages_relatedwork/ai2thor_01.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/hypersim_02.jpg>
+ges_relatedwork/ai2thor_01.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/hypersim_02.jpg  used on input line 76.
-(pdftex.def)             Requested size: 85.35696pt x 64.0096pt.
+images/realistic_images_relatedwork/ai2thor_01.png  used on input line 76.
+(pdftex.def)             Requested size: 85.35696pt x 42.67778pt.
 
 ./text/related_work.tex:77: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2465,42 +2372,42 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 .../realistic_images_relatedwork/hypersim_03}
-                                                  \\
+l.77 ...s/realistic_images_relatedwork/ai2thor_02}
+                                                   &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/hypersim_03.jpg, id=567, 740.0448pt x 555.0336pt>
+relatedwork/ai2thor_02.png, id=581, 713.66624pt x 539.01375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/hypersim_03.jpg Graphic file (type jpg)
+ages_relatedwork/ai2thor_02.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/hypersim_03.jpg>
+ges_relatedwork/ai2thor_02.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/hypersim_03.jpg  used on input line 77.
-(pdftex.def)             Requested size: 85.35696pt x 64.0096pt.
+images/realistic_images_relatedwork/ai2thor_02.png  used on input line 77.
+(pdftex.def)             Requested size: 85.35696pt x 64.46501pt.
 
-./text/related_work.tex:79: Package xkeyval Error: `valign' undefined in famili
+./text/related_work.tex:78: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.79 ...alistic_images_relatedwork/interiornet_01}
-                                                   &
+l.78 ...s/realistic_images_relatedwork/ai2thor_03}
+                                                  \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/interiornet_01.png, id=568, 642.4pt x 481.8pt>
+relatedwork/ai2thor_03.png, id=582, 712.6625pt x 539.01375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/interiornet_01.png Graphic file (type png)
+ages_relatedwork/ai2thor_03.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/interiornet_01.png>
+ges_relatedwork/ai2thor_03.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/interiornet_01.png  used on input line 79.
-(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
+images/realistic_images_relatedwork/ai2thor_03.png  used on input line 78.
+(pdftex.def)             Requested size: 85.35696pt x 64.55548pt.
 
 ./text/related_work.tex:80: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2509,20 +2416,20 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.80 ...alistic_images_relatedwork/interiornet_02}
+l.80 .../realistic_images_relatedwork/hypersim_01}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/interiornet_02.png, id=569, 642.4pt x 481.8pt>
+relatedwork/hypersim_01.jpg, id=583, 740.0448pt x 555.0336pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/interiornet_02.png Graphic file (type png)
+ages_relatedwork/hypersim_01.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/interiornet_02.png>
+ges_relatedwork/hypersim_01.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/interiornet_02.png  used on input line 80.
-(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
+images/realistic_images_relatedwork/hypersim_01.jpg  used on input line 80.
+(pdftex.def)             Requested size: 85.35696pt x 64.0096pt.
 
 ./text/related_work.tex:81: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2531,42 +2438,42 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...alistic_images_relatedwork/interiornet_03}
-                                                  \\
+l.81 .../realistic_images_relatedwork/hypersim_02}
+                                                   &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/interiornet_03.png, id=570, 642.4pt x 481.8pt>
+relatedwork/hypersim_02.jpg, id=584, 740.0448pt x 555.0336pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/interiornet_03.png Graphic file (type png)
+ages_relatedwork/hypersim_02.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/interiornet_03.png>
+ges_relatedwork/hypersim_02.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/interiornet_03.png  used on input line 81.
-(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
+images/realistic_images_relatedwork/hypersim_02.jpg  used on input line 81.
+(pdftex.def)             Requested size: 85.35696pt x 64.0096pt.
 
-./text/related_work.tex:83: Package xkeyval Error: `valign' undefined in famili
+./text/related_work.tex:82: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 ...realistic_images_relatedwork/openrooms_01}
-                                                   &
+l.82 .../realistic_images_relatedwork/hypersim_03}
+                                                  \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/openrooms_01.png, id=571, 642.4pt x 481.8pt>
+relatedwork/hypersim_03.jpg, id=585, 740.0448pt x 555.0336pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/openrooms_01.png Graphic file (type png)
+ages_relatedwork/hypersim_03.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/openrooms_01.png>
+ges_relatedwork/hypersim_03.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/openrooms_01.png  used on input line 83.
-(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
+images/realistic_images_relatedwork/hypersim_03.jpg  used on input line 82.
+(pdftex.def)             Requested size: 85.35696pt x 64.0096pt.
 
 ./text/related_work.tex:84: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2575,19 +2482,19 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.84 ...realistic_images_relatedwork/openrooms_02}
+l.84 ...alistic_images_relatedwork/interiornet_01}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/openrooms_02.png, id=572, 642.4pt x 481.8pt>
+relatedwork/interiornet_01.png, id=586, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/openrooms_02.png Graphic file (type png)
+ages_relatedwork/interiornet_01.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/openrooms_02.png>
+ges_relatedwork/interiornet_01.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/openrooms_02.png  used on input line 84.
+images/realistic_images_relatedwork/interiornet_01.png  used on input line 84.
 (pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
 
 ./text/related_work.tex:85: Package xkeyval Error: `valign' undefined in famili
@@ -2597,42 +2504,42 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 ...realistic_images_relatedwork/openrooms_03}
-                                                  \\
+l.85 ...alistic_images_relatedwork/interiornet_02}
+                                                   &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/openrooms_03.png, id=573, 642.4pt x 481.8pt>
+relatedwork/interiornet_02.png, id=587, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/openrooms_03.png Graphic file (type png)
+ages_relatedwork/interiornet_02.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/openrooms_03.png>
+ges_relatedwork/interiornet_02.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/openrooms_03.png  used on input line 85.
+images/realistic_images_relatedwork/interiornet_02.png  used on input line 85.
 (pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
 
-./text/related_work.tex:87: Package xkeyval Error: `valign' undefined in famili
+./text/related_work.tex:86: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.87 ...s/realistic_images_relatedwork/scenenet_1}
-                                                   &
+l.86 ...alistic_images_relatedwork/interiornet_03}
+                                                  \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/scenenet_1.jpg, id=574, 321.2pt x 240.9pt>
+relatedwork/interiornet_03.png, id=588, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/scenenet_1.jpg Graphic file (type jpg)
+ages_relatedwork/interiornet_03.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/scenenet_1.jpg>
+ges_relatedwork/interiornet_03.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/scenenet_1.jpg  used on input line 87.
-(pdftex.def)             Requested size: 85.35696pt x 64.0183pt.
+images/realistic_images_relatedwork/interiornet_03.png  used on input line 86.
+(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
 
 ./text/related_work.tex:88: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2641,20 +2548,20 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 ...s/realistic_images_relatedwork/scenenet_2}
+l.88 ...realistic_images_relatedwork/openrooms_01}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/scenenet_2.jpg, id=575, 321.2pt x 240.9pt>
+relatedwork/openrooms_01.png, id=589, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/scenenet_2.jpg Graphic file (type jpg)
+ages_relatedwork/openrooms_01.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/scenenet_2.jpg>
+ges_relatedwork/openrooms_01.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/scenenet_2.jpg  used on input line 88.
-(pdftex.def)             Requested size: 85.35696pt x 64.0183pt.
+images/realistic_images_relatedwork/openrooms_01.png  used on input line 88.
+(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
 
 ./text/related_work.tex:89: Package xkeyval Error: `valign' undefined in famili
 es `Gin'.
@@ -2663,149 +2570,162 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.89 ...s/realistic_images_relatedwork/scenenet_3}
+l.89 ...realistic_images_relatedwork/openrooms_02}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
+relatedwork/openrooms_02.png, id=590, 642.4pt x 481.8pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
+ages_relatedwork/openrooms_02.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
+ges_relatedwork/openrooms_02.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/realistic_images_relatedwork/openrooms_02.png  used on input line 89.
+(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
+
+./text/related_work.tex:90: Package xkeyval Error: `valign' undefined in famili
+es `Gin'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 ...realistic_images_relatedwork/openrooms_03}
                                                   \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/scenenet_3.jpg, id=576, 321.2pt x 240.9pt>
+relatedwork/openrooms_03.png, id=591, 642.4pt x 481.8pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
+ages_relatedwork/openrooms_03.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
+ges_relatedwork/openrooms_03.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/realistic_images_relatedwork/openrooms_03.png  used on input line 90.
+(pdftex.def)             Requested size: 85.35696pt x 64.01096pt.
+
+./text/related_work.tex:92: Package xkeyval Error: `valign' undefined in famili
+es `Gin'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92 ...s/realistic_images_relatedwork/scenenet_1}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
+relatedwork/scenenet_1.jpg, id=592, 321.2pt x 240.9pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
+ages_relatedwork/scenenet_1.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
+ges_relatedwork/scenenet_1.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/realistic_images_relatedwork/scenenet_1.jpg  used on input line 92.
+(pdftex.def)             Requested size: 85.35696pt x 64.0183pt.
+
+./text/related_work.tex:93: Package xkeyval Error: `valign' undefined in famili
+es `Gin'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 ...s/realistic_images_relatedwork/scenenet_2}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
+relatedwork/scenenet_2.jpg, id=593, 321.2pt x 240.9pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
+ages_relatedwork/scenenet_2.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
+ges_relatedwork/scenenet_2.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/realistic_images_relatedwork/scenenet_2.jpg  used on input line 93.
+(pdftex.def)             Requested size: 85.35696pt x 64.0183pt.
+
+./text/related_work.tex:94: Package xkeyval Error: `valign' undefined in famili
+es `Gin'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 ...s/realistic_images_relatedwork/scenenet_3}
+                                                  \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
+relatedwork/scenenet_3.jpg, id=594, 321.2pt x 240.9pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/scenenet_3.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
 ges_relatedwork/scenenet_3.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/scenenet_3.jpg  used on input line 89.
+images/realistic_images_relatedwork/scenenet_3.jpg  used on input line 94.
 (pdftex.def)             Requested size: 85.35696pt x 64.0183pt.
-\openout7 = `thesis.mw'.
-
-[8] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-
 
 Package natbib Warning: Citation `denninger2019blenderproc' on page 9 undefined
- on input line 98.
+ on input line 103.
 
 
-Package natbib Warning: Citation `blender' on page 9 undefined on input line 99
-.
+Package natbib Warning: Citation `blender' on page 9 undefined on input line 10
+4.
 
 
 Package natbib Warning: Citation `Lim2013ParsingIO' on page 9 undefined on inpu
-t line 103.
+t line 108.
 
 
-Package natbib Warning: Citation `pix3d' on page 9 undefined on input line 103.
+Package natbib Warning: Citation `pix3d' on page 9 undefined on input line 108.
 
 
 
 Package natbib Warning: Citation `chang2015shapenet' on page 9 undefined on inp
-ut line 103.
+ut line 108.
 
 
 Package natbib Warning: Citation `Fu20203DFRONT3F' on page 9 undefined on input
- line 103.
+ line 108.
 
 
 Package natbib Warning: Citation `Straub2019TheRD' on page 9 undefined on input
- line 103.
+ line 108.
 
 
 Package natbib Warning: Citation `Xiao2013SUN3DAD' on page 9 undefined on input
- line 103.
+ line 108.
 
 
-./text/related_work.tex:110: Package xkeyval Error: `valign' undefined in famil
+./text/related_work.tex:115: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.110 ...alistic_images_relatedwork/blenderproc_1}
+l.115 ...alistic_images_relatedwork/blenderproc_1}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_1.png, id=582, 541.02126pt x 543.02875pt>
+relatedwork/blenderproc_1.png, id=596, 541.02126pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
 ges_relatedwork/blenderproc_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_1.png  used on input line 110.
+images/realistic_images_relatedwork/blenderproc_1.png  used on input line 115.
 (pdftex.def)             Requested size: 85.35696pt x 85.66833pt.
-
-./text/related_work.tex:111: Package xkeyval Error: `valign' undefined in famil
-ies `Gin'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.111 ...c_images_relatedwork/blenderproc_depth_1}
-                                                   &
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_depth_1.png, id=583, 545.03625pt x 546.04pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_depth_1.png Graphic file (type png)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_depth_1.png>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_depth_1.png  used on input line
- 111.
-(pdftex.def)             Requested size: 85.35696pt x 85.51016pt.
-
-./text/related_work.tex:112: Package xkeyval Error: `valign' undefined in famil
-ies `Gin'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 ...mages_relatedwork/blenderproc_instance_1}
-                                                   &
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_instance_1.png, id=584, 545.03625pt x 544.0325pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_instance_1.png Graphic file (type png)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_instance_1.png>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_instance_1.png  used on input l
-ine 112.
-(pdftex.def)             Requested size: 85.35696pt x 85.19579pt.
-
-./text/related_work.tex:113: Package xkeyval Error: `valign' undefined in famil
-ies `Gin'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ..._images_relatedwork/blenderproc_normal_1}
-                                                  \\
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_normal_1.png, id=585, 546.04pt x 545.03625pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_normal_1.png Graphic file (type png)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_normal_1.png>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_normal_1.png  used on input lin
-e 113.
-(pdftex.def)             Requested size: 85.35696pt x 85.19496pt.
 
 ./text/related_work.tex:116: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
@@ -2814,20 +2734,21 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.116 ...alistic_images_relatedwork/blenderproc_2}
+l.116 ...c_images_relatedwork/blenderproc_depth_1}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_2.png, id=586, 579.16376pt x 578.16pt>
+relatedwork/blenderproc_depth_1.png, id=597, 545.03625pt x 546.04pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_2.png Graphic file (type png)
+ages_relatedwork/blenderproc_depth_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_2.png>
+ges_relatedwork/blenderproc_depth_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_2.png  used on input line 116.
-(pdftex.def)             Requested size: 85.35696pt x 85.20287pt.
+images/realistic_images_relatedwork/blenderproc_depth_1.png  used on input line
+ 116.
+(pdftex.def)             Requested size: 85.35696pt x 85.51016pt.
 
 ./text/related_work.tex:117: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
@@ -2836,21 +2757,21 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.117 ...c_images_relatedwork/blenderproc_depth_2}
+l.117 ...mages_relatedwork/blenderproc_instance_1}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_depth_2.png, id=587, 545.03625pt x 543.02875pt>
+relatedwork/blenderproc_instance_1.png, id=598, 545.03625pt x 544.0325pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_depth_2.png Graphic file (type png)
+ages_relatedwork/blenderproc_instance_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_depth_2.png>
+ges_relatedwork/blenderproc_instance_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_depth_2.png  used on input line
- 117.
-(pdftex.def)             Requested size: 85.35696pt x 85.0386pt.
+images/realistic_images_relatedwork/blenderproc_instance_1.png  used on input l
+ine 117.
+(pdftex.def)             Requested size: 85.35696pt x 85.19579pt.
 
 ./text/related_work.tex:118: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
@@ -2859,44 +2780,21 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.118 ...mages_relatedwork/blenderproc_instance_2}
-                                                   &
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_instance_2.png, id=588, 544.0325pt x 543.02875pt>
-File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_instance_2.png Graphic file (type png)
-<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_instance_2.png>
-Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_instance_2.png  used on input l
-ine 118.
-(pdftex.def)             Requested size: 85.35696pt x 85.19603pt.
-
-./text/related_work.tex:119: Package xkeyval Error: `valign' undefined in famil
-ies `Gin'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.119 ..._images_relatedwork/blenderproc_normal_2}
+l.118 ..._images_relatedwork/blenderproc_normal_1}
                                                   \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_normal_2.png, id=589, 543.02875pt x 543.02875pt>
+relatedwork/blenderproc_normal_1.png, id=599, 546.04pt x 545.03625pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_normal_2.png Graphic file (type png)
+ages_relatedwork/blenderproc_normal_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_normal_2.png>
+ges_relatedwork/blenderproc_normal_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_normal_2.png  used on input lin
-e 119.
-(pdftex.def)             Requested size: 85.35696pt x 85.35347pt.
+images/realistic_images_relatedwork/blenderproc_normal_1.png  used on input lin
+e 118.
+(pdftex.def)             Requested size: 85.35696pt x 85.19496pt.
 
 ./text/related_work.tex:121: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
@@ -2905,20 +2803,20 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.121 ...alistic_images_relatedwork/blenderproc_3}
+l.121 ...alistic_images_relatedwork/blenderproc_2}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_3.png, id=590, 740.7675pt x 738.76pt>
+relatedwork/blenderproc_2.png, id=600, 579.16376pt x 578.16pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_3.png Graphic file (type png)
+ages_relatedwork/blenderproc_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_3.png>
+ges_relatedwork/blenderproc_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_3.png  used on input line 121.
-(pdftex.def)             Requested size: 85.35696pt x 85.11906pt.
+images/realistic_images_relatedwork/blenderproc_2.png  used on input line 121.
+(pdftex.def)             Requested size: 85.35696pt x 85.20287pt.
 
 ./text/related_work.tex:122: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
@@ -2927,21 +2825,21 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.122 ...c_images_relatedwork/blenderproc_depth_3}
+l.122 ...c_images_relatedwork/blenderproc_depth_2}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_depth_3.png, id=591, 547.04375pt x 544.0325pt>
+relatedwork/blenderproc_depth_2.png, id=601, 545.03625pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_depth_3.png Graphic file (type png)
+ages_relatedwork/blenderproc_depth_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_depth_3.png>
+ges_relatedwork/blenderproc_depth_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_depth_3.png  used on input line
+images/realistic_images_relatedwork/blenderproc_depth_2.png  used on input line
  122.
-(pdftex.def)             Requested size: 85.35696pt x 84.88034pt.
+(pdftex.def)             Requested size: 85.35696pt x 85.0386pt.
 
 ./text/related_work.tex:123: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
@@ -2950,21 +2848,21 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.123 ...mages_relatedwork/blenderproc_instance_3}
+l.123 ...mages_relatedwork/blenderproc_instance_2}
                                                    &
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_instance_3.png, id=592, 545.03625pt x 542.025pt>
+relatedwork/blenderproc_instance_2.png, id=602, 544.0325pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_instance_3.png Graphic file (type png)
+ages_relatedwork/blenderproc_instance_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_instance_3.png>
+ges_relatedwork/blenderproc_instance_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_instance_3.png  used on input l
+images/realistic_images_relatedwork/blenderproc_instance_2.png  used on input l
 ine 123.
-(pdftex.def)             Requested size: 85.35696pt x 84.88141pt.
+(pdftex.def)             Requested size: 85.35696pt x 85.19603pt.
 
 ./text/related_work.tex:124: Package xkeyval Error: `valign' undefined in famil
 ies `Gin'.
@@ -2973,60 +2871,56 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 ..._images_relatedwork/blenderproc_normal_3}
+l.124 ..._images_relatedwork/blenderproc_normal_2}
                                                   \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_normal_3.png, id=593, 546.04pt x 546.04pt>
+relatedwork/blenderproc_normal_2.png, id=603, 543.02875pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_normal_3.png Graphic file (type png)
+ages_relatedwork/blenderproc_normal_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
-ges_relatedwork/blenderproc_normal_3.png>
+ges_relatedwork/blenderproc_normal_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_normal_3.png  used on input lin
+images/realistic_images_relatedwork/blenderproc_normal_2.png  used on input lin
 e 124.
-(pdftex.def)             Requested size: 85.35696pt x 85.35187pt.
+(pdftex.def)             Requested size: 85.35696pt x 85.35347pt.
 
 Package natbib Warning: Citation `to2018ndds' on page 9 undefined on input line
- 131.
+ 136.
 
 
 Package natbib Warning: Citation `tremblay2018falling' on page 9 undefined on i
-nput line 134.
+nput line 139.
 
 
 Package natbib Warning: Citation `synthdet2020' on page 9 undefined on input li
-ne 136.
-
-
-Package natbib Warning: Citation `hinterstoisser2019annotation' on page 9 undef
-ined on input line 138.
-
-
-Package natbib Warning: Citation `hinterstoisser2019annotation' on page 9 undef
-ined on input line 139.
-
-
-Package natbib Warning: Citation `qiu2017unrealcv' on page 9 undefined on input
- line 141.
-
-
-Package natbib Warning: Citation `unrealengine' on page 9 undefined on input li
 ne 141.
 
 
+Package natbib Warning: Citation `hinterstoisser2019annotation' on page 9 undef
+ined on input line 143.
+
+
+Package natbib Warning: Citation `hinterstoisser2019annotation' on page 9 undef
+ined on input line 144.
+
+
+Package natbib Warning: Citation `qiu2017unrealcv' on page 9 undefined on input
+ line 146.
+
+
+Package natbib Warning: Citation `unrealengine' on page 9 undefined on input li
+ne 146.
+
+
 Package natbib Warning: Citation `martinezgonzalez2021unrealrox' on page 9 unde
-fined on input line 144.
+fined on input line 149.
 
 \openout7 = `thesis.mw'.
 
 [9] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -3063,28 +2957,217 @@ atedwork/scenenet_2.jpg> </Users/apple/OVGU/Thesis/code/3dReconstruction/report
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
+
+
+Package natbib Warning: Citation `Kar2017LearningAM' on page 11 undefined on in
+put line 160.
+
+
+Package natbib Warning: Citation `choy20163d' on page 11 undefined on input lin
+e 160.
+
+
+Package natbib Warning: Citation `Yang_2019' on page 11 undefined on input line
+ 160.
+
+
+Package natbib Warning: Citation `huang2018deepmvs' on page 11 undefined on inp
+ut line 160.
+
+
+Package natbib Warning: Citation `Paschalidou2018RayNetLV' on page 11 undefined
+ on input line 160.
+
+
+Package natbib Warning: Citation `Xie_2019' on page 11 undefined on input line 
+160.
+
+
+Package natbib Warning: Citation `Xie_2020' on page 11 undefined on input line 
+160.
+
+
+Package natbib Warning: Citation `Kar2017LearningAM' on page 11 undefined on in
+put line 161.
+
+
+Package natbib Warning: Citation `choy20163d' on page 11 undefined on input lin
+e 161.
+
+
+Package natbib Warning: Citation `Yang_2019' on page 11 undefined on input line
+ 162.
+
+
+Package natbib Warning: Citation `huang2018deepmvs' on page 11 undefined on inp
+ut line 162.
+
+
+Package natbib Warning: Citation `Paschalidou2018RayNetLV' on page 11 undefined
+ on input line 162.
+
+
+Package natbib Warning: Citation `wu2017marrnet' on page 11 undefined on input 
+line 165.
+
+
+Package natbib Warning: Citation `z-gan' on page 11 undefined on input line 165
+.
+
+
+Package natbib Warning: Citation `Yang_219' on page 11 undefined on input line 
+165.
+
+
+Package natbib Warning: Citation `wu2018learning' on page 11 undefined on input
+ line 165.
+
+
+Package natbib Warning: Citation `popov2020corenet' on page 11 undefined on inp
+ut line 165.
+
+
+Package natbib Warning: Citation `wu2017marrnet' on page 11 undefined on input 
+line 166.
+
+
+Package natbib Warning: Citation `wu2018learning' on page 11 undefined on input
+ line 167.
+
+
+Package natbib Warning: Citation `Goodfellow2014GenerativeAN' on page 11 undefi
+ned on input line 168.
+
+
+Package natbib Warning: Citation `kingma2014autoencoding' on page 11 undefined 
+on input line 168.
+
+
+Package natbib Warning: Citation `z-gan' on page 11 undefined on input line 168
+.
+
+
+Package natbib Warning: Citation `Yang_219' on page 11 undefined on input line 
+168.
+
+
+Package natbib Warning: Citation `wu2017learning' on page 11 undefined on input
+ line 168.
+
+
+Package natbib Warning: Citation `Lunz2020InverseGG' on page 11 undefined on in
+put line 168.
+
+
+Package natbib Warning: Citation `Xie_2019' on page 11 undefined on input line 
+169.
+
+
+Package natbib Warning: Citation `Xie_2020' on page 11 undefined on input line 
+169.
+
+
+Package natbib Warning: Citation `tatarchenko2017octree' on page 11 undefined o
+n input line 172.
+
+
+Package natbib Warning: Citation `Richter2018MatryoshkaNP' on page 11 undefined
+ on input line 172.
+
+
+Package natbib Warning: Citation `Mescheder2019OccupancyNL' on page 11 undefine
+d on input line 172.
+
+
+Package natbib Warning: Citation `Gkioxari2019MeshR' on page 11 undefined on in
+put line 172.
+
+
+Package natbib Warning: Citation `wang2018pixel2mesh' on page 11 undefined on i
+nput line 172.
+
+
+Package natbib Warning: Citation `groueix2018atlasnet' on page 11 undefined on 
+input line 172.
+
+
+Package natbib Warning: Citation `pan2019deep' on page 11 undefined on input li
+ne 172.
+
+
+Package natbib Warning: Citation `Xie_2019' on page 11 undefined on input line 
+181.
+
+
+Package natbib Warning: Citation `Xie_2020' on page 11 undefined on input line 
+181.
+
+
+Package natbib Warning: Citation `wu2017marrnet' on page 11 undefined on input 
+line 181.
+
+
+Package natbib Warning: Citation `groueix2018atlasnet' on page 11 undefined on 
+input line 181.
+
+
+Package natbib Warning: Citation `pan2019deep' on page 11 undefined on input li
+ne 181.
+
+
+Package natbib Warning: Citation `chen2019learning' on page 11 undefined on inp
+ut line 181.
+
+
+Package natbib Warning: Citation `Lunz2020InverseGG' on page 11 undefined on in
+put line 183.
+
+
+Package natbib Warning: Citation `henderson2019learning' on page 11 undefined o
+n input line 183.
+
+\openout7 = `thesis.mw'.
+
+[11 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
+ges_relatedwork/blenderproc_1.png> </Users/apple/OVGU/Thesis/code/3dReconstruct
+ion/report/images/realistic_images_relatedwork/blenderproc_depth_1.png> </Users
+/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_related
+work/blenderproc_instance_1.png> </Users/apple/OVGU/Thesis/code/3dReconstructio
+n/report/images/realistic_images_relatedwork/blenderproc_normal_1.png> </Users/
+apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedw
+ork/blenderproc_2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/i
+mages/realistic_images_relatedwork/blenderproc_depth_2.png> </Users/apple/OVGU/
+Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blender
+proc_instance_2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/ima
+ges/realistic_images_relatedwork/blenderproc_normal_2.png>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+
+Package natbib Warning: Citation `nowruzi2019real' on page 12 undefined on inpu
+t line 191.
+
+
+Package natbib Warning: Citation `tobin2017domain' on page 12 undefined on inpu
+t line 199.
+
+
+Package natbib Warning: Citation `Tremblay2018TrainingDN' on page 12 undefined 
+on input line 202.
+
+
+Package natbib Warning: Citation `prakash2020structured' on page 12 undefined o
+n input line 208.
+
 )
 \openout7 = `thesis.mw'.
 
- [11 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
-ages_relatedwork/blenderproc_1.png> </Users/apple/OVGU/Thesis/code/3dReconstruc
-tion/report/images/realistic_images_relatedwork/blenderproc_depth_1.png> </User
-s/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relate
-dwork/blenderproc_instance_1.png> </Users/apple/OVGU/Thesis/code/3dReconstructi
-on/report/images/realistic_images_relatedwork/blenderproc_normal_1.png> </Users
-/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_related
-work/blenderproc_2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/realistic_images_relatedwork/blenderproc_depth_2.png> </Users/apple/OVGU
-/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blende
-rproc_instance_2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/im
-ages/realistic_images_relatedwork/blenderproc_normal_2.png> </Users/apple/OVGU/
-Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blender
-proc_3.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/reali
-stic_images_relatedwork/blenderproc_depth_3.png> </Users/apple/OVGU/Thesis/code
-/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instan
-ce_3.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realist
-ic_images_relatedwork/blenderproc_normal_3.png>]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [12] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -3099,18 +3182,6 @@ ic_images_relatedwork/blenderproc_normal_3.png>]
 
 
 (./text/concept.tex
-\openout7 = `thesis.mw'.
-
- [12
-
-
-
-
-]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-
 Chapter 3.
 
 Package natbib Warning: Citation `pix3d' on page 13 undefined on input line 6.
@@ -3123,25 +3194,8 @@ ut line 8.
 Package natbib Warning: Citation `pix3d' on page 13 undefined on input line 10.
 
 
-\openout7 = `thesis.mw'.
-
-[13] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_histo
-gram.png, id=640, 462.528pt x 346.896pt>
+gram.png, id=641, 462.528pt x 346.896pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 histogram.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_h
@@ -3152,7 +3206,7 @@ images/pix3d/pix3d_histogram.png  used on input line 30.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 30.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_model
-s_histogram.png, id=641, 1040.688pt x 624.4128pt>
+s_histogram.png, id=642, 1040.688pt x 624.4128pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 models_histogram.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_m
@@ -3161,61 +3215,83 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/pix3d/pix3d_models_histogram.png  used on input line 31.
 (pdftex.def)             Requested size: 192.04788pt x 170.70886pt.
 
-
-Package natbib Warning: Citation `pix3d' on page 14 undefined on input line 32.
-
+Package natbib Warning: Citation `pix3d' on page 13 undefined on input line 32.
 
 
-Package natbib Warning: Citation `pix3d' on page 14 undefined on input line 32.
 
+Package natbib Warning: Citation `pix3d' on page 13 undefined on input line 32.
+
+
+\openout7 = `thesis.mw'.
+
+[13
+
+
+
+
+] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_5.jpg
-, id=642, 1027.84pt x 770.88pt>
+, id=652, 1027.84pt x 770.88pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 5.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_5
 .jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/pix3d/pix3d_5.jpg  used on input line 43.
+images/pix3d/pix3d_5.jpg  used on input line 45.
 (pdftex.def)             Requested size: 170.71393pt x 128.02486pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2.png
-, id=643, 273.02pt x 205.76875pt>
+, id=653, 273.02pt x 205.76875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2
 .png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/pix3d/pix3d_2.png  used on input line 44.
+images/pix3d/pix3d_2.png  used on input line 46.
 (pdftex.def)             Requested size: 170.71393pt x 128.6648pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6.jpg
-, id=644, 1606.0pt x 1204.5pt>
+, id=654, 1606.0pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 6.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6
 .jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/pix3d/pix3d_6.jpg  used on input line 45.
+images/pix3d/pix3d_6.jpg  used on input line 47.
 (pdftex.def)             Requested size: 170.71393pt x 128.02927pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4.png
-, id=645, 1066.98625pt x 757.83125pt>
+, id=655, 1066.98625pt x 757.83125pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4
 .png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/pix3d/pix3d_4.png  used on input line 46.
+images/pix3d/pix3d_4.png  used on input line 48.
 (pdftex.def)             Requested size: 170.71393pt x 121.24391pt.
-
-Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 14 undefined 
-on input line 52.
 
 
 Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 14 undefined 
 on input line 54.
 
 
+Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 14 undefined 
+on input line 56.
+
+
 Package natbib Warning: Citation `chang2015shapenet' on page 14 undefined on in
-put line 55.
+put line 57.
 
 \openout7 = `thesis.mw'.
 
@@ -3251,14 +3327,18 @@ ages/pix3d/pix3d_4.png (PNG copy)>]
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 
 
 Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 16 undefined 
-on input line 98.
+on input line 103.
 
 
 Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 16 undefined 
-on input line 113.
+on input line 118.
 
 \openout7 = `thesis.mw'.
 
@@ -3287,57 +3367,61 @@ on input line 113.
 
 
 
+Package natbib Warning: Citation `Han2021ImageBased3O' on page 17 undefined on 
+input line 131.
+
+
 Package natbib Warning: Citation `Xie_2019' on page 17 undefined on input line 
-122.
+146.
 
 
 Package natbib Warning: Citation `simonyan2015deep' on page 17 undefined on inp
-ut line 126.
+ut line 150.
 
 
 Package natbib Warning: Citation `Deng2009ImageNetAL' on page 17 undefined on i
-nput line 126.
+nput line 150.
 
 
 Package natbib Warning: Citation `Xie_2020' on page 17 undefined on input line 
-129.
+153.
 
 
 Package natbib Warning: Citation `simonyan2015deep' on page 17 undefined on inp
-ut line 130.
+ut line 154.
 
 
 Package natbib Warning: Citation `He2016DeepRL' on page 17 undefined on input l
-ine 130.
+ine 154.
 
 
 Package natbib Warning: Citation `Han2021ImageBased3O' on page 17 undefined on 
-input line 135.
+input line 159.
 
 
 Package natbib Warning: Citation `Xie_2019' on page 17 undefined on input line 
-135.
+159.
 
 
 Package natbib Warning: Citation `popov2020corenet' on page 17 undefined on inp
-ut line 138.
+ut line 162.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox.p
-ng, id=677, 1371.1225pt x 463.7325pt>
+ng, id=685, 1371.1225pt x 463.7325pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
 vox.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2v
 ox.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/concept/pix2vox.png  used on input line 150.
+images/concept/pix2vox.png  used on input line 175.
 (pdftex.def)             Requested size: 426.79135pt x 144.34288pt.
 
 Package natbib Warning: Citation `Xie_2019' on page 17 undefined on input line 
-151.
+176.
 
 
 Package natbib Warning: Citation `Xie_2019' on page 17 undefined on input line 
-151.
+176.
 
 \openout7 = `thesis.mw'.
 
@@ -3361,64 +3445,71 @@ Package natbib Warning: Citation `Xie_2019' on page 17 undefined on input line
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2voxpp
-.png, id=682, 1330.9725pt x 451.6875pt>
+.png, id=690, 1330.9725pt x 451.6875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
 voxpp.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2v
 oxpp.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/concept/pix2voxpp.png  used on input line 157.
+images/concept/pix2voxpp.png  used on input line 182.
 (pdftex.def)             Requested size: 426.79135pt x 144.83241pt.
 
 
 Package natbib Warning: Citation `Xie_2020' on page 18 undefined on input line 
-158.
+183.
 
 
 Package natbib Warning: Citation `Xie_2020' on page 18 undefined on input line 
-158.
+183.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/survey.pn
-g, id=683, 718.685pt x 410.53375pt>
+g, id=691, 718.685pt x 410.53375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surv
 ey.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surve
 y.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/concept/survey.png  used on input line 164.
+images/concept/survey.png  used on input line 189.
 (pdftex.def)             Requested size: 426.79135pt x 243.80392pt.
 
 Package natbib Warning: Citation `Han2021ImageBased3O' on page 18 undefined on 
-input line 166.
+input line 191.
 
 
 Package natbib Warning: Citation `Han2021ImageBased3O' on page 18 undefined on 
-input line 166.
+input line 191.
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/it' in size <17.28> not
  available
 (Font)              Font shape `T1/LinuxBiolinumT-TLF/b/sl' tried instead on in
-put line 170.
+put line 195.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/sl' will be
-(Font)              scaled to size 17.28pt on input line 170.
+(Font)              scaled to size 17.28pt on input line 195.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 170.
+(hyperref)                removing `\@ifnextchar' on input line 195.
+
+\openout7 = `thesis.mw'.
+
+[18 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2v
+ox.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/p
+ix2voxpp.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
 
 
-Package natbib Warning: Citation `seib2020mixing' on page 18 undefined on input
- line 174.
+
+Package natbib Warning: Citation `seib2020mixing' on page 19 undefined on input
+ line 199.
 
 
-Package natbib Warning: Citation `2018LearningIC' on page 18 undefined on input
- line 176.
+Package natbib Warning: Citation `2018LearningIC' on page 19 undefined on input
+ line 201.
 
 )
 \openout7 = `thesis.mw'.
 
- [18 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
-vox.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/
-pix2voxpp.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [19 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surv
+ey.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -3427,12 +3518,6 @@ pix2voxpp.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-[19 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surve
-y.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout2 = `text/implementation.aux'.
@@ -3453,7 +3538,7 @@ y.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 
 Chapter 4.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/process.p
-ng, id=701, 1566.85374pt x 382.42876pt>
+ng, id=709, 1566.85374pt x 382.42876pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/proc
 ess.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/proce
@@ -3485,7 +3570,7 @@ Package natbib Warning: Citation `McCormac:etal:ICCV2017' on page 22 undefined
 on input line 48.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_bedroom.png, id=710, 645.41125pt x 522.95375pt>
+enenet_scenes/scene_bedroom.png, id=718, 645.41125pt x 522.95375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_bedroom.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3495,7 +3580,7 @@ images/implementation/scenenet_scenes/scene_bedroom.png  used on input line 58.
 
 (pdftex.def)             Requested size: 149.37704pt x 149.37851pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_livingroom.png, id=711, 1369.115pt x 1053.9375pt>
+enenet_scenes/scene_livingroom.png, id=719, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_livingroom.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3505,7 +3590,7 @@ images/implementation/scenenet_scenes/scene_livingroom.png  used on input line
 59.
 (pdftex.def)             Requested size: 149.37054pt x 149.36748pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_kitchen.png, id=712, 1369.115pt x 1053.9375pt>
+enenet_scenes/scene_kitchen.png, id=720, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_kitchen.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3515,7 +3600,7 @@ images/implementation/scenenet_scenes/scene_kitchen.png  used on input line 60.
 
 (pdftex.def)             Requested size: 149.37054pt x 149.36748pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_office.png, id=713, 1523.6925pt x 1053.9375pt>
+enenet_scenes/scene_office.png, id=721, 1523.6925pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_office.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3524,7 +3609,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/scenenet_scenes/scene_office.png  used on input line 61.
 (pdftex.def)             Requested size: 149.37897pt x 149.36748pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/types_of_scenes.png, id=714, 462.528pt x 346.896pt>
+enenet_scenes/types_of_scenes.png, id=722, 462.528pt x 346.896pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/types_of_scenes.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3534,7 +3619,7 @@ images/implementation/scenenet_scenes/types_of_scenes.png  used on input line 6
 8.
 (pdftex.def)             Requested size: 192.05846pt x 170.71628pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/distribution_categories_scenenet.png, id=715, 1040.688pt x 624.41
+enenet_scenes/distribution_categories_scenenet.png, id=723, 1040.688pt x 624.41
 28pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/distribution_categories_scenenet.png Graphic file (type png)
@@ -3559,7 +3644,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera1.png, id=717, 1369.115pt x 1132.23pt>
+ndomisation/camera1.png, id=725, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3581,7 +3666,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera2.png, id=718, 1369.115pt x 1132.23pt>
+ndomisation/camera2.png, id=726, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3603,7 +3688,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera3.png, id=719, 1369.115pt x 1132.23pt>
+ndomisation/camera3.png, id=727, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3625,7 +3710,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera4.png, id=720, 1369.115pt x 1132.23pt>
+ndomisation/camera4.png, id=728, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3696,7 +3781,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting1.png, id=746, 1369.115pt x 1132.23pt>
+ndomisation/lighting1.png, id=755, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3718,7 +3803,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting2.png, id=747, 1369.115pt x 1132.23pt>
+ndomisation/lighting2.png, id=756, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3740,7 +3825,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting3.png, id=748, 1369.115pt x 1132.23pt>
+ndomisation/lighting3.png, id=757, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3762,7 +3847,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting4.png, id=749, 1369.115pt x 1132.23pt>
+ndomisation/lighting4.png, id=758, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3784,7 +3869,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting5.png, id=750, 1525.7pt x 1053.9375pt>
+ndomisation/lighting5.png, id=759, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting5.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3806,7 +3891,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting6.png, id=751, 1525.7pt x 1053.9375pt>
+ndomisation/lighting6.png, id=760, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting6.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3828,7 +3913,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting7.png, id=752, 1525.7pt x 1053.9375pt>
+ndomisation/lighting7.png, id=761, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting7.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3850,7 +3935,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting8.png, id=753, 1525.7pt x 1053.9375pt>
+ndomisation/lighting8.png, id=762, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting8.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3872,7 +3957,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture1.png, id=757, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture1.png, id=766, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3895,7 +3980,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture2.png, id=758, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture2.png, id=767, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3918,7 +4003,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture3.png, id=759, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture3.png, id=768, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3941,7 +4026,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture4.png, id=760, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture4.png, id=769, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3964,7 +4049,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/distribution_of_textures.png, id=761, 1040.688pt x 624.4128pt>
+enenet_scenes/distribution_of_textures.png, id=770, 1040.688pt x 624.4128pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/distribution_of_textures.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3987,7 +4072,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_1.png, id=762, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_1.png, id=771, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4009,7 +4094,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_2.png, id=763, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_2.png, id=772, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4031,7 +4116,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_3.png, id=764, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_3.png, id=773, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4053,7 +4138,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_4.png, id=765, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_4.png, id=774, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4083,7 +4168,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_1-1.png, id=767, 1158.3275pt x 1053.9375pt>
+ndomisation/replace_1-1.png, id=776, 1158.3275pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_1-1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4105,7 +4190,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_1-2.png, id=768, 1158.3275pt x 1053.9375pt>
+ndomisation/replace_1-2.png, id=777, 1158.3275pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_1-2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4127,7 +4212,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_2-1.png, id=769, 1158.3275pt x 1053.9375pt>
+ndomisation/replace_2-1.png, id=778, 1158.3275pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_2-1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4149,7 +4234,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_2-2.png, id=770, 578.16pt x 526.96875pt>
+ndomisation/replace_2-2.png, id=779, 578.16pt x 526.96875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_2-2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4202,7 +4287,7 @@ Package natbib Warning: Citation `imagesynthesis' on page 27 undefined on input
  line 222.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_img.png, id=783, 1369.115pt x 1053.9375pt>
+uffers/0_img.png, id=791, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4211,7 +4296,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_img.png  used on input line 236.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_depth.png, id=784, 1369.115pt x 1053.9375pt>
+uffers/0_depth.png, id=792, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4220,7 +4305,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_depth.png  used on input line 237.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_id.png, id=785, 1369.115pt x 1053.9375pt>
+uffers/0_id.png, id=793, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4229,7 +4314,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_id.png  used on input line 238.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_layer.png, id=786, 1369.115pt x 1053.9375pt>
+uffers/0_layer.png, id=794, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4238,7 +4323,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_layer.png  used on input line 239.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_normals.png, id=787, 1369.115pt x 1053.9375pt>
+uffers/0_normals.png, id=795, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4247,7 +4332,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_normals.png  used on input line 240.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_img.png, id=788, 1369.115pt x 1053.9375pt>
+uffers/1_img.png, id=796, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4256,7 +4341,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_img.png  used on input line 242.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_depth.png, id=789, 1369.115pt x 1053.9375pt>
+uffers/1_depth.png, id=797, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4265,7 +4350,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_depth.png  used on input line 243.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_id.png, id=790, 1369.115pt x 1053.9375pt>
+uffers/1_id.png, id=798, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4274,7 +4359,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_id.png  used on input line 244.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_layer.png, id=791, 1369.115pt x 1053.9375pt>
+uffers/1_layer.png, id=799, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4283,7 +4368,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_layer.png  used on input line 245.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_normals.png, id=792, 1369.115pt x 1053.9375pt>
+uffers/1_normals.png, id=800, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4292,7 +4377,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_normals.png  used on input line 246.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_img.png, id=793, 1264.725pt x 1053.9375pt>
+uffers/2_img.png, id=801, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4301,7 +4386,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_img.png  used on input line 249.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_depth.png, id=794, 1264.725pt x 1053.9375pt>
+uffers/2_depth.png, id=802, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4310,7 +4395,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_depth.png  used on input line 250.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_id.png, id=795, 1264.725pt x 1053.9375pt>
+uffers/2_id.png, id=803, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4319,7 +4404,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_id.png  used on input line 251.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_layer.png, id=796, 1264.725pt x 1053.9375pt>
+uffers/2_layer.png, id=804, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4328,7 +4413,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_layer.png  used on input line 252.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_normals.png, id=797, 1264.725pt x 1053.9375pt>
+uffers/2_normals.png, id=805, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4337,7 +4422,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_normals.png  used on input line 253.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_img.png, id=798, 1264.725pt x 1053.9375pt>
+uffers/3_img.png, id=806, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4346,7 +4431,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_img.png  used on input line 255.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_depth.png, id=799, 1264.725pt x 1053.9375pt>
+uffers/3_depth.png, id=807, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4355,7 +4440,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_depth.png  used on input line 256.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_id.png, id=800, 1264.725pt x 1053.9375pt>
+uffers/3_id.png, id=808, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4364,7 +4449,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_id.png  used on input line 257.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_layer.png, id=801, 1264.725pt x 1053.9375pt>
+uffers/3_layer.png, id=809, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4373,7 +4458,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_layer.png  used on input line 258.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_normals.png, id=802, 1264.725pt x 1053.9375pt>
+uffers/3_normals.png, id=810, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4382,7 +4467,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_normals.png  used on input line 259.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_img.png, id=803, 1264.725pt x 1053.9375pt>
+uffers/4_img.png, id=811, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4391,7 +4476,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_img.png  used on input line 262.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_depth.png, id=804, 1264.725pt x 1053.9375pt>
+uffers/4_depth.png, id=812, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4400,7 +4485,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_depth.png  used on input line 263.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_id.png, id=805, 1264.725pt x 1053.9375pt>
+uffers/4_id.png, id=813, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4409,7 +4494,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_id.png  used on input line 264.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_layer.png, id=806, 1264.725pt x 1053.9375pt>
+uffers/4_layer.png, id=814, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4418,7 +4503,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_layer.png  used on input line 265.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_normals.png, id=807, 1264.725pt x 1053.9375pt>
+uffers/4_normals.png, id=815, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4427,7 +4512,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_normals.png  used on input line 266.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_img.png, id=808, 1264.725pt x 1053.9375pt>
+uffers/5_img.png, id=816, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4436,7 +4521,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_img.png  used on input line 269.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_depth.png, id=809, 1264.725pt x 1053.9375pt>
+uffers/5_depth.png, id=817, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4445,7 +4530,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_depth.png  used on input line 270.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_id.png, id=810, 1264.725pt x 1053.9375pt>
+uffers/5_id.png, id=818, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4454,7 +4539,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_id.png  used on input line 271.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_layer.png, id=811, 1264.725pt x 1053.9375pt>
+uffers/5_layer.png, id=819, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4463,7 +4548,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_layer.png  used on input line 272.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_normals.png, id=812, 1264.725pt x 1053.9375pt>
+uffers/5_normals.png, id=820, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4472,7 +4557,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_normals.png  used on input line 273.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_img.png, id=813, 1264.725pt x 1053.9375pt>
+uffers/6_img.png, id=821, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4481,7 +4566,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_img.png  used on input line 276.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_depth.png, id=814, 1264.725pt x 1053.9375pt>
+uffers/6_depth.png, id=822, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4490,7 +4575,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_depth.png  used on input line 277.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_id.png, id=815, 1264.725pt x 1053.9375pt>
+uffers/6_id.png, id=823, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4499,7 +4584,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_id.png  used on input line 278.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_layer.png, id=816, 1264.725pt x 1053.9375pt>
+uffers/6_layer.png, id=824, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4508,7 +4593,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_layer.png  used on input line 279.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_normals.png, id=817, 1264.725pt x 1053.9375pt>
+uffers/6_normals.png, id=825, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4619,7 +4704,7 @@ tation/gbuffers/6_normals.png (PNG copy)>]
 
 Chapter 5.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/out/images/tsne/photorealisit_d
-ataset_2.png, id=835, 1040.688pt x 624.4128pt>
+ataset_2.png, id=843, 1040.688pt x 624.4128pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/out/images/tsne/photoreali
 sit_dataset_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/out/images/tsne/photorealis
@@ -4655,13 +4740,17 @@ ges/tsne/photorealisit_dataset_2.png  used on input line 11.
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
  [32 </Users/apple/OVGU/Thesis/code/3dReconstruction/out/images/tsne/photoreali
 sit_dataset_2.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.
 mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 \openout2 = `text/conclusion.aux'.
@@ -5254,6 +5343,10 @@ No complaints by nag.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 )
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/implementation.aux
 \openout7 = `thesis.mw'.
@@ -5382,6 +5475,10 @@ No complaints by nag.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 )
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/conclusion.aux
 \openout7 = `thesis.mw'.
@@ -5466,15 +5563,18 @@ No complaints by nag.
 
 ))
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 \openout7 = `thesis.out'.
 
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7E8082C051BF8F39F6ABCC23AA6E31A5;11891.
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: FEF0ECDADDA6782A9C1ECA9999506052;12348
+(rerunfilecheck)             After:  6774A317C28866565604DA09FACB1E1F;12366.
 \openout7 = `thesis.idx'.
 
 \openout7 = `thesis.glo'.
@@ -5493,11 +5593,11 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 
  ) 
 Here is how much of TeX's memory you used:
- 41980 strings out of 478994
- 848862 string characters out of 5858185
- 1279963 words of memory out of 5000000
- 57574 multiletter control sequences out of 15000+600000
- 539435 words of font info for 561 fonts, out of 8000000 for 9000
+ 41968 strings out of 478994
+ 845903 string characters out of 5858185
+ 1281082 words of memory out of 5000000
+ 57553 multiletter control sequences out of 15000+600000
+ 540413 words of font info for 571 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,17n,116p,1010b,918s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc
@@ -5518,10 +5618,10 @@ b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2021/texmf-dist/fonts/type1/public/wasy-type1/wasy8.pfb>
 Output written on /Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.pdf
- (59 pages, 83435749 bytes).
+ (59 pages, 80412668 bytes).
 PDF statistics:
- 1015 PDF objects out of 1200 (max. 8388607)
- 785 compressed objects within 8 object streams
- 215 named destinations out of 1000 (max. 500000)
- 94769 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1024 PDF objects out of 1200 (max. 8388607)
+ 801 compressed objects within 9 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 94765 words of extra memory for PDF output out of 106986 (max. 10000000)
 
