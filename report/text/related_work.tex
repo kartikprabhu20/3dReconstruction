@@ -1,23 +1,23 @@
 \chapter{\iftoggle{german}{Verwandte Arbeiten}{Related Work}}\label{ch:related_work}
 
-In this chapter we discuss the previous contributions to indoor synthetic datasets ~\ref{ss:Indoor synthetic datasets}, what tasks each of the dataset supports and some of the disadvantages of each dataset.
-Further we discuss on the available tools which support creation of indoor dataset ~\ref{ss:tools to create synthetic}.
+In this chapter we discuss the previous contributions to indoor synthetic datasets ~\ref{subsec:indoor-synthetic-datasets}, what tasks each of the dataset supports and some of the disadvantages of each dataset.
+Further we discuss the available tools which support creation of indoor dataset ~\ref{subsec:tools-to-create-synthetic}.
 
-\section{Indoor datasets}\label{s:indoor dataset}
+\section{Indoor datasets}\label{sec:indoor-dataset}
 
 Indoor scene dataset has been in the rise with increasing interest in scene processing understanding ~\cite{dai2017scannet,Silberman2012IndoorSA,Xiao2013SUN3DAD,Hua2016SceneNNAS,Armeni20163DSP,chang2017matterport3d,Handa2016UnderstandingRI,InteriorNet18,li2021openrooms,zheng2020structured3d,Roberts2020HypersimAP,McCormac:etal:ICCV2017}.
 Synthetic dataset is not something new in the world of machine learning.
 As researchers realised the disadvantages of real dataset, focus was shifted to synthetic dataset.
-While ~\cite{dai2017scannet,} are real-world datasets, ~\cite{Fu20203DFRONT3F,Handa2016UnderstandingRI,McCormac:etal:ICCV2017,Roberts2020HypersimAP} are synthetically produced.
+While ~\cite{dai2017scannet} are real-world datasets, ~\cite{Fu20203DFRONT3F,Handa2016UnderstandingRI,McCormac:etal:ICCV2017,Roberts2020HypersimAP} are synthetically produced.
 The real-world dataset are gathered from live scans.
 The synthetic dataset can either bet manually configured by a professional or automated by a programmer using a tool.
 
-\subsection{Indoor synthetic datasets}\label{ss:Indoor synthetic datasets}
+\subsection{Indoor synthetic datasets}\label{subsec:indoor-synthetic-datasets}
 Alibaba group introduced 3D-FRONT~\cite{Fu20203DFRONT3F} which stands for 3D Furnished Rooms with layOuts and semaNTics dataset which comprises of
 synthetic indoor scenes designed under the supervision of professionals.
 It consists of 18,968 rooms and 13,151 textured furnitures.
 SceneNet~\cite{McCormac:etal:ICCV2017} is a large collection of photorealistic images and trajectories.
-This is discussed in detail in ~\ref{ss:SceneNet} section.
+This is discussed in detail in ~\ref{s:SceneNet} section.
 
 SunCG ~\cite{Song2017SemanticSC} was a key dataset for scene understanding.
 The dataset contained over 45,000 variations of scenes with realistic room layout created manually.
@@ -62,6 +62,11 @@ The focus of the simulator is providing the agent with sensor data and allowing 
 At the foundation level Habitat-sim uses Magnum graphics
 middleware library~\footnote{https://magnum.graphics/} which supports cross-platform on various hardware configuration.
 
+In figure ~\ref{fig:photorealistic images comparison}, we can see samples from each of the datasets which have claimed to be photorealistic.
+The images from these dataset are used in a research survey to determine the perception of humans about photorealism.
+
+\todo{A table to explain diffs between various methods( only if 3D-FREE has more advantage)}
+
 \begin{figure}
 \begin{tabular}{llll}
     3D FRONT & \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/3dfront_1} &
@@ -89,11 +94,11 @@ middleware library~\footnote{https://magnum.graphics/} which supports cross-plat
     \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/scenenet_3}\\
 
 \end{tabular}
-\caption{A collection of photorealistic synthetic datasets. The first colomn of each row indicates the dataset name followed by randomly selected images from the same dataset.}
+\caption{A collection of photorealistic synthetic datasets. The first column of each row indicates the dataset name followed by randomly selected images from the same dataset.}
 \label{fig:photorealistic images comparison}
 \end{figure}
 
-\subsection{Tools to create synthetic datasets}\label{ss:tools to create synthetic}
+\subsection{Tools to create synthetic datasets}\label{subsec:tools-to-create-synthetic}
 
 BlenderProc: Reducing the Reality Gap with Photorealistic Rendering ~\cite{denninger2019blenderproc} is a python based pipeline to create synthetic dataset.
 As the name suggests, the key underlying framework is Blender ~\cite{blender}, which is a 3D modelling and rendering package.
@@ -118,10 +123,10 @@ One extreme advantage of this toolkit, is that it is opensource and hence a wide
         \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instance_2} &
         \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_2}\\
 
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_3} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_depth_3} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instance_3} &
-        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_3}\\
+%        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_3} &
+%        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_depth_3} &
+%        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_instance_3} &
+%        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_3}\\
 
     \end{tabular}
     \caption{Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.}
@@ -131,7 +136,7 @@ One extreme advantage of this toolkit, is that it is opensource and hence a wide
 NVIDIA developed a Deep learning Dataset Synthesizer (NDDS) ~\cite{to2018ndds} in the form of a plugin for Unreal Engine 4(UE4).
 The plugin can synthesize images,per-pixel segmentation, depth, object 3D pose, 2D/3D bounding box, keypoints, and custom stencils.
 It even supports domain randomisation of objects, lighting, camera position, poses and textures.
-Leveraging the asynchronous-multithreaded frames, data was generated at high rates(50\–100 Hz) for Falling Things (FAT) ~\cite{tremblay2018falling} dataset.
+Leveraging the asynchronous-multithreaded frames, data was generated at high rates(50–100 Hz) for Falling Things (FAT) ~\cite{tremblay2018falling} dataset.
 
 "SynthDet: An end-to-end object detection pipeline using synthetic data" ~\cite{synthdet2020}, is an open source project supported by Unity technologies using Unity Engine.
 This is an ML pipeline which uses 63 categories of common objects(example: cereal box, cady, cartons, etc) as synthetic objects to generate 2D bounding boxes.
@@ -144,15 +149,20 @@ Along with this limitation, the plugin only creates depthmaps, normals and segme
 Another tool based on Unreal engine is UnrealROX+\cite{martinezgonzalez2021unrealrox}.
 This pluggin design is based on UnrealCV and provides similar data.
 
-\todo{A table to explain diffs between various methods( only if 3D-FREE has more advantage)}
-
-\section{State of the art for 3d-reconstruction}\label{ss:state_of_the_art}
+\section{State of the art for 3d-reconstruction}\label{sec:state_of_the_art}
 Voxel based, mesh based
 Pix2vox,OctNet,Mesh rcnn,Pixel2Mesh,Occupancy networks, etc
 
-\section{Domain Randomisation}\label{s:domain randomisation}
+3D reconstruction task is on the rise with improvement in technologies like Augmented and virtual reality.
+Scene understanding becomes important for these technologies to succeed.
+As discussed in ~\ref{sec:Volumetric representation}, 3D models can be represented as voxels,meshes or point clouds.
+Each of the representations have been explored for reconstuction and this section explores some of the approaches.
+
+
+
+\section{Domain Randomisation}\label{sec:domain-randomisation}
 Discuss other methods used to mitigate domain shift
 Example: distance learning, subspace matching
 
-\section{GAN based style transfer}\label{s:gan_based_styletransfer}
+\section{GAN based style transfer}\label{sec:gan_based_styletransfer}
 

@@ -7,6 +7,15 @@ The First step of the application is to import existing .obj files for 3D models
 These rooms and furniture models can be randomly textured and placed.
 In the final step, the main camera is used for taking snapshots of the scene.
 Along with RGB images, depth maps, normals, semantic segmentation are also saved.
+The pipeline is as shown in figure ~\ref{fig:pipline process}.
+For automation based pipeline, the process loops through each step, while in manaual pipeline the user decides which block needs to be executed.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/process}
+    \caption{Automated pipeline for image generatiion with different blocks and external libraries.}
+    \label{fig:pipline process}
+\end{figure}
 
 \subsection{Modes of operations}
 Creation of dataset can either be automated or by manual intervention.
@@ -20,7 +29,7 @@ To facilitate ease of use for the user, the application has 3 key pipelines.
 \item Multi Objects pipeline
 \end{enumerate}
 
-Single Room pipeline is used to create dataset with objects in the center of an empty room.
+Single Room pipeline is used to create the dataset with objects in the center of an empty room.
 A room path can either be provided, else a default room is imported.
 Manual Room pipeline randomises a furnished room, and then replaces the category under observation.
 The selection of object to be replaced is also random.
@@ -32,7 +41,7 @@ The user won't have control over any of the process, while the program snaps ima
 Another version of pipeline which is similar to Single Room pipeline is the Multi-threaded Single Room pipeline.
 As the name suggests, multiple rooms are created based on the number of categories and for each room the Single Room pipeline is applied in parallel.
 This is an attempt to let the tool perform faster with multi-threading.
-But as of now, the multi-process uses Coroutines which is still a sequential operation and hence this pipeline needs some work.
+The multi-process uses Coroutines which is still a sequential operation and hence this pipeline needs some work.
 To our estimate even the Multi-threaded pipeline runs 1.5 times faster than Single room pipeline.
 
 \subsection{Scenes from SceneNet}
@@ -43,7 +52,6 @@ Figure ~\ref{fig:Scene Types} shows different types of scenes utilised to genera
 These scenes are further modified by adding few more objects of categories present in Pix3D, so that we get more variations in the dataset.
 The distribution of furnitures matching the category of Pix3D in the scenes are as shown in figrue ~\ref{fig:distribution of scenes}.
 Each scene is replaced for every snap we take for the dataset we create at random.
-
 
 \begin{figure}[!ht]
     \centering
@@ -76,11 +84,11 @@ Figure ~\ref{fig:Camera viewpoints} shows samples of different camera view point
 
 \begin{figure}
     \centering
-    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera1}
-    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera2}\\
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera2}\\
     \vspace{0.1cm}
-    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera3}
-    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera4}\\
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera3}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera4}\\
     \caption{Sample images with different camera viewpoints of same object with a constant scene.}
     \label{fig:Camera viewpoints}
 \end{figure}
@@ -129,17 +137,15 @@ Samples for different skyboxes are as shown in figure ~\ref{fig:skybox samples}.
 
 \begin{figure}
     \centering
-    \begin{tabular}{llll}
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting3} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting4}\\
-
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting5} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting6} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting7} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting8}\\
-    \end{tabular}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting3}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting4}\\
+    \vspace{0.1cm}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting5}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting6}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting7}
+        \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting8}\\
     \caption{Sample images with different lighting and shadows conditions.First row is samples for light with different intensity and direction. Second row is differnt color for light.}
     \label{fig:Lighting and shadows}
 \end{figure}
@@ -180,29 +186,103 @@ We randomize 10 skyboxes to achieve this. Samples of skybox is as shown in figur
 
 \begin{figure}
     \centering
-    \begin{tabular}{llll}
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_1} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_2} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_3} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_4}\\
-    \end{tabular}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_1}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_2} \\
+        \vspace{0.1cm}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_3}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_4}\\
     \caption{Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.}
     \label{fig:skybox samples}
 \end{figure}
 
 \subsection{Replacing target Objects}
 
+Once the room is setup using Scenenet ~\cite{McCormac:etal:ICCV2017} which contains objects from ShapeNet ~\cite{chang2015shapenet}, the objects are renamed such that it matches the classes for the Pix3D dataset.
+Since a given scene can have more than one category under observation, a single model is chosen randomly out of all the present models.
+The chosen model is replaced with a model in Pix3D of same category.
+In case the replaced model is intersecting with any other models in the scene, we make it invisible.
+Further, the camera checks if the centre of replaced model is in the frame.
+If not, the camera viewpoint is changed untill it satisfies the condition.
+After the snapshot is taken, the scene is reset to the original and next model is imported.
+Samples for replacing a target object from original scene from Scenenet is shown in figure ~\ref{fig:replace model}
+
 \begin{figure}
     \centering
-    \begin{tabular}{llll}
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_1} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_2} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_3} &
-        \includegraphics[width=.249\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_4}\\
-    \end{tabular}
-    \caption{Samples for different skyboxes which change the outdoor environment for the scenes.}
-    \label{fig:skybox samples2}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_1-1}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_1-2} \\
+        \vspace{0.1cm}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_2-1}
+        \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_2-2}\\
+    \caption{Samples for object replacement. The Left column shows a scene from SceneNet, while the right column shows an object being replaced in original scene.}
+    \label{fig:replace model}
 \end{figure}
+
+\subsection{Snapshots with ML-ImageSynthesis}
+
+ML-ImageSynthesis ~\cite{imagesynthesis} is a library provided by Unity to support synthetic dataset creation.
+It supports the following G-buffers Image segmentation, Object categorization, Optical flow, Depth, Normals, etc.
+G-buffers is basically a collective term to represent light-properties which are agregated to give the final rendering.
+In image segmentation each object is assigned unique color.
+In object categorization each category of the objects is assigned a single color.
+For optical flow each pixel is colored depending on Unity's per-pixel Motion Vectors with respect to the camera.
+Depth is as the word suggests the distance of each pixel from the camera encoded in 8-bit channels of the PNG image.
+Normals are color encoding based on the orientation of object with respect to the camera.
+For the snapshot, each of these properties is assigned a hidden camera and have each one overrides rendering scene with custom shaders to generate corresponding output.
+These camera outputs can be seen in editor mode by changing the display window.
+Samples of G-buffer collected for dataset are as shown in figure \ref{fig:G-buffers samples}.
+
+\begin{figure}
+    \centering
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/0_img}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/0_depth}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/0_id}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/0_layer}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/0_normals}\\
+        \vspace{0.1cm}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/1_img}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/1_depth}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/1_id}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/1_layer}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/1_normals}\\
+        \vspace{0.1cm}
+
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/2_img}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/2_depth}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/2_id}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/2_layer}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/2_normals}\\
+        \vspace{0.1cm}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/3_img}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/3_depth}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/3_id}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/3_layer}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/3_normals}\\
+    \vspace{0.1cm}
+
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/4_img}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/4_depth}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/4_id}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/4_layer}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/4_normals}\\
+    \vspace{0.1cm}
+
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/5_img}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/5_depth}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/5_id}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/5_layer}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/5_normals}\\
+    \vspace{0.1cm}
+
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_img}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_depth}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_id}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_layer}
+        \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_normals}\\
+    \caption{Samples for G-buffers collected from ImageSynthesis as part of the dataset. In the figure,
+        (From left to right) RGB image, Depth map, Instance segmentation, Semantic Segmentation and Normal map}
+    \label{fig:G-buffers samples}
+\end{figure}
+
 
 Replacing models, lighting(indoor and outdoor), randomisation of texture, camera distance, camera angles, outdoor skybox,
 UI controls
@@ -210,7 +290,9 @@ Manual inputs, automated
 Unity - ML-ImageSynthesis
 UML diagram is needed? (If it helps)
 
-\section{3d-Reconstruction framework}
+\section{3d-Reconstruction framework}\label{s:3D-Reconstruction framework}
+
+
 Development environment
 Training setup(hardware, voxel size…)
 Mixed precision using apex
