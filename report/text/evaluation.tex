@@ -1,10 +1,137 @@
 \chapter{\iftoggle{german}{Evaluierung}{Evaluation}}\label{ch:evaluation}
 
+\todo{
+    \begin{enumerate}
+        \item tsne for survey datasets
+        \item tsne chair dataset with randomisation
+        \item explain different version of datasets v1, v4, v3, ablation with images.
+        \item baseline comparison, pix3d pix2vox, pix2vox++(modelwise, classwise)
+        \item values per category
+        \item baseline different version of dataset
+        \item baseline different version of dataset with different threshold
+        \item Mixed training different ratios
+        \item Finetuning over pretrained
+        \item Ablation chair with different randomisations
+        \item ablation chair with different mixedtraining
+        \item ablation values per model
+        \item !!!!!finetuning with different datasize (pending)
+        \item !!!!!mixed training with different real datasize(pending)
+        \item output diagrams
+        \item training graphs
+    \end{enumerate}
+}
+\section{A survey on photorealism}
+The participants were given minimalistic information about the intention behind the survey.
+The goal of the survey was to analyse if humans have the same perception for photographic and computer generated images.
+No time limit was set for the survey and it was open to everyone.
+A total of 72 participants responded to the survey.
+The survey was created using Google forms and the link was distributed.
+The participants either used a mobile phone or a desktop to respond to the survey.
+A total of 9 datasets were used in the survey.
+3DFRONT ~\cite{Fu20203DFRONT3F}, Hypersim ~\cite{Roberts2020HypersimAP}, InteriorNet ~\cite{InteriorNet18}, SceneNet ~\cite{McCormac:etal:ICCV2017}, BlenderProc~\cite{denninger2019blenderproc},
+AI2THOR ~\cite{kolve2019ai2thor}, Openroom ~\cite{li2021openrooms}, Pix3D ~\cite{pix3d} and proposed S2R:3DFREE dataset.
+Only Pix3D was a real dataset while all others are synthetic dataset proclaimed to be photorealistic.
+
+The survey was composed of 3 sections.
+\begin{enumerate}
+    \item Section 1: Decide if the image is real or not real.
+
+    In this section there were a total of 27 images, 3 each from the above mentioned datasets.
+    Each image had only 2 options to select: "Real" or "Not real"
+    This approach eliminated any ambiguous perception towards the images.
+
+    \item Section 2: Rate the image on scale of 1 to 10 in terms of realism (1 -> least real, 10 -> most real).
+
+    In this section, the participant used a likert scale to rate the images based on photorealism.
+    Similar to section 1, there were 27 questions of 3 images per dataset.
+
+    \item Section 3: Rank the images from 1 to 9 (1 -> Most real, 9 -> Least real).
+
+    In this section, the participant had only 3 questions, with each question having an image from each of the dataset arranged in a 3\x3 grid format.
+    The users were asked to rank them in the increasing order of the photorealism.
+\end{enumerate}
+
+\subsection{Survey results}\label{subsec:survey-results}
+In this segment, we discuss the results of survey collected from participants.
+
+\subsubsection{Section 1: Real or Not}
+In section 1, the participants had only 2 options to select from independently.
+Figure ~\ref{fig:question1}, shows that the real dataset Pix3D ~\cite{pix3d} was rightly recognised as real.
+77\% of the real images that belonged to Pix3D were recognised to be real.
+This shows that the participants were not convinced even with the real images as 23\% of the images were still recognized are not real.
+Among the synthetic datasets, Hyeperism ~\cite{Roberts2020HypersimAP} got the best results of 59.7\% identified as real.
+AI2THOR had the least amount of images recognised as real with just 5\% positive responses.
+The proposed S2R:3DFREE dataset had 8\% of images identified as real, which shows that images generated using the automated Unity framework needs some improvement.
+Suppose we have a threshold of 50\%, we see that the datasets for which the images selected as Not real below the threshold value belong to datasets which are automated and not created by professionals manually.
+As mentioned in ~\ref{subsec:indoor-synthetic-datasets}, Openrooms, SceneNet are Blenderproc are datasets obtained from automation.
+We consider S2R:3DFREE dataset to be automated and belog to this category.
+Among the automated images, Openrooms have got most vote of confidence with 37\% recognised as real images.
+Even though S2R:3DFREE was least recognised as real among the automated tools, it had better percetage than AI2THOR which has Unity based frameworm to generate images and was manually configured by professional by taking in reference of real world images.
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/survey/question1.pgf}}
+    \caption{The figure represents distribution for Section 1 of survey. The participants were asked to distinguish if the image was 'Real' or 'Nor Real'.}
+    \label{fig:question1}
+\end{figure}
+
+\subsubsection{Section 2: Likert Scale}
+In section 2, the participants could select ratings from 1 to 10 (1 being the least photorealistic).
+The distribution of values for each dataset can be seen in figure ~\ref{fig:question2} and the average ratings are as seen in figure ~\ref{fig:question2_2}.
+If we consider the scale 1, which is least rating that can be given to the image, AI2THOR has most number of votes.
+Suppose we have a cut off at scale 2 and 3, Openrooms and S2R:3DFREE are the least photorealistic respectively.
+Interestingly Interiornet has least number of scale 1 instead of Pix3D which is the real dataset.
+However, Pix3D has the highest number of perfect score(10) among all the datasets.
+Coming to the averages, we again see the datasets created from automated pipeline (Blenderproc, SceneNet, Openrooms,S2R:3DFREE), have least average ratings,
+while the manually created datasets(Hyperism, 3DFRONT, InteriorNet) have higher average ratings.
+Pix3D has highest of the average ratings closely followed by InteriorNet.
+Even though S2R:3DFREE has the least average, it is still comparable to other automated pipelines and even Unity based AI2THOR dataset.
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/survey/question2.pgf}}
+    \caption{The figure represents distribution for Section 2 of survey. The participants were asked to rate the image based on photorealism(1 being the least photorealistic).}
+    \label{fig:question2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/survey/question2_2.pgf}}
+    \caption{The figure represents average rating given by the participant to each of the datasets in section 2 of the survey.}
+    \label{fig:question2_2}
+\end{figure}
+
+\subsubsection{Section 3: Rank by comparison}
+In section 3 of the survey, the users compared all 9 datasets and ranked them according to their photorealism(1 being the best rank).
+Figures ~\ref{fig:question3} and ~\ref{fig:question3_2} show distribution and average ranking for each of the datasets.
+The real dataset Pix3D got the highest number of votes for rank 1, while S2R:3D-FREE got least.
+But if we have a threshold of 5, meaning frequency of votes being in top 5 ranks, then among the automated group, S2R:3D-FREE occurs most times followed by SceneNet, Openrooms and Blenderproc.
+This is significant because out of 9 datasets, 4 are automated, and these four have the least average rankings.
+But S2R:3D-FREE breaks the boundary to be in top 5 most times.
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/survey/question3.pgf}}
+    \caption{The figure represents distribution for Section 3 of survey. The participants were asked to rank the images based on photorealism(1 being the best) by comparing images from all 9 datasets.}
+    \label{fig:question3}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/survey/question3_3.pgf}}
+    \caption{The figure represents box plot for section 3. The Green horizontal line within the box indicates median, the blue dotted line indicates mean.}
+    \label{fig:question3_2}
+\end{figure}
+
+\subsubsection{Summary for survey}
+In the survey we observe that Pix3D was rightly chosen as photorealistic image as they are collected from real world data.
+Though the proposed S2R:3DFREE dataset falls behind in comparison to manually designed images from Hyperism, InteriorNet and 3DFRONT,
+it is comparible to automated datasets from Blenderproc, OpenRooms and SceneNet.
+It also trumps over AI2THOR which is manually designed using Unity game engines.
+
 \section{Domain gaps - Qualitative}
 Visualize domain gap between S2R:3D-FREE and real image(pix3d)
 
-Visualize domain gap between other synthetic dataset like 3dfront, scenenet
-tsne
 
 \begin{figure}
     \centering
@@ -12,7 +139,6 @@ tsne
     \caption{T-SNE visualisation for images from various photo-realistic synthetic dataset. Pix3d and S2R3DFREE is highlighted with bolder colors.}
     \label{fig:photorealistic tsne}
 \end{figure}
-
 
 \section{Domain gaps - Quantitative}
 Maximum Mean Discrepancy

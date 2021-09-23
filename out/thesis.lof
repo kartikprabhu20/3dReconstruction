@@ -6,29 +6,28 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A collection of photorealistic synthetic datasets. The first column of each row indicates the dataset name followed by randomly selected images from the same dataset.\relax }}{10}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.\relax }}{11}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Distribution of pix3D~\cite {pix3d} images(left), unique models(right)\relax }}{14}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Sample RGB images from pix3D\relax }}{15}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Network architecture for pix2vox~\cite {Xie_2019}\relax }}{18}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Network architecture for pix2vox++~\cite {Xie_2020}\relax }}{18}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces A survey conducted by ~\cite {Han2021ImageBased3O}, proves that Pix2Vox is considerably a good 3D reconstruction model. {\color {red} \emph {replace this figure with better one}}\relax }}{19}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Distribution of pix3D~\cite {pix3d} images(left), unique models(right)\relax }}{16}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sample RGB images from pix3D\relax }}{17}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Network architecture for pix2vox~\cite {Xie_2019}\relax }}{20}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Network architecture for pix2vox++~\cite {Xie_2020}\relax }}{20}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces A survey conducted by ~\cite {Han2021ImageBased3O}, proves that Pix2Vox is considerably a good 3D reconstruction model. {\color {red} \emph {replace this figure with better one}}\relax }}{21}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Automated pipeline for image generatiion with different blocks and external libraries.\relax }}{21}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office\relax }}{23}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces (a)Distribution of types ofs scenes, (b) Distribution of objects matching the categories of pix3d in scenes\relax }}{23}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Sample images with different camera viewpoints of same object with a constant scene.\relax }}{24}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Sample images with different lighting and shadows conditions.First row is samples for light with different intensity and direction. Second row is differnt color for light.\relax }}{25}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Sample images with different textures for same scene.\relax }}{26}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.\relax }}{26}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.\relax }}{27}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Samples for object replacement. The Left column shows a scene from SceneNet, while the right column shows an object being replaced in original scene.\relax }}{28}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Samples for G-buffers collected from ImageSynthesis as part of the dataset. In the figure, (From left to right) RGB image, Depth map, Instance segmentation, Semantic Segmentation and Normal map\relax }}{29}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Automated pipeline for image generatiion with different blocks and external libraries.\relax }}{23}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office\relax }}{25}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces (a)Distribution of types ofs scenes, (b) Distribution of objects matching the categories of pix3d in scenes\relax }}{25}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Sample images with different camera viewpoints of same object with a constant scene.\relax }}{26}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sample images with different lighting and shadows conditions.First row is samples for light with different intensity and direction. Second row is differnt color for light.\relax }}{27}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Sample images with different textures for same scene.\relax }}{28}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.\relax }}{28}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.\relax }}{29}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Samples for object replacement. The Left column shows a scene from SceneNet, while the right column shows an object being replaced in original scene.\relax }}{30}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Samples for G-buffers collected from ImageSynthesis as part of the dataset. In the figure, (From left to right) RGB image, Depth map, Instance segmentation, Semantic Segmentation and Normal map\relax }}{31}{figure.caption.29}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces T-SNE visualisation for images from various photo-realistic synthetic dataset. Pix3d and S2R3DFREE is highlighted with bolder colors.\relax }}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The figure represents distribution for Section 1 of survey. The participants were asked to distinguish if the image was 'Real' or 'Nor Real'.\relax }}{35}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The figure represents distribution for Section 2 of survey. The participants were asked to rate the image based on photorealism(1 being the least photorealistic).\relax }}{36}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The figure represents average rating given by the participant to each of the datasets in section 2 of the survey.\relax }}{36}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The figure represents distribution for Section 3 of survey. The participants were asked to rank the images based on photorealism(1 being the best) by comparing images from all 9 datasets.\relax }}{37}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces The figure represents box plot for section 3. The Green horizontal line within the box indicates median, the blue dotted line indicates mean.\relax }}{38}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces T-SNE visualisation for images from various photo-realistic synthetic dataset. Pix3d and S2R3DFREE is highlighted with bolder colors.\relax }}{39}{figure.caption.35}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Caption in the list of figures}}{35}{figure.caption.32}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces {{List}}\relax }}{38}{figure.caption.33}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces {{List}, {Ordered}}\relax }}{38}{figure.caption.33}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces {{List}, {Set}}\relax }}{38}{figure.caption.33}%
-\contentsline {figure}{\numberline {B.4}{\ignorespaces {{List}, {Ordered}, {Set}}\relax }}{38}{figure.caption.33}%
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Drawing with tables and TikZ}}{38}{figure.caption.33}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Caption in the list of figures}}{43}{figure.caption.37}%

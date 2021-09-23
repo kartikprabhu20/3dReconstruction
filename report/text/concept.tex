@@ -142,7 +142,7 @@ We create a pipeline for processing the above mentioned 3D reconstruction task.
 The backbone of the pipeline is the base model and the dataset being used to train.
 In this section we discuss the model used as a base and the rationale behind its selection.
 
-\subsection{Pix2Vox and Pix2Vox++}
+\subsection{Pix2Vox and Pix2Vox++}\label{subsec:pix2vox-and-pix2vox++}
 The architecture of pix2vox ~\cite{Xie_2019} as in ~\ref{fig:pix2vox architecture}.
 The network consists of 4 modules: Encoder, Decoder, Merger and Refiner.
 Merger plays significant part when it comes to multi-view reconstruction of 3d objects.
@@ -157,7 +157,7 @@ The extended work replaces VGG encoder ~\cite{simonyan2015deep} with ResNet ~\ci
 Pix2Vox has been used as baseline by most of the research oriented to 3D reconstruction.
 This network is one of the few networks to be tested on pix3d dataset.
 According to the survey conducted by ~\cite{Han2021ImageBased3O}, performance of pix2vox ~\cite{Xie_2019}
-has been noted to be significantly higher when compared to previous work \todo{cite other papers} as shown in \ref{fig:survey on 3d reconstruction}.
+has been noted to be significantly higher when compared to previous work \todo{cite other papers} as shown in ~\ref{fig:survey on 3d reconstruction}.
 While this comparison was made on 3d reconstruction of shapenet dataset, since pix3d was not available at the time when previous work were published.
 From our survey, only CoReNet ~\cite{popov2020corenet} had a slight gain in performance compared to pix2vox.
 When trained on shapenet and tested with pix3d, CoReNet gave a result of 29.7\% IoU while Pix2Vox gave a result of 28.8\% IoU and Pix2Vox++ a result of 29.2\% IoU.

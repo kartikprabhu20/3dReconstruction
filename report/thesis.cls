@@ -37,7 +37,9 @@
 \usepackage{makecell} % insert new line where usually impossible
 \usepackage{adjustbox} % resize boxes easily
 \usepackage{datatool} % read CSV automatically
-
+\usepackage{pgf}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
 \newtoggle{final}
 \newtoggle{print}
 \newtoggle{german}

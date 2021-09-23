@@ -34,7 +34,7 @@ This dataset is more focused on room layout estimation and not 3D reconstruction
 
 Openrooms~\cite{li2021openrooms} use Scannet~\cite{dai2017scannet} as their layout foundation, retrieve corresponding models from shapenet~\cite{chang2015shapenet}
 and then replace the CAD model with retrieved model with proper alignment.
-They further add reflectance and illumination to compose photo-realistic images.
+They further add the reflectance and illumination properties to compose photo-realistic images.
 As of August 2021, only the dataset has been made public and not the generation tool or the CAD models.
 Though the underlying concept of Openrooms is to convert existing scans into photo-realistic synthetic images, in terms of the output images we consider them our counterpart, as the framework can produce normals, depth maps, instancs segmentation and masks same as we do.
 
@@ -55,6 +55,7 @@ This is again a Agent focused photo-realistic dataset with the key factor being 
 The underlying renderer for this framework is Unity game engine.
 RoboThor ~\cite{Deitke2020RoboTHORAO} is built upon AI2-Thor which consists of real scenes and its corresponding synthetic equivalent.
 This helps in the study of behavior of agents in real world when trained on synthetic data.
+The scenes were manually designed by architects by taking reference from photos of real world.
 
 Habitat: A Platform for Embodied AI Research ~\cite{savva2019habitat}, is a photorealistic 3D simulation which can be used for training virtual agents for tasks like navigation, question answering, intruction foloowing.
 The paper introduces Habitat-Sim which renders scenes from Matterport3d ~\cite{chang2017matterport3d}, Gibson ~\cite{xia2018gibson}, Replica ~\cite{Straub2019TheRD} and some other datasets.
@@ -63,7 +64,9 @@ At the foundation level Habitat-sim uses Magnum graphics
 middleware library~\footnote{https://magnum.graphics/} which supports cross-platform on various hardware configuration.
 
 In figure ~\ref{fig:photorealistic images comparison}, we can see samples from each of the datasets which have claimed to be photorealistic.
-The images from these dataset are used in a research survey to determine the perception of humans about photorealism.
+The images from these datasets are used in a research survey to determine the perception of humans about photorealism.
+Among the datasets under consideration; OpenRooms, SceneNet, BlenderProc are all automated datasets with no manual inputs from a professional designer where as
+Hyperism,AI2THOR, InteriorNet and 3DFRONT were manually configured and designed by professional architects.
 
 \todo{A table to explain diffs between various methods( only if 3D-FREE has more advantage)}
 
@@ -136,7 +139,7 @@ One extreme advantage of this toolkit, is that it is opensource and hence a wide
 NVIDIA developed a Deep learning Dataset Synthesizer (NDDS) ~\cite{to2018ndds} in the form of a plugin for Unreal Engine 4(UE4).
 The plugin can synthesize images,per-pixel segmentation, depth, object 3D pose, 2D/3D bounding box, keypoints, and custom stencils.
 It even supports domain randomisation of objects, lighting, camera position, poses and textures.
-Leveraging the asynchronous-multithreaded frames, data was generated at high rates(50–100 Hz) for Falling Things (FAT) ~\cite{tremblay2018falling} dataset.
+Leveraging the asynchronous-multithreaded frames, data was generated at high rates(50-100 Hz) for Falling Things (FAT) ~\cite{tremblay2018falling} dataset.
 
 "SynthDet: An end-to-end object detection pipeline using synthetic data" ~\cite{synthdet2020}, is an open source project supported by Unity technologies using Unity Engine.
 This is an ML pipeline which uses 63 categories of common objects(example: cereal box, cady, cartons, etc) as synthetic objects to generate 2D bounding boxes.
@@ -190,7 +193,7 @@ With the advent of Virtual and Augmented realities, 3D models are which are avai
 
 In ~\cite{nowruzi2019real}, the author tries to find how much of real data is required with synthetic dataset to increase the performance of object detection task.
 A study was conducted by training various object detection models on mixed data containing different ratios of real and synthetic dataset.
-The four ratios considered for mixed training were, 0\%,90\%,95\%,97.5\% of synthtic data to real data.
+The four ratios considered for mixed training were, 0\%, 90\%, 95\%, 97.5\% of synthtic data to real data.
 Another study was conducted by fine tuning a model pre-trained on a synthetic dataset with different quantity of real dataset.
 They observed that fine-tuning with limited real dataset is better than mixed training with synthetic dataset.
 
@@ -211,8 +214,19 @@ With this as context, the pedestrian walk, road lanes, etc are generated.
 After these 2 steps, the objects such as cars, cyclists, houses, buildings are placed in the scene.
 As ablation study, the author changes domain randomisation parameters and checks the performance on car detection task.
 
+~\cite{georgakis2017synthesizing} proposes a domain randomisation based synthetic images generation for detection of objects found in kitchen.
+The objects are cropped and placed on the background with semantic information and geomety with proper scale.
+Similar to the above works, here to the author provides ablation study with different ratios of synthetic to real dataset for mixed training.
 
+Domain randomisation and adaptation techniques are not the only ways to mitigate the domain shift.
+With advent of Generative Adversarial Networks~\cite{Goodfellow2014GenerativeAN}, synthetic to real image conversions has become possible and can lead to better performance on given task.
+~\cite{Richter_2021, CycleGAN2017, park2020cut,isola2017image, dundar2018domain,Wang2018HighResolutionIS} are some of the successful attempts to reduce the gap between simulated environment and reality.
+Intel in ~\cite{Richter_2021} uses GTA V dataset with G-buffers(depth, normals, segmentations,Albedo, glossiness, etc.) to enhance the photorealism of synthetic images.
+~\cite{park2020cut} uses patchwise contrastive loss so that the content of input image is retained.
+The loss is minimised such that corresponding patches retain high mutual values.
 
-
-\section{GAN based style transfer}\label{sec:gan_based_styletransfer}
+Another interesting way to reduce domain gap is using domain adversarial training ~\cite{ganin2016domainadversarial}.
+Along with the task in observation, a branched network from the feature extractor is used as a classifier for the domains.
+This acts like a multi-learning tasks where feature extractor is the common branch, where in one branch learns to perform a specific task like segmentation or classification, where as the other branch classifies if the dataset is real or synthetic.
+~\cite{pinheiro2019domainadaptive} implements the same principle on much complex 3D reconstruction task by predicting voxels and classifying the image domain.
 
