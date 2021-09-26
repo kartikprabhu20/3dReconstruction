@@ -10,18 +10,20 @@ Along with RGB images, depth maps, normals, semantic segmentation are also saved
 The pipeline is as shown in figure ~\ref{fig:pipline process}.
 For automation based pipeline, the process loops through each step, while in manaual pipeline the user decides which block needs to be executed.
 
-\begin{figure}
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/process}
     \caption{Automated pipeline for image generatiion with different blocks and external libraries.}
     \label{fig:pipline process}
 \end{figure}
 
-\subsection{Modes of operations}
+\subsection{Modes of operations}\label{subsec:modes-of-operations}
 Creation of dataset can either be automated or by manual intervention.
 Automated images may not give us the perfect images which we expect.
 There can be some bad lighting, unexpected intersections with other objects, unforseen camera angles, etc.
 To facilitate ease of use for the user, the application has 3 key pipelines.
+After configuring the parameters to create an ersatz environment using Unity,
+the user can select any of these pipeline to either get automatic snapshots or manually snaps for the models.
 
 \begin{enumerate}
 \item Single Room pipeline
@@ -44,7 +46,7 @@ This is an attempt to let the tool perform faster with multi-threading.
 The multi-process uses Coroutines which is still a sequential operation and hence this pipeline needs some work.
 To our estimate even the Multi-threaded pipeline runs 1.5 times faster than Single room pipeline.
 
-\subsection{Scenes from SceneNet}
+\subsection{Scenes from SceneNet}\label{subsec:scenes-from-scenenet}
 For the rooms in our ersatz environments we utilize scenes provided by SceneNet ~\cite{McCormac:etal:ICCV2017}.
 SceneNet has made 25 rooms available for public.
 We only use scenes of type Bedroom(11), Kitchen(1), Living room(6) and office(7).
@@ -63,15 +65,16 @@ Each scene is replaced for every snap we take for the dataset we create at rando
     \label{fig:Scene Types}
 \end{figure}
 
+
 \begin{figure}[!ht]
-    \centering
-    \subfloat[][]{\includegraphics[width=.45\textwidth,height=6cm]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes}}\quad
-    \subfloat[][]{\includegraphics[width=.45\textwidth,height=6cm]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet}}\\
-    \caption{(a)Distribution of types ofs scenes, (b) Distribution of objects matching the categories of pix3d in scenes}
+    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes.pgf}}
+    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet.pgf}}
+    \caption{(Left)Distribution of types ofs scenes, (Right) Distribution of objects matching the categories of pix3d in scenes}
     \label{fig:distribution of scenes}
 \end{figure}
 
-\subsection{Camera ViewPoints}
+
+\subsection{Camera ViewPoints}\label{subsec:camera-viewpoints}
 
 The distance of camera from the target object is a configurable entity.
 The user can set the minimum and maximum distance to the target object for the camera to be placed.
@@ -93,7 +96,7 @@ Figure ~\ref{fig:Camera viewpoints} shows samples of different camera view point
     \label{fig:Camera viewpoints}
 \end{figure}
 
-\subsection{Lightings and Shadows}
+\subsection{Lightings and Shadows}\label{subsec:lightings-and-shadows}
 
 We consider lighting to be a key component of the photorealism.
 The shadows formed with different lighting condition enhance the photorealism of the images.
@@ -150,20 +153,21 @@ Samples for different skyboxes are as shown in figure ~\ref{fig:skybox samples}.
     \label{fig:Lighting and shadows}
 \end{figure}
 
-\subsection{Randomised Texture}
+\subsection{Randomised Texture}\label{subsec:randomised-texture}
 
 The objects in the scene are renamed to standard objects seen in day-to-day life.
 The textures are grouped together to these names as folder names.
-A total of 982 texture images, some of which are just JPG or PNG images, while there are few texutres from cctextures.com with more details like normals, displacement and roughness.
+A total of 982 texture images with 58 regular object category, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement and roughness.
 This makes the textures more realistic.
-Distribution of textures used for randomisation of scenes is as shown in figure ~\ref{fig:Distribution of textures}, with categories of Pix3d having higher number of images.
+Distribution of top 40 texture cataegory used for randomisation of scenes is as shown in figure ~\ref{fig:Distribution of textures}, with categories of Pix3d having higher number of images.
 Each scene is randomised for every snap taken of the target object.
 Samples of texture randomisation of background in the scene with target object in the focus is as shown in figure ~\ref{fig:Texture Randomisation}.
 Randomising outdoor environment is important in cases where we have open doors and windows.
 Unity provides a wrapper for scenes called skyboxes.
 This is something of a globe around the room under observation.
-This gives us varying outdoor environment for the scene with sceneray at the horizon.
-We randomize 10 skyboxes to achieve this. Samples of skybox is as shown in figure ~\ref{fig:skybox samples}.
+This gives us varying outdoor environment for the scene with scenery at the horizon.
+We randomise 10 skyboxes to achieve this.
+Samples of skybox is as shown in figure ~\ref{fig:skybox samples}.
 
 
 \begin{figure}
@@ -177,9 +181,17 @@ We randomize 10 skyboxes to achieve this. Samples of skybox is as shown in figur
     \label{fig:Texture Randomisation}
 \end{figure}
 
-\begin{figure}
+
+%\begin{figure}[!ht]
+%        \centering
+%        \includegraphics[width=\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures}
+%        \caption{Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.}
+%        \label{fig:Distribution of textures}
+%\end{figure}
+
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures}
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures.pgf}}
     \caption{Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.}
     \label{fig:Distribution of textures}
 \end{figure}
@@ -195,7 +207,7 @@ We randomize 10 skyboxes to achieve this. Samples of skybox is as shown in figur
     \label{fig:skybox samples}
 \end{figure}
 
-\subsection{Replacing target Objects}
+\subsection{Replacing target Objects}\label{subsec:replacing-target-objects}
 
 Once the room is setup using Scenenet ~\cite{McCormac:etal:ICCV2017} which contains objects from ShapeNet ~\cite{chang2015shapenet}, the objects are renamed such that it matches the classes for the Pix3D dataset.
 Since a given scene can have more than one category under observation, a single model is chosen randomly out of all the present models.
@@ -217,7 +229,7 @@ Samples for replacing a target object from original scene from Scenenet is shown
     \label{fig:replace model}
 \end{figure}
 
-\subsection{Snapshots with ML-ImageSynthesis}
+\subsection{Snapshots with ML-ImageSynthesis}\label{subsec:snapshots-with-ml-imagesynthesis}
 
 ML-ImageSynthesis ~\cite{imagesynthesis} is a library provided by Unity to support synthetic dataset creation.
 It supports the following G-buffers Image segmentation, Object categorization, Optical flow, Depth, Normals, etc.
@@ -229,7 +241,7 @@ Depth is as the word suggests the distance of each pixel from the camera encoded
 Normals are color encoding based on the orientation of object with respect to the camera.
 For the snapshot, each of these properties is assigned a hidden camera and have each one overrides rendering scene with custom shaders to generate corresponding output.
 These camera outputs can be seen in editor mode by changing the display window.
-Samples of G-buffer collected for dataset are as shown in figure \ref{fig:G-buffers samples}.
+Samples of G-buffer collected for dataset are as shown in figure ~\ref{fig:G-buffers samples}.
 
 \begin{figure}
     \centering
@@ -290,10 +302,10 @@ Manual inputs, automated
 Unity - ML-ImageSynthesis
 UML diagram is needed? (If it helps)
 
-\section{3d-Reconstruction framework}\label{s:3D-Reconstruction framework}
+\section{3d-Reconstruction framework}\label{sec:3d-reconstruction-framework}
 
 Development environment
-Training setup(hardware, voxel size…)
+Training setup(hardware, voxel size)
 Mixed precision using apex
 If mixed precision helped performance, memory, speed, evaluation metric
 

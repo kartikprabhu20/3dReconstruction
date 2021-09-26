@@ -35,7 +35,7 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
 
 \subsection{Why Pix3D?}\label{subsec:why-pix3d?}
 Pix3D is a collection of indoor scenes with complex background, varying light conditions with shadows, reflective surfaces and even varying occlusion levels.
-Each image comprises a collection of objects in the scene, but only one object from the catagory is annotated.
+Each image comprises a collection of objects in the scene, but only one object from the category is annotated.
 It is a perfect example of having limited real world data.
 Since 3D models are available for each furniture,a synthetic data can be generated in abundance from those models.
 Samples from Pix2D are as shown in figure ~\ref{fig:Pix3D samples}.
@@ -122,7 +122,7 @@ Ideally a model trained on shapenet should also perform well with a real dataset
 \section{3D reconstruction}\label{sec:3D reconstruction}
 Now that we discussed on how the dataset will be created, we move to the deep learning aspect of this thesis.
 3D reconstruction is the task to convert a 2-Dimensional RGB image into a known 3D representation of the model under observation.
-For voxel-based approach, the 3D model space is discritized to obtain 3D voxel grid $X$.
+For voxel-based approach, the 3D model space is discretized to obtain 3D voxel grid $X$.
 Let $I = \{I_k \mid k = 1,2,\dots n\}$ with n$\geq$1 be a set of single view RGB images with atleast one object $X$.
 3D reconstruction can be defined as a task to learn a function $f(\theta)$ such that the objective function $L(I) = d(f(\theta),X)$ is minimised.
 $\theta$ is the parameters of predictor function $f$., \b($d$) is a distance measure between real shape X and shape predicted by $f(\theta)$,

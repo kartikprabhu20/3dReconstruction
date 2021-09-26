@@ -4,15 +4,10 @@
     \begin{enumerate}
         \item tsne for survey datasets
         \item tsne chair dataset with randomisation
-        \item explain different version of datasets v1, v4, v3, ablation with images.
         \item baseline comparison, pix3d pix2vox, pix2vox++(modelwise, classwise)
         \item values per category
-        \item baseline different version of dataset
         \item baseline different version of dataset with different threshold
-        \item Mixed training different ratios
         \item Finetuning over pretrained
-        \item Ablation chair with different randomisations
-        \item ablation chair with different mixedtraining
         \item ablation values per model
         \item !!!!!finetuning with different datasize (pending)
         \item !!!!!mixed training with different real datasize(pending)
@@ -20,7 +15,7 @@
         \item training graphs
     \end{enumerate}
 }
-\section{A survey on photorealism}
+\section{A survey on photorealism}\label{sec:a-survey-on-photorealism}
 The participants were given minimalistic information about the intention behind the survey.
 The goal of the survey was to analyse if humans have the same perception for photographic and computer generated images.
 No time limit was set for the survey and it was open to everyone.
@@ -118,7 +113,7 @@ But S2R:3D-FREE breaks the boundary to be in top 5 most times.
 
 \begin{figure}
     \centering
-    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/survey/question3_3.pgf}}
+    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/survey/question3_3.pgf}}
     \caption{The figure represents box plot for section 3. The Green horizontal line within the box indicates median, the blue dotted line indicates mean.}
     \label{fig:question3_2}
 \end{figure}
@@ -126,12 +121,18 @@ But S2R:3D-FREE breaks the boundary to be in top 5 most times.
 \subsubsection{Summary for survey}
 In the survey we observe that Pix3D was rightly chosen as photorealistic image as they are collected from real world data.
 Though the proposed S2R:3DFREE dataset falls behind in comparison to manually designed images from Hyperism, InteriorNet and 3DFRONT,
-it is comparible to automated datasets from Blenderproc, OpenRooms and SceneNet.
+it is comparable to automated datasets from Blenderproc, OpenRooms and SceneNet.
 It also trumps over AI2THOR which is manually designed using Unity game engines.
 
-\section{Domain gaps - Qualitative}
-Visualize domain gap between S2R:3D-FREE and real image(pix3d)
+\section{Domain gaps}\label{sec:domain-gaps}
 
+In this section, we verify if the synthetic dataset;
+S2R:3DFREE, has domain gap with the real dataset(Pix3D).
+Along with new synthetic dataset, we will compare the datasets used for survey in ~\ref{sec:a-survey-on-photorealism}.
+Qualitatively we will visualise dataset embeddings using T-SNE, and quantitatively we will compare the distributions of all the synthetic dataset and real dataset.
+
+\subsection{Qualitative}\label{subsec:qualitative}
+Visualize domain gap between S2R:3D-FREE and real image(pix3d)
 
 \begin{figure}
     \centering
@@ -140,42 +141,228 @@ Visualize domain gap between S2R:3D-FREE and real image(pix3d)
     \label{fig:photorealistic tsne}
 \end{figure}
 
-\section{Domain gaps - Quantitative}
+\subsection{Quantitative}\label{subsec:quantitative}
 Maximum Mean Discrepancy
 Kullback-Leibler divergence
 
-\section{Performance}
 
 \begin{center}
     \begin{tabular}{||c |c |c |c||}
         \hline
-        Col1 & Col2 & Col2 & Col3 \\ [0.5ex]
+        Dataset & MSE & FID \\ [0.5ex]
         \hline\hline
-        1 & 6 & 87837 & 787 \\
+        Openrooms & 7.63 & 189.43 \\
         \hline
-        2 & 7 & 78 & 5415 \\
+         AI2THOR & 6.94 & 164.61 \\
         \hline
-        3 & 545 & 778 & 7507 \\
+        BlenderProc & 5.53 & 173.37 \\
         \hline
-        4 & 545 & 18744 & 7560 \\
+        Hyperism & 7.12 & 186.57 \\
         \hline
-        5 & 88 & 788 & 6344 \\ [1ex]
+        3DFRONT & 6.93 & 167.65 \\
+        \hline
+        InteriorNet & xx & xx \\
+        \hline
+        SceneNet & xx & xx \\
+        \hline
+        S2R:3DFREE & 1.86 & 178.83 \\[1ex]
         \hline
     \end{tabular}
 \end{center}
+
+
+
+\section{Datasets}\label{sec:datasets}
+In this section, the datasets used for the following evaluations will be described.
+The datasets are intended to have variations in domain randomisation to check its performance on 3D reconstruction task.
+
+\subsection{Pix3D}
+As mentioned in ~\ref{subsec:why-pix3d?}, we use a real dataset from ~\cite{pix3d} which is a collection of indoor scenes.
+The 2 classes 'misc' and 'tools' are eliminated so that we focus only on furnitures.
+The total images after the reduction is 9954 with 354 unique models.
+The train and validation dataset is divided in the ratio of 70:30 giving us 6814 images from training and 3140 images for validation/test.
+We do not have a test set only for this dataset since it is already limited and the validation set is used as test set while testing with synthetic data.
+Samples are as shown in ~\ref{fig:samples for synthetic and real comparison}.
+
+\subsection{S2R:3DFREE Version 1}
+Version 1 of S2R:3DFREE was created by keeping the models in the center of a default 3D room.
+The camera distance was randomised between 1 and 2.5 meters from the model.
+The camera view points and textures were randomised.
+A total of 70000 images were synthetically generated using the S2R:3DFREE 'Single Room pipeline' with 10000 images per category.
+Samples are as shown in ~\ref{fig:samples for synthetic and real comparison}.
+
+\subsection{S2R:3DFREE Version 2}
+Version 1 of S2R:3DFREE was created by keeping the models in the center of a defualt 3D room.
+The camera distance was randomised between 1 and 2.5 meters from the model.
+The camera view points and textures were randomised.
+A total of 21000 images were synthetically generated using the S2R:3DFREE 'Multi Object pipeline' with 3000 images per category.
+Samples are as shown in ~\ref{fig:samples for synthetic and real comparison}.
+
+\subsection{S2R:3DFREE Ablation}\label{subsec:s2r:3dfree-ablation}
+To study the affects of parameters on domain randomisation, a study was conducted on chair dataset.
+This dataset were divided into 5 categories with different randomisation parameters.
+The sample images with different randomization is as shown in figure ~\ref{fig:domain randomisation for ablation study}.
+
+\subsubsection{2R:3DFREE\_Textureless}
+
+    For textureless dataset, the chair models were kept at the center of an un-textured room with constant light source.
+    A total of 10000 images were generated from different camera viewpoints.
+
+\subsubsection{S2R:3DFREE\_Textureless\_Light}
+
+    For this dataset, similar to the textureless dataset the chair models were kept at the center of an un-textured room, but with randomised light source.
+    The light variation was implemented as in ~\ref{subsec:lightings-and-shadows}.
+    Along with randomised light source, the camera view points were randomised with a distance in range of 0.75 to 1.5 meters from the model under observation.
+
+\subsubsection{S2R:3DFREE\_Textured}
+
+    As the name suggests, in this dataset both the model and the default single room were textured randomly for each snapshot as explained in ~\ref{subsec:randomised-texture}.
+    10000 snapshot of chair models were taken using different camera viewpoints.
+
+\subsubsection{S2R:3DFREE\_Textured\_Light}
+
+    This is an extension of the above mention S2R:3DFREE\_Textured dataset, with addition of randomized light sources.
+    The lights are randomized as implemented in ~\ref{subsec:lightings-and-shadows}.
+
+\subsubsection{S2R:3DFREE\_Chair}
+
+    S2R:3DFREE\_Chair dataset was created using 'Multi Object pipeline' with chair replacing a similar category from scene as implemented in ~\ref{subsec:replacing-target-objects}.
+    Both the light and camera view points were randomised making sure that the model under observation is not completly occluded.
+
+
+\begin{figure}
+    \begin{tabular}{llll}
+        Pix3D & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_3}\\
+
+        S2R:3DFREE Version 1 & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_3}\\
+
+        S2R:3DFREE Version 2 & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_3}\\
+
+    \end{tabular}
+    \caption{Samples of images from real and synthetic datasets.}
+    \label{fig:samples for synthetic and real comparison}
+\end{figure}
+
+
+\begin{figure}
+    \begin{tabular}{llll}
+        Textureless & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_3}\\
+
+        Textureless with light & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_light_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_light_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_light_3}\\
+
+        Textured & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_1} &
+        \includegraphics[width=.2\linewidthm]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_3}\\
+
+        Textured with light & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_light_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_light_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_light_4}\\
+
+        Multi-Object & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_3}\\
+
+    \end{tabular}
+    \caption{Samples of images used for ablation study on chairs with different parameters of domain randomisation.}
+    \label{fig:domain randomisation for ablation study}
+\end{figure}
 
 Performance of model trained on synthetic dataset by testing model with real dataset(pix3d)
 Qualitative: Voxel output comparisons
 Quantitative: IOU, Dice
 
-\section{Domain shift technique}
+\section{Baseline}\label{sec:baseline}
 
-Compare the differences in domain shift of models learnt on S2R:3D-FREE and a traditional domain shift learning.
+As mentioned in ~\ref{subsec:pix2vox-and-pix2vox++}, pix2vox and pix2vox++ are the models which will act as the baselines for all the experiments.
+For the dataset from ~\ref{sec:datasets}, Pix3D is the real dataset and will be acting as the base dataset.
+The models are also compared with and without 2D augmentation.
+The 2D augmentations include Random Flip, Random Crop, Color Jitter, RandomPermuteRGB.
+A performance test with no augmentation will give us actually idea whether synthetic dataset actually enhances the performance of 3D reconstruction task.
 
-\section{Ablation study on chairs}
+Figure ~\ref{fig:baseline1}, represents performance of baseline models on different datasets.
+It is seen that 2D augmentation improves IoU by 1.2\% for Pix3D on pix2vox++, and 1.15\% on pix2vox.
+For synthetic dataset, the models are trained on 70\% of data and 30\% is used for validation.
+For testing we use the same 30\% of real data from Pix3D dataset.
+In case of synthetic dataset, 2D augmentation increased the IoU by 2.04\% and 4.77\%  for pix2vo++ and pix2vox respectively.
+When it comes to the question of whether synthetic dataset gives equivalent performance as real dataset, we can clearly see a dip in the performnace,
+proving that there is a domain gap between real and synthetic data.
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline1.pgf}}
+    \caption{Bar plot for the IoU for baseline models(Pix2Vox++ and Pix2Vox) trained on dataset mentioned in ~\ref{sec:datasets}. }
+    \label{fig:baseline1}
+\end{figure}
+
+%\todo{replace value of s2r\_v1(currently values are from s2r\_v4)}
+
+\section{Fine Tuning}\label{sec:fine-tuning}
+Fine tuning or Transfer Learning is a common way of domain adaptation.
+For this experiment, the model is first trained on synthetic dataset and then used as a pre-trained model to be fine tuned using real dataset.
+
+In figure ~\ref{fig:finetuning1}, we have a comparison of IoU with pure real and pure synthetic dataset, followed by fine-tuning the models with real dataset.
+The core comparison is between real data and fine-tuned model.
+Models are pre-trained with 2 versions of S2R:3DFREE as mentioned in ~\ref{sec:datasets}.
+It is noticed that for Version 1, there is an increment of 1.36\% and 1.55\% on pix2vox++ and pix2vox respectively.
+For Version 2, an increment of 2.41\% on pix2vox++, but decrement of 1.01\% on pix2vox model.
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetuning1.pgf}}
+    \caption{Bar plot for the IoU for baseline models(Pix2Vox++ and Pix2Vox) trained on synthetic and fine-tuned with real dataset. }
+    \label{fig:finetuning1}
+\end{figure}
+
+\section{Mixed Training}\label{sec:mixed-training}
+
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed1.pgf}}
+    \caption{Bar plot for the IoU for baselines trained on different ratios of synthetic and real dataset}
+    \label{fig:mixed1}
+\end{figure}
+
+\section{Ablation study on chairs}\label{sec:ablation-study-on-chairs}
+In this section, we conduct ablation study oon chairs by changing domain randomisation property.
+The dataset used for the study is explained in subsection ~\ref{subsec:s2r:3dfree-ablation}.
+The samples for dataset used is as shown in ~\ref{fig:domain randomisation for ablation study}.
+For comparison with real dataset, we extract only the chair models from Pix3D and compare the results of with and without 2D augmentation with synthetic dataset.
+
+In figure ~\ref{fig:ablation1}, we see that textureless chair dataset out performs rest of the dataset.
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation1.pgf}}
+    \caption{Bar plot for the IoU for baseline trained on chair dataset with different parameters and tested on real dataset.}
+    \label{fig:ablation1}
+\end{figure}
+\todo{make sure bar values are not overlapping}
+
+
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation2.pgf}}
+    \caption{Bar plot for the IoU for baseline trained by mixing chair dataset from real and synthetic dataset with ratio of 50\%}
+    \label{fig:ablation2}
+\end{figure}
 
 \subsection{Domain randomisation on chair dataset}
-
 Check if randomising textures of chair and background helps improve performance.  Example: Create dataset with constant room texture vs randomising texture,
 Check if lighting helps (indoor, outdoor). Example: Create a dataset with constant lighting(only outdoor lighting) vs indoor lighting.
 Iou per category: as in https://arxiv.org/pdf/1905.03678.pdf
+
+\subsection{Domain randomisation with Mixed training}
+
+

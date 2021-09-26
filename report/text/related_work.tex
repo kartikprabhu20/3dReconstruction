@@ -193,9 +193,9 @@ With the advent of Virtual and Augmented realities, 3D models are which are avai
 
 In ~\cite{nowruzi2019real}, the author tries to find how much of real data is required with synthetic dataset to increase the performance of object detection task.
 A study was conducted by training various object detection models on mixed data containing different ratios of real and synthetic dataset.
-The four ratios considered for mixed training were, 0\%, 90\%, 95\%, 97.5\% of synthtic data to real data.
-Another study was conducted by fine tuning a model pre-trained on a synthetic dataset with different quantity of real dataset.
-They observed that fine-tuning with limited real dataset is better than mixed training with synthetic dataset.
+The four ratios considered for mixed training were, 0\%, 90\%, 95\%, 97.5\% of synthetic data to real data.
+Another study was conducted by fine-tuning a model pre-trained on a synthetic dataset with different quantity of real dataset.
+They observed that fine-tuning with limited real dataset is better than mixed training with a synthetic dataset.
 
 The idea of domain randomisation is that among the set of training images from synthetic dataset, real images appears to be one of the variations.
 Thus, testing with real world images should give comparable performance.
@@ -215,12 +215,12 @@ After these 2 steps, the objects such as cars, cyclists, houses, buildings are p
 As ablation study, the author changes domain randomisation parameters and checks the performance on car detection task.
 
 ~\cite{georgakis2017synthesizing} proposes a domain randomisation based synthetic images generation for detection of objects found in kitchen.
-The objects are cropped and placed on the background with semantic information and geomety with proper scale.
+The objects are cropped and placed on the background with semantic information and geometry with proper scale.
 Similar to the above works, here to the author provides ablation study with different ratios of synthetic to real dataset for mixed training.
 
 Domain randomisation and adaptation techniques are not the only ways to mitigate the domain shift.
 With advent of Generative Adversarial Networks~\cite{Goodfellow2014GenerativeAN}, synthetic to real image conversions has become possible and can lead to better performance on given task.
-~\cite{Richter_2021, CycleGAN2017, park2020cut,isola2017image, dundar2018domain,Wang2018HighResolutionIS} are some of the successful attempts to reduce the gap between simulated environment and reality.
+~\cite{Richter_2021, CycleGAN2017, park2020cut,isola2017image, dundar2018domain,Wang2018HighResolutionIS} are some successful attempts to reduce the gap between simulated environment and reality.
 Intel in ~\cite{Richter_2021} uses GTA V dataset with G-buffers(depth, normals, segmentations,Albedo, glossiness, etc.) to enhance the photorealism of synthetic images.
 ~\cite{park2020cut} uses patchwise contrastive loss so that the content of input image is retained.
 The loss is minimised such that corresponding patches retain high mutual values.
