@@ -1,0 +1,621 @@
+\begin{thebibliography}{91}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Eve()]{Evermotion}
+Evermotion archinteriors collection.
+\newblock \url{https://evermotion.org/}.
+\newblock Accessed: 2021-08-16.
+
+\bibitem[Tur()]{TurboSquid}
+Turbosquid.
+\newblock \url{http://www.turbosquid.com}.
+\newblock Accessed: 2021-08-16.
+
+\bibitem[Afzal et~al.(2020)Afzal, Luo, Afzal, Chaudhary, Khari, and
+  Kumar]{9210569}
+H.~M.~Rehan Afzal, Suhuai Luo, M.~Kamran Afzal, Gopal Chaudhary, Manju Khari,
+  and Sathish A.~P. Kumar.
+\newblock 3d face reconstruction from single 2d image using distinctive
+  features.
+\newblock \emph{IEEE Access}, 8:\penalty0 180681--180689, 2020.
+\newblock \doi{10.1109/ACCESS.2020.3028106}.
+
+\bibitem[Armeni et~al.(2016)Armeni, Sener, Zamir, Jiang, Brilakis, Fischer, and
+  Savarese]{Armeni20163DSP}
+Iro Armeni, Ozan Sener, A.~Zamir, Helen Jiang, I.~Brilakis, Martin Fischer, and
+  S.~Savarese.
+\newblock 3d semantic parsing of large-scale indoor spaces.
+\newblock \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 1534--1543, 2016.
+
+\bibitem[Chang et~al.(2017)Chang, Dai, Funkhouser, Halber, Nießner, Savva,
+  Song, Zeng, and Zhang]{chang2017matterport3d}
+Angel Chang, Angela Dai, Thomas Funkhouser, Maciej Halber, Matthias Nießner,
+  Manolis Savva, Shuran Song, Andy Zeng, and Yinda Zhang.
+\newblock Matterport3d: Learning from rgb-d data in indoor environments, 2017.
+
+\bibitem[Chang et~al.(2015)Chang, Funkhouser, Guibas, Hanrahan, Huang, Li,
+  Savarese, Savva, Song, Su, Xiao, Yi, and Yu]{chang2015shapenet}
+Angel~X. Chang, Thomas Funkhouser, Leonidas Guibas, Pat Hanrahan, Qixing Huang,
+  Zimo Li, Silvio Savarese, Manolis Savva, Shuran Song, Hao Su, Jianxiong Xiao,
+  Li~Yi, and Fisher Yu.
+\newblock Shapenet: An information-rich 3d model repository, 2015.
+
+\bibitem[Chen and Zhang(2019)]{chen2019learning}
+Zhiqin Chen and Hao Zhang.
+\newblock Learning implicit fields for generative shape modeling, 2019.
+
+\bibitem[Choy et~al.(2016)Choy, Xu, Gwak, Chen, and Savarese]{choy20163d}
+Christopher~B Choy, Danfei Xu, JunYoung Gwak, Kevin Chen, and Silvio Savarese.
+\newblock 3d-r2n2: A unified approach for single and multi-view 3d object
+  reconstruction.
+\newblock In \emph{Proceedings of the European Conference on Computer Vision
+  ({ECCV})}, 2016.
+
+\bibitem[Community(2018)]{blender}
+Blender~Online Community.
+\newblock \emph{Blender - a 3D modelling and rendering package}.
+\newblock Blender Foundation, Stichting Blender Foundation, Amsterdam, 2018.
+\newblock URL \url{http://www.blender.org}.
+
+\bibitem[Dai et~al.(2017)Dai, Chang, Savva, Halber, Funkhouser, and
+  Nießner]{dai2017scannet}
+Angela Dai, Angel~X. Chang, Manolis Savva, Maciej Halber, Thomas Funkhouser,
+  and Matthias Nießner.
+\newblock Scannet: Richly-annotated 3d reconstructions of indoor scenes, 2017.
+
+\bibitem[Deitke et~al.(2020)Deitke, Han, Herrasti, Kembhavi, Kolve, Mottaghi,
+  Salvador, Schwenk, VanderBilt, Wallingford, Weihs, Yatskar, and
+  Farhadi]{Deitke2020RoboTHORAO}
+Matt Deitke, Winson Han, Alvaro Herrasti, Aniruddha Kembhavi, Eric Kolve,
+  R.~Mottaghi, Jordi Salvador, Dustin Schwenk, Eli VanderBilt, Matthew
+  Wallingford, Luca Weihs, Mark Yatskar, and Ali Farhadi.
+\newblock Robothor: An open simulation-to-real embodied ai platform.
+\newblock \emph{2020 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 3161--3171, 2020.
+
+\bibitem[Deng et~al.(2009)Deng, Dong, Socher, Li, Li, and
+  Fei-Fei]{Deng2009ImageNetAL}
+J.~Deng, Wei Dong, R.~Socher, Li-Jia Li, K.~Li, and Li~Fei-Fei.
+\newblock Imagenet: A large-scale hierarchical image database.
+\newblock \emph{2009 IEEE Conference on Computer Vision and Pattern
+  Recognition}, pages 248--255, 2009.
+
+\bibitem[Deng et~al.(2019)Deng, Yang, Xu, Chen, Jia, and
+  Tong]{deng2019accurate}
+Yu~Deng, Jiaolong Yang, Sicheng Xu, Dong Chen, Yunde Jia, and Xin Tong.
+\newblock Accurate 3d face reconstruction with weakly-supervised learning: From
+  single image to image set.
+\newblock In \emph{IEEE Computer Vision and Pattern Recognition Workshops},
+  2019.
+
+\bibitem[Denninger and Triebel(2020)]{Denninger20203DSR}
+Maximilian Denninger and Rudolph Triebel.
+\newblock 3d scene reconstruction from a single viewport.
+\newblock In \emph{ECCV}, 2020.
+
+\bibitem[Denninger et~al.(2019)Denninger, Sundermeyer, Winkelbauer, Zidan,
+  Olefir, Elbadrawy, Lodhi, and Katam]{denninger2019blenderproc}
+Maximilian Denninger, Martin Sundermeyer, Dominik Winkelbauer, Youssef Zidan,
+  Dmitry Olefir, Mohamad Elbadrawy, Ahsan Lodhi, and Harinandan Katam.
+\newblock Blenderproc.
+\newblock \emph{arXiv preprint arXiv:1911.01911}, 2019.
+
+\bibitem[Dundar et~al.(2018)Dundar, Liu, Wang, Zedlewski, and
+  Kautz]{dundar2018domain}
+Aysegul Dundar, Ming-Yu Liu, Ting-Chun Wang, John Zedlewski, and Jan Kautz.
+\newblock Domain stylization: A strong, simple baseline for synthetic to real
+  image domain adaptation, 2018.
+
+\bibitem[{Epic Games}()]{unrealengine}
+{Epic Games}.
+\newblock Unreal engine.
+\newblock URL \url{https://www.unrealengine.com}.
+
+\bibitem[Fu et~al.(2020)Fu, Cai, Gao, Zhang, Li, Xun, Sun, Fei, Zheng, Li, Liu,
+  Liu, Ma, Weng, Hu, Ma, Qian, Jia, Zhao, and Zhang]{Fu20203DFRONT3F}
+Huan Fu, Bowen Cai, Lin Gao, Ling-Xiao Zhang, Cao Li, Zengqi Xun, Chengyue Sun,
+  Yiyun Fei, Yu~Zheng, Yunyao Li, Yi~Liu, Peng Liu, Lin Ma, Le~Weng, Xiaohang
+  Hu, Xin Ma, Qian Qian, Rongfei Jia, Binqiang Zhao, and Hao Zhang.
+\newblock 3d-front: 3d furnished rooms with layouts and semantics.
+\newblock \emph{ArXiv}, abs/2011.09127, 2020.
+
+\bibitem[Ganin et~al.(2016)Ganin, Ustinova, Ajakan, Germain, Larochelle,
+  Laviolette, Marchand, and Lempitsky]{ganin2016domainadversarial}
+Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo
+  Larochelle, François Laviolette, Mario Marchand, and Victor Lempitsky.
+\newblock Domain-adversarial training of neural networks, 2016.
+
+\bibitem[Georgakis et~al.(2017)Georgakis, Mousavian, Berg, and
+  Kosecka]{georgakis2017synthesizing}
+Georgios Georgakis, Arsalan Mousavian, Alexander~C. Berg, and Jana Kosecka.
+\newblock Synthesizing training data for object detection in indoor scenes,
+  2017.
+
+\bibitem[Gkioxari et~al.(2019)Gkioxari, Malik, and Johnson]{Gkioxari2019MeshR}
+Georgia Gkioxari, Jitendra Malik, and Justin Johnson.
+\newblock Mesh r-cnn.
+\newblock \emph{2019 IEEE/CVF International Conference on Computer Vision
+  (ICCV)}, pages 9784--9794, 2019.
+
+\bibitem[Gold(2004)]{10.5555/983334}
+Julian Gold.
+\newblock \emph{Object-Oriented Game Development}.
+\newblock Pearson Addison Wesley, 2004.
+\newblock ISBN 032117660X.
+
+\bibitem[Goodfellow et~al.(2014)Goodfellow, Pouget-Abadie, Mirza, Xu,
+  Warde-Farley, Ozair, Courville, and Bengio]{Goodfellow2014GenerativeAN}
+I.~Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley,
+  Sherjil Ozair, Aaron~C. Courville, and Yoshua Bengio.
+\newblock Generative adversarial nets.
+\newblock In \emph{NIPS}, 2014.
+
+\bibitem[Groueix et~al.(2018)Groueix, Fisher, Kim, Russell, and
+  Aubry]{groueix2018atlasnet}
+Thibault Groueix, Matthew Fisher, Vladimir~G. Kim, Bryan~C. Russell, and
+  Mathieu Aubry.
+\newblock Atlasnet: A papier-m\^ach\'e approach to learning 3d surface
+  generation, 2018.
+
+\bibitem[Guo et~al.(2017)Guo, Zhang, Cai, Jiang, and Zheng]{Guo20173DFaceNetRD}
+Y.~Guo, Juyong Zhang, Jianfei Cai, Boyi Jiang, and Jianmin Zheng.
+\newblock 3dfacenet: Real-time dense face reconstruction via synthesizing
+  photo-realistic face images.
+\newblock 2017.
+
+\bibitem[Han et~al.(2021)Han, Laga, and Bennamoun]{Han2021ImageBased3O}
+Xian-Feng Han, Hamid Laga, and M.~Bennamoun.
+\newblock Image-based 3d object reconstruction: State-of-the-art and trends in
+  the deep learning era.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 43:\penalty0 1578--1604, 2021.
+
+\bibitem[Handa et~al.(2016)Handa, Patraucean, Badrinarayanan, Stent, and
+  Cipolla]{Handa2016UnderstandingRI}
+A.~Handa, Viorica Patraucean, Vijay Badrinarayanan, Simon Stent, and
+  R.~Cipolla.
+\newblock Understanding realworld indoor scenes with synthetic data.
+\newblock \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 4077--4085, 2016.
+
+\bibitem[He et~al.(2016)He, Zhang, Ren, and Sun]{He2016DeepRL}
+Kaiming He, X.~Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 770--778, 2016.
+
+\bibitem[Henderson and Ferrari(2019)]{henderson2019learning}
+Paul Henderson and Vittorio Ferrari.
+\newblock Learning single-image 3d reconstruction by generative modelling of
+  shape, pose and shading, 2019.
+
+\bibitem[Hinterstoisser et~al.(2019)Hinterstoisser, Pauly, Heibel, Marek, and
+  Bokeloh]{hinterstoisser2019annotation}
+Stefan Hinterstoisser, Olivier Pauly, Hauke Heibel, Martina Marek, and Martin
+  Bokeloh.
+\newblock An annotation saved is an annotation earned: Using fully synthetic
+  training for object instance detection, 2019.
+
+\bibitem[Hoang et~al.(2019)Hoang, Lee, Kwon, and Kwon]{Hoang2019ADL}
+Long Hoang, Suk-Hwan Lee, Oh-Heum Kwon, and Ki-Ryong Kwon.
+\newblock A deep learning method for 3d object classification using the wave
+  kernel signature and a center point of the 3d-triangle mesh.
+\newblock \emph{Electronics}, 8:\penalty0 1196, 2019.
+
+\bibitem[Hua et~al.(2016)Hua, Pham, Nguyen, Tran, Yu, and
+  Yeung]{Hua2016SceneNNAS}
+Binh-Son Hua, Quang-Hieu Pham, D.~Nguyen, Minh-Khoi Tran, Lap-Fai Yu, and
+  S.~Yeung.
+\newblock Scenenn: A scene meshes dataset with annotations.
+\newblock \emph{2016 Fourth International Conference on 3D Vision (3DV)}, pages
+  92--101, 2016.
+
+\bibitem[Huang et~al.(2018)Huang, Matzen, Kopf, Ahuja, and
+  Huang]{huang2018deepmvs}
+Po-Han Huang, Kevin Matzen, Johannes Kopf, Narendra Ahuja, and Jia-Bin Huang.
+\newblock Deepmvs: Learning multi-view stereopsis, 2018.
+
+\bibitem[Isola et~al.(2017)Isola, Zhu, Zhou, and Efros]{isola2017image}
+Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei~A Efros.
+\newblock Image-to-image translation with conditional adversarial networks.
+\newblock In \emph{IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2017.
+
+\bibitem[Jhang et~al.(2020)Jhang, Palmar, Li, Dhakad, Vishwakarma, Hogins,
+  Crespi, Kerr, Chockalingam, Romero, Thaman, and Ganguly]{synthdet2020}
+You-Cyuan Jhang, Adam Palmar, Bowen Li, Saurav Dhakad, Sanjay~Kumar
+  Vishwakarma, Jonathan Hogins, Adam Crespi, Chris Kerr, Sharmila Chockalingam,
+  Cesar Romero, Alex Thaman, and Sujoy Ganguly.
+\newblock Training a performant object detection {ML} model on synthetic data
+  using {U}nity {P}erception tools.
+\newblock
+  \url{https://blogs.unity3d.com/2020/09/17/training-a-performant-object-detection-ml-model-on-synthetic-data-using-unity-computer-vision-tools/},
+  Sep 2020.
+
+\bibitem[Kar et~al.(2017)Kar, H{\"a}ne, and Malik]{Kar2017LearningAM}
+Abhishek Kar, Christian H{\"a}ne, and Jitendra Malik.
+\newblock Learning a multi-view stereo machine.
+\newblock In \emph{NIPS}, 2017.
+
+\bibitem[Kingma and Welling(2014)]{kingma2014autoencoding}
+Diederik~P Kingma and Max Welling.
+\newblock Auto-encoding variational bayes, 2014.
+
+\bibitem[Knyaz et~al.(2019)Knyaz, Kniaz, and Remondino]{z-gan}
+Vladimir~A. Knyaz, Vladimir~V. Kniaz, and Fabio Remondino.
+\newblock Image-to-voxel model translation with conditional adversarial
+  networks.
+\newblock In Laura Leal-Taix{\'e} and Stefan Roth, editors, \emph{Computer
+  Vision -- ECCV 2018 Workshops}, pages 601--618, Cham, 2019. Springer
+  International Publishing.
+\newblock ISBN 978-3-030-11009-3.
+
+\bibitem[Kolve et~al.(2019)Kolve, Mottaghi, Han, VanderBilt, Weihs, Herrasti,
+  Gordon, Zhu, Gupta, and Farhadi]{kolve2019ai2thor}
+Eric Kolve, Roozbeh Mottaghi, Winson Han, Eli VanderBilt, Luca Weihs, Alvaro
+  Herrasti, Daniel Gordon, Yuke Zhu, Abhinav Gupta, and Ali Farhadi.
+\newblock Ai2-thor: An interactive 3d environment for visual ai, 2019.
+
+\bibitem[Leinar~Ramos(2021)]{gartnerreport}
+Jitendra~Subramanyam Leinar~Ramos.
+\newblock {Maverick Research: Forget About Your Real Data – Synthetic Data Is
+  the Future of AI}.
+\newblock \url{https://www.gartner.com/en/documents/4002912}, June 2021.
+
+\bibitem[Li()]{LiSilhouetteAssisted3O}
+Lin Li.
+\newblock Silhouette-assisted 3d object instance reconstruction from a
+  cluttered scene.
+
+\bibitem[Li et~al.(2017)Li, Song, and Huang]{Li2017PredictionRF}
+Shuang Li, Shiji Song, and Gao Huang.
+\newblock Prediction reweighting for domain adaptation.
+\newblock \emph{IEEE Transactions on Neural Networks and Learning Systems},
+  28:\penalty0 1682--1695, 2017.
+
+\bibitem[Li et~al.(2018)Li, Saeedi, McCormac, Clark, Tzoumanikas, Ye, Huang,
+  Tang, and Leutenegger]{InteriorNet18}
+Wenbin Li, Sajad Saeedi, John McCormac, Ronald Clark, Dimos Tzoumanikas, Qing
+  Ye, Yuzhong Huang, Rui Tang, and Stefan Leutenegger.
+\newblock Interiornet: Mega-scale multi-sensor photo-realistic indoor scenes
+  dataset.
+\newblock In \emph{British Machine Vision Conference (BMVC)}, 2018.
+
+\bibitem[Li et~al.(2016)Li, Pirk, Su, Qi, and Guibas]{li2016fpnn}
+Yangyan Li, Soeren Pirk, Hao Su, Charles~R. Qi, and Leonidas~J. Guibas.
+\newblock Fpnn: Field probing neural networks for 3d data, 2016.
+
+\bibitem[Li et~al.(2021)Li, Yu, Sang, Wang, Song, Liu, Yeh, Zhu, Gundavarapu,
+  Shi, Bi, Xu, Yu, Sunkavalli, Hašan, Ramamoorthi, and
+  Chandraker]{li2021openrooms}
+Zhengqin Li, Ting-Wei Yu, Shen Sang, Sarah Wang, Meng Song, Yuhan Liu, Yu-Ying
+  Yeh, Rui Zhu, Nitesh Gundavarapu, Jia Shi, Sai Bi, Zexiang Xu, Hong-Xing Yu,
+  Kalyan Sunkavalli, Miloš Hašan, Ravi Ramamoorthi, and Manmohan Chandraker.
+\newblock Openrooms: An end-to-end open framework for photorealistic indoor
+  scene datasets, 2021.
+
+\bibitem[Lim et~al.(2013)Lim, Pirsiavash, and Torralba]{Lim2013ParsingIO}
+Joseph~J. Lim, H.~Pirsiavash, and A.~Torralba.
+\newblock Parsing ikea objects: Fine pose estimation.
+\newblock \emph{2013 IEEE International Conference on Computer Vision}, pages
+  2992--2999, 2013.
+
+\bibitem[Lunz et~al.(2020)Lunz, Li, Fitzgibbon, and Kushman]{Lunz2020InverseGG}
+Sebastian Lunz, Yingzhen Li, A.~Fitzgibbon, and Nate Kushman.
+\newblock Inverse graphics gan: Learning to generate 3d shapes from
+  unstructured 2d data.
+\newblock \emph{ArXiv}, abs/2002.12674, 2020.
+
+\bibitem[Martinez-Gonzalez et~al.(2021)Martinez-Gonzalez, Oprea, Castro-Vargas,
+  Garcia-Garcia, Orts-Escolano, Garcia-Rodriguez, and
+  Vincze]{martinezgonzalez2021unrealrox}
+Pablo Martinez-Gonzalez, Sergiu Oprea, John~Alejandro Castro-Vargas, Alberto
+  Garcia-Garcia, Sergio Orts-Escolano, Jose Garcia-Rodriguez, and Markus
+  Vincze.
+\newblock Unrealrox+: An improved tool for acquiring synthetic data from
+  virtual 3d environments, 2021.
+
+\bibitem[McCormac et~al.(2017)McCormac, Handa, Leutenegger, and
+  J.Davison]{McCormac:etal:ICCV2017}
+John McCormac, Ankur Handa, Stefan Leutenegger, and Andrew J.Davison.
+\newblock Scenenet rgb-d: Can 5m synthetic images beat generic imagenet
+  pre-training on indoor segmentation?
+\newblock 2017.
+
+\bibitem[Mescheder et~al.(2019)Mescheder, Oechsle, Niemeyer, Nowozin, and
+  Geiger]{Mescheder2019OccupancyNL}
+Lars~M. Mescheder, Michael Oechsle, Michael Niemeyer, S.~Nowozin, and Andreas
+  Geiger.
+\newblock Occupancy networks: Learning 3d reconstruction in function space.
+\newblock \emph{2019 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 4455--4465, 2019.
+
+\bibitem[Nowruzi et~al.(2019)Nowruzi, Kapoor, Kolhatkar, Hassanat, Laganiere,
+  and Rebut]{nowruzi2019real}
+Farzan~Erlik Nowruzi, Prince Kapoor, Dhanvin Kolhatkar, Fahed~Al Hassanat,
+  Robert Laganiere, and Julien Rebut.
+\newblock How much real data do we actually need: Analyzing object detection
+  performance using synthetic and real data, 2019.
+
+\bibitem[Pan et~al.(2019)Pan, Han, Chen, Tang, and Jia]{pan2019deep}
+Junyi Pan, Xiaoguang Han, Weikai Chen, Jiapeng Tang, and Kui Jia.
+\newblock Deep mesh reconstruction from single rgb images via topology
+  modification networks, 2019.
+
+\bibitem[Park et~al.(2020)Park, Efros, Zhang, and Zhu]{park2020cut}
+Taesung Park, Alexei~A. Efros, Richard Zhang, and Jun-Yan Zhu.
+\newblock Contrastive learning for unpaired image-to-image translation.
+\newblock In \emph{European Conference on Computer Vision}, 2020.
+
+\bibitem[Paschalidou et~al.(2018)Paschalidou, Ulusoy, Schmitt, Gool, and
+  Geiger]{Paschalidou2018RayNetLV}
+Despoina Paschalidou, Ali~O. Ulusoy, Carolin Schmitt, L.~Gool, and Andreas
+  Geiger.
+\newblock Raynet: Learning volumetric 3d reconstruction with ray potentials.
+\newblock \emph{2018 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition}, pages 3897--3906, 2018.
+
+\bibitem[Pinheiro et~al.(2019)Pinheiro, Rostamzadeh, and
+  Ahn]{pinheiro2019domainadaptive}
+Pedro~O. Pinheiro, Negar Rostamzadeh, and Sungjin Ahn.
+\newblock Domain-adaptive single-view 3d reconstruction, 2019.
+
+\bibitem[Popov et~al.(2020)Popov, Bauszat, and Ferrari]{popov2020corenet}
+Stefan Popov, Pablo Bauszat, and Vittorio Ferrari.
+\newblock Corenet: Coherent 3d scene reconstruction from a single rgb image,
+  2020.
+
+\bibitem[Prakash et~al.(2020)Prakash, Boochoon, Brophy, Acuna, Cameracci,
+  State, Shapira, and Birchfield]{prakash2020structured}
+Aayush Prakash, Shaad Boochoon, Mark Brophy, David Acuna, Eric Cameracci,
+  Gavriel State, Omer Shapira, and Stan Birchfield.
+\newblock Structured domain randomization: Bridging the reality gap by
+  context-aware synthetic data, 2020.
+
+\bibitem[Qiu(2017)]{qiu2017unrealcv}
+Weichao Qiu.
+\newblock Unrealcv: Virtual worlds for computer vision.
+\newblock \emph{ACM Multimedia Open Source Software Competition}, 2017.
+
+\bibitem[Richardson et~al.(2016)Richardson, Sela, and Kimmel]{richardson20163d}
+Elad Richardson, Matan Sela, and Ron Kimmel.
+\newblock 3d face reconstruction by learning from synthetic data, 2016.
+
+\bibitem[Richardson et~al.(2017)Richardson, Sela, Or-El, and
+  Kimmel]{Richardson2017LearningDF}
+Elad Richardson, Matan Sela, Roy Or-El, and R.~Kimmel.
+\newblock Learning detailed face reconstruction from a single image.
+\newblock \emph{2017 IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 5553--5562, 2017.
+
+\bibitem[Richter and Roth(2018)]{Richter2018MatryoshkaNP}
+Stephan~R. Richter and S.~Roth.
+\newblock Matryoshka networks: Predicting 3d geometry via nested shape layers.
+\newblock \emph{2018 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition}, pages 1936--1944, 2018.
+
+\bibitem[Richter et~al.(2021)Richter, AlHaija, and Koltun]{Richter_2021}
+Stephan~R. Richter, Hassan~Abu AlHaija, and Vladlen Koltun.
+\newblock Enhancing photorealism enhancement.
+\newblock \emph{arXiv:2105.04619}, 2021.
+
+\bibitem[Roberts and Paczan(2020)]{Roberts2020HypersimAP}
+Mike Roberts and Nathan Paczan.
+\newblock Hypersim: A photorealistic synthetic dataset for holistic indoor
+  scene understanding.
+\newblock \emph{ArXiv}, abs/2011.02523, 2020.
+
+\bibitem[Savva et~al.(2019)Savva, Kadian, Maksymets, Zhao, Wijmans, Jain,
+  Straub, Liu, Koltun, Malik, Parikh, and Batra]{savva2019habitat}
+Manolis Savva, Abhishek Kadian, Oleksandr Maksymets, Yili Zhao, Erik Wijmans,
+  Bhavana Jain, Julian Straub, Jia Liu, Vladlen Koltun, Jitendra Malik, Devi
+  Parikh, and Dhruv Batra.
+\newblock Habitat: A platform for embodied ai research, 2019.
+
+\bibitem[Seib et~al.(2020)Seib, Lange, and Wirtz]{seib2020mixing}
+Viktor Seib, Benjamin Lange, and Stefan Wirtz.
+\newblock Mixing real and synthetic data to enhance neural network training --
+  a review of current approaches, 2020.
+
+\bibitem[Shin et~al.(2019)Shin, Ren, Sudderth, and Fowlkes]{Shin20193DSR}
+Daeyun Shin, Zhile Ren, Erik~B. Sudderth, and Charless~C. Fowlkes.
+\newblock 3d scene reconstruction with multi-layer depth and epipolar
+  transformers.
+\newblock \emph{2019 IEEE/CVF International Conference on Computer Vision
+  (ICCV)}, pages 2172--2182, 2019.
+
+\bibitem[Silberman et~al.(2012)Silberman, Hoiem, Kohli, and
+  Fergus]{Silberman2012IndoorSA}
+N.~Silberman, Derek Hoiem, P.~Kohli, and R.~Fergus.
+\newblock Indoor segmentation and support inference from rgbd images.
+\newblock In \emph{ECCV}, 2012.
+
+\bibitem[Simonyan and Zisserman(2015)]{simonyan2015deep}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition,
+  2015.
+
+\bibitem[Song et~al.(2017)Song, Yu, Zeng, Chang, Savva, and
+  Funkhouser]{Song2017SemanticSC}
+Shuran Song, F.~Yu, Andy Zeng, Angel~X. Chang, M.~Savva, and T.~Funkhouser.
+\newblock Semantic scene completion from a single depth image.
+\newblock \emph{2017 IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 190--198, 2017.
+
+\bibitem[Straub et~al.(2019)Straub, Whelan, Ma, Chen, Wijmans, Green, Engel,
+  Mur-Artal, Ren, Verma, Clarkson, Yan, Budge, Yan, Pan, Yon, Zou, Leon,
+  Carter, Briales, Gillingham, Mueggler, Pesqueira, Savva, Batra, Strasdat,
+  Nardi, Goesele, Lovegrove, and Newcombe]{Straub2019TheRD}
+J.~Straub, Thomas Whelan, Lingni Ma, Yufan Chen, Erik Wijmans, Simon Green,
+  Jakob Engel, Raul Mur-Artal, C.~Ren, Shobhit Verma, Anton Clarkson, Mingfei
+  Yan, B.~Budge, Yajie Yan, Xiaqing Pan, June Yon, Yuyang Zou, Kimberly Leon,
+  Nigel Carter, Jesus Briales, Tyler Gillingham, Elias Mueggler, Luis
+  Pesqueira, M.~Savva, Dhruv Batra, H.~Strasdat, R.~D. Nardi, M.~Goesele,
+  S.~Lovegrove, and Richard~A. Newcombe.
+\newblock The replica dataset: A digital replica of indoor spaces.
+\newblock \emph{ArXiv}, abs/1906.05797, 2019.
+
+\bibitem[Sun et~al.(2018)Sun, Wu, Zhang, Zhang, Zhang, Xue, Tenenbaum, and
+  Freeman]{pix3d}
+Xingyuan Sun, Jiajun Wu, Xiuming Zhang, Zhoutong Zhang, Chengkai Zhang, Tianfan
+  Xue, Joshua~B Tenenbaum, and William~T Freeman.
+\newblock Pix3d: Dataset and methods for single-image 3d shape modeling.
+\newblock In \emph{IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2018.
+
+\bibitem[Tatarchenko et~al.(2017)Tatarchenko, Dosovitskiy, and
+  Brox]{tatarchenko2017octree}
+Maxim Tatarchenko, Alexey Dosovitskiy, and Thomas Brox.
+\newblock Octree generating networks: Efficient convolutional architectures for
+  high-resolution 3d outputs, 2017.
+
+\bibitem[To et~al.(2018)To, Tremblay, McKay, Yamaguchi, Leung, Balanon, Cheng,
+  Hodge, and Birchfield]{to2018ndds}
+Thang To, Jonathan Tremblay, Duncan McKay, Yukie Yamaguchi, Kirby Leung, Adrian
+  Balanon, Jia Cheng, William Hodge, and Stan Birchfield.
+\newblock {NDDS}: {NVIDIA} deep learning dataset synthesizer, 2018.
+\newblock \url{ https://github.com/NVIDIA/Dataset_Synthesizer }.
+
+\bibitem[Tobin et~al.(2017)Tobin, Fong, Ray, Schneider, Zaremba, and
+  Abbeel]{tobin2017domain}
+Josh Tobin, Rachel Fong, Alex Ray, Jonas Schneider, Wojciech Zaremba, and
+  Pieter Abbeel.
+\newblock Domain randomization for transferring deep neural networks from
+  simulation to the real world, 2017.
+
+\bibitem[Tremblay et~al.(2018{\natexlab{a}})Tremblay, Prakash, Acuna, Brophy,
+  Jampani, Anil, To, Cameracci, Boochoon, and
+  Birchfield]{Tremblay2018TrainingDN}
+Jonathan Tremblay, Aayush Prakash, David Acuna, M.~Brophy, V.~Jampani, Cem
+  Anil, Thang To, Eric Cameracci, Shaad Boochoon, and Stan Birchfield.
+\newblock Training deep networks with synthetic data: Bridging the reality gap
+  by domain randomization.
+\newblock \emph{2018 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition Workshops (CVPRW)}, pages 1082--10828, 2018{\natexlab{a}}.
+
+\bibitem[Tremblay et~al.(2018{\natexlab{b}})Tremblay, To, and
+  Birchfield]{tremblay2018falling}
+Jonathan Tremblay, Thang To, and Stan Birchfield.
+\newblock Falling things: A synthetic dataset for 3d object detection and pose
+  estimation, 2018{\natexlab{b}}.
+
+\bibitem[Wang and Deng(2018)]{DBLP:journals/corr/abs-1802-03601}
+Mei Wang and Weihong Deng.
+\newblock Deep visual domain adaptation: {A} survey.
+\newblock \emph{CoRR}, abs/1802.03601, 2018.
+\newblock URL \url{http://arxiv.org/abs/1802.03601}.
+
+\bibitem[Wang et~al.(2018{\natexlab{a}})Wang, Zhang, Li, Fu, Liu, and
+  Jiang]{wang2018pixel2mesh}
+Nanyang Wang, Yinda Zhang, Zhuwen Li, Yanwei Fu, Wei Liu, and Yu-Gang Jiang.
+\newblock Pixel2mesh: Generating 3d mesh models from single rgb images,
+  2018{\natexlab{a}}.
+
+\bibitem[Wang et~al.(2018{\natexlab{b}})Wang, Liu, Zhu, Tao, Kautz, and
+  Catanzaro]{Wang2018HighResolutionIS}
+T.~Wang, Ming-Yu Liu, Jun-Yan Zhu, Andrew Tao, J.~Kautz, and Bryan Catanzaro.
+\newblock High-resolution image synthesis and semantic manipulation with
+  conditional gans.
+\newblock \emph{2018 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition}, pages 8798--8807, 2018{\natexlab{b}}.
+
+\bibitem[Wu et~al.(2017{\natexlab{a}})Wu, Wang, Xue, Sun, Freeman, and
+  Tenenbaum]{wu2017marrnet}
+Jiajun Wu, Yifan Wang, Tianfan Xue, Xingyuan Sun, William~T Freeman, and
+  Joshua~B Tenenbaum.
+\newblock Marrnet: 3d shape reconstruction via 2.5d sketches,
+  2017{\natexlab{a}}.
+
+\bibitem[Wu et~al.(2017{\natexlab{b}})Wu, Zhang, Xue, Freeman, and
+  Tenenbaum]{wu2017learning}
+Jiajun Wu, Chengkai Zhang, Tianfan Xue, William~T. Freeman, and Joshua~B.
+  Tenenbaum.
+\newblock Learning a probabilistic latent space of object shapes via 3d
+  generative-adversarial modeling, 2017{\natexlab{b}}.
+
+\bibitem[Wu et~al.(2018)Wu, Zhang, Zhang, Zhang, Freeman, and
+  Tenenbaum]{wu2018learning}
+Jiajun Wu, Chengkai Zhang, Xiuming Zhang, Zhoutong Zhang, William~T. Freeman,
+  and Joshua~B. Tenenbaum.
+\newblock Learning shape priors for single-view 3d completion and
+  reconstruction, 2018.
+
+\bibitem[Xia et~al.(2018)Xia, Zamir, He, Sax, Malik, and
+  Savarese]{xia2018gibson}
+Fei Xia, Amir Zamir, Zhi-Yang He, Alexander Sax, Jitendra Malik, and Silvio
+  Savarese.
+\newblock Gibson env: Real-world perception for embodied agents, 2018.
+
+\bibitem[Xiao et~al.(2013)Xiao, Owens, and Torralba]{Xiao2013SUN3DAD}
+J.~Xiao, Andrew Owens, and A.~Torralba.
+\newblock Sun3d: A database of big spaces reconstructed using sfm and object
+  labels.
+\newblock \emph{2013 IEEE International Conference on Computer Vision}, pages
+  1625--1632, 2013.
+
+\bibitem[Xie et~al.(2019)Xie, Yao, Sun, Zhou, and Zhang]{Xie_2019}
+Haozhe Xie, Hongxun Yao, Xiaoshuai Sun, Shangchen Zhou, and Shengping Zhang.
+\newblock Pix2vox: Context-aware 3d reconstruction from single and multi-view
+  images.
+\newblock \emph{2019 IEEE/CVF International Conference on Computer Vision
+  (ICCV)}, Oct 2019.
+\newblock \doi{10.1109/iccv.2019.00278}.
+\newblock URL \url{http://dx.doi.org/10.1109/ICCV.2019.00278}.
+
+\bibitem[Xie et~al.(2020)Xie, Yao, Zhang, Zhou, and Sun]{Xie_2020}
+Haozhe Xie, Hongxun Yao, Shengping Zhang, Shangchen Zhou, and Wenxiu Sun.
+\newblock Pix2vox++: Multi-scale context-aware 3d object reconstruction from
+  single and multiple images.
+\newblock \emph{International Journal of Computer Vision}, 128\penalty0
+  (12):\penalty0 2919–2935, Jul 2020.
+\newblock ISSN 1573-1405.
+\newblock \doi{10.1007/s11263-020-01347-6}.
+\newblock URL \url{http://dx.doi.org/10.1007/s11263-020-01347-6}.
+
+\bibitem[Yang et~al.(2019{\natexlab{a}})Yang, Rosa, Markham, Trigoni, and
+  Wen]{Yang_219}
+Bo~Yang, Stefano Rosa, Andrew Markham, Niki Trigoni, and Hongkai Wen.
+\newblock Dense 3d object reconstruction from a single depth view.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 41\penalty0 (12):\penalty0 2820–2834, Dec
+  2019{\natexlab{a}}.
+\newblock ISSN 1939-3539.
+\newblock \doi{10.1109/tpami.2018.2868195}.
+\newblock URL \url{http://dx.doi.org/10.1109/TPAMI.2018.2868195}.
+
+\bibitem[Yang et~al.(2019{\natexlab{b}})Yang, Wang, Markham, and
+  Trigoni]{Yang_2019}
+Bo~Yang, Sen Wang, Andrew Markham, and Niki Trigoni.
+\newblock Robust attentional aggregation of deep feature sets for multi-view 3d
+  reconstruction.
+\newblock \emph{International Journal of Computer Vision}, 128\penalty0
+  (1):\penalty0 53–73, Aug 2019{\natexlab{b}}.
+\newblock ISSN 1573-1405.
+\newblock \doi{10.1007/s11263-019-01217-w}.
+\newblock URL \url{http://dx.doi.org/10.1007/s11263-019-01217-w}.
+
+\bibitem[Zheng et~al.(2020)Zheng, Zhang, Li, Tang, Gao, and
+  Zhou]{zheng2020structured3d}
+Jia Zheng, Junfei Zhang, Jing Li, Rui Tang, Shenghua Gao, and Zihan Zhou.
+\newblock Structured3d: A large photo-realistic dataset for structured 3d
+  modeling, 2020.
+
+\bibitem[Zhu et~al.(2017)Zhu, Park, Isola, and Efros]{CycleGAN2017}
+Jun-Yan Zhu, Taesung Park, Phillip Isola, and Alexei~A Efros.
+\newblock Unpaired image-to-image translation using cycle-consistent
+  adversarial networks.
+\newblock In \emph{IEEE International Conference on Computer Vision (ICCV)},
+  2017.
+
+\bibitem[zigurous.com(2017)]{imagesynthesis}
+zigurous.com.
+\newblock Ml-imagesynthesis.
+\newblock \url{https://bitbucket.org/Unity-Technologies/ml-imagesynthesis},
+  2017.
+
+\end{thebibliography}

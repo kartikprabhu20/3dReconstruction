@@ -316,15 +316,15 @@
 	\renewcommand*{\backrefalt}[4]{\footnotesize\color{gray}(cited on Page~#2)}
 }
 
-\iftoggle{german}{
-	\renewcommand{\bibname}{Literaturverzeichnis}
-    \bibliography{literature/thesis}
-
-}{
-	\renewcommand{\bibname}{Bibliography}
-    \bibliography{literature/thesis}
-
-}
+%\iftoggle{german}{
+%	\renewcommand{\bibname}{Literaturverzeichnis}
+%    \bibliography{literature/thesis}
+%
+%}{
+%	\renewcommand{\bibname}{Bibliography}
+%    \bibliography{literature/thesis}
+%
+%}
 \bibpunct{[}{]}{;}{a}{,}{,}
 
 \renewenvironment{theindex}
