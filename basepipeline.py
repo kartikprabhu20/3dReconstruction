@@ -45,7 +45,15 @@ class BasePipeline:
         IMG_SIZE = self.config.size[0],self.config.size[1]
         CROP_SIZE = self.config.crop_size[0], self.config.crop_size[1]
 
-        train_transforms = transform_utils.Compose([
+        self.test_transforms = transform_utils.Compose([
+                transform_utils.CenterCrop(IMG_SIZE, CROP_SIZE),
+                # transform_utils.RandomBackground(self.config.TEST.RANDOM_BG_COLOR_RANGE),
+                transform_utils.Normalize(mean=self.config.DATASET.MEAN, std=self.config.DATASET.STD),
+                transform_utils.ToTensor(),
+            ])
+
+        if self.config.apply_augmentation:
+            self.train_transforms = transform_utils.Compose([
             transform_utils.RandomCrop(IMG_SIZE, CROP_SIZE),
             # transform_utils.RandomBackground(self.config.TRAIN.RANDOM_BG_COLOR_RANGE),
             transform_utils.ColorJitter(self.config.TRAIN.BRIGHTNESS, self.config.TRAIN.CONTRAST, self.config.TRAIN.SATURATION),
@@ -54,19 +62,13 @@ class BasePipeline:
             transform_utils.RandomFlip(),
             transform_utils.RandomPermuteRGB(),
             transform_utils.ToTensor(),
-        ])
-
-        self.test_transforms = transform_utils.Compose([
-             transform_utils.CenterCrop(IMG_SIZE, CROP_SIZE),
-             # transform_utils.RandomBackground(self.config.TEST.RANDOM_BG_COLOR_RANGE),
-             transform_utils.Normalize(mean=self.config.DATASET.MEAN, std=self.config.DATASET.STD),
-             transform_utils.ToTensor(),
-         ])
-
+            ])
+        else:
+            self.train_transforms = self.test_transforms
 
         dataset = datasetManager.get_dataset(self.config.dataset_type,logger=self.logger)
 
-        traindataset = dataset.get_trainset(transforms=train_transforms)
+        traindataset = dataset.get_trainset(transforms=self.train_transforms)
         self.train_loader = torch.utils.data.DataLoader(traindataset, batch_size=self.config.batch_size, shuffle=True,
                                                num_workers=self.config.num_workers)
 
