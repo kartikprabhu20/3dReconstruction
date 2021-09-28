@@ -52,7 +52,7 @@ class ReconstructionPipeline(BasePipeline):
         self.dice = self.get_loss(ModelManager.LossTypes.DICE)
         self.focalTverskyLoss = self.get_loss(ModelManager.LossTypes.FOCAL_TVERSKY)
         self.iou = self.get_loss(ModelManager.LossTypes.IOU)
-        self.bce = self.get_loss(ModelManager.LossTypes.BCE)
+        self.lossfn = self.get_loss(config.train_loss_type)
 
         self.pix2vox,_ = ModelManager.ModelManager(self.config).get_Model(self.config.model_type)
         self.init_models(load_model=config.load_model)
@@ -175,11 +175,12 @@ class ReconstructionPipeline(BasePipeline):
                     dec_generated_volumes = self.merger(raw_features, dec_generated_volumes)
                 else:
                     dec_generated_volumes = torch.mean(dec_generated_volumes, dim=1)
-                encoder_loss = self.bce(dec_generated_volumes, local_labels) * 10
+
+                encoder_loss = self.lossfn(dec_generated_volumes, local_labels) * 10
 
                 if self.config.pix2vox_refiner:
                     ref_generated_volumes = self.refiner(dec_generated_volumes)
-                    refiner_loss = self.bce(ref_generated_volumes, local_labels) * 10
+                    refiner_loss = self.lossfn(ref_generated_volumes, local_labels) * 10
                 else:
                     refiner_loss = encoder_loss
 
@@ -265,7 +266,7 @@ class ReconstructionPipeline(BasePipeline):
 
             self.validate_or_test(epoch,self.encoder,self.decoder,self.refiner,self.merger,self.encoder_solver,self.decoder_solver,self.refiner_solver,self.merger_solver)
 
-            if epoch % self.config.save_mesh == 0:
+            if epoch % 5 == 0:
                 self.realdata_test(epoch=epoch)
 
     def validate_or_test(self,epoch,encoder=None,
@@ -332,17 +333,17 @@ class ReconstructionPipeline(BasePipeline):
                     generated_volume = merger(raw_features, generated_volume)
                 else:
                     generated_volume = torch.mean(generated_volume, dim=1)
-                encoder_loss = self.bce(generated_volume, labels) * 10
+                encoder_loss = self.lossfn(generated_volume, labels) * 10
 
                 if self.config.pix2vox_refiner:
                     generated_volume = refiner(generated_volume)
-                    refiner_loss = self.bce(generated_volume, labels) * 10
+                    refiner_loss = self.lossfn(generated_volume, labels) * 10
                 else:
                     refiner_loss = encoder_loss
 
                 outputs = generated_volume
 
-                bceloss + self.bce(outputs, labels)
+                bceloss + self.lossfn(outputs, labels)
                 dl = self.dice(outputs, labels)
                 ds = self.dice.get_dice_score()
                 jaccardIndex += self.iou(outputs, labels)
@@ -647,7 +648,7 @@ class ReconstructionPipeline(BasePipeline):
 
                 outputs = generated_volume
 
-                bceloss + self.bce(outputs, labels)
+                bceloss + self.lossfn(outputs, labels)
                 dl = self.dice(outputs, labels)
                 ds = self.dice.get_dice_score()
                 jaccardIndex += self.iou(outputs, labels)
