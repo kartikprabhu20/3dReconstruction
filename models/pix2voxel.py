@@ -77,8 +77,7 @@ class Encoder(BaseModel):
 class Decoder(BaseModel):
     def __init__(self, config):
         super(Decoder, self).__init__()
-        self.config = config
-        self.least_voxel = int(self.config.voxel_size/16)
+        self.cfg = config
 
         # Layer Definition
         self.layer1 = torch.nn.Sequential(
@@ -101,6 +100,19 @@ class Decoder(BaseModel):
             torch.nn.BatchNorm3d(8),
             torch.nn.ReLU()
         )
+
+        self.layer4_1 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(8, 8, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(8),
+            torch.nn.ReLU()
+        )
+
+        self.layer4_2 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(8, 8, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(8),
+            torch.nn.ReLU()
+        )
+
         self.layer5 = torch.nn.Sequential(
             torch.nn.ConvTranspose3d(8, 1, kernel_size=1),
             torch.nn.Sigmoid()
@@ -121,7 +133,7 @@ class Decoder(BaseModel):
         for features in image_features:
             # print("features")
             # print(features.shape)
-            gen_volume = features.view(-1, 2048, self.least_voxel, self.least_voxel, self.least_voxel)
+            gen_volume = features.view(-1, 2048, 2, 2, 2)
             # print(gen_volume.shape)
             # print(gen_volume.size())   # torch.Size([batch_size, 2048, 2, 2, 2])
             gen_volume = self.layer1(gen_volume)
@@ -131,6 +143,12 @@ class Decoder(BaseModel):
             gen_volume = self.layer3(gen_volume)
             # print(gen_volume.size())   # torch.Size([batch_size, 32, 16, 16, 16])
             gen_volume = self.layer4(gen_volume)
+
+            if self.cfg.voxel_size == 64 or self.cfg.voxel_size == 128:
+                gen_volume = self.layer4_1(gen_volume)
+            if self.cfg.voxel_size == 128:
+                gen_volume = self.layer4_2(gen_volume)
+
             raw_feature = gen_volume
             # print(gen_volume.size())   # torch.Size([batch_size, 8, 32, 32, 32])
             gen_volume = self.layer5(gen_volume)
@@ -150,9 +168,8 @@ class Decoder(BaseModel):
 class Refiner(BaseModel):
     def __init__(self, config):
         super(Refiner, self).__init__()
-        self.config = config
+        self.cfg = config
         self.voxel_size = config.voxel_size
-        self.least_size = int(self.voxel_size/8)  # self.voxel_size divideby 2 divideby 2 divideby 2
         # Layer Definition
         self.layer1 = torch.nn.Sequential(
             torch.nn.Conv3d(1, 32, kernel_size=4, padding=2),
@@ -172,6 +189,21 @@ class Refiner(BaseModel):
             torch.nn.LeakyReLU(0.2),
             torch.nn.MaxPool3d(kernel_size=2)
         )
+
+        self.layer3_1 = torch.nn.Sequential(
+            torch.nn.Conv3d(128, 128, kernel_size=4, padding=2),
+            torch.nn.BatchNorm3d(128),
+            torch.nn.LeakyReLU(0.2),
+            torch.nn.MaxPool3d(kernel_size=2)
+        )
+
+        self.layer3_2 = torch.nn.Sequential(
+            torch.nn.Conv3d(128, 128, kernel_size=4, padding=2),
+            torch.nn.BatchNorm3d(128),
+            torch.nn.LeakyReLU(0.2),
+            torch.nn.MaxPool3d(kernel_size=2)
+        )
+
         self.layer4 = torch.nn.Sequential(
             torch.nn.Linear(8192, 2048),
             torch.nn.ReLU()
@@ -185,6 +217,19 @@ class Refiner(BaseModel):
             torch.nn.BatchNorm3d(64),
             torch.nn.ReLU()
         )
+
+        self.layer6_1 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(128, 128, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(128),
+            torch.nn.ReLU()
+        )
+
+        self.layer6_2 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(128, 128, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(128),
+            torch.nn.ReLU()
+        )
+
         self.layer7 = torch.nn.Sequential(
             torch.nn.ConvTranspose3d(64, 32, kernel_size=4, stride=2, padding=1),
             torch.nn.BatchNorm3d(32),
@@ -209,12 +254,23 @@ class Refiner(BaseModel):
         volumes_4_l = self.layer3(volumes_8_l)
         # print(volumes_4_l.size())        # torch.Size([batch_size, 128, 4, 4, 4])
 
-        flatten_features = self.layer4(volumes_4_l.view(-1, 128 * self.least_size * self.least_size * self.least_size))
+        if self.cfg.voxel_size == 64 or self.cfg.voxel_size == 128:
+            volumes_4_l = self.layer3_1(volumes_4_l)
+        if self.cfg.voxel_size == 128:
+            volumes_4_l = self.layer3_2(volumes_4_l)
+
+        flatten_features = self.layer4(volumes_4_l.view(-1, 8192))
         # print(flatten_features.size())   # torch.Size([batch_size, 2048])
         flatten_features = self.layer5(flatten_features)
         # print(flatten_features.size())   # torch.Size([batch_size, 8192])
-        volumes_4_r = volumes_4_l + flatten_features.view(-1, 128, self.least_size, self.least_size, self.least_size)
+        volumes_4_r = volumes_4_l + flatten_features.view(-1, 128, 4, 4, 4)
         # print(volumes_4_r.size())        # torch.Size([batch_size, 128, 4, 4, 4])
+
+        if self.cfg.voxel_size == 64 or self.cfg.voxel_size == 128:
+            volumes_4_r = self.layer6_1(volumes_4_r)
+        if self.cfg.voxel_size == 128:
+            volumes_4_r = self.layer6_2(volumes_4_r)
+
         volumes_8_r = volumes_8_l + self.layer6(volumes_4_r)
         # print(volumes_8_r.size())        # torch.Size([batch_size, 64, 8, 8, 8])
         volumes_16_r = volumes_16_l + self.layer7(volumes_8_r)

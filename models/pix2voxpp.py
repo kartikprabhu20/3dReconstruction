@@ -96,6 +96,19 @@ class Decoder(torch.nn.Module):
             torch.nn.BatchNorm3d(8),
             torch.nn.ReLU()
         )
+
+        self.layer4_1 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(8, 8, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(8),
+            torch.nn.ReLU()
+        )
+
+        self.layer4_2 = torch.nn.Sequential(
+            torch.nn.ConvTranspose3d(8, 8, kernel_size=4, stride=2, padding=1),
+            torch.nn.BatchNorm3d(8),
+            torch.nn.ReLU()
+        )
+
         self.layer5 = torch.nn.Sequential(
             torch.nn.ConvTranspose3d(8, 1, kernel_size=1),
             torch.nn.Sigmoid()
@@ -117,6 +130,12 @@ class Decoder(torch.nn.Module):
             gen_volume = self.layer3(gen_volume)
             # print(gen_volume.size())   # torch.Size([batch_size, 32, 16, 16, 16])
             gen_volume = self.layer4(gen_volume)
+
+            if self.cfg.voxel_size == 64 or self.cfg.voxel_size == 128:
+                gen_volume = self.layer4_1(gen_volume)
+            if self.cfg.voxel_size == 128:
+                gen_volume = self.layer4_2(gen_volume)
+
             raw_feature = gen_volume
             # print(gen_volume.size())   # torch.Size([batch_size, 8, 32, 32, 32])
             gen_volume = self.layer5(gen_volume)
@@ -228,6 +247,21 @@ class Refiner(torch.nn.Module):
             torch.nn.LeakyReLU(0.2),
             torch.nn.MaxPool3d(kernel_size=2)
         )
+
+        # self.layer3_1 = torch.nn.Sequential(
+        #     torch.nn.Conv3d(128, 128, kernel_size=4, padding=2),
+        #     torch.nn.BatchNorm3d(128),
+        #     torch.nn.LeakyReLU(0.2),
+        #     torch.nn.MaxPool3d(kernel_size=2)
+        # )
+        #
+        # self.layer3_2 = torch.nn.Sequential(
+        #     torch.nn.Conv3d(128, 128, kernel_size=4, padding=2),
+        #     torch.nn.BatchNorm3d(128),
+        #     torch.nn.LeakyReLU(0.2),
+        #     torch.nn.MaxPool3d(kernel_size=2)
+        # )
+
         self.layer4 = torch.nn.Sequential(
             torch.nn.Linear(8192, 2048),
             torch.nn.ReLU()
@@ -236,6 +270,19 @@ class Refiner(torch.nn.Module):
             torch.nn.Linear(2048, 8192),
             torch.nn.ReLU()
         )
+
+        # self.layer6_1 = torch.nn.Sequential(
+        #     torch.nn.ConvTranspose3d(128, 128, kernel_size=4, stride=2, padding=1),
+        #     torch.nn.BatchNorm3d(128),
+        #     torch.nn.ReLU()
+        # )
+        #
+        # self.layer6_2 = torch.nn.Sequential(
+        #     torch.nn.ConvTranspose3d(128, 128, kernel_size=4, stride=2, padding=1),
+        #     torch.nn.BatchNorm3d(128),
+        #     torch.nn.ReLU()
+        # )
+
         self.layer6 = torch.nn.Sequential(
             torch.nn.ConvTranspose3d(128, 64, kernel_size=4, stride=2, padding=1),
             torch.nn.BatchNorm3d(64),
