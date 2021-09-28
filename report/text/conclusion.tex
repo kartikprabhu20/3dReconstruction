@@ -1,7 +1,110 @@
 \chapter{\iftoggle{german}{Fazit}{Conclusion}}\label{ch:conclusion}
 
+In this chapter we summarize~\ref{sec:Summary} the entire thesis and answer the research questions discussed in~\ref{sec:goal}.
+We will further discuss the limitation of the work indulged in this thesis in ~\ref{sec:limitations-of-game-engines2}.
+We will also mention possible future scopes and ideas which we came across while conducting this thesis.
 
-\section{\iftoggle{german}{Zukünftige Arbeiten}{Summary}}
 
-\section{\iftoggle{german}{Zukünftige Arbeiten}{Limitations of game engines}}
-\section{\iftoggle{german}{Zukünftige Arbeiten}{Future Work}}
+\section{\iftoggle{german}{Zukünftige Arbeiten}{Summary}}\label{sec:Summary}
+
+In chapter~\ref{ch:introduction} we describe the main aim of the thesis to create a synthetic dataset that can be used for 3D reconstruction tasks
+for furniture as there are very limited number of dataset open to researchers.
+We also explained why synthetic datasets are important and how it will be handy for future tasks.
+We also introduced game engines and how we intend to use the Unity framework in our pipeline.
+
+In chapter~\ref{ch:related_work}, we provided an overview of existing proclaimed photorealistic datasets along their use cases.
+These datasets were further used in survey to verify the photorealism from human perspective the images for which can be seen in ~\ref{fig:photorealistic images comparison}.
+The tools to create synthetic datasets was discussed in ~\ref{subsec:tools-to-create-synthetic}, where in we discussed the underlying framework used build the tool.
+Then we came across deep learning techniques and models used for 3D reconstruction with different representations.
+In the same section we discussed some similar works where in synthetic datasets were used to enhance the performance of real dataset by techniques like fine-tuning and mixed training.
+
+In chapter~\ref{ch:concept}, we discussed about the benchmark datasets Pix3D~\cite{pix3d} and SceneNet~\cite{McCormac:etal:ICCV2017}, and how we use them in our synthetic dataset generation pipeline.
+We then discussed hot unity game engine be used as a framework to domain randomisation and what types of randomisation can be used to generate synthetic dataset.
+Then came the introduction of S2R:3DFREE dataset and its distribution.
+We then moved to deep learning aspect of the thesis and discussed baseline models Pix2Vox and Pix2Vox++ used for 3D reconstruction task.
+
+For implementation, we used Unity game engine, and the application details were provided in chapter~\ref{ch:implementation}.
+Using different modes of operation and importing models from Pix3D and SceneNet, the pipeline can create an ersatz environment for our dataset.
+We then discussed domain randomisation achieved from camera viewpoints, textures , lighting and shadows and replacing category objects.
+The snapshots were taken by using Unity technologies' library called ML-ImageSynthesis which provides option to generate 2.5D images, i.e. Depth, normals, flows, segmentation.
+Then we see the Deep Learning framework and its configurations.
+
+We dedicate chapter~\ref{ch:evaluation} for experiments and evaluation.
+We evaluate the photorealism of datasets in comparison with real dataset(Pix3D) from a survey conducted, which answers our first research question:
+\textbf{\emph{Are game engines a good medium to create photorealistic synthetic dataset?}} From the results of survey as discussed in~\ref{subsec:survey-results},
+we came to a conclusion that the proposed dataset using unity game engine, although comparable with other automated dataset collection,
+still lags the photorealism from real dataset or even the manually created datasets by architects.
+The S2R:3DFREE outperformed only some synthetic dataset when it came to individual rating, but was in top 5 out of 9 datasets while having a comparative study.
+
+For our second research question: \textbf{\emph{Can Ersatz environment from a game engine like Unity replace real data for training in 3d reconstruction task?}}
+We trained baseline models for 3D reconstruction task, with real dataset and also with synthetic dataset and tested them on real dataset.
+In section~\ref{sec:baseline}, we see that there is a drop of around 14\% in performance when we use only sythetic dataset.
+
+To investigate for our third research question: \textbf{\emph{To what extent can the performance of model Pre-trained with real dataset improved with Synthetic dataset from game engine with size of synthetic dataset being
+10\todo{(depends on how much data is generated)} times that of real dataset?}}, we tried domain adaptation techniques.
+When we fine-tuned a model pretrained on synthetic dataset using real dataset, we see an increase of 1.36\% to 2.41\%.
+We further investigate the domain adaptation, by mix training the models with both synthetic and real dataset with different ratios and see a further 3\% improvement in performance.
+To conclude, synthetic data does improve the performance on top of real data for 3D reconstruction task.
+
+As stated in~\ref{sec:contributions}, we have conducted a comprehensive study on mixed training with different ratios and comparing it with fine-tuning or transfer learning approach.
+We saw that mixed training performed better than fine-tuning of the model.
+A study was also conducted to see the domain randomisation by using only the chair dataset with different parameters of randomisation.
+Contrary to our initial hypothesis, adding more randomisation decreased the performance of the models as it gave the maximum performance with the dataset was textureless and with constant light as seen in ~\ref{sec:ablation-study-on-chairs}.
+We now hypothesis this result is because of limited dataset created, and the limited real data present to evaluation, meaning the variance of real dataset might be limited and additional randomisation is not helping the cause.
+
+\section{\iftoggle{german}{Zukünftige Arbeiten}{Limitations}}\label{sec:limitations-of-game-engines2}
+
+In this section we discuss the limitations observed while conducting experiments for the thesis.
+
+\subsection{Unity Game Engine}\label{subsec:unity-game-engine}
+Unity game engine does not give control to the user for GPU usage.
+It is entirely under the control of framework and the user can just hope for faster performance.
+We observed that it took around 8hours to create a 3000 images using Ml-Image Synthesis library on a CPU.
+Comparing this to Blenderproc, which takes 20 minutes for a single image on CPU, but proclaimed to create 3000 images in 1 hour with GPU usage.
+Blenderproc has python as its underlying framework and hence can access GPUs easily.
+
+\subsection{Configuring synthetic dataset generation pipeline}\label{subsec:configuring-synthetic-dataset-generation-pipeline}
+We had to try different configuration to try to get optimum solution manually.
+And since the shader layers used by unity are not differentiable, we can not train a model to optimise the input parameters like
+light intensity, light color, darkness of shadow, texture colors,texture brightness, etc.
+These parameters are randomised and not fine-tuned to increase the performance.
+Though blenderproc does not do this, since it uses python, users may try to optimise these parameters.
+
+\subsection{High Definition Render Pipeline}\label{subsec:high-definition-render-pipeline}
+Unity has introduced 'High Definition Render Pipeline'(HDRP) which provides more realistic lighting and natural looking scenes.
+But this pipeline is not cross-compatible and the models/assets which are not generated for HDRP do not get rendered, as shown in figure~\ref{fig:hdrp}.
+The shaders are not made public either, and hence can not be assigned to models at runtime.
+To use these pipeline we will have to manually modify the models and make them compatible.
+
+\section{\iftoggle{german}{Zukünftige Arbeiten}{Future Scope}}\label{sec:Future_scope}
+
+In this section we discuss future prospects of the generated dataset, and the ideas which were not implemented.
+
+\subsection{Domain adaptation using Generative models}
+A study can be conducted to see the affects of domain adaptation or style transfer using Generative models like CyceleGAN~\ref{CycleGAN2017} to see if the performance increases after conversion.
+An attempt was made by creating a pipeline for CycelGAN, but we did not get favourable style translation.
+Unity provides a library to inference Deep Neural Networks, which can be integrated with the camera for style transfer.
+In this case, the user need not fine-tune the configuration for generating images and only needs to provide few reference indoor room reference images for style optimisation.
+
+\subsection{A study on Style transfer with G-buffers}
+The proposed S2R:3DFREE dataset provides with various G-buffers like depth, normal, semantic and instance segmentations and optical flows.
+These buffer images can be used to enhance the photorealism of images as proved in ~\cite{Richter_2021}.
+In the cited publication, the authors use G-buffer from GTA-V game and enhance the photorealism which can be used for training autonomous vehicles.
+The dataset generated in this thesis can also be used in similar way to train autonomous bots for indoor environment.
+
+\subsection{Integrating the framework with Unity Cloud}
+Unity has provided the functionality of integrating simulations on Amazon Web Service, and hence can be run on cloud.
+By achieving this, the user will not have to worry about running the data generator for days or weeks on local machine.
+Though, running models on AWS will come at a cost.
+
+\subsection{Other forms of representations}
+In this thesis, we focused to work on Voxel representation as indicated in~\ref{sec:Volumetric representation}.
+It would be interesting to check if the performance increases significantly if the model representation is changed to mesh or pointclouds.
+
+\subsection{Increasing the synthetic dataset}
+Though we have increased the dataset size by creating synthetically generated images.
+The quantity is still limited.
+For domain randomisation to actually increase the performance we might need a very large dataset.
+Another dataset can be created using the same framework to check if larger number of images are needed for domain randomisation to show its impact.
+
+

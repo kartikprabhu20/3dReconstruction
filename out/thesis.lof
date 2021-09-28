@@ -1,16 +1,16 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A graph showing how synthetic dataset will evolve overtime. The research graph shows that synthetic dataset will overshadow the existing real dataset ~\cite {gartnerreport}. Source: Research article from Gartner on "Synthetic Data Is the Future of AI" ~\cite {gartnerreport}\relax }}{2}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces 3D representation of Standford bunny model.(left to right) Point cloud, voxel and mesh ~\cite {Hoang2019ADL} \relax }}{4}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces A graph showing how synthetic dataset will evolve overtime. The research graph shows that synthetic dataset will overshadow the existing real dataset~\cite {gartnerreport}. Source: Research article from Gartner on "Synthetic Data Is the Future of AI"~\cite {gartnerreport}\relax }}{2}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces 3D representation of Standford bunny model.(left to right) Point cloud, voxel and mesh~\cite {Hoang2019ADL} \relax }}{4}{figure.caption.12}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A collection of photorealistic synthetic datasets. The first column of each row indicates the dataset name followed by randomly selected images from the same dataset.\relax }}{10}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.\relax }}{11}{figure.caption.14}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Distribution of pix3D~\cite {pix3d} images(left), unique models(right)\relax }}{16}{figure.caption.15}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Sample RGB images from pix3D\relax }}{17}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Network architecture for pix2vox~\cite {Xie_2019}\relax }}{20}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Network architecture for pix2vox~\cite {Xie_2019}\relax }}{21}{figure.caption.17}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Network architecture for pix2vox++~\cite {Xie_2020}\relax }}{21}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces A survey conducted by ~\cite {Han2021ImageBased3O}, proves that Pix2Vox is considerably a good 3D reconstruction model. {\color {red} \emph {replace this figure with better one}}\relax }}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces A survey conducted by~\cite {Han2021ImageBased3O}, proves that Pix2Vox is considerably a good 3D reconstruction model. {\color {red} \emph {replace this figure with better one}}\relax }}{21}{figure.caption.19}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Automated pipeline for image generatiion with different blocks and external libraries.\relax }}{23}{figure.caption.20}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office\relax }}{25}{figure.caption.21}%
@@ -27,14 +27,18 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces The figure represents distribution for Section 2 of survey. The participants were asked to rate the image based on photorealism(1 being the least photorealistic).\relax }}{36}{figure.caption.31}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces The figure represents average rating given by the participant to each of the datasets in section 2 of the survey.\relax }}{36}{figure.caption.32}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces The figure represents distribution for Section 3 of survey. The participants were asked to rank the images based on photorealism(1 being the best) by comparing images from all 9 datasets.\relax }}{37}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces The figure represents box plot for section 3. The Green horizontal line within the box indicates median, the blue dotted line indicates mean.\relax }}{37}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces T-SNE visualisation for images from various photo-realistic synthetic dataset. Pix3d and S2R3DFREE is highlighted with bolder colors.\relax }}{38}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Samples of images from real and synthetic datasets.\relax }}{40}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Samples of images used for ablation study on chairs with different parameters of domain randomisation.\relax }}{41}{figure.caption.37}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Bar plot for the IoU for baseline models(Pix2Vox++ and Pix2Vox) trained on dataset mentioned in ~\ref {sec:datasets}. \relax }}{42}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Bar plot for the IoU for baseline models(Pix2Vox++ and Pix2Vox) trained on synthetic and fine-tuned with real dataset. \relax }}{43}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Bar plot for the IoU for baselines trained on different ratios of synthetic and real dataset\relax }}{43}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Bar plot for the IoU for baseline trained on chair dataset with different parameters and tested on real dataset.\relax }}{44}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Bar plot for the IoU for baseline trained by mixing chair dataset from real and synthetic dataset with ratio of 50\%\relax }}{45}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces The figure represents box plot for section 3. The Green horizontal line within the box indicates median, the blue dotted line indicates mean.\relax }}{38}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces T-SNE visualisation for images from various photo-realistic synthetic dataset. Pix3d and \gls {free} is highlighted with bolder colors.\relax }}{39}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces T-SNE visualisation for chair images from Pix3d and \gls {free} dataset.\relax }}{40}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces T-SNE visualisation for images from individual photo-realistic synthetic dataset compared with Pix3D latent space. (Left to right, top to bottom) Openrooms, SceneNet, Blenderproc, \gls {ai2thor}, \gls {front}, Hyperism, \gls {free} in blue; compared with Pix3D in orange.\relax }}{41}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces T-SNE visualisation for chair images from Pix3d and \gls {free} dataset.\relax }}{43}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces T-SNE visualisation for images from individual synthetic chair dataset with different domain randomisation parameter compared with Pix3D chair latent space. (Left to right, top to bottom) Textureless, Textureless with light, Textured, Textured with light, Multi-Object\relax }}{44}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Samples of images from real and synthetic datasets.\relax }}{45}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Samples of images used for ablation study on chairs with different parameters of domain randomisation.\relax }}{45}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Bar plot for the IoU for baseline models(Pix2Vox++ and Pix2Vox) trained on dataset mentioned in~\ref {sec:datasets}. \relax }}{46}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Bar plot for the \gls {iou} for baseline models(Pix2Vox++ and Pix2Vox) trained on synthetic and fine-tuned with real dataset. \relax }}{47}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Bar plot for the \gls {iou} for baselines trained on different ratios of synthetic and real dataset\relax }}{48}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Bar plot for the \gls {iou} for baseline trained on chair dataset with different parameters and tested on real dataset.\relax }}{49}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Bar plot for the \gls {iou} for baseline trained by mixing chair dataset from real and synthetic dataset with ratio of 50\%\relax }}{50}{figure.caption.47}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Sample images for models rendered in High Definition Render Pipeline of Unity\relax }}{50}{figure.caption.44}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Sample images for models rendered in High Definition Render Pipeline of Unity\relax }}{56}{figure.caption.49}%

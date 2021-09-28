@@ -11,14 +11,14 @@ Synthetic data can be defined as data created artificially using computer simula
 These data can be created in abundance and hence are frontrunners for Deep Learning training.
 Synthetic approaches are also means of getting data which might be difficult to collect and annotate in real world.
 Further more, companies have realised that synthetic data are a necessity not just for the task which are inconvenient to annotate, but also for improving the performance of existing models.
-In a research article published by Gartner ~\cite{gartnerreport}, they claim that by 2030, synthetic datasets will overshadow a real dataset in all domains.
-The progression of synthetic data generation is predicted to be as shown in ~\ref{fig:Gartner research on synthetic dataset}.
+In a research article published by Gartner~\cite{gartnerreport}, they claim that by 2030, synthetic datasets will overshadow a real dataset in all domains.
+The progression of synthetic data generation is predicted to be as shown in~\ref{fig:Gartner research on synthetic dataset}.
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-chart_2}
-    \caption{A graph showing how synthetic dataset will evolve overtime. The research graph shows that synthetic dataset will overshadow the existing real dataset ~\cite{gartnerreport}.
-    Source: Research article from Gartner on "Synthetic Data Is the Future of AI" ~\cite{gartnerreport}}
+    \caption{A graph showing how synthetic dataset will evolve overtime. The research graph shows that synthetic dataset will overshadow the existing real dataset~\cite{gartnerreport}.
+    Source: Research article from Gartner on "Synthetic Data Is the Future of AI"~\cite{gartnerreport}}
     \label{fig:Gartner research on synthetic dataset}
 \end{figure}
 
@@ -27,7 +27,7 @@ It has now entered the realm of Three-Dimension.
 An image is a 3D objects projects onto a 2D-surface.
 While doing so, some data from higher dimension is being lost in lower dimension.
 This inverse ability to reconstruct 3D objects from 2D images has a wide scale application in computer vision and robotics.
-Tasks like human body shapes and face reconstructions ~\cite{deng2019accurate,Guo20173DFaceNetRD,9210569,richardson20163d,Richardson2017LearningDF},
+Tasks like human body shapes and face reconstructions~\cite{deng2019accurate,Guo20173DFaceNetRD,9210569,richardson20163d,Richardson2017LearningDF},
 3D-Scene reconstructions~\cite{Denninger20203DSR,Song2017SemanticSC,LiSilhouetteAssisted3O,Shin20193DSR}, generic object mesh reconstruction with textures are some of the advancements we had over recent years.
 Here comes the challenge;3D data is not easy to collect.
 3D data is not just limited but also noisy and expensive to collect.
@@ -43,44 +43,44 @@ The pre-trained network is then trained over with the limited data available for
 In this case the features learnt from larger dataset is fine-tuned by overwriting few layers using small annotated dataset of a different domain.
 Domain adaptation is field of study in machine learning where the distribution of training data differs from testing or target distribution.
 One shallow approach is as mentioned above;
-re-weighting the network with testing data to adapt to the problem domain ~\cite{Li2017PredictionRF}.
+re-weighting the network with testing data to adapt to the problem domain~\cite{Li2017PredictionRF}.
 \todo{add more citations for domain adaptation}.
 "Deep domain adaptation methods leverage deep networks to learn more transferable representations by embedding domain adaptation in the pipeline of
-deep learning" ~\cite{DBLP:journals/corr/abs-1802-03601}
+deep learning"~\cite{DBLP:journals/corr/abs-1802-03601}.
 For this thesis, domain adaptation is relevant as synthetic dataset might not represent the real or target domain, which can lead to drop in performance.
 
 Domain randomisation on the other hand, is improving data quality such that the target domain distribution is included in the training domain.
-This is mainly used to bridge the 'reality gap' as termed in ~\cite{tobin2017domain}, between simulated environment and real images.
+This is mainly used to bridge the 'reality gap' as termed in~\cite{tobin2017domain}, between simulated environment and real images.
 This is achieved by randomising the rendering of objects in the synthetic data.
 The key concept here is that by rendering objects with large variance, the real-world distribution will appear to be just a variation in the dataset.
 Some features that can be randomised in a synthetic dataset are textures, brightness, shadows, camera settings, object pose, etc.
-This will be further discussed in chapter ~\ref{ch:concept}.
+This will be further discussed in chapter~\ref{ch:concept}.
 
 
 \section{Volumetric representations of 3D shapes} \label{sec:Volumetric representation}
 The universal representation of images in computer graphics is via pixels.
 But unlike 2D, 3D data can be represented in various formats like voxels, mesh and point clouds.
-A sample of these 3 formats is shown in ~\ref{fig:3d representation}.
+A sample of these 3 formats is shown in~\ref{fig:3d representation}.
 Each of the representation have its own sets of advantages and disadvantages.
 Voxels, which is short for Volumetric Pixels is a 3D-grid of pixels of constant size.
-As indicated in ~\cite{li2016fpnn}, the main advantage of voxels is that Convolution Neural Networks can be easily applied to 3-Dimensions as in 2-Dimensions.
+As indicated in~\cite{li2016fpnn}, the main advantage of voxels is that Convolution Neural Networks can be easily applied to 3-Dimensions as in 2-Dimensions.
 Since most of the 3D geometry is surface based, it can be wasteful and computationally expensive.
 Mesh is composed of vertices, edges and faces in 3D space that indicate the formation of 3D objects.
 This form of representation is far more compact at granular level depending on the resolution.
 Point clouds on the other hand are collection of 3D points with (x,y,z) coordinates on the surface of the object.
 The collection of points determines detailing the 3D object representation.
-In both these cases CNN is not directly applicable.
+In both these cases \gls{cnn} is not directly applicable.
 In this thesis we will be dealing with a voxel based models as the focus is on performance of synthetic data rather than the model, or the 3d representation itself.
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepresentation}
-    \caption{3D representation of Standford bunny model.(left to right) Point cloud, voxel and mesh ~\cite{Hoang2019ADL}
+    \caption{3D representation of Standford bunny model.(left to right) Point cloud, voxel and mesh~\cite{Hoang2019ADL}
     \label{fig:3d representation}}
 \end{figure}
 
 \section{GameEngines}\label{sec:gameengines}
-As per ~\cite{10.5555/983334}, game engine is defined as “A series of modules and interfaces that allows a
+As per~\cite{10.5555/983334}, game engine is defined as “A series of modules and interfaces that allows a
 development team to focus on product gameplay content, rather than technical content”.
 In layman term game engines are software used for development of games.
 Unreal Engine, Unity, GameMaker, Amazon Lumeryard and CryEngine are some popular game engines in modern times.
@@ -97,7 +97,7 @@ Game engines aim to make photorealism at highest level with least possible rende
 3D reconstruction is of great significance to understand scene and to cross the 2D realm.
 But the task is not trivial, considering the input is still a Two-dimensional RGB image.
 It is even more challenging since obtaining new data is expensive and time-consuming.
-The 3D reconstruction field has datasets like ShapeNet ~\cite{chang2015shapenet}, 3D-Front~\cite{Fu20203DFRONT3F}.
+The 3D reconstruction field has datasets like ShapeNet~\cite{chang2015shapenet}, 3D-Front~\cite{Fu20203DFRONT3F}.
 But there are no corresponding real-images to check if the model will work in real world scenarios.
 Also searching for real-world examples or creating a set-up scene and then labelling the images manually can lead to human mistakes resulting in wrong labels.
 A solution to this problem is automating the task of generating synthetic data which can produce pixel-perfect annotations.
@@ -115,17 +115,11 @@ The following research questions will be answered:
     \item Are game engines a good medium to create photorealistic synthetic dataset?
 
     This will be evaluated with a survey to comparing images from real dataset, generate dataset and other proclaimed photorealistic datasets.
-%    \todo{\begin{enumerate}
-%        \item Experiment: Conduct a survey on real vs synthetic. Use dataset like Pix3d(real), blender proc, unity, 3d-front (synthetic)
-%        \item Depending on the survey, the most real dataset will be considered as baseline and other datasets will be compared to it.
-%    \end{enumerate} }
+
     \item Can Ersatz environment from a game engine like Unity replace real data for training in 3d reconstruction task?
 
     Using the dataset created using Unity game engine, a single-view image to 3d reconstruction of furniture will be trained and tested on real image dataset.
 
-%    \todo{\begin{enumerate}
-%            \item Train on s2r:3dfree data, test on pix3d
-%        \end{enumerate}}
     \item To what extent can the performance of model Pre-trained with real dataset improved with Synthetic dataset from game engine,
             with size of synthetic dataset being 10\todo{(depends on how much data is generated)} times that of real dataset?
 
@@ -133,22 +127,11 @@ The following research questions will be answered:
     Further an ablation study on chair dataset to check the affects domain randomisation parameters.
     This will also answer whether augmenting images with domain randomisation with real data during training improve the performance?
 
-%    \todo{\begin{enumerate}
-%            \item pretrained on pix3d, continue training on s2r:3dfree
-%            \item Mix training
-%    \end{enumerate}}
-    \item \todo{(optional: Can the photorealism of synthetic image further be enhanced using domain adaptation/GAN techniques?)}
+%    \item \todo{(optional: Can the photorealism of synthetic image further be enhanced using domain adaptation/GAN techniques?)}
 \end{enumerate}
 
-%\todo{Overall dataset experiments:
-%    \begin{enumerate}
-%          \item Ablation study on chairs, conduct all above mentioned experiments only on chairs as it has highest number of 3d models available
-%          \item Finetune chair dataset and check if dataset can be improved to get better results
-%          \item Scoremaps on voxel output to see if the probabilty of voxel is high in required region and to see which region is least to give possible explaination fo low IOU
-%\end{enumerate}}
-
 \section{Contributions of this Thesis}\label{sec:contributions}
-In answering the research questions formulated in ~\ref{sec:goal}, this thesis contributes the following:
+In answering the research questions formulated in~\ref{sec:goal}, this thesis contributes the following:
 
 \begin{itemize}
     \item A unity based framework to create a synthetic dataset with domain randomisation.

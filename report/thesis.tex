@@ -32,14 +32,26 @@
 % Here, you can define acronyms for consistent usage in your text like this:
 % \acro{key}{XYZ}{Correctly Capitalized Acronym}{all lowercase acronym}
 % cite with \gls{key}, \Gls{key} (at the start of a sentence), \glspl{key} (plural form), \gls{key} (plural at start of sentence)
-% Only the acronyms you actually use in the text are shown in the list of acronyms.
-\newcommand{\acro}[4]{\newacronym[description=#3]{#1}{#2}{#4}}
-\newcommand{\makeacronyms}{
-    \acro{spl}{SPL}{Software Product Line}{software product line}
-    \acro{fol}{FOL}{First-Order Logic}{first-order logic}
-    \acro{slr}{SLR}{Systematic Literature Review}{systematic literature review}
-    % ...
-}
+%% Only the acronyms you actually use in the text are shown in the list of acronyms.
+%\newcommand{\acro}[4]{\newacronym[description=#3]{#1}{#2}{#4}}
+%\newcommand{\makeacronyms}{
+%    \acro{3dfree}){S2R:3DFREE}{Synth2Real : 3D-Furniture Reconstruction in Ersatz Environment}
+%    \acro{mse}{MSE}{Mean Squared Error}
+%    \acro{fid}{FID}{Fréchet Inception Distance}
+%    % ...
+%}
+
+\newacronym{mse}{MSE}{Mean Squared Error}
+\newacronym{free}{S2R:3DFREE}{Synth2Real : 3D-Furniture Reconstruction in Ersatz Environment}
+\newacronym{fid}{FID}{Fréchet Inception Distance}
+\newacronym{front}{3DFRONT}{3D Furnished Rooms with layOuts and semaNTics}
+\newacronym{ai2thor}{AI2THOR}{Artificial Intelligence to The House Of inteRactions}
+\newacronym{front}{3DFRONT}{3D Furnished Rooms with layOuts and semaNTics}
+\newacronym{rnn}{RNN}{Recurrent Neural Networks}
+\newacronym{cnn}{CNN}{Convolutional Neural Networks}
+\newacronym{vgg}{VGG}{Visual Geometry Group}
+\newacronym{resnet}{ResNet}{Residual neural network}
+\newacronym{iou}{IoU}{Intersection over Union}
 
 % For some theses a list of symbols can be nice. For example usage, see below.
 \newcommand{\category}[3]{\newglossaryentry{_#2}{type=symbol, name={#3}, description={}, sort={#1}}}

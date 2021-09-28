@@ -7,7 +7,7 @@ The First step of the application is to import existing .obj files for 3D models
 These rooms and furniture models can be randomly textured and placed.
 In the final step, the main camera is used for taking snapshots of the scene.
 Along with RGB images, depth maps, normals, semantic segmentation are also saved.
-The pipeline is as shown in figure ~\ref{fig:pipline process}.
+The pipeline is as shown in figure~\ref{fig:pipline process}.
 For automation based pipeline, the process loops through each step, while in manaual pipeline the user decides which block needs to be executed.
 
 \begin{figure}[!ht]
@@ -47,12 +47,12 @@ The multi-process uses Coroutines which is still a sequential operation and henc
 To our estimate even the Multi-threaded pipeline runs 1.5 times faster than Single room pipeline.
 
 \subsection{Scenes from SceneNet}\label{subsec:scenes-from-scenenet}
-For the rooms in our ersatz environments we utilize scenes provided by SceneNet ~\cite{McCormac:etal:ICCV2017}.
+For the rooms in our ersatz environments we utilize scenes provided by SceneNet~\cite{McCormac:etal:ICCV2017}.
 SceneNet has made 25 rooms available for public.
 We only use scenes of type Bedroom(11), Kitchen(1), Living room(6) and office(7).
-Figure ~\ref{fig:Scene Types} shows different types of scenes utilised to generate synthetic dataset.
+Figure~\ref{fig:Scene Types} shows different types of scenes utilised to generate synthetic dataset.
 These scenes are further modified by adding few more objects of categories present in Pix3D, so that we get more variations in the dataset.
-The distribution of furnitures matching the category of Pix3D in the scenes are as shown in figrue ~\ref{fig:distribution of scenes}.
+The distribution of furnitures matching the category of Pix3D in the scenes are as shown in figrue~\ref{fig:distribution of scenes}.
 Each scene is replaced for every snap we take for the dataset we create at random.
 
 \begin{figure}[!ht]
@@ -83,7 +83,7 @@ Similarly the height of the camera can be configured by the user.
 The camera is programed to always look towards the target object and will be changed if the object is not in the frame.
 This is acheived by passing a ray and determining if the center of the target object is visible.
 To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera poisiton and make sure that the camera is in front of the target object within an angle of 60 degrees.
-Figure ~\ref{fig:Camera viewpoints} shows samples of different camera view points on a constant object and scene.
+Figure~\ref{fig:Camera viewpoints} shows samples of different camera view points on a constant object and scene.
 
 \begin{figure}
     \centering
@@ -118,14 +118,14 @@ Sunlight is the default light settings in Unity.
 This is specifically effective when the room has windows forming more realistic shadows.
 In this case, we modulate the brightness and the angle at which the rays are emitted, which simulates different times of the day.
 Additional to these different types of light, we give ceilings the property of light with limited brightness as we observed that the entire room does not lit up for single light source.
-This is similar to what BlenderProc ~\cite{denninger2019blenderproc} does for all scenarios.
-Samples of different lighting condition and shadows with varying color is displayed in figure ~\ref{fig:Lighting and shadows}.
+This is similar to what BlenderProc~\cite{denninger2019blenderproc} does for all scenarios.
+Samples of different lighting condition and shadows with varying color is displayed in figure~\ref{fig:Lighting and shadows}.
 
 Another randomised entity is the skybox.
 Skybox acts as the outdoor scene for a given room.
 For each of the pipeline, skybox changes for every snap taken.
 This simulates different outdoor places and weather scenarios, thus providing more randomisation for rooms have open doors and windows.
-Samples for different skyboxes are as shown in figure ~\ref{fig:skybox samples}.
+Samples for different skyboxes are as shown in figure~\ref{fig:skybox samples}.
 
 %\begin{figure}
 %    \centering
@@ -159,15 +159,15 @@ The objects in the scene are renamed to standard objects seen in day-to-day life
 The textures are grouped together to these names as folder names.
 A total of 982 texture images with 58 regular object category, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement and roughness.
 This makes the textures more realistic.
-Distribution of top 40 texture cataegory used for randomisation of scenes is as shown in figure ~\ref{fig:Distribution of textures}, with categories of Pix3d having higher number of images.
+Distribution of top 40 texture cataegory used for randomisation of scenes is as shown in figure~\ref{fig:Distribution of textures}, with categories of Pix3d having higher number of images.
 Each scene is randomised for every snap taken of the target object.
-Samples of texture randomisation of background in the scene with target object in the focus is as shown in figure ~\ref{fig:Texture Randomisation}.
+Samples of texture randomisation of background in the scene with target object in the focus is as shown in figure~\ref{fig:Texture Randomisation}.
 Randomising outdoor environment is important in cases where we have open doors and windows.
 Unity provides a wrapper for scenes called skyboxes.
 This is something of a globe around the room under observation.
 This gives us varying outdoor environment for the scene with scenery at the horizon.
 We randomise 10 skyboxes to achieve this.
-Samples of skybox is as shown in figure ~\ref{fig:skybox samples}.
+Samples of skybox is as shown in figure~\ref{fig:skybox samples}.
 
 
 \begin{figure}
@@ -209,14 +209,14 @@ Samples of skybox is as shown in figure ~\ref{fig:skybox samples}.
 
 \subsection{Replacing target Objects}\label{subsec:replacing-target-objects}
 
-Once the room is setup using Scenenet ~\cite{McCormac:etal:ICCV2017} which contains objects from ShapeNet ~\cite{chang2015shapenet}, the objects are renamed such that it matches the classes for the Pix3D dataset.
+Once the room is setup using Scenenet~\cite{McCormac:etal:ICCV2017} which contains objects from ShapeNet~\cite{chang2015shapenet}, the objects are renamed such that it matches the classes for the Pix3D dataset.
 Since a given scene can have more than one category under observation, a single model is chosen randomly out of all the present models.
 The chosen model is replaced with a model in Pix3D of same category.
 In case the replaced model is intersecting with any other models in the scene, we make it invisible.
 Further, the camera checks if the centre of replaced model is in the frame.
 If not, the camera viewpoint is changed untill it satisfies the condition.
 After the snapshot is taken, the scene is reset to the original and next model is imported.
-Samples for replacing a target object from original scene from Scenenet is shown in figure ~\ref{fig:replace model}
+Samples for replacing a target object from original scene from Scenenet is shown in figure~\ref{fig:replace model}
 
 \begin{figure}
     \centering
@@ -231,7 +231,7 @@ Samples for replacing a target object from original scene from Scenenet is shown
 
 \subsection{Snapshots with ML-ImageSynthesis}\label{subsec:snapshots-with-ml-imagesynthesis}
 
-ML-ImageSynthesis ~\cite{imagesynthesis} is a library provided by Unity to support synthetic dataset creation.
+ML-ImageSynthesis~\cite{imagesynthesis} is a library provided by Unity to support synthetic dataset creation.
 It supports the following G-buffers Image segmentation, Object categorization, Optical flow, Depth, Normals, etc.
 G-buffers is basically a collective term to represent light-properties which are agregated to give the final rendering.
 In image segmentation each object is assigned unique color.
@@ -241,7 +241,7 @@ Depth is as the word suggests the distance of each pixel from the camera encoded
 Normals are color encoding based on the orientation of object with respect to the camera.
 For the snapshot, each of these properties is assigned a hidden camera and have each one overrides rendering scene with custom shaders to generate corresponding output.
 These camera outputs can be seen in editor mode by changing the display window.
-Samples of G-buffer collected for dataset are as shown in figure ~\ref{fig:G-buffers samples}.
+Samples of G-buffer collected for dataset are as shown in figure~\ref{fig:G-buffer-samples}.
 
 \begin{figure}
     \centering
@@ -292,23 +292,17 @@ Samples of G-buffer collected for dataset are as shown in figure ~\ref{fig:G-buf
         \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_normals}\\
     \caption{Samples for G-buffers collected from ImageSynthesis as part of the dataset. In the figure,
         (From left to right) RGB image, Depth map, Instance segmentation, Semantic Segmentation and Normal map}
-    \label{fig:G-buffers samples}
+    \label{fig:G-buffers-samples}
 \end{figure}
-
-
-Replacing models, lighting(indoor and outdoor), randomisation of texture, camera distance, camera angles, outdoor skybox,
-UI controls
-Manual inputs, automated
-Unity - ML-ImageSynthesis
-UML diagram is needed? (If it helps)
 
 \section{3d-Reconstruction framework}\label{sec:3d-reconstruction-framework}
 
 Development environment
 Training setup(hardware, voxel size)
-Mixed precision using apex
-If mixed precision helped performance, memory, speed, evaluation metric
+evaluation metric
 
+\subsection{Preprocessing}
 
-%\section{Implement a domain adaptation technique}{}
-%To serve as a proof if more domain gap reduction is needed.
+\subsection{Modelling}
+
+\subsection{Evaluation}
