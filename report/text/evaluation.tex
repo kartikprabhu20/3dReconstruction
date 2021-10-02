@@ -13,17 +13,19 @@
 %    \end{enumerate}
 %}
 
-In this chapter we will conduct experiments that will help us find solutions for the research questions discussed in~\ref{sec:goal}.
-Section~\ref{sec:a-survey-on-photorealism} will contain the survey results conducted to check the photorealism of the proposed synthetic dataset.
+In this chapter we will conduct experiments that will help us find solutions for the research questions discussed in \autoref{sec:goal}.
+The \autoref{sec:a-survey-on-photorealism} will contain the survey results conducted to check the photorealism of the proposed synthetic dataset.
 In this section we will also compare the ratings given to other proclaimed photorealistic dataset and check whether \gls{free} dataset compares to those datasets.
-We will further evaluate the datasets using a T-SNE as qualitative measure and MSE \& FID as quantitative measure which will indicate the domain gaps with respect to the real dataset.
+We will further evaluate the datasets using a T-SNE as qualitative measure and \gls{mse} \& \gls{fid} as quantitative measure which will indicate the domain gaps with respect to the real dataset.
 
-In section~\ref{sec:datasets}, we describe different datasets specifically generated to evaluate our baseline models and check randomisation parameters.
-Section~\ref{sec:baseline} evaluates baseline models with real and synthetic versions of datasets.
-Section~\ref{sec:fine-tuning} further evaluates models pretrained on synthetic dataset by fine-tuning them using real dataset.
-In section~\ref{sec:ablation-study-on-chairs} we will evaluate models on chair dataset with different parameters of randomisation and also mixed training for these individual datasets.
+In \autoref{sec:datasets}, we describe different datasets specifically generated to evaluate our baseline models and check randomisation parameters.
+\autoref{sec:baseline} evaluates baseline models with real and synthetic versions of datasets.
+\autoref{sec:fine-tuning} further evaluates models pretrained on synthetic dataset by fine-tuning them using real dataset.
+\autoref{sec:mixed-training} deals with mixed training and its impact on performance with different mixing ratios of real and synthetic dataset.
+In \autoref{sec:ablation-study-on-chairs} we will evaluate models on chair dataset with different parameters of randomisation and also mixed training for these individual datasets.
 
 \section{A survey on photorealism}\label{sec:a-survey-on-photorealism}
+
 The participants were given minimalistic information about the intention behind the survey.
 The goal of the survey was to analyse if humans have the same perception for photographic and computer generated images.
 No time limit was set for the survey, and it was open to everyone.
@@ -59,7 +61,7 @@ In this segment, we discuss the results of survey collected from participants.
 
 \subsubsection{Section 1: Real or Not}
 In section 1, the participants had only 2 options to select from independently.
-Figure~\ref{fig:question1}, shows that the real dataset Pix3D~\cite{pix3d} was rightly recognised as real.
+\autoref{fig:question1}, shows that the real dataset Pix3D~\cite{pix3d} was rightly recognised as real.
 77\% of the real images that belonged to Pix3D were recognised to be real.
 This shows that the participants were not convinced even with the real images as 23\% of the images were still recognized as not real.
 Among the synthetic datasets, Hyeperism~\cite{Roberts2020HypersimAP} got the best results of 59.7\% identified as real.
@@ -67,10 +69,11 @@ Among the synthetic datasets, Hyeperism~\cite{Roberts2020HypersimAP} got the bes
 The proposed \gls{free} dataset had 8\% of images identified as real.
 Both of these datasets were built Unity, which shows that images generated using the automated Unity framework needs some improvement.
 Suppose we have a threshold of 50\%, we see that the datasets for which the images selected as Not real below the threshold value belong to datasets which are automated and not created by professionals manually.
-As mentioned in~\ref{subsec:indoor-synthetic-datasets}, Openrooms, SceneNet and Blenderproc are datasets obtained from automation.
+As mentioned in \autoref{subsec:indoor-synthetic-datasets}, Openrooms, SceneNet and Blenderproc are datasets obtained from automation.
 We consider \gls{free} dataset to be automated and belog to this category.
 Among the automated images, Openrooms have got most vote of confidence with 37\% recognised as real images.
-Even though \gls{free} was least recognised as real among the automated tools, it had better percentage than AI2THOR which has Unity based framework to generate images and was manually configured by professional by taking in reference of real world images.
+Even though \gls{free} was least recognised as real among the automated tools, it had better percentage than AI2THOR
+which has Unity based framework to generate images and was manually configured by professional by taking in reference of real world images.
 
 \begin{figure}
     \centering
@@ -82,7 +85,7 @@ Even though \gls{free} was least recognised as real among the automated tools, i
 
 \subsubsection{Section 2: Likert Scale}
 In section 2, the participants could select ratings from 1 to 10 (1 being the least photorealistic).
-The distribution of values for each dataset can be seen in figure~\ref{fig:question2} and the average ratings are as seen in figure~\ref{fig:question2_2}.
+The distribution of values for each dataset can be seen in \autoref{fig:question2} and the average ratings are as seen in \autoref{fig:question2_2}.
 If we consider the scale 1, which is least rating that can be given to the image, AI2THOR has most number of votes.
 Suppose we have a cut off at scale 2 and 3, Openrooms and \gls{free} are the least photorealistic respectively.
 Interestingly Interiornet has least number of scale 1 instead of Pix3D which is the real dataset.
@@ -90,7 +93,7 @@ However, Pix3D has the highest number of perfect score(10) among all the dataset
 Coming to the averages, we again see the datasets created from automated pipeline (Blenderproc, SceneNet, Openrooms,\gls{free}), have least average ratings,
 while the manually created datasets(Hyperism, \gls{front}, InteriorNet) have higher average ratings.
 Pix3D has highest of the average ratings closely followed by InteriorNet.
-Even though \gls{free} has the least average, it is still comparable to other automated pipelines as highlighted in the figure~\ref{fig:question2_2} and even Unity based AI2THOR dataset.
+Even though \gls{free} has the least average, it is still comparable to other automated pipelines as highlighted in the \autoref{fig:question2_2} and even Unity based AI2THOR dataset.
 
 \begin{figure}
     \centering
@@ -110,11 +113,11 @@ Even though \gls{free} has the least average, it is still comparable to other au
 
 \subsubsection{Section 3: Rank by comparison}
 In section 3 of the survey, the users compared all 9 datasets and ranked them according to their photorealism(1 being the best rank).
-Figures~\ref{fig:question3} and~\ref{fig:question3_2} show distribution and average ranking for each of the datasets.
+\autoref{fig:question3} and \autoref{fig:question3_2} show distribution and average ranking for each of the datasets.
 The real dataset Pix3D got the highest number of votes for rank 1, while \gls{free} got least.
 But if we have a threshold of 5, meaning frequency of votes being in top 5 ranks, then among the automated group, \gls{free} occurs most times followed by SceneNet, Openrooms and Blenderproc.
 This is significant because out of 9 datasets, 4 are automated, and these four have the least average rankings.
-But \gls{free} breaks the boundary to be in top 5 most times.
+But, \gls{free} breaks the boundary to be in top 5 most times.
 
 \begin{figure}
     \centering
@@ -158,7 +161,7 @@ The images are less in quantity because not all datasets provide images directly
 Some datasets like Hyperism, SceneNet, Openrooms are built for training SLAM(Simultaneous Localisation and Mapping) models, and thus not all frames contain furniture.
 We had to filter the images containing furniture so that time images appear to be in same embedding space.
 
-In figure ~\ref{fig:photorealistic tsne}, we see the embedding for each dataset used for the survey discussed in~\ref{sec:a-survey-on-photorealism}.
+In \autoref{fig:photorealistic tsne}, we see the embedding for each dataset used for the survey discussed in \autoref{sec:a-survey-on-photorealism}.
 For better visualisation, the points are connected to centroid of the dataset,
 if not we found it difficult to comprehend scatterplot of all datasets in single graph.
 The proposed \gls{free} and the real dataset;Pix3D are highlighted for better focus.
@@ -170,7 +173,7 @@ BlenderProc and SceneNet seem to be closest to the real dataset, but the latent 
 This can also be seen in figure~\ref{fig:pix3d_s2r3dfree}.
 For this visualisation, 280 randomly images were randomly selected from each dataset with 40 images belonging to each of the categories.
 
-We plot the visualisation for each dataset individually with real dataset in figure~\ref{fig:tsne per dataset}.
+We plot the visualisation for each dataset individually with real dataset in \autoref{fig:tsne per dataset}.
 From this figure we can clearly observe that the latent space of real dataset and \gls{free} are very close to each other and spread across the space.
 We can also see that \gls{ai2thor} has the maximum separation, while Blenderproc is as close as \gls{free}.
 Openrooms and SceneNet also have latent space significantly apart from real dataset, while Hyperism and \gls{front} have a widespread space that intersects real data.
@@ -210,15 +213,15 @@ Openrooms and SceneNet also have latent space significantly apart from real data
 
 \subsection{Quantitative}\label{subsec:quantitative}
 
-We visualised the embedding space using T-SNE in the above subsection~\ref{subsec:qualitative}.
+We visualised the embedding space using T-SNE in the above \autoref{subsec:qualitative}.
 All the datasets seem to have a very close relation with the real dataset as we see atleast some points being in intersection with the latent space of real dataset.
 In this section,we compare the datasets with quantitative assessment using Mean Squared Error(MSE) and Fr\'echet Inception Distance(FID)
-As seen in the table~\ref{tab:quantitative-dataset-comparison}, we see that BlenderProc has least MSE of 5.53 to Pix3D,
+As seen in the \autoref{tab:quantitative-dataset-comparison}, we see that BlenderProc has least MSE of 5.53 to Pix3D,
 while openrooms has highest MES of 7.63.
 \gls{free} has a MSE of 7.075 which is below Openrooms and Hyperism.
 Interestingly, \gls{ai2thor} seems to perform better in quantitative assessment of photorealism,
 where both MSE and \gls{fid} are considerably lesser than other dataset,
-proving that \gls{ai2thor} is closer to real dataset than what was visualised in figures~\ref{fig:photorealistic tsne} and~\ref{fig:tsne per dataset}.
+proving that \gls{ai2thor} is closer to real dataset than what was visualised in \autoref{fig:photorealistic tsne} and \autoref{fig:tsne per dataset}.
 \gls{free} has a \gls{fid} of 178.83 which is lesser than Openrooms, Hyperism and SceneNet.
 
 \begin{table}[ht]
@@ -253,34 +256,34 @@ In this section, the datasets used for the following evaluations will be describ
 The datasets are intended to have variations in domain randomisation to check its performance on 3D reconstruction task.
 
 \subsection{Pix3D}
-As mentioned in~\ref{subsec:why-pix3d?}, we use a real dataset from~\cite{pix3d} which is a collection of indoor scenes.
+As mentioned in \autoref{subsec:why-pix3d?}, we use a real dataset from~\cite{pix3d} which is a collection of indoor scenes.
 The 2 classes 'misc' and 'tools' are eliminated so that we focus only on furnitures.
 The total images after the reduction is 9954 with 354 unique models.
 The train and validation dataset is divided in the ratio of 70:30 giving us 6814 images from training and 3140 images for validation/test.
 We do not have a test set only for this dataset since it is already limited, and the validation set is used as test set while testing with synthetic data.
-Samples are as shown in~\ref{fig:samples for synthetic and real comparison}.
+Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
 \subsection{\gls{free} Version 1}
 Version 1 of \gls{free} was created by keeping the models in the center of a default 3D room.
 The camera distance was randomised between 1 and 2.5 meters from the model.
 The camera view points and textures were randomised.
 A total of 70000 images were synthetically generated using the \gls{free} 'Single Room pipeline' with 10000 images per category.
-Samples are as shown in~\ref{fig:samples for synthetic and real comparison}.
+Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
 \subsection{\gls{free} Version 2}
 Version 1 of \gls{free} was created by keeping the models in the center of a defualt 3D room.
 The camera distance was randomised between 1 and 2.5 meters from the model.
 The camera view points and textures were randomised.
 A total of 21000 images were synthetically generated using the \gls{free} 'Multi Object pipeline' with 3000 images per category.
-Samples are as shown in~\ref{fig:samples for synthetic and real comparison}.
+Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
 \subsection{\gls{free} Ablation}\label{subsec:s2r:3dfree-ablation}
 To study the affects of parameters of domain randomisation, a study was conducted on chair dataset by omitting few factors one at a time.
 This dataset were divided into 5 categories with different randomisation parameters.
-The sample images with different randomisation is as shown in figure~\ref{fig:domain randomisation for ablation study}.
-Figure~\ref{fig:tsne per chair dataset} represents latent space for each of the variation of domain randomisation for chairs when compared to chairs from real dataset(Pix3D).
-50 images were randomly sampled from each dataset and embeded using \gls{vgg} as in~\ref{subsec:qualitative}.
-Figure~\ref{fig:pix3dchair_s2r3dfreechair} shows a combined latent space of all the randomised dataset for chair.
+The sample images with different randomisation is as shown in \autoref{fig:domain randomisation for ablation study}.
+\autoref{fig:tsne per chair dataset} represents latent space for each of the variation of domain randomisation for chairs when compared to chairs from real dataset(Pix3D).
+50 images were randomly sampled from each dataset and embeded using \gls{vgg} as in \autoref{subsec:qualitative}.
+\autoref{fig:pix3dchair_s2r3dfreechair} shows a combined latent space of all the randomised dataset for chair.
 We see that combined space is close to the real dataset space and spreads across the latent space, while individual parameters have limited spread.o
 
 \begin{figure}[!ht]
@@ -311,7 +314,7 @@ We see that combined space is close to the real dataset space and spreads across
 \subsubsection{\gls{free}\_Textureless\_Light}
 
     For this dataset, similar to the textureless dataset the chair models were kept at the center of an un-textured room, but with randomised light source.
-    The light variation was implemented as in~\ref{subsec:lightings-and-shadows}.
+    The light variation was implemented as in \autoref{subsec:lightings-and-shadows}.
     Along with randomised light source, the camera view points were randomised with a distance in range of 0.75 to 1.5 meters from the model under observation.
 
 \subsubsection{\Gls{free}\_Textured}
@@ -322,7 +325,7 @@ We see that combined space is close to the real dataset space and spreads across
 \subsubsection{\Gls{free}\_Textured\_Light}
 
     This is an extension of the above mention \gls{free}\_Textured dataset, with addition of randomized light sources.
-    The lights are randomized as implemented in~\ref{subsec:lightings-and-shadows}.
+    The lights are randomized as implemented in \autoref{subsec:lightings-and-shadows}.
 
 \subsubsection{\gls{free}\_Chair}
 
@@ -336,11 +339,11 @@ We see that combined space is close to the real dataset space and spreads across
         \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_2} &
         \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_3}\\
 
-        \Gls{free} Version 1 & \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_1} &
+        \Gls{s2rv1} & \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_1} &
         \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_2} &
         \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_3}\\
 
-        \Gls{free} Version 2 & \includegraphics[width=.19\textwidth, height =.2\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_1} &
+        \Gls{s2rv2} & \includegraphics[width=.19\textwidth, height =.2\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_1} &
         \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_2} &
         \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_3}\\
 
@@ -379,12 +382,12 @@ We see that combined space is close to the real dataset space and spreads across
 
 \section{Baseline}\label{sec:baseline}
 
-As mentioned in~\ref{subsec:pix2vox-and-pix2vox++}, pix2vox and pix2vox++ are the models which will act as the baselines for all the experiments.
-For the dataset from~\ref{sec:datasets}, Pix3D is the real dataset and will be acting as the base dataset.
+As mentioned in \autoref{subsec:pix2vox-and-pix2vox++}, pix2vox and pix2vox++ are the models which will act as the baselines for all the experiments.
+For the dataset from \autoref{sec:datasets}, Pix3D is the real dataset and will be acting as the base dataset.
 The models are also compared with and without 2D augmentation.
 The 2D augmentations include Random Flip, Random Crop, Color Jitter, RandomPermuteRGB.
 A performance test with no augmentation will explain the importance of 2D augmentation in the performance of 3D reconstruction task.
-Figure~\ref{fig:baseline1}, represents performance of baseline models on different datasets, both with and without data augmentation.
+\autoref{fig:baseline1}, represents performance of baseline models on different datasets, both with and without data augmentation.
 For validation step, we save 2 checkpoints for the best epoch .
 One which is validated with real dataset, and the other is validated with respective synthetic dataset.
 
@@ -392,17 +395,20 @@ For the synthetic dataset, the models are trained on 70\% of data and 30\% is us
 For testing we use the same 30\% of real data from Pix3D dataset.
 For the real dataset, the models are trained on 70\% of real data, and validated/tested on same 30\% used in testing models trained on synthetic data.
 
+\autoref{fig:baseline1} is a comparison of models trained with 2D augmentation and the synthetic dataset with real dataset.
 For models validated with real dataset, it is seen that 2D augmentation improves \gls{iou}  by 8.06\% for Pix3D on pix2vox++, and 1.22\% on pix2vox.
-In case of synthetic dataset, 2D augmentation increased the \gls{iou}  by 2.04\% and 4.77\%  for pix2vo++ and pix2vox respectively.
+In case of synthetic dataset, 2D augmentation increases the \gls{iou}  by 6.66\% and 1.42\%  for pix2vox++ and pix2vox respectively.
 When it comes to whether synthetic dataset gives equivalent performance as real dataset, we can clearly see a dip in the performance,
 proving that there is a domain gap between real and synthetic data.
+Out of the 2 synthetic dataset version \gls{s2rv2} gives better results than \gls{s2rv1} when tested with real data.
+We hypothesize that since Pix3D has multi-objects in the scenes same as \gls{s2rv2}, it performs better than single object images from \gls{s2rv1}.
 
 \begin{figure}
     \centering
     \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_linegraph1.pgf}}
     \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_linegraph2.pgf}}
     \caption{Line plot for the \gls{iou}  for baselines trained on real and synthetic datasets, with and without 2D augmentation.
-        (Left)The checkpoint was saved using real dataset for validation step, (right) the checkpoint was saved using corresponding synthetic data for validation step.
+        (Left)The checkpoint was saved using real dataset for validation and test, (right) the checkpoint was saved using corresponding synthetic data for validation step and tested with real data.
         In both the cases we see that ~\gls{free} does not perform adequately on its own. \gls{s2rv2} contributes better than \gls{s2rv1}.}
     \label{fig:baseline1}
 \end{figure}
