@@ -22,56 +22,58 @@ Warning--I'm ignoring 9210569's extra "key" field
 --line 326 of file literature/thesis.bib
 Warning--entry type for "unrealengine" isn't style-file defined
 --line 846 of file literature/thesis.bib
-Warning--I didn't find a database entry for "2018LearningIC"
 Warning--to sort, need author or key in Evermotion
 Warning--to sort, need author or key in TurboSquid
+Warning--to sort, need author or key in 2018LearningIC
 Warning--empty year in Evermotion
 Warning--empty year in TurboSquid
+Warning--empty author in 2018LearningIC
+Warning--empty booktitle in 2018LearningIC
 Warning--empty year in unrealengine
 Warning--empty booktitle in Guo20173DFaceNetRD
 Warning--empty booktitle in LiSilhouetteAssisted3O
 Warning--empty year in LiSilhouetteAssisted3O
 Warning--empty year in LiSilhouetteAssisted3O
 Warning--empty journal in McCormac:etal:ICCV2017
-You've used 91 entries,
+You've used 94 entries,
             2773 wiz_defined-function locations,
-            1033 strings with 24016 characters,
-and the built_in function-call counts, 52794 in all, are:
-= -- 4204
-> -- 4671
-< -- 33
-+ -- 1567
-- -- 1472
-* -- 4614
-:= -- 8208
-add.period$ -- 255
-call.type$ -- 91
-change.case$ -- 761
-chr.to.int$ -- 87
-cite$ -- 194
-duplicate$ -- 1902
-empty$ -- 3412
-format.name$ -- 1577
-if$ -- 10911
+            1051 strings with 25780 characters,
+and the built_in function-call counts, 57012 in all, are:
+= -- 4501
+> -- 5237
+< -- 35
++ -- 1756
+- -- 1658
+* -- 5054
+:= -- 8904
+add.period$ -- 267
+call.type$ -- 94
+change.case$ -- 830
+chr.to.int$ -- 90
+cite$ -- 204
+duplicate$ -- 1983
+empty$ -- 3551
+format.name$ -- 1767
+if$ -- 11736
 int.to.chr$ -- 5
 int.to.str$ -- 1
-missing$ -- 50
-newline$ -- 444
-num.names$ -- 358
-pop$ -- 1730
+missing$ -- 53
+newline$ -- 461
+num.names$ -- 368
+pop$ -- 1882
 preamble$ -- 1
-purify$ -- 672
+purify$ -- 738
 quote$ -- 0
-skip$ -- 1862
+skip$ -- 1974
 stack$ -- 0
-substring$ -- 986
-swap$ -- 302
-text.length$ -- 18
+substring$ -- 1033
+swap$ -- 317
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 996
-warning$ -- 10
-while$ -- 312
+type$ -- 1029
+warning$ -- 13
+while$ -- 322
 width$ -- 0
-write$ -- 1088
-(There were 17 warnings)
+write$ -- 1129
+(There were 19 warnings)

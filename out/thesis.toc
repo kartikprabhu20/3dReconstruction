@@ -1,16 +1,16 @@
 \babel@toc {english}{}
-\contentsline {chapter}{List of Figures}{xi}{chapter*.4}%
-\contentsline {chapter}{List of Tables}{xv}{chapter*.5}%
-\contentsline {chapter}{List of Code Listings}{xvii}{chapter*.6}%
-\contentsline {chapter}{List of Acronyms}{xix}{section*.7}%
-\contentsline {chapter}{List of Symbols}{xxi}{section*.9}%
+\contentsline {chapter}{List of Figures}{xiii}{chapter*.4}%
+\contentsline {chapter}{List of Tables}{xvii}{chapter*.5}%
+\contentsline {chapter}{List of Code Listings}{xix}{chapter*.6}%
+\contentsline {chapter}{List of Acronyms}{xxi}{section*.7}%
+\contentsline {chapter}{List of Symbols}{xxiii}{section*.9}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Domain Adaptation vs Domain randomisation}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Volumetric representations of 3D shapes}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.1}Domain Adaptation vs. Domain randomization}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Volumetric representations of 3D shapes}{4}{section.1.2}%
 \contentsline {section}{\numberline {1.3}GameEngines}{4}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Background and motivation}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.4}Background and motivation}{5}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Goal of this Thesis}{5}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Contributions of this Thesis}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.6}Contributions of this Thesis}{6}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Structure of this Thesis}{6}{section.1.7}%
 \contentsline {chapter}{\numberline {2}Related Work}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Indoor datasets}{7}{section.2.1}%
@@ -31,7 +31,7 @@
 \contentsline {subsubsection}{\numberline {3.3.1.3}Lighting and shadows}{18}{subsubsection.3.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.3.1.4}Randomised textures}{18}{subsubsection.3.3.1.4}%
 \contentsline {subsubsection}{\numberline {3.3.1.5}Replacing target objects}{18}{subsubsection.3.3.1.5}%
-\contentsline {section}{\numberline {3.4}\Gls {free}, a Pix3D based sythetic dataset}{19}{section.3.4}%
+\contentsline {section}{\numberline {3.4}\gls {free}, a Pix3D based sythetic dataset}{19}{section.3.4}%
 \contentsline {section}{\numberline {3.5}3D reconstruction}{19}{section.3.5}%
 \contentsline {section}{\numberline {3.6}3D reconstruction pipeline}{19}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Pix2Vox and Pix2Vox++}{20}{subsection.3.6.1}%
@@ -43,52 +43,59 @@
 \contentsline {section}{\numberline {4.1}3D-Scene framework}{23}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Modes of operations}{23}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Scenes from SceneNet}{24}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Camera ViewPoints}{24}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.3}Camera ViewPoints}{25}{subsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.1.4}Lightings and Shadows}{26}{subsection.4.1.4}%
 \contentsline {subsection}{\numberline {4.1.5}Randomised Texture}{27}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Replacing target Objects}{27}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.6}Replacing target Objects}{28}{subsection.4.1.6}%
 \contentsline {subsection}{\numberline {4.1.7}Snapshots with ML-ImageSynthesis}{28}{subsection.4.1.7}%
-\contentsline {section}{\numberline {4.2}3d-Reconstruction framework}{28}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Preprocessing}{29}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Modelling}{29}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Evaluation}{29}{subsection.4.2.3}%
-\contentsline {chapter}{\numberline {5}Evaluation}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}A survey on photorealism}{33}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Survey results}{34}{subsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.1}Section 1: Real or Not}{34}{subsubsection.5.1.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.2}Section 2: Likert Scale}{35}{subsubsection.5.1.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.1.3}Section 3: Rank by comparison}{35}{subsubsection.5.1.1.3}%
+\contentsline {subsection}{\numberline {4.1.8}Demo for the application}{29}{subsection.4.1.8}%
+\contentsline {section}{\numberline {4.2}3d-Reconstruction framework}{33}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Preprocessing}{33}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Modelling}{33}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Training}{33}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Evaluation}{34}{subsection.4.2.4}%
+\contentsline {chapter}{\numberline {5}Experiments and Evaluation}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}A survey on photorealism}{35}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Survey results}{36}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}Section 1: Real or Not}{36}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Section 2: Likert Scale}{36}{subsubsection.5.1.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.3}Section 3: Rank by comparison}{37}{subsubsection.5.1.1.3}%
 \contentsline {subsubsection}{\numberline {5.1.1.4}Summary for survey}{37}{subsubsection.5.1.1.4}%
-\contentsline {section}{\numberline {5.2}Domain gaps}{37}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Qualitative}{37}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Quantitative}{39}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Datasets}{42}{section.5.3}%
+\contentsline {section}{\numberline {5.2}Domain gaps}{40}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Qualitative}{40}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Quantitative}{41}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Datasets}{41}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Pix3D}{42}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}\Gls {free} Version 1}{42}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}\Gls {free} Version 2}{42}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}\Gls {free} Ablation}{43}{subsection.5.3.4}%
-\contentsline {subsubsection}{\numberline {5.3.4.1}2R:3DFREE\_Textureless}{43}{subsubsection.5.3.4.1}%
-\contentsline {subsubsection}{\numberline {5.3.4.2}\Gls {free}\_Textureless\_Light}{43}{subsubsection.5.3.4.2}%
-\contentsline {subsubsection}{\numberline {5.3.4.3}\Gls {free}\_Textured}{43}{subsubsection.5.3.4.3}%
+\contentsline {subsection}{\numberline {5.3.2}\gls {free} Version 1}{42}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}\gls {free} Version 2}{42}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}\gls {free} Ablation}{44}{subsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.1}2R:3DFREE\_Textureless}{44}{subsubsection.5.3.4.1}%
+\contentsline {subsubsection}{\numberline {5.3.4.2}\gls {free}\_Textureless\_Light}{44}{subsubsection.5.3.4.2}%
+\contentsline {subsubsection}{\numberline {5.3.4.3}\Gls {free}\_Textured}{44}{subsubsection.5.3.4.3}%
 \contentsline {subsubsection}{\numberline {5.3.4.4}\Gls {free}\_Textured\_Light}{44}{subsubsection.5.3.4.4}%
-\contentsline {subsubsection}{\numberline {5.3.4.5}\gls {free}\_Chair}{44}{subsubsection.5.3.4.5}%
-\contentsline {section}{\numberline {5.4}Baseline}{46}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Fine Tuning}{46}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Mixed Training}{47}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Ablation study on chairs}{48}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Domain randomisation on chair dataset}{48}{subsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.7.2}Domain randomisation with Mixed training}{49}{subsection.5.7.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{51}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary}{51}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Limitations}{52}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Unity Game Engine}{53}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Configuring synthetic dataset generation pipeline}{53}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}High Definition Render Pipeline}{53}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Future Scope}{53}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Domain adaptation using Generative models}{53}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}A study on Style transfer with G-buffers}{53}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Integrating the framework with Unity Cloud}{54}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Other forms of representations}{54}{subsection.6.3.4}%
-\contentsline {subsection}{\numberline {6.3.5}Increasing the synthetic dataset}{54}{subsection.6.3.5}%
-\contentsline {chapter}{Appendix}{55}{appendix*.48}%
-\contentsline {chapter}{Bibliography}{57}{appendix*.51}%
+\contentsline {subsubsection}{\numberline {5.3.4.5}\gls {free}\_Chair}{45}{subsubsection.5.3.4.5}%
+\contentsline {section}{\numberline {5.4}Baseline}{45}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Fine Tuning}{48}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Mixed Training}{49}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Ablation study on chairs}{50}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Domain randomisation on chair dataset}{50}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Domain randomization with Mixed training}{50}{subsection.5.7.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{55}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary}{55}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Limitations}{56}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Unity Game Engine}{57}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Configuring synthetic dataset generation pipeline}{57}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}High Definition Render Pipeline}{57}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Future Scope}{57}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Domain adaptation using Generative models}{57}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}A study on Style transfer with G-buffers}{57}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Integrating the framework with Unity Cloud}{58}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Other forms of representations}{58}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Increasing the synthetic dataset}{58}{subsection.6.3.5}%
+\contentsline {chapter}{Appendix}{59}{appendix*.52}%
+\contentsline {section}{\numberline {A.1}Additional attempts}{59}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}High Definition Render Pipeline(HDRP)}{59}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Half precision using Nvidia Apex}{59}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}Different loss functions}{59}{subsection.A.1.3}%
+\contentsline {subsection}{\numberline {A.1.4}Empty image test}{59}{subsection.A.1.4}%
+\contentsline {chapter}{Bibliography}{61}{appendix*.55}%

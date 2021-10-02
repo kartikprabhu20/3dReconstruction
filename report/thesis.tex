@@ -11,12 +11,18 @@
 \newcommand{\university}{Otto-von-Guericke University Magdeburg}
 \newcommand{\school}{Faculty of Computer Science}
 \newcommand{\logo}{\includegraphics[trim=0mm 0mm 50mm 0mm,clip,height=3cm]{ovgu}}
-\newcommand{\advisorone}{Prof. X}
-\newcommand{\departmentone}{}
-\newcommand{\universityone}{National Aeronautics and Space Administration}
-\newcommand{\advisortwo}{Dr. No}
-\newcommand{\departmenttwo}{Department of Technical and Business Information Systems}
-\newcommand{\universitytwo}{Otto-von-Guericke University Magdeburg}
+\newcommand{\advisorone}{Marco Filax}
+\newcommand{\departmentone}{Chair of Software Engineering}
+\newcommand{\universityone}{Otto-von-Guericke University, Magdeburg}
+\newcommand{\advisortwo}{Konstantin Kirchheim}
+\newcommand{\departmenttwo}{Chair of Software Engineering}
+\newcommand{\universitytwo}{Otto-von-Guericke University, Magdeburg}
+\newcommand{\supervisorone}{Prof.Dr.Frank Ortmeier}
+\newcommand{\sdepartmentone}{Chair of Software Engineering}
+\newcommand{\suniversityone}{Otto-von-Guericke University, Magdeburg}
+\newcommand{\supervisortwo}{xxx}
+\newcommand{\sdepartmenttwo}{xxx xxx}
+\newcommand{\suniversitytwo}{Otto-von-Guericke University, Magdeburg}
 \newcommand{\advisorthree}{}
 \newcommand{\departmentthree}{}
 \newcommand{\universitythree}{}
@@ -52,6 +58,11 @@
 \newacronym{vgg}{VGG}{Visual Geometry Group}
 \newacronym{resnet}{ResNet}{Residual neural network}
 \newacronym{iou}{IoU}{Intersection over Union}
+\newacronym{hdrp}{HDRP}{High Definition Render Pipeline}
+\newacronym{urp}{URP}{Universal Render Pipeline}
+\newacronym{s2rv1}{S2R\_V1}{S2R:3DFREE Version 1}
+\newacronym{s2rv2}{S2R\_V2}{S2R:3DFREE Version 2}
+
 
 % For some theses a list of symbols can be nice. For example usage, see below.
 \newcommand{\category}[3]{\newglossaryentry{_#2}{type=symbol, name={#3}, description={}, sort={#1}}}
@@ -116,18 +127,44 @@
         {\iftoggle{german}{Autor}{Author}:}\\[0.4cm]
         {\large \theauthor}\\[0.8cm]
         {\large\thedate}\\[0.8cm]
+
+    \vspace{2cm}
+    \renewcommand{\arraystretch}{.9}
+    \begin{tabular}{cc}
+        \multicolumn{2}{c}{\small Advisers:} \\[1mm]
+%        {\small Supervisor} & {\small Supervisor} \\
+        {\large \advisorone} & {\large \advisortwo} \\[2mm]
+        {\small \departmentone} 			 & {\small \departmentone} \\
+        {\small \universityone} 			 & {\small \universitytwo} 	\\
+%        {\small \myunistreet} 		 & {\small \myunistreet} \\
+%        {\small \myunizipcity}		 & {\small \myunizipcity}
+    \end{tabular}
+
+    \vspace{1cm}
+
+    \begin{tabular}{cc}
+        \multicolumn{2}{c}{\small Supervisors:} \\[1mm]
+%        {\small Supervisor} & {\small Supervisor} \\
+        {\large \supervisorone} & {\large \supervisortwo} \\[2mm]
+        {\small \sdepartmentone} 			 & {\small \sdepartmenttwo} \\
+        {\small \suniversityone} 			 & {\small \suniversitytwo} 	\\
+%        {\small \myunistreet} 		 & {\small \myunistreet} \\
+%        {\small \myunizipcity}		 & {\small \myunizipcity}
+    \end{tabular}
+
+    \renewcommand{\arraystretch}{1}
     \end{center}
     \vspace*{\fill}
-    {\iftoggle{german}{Betreuer}{Advisors}:}\\[0.3cm]
-    \ifdefempty{\advisorone}{}{{\large\advisorone}\\[0.1cm]}
-    \ifdefempty{\departmentone}{}{{\departmentone}\\[0.1cm]}
-    \ifdefempty{\universityone}{}{{\universityone}\\[0.3cm]}
-    \ifdefempty{\advisortwo}{}{{\large\advisortwo}\\[0.1cm]}
-    \ifdefempty{\departmenttwo}{}{{\departmenttwo}\\[0.1cm]}
-    \ifdefempty{\universitytwo}{}{{\universitytwo}\\[0.3cm]}
-    \ifdefempty{\advisorthree}{}{{\large\advisorthree}\\[0.1cm]}
-    \ifdefempty{\departmentthree}{}{{\departmentthree}\\[0.1cm]}
-    \ifdefempty{\universitythree}{}{{\universitythree}}
+%    {\iftoggle{german}{Betreuer}{Advisors}:}\\[0.3cm]
+%    \ifdefempty{\advisorone}{}{{\large\advisorone}\\[0.1cm]}
+%    \ifdefempty{\departmentone}{}{{\departmentone}\\[0.1cm]}
+%    \ifdefempty{\universityone}{}{{\universityone}\\[0.3cm]}
+%    \ifdefempty{\advisortwo}{}{{\large\advisortwo}\\[0.1cm]}
+%    \ifdefempty{\departmenttwo}{}{{\departmenttwo}\\[0.1cm]}
+%    \ifdefempty{\universitytwo}{}{{\universitytwo}\\[0.3cm]}
+%    \ifdefempty{\advisorthree}{}{{\large\advisorthree}\\[0.1cm]}
+%    \ifdefempty{\departmentthree}{}{{\departmentthree}\\[0.1cm]}
+%    \ifdefempty{\universitythree}{}{{\universitythree}}
 \end{titlepage}
 
 % the second page
@@ -142,24 +179,46 @@
 
 \iftoggle{german}{\chapter*{Zusammenfassung}}{\chapter*{Abstract}}
 
-Besides the title, the abstract is the most important part of your thesis, as most readers will only read title and abstract.
-Your goal is to advertise the rest of the thesis for potential readers.
-For that, you briefly explain what you are focusing on in the thesis.
-With a misleading abstract, you will miss interested readers and maybe even attract readers with wrong assumptions about your work which will stop reading soon.
-The abstract should describe the general area as well as the most interesting insights of the work.
-It is crucial to find the right level of abstraction and length.
-An abstract typically consists of one paragraph that is significantly shorter than the introduction.
+The field of Deep Learning is growing exponential and have tremendous applications in every domain.
+The key for training deep learning models is large dataset.
+Real-world dataset is cost ineffective, time consuming, difficult to obtain, and are very limited.
+Synthetic data are easier to create and automate.
+In this thesis we aim to check if images created using game engines(Unity), are photorealistic, and can be used for 3D reconstruction task using Deep Neural Networks.
+To achieve this we contribute the following (a)A Unity-based framework to create synthetic images of furniture in indoor environment.
+(b)A new synthetic dataset which can be used as a benchmark for 3D reconstruction task (c) A comprehensive study on domain adaptation and domain randomisation.
+To check the photorealism, we conducted a user survey using 7 other proclaimed photorealistic synthetic dataset.
+We see that the proposed dataset was voted as real most number of times among the dataset created by automation.
+We compare the performance of baseline models with transfer learning and mixed training to check if the synthetic dataset.
+We check domain randomisation by creating synthetic chair dataset with different parameters like light, textures, camera position, etc.
+The domain gap between real and synthetic dataset is visualised using T-SNE and quantitatively measured with FID score.
+Finally, these experimental results proves that the proposed dataset enhances the performances of Deep Neural Net models for 3D reconstruction task.
 
-Abstracts typically follow the same structure.
-You start by describing the research area as well as the general and the specific problem you are focusing on.
-Then, you outline how you approach the problem in terms of concepts and evaluations.
-Finally, you close with the most interesting insights that you gained and why they are relevant for the research area.
+\textbf{ \emph{keywords}}: \emph{Synthetic dataset, 3D reconstruction, Domain adaptation, Domain randomisation, Mixed training}
+
+%Abstracts typically follow the same structure.
+%You start by describing the research area as well as the general and the specific problem you are focusing on.
+%Then, you outline how you approach the problem in terms of concepts and evaluations.
+%Finally, you close with the most interesting insights that you gained and why they are relevant for the research area.
 
 \blankpage
 
 \iftoggle{german}{\chapter*{Danksagungen}}{\chapter*{Acknowledgments}}
 
-If you want to, you can thank your advisors and/or anyone else who supported you during the thesis in some way.
+Throughout my thesis work I have received a great deal of guidance, supervision and support.
+
+First and foremost, I would like to express my supervisors Marco Filax and Konstantin Kirchheim for their expert guidance, constant support,encourgement
+and patience right from the beginning of the thesis.
+I would especially like to thank them for accepting my proposal and helping me fine tune the research question, and making sure that I do not divert from the topic at hand.
+The discussions we had throughout the thesis not only helped me think different, but also tackle and make tough decision in limited duration of time.
+
+I would also like to extend my gratitude to Prof.Dr.Frank Ortmeier for accepting my thesis research topic and taking me under his banner.
+I sincerely thank him for providing an excellent research environment and all the required resources for completion of the thesis.
+The active research going on under Chair of Software Engineering Workgroup urged me to take up the thesis under the same department.
+
+I would also like to thank my family, for their constant support during these tough times.
+Their life advises and casual talks always calmed me and re-energised whenever required.
+Last but not the least, to all my friends, there were tough situations during the pandemic, and it was all thanks to them the period passed like a breeze.
+Thank you for teaching me to enjoy life!
 
 % table of contents
 \blankpage

@@ -1,58 +1,67 @@
 \chapter{\iftoggle{german}{Implementierung}{Implementation}}\label{ch:implementation}
 
-\section{3D-Scene framework}\label{sec:3d-scene-framework}
+In this chapter we discuss the implementations of the all the framework and how it was acheived.
+In~\ref{sec:3d-scene-framework}, we go through the implementation of each of the modes of operation.
+Further, we discuss each component that can be used for domain randomization like scenes from SceneNet, camera viewpoints, textures, lighting conditions, and replacement of the target object.
+We then explain how Ml-Image Synthesis library is integrated with the cameras to take the snapshots.
+Some sample images are added for each of the components for the readers to better grasp its importance.
 
-3D-Scene is a Unity based application used in editor mode written in CSharp programming language.
+in~\ref{sec:3d-reconstruction-framework}, we discuss the Deep Learning framework used to train and evaluate the 3D reconstruction task.
+\section{3D-Scene framework}\label{sec:3d-scene-framework}.
+We discuss the underlying libraries and hyperparameters used for the evaluation of the models.
+
+3D-Scene is a Unity-based application used in editor mode written in CSharp programming language.
 The First step of the application is to import existing .obj files for 3D models, along with 3D models of rooms.
 These rooms and furniture models can be randomly textured and placed.
 In the final step, the main camera is used for taking snapshots of the scene.
 Along with RGB images, depth maps, normals, semantic segmentation are also saved.
-The pipeline is as shown in figure~\ref{fig:pipline process}.
-For automation based pipeline, the process loops through each step, while in manaual pipeline the user decides which block needs to be executed.
+The pipeline is as shown in figure~\ref{fig:pipeline process}.
+For an automation-based pipeline, the process loops through each step, while in the manual pipeline the user decides which block needs to be executed.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/process}
-    \caption{Automated pipeline for image generatiion with different blocks and external libraries.}
-    \label{fig:pipline process}
+    \caption{Automated pipeline for image generation with different blocks and external libraries.}
+    \label{fig:pipeline process}
 \end{figure}
 
 \subsection{Modes of operations}\label{subsec:modes-of-operations}
-Creation of dataset can either be automated or by manual intervention.
+The creation of a dataset can either be automated or by manual intervention.
 Automated images may not give us the perfect images which we expect.
-There can be some bad lighting, unexpected intersections with other objects, unforseen camera angles, etc.
+There can be some bad lighting, unexpected intersections with other objects, unforeseen camera angles, etc.
 To facilitate ease of use for the user, the application has 3 key pipelines.
 After configuring the parameters to create an ersatz environment using Unity,
-the user can select any of these pipeline to either get automatic snapshots or manually snaps for the models.
+the user can select any of this pipeline to either get automatic snapshots or manually snaps for the models.
 
+The different modes of operation are as follows:
 \begin{enumerate}
 \item Single Room pipeline
 \item Manual Room pipeline
 \item Multi Objects pipeline
 \end{enumerate}
 
-Single Room pipeline is used to create the dataset with objects in the center of an empty room.
+The single Room pipeline is used to create the dataset with objects in the center of an empty room.
 A room path can either be provided, else a default room is imported.
-Manual Room pipeline randomises a furnished room, and then replaces the category under observation.
-The selection of object to be replaced is also random.
-In this mode, the user has the control over taking the snap of the scene.
-The user can randomise model an room textures, randomise camera position or manually set it and randomise the lighting conditions.
+Manual Room pipeline randomizes a furnished room and then replaces the category under observation.
+The selection of objects to be replaced is also random.
+In this mode, the user has control over taking the snap of the scene.
+The user can randomize model and room textures, randomize camera position or manually set it and randomize the lighting conditions.
 Once the user is satisfied with the view of the scene, images can be saved with a click of the Snap button.
 In Multi Objects pipeline, all the process mentioned in the Manual Room pipeline is automated.
-The user won't have control over any of the process, while the program snaps images at random.
-Another version of pipeline which is similar to Single Room pipeline is the Multi-threaded Single Room pipeline.
-As the name suggests, multiple rooms are created based on the number of categories and for each room the Single Room pipeline is applied in parallel.
+The user won’t have control over any of the processes, while the program snaps images at random.
+Another version of the pipeline which is similar to the Single Room pipeline is the Multi-threaded Single Room pipeline.
+As the name suggests, multiple rooms are created based on the number of categories and for each room, the Single Room pipeline is applied in parallel.
 This is an attempt to let the tool perform faster with multi-threading.
 The multi-process uses Coroutines which is still a sequential operation and hence this pipeline needs some work.
-To our estimate even the Multi-threaded pipeline runs 1.5 times faster than Single room pipeline.
+To our estimate, even the Multi-threaded pipeline runs 1.5 times faster than Single room pipeline.
 
 \subsection{Scenes from SceneNet}\label{subsec:scenes-from-scenenet}
-For the rooms in our ersatz environments we utilize scenes provided by SceneNet~\cite{McCormac:etal:ICCV2017}.
-SceneNet has made 25 rooms available for public.
-We only use scenes of type Bedroom(11), Kitchen(1), Living room(6) and office(7).
-Figure~\ref{fig:Scene Types} shows different types of scenes utilised to generate synthetic dataset.
-These scenes are further modified by adding few more objects of categories present in Pix3D, so that we get more variations in the dataset.
-The distribution of furnitures matching the category of Pix3D in the scenes are as shown in figrue~\ref{fig:distribution of scenes}.
+For the rooms in our ersatz environments, we utilize scenes provided by SceneNet~\cite{McCormac:etal:ICCV2017}.
+SceneNet has made 25 rooms available to the public.
+We only use scenes of type Bedroom(11), Kitchen(1), Living room(6), and office(7).
+Figure~\ref{fig:Scene Types} shows different types of scenes utilized to generate a synthetic dataset.
+These scenes are further modified by adding few more objects of categories present in Pix3D so that we get more variations in the dataset.
+The distribution of furniture matching the category of Pix3D in the scenes is as shown in figure~\ref{fig:distribution of scenes}.
 Each scene is replaced for every snap we take for the dataset we create at random.
 
 \begin{figure}[!ht]
@@ -61,7 +70,7 @@ Each scene is replaced for every snap we take for the dataset we create at rando
     \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_livingroom}}\\
     \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_kitchen}}\quad
     \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_office}}
-    \caption{Sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office}
+    \caption{The top view of sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office}
     \label{fig:Scene Types}
 \end{figure}
 
@@ -69,20 +78,20 @@ Each scene is replaced for every snap we take for the dataset we create at rando
 \begin{figure}[!ht]
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes.pgf}}
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet.pgf}}
-    \caption{(Left)Distribution of types ofs scenes, (Right) Distribution of objects matching the categories of pix3d in scenes}
+    \caption{(Left)Distribution of types of scenes, (Right) Distribution of objects matching the categories of pix3d in scenes}
     \label{fig:distribution of scenes}
 \end{figure}
 
 
 \subsection{Camera ViewPoints}\label{subsec:camera-viewpoints}
 
-The distance of camera from the target object is a configurable entity.
+The distance of the camera from the target object is a configurable entity.
 The user can set the minimum and maximum distance to the target object for the camera to be placed.
 The program will then randomly select a point within this range.
-Similarly the height of the camera can be configured by the user.
+Similarly, the height of the camera can be configured by the user.
 The camera is programed to always look towards the target object and will be changed if the object is not in the frame.
-This is acheived by passing a ray and determining if the center of the target object is visible.
-To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera poisiton and make sure that the camera is in front of the target object within an angle of 60 degrees.
+This is achieved by passing a ray and determining if the center of the target object is visible.
+To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera posiiton and make sure that the camera is in front of the target object within an angle of 60 degrees.
 Figure~\ref{fig:Camera viewpoints} shows samples of different camera view points on a constant object and scene.
 
 \begin{figure}
@@ -98,34 +107,34 @@ Figure~\ref{fig:Camera viewpoints} shows samples of different camera view points
 
 \subsection{Lightings and Shadows}\label{subsec:lightings-and-shadows}
 
-We consider lighting to be a key component of the photorealism.
-The shadows formed with different lighting condition enhance the photorealism of the images.
-For this purpose we use 3 types of lights offered in Unity.
+We consider lighting to be a key component of photorealism.
+The shadows formed with different lighting conditions enhance the photorealism of the images.
+For this purpose, we use 3 types of lights offered in Unity.
 
 \begin{itemize}
     \item Point light
-    \item Spot light
+    \item Spotlight
     \item Sunlight
 \end{itemize}
 
 Point lights act as indoor lights for the room the range of which can be varied.
-We pre-define 6 light patterns for a room with cuboid shape.
+We pre-define 6 light patterns for a room with a cuboid shape.
 Knowing the bounds of the room we decide how to place the lights by randomly select 1 to 6 lights with corresponding light patterns on the ceiling.
 For the spotlight, only a single light is placed a meter above the target object.
-This light gives a variation which focuses only on the target object.
-Both point and spot-light have color variation along with varing brightness.
+This light gives a variation that focuses only on the target object.
+Both point and spot-light have color variation along with varying brightness.
 Sunlight is the default light settings in Unity.
 This is specifically effective when the room has windows forming more realistic shadows.
-In this case, we modulate the brightness and the angle at which the rays are emitted, which simulates different times of the day.
-Additional to these different types of light, we give ceilings the property of light with limited brightness as we observed that the entire room does not lit up for single light source.
-This is similar to what BlenderProc~\cite{denninger2019blenderproc} does for all scenarios.
-Samples of different lighting condition and shadows with varying color is displayed in figure~\ref{fig:Lighting and shadows}.
+In this case, we modulate the brightness, and the angle at which the rays are emitted, which simulates different times of the day.
+Additional to these different types of light, we give ceilings the property of light with limited brightness as we observed that the entire room does not light up for a single light source.
+This is similar to what BlenderProc~\cite{denninger2019blenderproc} do for all scenarios.
+Samples of different lighting conditions and shadows with varying colors are displayed in figure~\ref{fig:Lighting and shadows}.
 
-Another randomised entity is the skybox.
+Another randomized entity is the skybox.
 Skybox acts as the outdoor scene for a given room.
-For each of the pipeline, skybox changes for every snap taken.
-This simulates different outdoor places and weather scenarios, thus providing more randomisation for rooms have open doors and windows.
-Samples for different skyboxes are as shown in figure~\ref{fig:skybox samples}.
+For each of the pipelines, skybox changes for every snap taken.
+This simulates different outdoor places and weather scenarios, thus providing more randomization for rooms that have open doors and windows.
+Samples for different skyboxes are shown in figure~\ref{fig:skybox samples}.
 
 %\begin{figure}
 %    \centering
@@ -157,17 +166,17 @@ Samples for different skyboxes are as shown in figure~\ref{fig:skybox samples}.
 
 The objects in the scene are renamed to standard objects seen in day-to-day life.
 The textures are grouped together to these names as folder names.
-A total of 982 texture images with 58 regular object category, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement and roughness.
+A total of 982 texture images with 58 regular object categories, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement, and roughness.
 This makes the textures more realistic.
-Distribution of top 40 texture cataegory used for randomisation of scenes is as shown in figure~\ref{fig:Distribution of textures}, with categories of Pix3d having higher number of images.
-Each scene is randomised for every snap taken of the target object.
-Samples of texture randomisation of background in the scene with target object in the focus is as shown in figure~\ref{fig:Texture Randomisation}.
-Randomising outdoor environment is important in cases where we have open doors and windows.
+The distribution of the top 40 texture categories used for randomization of scenes is as shown in figure~\ref{fig:Distribution of textures}, with categories of Pix3d a having higher number of images.
+Each scene is randomized for every snap taken of the target object.
+Samples of texture randomization of background in the scene with target object in the focus are shown in figure~\ref{fig:Texture Randomisation}.
+Randomizing the outdoor environment is important in cases where we have open doors and windows.
 Unity provides a wrapper for scenes called skyboxes.
 This is something of a globe around the room under observation.
-This gives us varying outdoor environment for the scene with scenery at the horizon.
-We randomise 10 skyboxes to achieve this.
-Samples of skybox is as shown in figure~\ref{fig:skybox samples}.
+This gives us a varying outdoor environment for the scene with the scenery at the horizon.
+We randomize 10 skyboxes to achieve this.
+Samples of the skybox are shown in figure~\ref{fig:skybox samples}.
 
 
 \begin{figure}
@@ -192,7 +201,7 @@ Samples of skybox is as shown in figure~\ref{fig:skybox samples}.
 \begin{figure}[!ht]
     \centering
     \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures.pgf}}
-    \caption{Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.}
+    \caption{Distribution of textures used on scenes. The categories of pix3d(target furniture) have higher number of images.}
     \label{fig:Distribution of textures}
 \end{figure}
 
@@ -209,14 +218,14 @@ Samples of skybox is as shown in figure~\ref{fig:skybox samples}.
 
 \subsection{Replacing target Objects}\label{subsec:replacing-target-objects}
 
-Once the room is setup using Scenenet~\cite{McCormac:etal:ICCV2017} which contains objects from ShapeNet~\cite{chang2015shapenet}, the objects are renamed such that it matches the classes for the Pix3D dataset.
+Once the room is set up using Scenenet~\cite{McCormac:etal:ICCV2017} which contains objects from ShapeNet~\cite{chang2015shapenet}, the objects are renamed such that it matches the classes for the Pix3D dataset.
 Since a given scene can have more than one category under observation, a single model is chosen randomly out of all the present models.
-The chosen model is replaced with a model in Pix3D of same category.
+The chosen model is replaced with a model in Pix3D of the same category.
 In case the replaced model is intersecting with any other models in the scene, we make it invisible.
-Further, the camera checks if the centre of replaced model is in the frame.
-If not, the camera viewpoint is changed untill it satisfies the condition.
-After the snapshot is taken, the scene is reset to the original and next model is imported.
-Samples for replacing a target object from original scene from Scenenet is shown in figure~\ref{fig:replace model}
+Further, the camera checks if the center of replaced model is in the frame.
+If not, the camera viewpoint is changed until it satisfies the condition.
+After the snapshot is taken, the scene is reset to the original and the next model is imported.
+Samples for replacing a target object from an original scene from Scenenet is shown in figure~\ref{fig:replace model}.
 
 \begin{figure}
     \centering
@@ -233,15 +242,15 @@ Samples for replacing a target object from original scene from Scenenet is shown
 
 ML-ImageSynthesis~\cite{imagesynthesis} is a library provided by Unity to support synthetic dataset creation.
 It supports the following G-buffers Image segmentation, Object categorization, Optical flow, Depth, Normals, etc.
-G-buffers is basically a collective term to represent light-properties which are agregated to give the final rendering.
-In image segmentation each object is assigned unique color.
-In object categorization each category of the objects is assigned a single color.
-For optical flow each pixel is colored depending on Unity's per-pixel Motion Vectors with respect to the camera.
+G-buffers is basically a collective term to represent light properties that are aggregated to give the final rendering.
+In image segmentation, each object is assigned a unique color.
+In object categorization, each category of the objects is assigned a single color.
+For optical flow, each pixel is colored depending on Unity's per-pixel Motion Vectors with respect to the camera.
 Depth is as the word suggests the distance of each pixel from the camera encoded in 8-bit channels of the PNG image.
 Normals are color encoding based on the orientation of object with respect to the camera.
-For the snapshot, each of these properties is assigned a hidden camera and have each one overrides rendering scene with custom shaders to generate corresponding output.
+For the snapshot, each of these properties is assigned a hidden camera, and has each one overrides rendering scene with custom shaders to generate corresponding output.
 These camera outputs can be seen in editor mode by changing the display window.
-Samples of G-buffer collected for dataset are as shown in figure~\ref{fig:G-buffer-samples}.
+Samples of G-buffer collected for the dataset are as shown in figure~\ref{fig:G-buffers-samples}.
 
 \begin{figure}
     \centering
@@ -295,14 +304,110 @@ Samples of G-buffer collected for dataset are as shown in figure~\ref{fig:G-buff
     \label{fig:G-buffers-samples}
 \end{figure}
 
+\subsection{Demo for the application}\label{subsec:demo}
+
+The researchers are provided source code for the Unity-based application~\footnote{https://github.com/kartikprabhu20/3dScene}, which was used to create the synthetic datasets.
+The application allows the users to provide paths for the 3D models, 3D rooms, textures, and output.
+The user can also select the category of furniture for which images are to be generated and the quantity per category.
+For the camera, the user can decide upon the height of the camera position, minimum and maximum distance from the target model between which a viewpoint will be randomly chosen.
+The modes are discussed in~\ref{subsec:modes-of-operations}, which can be select once all the data is configured.
+For the manual mode, the user can randomize one or more parameters and take the snapshot as desired.
+Figure~\ref{fig:demo1} shows the configuration page for the demo application, figure~\ref{fig:demo2} shows the application in action in manual mode.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/demo/demo}
+    \caption{A screenshot of the Unity based application developed for proof of concept to create synthetic dataset.}
+    \label{fig:demo1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/demo/demo2}
+    \caption{A screenshot of the Unity based application in action, the user is able to configure the pipeline using GUI and take snapshots either automatically or manually.}
+    \label{fig:demo2}
+\end{figure}
+
 \section{3d-Reconstruction framework}\label{sec:3d-reconstruction-framework}
 
-Development environment
-Training setup(hardware, voxel size)
-evaluation metric
+In this section, we discuss the pipeline used for the 3D reconstruction~\footnote{https://github.com/kartikprabhu20/3dReconstruction} tasks using Deep Learning.
+The discussion will revolve around the implementation of models and the training parameters.
+The code for the pipeline was written in Python 3.7.9.
+The backbone of this pipeline is pytorch 1.7.1~\cite{NEURIPS2019_9015}.
 
-\subsection{Preprocessing}
+The key features of this pipeline are as follows:
+\begin{enumerate}
+    \item Allows users to configure the parameter using a config file which included dataset paths, root paths, output path, parameters for 2D augmentations, etc.
+    \item Allows users to select train, validate, test with real data, an empty image test.
+    \item Allows users to select the pipeline type(3d-reconstruction, cyclegan~\cite{CycleGAN2017}, autoencoder)
+    \item Allows users to select the dataset(Pix3d, \gls(free), Mixed), with a further option to add new datasets.
+    \item Allows users to collect graphs, images per epoch using tensorboard~\cite{tensorflow2015-whitepaper}.
+\end{enumerate}
 
-\subsection{Modelling}
+\subsection{Preprocessing}\label{subsec:preprocessing}
+As preprocessing for testing, images were resized to 224$\times$224, and then center cropped to 128$\times$128.
+The images were then normalized using the parameters used for ImageNet~\cite{Deng2009ImageNetAL} Mean=[0.485, 0.456, 0.406] and STD=[0.229, 0.224, 0.225].
+This was also done for training images followed by 2D-augmentations which included ColorJitter, RandomNoise, RandomFlip and, RandomPermuteRGB.
+All the images were then transformed to a tensor to make them compatible with deep learning models.
 
-\subsection{Evaluation}
+\subsection{Modelling}\label{subsec:modelling}
+For models we used the architectures proposed in ~\cite{Xie_2019} and ~\cite{Xie_2020}.
+The backbones of these 2 models are \gls{vgg} and \gls{resnet} respectively.
+These models were obtained from pytorch's model zoo, pretrained on ImageNet.
+Rest of the architecture were built using basic models using pytorch.
+The weights for the models were initialised using Glorot Initializer~\cite{Glorot2010UnderstandingTD}.
+
+\subsection{Training}\label{subsec:training}
+
+For training, the Deep learning models for the 3D reconstruction task the GPU used was NVIDIA DGX-1 with 1 node,
+with 512 GB RAM, and 8x NVIDIA Tesla V100 GPU cards.
+The hyperparameters were initially fine-tuned with a grid search approach and then trained on parameters on which the baselines were published.
+The difference was not significant, hence we decided to follow the hyperparameters used by the authors~\cite{Xie_2019}.
+The only visible difference being the batch size, where we used the maximum possible value that would fit a 32GB memory of the used GPU.
+The rest of the hyperparameters are as shown in table~\ref{tab:hyperparameter}.
+A more extensive hyperparameter optimization can be done in the future for better performance.
+The model took up to 96 hours to train.
+
+
+The users could decide when to write the training values in the tensorboard in the config file.
+The tensorboard not only saves the loss values for each epoch but also the images of the 3d models for the configured epochs.
+Tensorboard also has the capability to save 3D models, but we observed that the interface freezes and also occupies a larger storge.
+Hence, we convert the 3D models into 2D images for visualization using Matplotlib.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c |c |}
+        \hline
+        Hyperparameter & Value \\ [0.5ex]
+        \hline\hline
+        Optimizer & Adam(\beta_1 =.9, \beta_2=.999)\\
+        \hline
+        Weight Initializer & Glorot \\
+        \hline
+        Batch Size & 128  \\
+        \hline
+        Learning Rate & 0.001 \\
+        \hline
+        Epochs & 400\\
+        \hline
+        Loss & Binary Crossentropy\\
+        \hline
+    \end{tabular}
+    \caption{Hyperparameters used for training 3d reconstruction models.}
+    \label{tab:hyperparameter}
+\end{table}
+
+\subsection{Evaluation}\label{subsec:evaluation}
+
+For evaluating the models we use \gls{iou} as used in the original paper~\cite{Xie_2019}.
+In the validation step, we compute the average ~\gls{iou} for each of the batches and store the best epoch value.
+In case where the value increases, we replace the best value and save the model state as the best model.
+No thresholding is done during the validation step to apply binary cross-entropy.
+
+For the testing step, we use the test split from the real dataset(Pix3D).
+In this step, we compute the average of each sample with different threshold values and select the best average value as our result.
+The threshold values used are 0.05, 0.075, .1, .2, .3, .4, .5, .6, .7.
+The average \gls{iou }values for each of the categories are also noted for real data test.
+
+
+

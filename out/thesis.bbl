@@ -1,4 +1,4 @@
-\begin{thebibliography}{91}
+\begin{thebibliography}{94}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,6 +14,30 @@ Evermotion archinteriors collection.
 Turbosquid.
 \newblock \url{http://www.turbosquid.com}.
 \newblock Accessed: 2021-08-16.
+
+\bibitem[201(2018)]{2018LearningIC}
+Learning image classifiers from (limited) real and (abundant) synthetic data.
+\newblock 2018.
+
+\bibitem[Abadi et~al.(2015)Abadi, Agarwal, Barham, Brevdo, Chen, Citro,
+  Corrado, Davis, Dean, Devin, Ghemawat, Goodfellow, Harp, Irving, Isard, Jia,
+  Jozefowicz, Kaiser, Kudlur, Levenberg, Man\'{e}, Monga, Moore, Murray, Olah,
+  Schuster, Shlens, Steiner, Sutskever, Talwar, Tucker, Vanhoucke, Vasudevan,
+  Vi\'{e}gas, Vinyals, Warden, Wattenberg, Wicke, Yu, and
+  Zheng]{tensorflow2015-whitepaper}
+Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
+  Craig Citro, Greg~S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin,
+  Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard,
+  Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh
+  Levenberg, Dandelion Man\'{e}, Rajat Monga, Sherry Moore, Derek Murray, Chris
+  Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal
+  Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Vi\'{e}gas,
+  Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and
+  Xiaoqiang Zheng.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems,
+  2015.
+\newblock URL \url{https://www.tensorflow.org/}.
+\newblock Software available from tensorflow.org.
 
 \bibitem[Afzal et~al.(2020)Afzal, Luo, Afzal, Chaudhary, Khari, and
   Kumar]{9210569}
@@ -141,6 +165,12 @@ Georgia Gkioxari, Jitendra Malik, and Justin Johnson.
 \newblock Mesh r-cnn.
 \newblock \emph{2019 IEEE/CVF International Conference on Computer Vision
   (ICCV)}, pages 9784--9794, 2019.
+
+\bibitem[Glorot and Bengio(2010)]{Glorot2010UnderstandingTD}
+Xavier Glorot and Yoshua Bengio.
+\newblock Understanding the difficulty of training deep feedforward neural
+  networks.
+\newblock In \emph{AISTATS}, 2010.
 
 \bibitem[Gold(2004)]{10.5555/983334}
 Julian Gold.
@@ -360,6 +390,22 @@ Despoina Paschalidou, Ali~O. Ulusoy, Carolin Schmitt, L.~Gool, and Andreas
 \newblock \emph{2018 IEEE/CVF Conference on Computer Vision and Pattern
   Recognition}, pages 3897--3906, 2018.
 
+\bibitem[Paszke et~al.(2019)Paszke, Gross, Massa, Lerer, Bradbury, Chanan,
+  Killeen, Lin, Gimelshein, Antiga, Desmaison, Kopf, Yang, DeVito, Raison,
+  Tejani, Chilamkurthy, Steiner, Fang, Bai, and Chintala]{NEURIPS2019_9015}
+Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory
+  Chanan, Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban
+  Desmaison, Andreas Kopf, Edward Yang, Zachary DeVito, Martin Raison, Alykhan
+  Tejani, Sasank Chilamkurthy, Benoit Steiner, Lu~Fang, Junjie Bai, and Soumith
+  Chintala.
+\newblock Pytorch: An imperative style, high-performance deep learning library.
+\newblock In H.~Wallach, H.~Larochelle, A.~Beygelzimer, F.~d\textquotesingle
+  Alch\'{e}-Buc, E.~Fox, and R.~Garnett, editors, \emph{Advances in Neural
+  Information Processing Systems 32}, pages 8024--8035. Curran Associates,
+  Inc., 2019.
+\newblock URL
+  \url{http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf}.
+
 \bibitem[Pinheiro et~al.(2019)Pinheiro, Rostamzadeh, and
   Ahn]{pinheiro2019domainadaptive}
 Pedro~O. Pinheiro, Negar Rostamzadeh, and Sungjin Ahn.
@@ -416,11 +462,6 @@ Manolis Savva, Abhishek Kadian, Oleksandr Maksymets, Yili Zhao, Erik Wijmans,
   Bhavana Jain, Julian Straub, Jia Liu, Vladlen Koltun, Jitendra Malik, Devi
   Parikh, and Dhruv Batra.
 \newblock Habitat: A platform for embodied ai research, 2019.
-
-\bibitem[Seib et~al.(2020)Seib, Lange, and Wirtz]{seib2020mixing}
-Viktor Seib, Benjamin Lange, and Stefan Wirtz.
-\newblock Mixing real and synthetic data to enhance neural network training --
-  a review of current approaches, 2020.
 
 \bibitem[Shin et~al.(2019)Shin, Ren, Sudderth, and Fowlkes]{Shin20193DSR}
 Daeyun Shin, Zhile Ren, Erik~B. Sudderth, and Charless~C. Fowlkes.
