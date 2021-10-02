@@ -145,8 +145,8 @@ It also trumps over AI2THOR which is manually designed using Unity game engines.
 
 In this section, we verify if the synthetic dataset;
 \gls{free}, has domain gap with the real dataset(Pix3D).
-Along with the new synthetic dataset, we will compare the datasets used for the survey in section ~\ref{sec:a-survey-on-photorealism}.
-Qualitatively we will visualise dataset embeddings using T-SNE in ~\ref{subsec:qualitative}, and quantitatively we will compare the distributions of all the synthetic dataset and real dataset~\ref{subsec:quantitative}.
+Along with the new synthetic dataset, we will compare the datasets used for the survey in \autoref{sec:a-survey-on-photorealism}.
+Qualitatively we will visualise dataset embeddings using T-SNE in \autoref{subsec:qualitative}, and quantitatively we will compare the distributions of all the synthetic dataset and real dataset as in \autoref{subsec:quantitative}.
 
 \subsection{Qualitative}\label{subsec:qualitative}
 
@@ -170,7 +170,7 @@ From the T-SNE visualisation, we see that the real dataset(Pix3D) is spread acro
 \gls{ai2thor}, openrooms, hyperism and \gls{front} have their embedding mapped in the outer region.
 BlenderProc and SceneNet seem to be closest to the real dataset, but the latent space is not widespread indicating lesser randomisation.
 \gls{free} has a wide spread and is closer to the real dataset.
-This can also be seen in figure~\ref{fig:pix3d_s2r3dfree}.
+This can also be seen in \autoref{fig:pix3d_s2r3dfree}.
 For this visualisation, 280 randomly images were randomly selected from each dataset with 40 images belonging to each of the categories.
 
 We plot the visualisation for each dataset individually with real dataset in \autoref{fig:tsne per dataset}.
@@ -319,7 +319,7 @@ We see that combined space is close to the real dataset space and spreads across
 
 \subsubsection{\Gls{free}\_Textured}
 
-    As the name suggests, in this dataset both the model and the default single room were textured randomly for each snapshot as explained in~\ref{subsec:randomised-texture}.
+    As the name suggests, in this dataset both the model and the default single room were textured randomly for each snapshot as explained in \autoref{subsec:randomised-texture}.
     10000 snapshot of chair models were taken using different camera viewpoints.
 
 \subsubsection{\Gls{free}\_Textured\_Light}
@@ -329,7 +329,7 @@ We see that combined space is close to the real dataset space and spreads across
 
 \subsubsection{\gls{free}\_Chair}
 
-    \Gls{free}\_Chair dataset was created using 'Multi Object pipeline' with chair replacing a similar category from scene as implemented in~\ref{subsec:replacing-target-objects}.
+    \Gls{free}\_Chair dataset was created using 'Multi Object pipeline' with chair replacing a similar category from scene as implemented in \autoref{subsec:replacing-target-objects}.
     Both the light and camera view points were randomised making sure that the model under observation is not completly occluded.
 
 
@@ -419,9 +419,9 @@ We hypothesize that since Pix3D has multi-objects in the scenes same as \gls{s2r
 Fine tuning or Transfer Learning is a common way of domain adaptation.
 For this experiment, the model is first trained on synthetic dataset and then used as a pre-trained model to be fine tuned using real dataset.
 
-In figure~\ref{fig:finetuning1}, we have a comparison of \gls{iou}  with pure real and pure synthetic dataset, followed by fine-tuning the models with real dataset.
+In \autoref{fig:finetuning1}, we have a comparison of \gls{iou}  with pure real and pure synthetic dataset, followed by fine-tuning the models with real dataset.
 The core comparison is between real data and fine-tuned model.
-Models are pre-trained with 2 versions of \gls{free}(\gls{s2rv1} and \gls{s2rv2}) as mentioned in~\ref{sec:datasets}.
+Models are pre-trained with 2 versions of \gls{free}(\gls{s2rv1} and \gls{s2rv2}) as mentioned in \autoref{sec:datasets}.
 It is noticed that for \gls{s2rv1} there is a decrement of 3.04\% and 1.25\% on pix2vox++ and pix2vox respectively.
 For \gls{s2rv2}, a decrement of 3.54\% on pix2vox++, but an increment of 0.8\% on pix2vox model.
 
@@ -440,13 +440,13 @@ Higher the ratio, closer the mixed dataset becomes a real dataset.
 Both real and synthetic dataset drawn according to these ratios for each mini-batch.
 As synthetic dataset is much more abundant than real, the real dataset will be oversampled to achieve the mentioned ratios.
 
-In figure~\ref{fig:mixed1}, with each of the ratios the performance is better than the baseline of 0.3443 for pix2vox++,
+In \autoref{fig:mixed1}, with each of the ratios the performance is better than the baseline of 0.3443 for pix2vox++,
 except for a ratio 15\%, which in some cases has slightly lower \gls{iou}  value.
 Most significant difference is seen for at 50\% using \gls{s2rv2} dataset with an increase of 3.04\%.
 We saw an increase in \gls{iou} for pix2vox rather than pix2vox++.
 An increase of 2.62\% is noted for 25\% mix with \gls{s2rv2} on pix2vox.
 
-In the figure~\ref{fig:mixed2}, we represent \gls{iou} per category present in the Pix3D and \gls{free}.
+In the \autoref{fig:mixed2}, we represent \gls{iou} per category present in the Pix3D and \gls{free}.
 The number of images per category is also mentioned on the x-label.
 We see that table and desk are most difficult to reconstruct as the \gls{iou} is least, while the wardrobe is the easiest category to reconstruct and gets the most points.
 In the majority of the cases we see that \fls{iou} of models trained on mixed data achieves higher performance than models trained on only real dataset.
@@ -469,14 +469,24 @@ In the majority of the cases we see that \fls{iou} of models trained on mixed da
     \label{fig:mixed2}
 \end{figure}
 
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_parallel_pix2voxpp.pgf}}
+    \caption{Parallel coordinate plot for the \gls{iou} for baseline pix2vox trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
+    The categories are listed along with the number of images.
+    The performance of pix2vox++ mixed with both the synthetic dataset is more than model trained on only pix3d, for most of the categories.
+    \todo{running s2rv1}}
+    \label{fig:mixed3}
+\end{figure}
+
 \section{Ablation study on chairs}\label{sec:ablation-study-on-chairs}
 In this section, we conduct ablation study on chairs by changing domain randomisation property.
-The dataset used for the study is explained in subsection~\ref{subsec:s2r:3dfree-ablation}.
-The samples for  each of the dataset used is as shown in~\ref{fig:domain randomisation for ablation study}.
+The dataset used for the study is explained in \autoref{subsec:s2r:3dfree-ablation}.
+The samples for  each of the dataset used is as shown in \autoref{fig:domain randomisation for ablation study}.
 
 \subsection{Domain randomisation on chair dataset}\label{subsec:domain-randomisation-on-chair-dataset}
 For comparison with real dataset, we extract only the chair models from Pix3D and compare the results  with and without 2D augmentation on the synthetic dataset.
-In figure~\ref{fig:ablation1}, we see that textureless chair dataset out performs rest of the dataset.
+In \autoref{fig:ablation1}, we see that textureless chair dataset out performs rest of the dataset.
 Contrary to the hypothesis that more the randomisation, better the performance, we see that as the randomisation is increased the performance has decreased.
 
 The baseline on real chair dataset from Pix3D is 0.2797 and 0.3305, without and with 2D augmentations on pix2vox++.
@@ -496,14 +506,14 @@ From then on we see slight increase in \gls{iou} for pix2vox++, but not for pix2
 
 To reiterate,the performance on real chair dataset from Pix3D is 0.2918 and 0.3308, 0.2664 and 0.2907 without and with 2D augmentations on pix2vox++ and pix2vox respectively.
 In the mixed training with a ratio of 50\%, we see a maximum increase of 3.4\% increment in pix2vox++ and 5.24\% in pix2vox.
-The behavior of models for the different randomisation parameters is similar to what we observed in ~\ref{subsec:domain-randomisation-on-chair-dataset}.
+The behavior of models for the different randomisation parameters is similar to what we observed in \autoref{subsec:domain-randomisation-on-chair-dataset}.
 For pix2vox++, the textureless chair dataset gives the best performance, with gradual decrease with addition of each parameter and slight increase for multi-object dataset.
 Similarly, for pix2vox the gradual decrease is observed, but multi-object gives better performance than the textureless dataset.
-These observations are seen in figure~\ref{fig:ablation2}.
+These observations are seen in \autoref{fig:ablation2}.
 
-Hypothesis would be that with each percentage of real data added, the final \gls{iou} changes in proportion to the values in ~\ref{fig:ablation1}; that is we would expect a similar shaped curved with better \gls{iou} values.
+Hypothesis would be that with each percentage of real data added, the final \gls{iou} changes in proportion to the values in \autoref{fig:ablation1}; that is we would expect a similar shaped curved with better \gls{iou} values.
 But we observe that mixed training eliminated this inconsistency, and thus irrespective of the type domain randomisation in synthetic data, the validation achieves good consistent performance.
-Hence, we see a flat line in figure~\ref{fig:ablation2}.
+Hence, we see a flat line in \autoref{fig:ablation2}.
 \begin{figure}
     \centering
     \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_linegraph2.pgf}}

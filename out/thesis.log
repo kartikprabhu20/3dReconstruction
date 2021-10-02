@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  2 OCT 2021 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  2 OCT 2021 19:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1610,7 +1610,7 @@ Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
 t line 102.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
 line 102.
-<files//ovgu.pdf, id=413, 277.00789pt x 45.76799pt>
+<files//ovgu.pdf, id=417, 277.00789pt x 45.76799pt>
 File: files//ovgu.pdf Graphic file (type pdf)
 <use files//ovgu.pdf>
 Package pdftex.def Info: files//ovgu.pdf  used on input line 120.
@@ -2067,6 +2067,18 @@ d and [][][]S2R:3DFREE[][] dataset.We
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.lot)
 \tf@lot=\write27
@@ -2194,7 +2206,7 @@ Overfull \hbox (10.95497pt too wide) in alignment at lines 2--65
 (./text/introduction.tex
 Chapter 1.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-cha
-rt_2.png, id=885, 1155.31625pt x 843.15pt>
+rt_2.png, id=900, 1155.31625pt x 843.15pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartne
 r-chart_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner
@@ -2235,7 +2247,7 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepresent
-ation.png, id=973, 3679.7475pt x 1340.00626pt>
+ation.png, id=988, 3679.7475pt x 1340.00626pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepr
 esentation.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepre
@@ -2351,7 +2363,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/3dfront_1.jpg, id=1130, 1204.5pt x 1204.5pt>
+relatedwork/3dfront_1.jpg, id=1145, 1204.5pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/3dfront_1.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2373,7 +2385,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/3dfront_2.jpg, id=1131, 1204.5pt x 1204.5pt>
+relatedwork/3dfront_2.jpg, id=1146, 1204.5pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/3dfront_2.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2395,7 +2407,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/3dfront_3.jpg, id=1132, 1204.5pt x 1204.5pt>
+relatedwork/3dfront_3.jpg, id=1147, 1204.5pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/3dfront_3.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2417,7 +2429,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/ai2thor_01.png, id=1134, 1178.4025pt x 589.20125pt>
+relatedwork/ai2thor_01.png, id=1149, 1178.4025pt x 589.20125pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/ai2thor_01.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2439,7 +2451,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/ai2thor_02.png, id=1135, 713.66624pt x 539.01375pt>
+relatedwork/ai2thor_02.png, id=1150, 713.66624pt x 539.01375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/ai2thor_02.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2461,7 +2473,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/ai2thor_03.png, id=1136, 712.6625pt x 539.01375pt>
+relatedwork/ai2thor_03.png, id=1151, 712.6625pt x 539.01375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/ai2thor_03.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2483,7 +2495,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/hypersim_01.jpg, id=1137, 740.0448pt x 555.0336pt>
+relatedwork/hypersim_01.jpg, id=1152, 740.0448pt x 555.0336pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/hypersim_01.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2505,7 +2517,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/hypersim_02.jpg, id=1138, 740.0448pt x 555.0336pt>
+relatedwork/hypersim_02.jpg, id=1153, 740.0448pt x 555.0336pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/hypersim_02.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2527,7 +2539,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/hypersim_03.jpg, id=1139, 740.0448pt x 555.0336pt>
+relatedwork/hypersim_03.jpg, id=1154, 740.0448pt x 555.0336pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/hypersim_03.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2549,7 +2561,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/interiornet_01.png, id=1140, 642.4pt x 481.8pt>
+relatedwork/interiornet_01.png, id=1155, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/interiornet_01.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2571,7 +2583,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/interiornet_02.png, id=1141, 642.4pt x 481.8pt>
+relatedwork/interiornet_02.png, id=1156, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/interiornet_02.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2593,7 +2605,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/interiornet_03.png, id=1142, 642.4pt x 481.8pt>
+relatedwork/interiornet_03.png, id=1157, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/interiornet_03.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2615,7 +2627,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/openrooms_01.png, id=1143, 642.4pt x 481.8pt>
+relatedwork/openrooms_01.png, id=1158, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/openrooms_01.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2637,7 +2649,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/openrooms_02.png, id=1144, 642.4pt x 481.8pt>
+relatedwork/openrooms_02.png, id=1159, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/openrooms_02.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2659,7 +2671,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/openrooms_03.png, id=1145, 642.4pt x 481.8pt>
+relatedwork/openrooms_03.png, id=1160, 642.4pt x 481.8pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/openrooms_03.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2681,7 +2693,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/scenenet_1.jpg, id=1146, 321.2pt x 240.9pt>
+relatedwork/scenenet_1.jpg, id=1161, 321.2pt x 240.9pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/scenenet_1.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2703,7 +2715,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/scenenet_2.jpg, id=1147, 321.2pt x 240.9pt>
+relatedwork/scenenet_2.jpg, id=1162, 321.2pt x 240.9pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/scenenet_2.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2725,7 +2737,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/scenenet_3.jpg, id=1148, 321.2pt x 240.9pt>
+relatedwork/scenenet_3.jpg, id=1163, 321.2pt x 240.9pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/scenenet_3.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2747,7 +2759,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_1.png, id=1167, 541.02126pt x 543.02875pt>
+relatedwork/blenderproc_1.png, id=1182, 541.02126pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2769,7 +2781,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_depth_1.png, id=1168, 545.03625pt x 546.04pt>
+relatedwork/blenderproc_depth_1.png, id=1183, 545.03625pt x 546.04pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_depth_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2792,7 +2804,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_instance_1.png, id=1169, 545.03625pt x 544.0325pt>
+relatedwork/blenderproc_instance_1.png, id=1184, 545.03625pt x 544.0325pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_instance_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2815,7 +2827,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_normal_1.png, id=1170, 546.04pt x 545.03625pt>
+relatedwork/blenderproc_normal_1.png, id=1185, 546.04pt x 545.03625pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_normal_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2838,7 +2850,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_2.png, id=1171, 579.16376pt x 578.16pt>
+relatedwork/blenderproc_2.png, id=1186, 579.16376pt x 578.16pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2860,7 +2872,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_depth_2.png, id=1172, 545.03625pt x 543.02875pt>
+relatedwork/blenderproc_depth_2.png, id=1187, 545.03625pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_depth_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2883,7 +2895,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_instance_2.png, id=1173, 544.0325pt x 543.02875pt>
+relatedwork/blenderproc_instance_2.png, id=1188, 544.0325pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_instance_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -2906,7 +2918,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_
-relatedwork/blenderproc_normal_2.png, id=1174, 543.02875pt x 543.02875pt>
+relatedwork/blenderproc_normal_2.png, id=1189, 543.02875pt x 543.02875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_im
 ages_relatedwork/blenderproc_normal_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_ima
@@ -3057,12 +3069,8 @@ Chapter 3.
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_histo
-gram.png, id=1430, 462.528pt x 346.896pt>
+gram.png, id=1446, 462.528pt x 346.896pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 histogram.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_h
@@ -3073,7 +3081,7 @@ images/pix3d/pix3d_histogram.png  used on input line 38.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 38.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_model
-s_histogram.png, id=1431, 1040.688pt x 624.4128pt>
+s_histogram.png, id=1447, 1040.688pt x 624.4128pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 models_histogram.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_m
@@ -3082,7 +3090,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/pix3d/pix3d_models_histogram.png  used on input line 39.
 (pdftex.def)             Requested size: 192.04788pt x 170.70886pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_5.jpg
-, id=1437, 1027.84pt x 770.88pt>
+, id=1453, 1027.84pt x 770.88pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 5.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_5
@@ -3091,7 +3099,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/pix3d/pix3d_5.jpg  used on input line 53.
 (pdftex.def)             Requested size: 170.71393pt x 128.02486pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2.png
-, id=1438, 273.02pt x 205.76875pt>
+, id=1454, 273.02pt x 205.76875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2
@@ -3100,7 +3108,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/pix3d/pix3d_2.png  used on input line 54.
 (pdftex.def)             Requested size: 170.71393pt x 128.6648pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6.jpg
-, id=1439, 1606.0pt x 1204.5pt>
+, id=1455, 1606.0pt x 1204.5pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 6.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6
@@ -3109,7 +3117,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/pix3d/pix3d_6.jpg  used on input line 55.
 (pdftex.def)             Requested size: 170.71393pt x 128.02927pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4.png
-, id=1440, 1066.98625pt x 757.83125pt>
+, id=1456, 1066.98625pt x 757.83125pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_
 4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4
@@ -3123,6 +3131,10 @@ images/pix3d/pix3d_4.png  used on input line 56.
 histogram.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pi
 x3d/pix3d_models_histogram.png>]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -3149,6 +3161,28 @@ ages/pix3d/pix3d_4.png (PNG copy)>]
 
 \openout7 = `thesis.mw'.
 
+ [18]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 
@@ -3158,33 +3192,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 \openout7 = `thesis.mw'.
 
-[18] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
- [19]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+[19] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -3212,7 +3220,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox.p
-ng, id=1521, 1371.1225pt x 463.7325pt>
+ng, id=1536, 1371.1225pt x 463.7325pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
 vox.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2v
@@ -3221,7 +3229,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/concept/pix2vox.png  used on input line 183.
 (pdftex.def)             Requested size: 426.79135pt x 144.34288pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2voxpp
-.png, id=1526, 1330.9725pt x 451.6875pt>
+.png, id=1541, 1330.9725pt x 451.6875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
 voxpp.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2v
@@ -3230,7 +3238,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/concept/pix2voxpp.png  used on input line 190.
 (pdftex.def)             Requested size: 426.79135pt x 144.83241pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/survey.pn
-g, id=1531, 718.685pt x 410.53375pt>
+g, id=1546, 718.685pt x 410.53375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surv
 ey.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/surve
@@ -3305,14 +3313,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
  [21 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2
 vox.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/
 pix2voxpp.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/co
@@ -3320,25 +3320,31 @@ ncept/survey.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.m
 w)
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+
+[22] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout2 = `text/implementation.aux'.
 
 
 (./text/implementation.tex
-\openout7 = `thesis.mw'.
-
- [22
-
-
-
-
-]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-
 Chapter 4.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/process.p
-ng, id=1560, 1566.85374pt x 382.42876pt>
+ng, id=1575, 1566.85374pt x 382.42876pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/proc
 ess.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/proce
@@ -3348,7 +3354,12 @@ images/concept/process.png  used on input line 23.
 (pdftex.def)             Requested size: 426.79135pt x 104.16745pt.
 \openout7 = `thesis.mw'.
 
-[23] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+[23
+
+
+
+
+] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -3364,7 +3375,7 @@ images/concept/process.png  used on input line 23.
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_bedroom.png, id=1569, 645.41125pt x 522.95375pt>
+enenet_scenes/scene_bedroom.png, id=1584, 645.41125pt x 522.95375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_bedroom.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3374,7 +3385,7 @@ images/implementation/scenenet_scenes/scene_bedroom.png  used on input line 69.
 
 (pdftex.def)             Requested size: 149.37704pt x 149.37851pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_livingroom.png, id=1570, 1369.115pt x 1053.9375pt>
+enenet_scenes/scene_livingroom.png, id=1585, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_livingroom.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3384,7 +3395,7 @@ images/implementation/scenenet_scenes/scene_livingroom.png  used on input line
 70.
 (pdftex.def)             Requested size: 149.37054pt x 149.36748pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_kitchen.png, id=1571, 1369.115pt x 1053.9375pt>
+enenet_scenes/scene_kitchen.png, id=1586, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_kitchen.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3394,7 +3405,7 @@ images/implementation/scenenet_scenes/scene_kitchen.png  used on input line 71.
 
 (pdftex.def)             Requested size: 149.37054pt x 149.36748pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/sc
-enenet_scenes/scene_office.png, id=1572, 1523.6925pt x 1053.9375pt>
+enenet_scenes/scene_office.png, id=1587, 1523.6925pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/scenenet_scenes/scene_office.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3460,7 +3471,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera1.png, id=1595, 1369.115pt x 1132.23pt>
+ndomisation/camera1.png, id=1610, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3482,7 +3493,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera2.png, id=1596, 1369.115pt x 1132.23pt>
+ndomisation/camera2.png, id=1611, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3504,7 +3515,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera3.png, id=1597, 1369.115pt x 1132.23pt>
+ndomisation/camera3.png, id=1612, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3526,7 +3537,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/camera4.png, id=1598, 1369.115pt x 1132.23pt>
+ndomisation/camera4.png, id=1613, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/camera4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3564,7 +3575,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting1.png, id=1607, 1369.115pt x 1132.23pt>
+ndomisation/lighting1.png, id=1622, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3586,7 +3597,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting2.png, id=1608, 1369.115pt x 1132.23pt>
+ndomisation/lighting2.png, id=1623, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3608,7 +3619,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting3.png, id=1609, 1369.115pt x 1132.23pt>
+ndomisation/lighting3.png, id=1624, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3630,7 +3641,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting4.png, id=1610, 1369.115pt x 1132.23pt>
+ndomisation/lighting4.png, id=1625, 1369.115pt x 1132.23pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3652,7 +3663,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting5.png, id=1611, 1525.7pt x 1053.9375pt>
+ndomisation/lighting5.png, id=1626, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting5.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3674,7 +3685,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting6.png, id=1612, 1525.7pt x 1053.9375pt>
+ndomisation/lighting6.png, id=1627, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting6.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3696,7 +3707,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting7.png, id=1613, 1525.7pt x 1053.9375pt>
+ndomisation/lighting7.png, id=1628, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting7.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3718,7 +3729,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/lighting8.png, id=1614, 1525.7pt x 1053.9375pt>
+ndomisation/lighting8.png, id=1629, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/lighting8.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3740,7 +3751,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture1.png, id=1618, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture1.png, id=1633, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3763,7 +3774,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture2.png, id=1619, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture2.png, id=1634, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3786,7 +3797,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture3.png, id=1620, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture3.png, id=1635, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3809,7 +3820,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/background_texture4.png, id=1621, 1369.115pt x 1053.9375pt>
+ndomisation/background_texture4.png, id=1636, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/background_texture4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3835,7 +3846,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_1.png, id=1622, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_1.png, id=1637, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3857,7 +3868,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_2.png, id=1623, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_2.png, id=1638, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3879,7 +3890,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_3.png, id=1624, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_3.png, id=1639, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3901,7 +3912,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/skybox_4.png, id=1625, 1525.7pt x 1053.9375pt>
+ndomisation/skybox_4.png, id=1640, 1525.7pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/skybox_4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3945,7 +3956,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_1-1.png, id=1635, 1158.3275pt x 1053.9375pt>
+ndomisation/replace_1-1.png, id=1650, 1158.3275pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_1-1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3967,7 +3978,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_1-2.png, id=1636, 1158.3275pt x 1053.9375pt>
+ndomisation/replace_1-2.png, id=1651, 1158.3275pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_1-2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -3989,7 +4000,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_2-1.png, id=1637, 1158.3275pt x 1053.9375pt>
+ndomisation/replace_2-1.png, id=1652, 1158.3275pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_2-1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4011,7 +4022,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/ra
-ndomisation/replace_2-2.png, id=1638, 578.16pt x 526.96875pt>
+ndomisation/replace_2-2.png, id=1653, 578.16pt x 526.96875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/randomisation/replace_2-2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4020,7 +4031,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/randomisation/replace_2-2.png  used on input line 236.
 (pdftex.def)             Requested size: 170.71451pt x 128.035pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_img.png, id=1642, 1369.115pt x 1053.9375pt>
+uffers/0_img.png, id=1657, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4029,7 +4040,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_img.png  used on input line 257.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_depth.png, id=1643, 1369.115pt x 1053.9375pt>
+uffers/0_depth.png, id=1658, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4038,7 +4049,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_depth.png  used on input line 258.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_id.png, id=1644, 1369.115pt x 1053.9375pt>
+uffers/0_id.png, id=1659, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4047,7 +4058,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_id.png  used on input line 259.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_layer.png, id=1645, 1369.115pt x 1053.9375pt>
+uffers/0_layer.png, id=1660, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4056,7 +4067,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_layer.png  used on input line 260.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/0_normals.png, id=1646, 1369.115pt x 1053.9375pt>
+uffers/0_normals.png, id=1661, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/0_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4065,7 +4076,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/0_normals.png  used on input line 261.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_img.png, id=1647, 1369.115pt x 1053.9375pt>
+uffers/1_img.png, id=1662, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4074,7 +4085,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_img.png  used on input line 263.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_depth.png, id=1648, 1369.115pt x 1053.9375pt>
+uffers/1_depth.png, id=1663, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4083,7 +4094,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_depth.png  used on input line 264.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_id.png, id=1649, 1369.115pt x 1053.9375pt>
+uffers/1_id.png, id=1664, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4092,7 +4103,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_id.png  used on input line 265.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_layer.png, id=1650, 1369.115pt x 1053.9375pt>
+uffers/1_layer.png, id=1665, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4101,7 +4112,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_layer.png  used on input line 266.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/1_normals.png, id=1651, 1369.115pt x 1053.9375pt>
+uffers/1_normals.png, id=1666, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/1_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4110,7 +4121,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/1_normals.png  used on input line 267.
 (pdftex.def)             Requested size: 81.09138pt x 62.41335pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_img.png, id=1652, 1264.725pt x 1053.9375pt>
+uffers/2_img.png, id=1667, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4119,7 +4130,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_img.png  used on input line 270.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_depth.png, id=1653, 1264.725pt x 1053.9375pt>
+uffers/2_depth.png, id=1668, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4128,7 +4139,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_depth.png  used on input line 271.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_id.png, id=1654, 1264.725pt x 1053.9375pt>
+uffers/2_id.png, id=1669, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4137,7 +4148,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_id.png  used on input line 272.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_layer.png, id=1655, 1264.725pt x 1053.9375pt>
+uffers/2_layer.png, id=1670, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4146,7 +4157,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_layer.png  used on input line 273.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/2_normals.png, id=1656, 1264.725pt x 1053.9375pt>
+uffers/2_normals.png, id=1671, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/2_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4155,7 +4166,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/2_normals.png  used on input line 274.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_img.png, id=1657, 1264.725pt x 1053.9375pt>
+uffers/3_img.png, id=1672, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4164,7 +4175,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_img.png  used on input line 276.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_depth.png, id=1658, 1264.725pt x 1053.9375pt>
+uffers/3_depth.png, id=1673, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4173,7 +4184,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_depth.png  used on input line 277.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_id.png, id=1659, 1264.725pt x 1053.9375pt>
+uffers/3_id.png, id=1674, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4182,7 +4193,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_id.png  used on input line 278.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_layer.png, id=1660, 1264.725pt x 1053.9375pt>
+uffers/3_layer.png, id=1675, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4191,7 +4202,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_layer.png  used on input line 279.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/3_normals.png, id=1661, 1264.725pt x 1053.9375pt>
+uffers/3_normals.png, id=1676, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/3_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4200,7 +4211,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/3_normals.png  used on input line 280.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_img.png, id=1662, 1264.725pt x 1053.9375pt>
+uffers/4_img.png, id=1677, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4209,7 +4220,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_img.png  used on input line 283.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_depth.png, id=1663, 1264.725pt x 1053.9375pt>
+uffers/4_depth.png, id=1678, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4218,7 +4229,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_depth.png  used on input line 284.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_id.png, id=1664, 1264.725pt x 1053.9375pt>
+uffers/4_id.png, id=1679, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4227,7 +4238,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_id.png  used on input line 285.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_layer.png, id=1665, 1264.725pt x 1053.9375pt>
+uffers/4_layer.png, id=1680, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4236,7 +4247,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_layer.png  used on input line 286.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/4_normals.png, id=1666, 1264.725pt x 1053.9375pt>
+uffers/4_normals.png, id=1681, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/4_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4245,7 +4256,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/4_normals.png  used on input line 287.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_img.png, id=1667, 1264.725pt x 1053.9375pt>
+uffers/5_img.png, id=1682, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4254,7 +4265,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_img.png  used on input line 290.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_depth.png, id=1668, 1264.725pt x 1053.9375pt>
+uffers/5_depth.png, id=1683, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4263,7 +4274,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_depth.png  used on input line 291.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_id.png, id=1669, 1264.725pt x 1053.9375pt>
+uffers/5_id.png, id=1684, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4272,7 +4283,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_id.png  used on input line 292.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_layer.png, id=1670, 1264.725pt x 1053.9375pt>
+uffers/5_layer.png, id=1685, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4281,7 +4292,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_layer.png  used on input line 293.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/5_normals.png, id=1671, 1264.725pt x 1053.9375pt>
+uffers/5_normals.png, id=1686, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/5_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4290,7 +4301,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/5_normals.png  used on input line 294.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_img.png, id=1672, 1264.725pt x 1053.9375pt>
+uffers/6_img.png, id=1687, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_img.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4299,7 +4310,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_img.png  used on input line 297.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_depth.png, id=1673, 1264.725pt x 1053.9375pt>
+uffers/6_depth.png, id=1688, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_depth.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4308,7 +4319,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_depth.png  used on input line 298.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_id.png, id=1674, 1264.725pt x 1053.9375pt>
+uffers/6_id.png, id=1689, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_id.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4317,7 +4328,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_id.png  used on input line 299.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_layer.png, id=1675, 1264.725pt x 1053.9375pt>
+uffers/6_layer.png, id=1690, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_layer.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4326,7 +4337,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/gbuffers/6_layer.png  used on input line 300.
 (pdftex.def)             Requested size: 81.09138pt x 67.57559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gb
-uffers/6_normals.png, id=1676, 1264.725pt x 1053.9375pt>
+uffers/6_normals.png, id=1691, 1264.725pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/gbuffers/6_normals.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4355,7 +4366,7 @@ n/background_texture4.png (PNG copy)>]
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/de
-mo/demo.png, id=1686, 565.11125pt x 365.365pt>
+mo/demo.png, id=1701, 565.11125pt x 365.365pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/demo/demo.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4364,7 +4375,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/demo/demo.png  used on input line 319.
 (pdftex.def)             Requested size: 426.79135pt x 275.94087pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/de
-mo/demo2.png, id=1687, 611.28375pt x 396.48125pt>
+mo/demo2.png, id=1702, 611.28375pt x 396.48125pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementati
 on/demo/demo2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementatio
@@ -4594,9 +4605,17 @@ Chapter 5.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
 
-./text/evaluation.tex:53: Undefined control sequence.
-l.53 ...from each of the dataset arranged in a 3\x
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+./text/evaluation.tex:55: Undefined control sequence.
+l.55 ...from each of the dataset arranged in a 3\x
                                                   3 grid format.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4690,14 +4709,6 @@ and I'll forget about whatever was undefined.
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
  [38]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
@@ -4724,9 +4735,6 @@ and I'll forget about whatever was undefined.
 
 \openout7 = `thesis.mw'.
 
-
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domain
-gap/photorealisitic_dataset_2.pgf)
 \openout7 = `thesis.mw'.
 
  [40]
@@ -4782,6 +4790,8 @@ gap/photorealisitic_dataset_2.pgf)
 \openout7 = `thesis.mw'.
 
 
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domain
+gap/photorealisitic_dataset_2.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domain
 gap/s2r3dfree_Pix3d280.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domain
@@ -4848,34 +4858,22 @@ gap/s2r-3dfree_Pix3d.pgf)
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 263.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 270.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 277.
+(hyperref)                removing `\gls' on input line 266.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 273.
 
 \openout7 = `thesis.mw'.
 
 [42] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -4929,6 +4927,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \openout7 = `thesis.mw'.
 
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 280.
+
+
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domain
 gap/Pix3d_s2r3dfree_textureless.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domain
@@ -4943,19 +4946,11 @@ gap/Pix3d_s2r3dfree_chair.pgf)
 gap/Pix3d_chair_DR.pgf)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 311.
+(hyperref)                removing `\gls' on input line 314.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Gls' on input line 317.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Gls' on input line 322.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 327.
+(hyperref)                removing `\Gls' on input line 320.
 
 \openout7 = `thesis.mw'.
 
@@ -5022,232 +5017,262 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 \openout7 = `thesis.mw'.
 
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Gls' on input line 325.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 330.
+
+\openout7 = `thesis.mw'.
+
+[45] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/pix3d_1.png, id=1938, 119.44624pt x 103.38625pt>
+ts/pix3d_1.png, id=1961, 119.44624pt x 103.38625pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/pix3d_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/pix3d_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/pix3d_1.png  used on input line 335.
+images/evaluation/datasets/pix3d_1.png  used on input line 338.
 (pdftex.def)             Requested size: 85.35602pt x 81.09369pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/pix3d_2.png, id=1939, 376.40625pt x 285.065pt>
+ts/pix3d_2.png, id=1962, 376.40625pt x 285.065pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/pix3d_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/pix3d_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/pix3d_2.png  used on input line 336.
+images/evaluation/datasets/pix3d_2.png  used on input line 339.
 (pdftex.def)             Requested size: 85.35399pt x 81.08777pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/pix3d_3.jpg, id=1940, 1027.84pt x 770.88pt>
+ts/pix3d_3.jpg, id=1963, 1027.84pt x 770.88pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/pix3d_3.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/pix3d_3.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/pix3d_3.jpg  used on input line 337.
+images/evaluation/datasets/pix3d_3.jpg  used on input line 340.
 (pdftex.def)             Requested size: 85.3499pt x 81.08005pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v1_1.png, id=1942, 1349.04pt x 979.66pt>
+ts/s2r_v1_1.png, id=1965, 1349.04pt x 979.66pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v1_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v1_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v1_1.png  used on input line 339.
+images/evaluation/datasets/s2r_v1_1.png  used on input line 342.
 (pdftex.def)             Requested size: 85.34402pt x 81.08005pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v1_2.png, id=1943, 1487.5575pt x 1001.7425pt>
+ts/s2r_v1_2.png, id=1966, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v1_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v1_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v1_2.png  used on input line 340.
+images/evaluation/datasets/s2r_v1_2.png  used on input line 343.
 (pdftex.def)             Requested size: 85.34549pt x 81.08871pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v1_3.png, id=1944, 1487.5575pt x 1001.7425pt>
+ts/s2r_v1_3.png, id=1967, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v1_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v1_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v1_3.png  used on input line 341.
+images/evaluation/datasets/s2r_v1_3.png  used on input line 344.
 (pdftex.def)             Requested size: 85.34549pt x 81.08871pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v3_1.png, id=1946, 1369.115pt x 1142.2675pt>
+ts/s2r_v3_1.png, id=1969, 1369.115pt x 1142.2675pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v3_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v3_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v3_1.png  used on input line 343.
+images/evaluation/datasets/s2r_v3_1.png  used on input line 346.
 (pdftex.def)             Requested size: 81.07791pt x 85.35263pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v3_2.png, id=1947, 1523.6925pt x 1078.0275pt>
+ts/s2r_v3_2.png, id=1970, 1523.6925pt x 1078.0275pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v3_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v3_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v3_2.png  used on input line 344.
+images/evaluation/datasets/s2r_v3_2.png  used on input line 347.
 (pdftex.def)             Requested size: 85.34944pt x 81.07886pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v3_3.png, id=1948, 1369.115pt x 1053.9375pt>
+ts/s2r_v3_3.png, id=1971, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v3_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v3_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v3_3.png  used on input line 345.
+images/evaluation/datasets/s2r_v3_3.png  used on input line 348.
 (pdftex.def)             Requested size: 85.33968pt x 81.08427pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_1.png, id=1949, 1449.415pt x 1053.9375pt>
+ts/s2r_textureless_1.png, id=1972, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_1.png  used on input line 355.
+images/evaluation/datasets/s2r_textureless_1.png  used on input line 358.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_2.png, id=1950, 1449.415pt x 1053.9375pt>
+ts/s2r_textureless_2.png, id=1973, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_2.png  used on input line 356.
+images/evaluation/datasets/s2r_textureless_2.png  used on input line 359.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_3.png, id=1951, 1449.415pt x 1053.9375pt>
+ts/s2r_textureless_3.png, id=1974, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_3.png  used on input line 357.
+images/evaluation/datasets/s2r_textureless_3.png  used on input line 360.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_light_1.png, id=1952, 1369.115pt x 1053.9375pt>
+ts/s2r_textureless_light_1.png, id=1975, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_light_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_light_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_light_1.png  used on input line 359.
+images/evaluation/datasets/s2r_textureless_light_1.png  used on input line 362.
 
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_light_2.png, id=1953, 1369.115pt x 1053.9375pt>
+ts/s2r_textureless_light_2.png, id=1976, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_light_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_light_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_light_2.png  used on input line 360.
+images/evaluation/datasets/s2r_textureless_light_2.png  used on input line 363.
 
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_light_3.png, id=1954, 1369.115pt x 1053.9375pt>
+ts/s2r_textureless_light_3.png, id=1977, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_light_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_light_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_light_3.png  used on input line 361.
+images/evaluation/datasets/s2r_textureless_light_3.png  used on input line 364.
 
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_1.png, id=1955, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_1.png, id=1978, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_1.png  used on input line 363.
+images/evaluation/datasets/s2r_textured_1.png  used on input line 366.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_2.png, id=1956, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_2.png, id=1979, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_2.png  used on input line 364.
+images/evaluation/datasets/s2r_textured_2.png  used on input line 367.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_3.png, id=1957, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_3.png, id=1980, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_3.png  used on input line 365.
+images/evaluation/datasets/s2r_textured_3.png  used on input line 368.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_light_1.png, id=1958, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_light_1.png, id=1981, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_light_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_light_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_light_1.png  used on input line 367.
+images/evaluation/datasets/s2r_textured_light_1.png  used on input line 370.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_light_2.png, id=1959, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_light_2.png, id=1982, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_light_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_light_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_light_2.png  used on input line 368.
+images/evaluation/datasets/s2r_textured_light_2.png  used on input line 371.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_light_4.png, id=1960, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_light_4.png, id=1983, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_light_4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_light_4.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_light_4.png  used on input line 369.
+images/evaluation/datasets/s2r_textured_light_4.png  used on input line 372.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_chair_1.png, id=1961, 1449.415pt x 1053.9375pt>
+ts/s2r_chair_1.png, id=1984, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_chair_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_chair_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_chair_1.png  used on input line 371.
+images/evaluation/datasets/s2r_chair_1.png  used on input line 374.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_chair_2.png, id=1962, 1449.415pt x 1053.9375pt>
+ts/s2r_chair_2.png, id=1985, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_chair_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_chair_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_chair_2.png  used on input line 372.
+images/evaluation/datasets/s2r_chair_2.png  used on input line 375.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_chair_3.png, id=1963, 1449.415pt x 1053.9375pt>
+ts/s2r_chair_3.png, id=1986, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_chair_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_chair_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_chair_3.png  used on input line 373.
+images/evaluation/datasets/s2r_chair_3.png  used on input line 376.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 \openout7 = `thesis.mw'.
 
- [45]
+ [46]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
@@ -5257,32 +5282,6 @@ images/evaluation/datasets/s2r_chair_3.png  used on input line 373.
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
- [46 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
-atasets/pix3d_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction
-/report/images/evaluation/datasets/pix3d_2.png (PNG copy)> </Users/apple/OVGU/T
-hesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_3.jpg> </Us
-ers/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s
-2r_v1_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v1_2.png (PNG copy)> </Users/apple/OVGU/Thesis/c
-ode/3dReconstruction/report/images/evaluation/datasets/s2r_v1_3.png (PNG copy)>
- </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datas
-ets/s2r_v3_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/re
-port/images/evaluation/datasets/s2r_v3_2.png (PNG copy)> </Users/apple/OVGU/The
-sis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_3.png (PNG c
-opy)>]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -5300,29 +5299,49 @@ opy)>]
 \openout7 = `thesis.mw'.
 
  [47 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
-atasets/s2r_textureless_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReco
-nstruction/report/images/evaluation/datasets/s2r_textureless_2.png (PNG copy)> 
-</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_3.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstru
-ction/report/images/evaluation/datasets/s2r_textureless_light_1.png (PNG copy)>
+atasets/pix3d_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction
+/report/images/evaluation/datasets/pix3d_2.png (PNG copy)> </Users/apple/OVGU/T
+hesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_3.jpg> </Us
+ers/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s
+2r_v1_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/datasets/s2r_v1_2.png (PNG copy)> </Users/apple/OVGU/Thesis/c
+ode/3dReconstruction/report/images/evaluation/datasets/s2r_v1_3.png (PNG copy)>
  </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datas
-ets/s2r_textureless_light_2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dRe
-construction/report/images/evaluation/datasets/s2r_textureless_light_3.png (PNG
- copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluatio
-n/datasets/s2r_textured_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReco
-nstruction/report/images/evaluation/datasets/s2r_textured_2.png (PNG copy)> </U
-sers/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/
-s2r_textured_3.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/
-report/images/evaluation/datasets/s2r_textured_light_1.png (PNG copy)> </Users/
-apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_t
-extured_light_2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction
-/report/images/evaluation/datasets/s2r_textured_light_4.png (PNG copy)> </Users
+ets/s2r_v3_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/re
+port/images/evaluation/datasets/s2r_v3_2.png (PNG copy)> </Users/apple/OVGU/The
+sis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_3.png (PNG c
+opy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/
+datasets/s2r_textureless_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/evaluation/datasets/s2r_textureless_2.png (PNG copy)>
+ </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datas
+ets/s2r_textureless_3.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstr
+uction/report/images/evaluation/datasets/s2r_textureless_light_1.png (PNG copy)
+> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/data
+sets/s2r_textureless_light_2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dR
+econstruction/report/images/evaluation/datasets/s2r_textureless_light_3.png (PN
+G copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluati
+on/datasets/s2r_textured_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/evaluation/datasets/s2r_textured_2.png (PNG copy)> </
+Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets
+/s2r_textured_3.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction
+/report/images/evaluation/datasets/s2r_textured_light_1.png (PNG copy)> </Users
 /apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_
-chair_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_chair_2.png (PNG copy)> </Users/apple/OVGU/Thesi
-s/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_3.png (PNG 
-copy)>]
+textured_light_2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstructio
+n/report/images/evaluation/datasets/s2r_textured_light_4.png (PNG copy)> </User
+s/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r
+_chair_1.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report
+/images/evaluation/datasets/s2r_chair_2.png (PNG copy)> </Users/apple/OVGU/Thes
+is/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_3.png (PNG
+ copy)>]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 
@@ -5330,6 +5349,8 @@ copy)>]
 mance/baseline_linegraph1.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/baseline_linegraph2.pgf)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/finetuning_linegraph1.pgf)
 \openout7 = `thesis.mw'.
 
  [48]
@@ -5368,11 +5389,45 @@ mance/baseline_linegraph2.pgf)
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
 
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
-mance/finetuning_linegraph1.pgf)
-./text/evaluation.tex:446: Undefined control sequence.
-l.446 ...he majority of the cases we see that \fls
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+./text/evaluation.tex:452: Undefined control sequence.
+l.452 ...he majority of the cases we see that \fls
                                                   {iou} of models trained on...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5381,16 +5436,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (7.19984pt too wide) in paragraph at lines 443--447
-[]\T1/aer/m/n/12 (-20) In the fig-ure [][]5.16[][], we rep-re-sent [][][]IoU[][
-] per cat-e-gory present in the Pix3D and [][][]S2R:3DFREE[][].
- []
-
-
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/mixed_linegraph1.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/mixed_linegraph2.pgf)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/mixed_parallel_pix2vox.pgf)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/mixed_parallel_pix2voxpp.pgf)
 \openout7 = `thesis.mw'.
 
  [49]
@@ -5435,45 +5488,8 @@ mance/mixed_linegraph2.pgf)
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
-mance/mixed_parallel_pix2vox.pgf)
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
-mance/ablation_linegraph1.pgf)
-\openout7 = `thesis.mw'.
-
  [50]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -5516,11 +5532,48 @@ mance/ablation_linegraph1.pgf)
 
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/ablation_linegraph1.pgf)
+\openout7 = `thesis.mw'.
+
+ [52]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/ablation_linegraph2.pgf)
-./text/evaluation.tex:505: Undefined control sequence.
+./text/evaluation.tex:521: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.505 ...aining negates loss from randomization.]}
+l.521 ...aining negates loss from randomization.]}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5528,10 +5581,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:505: Undefined control sequence.
+./text/evaluation.tex:521: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.505 ...aining negates loss from randomization.]}
+l.521 ...aining negates loss from randomization.]}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5539,10 +5592,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:505: Undefined control sequence.
+./text/evaluation.tex:521: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.505 ...aining negates loss from randomization.]}
+l.521 ...aining negates loss from randomization.]}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5553,7 +5606,7 @@ and I'll forget about whatever was undefined.
 )
 \openout7 = `thesis.mw'.
 
- [52] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [53] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -5562,16 +5615,6 @@ and I'll forget about whatever was undefined.
 
 \openout7 = `thesis.mw'.
 
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
- [53]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -5672,54 +5715,54 @@ Chapter 6.
 
 (./text/appendix.tex
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp1.pn
-g, id=2105, 1102.1175pt x 1001.7425pt>
+g, id=2135, 1102.1175pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp1.png  used on input line 34.
+images/appendix/hdrp1.png  used on input line 37.
 (pdftex.def)             Requested size: 170.70872pt x 128.03pt.
 
 
-./text/appendix.tex:35: Package xkeyval Error: `valign' undefined in families `
+./text/appendix.tex:38: Package xkeyval Error: `valign' undefined in families `
 Gin'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.35 ...construction/report/images/appendix/hdrp2}
+l.38 ...construction/report/images/appendix/hdrp2}
                                                   \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp2.pn
-g, id=2106, 1102.1175pt x 1001.7425pt>
+g, id=2136, 1102.1175pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp2.png  used on input line 35.
+images/appendix/hdrp2.png  used on input line 38.
 (pdftex.def)             Requested size: 170.70872pt x 128.03pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp3.pn
-g, id=2107, 1487.5575pt x 1001.7425pt>
+g, id=2137, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp3.png  used on input line 37.
+images/appendix/hdrp3.png  used on input line 40.
 (pdftex.def)             Requested size: 170.71368pt x 128.03pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp4.pn
-g, id=2108, 1487.5575pt x 1001.7425pt>
+g, id=2138, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 4.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp4.png  used on input line 38.
+images/appendix/hdrp4.png  used on input line 41.
 (pdftex.def)             Requested size: 170.71368pt x 128.03pt.
 )
 \openout7 = `thesis.mw'.
@@ -5735,6 +5778,10 @@ pendix/hdrp2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/re
 port/images/appendix/hdrp3.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dRec
 onstruction/report/images/appendix/hdrp4.png (PNG copy)>]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -7213,6 +7260,10 @@ No complaints by nag.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 )
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/conclusion.aux
 \openout7 = `thesis.mw'.
@@ -7317,6 +7368,10 @@ No complaints by nag.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 )
 \openout7 = `thesis.mw'.
 
@@ -7326,14 +7381,17 @@ No complaints by nag.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 \openout7 = `thesis.out'.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BDF953EE6F0713FCA68F7E8C761DB72C;20141.
+(rerunfilecheck)             Checksum: 4CC31703FFF84E1755FD0C15C2610929;20318.
 \openout7 = `thesis.brf'.
 
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 49F4A2F34BFC6176C4D887E8416A1426;11301.
+(rerunfilecheck)             Checksum: E7ED98374F7E5B53DB7FC7E1E5E314B8;11301.
 \openout7 = `thesis.idx'.
 
 \openout7 = `thesis.glo'.
@@ -7352,13 +7410,13 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 
  ) 
 Here is how much of TeX's memory you used:
- 53797 strings out of 478994
- 1243794 string characters out of 5858185
- 2884383 words of memory out of 5000000
- 68684 multiletter control sequences out of 15000+600000
+ 53823 strings out of 478994
+ 1244666 string characters out of 5858185
+ 2884141 words of memory out of 5000000
+ 68705 multiletter control sequences out of 15000+600000
  563782 words of font info for 717 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,13n,116p,1097b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 117i,13n,116p,1157b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.p
@@ -7382,10 +7440,10 @@ sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
 ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
 Output written on /Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.pdf
- (95 pages, 113052572 bytes).
+ (95 pages, 113057307 bytes).
 PDF statistics:
- 2514 PDF objects out of 2984 (max. 8388607)
- 2177 compressed objects within 22 object streams
- 395 named destinations out of 1000 (max. 500000)
- 130511 words of extra memory for PDF output out of 154059 (max. 10000000)
+ 2548 PDF objects out of 2984 (max. 8388607)
+ 2207 compressed objects within 23 object streams
+ 397 named destinations out of 1000 (max. 500000)
+ 130519 words of extra memory for PDF output out of 154059 (max. 10000000)
 

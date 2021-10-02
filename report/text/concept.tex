@@ -2,12 +2,12 @@
 
 In this chapter we discuss the key datasets used in the creation of new synthetic dataset and reason for their selection.
 And how we combine multiple datasets to our advantage of creating new datasets in Ersatz environment.
-The rationale in choosing Unity as framework to build the pipeline ~\ref{sec:unity-based-pipeline}.
-We will also discuss domain randomisation~\ref{subsec:domain-randomisation-with-unity-engine} and each of its parameters.
-With this, we will introduce the proposed \gls{free}~\ref{sec:s2r:3d-free-a-pix3d-based-sythetic-dataset} dataset which can be used for 3D-reconsturction task.
+The rationale in choosing Unity as framework to build the pipeline \autoref{sec:unity-based-pipeline}.
+We will also discuss domain randomisation \autoref{subsec:domain-randomisation-with-unity-engine} and each of its parameters.
+With this, we will introduce the proposed \gls{free} \autoref{sec:s2r:3d-free-a-pix3d-based-sythetic-dataset} dataset which can be used for 3D-reconsturction task.
 
-In Deep Learning domain, we explore what is 3D-reconstruction and how it can be achieved in section ~\ref{sec:3D reconstruction}.
-In section~\ref{subsec:pix2vox-and-pix2vox++}, the state-of-the-art models for 3D-reconstruction on voxel representation, and reason for selecting the sibling models as baselines.
+In Deep Learning domain, we explore what is 3D-reconstruction and how it can be achieved in \autoref{sec:3D reconstruction}.
+In \autoref{subsec:pix2vox-and-pix2vox++}, the state-of-the-art models for 3D-reconstruction on voxel representation, and reason for selecting the sibling models as baselines.
 
 
 \section{Pix3D: A large-scale benchmark}\label{sec:pix3d}
@@ -23,7 +23,7 @@ For our experiment on synthetic to real dataset, we chose to select only furnitu
 
 \subsection{Disadvantages of Pix3D}\label{subsec:disadvantages-of-pix3d}
 
-The distribution of models in pix3d is as shown in~\ref{fig:pix3d_histogram}.
+The distribution of models in pix3d is as shown in \autoref{fig:pix3d_histogram}.
 As we can see, the dataset distribution is uneven across classes and more than 50\% of classes have less than 1000 images.
 
 Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of using this real dataset.
@@ -46,7 +46,7 @@ Pix3D is a collection of indoor scenes with complex background, varying light co
 Each image comprises a collection of objects in the scene, but only one object from the category is annotated.
 It is a perfect example of having limited real world data.
 Since 3D models are available for each furniture,a synthetic data can be generated in abundance from those models.
-Samples from Pix2D are as shown in figure~\ref{fig:Pix3D samples}.
+Samples from Pix2D are as shown in \autoref{fig:Pix3D samples}.
 
 \begin{figure}[!ht]
     \centering
@@ -87,7 +87,7 @@ Further domain randomisation can be applied to create a dataset of photorealisti
 \subsection{Domain Randomisation with Unity Engine}\label{subsec:domain-randomisation-with-unity-engine}
 In this section we discuss what kind of domain randomisation is applied for the dataset creation.
 \subsubsection{Scenes from scenenet}\label{subsubsec:scenes-from-scenenet}
-As discussed in section~\ref{sec:role-of-scenenet}, SceneNet provides wide variety of indoor scenes which includes bedrooms, bathroom, living room, kitchen and office.
+As discussed in \autoref{sec:role-of-scenenet}, SceneNet provides wide variety of indoor scenes which includes bedrooms, bathroom, living room, kitchen and office.
 For our case, we did not consider the bathroom, as the categories under observations are furnitures which we rarely see in the bathroom.
 For the rest of the scenes we have a pre-determined setup given by scenenet.
 We use 25 scenes in total as basic rooms for our target object to be place.
@@ -105,7 +105,7 @@ Lighting plays an important role in photorealism.
 If the lighting is not setup correctly the synthetic dataset will never seem to be photorealistic.
 Unity offers wide variety of lighting like global light which acts like the sunlight, and various indoor lighting systems.
 Ideally we should make the luminous objects like lamps, chandelier, bulbs etc be the source of light for indoor scenes, but we observed that the room does not lit up uniformly which makes in less photorealistic.
-Hence we use some pre-determined lighting settings which will be further discussed in implementation section~\ref{sec:3d-scene-framework}.
+Hence we use some pre-determined lighting settings which will be further discussed in implementation \autoref{sec:3d-scene-framework}.
 
 \subsubsection{Randomised textures}
 SceneNet~\cite{McCormac:etal:ICCV2017} also provides with textures for different categories in the scene.
@@ -151,7 +151,7 @@ The backbone of the pipeline is the base model and the dataset being used to tra
 In this section we discuss the model used as a base and the rationale behind its selection.
 
 \subsection{Pix2Vox and Pix2Vox++}\label{subsec:pix2vox-and-pix2vox++}
-The architecture of pix2vox~\cite{Xie_2019} as in~\ref{fig:pix2vox architecture}.
+The architecture of pix2vox~\cite{Xie_2019} as in \autoref{fig:pix2vox architecture}.
 The network consists of 4 modules: Encoder, Decoder, Merger and Refiner.
 Merger plays significant part when it comes to multi-view reconstruction of 3d objects.
 As we focus on single-view 3d reconstruction the merger module will not influence the output significantly.
@@ -165,7 +165,7 @@ The extended work replaces \gls{vgg} encoder~\cite{simonyan2015deep} with \gls{r
 Pix2Vox has been used as baseline by most of the research oriented to 3D reconstruction.
 This network is one of the few networks to be tested on pix3d dataset.
 According to the survey conducted by~\cite{Han2021ImageBased3O}, performance of pix2vox~\cite{Xie_2019}
-has been noted to be significantly higher when compared to previous work \todo{cite other papers} as shown in~\ref{fig:survey on 3d reconstruction}.
+has been noted to be significantly higher when compared to previous work \todo{cite other papers} as shown in \autoref{fig:survey on 3d reconstruction}.
 While this comparison was made on 3d reconstruction of shapenet dataset, since pix3d was not available at the time when previous work were published.
 From our survey, only CoReNet~\cite{popov2020corenet} had a slight gain in performance compared to pix2vox.
 When trained on shapenet and tested with pix3d, CoReNet gave a result of 29.7\% \gls{iou} while Pix2Vox gave a result of 28.8\% \gls{iou}  and Pix2Vox++ a result of 29.2\% \gls{iou}\@.
@@ -174,7 +174,7 @@ Another reason for selecting pix2vox model is that the backbone of the architect
 hence the embeddings generated from this encoder can help in visualising the domain space of both Pix3D (real images) and \gls{free}(synthetic images).
 As mentioned above, for pix2vox++ the \gls{resnet} is the backbone encoder which has 25\% lesser parameters and 5\% lesser inference time compared to \gls{vgg}\@.
 In addition, the author even proved that Pix2vox++ performs 1.5\% better than pix2vox.
-The architecture of pix2vox++ is as shown in figure~\ref{fig:pix2voxpp architecture}.
+The architecture of pix2vox++ is as shown in \autoref{fig:pix2voxpp architecture}.
 Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the model, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
 Hence the selection of the model was not of utmost importance.
 But since the 2 architecture are relatable, it would be interesting to compare the results for 3D Reconstuction task.

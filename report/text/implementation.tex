@@ -1,12 +1,12 @@
 \chapter{\iftoggle{german}{Implementierung}{Implementation}}\label{ch:implementation}
 
 In this chapter we discuss the implementations of the all the framework and how it was acheived.
-In~\ref{sec:3d-scene-framework}, we go through the implementation of each of the modes of operation.
+In \autoref{sec:3d-scene-framework}, we go through the implementation of each of the modes of operation.
 Further, we discuss each component that can be used for domain randomization like scenes from SceneNet, camera viewpoints, textures, lighting conditions, and replacement of the target object.
 We then explain how Ml-Image Synthesis library is integrated with the cameras to take the snapshots.
 Some sample images are added for each of the components for the readers to better grasp its importance.
 
-in~\ref{sec:3d-reconstruction-framework}, we discuss the Deep Learning framework used to train and evaluate the 3D reconstruction task.
+in \autoref{sec:3d-reconstruction-framework}, we discuss the Deep Learning framework used to train and evaluate the 3D reconstruction task.
 \section{3D-Scene framework}\label{sec:3d-scene-framework}.
 We discuss the underlying libraries and hyperparameters used for the evaluation of the models.
 
@@ -15,7 +15,7 @@ The First step of the application is to import existing .obj files for 3D models
 These rooms and furniture models can be randomly textured and placed.
 In the final step, the main camera is used for taking snapshots of the scene.
 Along with RGB images, depth maps, normals, semantic segmentation are also saved.
-The pipeline is as shown in figure~\ref{fig:pipeline process}.
+The pipeline is as shown in \autoref{fig:pipeline process}.
 For an automation-based pipeline, the process loops through each step, while in the manual pipeline the user decides which block needs to be executed.
 
 \begin{figure}[!ht]
@@ -59,9 +59,9 @@ To our estimate, even the Multi-threaded pipeline runs 1.5 times faster than Sin
 For the rooms in our ersatz environments, we utilize scenes provided by SceneNet~\cite{McCormac:etal:ICCV2017}.
 SceneNet has made 25 rooms available to the public.
 We only use scenes of type Bedroom(11), Kitchen(1), Living room(6), and office(7).
-Figure~\ref{fig:Scene Types} shows different types of scenes utilized to generate a synthetic dataset.
+\autoref{fig:Scene Types} shows different types of scenes utilized to generate a synthetic dataset.
 These scenes are further modified by adding few more objects of categories present in Pix3D so that we get more variations in the dataset.
-The distribution of furniture matching the category of Pix3D in the scenes is as shown in figure~\ref{fig:distribution of scenes}.
+The distribution of furniture matching the category of Pix3D in the scenes is as shown in \autoref{fig:distribution of scenes}.
 Each scene is replaced for every snap we take for the dataset we create at random.
 
 \begin{figure}[!ht]
@@ -92,7 +92,7 @@ Similarly, the height of the camera can be configured by the user.
 The camera is programed to always look towards the target object and will be changed if the object is not in the frame.
 This is achieved by passing a ray and determining if the center of the target object is visible.
 To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera posiiton and make sure that the camera is in front of the target object within an angle of 60 degrees.
-Figure~\ref{fig:Camera viewpoints} shows samples of different camera view points on a constant object and scene.
+\autoref{fig:Camera viewpoints} shows samples of different camera view points on a constant object and scene.
 
 \begin{figure}
     \centering
@@ -128,13 +128,13 @@ This is specifically effective when the room has windows forming more realistic 
 In this case, we modulate the brightness, and the angle at which the rays are emitted, which simulates different times of the day.
 Additional to these different types of light, we give ceilings the property of light with limited brightness as we observed that the entire room does not light up for a single light source.
 This is similar to what BlenderProc~\cite{denninger2019blenderproc} do for all scenarios.
-Samples of different lighting conditions and shadows with varying colors are displayed in figure~\ref{fig:Lighting and shadows}.
+Samples of different lighting conditions and shadows with varying colors are displayed in \autoref{fig:Lighting and shadows}.
 
 Another randomized entity is the skybox.
 Skybox acts as the outdoor scene for a given room.
 For each of the pipelines, skybox changes for every snap taken.
 This simulates different outdoor places and weather scenarios, thus providing more randomization for rooms that have open doors and windows.
-Samples for different skyboxes are shown in figure~\ref{fig:skybox samples}.
+Samples for different skyboxes are shown in \autoref{fig:skybox samples}.
 
 %\begin{figure}
 %    \centering
@@ -168,15 +168,15 @@ The objects in the scene are renamed to standard objects seen in day-to-day life
 The textures are grouped together to these names as folder names.
 A total of 982 texture images with 58 regular object categories, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement, and roughness.
 This makes the textures more realistic.
-The distribution of the top 40 texture categories used for randomization of scenes is as shown in figure~\ref{fig:Distribution of textures}, with categories of Pix3d a having higher number of images.
+The distribution of the top 40 texture categories used for randomization of scenes is as shown in \autoref{fig:Distribution of textures}, with categories of Pix3d a having higher number of images.
 Each scene is randomized for every snap taken of the target object.
-Samples of texture randomization of background in the scene with target object in the focus are shown in figure~\ref{fig:Texture Randomisation}.
+Samples of texture randomization of background in the scene with target object in the focus are shown in \autoref{fig:Texture Randomisation}.
 Randomizing the outdoor environment is important in cases where we have open doors and windows.
 Unity provides a wrapper for scenes called skyboxes.
 This is something of a globe around the room under observation.
 This gives us a varying outdoor environment for the scene with the scenery at the horizon.
 We randomize 10 skyboxes to achieve this.
-Samples of the skybox are shown in figure~\ref{fig:skybox samples}.
+Samples of the skybox are shown in \autoref{fig:skybox samples}.
 
 
 \begin{figure}
@@ -225,7 +225,7 @@ In case the replaced model is intersecting with any other models in the scene, w
 Further, the camera checks if the center of replaced model is in the frame.
 If not, the camera viewpoint is changed until it satisfies the condition.
 After the snapshot is taken, the scene is reset to the original and the next model is imported.
-Samples for replacing a target object from an original scene from Scenenet is shown in figure~\ref{fig:replace model}.
+Samples for replacing a target object from an original scene from Scenenet is shown in \autoref{fig:replace model}.
 
 \begin{figure}
     \centering
@@ -250,7 +250,7 @@ Depth is as the word suggests the distance of each pixel from the camera encoded
 Normals are color encoding based on the orientation of object with respect to the camera.
 For the snapshot, each of these properties is assigned a hidden camera, and has each one overrides rendering scene with custom shaders to generate corresponding output.
 These camera outputs can be seen in editor mode by changing the display window.
-Samples of G-buffer collected for the dataset are as shown in figure~\ref{fig:G-buffers-samples}.
+Samples of G-buffer collected for the dataset are as shown in \autoref{fig:G-buffers-samples}.
 
 \begin{figure}
     \centering
@@ -310,9 +310,9 @@ The researchers are provided source code for the Unity-based application~\footno
 The application allows the users to provide paths for the 3D models, 3D rooms, textures, and output.
 The user can also select the category of furniture for which images are to be generated and the quantity per category.
 For the camera, the user can decide upon the height of the camera position, minimum and maximum distance from the target model between which a viewpoint will be randomly chosen.
-The modes are discussed in~\ref{subsec:modes-of-operations}, which can be select once all the data is configured.
+The modes are discussed in \autoref{subsec:modes-of-operations}, which can be select once all the data is configured.
 For the manual mode, the user can randomize one or more parameters and take the snapshot as desired.
-Figure~\ref{fig:demo1} shows the configuration page for the demo application, figure~\ref{fig:demo2} shows the application in action in manual mode.
+\autoref{fig:demo1} shows the configuration page for the demo application, \autoref{fig:demo2} shows the application in action in manual mode.
 
 \begin{figure}
     \centering
@@ -364,7 +364,7 @@ with 512 GB RAM, and 8x NVIDIA Tesla V100 GPU cards.
 The hyperparameters were initially fine-tuned with a grid search approach and then trained on parameters on which the baselines were published.
 The difference was not significant, hence we decided to follow the hyperparameters used by the authors~\cite{Xie_2019}.
 The only visible difference being the batch size, where we used the maximum possible value that would fit a 32GB memory of the used GPU.
-The rest of the hyperparameters are as shown in table~\ref{tab:hyperparameter}.
+The rest of the hyperparameters are as shown in \autoref{tab:hyperparameter}.
 A more extensive hyperparameter optimization can be done in the future for better performance.
 The model took up to 96 hours to train.
 
