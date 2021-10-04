@@ -1,4 +1,4 @@
-\begin{thebibliography}{94}
+\begin{thebibliography}{95}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -266,6 +266,14 @@ You-Cyuan Jhang, Adam Palmar, Bowen Li, Saurav Dhakad, Sanjay~Kumar
 \newblock
   \url{https://blogs.unity3d.com/2020/09/17/training-a-performant-object-detection-ml-model-on-synthetic-data-using-unity-computer-vision-tools/},
   Sep 2020.
+
+\bibitem[Joyce(2011)]{Joyce2011}
+James~M. Joyce.
+\newblock \emph{Kullback-Leibler Divergence}, pages 720--722.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2011.
+\newblock ISBN 978-3-642-04898-2.
+\newblock \doi{10.1007/978-3-642-04898-2_327}.
+\newblock URL \url{https://doi.org/10.1007/978-3-642-04898-2_327}.
 
 \bibitem[Kar et~al.(2017)Kar, H{\"a}ne, and Malik]{Kar2017LearningAM}
 Abhishek Kar, Christian H{\"a}ne, and Jitendra Malik.

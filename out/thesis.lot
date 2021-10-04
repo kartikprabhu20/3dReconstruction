@@ -3,7 +3,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Hyperparameters used for training 3d reconstruction models.\relax }}{34}{table.caption.32}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Hyperparameters used for training 3d reconstruction models.\relax }}{36}{table.caption.32}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Table represents quantitative measure to compare synthetic dataset distribution with the real dataset(Pix3D)\relax }}{44}{table.caption.41}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Table represents quantitative measure to compare synthetic dataset distribution with the real dataset(Pix3D)\relax }}{46}{table.caption.41}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Table represents \gls {iou} values for each category when trained on Pix2Vox++. The models trained on synthetic data is significantly bad when tested on real-data.\relax }}{67}{table.caption.69}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Table represents \gls {iou} values for each category when trained on Pix2Vox. The models trained on synthetic data is significantly bad when tested on real-data.\relax }}{70}{table.caption.70}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Table represents \gls {iou} values for each category when trained on Pix2Vox++. The models trained on synthetic data and then fine-tuned with real data. No improvement is seen with fine-tuning.\relax }}{70}{table.caption.71}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces Table represents \gls {iou} values for each category when trained on Pix2Vox. The models trained on synthetic dataand fine-tuned with real-data. A slight improvement is seen in some of the categories and the average \gls {iou}\relax }}{70}{table.caption.72}%
+\contentsline {table}{\numberline {A.5}{\ignorespaces Table represents \gls {iou} values for each category when trained on Pix2Vox++. The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.\relax }}{70}{table.caption.73}%
+\contentsline {table}{\numberline {A.6}{\ignorespaces Table represents \gls {iou} values for each category when trained on Pix2Vox. The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.\relax }}{71}{table.caption.74}%
+\contentsline {table}{\numberline {A.7}{\ignorespaces Table represents \gls {iou} values for each of the dataset created with different domain randomization component. The last 2 colums is mixed training with 50\% of mini-batches being Pix3D. We see that mixed training consistently increases the performance of the models.\relax }}{71}{table.caption.75}%
+\contentsline {table}{\numberline {A.8}{\ignorespaces Table represents \gls {f1} values for each category when trained on Pix2Vox++. The models trained on synthetic data is significantly bad when tested on real-data.\relax }}{71}{table.caption.76}%
+\contentsline {table}{\numberline {A.9}{\ignorespaces Table represents \gls {f1} values for each category when trained on Pix2Vox. The models trained on synthetic data is significantly bad when tested on real-data.\relax }}{71}{table.caption.77}%
+\contentsline {table}{\numberline {A.10}{\ignorespaces Table represents \gls {f1} values for each category when trained on Pix2Vox++. The models trained on synthetic data and then fine-tuned with real data. No improvement is seen with fine-tuning.\relax }}{72}{table.caption.78}%
+\contentsline {table}{\numberline {A.11}{\ignorespaces Table represents \gls {f1} values for each category when trained on Pix2Vox. The models trained on synthetic dataand fine-tuned with real-data. A slight improvement is seen in some of the categories and the average \gls {iou}\relax }}{72}{table.caption.79}%
+\contentsline {table}{\numberline {A.12}{\ignorespaces Table represents \gls {f1} values for each category when trained on Pix2Vox++. The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.\relax }}{72}{table.caption.80}%
+\contentsline {table}{\numberline {A.13}{\ignorespaces Table represents \gls {iou} values for each category when trained on Pix2Vox. The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.\relax }}{72}{table.caption.81}%
+\contentsline {table}{\numberline {A.14}{\ignorespaces Table represents \gls {f1} values for each of the dataset created with different domain randomization component. The last 2 colums is mixed training with 50\% of mini-batches being Pix3D. We see that mixed training consistently increases the performance of the models.\relax }}{73}{table.caption.82}%

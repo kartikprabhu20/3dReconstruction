@@ -347,7 +347,7 @@ The key features of this pipeline are as follows:
 \subsection{Preprocessing}\label{subsec:preprocessing}
 As preprocessing for testing, images were resized to 224$\times$224, and then center cropped to 128$\times$128.
 The images were then normalized using the parameters used for ImageNet~\cite{Deng2009ImageNetAL} Mean=[0.485, 0.456, 0.406] and STD=[0.229, 0.224, 0.225].
-This was also done for training images followed by 2D-augmentations which included ColorJitter, RandomNoise, RandomFlip and, RandomPermuteRGB.
+This was also done for training images followed by 2D-augmentations which included ColorJitter, RandomNoise, RandomFlip and, RandomPermuteRGB\@.
 All the images were then transformed to a tensor to make them compatible with deep learning models.
 
 \subsection{Modelling}\label{subsec:modelling}
@@ -363,7 +363,7 @@ For training, the Deep learning models for the 3D reconstruction task the GPU us
 with 512 GB RAM, and 8x NVIDIA Tesla V100 GPU cards.
 The hyperparameters were initially fine-tuned with a grid search approach and then trained on parameters on which the baselines were published.
 The difference was not significant, hence we decided to follow the hyperparameters used by the authors~\cite{Xie_2019}.
-The only visible difference being the batch size, where we used the maximum possible value that would fit a 32GB memory of the used GPU.
+The only visible difference being the batch size, where we used the maximum possible value that would fit a 32GB memory of the used GPU\@.
 The rest of the hyperparameters are as shown in \autoref{tab:hyperparameter}.
 A more extensive hyperparameter optimization can be done in the future for better performance.
 The model took up to 96 hours to train.

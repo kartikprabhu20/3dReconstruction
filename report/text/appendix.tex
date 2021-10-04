@@ -3,27 +3,125 @@
 \setcounter{chapter}{1}
 \addcontentsline{toc}{chapter}{\iftoggle{german}{Anhang}{Appendix}}
 
-%\DTLloaddb{nodes}{files/data.csv}
-%
-%This table is automatically generated from a CSV file.
-%Of course, you can also create tables from scratch.
-%
-%\begin{figure}[H]
-%    \centering
-%    \footnotesize
-%    \begin{tabular}{lrrrrrrr} \toprule
-%        & \makecell{{List\_}\\{Insert}} & \makecell{{List\_}\\{Search}} & \makecell{{Ordered\_}\\{Insert}} & \makecell{{Ordered\_}\\{Search}} & \makecell{{Ordered\_}\\{Min}} & \makecell{{Ordered\_}\\{Sort}} & \makecell{{Set\_}\\{Insert}}
-%        \DTLforeach*{nodes}{\param=Parameter,\listins=ListInsert,\listsea=ListSearch,\ordins=OrderedInsert,\ordsea=OrderedSearch,\ordmin=OrderedMin,\ordsort=OrderedSort,\setins=SetInsert}{
-%            \DTLiffirstrow{\\\cmidrule{1-8}}{\\}
-%            \param & \listins & \listsea & \ordins & \ordsea & \ordmin & \ordsort & \setins
-%        }
-%        \\\bottomrule
-%    \end{tabular}
-%    \caption[Caption in the list of figures]{Caption in the text.}\label{fig:data}
-%\end{figure}
-
 \section{Study with F-Score}\label{sec:study-with-f-score}
 
+In this section we conduct a contemporary study on the performance on Deep Learning models using \gls{f1} as evaluation measure instead of \gls{iou}.
+\gls{iou} tends to penalize a single bad classification more than Dice score, and hence we can say that \gls{f1} gives a measure which is closer to the average, where as \gls{iou}
+gives a score for the worst possible scenario.
+Even though both \gls{iou} and \gls{f1} are positively correlated, a study with \gls{f1} might prove the better dataset on an average.
+
+\subsection{Baseline}\label{subsec:baseline_dice}
+The set up for this experiment is explain in \autoref{sec:baseline}, where the evaluation was done using \gls{iou}.
+In \autoref{fig:baseline_dice1} we see the comparison of models trained on real and synthetic dataset.
+The performance is similar to what we see in \autoref{fig:baseline1}.
+
+There is a difference of 6.39\% and 1.94\% for Pix2vox++ and Pix2vox, when trained with and without 2D augmentation, which shows its importance.
+There is a huge dip in performance when we train the models on proposed synthetic dataset (\gls(s2rv1) and \gls(s2rv2)).
+Among the 2 versions, \gls(s2rv2) 6.8\% and 1.6\% more than \gls{s2rv1}, for pix2vo++ and pix2vox respectively, proving that multi-object is the better dataset.
+
+\begin{figure}
+    \centering
+    \resizebox{0.6\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_dice_linegraph1.pgf}}
+    \caption{Line plot for the \gls{f1}  for baselines trained on real and synthetic datasets, with and without 2D augmentation.
+        We see that ~\gls{free} does not perform adequately on its own. \gls{s2rv2} contributes slightly better than \gls{s2rv1}.}
+    \label{fig:baseline_dice1}
+\end{figure}
+
+\subsection{Fine-Tuning}\label{subsec:fine-tuning-dice}
+
+This section is the contemporary of what we experimented in \autoref{sec:fine-tuning}.
+\autoref{fig:finetuning_dice1} shows comparison of models trained with and without fine-tuning with real dataset and with models trained on only real dataset.
+We see an increment of only 0.3\% for pix2vox trained on \gls{s2rv2} and fine-tuned with Pix3d.
+In all the cases the performance is decreased instead of improving.
+
+We see the same results in \autoref{fig:finetuning_dice2} and \autoref{fig:finetuning_dice3}, where in \gls{f1} for each category with fine-tuned models is less than the models trained only on real dataset.
+
+\begin{figure}
+    \centering
+    \resizebox{0.6\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetuning_dice_linegraph1.pgf}}
+    \caption{Line plot for the \gls{f1} for baseline models(Pix2Vox++ and Pix2Vox) trained on synthetic and fine-tuned with real dataset.
+    We see that even after fine-tuning both the models do not perform as good as models trained on only real dataset.}
+    \label{fig:finetuning_dice1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_dice_parallel_pix2voxpp.pgf}}
+    \caption{Parallel coordinate plot for the \gls{f1} for baseline pix2vox++ trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
+    The categories are listed along with the number of images.
+    The performance of \texbf{pix2vox++} mixed with both the synthetic dataset is less than model trained on only pix3d, for majority of the categories.
+    \todo{running s2rv1}}
+    \label{fig:finetuning_dice2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_dice_parallel_pix2vox.pgf}}
+    \caption{Parallel coordinate plot for the \gls{f1} for baseline \texbf{pix2vox} trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
+    The categories are listed along with the number of images.
+    The performance of pix2vox mixed with both the synthetic dataset is less than model trained on only pix3d, for majority the categories.}
+    \label{fig:finetuning_dice3}
+\end{figure}
+
+\subsection{Mixed training}\label{subsec:mixed-training-dice}
+
+Similar to the experiments conducted in \autoref{sec:mixed-training}, here too we note the \gls{f1} for training executed with different mixing ration per mini-batch.
+The results are consistent with previous experiment as seen in \autoref{fig:mixed_dice1}, where the performance increase slightly with increas in ratio of real data in mini-batch and decreases gradually till it is 100\% real dataset.
+\autoref{fig:mixed_dice2} and \autoref{fig:mixed_dice3} are \gls{f1} per category when trained with ratio of 50\% of real data per mini-batch, on pix2voc++ and pix2vox respectively.
+\begin{figure}
+    \centering
+    \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_linegraph1.pgf}}
+    \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_linegraph2.pgf}}
+    \caption{Line plot for the \gls{f1}  for baselines trained on different ratios of synthetic and real dataset.
+        (Left)Mixed training on Pix2Vox++, (right)Mixed training on Pix2Vox. In both cases we see a slight increase in \gls{f1} with addition of real data, and a gradual decrease till it reaches 100\% real data}
+    \label{fig:mixed_dice1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_parallel_pix2voxpp.pgf}}
+    \caption{Parallel coordinate plot for the \gls{f1} for baseline \texbf{pix2vox++} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
+    The categories are listed along with the number of images.
+    The performance of pix2vox++ mixed with both the synthetic dataset is more than model trained on only pix3d, for most of the categories.
+%    \todo{running s2rv1}
+    }
+    \label{fig:mixed_dice2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_parallel_pix2vox.pgf}}
+    \caption{Parallel coordinate plot for the \gls{f1} for baseline \texbf{pix2vox} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
+    The categories are listed along with the number of images.
+    The performance of pix2vox mixed with both the synthetic dataset is more than model trained on only pix3d, for all the categories.}
+    \label{fig:mixed_dice3}
+\end{figure}
+\subsection{Ablation study on chairs}
+
+For ablation study on chairs, we created different datasets with different domain randomization components as in \autoref{subsec:s2r:3dfree-ablation}
+\autoref{fig:ablation_dice1} shows the performance of baseline models with each of the randomization component.
+Pix2Vox++ seem to give a \gls{f1} closer to the real dataset when trained on \gls{s2rv2} than Pix2vox.
+Overall the performance still does not match the real dataset on its own.
+
+To further improve the performance(as in \autoref{fig:ablation_dice2}), we do a mixed training with 50\% of real data per mini-batch to witness an increment of average \gls{f1} in the range of 3 to 7\%
+While the baseline Pix2vox++ give a \gls{f1} of 0.4175 on real chairs, with textureless chair we get a \gks{f1} of 0.4879.
+For pix2vox the difference is slightly lesser, as it is 0.4547 and 0.4659 on real and textureless chairs.
+
+\begin{figure}
+    \centering
+    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_dice_linegraph1.pgf}}
+    \caption{Line plot for the \gls{f1}  for baseline trained on chair dataset with different domain randomization parameters and tested on real dataset.
+    We see a dip in performance near textureless dataset, but it gradually increases with addition of domain randomization parameter.}
+    \label{fig:ablation_dice1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_dice_linegraph2.pgf}}
+    \caption{Line plot for the \gls{f1}  for baseline trained by mixing chair dataset from real and synthetic dataset with ratio of 50\%.
+    Observe that the \fls{IoU} is consistent for all types of randomization proving that mixed training negates loss from randomization.}
+    \label{fig:ablation_dice2}
+\end{figure}
 
 \section{Additional attempts}\label{sec:some-failed-attempts}
 
@@ -43,8 +141,434 @@ In this section we briefly discuss the attempts made to solve the thesis.
     \label{fig:hdrp}
 \end{figure}
 
-\subsection{Half precision using Nvidia Apex}
 
 \subsection{Different loss functions}
 
 \subsection{Empty image test}
+
+
+\section{Samples from Survey}\label{sec:samples-from-survey}
+We conducted a survey to realise the photorealism of proposed \gls{free} dataset with other proclaimed photorealistic dataset.
+The survey is discussed in detail in \autoref{subsec:survey-results}.
+In this section we display a sample each for all the 3 sections from the collection.
+\autoref{fig:survey_sample_section1},\autoref{fig:survey_sample_section2},\autoref{fig:survey_sample_section3} are one example from each section.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section1}
+    \caption{A sample question used for survey section 1. For section 1, participants were asked to select 'Real' or 'Not real' for 27 images, 3 images per dataset.}
+    \label{fig:survey_sample_section1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section2}
+    \caption{A sample question used for survey section 2. For section 2, participants were asked rate the 27 images from 1 to 10. We had 3 images per dataset.}
+    \label{fig:survey_sample_section2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section3}
+    \caption{A sample question used for survey section 3. For section 3, the users were shown 9 images together and asked to rank them on descending order of photorealism. }
+    \label{fig:survey_sample_section3}
+\end{figure}
+
+\section{Tables}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+        \hline
+        Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+        \hline\hline
+        Pix3D & \textbf{0.2887} &\textbf{0.6782}	&\textbf{0.1888} &\textbf{0.3739} &\textbf{0.211}2 &\textbf{0.618} &\textbf{0.291} &\textbf{0.3443} \\
+        \hline
+        Pix3D(no aug.) & 0.2306 &0.5901 &0.1494	&0.2744	&0.1734	&0.5182 &0.2099 &0.2777 \\
+        \hline
+        \gls{s2rv1}(no aug.) &0.0455 &0.05362 &0.064 &0.0308 &0.1277 &0.0695 &0.03995 &0.0577 \\
+        \hline
+        \gls{s2rv1} &0.0793 &0.0947 &0.0553 &0.0674 &0.1074 &0.1237 &0.0869 &0.0847 \\
+        \hline
+        \gls{s2rv2} &0.0916	&0.3604	&0.0822	&0.1263	&0.1079	&0.23022 &0.1686	&0.1297 \\
+        \hline
+    \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
+    The models trained on synthetic data is significantly bad when tested on real-data.}
+    \label{tab:baseline_categories_all_iou_pix2voxpp}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+        \hline
+        Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+        \hline\hline
+        Pix3D & \textbf{0.2715}	&\textbf{0.7287}	&\textbf{0.1831}	&\textbf{0.355}	&\textbf{0.2004}	&\textbf{0.5703}	&\textbf{0.2747}	&\textbf{0.3254} \\
+        \hline
+        Pix3D(no aug.) & 0.2493	&0.6615	&0.1774	&0.3216	&0.1838	&0.5857	&0.231 &0.3108 \\
+        \hline
+        \gls{s2rv1}(no aug.) &0.0763	&0.0597	&0.0187	&0.0541	&0.03774 &0.1202	&0.0549 &0.0679  \\
+        \hline
+        \gls{s2rv1} &0.04	&0.1431	&0.0485	&0.0404 &0.10411	&0.0723	&0.1067 &0.0571\\
+        \hline
+        \gls{s2rv2} &0.1323	&0.3747	&0.0959	&0.1505	&0.1197	&0.305	&0.1206 &0.1643\\
+        \hline
+    \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    The models trained on synthetic data is significantly bad when tested on real-data.}
+    \label{tab:baseline_categories_all_iou_pix2vox}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+        \hline
+        Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+        \hline\hline
+        Pix3D & \textbf{0.2887} &\textbf{0.6782}	&\textbf{0.1888} &\textbf{0.3739} &\textbf{0.211}2 &\textbf{0.618} &\textbf{0.291} &\textbf{0.3443} \\
+        \hline
+        \gls{s2rv1}+Pix3D  &0.2589 &0.6454 &0.1715	&0.3382	&0.2096 &0.5897	&0.2006	&0.3161\\
+        \hline
+        \gls{s2rv2}+Pix3D &0.2605	&0.63 &0.1579 &0.3051 &0.185 &0.5813 &0.2388	&0.3089\\
+
+        \hline
+    \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
+    The models trained on synthetic data and then fine-tuned with real data. No improvement is seen with fine-tuning.}
+    \label{tab:finetuning_categories_all_iou_pix2voxpp}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+        \hline
+        Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+        \hline\hline
+        Pix3D & \textbf{0.2715}	&\textbf{0.7287} &\textbf{0.1831} &0.355	&0.2004	&0.5703	&0.2747	&0.3254 \\
+        \hline
+        \gls{s2rv1}+Pix3D  &0.25347	&0.6806	&0.1735	&0.3176	&\textbf{0.2006}	&0.5824	&0.23386	&0.3125\\
+        \hline
+        \gls{s2rv2}+Pix3D &0.2684	&0.6965	&0.1765	&\textbf{0.3722}	&0.1963	&\textbf{0.6202}	&\textbf{0.296}	&\textbf{0.3338}\\
+
+        \hline
+    \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    The models trained on synthetic dataand fine-tuned with real-data. A slight improvement is seen in some of the categories and the average \gls{iou}}
+    \label{tab:finetuning_categories_all_iou_pix2vox}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+        \hline
+        Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+        \hline\hline
+        Pix3D & 0.2887 &0.6782	&0.1888 &0.3739 &0.2112 &0.618 &0.291 &\textbf{0.3443} \\
+        \hline
+        \gls{s2rv1}+0.15\%  &0.2972	&0.7229 &\textbf{0.2008} &0.3591 &0.2394	&0.6011	&0.2789	&0.3479\\
+        \hline
+        \gls{s2rv1}+0.25\% &	& & & & & &	&\\
+        \hline
+        \gls{s2rv1}+0.5\% &	& & & & & &	&\\
+        \hline
+        \gls{s2rv1}+0.75\% &0.3005	&0.6787	&0.1797	&0.3867	&0.2241	&0.6168	&0.3049 &0.3498\\
+        \hline
+        \gls{s2rv1}+0.90\% &0.2933	&0.6514	&0.1901	&0.3692	&0.2135	&\textbf{0.6388}	&0.3021	&0.3499\\
+        \hline
+        \gls{s2rv2}+0.15\%  &0.2559	&0.7651	&0.1708	&0.3042	&0.2297	&0.554	&0.3159	&0.3134 \\
+        \hline
+        \gls{s2rv2}+0.25\% &0.3017	&0.7221	&0.1897	&0.3649	&0.2606	&0.6138	&0.372	&0.3556 \\
+        \hline
+        \gls{s2rv2}+0.5\% &\textbf{0.3077}	&0.7582	&0.1859	&0.3493	&\textbf{0.2664}	&0.6194	&\textbf{0.3874}	&\textbf{0.3587} \\
+        \hline
+        \gls{s2rv2}+0.75\% &0.2944	&\textbf{0.7697} &0.1872 &0.3712	&0.2527	&0.6013	&0.3291	&0.3494 \\
+        \hline
+        \gls{s2rv2}+0.90\% &0.2947	&0.6893	&0.1794	&\textbf{0.4013}	&0.1914	&0.6139	&0.3558	&0.3482\\
+        \hline
+    \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
+    The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
+    \label{tab:mixed_categories_all_iou_pix2voxpp}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+        \hline
+        Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+        \hline\hline
+        Pix3D & 0.2715	&0.7287	&0.1831 &0.355	&0.2004	&0.5703	&0.2747	&0.3254 \\
+        \hline
+        \gls{s2rv1}+0.15\%  &\textbf{0.2961}	&0.7001	&0.1918	&0.3894	&0.209	&0.6099	&0.294	&0.3483 \\
+        \hline
+        \gls{s2rv1}+0.25\% &0.2911	&0.7323	&\textbf{0.2026}	&0.367	&0.2297	&0.5889	&0.2644	&0.3432 \\
+        \hline
+        \gls{s2rv1}+0.5\% &0.2756	&0.7087	&0.1877	&\textbf{0.4072} &0.2365 &\textbf{0.652}	&0.3007	&\textbf{0.3514} \\
+        \hline
+        \gls{s2rv1}+0.75\% &0.281	&0.6571	&0.1778	&0.3869	&0.2110	&0.6369	&0.2769	&0.343\\
+        \hline
+        \gls{s2rv1}+0.90\% &0.2756	&0.7258	&0.1769	&0.3611	&0.218	&0.6192	&0.3263	&0.3389 \\
+        \hline
+        \gls{s2rv2}+0.15\%  &0.2447	&0.7086	&0.1481	&0.3199	&0.1923	&0.5589	&0.3191	&0.3027 \\
+        \hline
+        \gls{s2rv2}+0.25\% &0.2889	&0.741	&0.1823	&0.375	&0.2226	&0.6268	&\textbf{0.3966}	&0.3513  \\
+        \hline
+        \gls{s2rv2}+0.5\% &0.268	&0.7479	&0.1790	&0.362	&\textbf{0.2404}	&0.6337	&0.3393	&0.3416 \\
+        \hline
+        \gls{s2rv2}+0.75\% &0.2837	&0.743	&0.1784	&0.359	&0.1958	&0.6076	&0.3908	&0.3413 \\
+        \hline
+        \gls{s2rv2}+0.90\% &0.2764	&\textbf{0.7497}	&0.1821	&0.3776	&0.2006	&0.6227	&0.3701	&0.3434\\
+        \hline
+    \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
+    \label{tab:mixed_categories_all_iou_pix2vox}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+
+        \begin{tabular}{|c |c |c | c| c|}
+            \hline
+            Dataset & Pix2Vox++ & Pix2Vox & Pix2Vox++ with 50\% & Pix2Vox with 50\%\\ [0.5ex]
+            \hline\hline
+            Pix3D Chair(no aug)  &\textbf{0.2797} &0.2694 &x &x\\
+            \hline
+            Pix3D Chair &\textbf{0.3305} &0.2918 & x & x\\
+            \hline
+            S2R\textunderscore Textureless  &0.1798 &0.0748 &\textbf{0.366} &0.3385\\
+            \hline
+            S2R \textunderscore Textureless\textunderscore Light &0.143 &0.1026 &\textbf{0.362}  &0.338\\
+            \hline
+            S2R\textunderscore Textured  &0.2217 &0.112 &\textbf{0.3426} &0.3404\\
+            \hline
+            S2R\textunderscore Textured\textunderscore Light &0.2221 &0.0991 &0.312 &\textbf{0.3303}\\
+            \hline
+            S2R\textunderscore Multi\textunderscore Object &0.2372 &0.0943 &0.3104 &\textbf{0.3429}\\
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each of the dataset created with different domain randomization component.
+    The last 2 colums is mixed training with 50\% of mini-batches being Pix3D.
+    We see that mixed training consistently increases the performance of the models.}
+    \label{tab:ablation1}
+\end{table}
+
+
+
+
+%Dice tables
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+            \hline
+            Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+            \hline\hline
+            Pix3D & \textbf{0.4016} &\textbf{0.7452} &\textbf{0.251} &\textbf{0.4783} &\textbf{0.2973}2 &\textbf{0.7234} &\textbf{0.3881} &\textbf{0.4421} \\
+            \hline
+            Pix3D(no aug.) &0.3392	&0.6894	&0.2114	&0.3831	&0.2534	0.&6442	&0.3041	&0.3782 \\
+            \hline
+            \gls{s2rv1}(no aug.) &0.0849 &0.1012	&0.1152	&0.0586	&0.2201	&0.1279	&0.07491	&0.1054\\
+            \hline
+            \gls{s2rv1} &0.1406	&0.1696	&0.0996	&0.1182	&0.1847	&0.2073	&0.1541	&0.1477    \\
+            \hline
+            \gls{s2rv2} &0.1619	&0.5132	&0.1438	&0.2156	&0.1855	&0.3667	&0.2745	&0.21659 \\
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
+    The models trained on synthetic data is significantly bad when tested on real-data.}
+    \label{tab:baseline_categories_all_f1_pix2voxpp}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+            \hline
+            Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+            \hline\hline
+            Pix3D & \textbf{0.3883}	&\textbf{0.8013}	&\textbf{0.2456}	&\textbf{0.4656}	&\textbf{0.2856}	&0.6882	&\textbf{0.3807}	&\textbf{0.4281} \\
+            \hline
+            Pix3D(no aug.) & 0.3585	& 0.7439	& 0.2375	& 0.4258	&0.2625	&\textbf{0.7033}	&0.3256	&0.4087 \\
+            \hline
+            \gls{s2rv1}(no aug.) &0.1359	&0.1119	&0.0353	&0.0984	&0.0695	&0.2094	&0.103	&0.1211  \\
+            \hline
+            \gls{s2rv1} &0.0744	&0.2421	&0.0903	&0.0764	&0.1837	&0.13071	&0.1883	&0.104\\
+            \hline
+            \gls{s2rv2}  &0.2255	&0.5402	&0.165	&0.2562	&0.2052	&0.4608	&0.2112	&0.267
+            \\
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox.
+    The models trained on synthetic data is significantly bad when tested on real-data.}
+    \label{tab:baseline_categories_all_f1_pix2vox}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+            \hline
+            Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+            \hline\hline
+            Pix3D & \textbf{0.4016} &\textbf{0.7452} &\textbf{0.251} &\textbf{0.4783} &\textbf{0.2973} &\textbf{0.7234} &\textbf{0.3881} &\textbf{0.4421} \\
+            \hline
+            \gls{s2rv1}+Pix3D  &0.3766	&0.7284	&0.2326	&0.4488	&0.2952	&0.7048	&0.2826	&0.4177\\
+            \hline
+            \gls{s2rv2}+Pix3D &0.374	&0.7064	&0.212	&0.4083	&0.2656	&0.69468	&0.3334	&0.4065\\
+
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
+    The models trained on synthetic data and then fine-tuned with real data. No improvement is seen with fine-tuning.}
+    \label{tab:finetuning_categories_all_f1_pix2voxpp}
+\end{table}
+
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+            \hline
+            Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+            \hline\hline
+            Pix3D & \textbf{0.3883}	&\textbf{0.8013}	&\textbf{0.2456}	&0.4656	&\textbf{0.2856}	&0.6882	&0.3807	&0.4281 \\
+            \hline
+            \gls{s2rv1}+Pix3D  &0.3703	&0.7694	&0.2371	&0.4309	&0.2883	&\textbf{0.6977}	&0.335	&0.4155\\
+            \hline
+            \gls{s2rv2}+Pix3D &0.3798	&0.6646	&0.2311	&\textbf{0.4822}	&0.2757	&0.7327	&\textbf{0.3941}	&\textbf{0.431}\\
+
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox.
+    The models trained on synthetic dataand fine-tuned with real-data. A slight improvement is seen in some of the categories and the average \gls{iou}}
+    \label{tab:finetuning_categories_all_f1_pix2vox}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+            \hline
+            Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+            \hline\hline
+            Pix3D & 0.4016 &\textbf{0.7452} &0.251 &0.4783 &0.2973 &0.7234 &0.3881 &0.4421 \\
+            \hline
+            \gls{s2rv1}+0.15\%  &0.4178	&0.7787	&\textbf{0.2638}	&0.4618	&0.3278	&0.7116	&0.3711	&0.4493 \\
+            \hline
+            \gls{s2rv1}+0.25\% &	& & & & & &	&\\
+            \hline
+            \gls{s2rv1}+0.5\% &	& & & & & &	&\\
+            \hline
+            \gls{s2rv1}+0.75\% &0.4057	&0.7329	&0.2278	&0.3303	&0.2946	&0.7145	&0.3931	&0.4377 \\
+            \hline
+            \gls{s2rv1}+0.90\% &0.4091	&0.7212	&0.2495	&0.4719	&0.2952	&\textbf{0.7413}	&0.3968	&0.4472\\
+            \hline
+            \gls{s2rv2}+0.15\%  &0.3712	&0.8269	&0.2378	&0.4067	&0.3212	&0.6659	&0.4105	&0.4142 \\
+            \hline
+            \gls{s2rv2}+0.25\% &0.415	&0.6844	&0.2440	&0.4689	&0.3459	&0.7157	&0.4692	&0.4511 \\
+            \hline
+            \gls{s2rv2}+0.5\% &\textbf{0.4211}	&0.8135	&0.2422	&0.4485	&\textbf{0.3535} &0.7222	&\textbf{0.485}	&\textbf{0.4543}\\
+            \hline
+            \gls{s2rv2}+0.75\% &0.4089	&\textbf{0.8313}	&0.249	&0.4747	&0.3384	&0.709	&0.4273	&0.4479 \\
+            \hline
+            \gls{s2rv2}+0.90\% &0.4022	&0.7502	&0.2279	&0.5018	&0.2614	&0.7148	&0.4497	&0.4386\\
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
+    The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
+    \label{tab:mixed_categories_all_f1_pix2voxpp}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \begin{tabular}{|c |c |c |c |c |c |c |c |c |}
+            \hline
+            Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
+            \hline\hline
+            Pix3D & 0.3883	&0.8013	&0.2456	&0.4656	&0.2856	&0.6882	&0.3807	&0.4281 \\
+            \hline
+            \gls{s2rv1}+0.15\%  &\textbf{0.4137}	&0.7597	&0.2518	&0.4914	&0.29474 &0.7195	&0.3862	&0.4476 \\
+            \hline
+            \gls{s2rv1}+0.25\% &0.4074	&0.7888	&\textbf{0.2691}	&0.4681	&0.3173	&0.6971	&0.3528	&0.4428 \\
+            \hline
+            \gls{s2rv1}+0.5\% &0.3894	&0.7748	&0.2458	&\textbf{0.519}	&0.3228	&\textbf{0.7603}	&0.3977	&0.4499 \\
+            \hline
+            \gls{s2rv1}+0.75\% &0.3931	&0.7284	&0.2338	&0.4916	&0.2917	&0.6704	&0.3657	&0.4391\\
+            \hline
+            \gls{s2rv1}+0.90\% &0.3851	&0.794	&0.2346	&0.4628	&0.2993	&0.7312	&0.4344	&0.4355 \\
+            \hline
+            \gls{s2rv2}+0.15\%  &0.3614	&0.7796	&0.2128	&0.4274	&0.2809	&0.6787	&0.4074	&0.406 \\
+            \hline
+            \gls{s2rv2}+0.25\% &0.4066	&0.7992	&0.2477	&0.304	&0.3074	&0.7337	&0.4904	&\textbf{0.4513}  \\
+            \hline
+            \gls{s2rv2}+0.5\% &0.3752	&0.8061	&0.2347	&0.4684	&\textbf{0.3247}	&0.7382	&0.427	&0.4352 \\
+            \hline
+            \gls{s2rv2}+0.75\% &0.3958	&0.8015	&0.2329	&0.4653	&0.268	&0.7172	&\textbf{0.4927}	&0.4373 \\
+            \hline
+            \gls{s2rv2}+0.90\% &0.3869	&\textbf{0.8116}	&0.238	&0.4823	&0.2778	&0.7298	&0.4769	&0.439\\
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
+    \label{tab:mixed_categories_all_f1_pix2vox}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+
+        \begin{tabular}{|c |c |c | c| c|}
+            \hline
+            Dataset & Pix2Vox++ & Pix2Vox & Pix2Vox++ with 50\% & Pix2Vox with 50\%\\ [0.5ex]
+            \hline\hline
+            Pix3D Chair(no aug)  &0.4047 &0.3944 &x &x\\
+            \hline
+            Pix3D Chair &\textbf{0.4175} &\textbf{0.4547} & x & x\\
+            \hline
+            S2R\textunderscore Textureless  &0.2933 &0.1365 &\textbf{0.4879} &0.4659\\
+            \hline
+            S2R \textunderscore Textureless\textunderscore Light &0.242 &0.1795 &0.4821  &0.4641\\
+            \hline
+            S2R\textunderscore Textured  &0.3513 &0.1959 &0.4671 &\textbf{0.4672}\\
+            \hline
+            S2R\textunderscore Textured\textunderscore Light &0.35197 &0.1769 &0.4369 &0.4548\\
+            \hline
+            S2R\textunderscore Multi\textunderscore Object &0.3705 &0.168 &0.4364 &0.4665\\
+            \hline
+        \end{tabular}%
+    }
+    \caption{Table represents \gls{f1} values for each of the dataset created with different domain randomization component.
+    The last 2 colums is mixed training with 50\% of mini-batches being Pix3D.
+    We see that mixed training consistently increases the performance of the models.}
+    \label{tab:ablation1_f1}
+\end{table}

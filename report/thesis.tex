@@ -62,6 +62,8 @@
 \newacronym{urp}{URP}{Universal Render Pipeline}
 \newacronym{s2rv1}{S2R\_V1}{S2R:3DFREE Version 1}
 \newacronym{s2rv2}{S2R\_V2}{S2R:3DFREE Version 2}
+\newacronym{tsne}{t-SNE}{t-Distributed Stochastic Neighbor Embedding }
+\newacronym{f1}{F1 Score}{Dice Coefficient/Dice Score/F Score}
 
 
 % For some theses a list of symbols can be nice. For example usage, see below.
@@ -179,19 +181,22 @@
 
 \iftoggle{german}{\chapter*{Zusammenfassung}}{\chapter*{Abstract}}
 
-The field of Deep Learning is growing exponential and have tremendous applications in every domain.
-The key for training deep learning models is large dataset.
-Real-world dataset is cost ineffective, time consuming, difficult to obtain, and are very limited.
+The field of Deep Learning is growing exponentially and has tremendous applications in every domain.
+The key for training deep learning models is a large dataset.
+The real-world dataset is cost-ineffective, time-consuming, difficult to obtain, and are very limited.
 Synthetic data are easier to create and automate.
-In this thesis we aim to check if images created using game engines(Unity), are photorealistic, and can be used for 3D reconstruction task using Deep Neural Networks.
-To achieve this we contribute the following (a)A Unity-based framework to create synthetic images of furniture in indoor environment.
-(b)A new synthetic dataset which can be used as a benchmark for 3D reconstruction task (c) A comprehensive study on domain adaptation and domain randomisation.
-To check the photorealism, we conducted a user survey using 7 other proclaimed photorealistic synthetic dataset.
-We see that the proposed dataset was voted as real most number of times among the dataset created by automation.
-We compare the performance of baseline models with transfer learning and mixed training to check if the synthetic dataset.
-We check domain randomisation by creating synthetic chair dataset with different parameters like light, textures, camera position, etc.
-The domain gap between real and synthetic dataset is visualised using T-SNE and quantitatively measured with FID score.
-Finally, these experimental results proves that the proposed dataset enhances the performances of Deep Neural Net models for 3D reconstruction task.
+This thesis aims to check if images created using game engines(Unity) are photorealistic and valuable in  3D reconstruction tasks using Deep Neural Networks.
+To achieve this, we contribute the following:
+(a)A Unity-based application to create synthetic images of furniture in an indoor environment.
+(b)We use the new synthetic dataset as a benchmark for the 3D reconstruction task.
+(c) A comprehensive study on domain adaptation and domain randomization.
+
+We conducted a user survey with the proposed synthetic dataset, a real dataset, and seven other proclaimed photorealistic synthetic datasets to check the photorealism.
+We see that the proposed dataset got the most votes to be 'Real' among the automated datasets.
+We compare the performance of baseline models with transfer learning and mixed training to check the influence of the synthetic dataset.
+We check domain randomization by creating a synthetic chair dataset with different parameters like light, textures, camera position, etc.
+The domain gap between real and synthetic datasets is visualized using T-SNE and quantitatively measured with the FID score.
+Finally, these experimental results prove that the proposed dataset enhances the performances of Deep Neural Net models for the 3D reconstruction task.
 
 \textbf{ \emph{keywords}}: \emph{Synthetic dataset, 3D reconstruction, Domain adaptation, Domain randomisation, Mixed training}
 
@@ -204,20 +209,21 @@ Finally, these experimental results proves that the proposed dataset enhances th
 
 \iftoggle{german}{\chapter*{Danksagungen}}{\chapter*{Acknowledgments}}
 
-Throughout my thesis work I have received a great deal of guidance, supervision and support.
+Throughout this thesis work, I have received a great deal of guidance, supervision, and support.
 
-First and foremost, I would like to express my supervisors Marco Filax and Konstantin Kirchheim for their expert guidance, constant support,encourgement
-and patience right from the beginning of the thesis.
-I would especially like to thank them for accepting my proposal and helping me fine tune the research question, and making sure that I do not divert from the topic at hand.
-The discussions we had throughout the thesis not only helped me think different, but also tackle and make tough decision in limited duration of time.
+First and foremost, I would like to express my supervisors Marco Filax and Konstantin Kirchheim,
+for their expert guidance, constant support, encouragement, and patience right from the beginning of the thesis.
+I would especially like to thank them for accepting the thesis proposal and helping me fine-tune the research question,
+and making sure that I do not divert from the topic at hand.
+The discussions we had throughout the thesis helped me think differently and tackle and make tough decisions in a limited time interval.
 
 I would also like to extend my gratitude to Prof.Dr.Frank Ortmeier for accepting my thesis research topic and taking me under his banner.
-I sincerely thank him for providing an excellent research environment and all the required resources for completion of the thesis.
-The active research going on under Chair of Software Engineering Workgroup urged me to take up the thesis under the same department.
+I sincerely thank him for providing an excellent research environment and all the required resources to complete the thesis.
+The active research under the Chair of Software Engineering Workgroup urged me to take up the thesis under the same department.
 
-I would also like to thank my family, for their constant support during these tough times.
-Their life advises and casual talks always calmed me and re-energised whenever required.
-Last but not the least, to all my friends, there were tough situations during the pandemic, and it was all thanks to them the period passed like a breeze.
+I would also like to thank my family for their constant support during these challenging times.
+Their life advice and casual talks always calmed me and re-energized whenever required.
+Last but not least, to all my friends, there were challenging situations during the pandemic, and it was all thanks to them the period passed like a breeze.
 Thank you for teaching me to enjoy life!
 
 % table of contents
