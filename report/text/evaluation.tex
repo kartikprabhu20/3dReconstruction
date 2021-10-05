@@ -3,7 +3,6 @@
 %\todo{
 %    \begin{enumerate}
 %        \item baseline comparison, pix3d pix2vox, pix2vox++ classwise)
-%        \item values per category
 %        \item baseline different version of dataset with different threshold
 %        \item ablation values per model
 %        \item !!!!!finetuning with different datasize (pending)
@@ -413,8 +412,6 @@ We hypothesize that since Pix3D has multi-objects in the scenes same as \gls{s2r
     \label{fig:baseline1}
 \end{figure}
 
-%\todo{replace value of s2r\_v1(currently values are from s2r\_v4)}
-
 \section{Fine Tuning}\label{sec:fine-tuning}
 Fine tuning or Transfer Learning is a common way of domain adaptation.
 For this experiment, the model is first trained on synthetic dataset and then used as a pre-trained model to be fine tuned using real dataset.
@@ -444,8 +441,7 @@ Overall, fine tuning is not helping in increasing the performance of the baselin
     \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_parallel_pix2voxpp.pgf}}
     \caption{Parallel coordinate plot for the \gls{iou} for baseline pix2vox++ trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
     The categories are listed along with the number of images.
-    The performance of \texbf{pix2vox++} mixed with both the synthetic dataset is less than model trained on only pix3d, for majority of the categories.
-    \todo{running s2rv1}}
+    The performance of \texbf{pix2vox++} mixed with both the synthetic dataset is less than model trained on only pix3d, for majority of the categories.}
     \label{fig:finetuning2}
 \end{figure}
 
@@ -493,7 +489,6 @@ In the majority of the cases we see that \fls{iou} of models trained on mixed da
     \caption{Parallel coordinate plot for the \gls{iou} for baseline \texbf{pix2vox++} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
     The categories are listed along with the number of images.
     The performance of pix2vox++ mixed with both the synthetic dataset is more than model trained on only pix3d, for most of the categories.
-%    \todo{running s2rv1}
     }
     \label{fig:mixed2}
 \end{figure}

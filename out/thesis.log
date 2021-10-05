@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  4 OCT 2021 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  5 OCT 2021 09:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4788,23 +4788,14 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-
-./text/implementation.tex:410: Package glossaries Error: Glossary entry `iou ' 
-has not been defined.
-
-See the glossaries package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.410 The average \gls{iou }v
-                             alues for each of the categories are also noted...
-
-You need to define a glossary entry before you can use it.
-
 )
 \openout7 = `thesis.mw'.
 
  [36] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -4867,8 +4858,8 @@ Chapter 5.
 \openout7 = `thesis.mw'.
 
 
-./text/evaluation.tex:55: Undefined control sequence.
-l.55 ...from each of the dataset arranged in a 3\x
+./text/evaluation.tex:54: Undefined control sequence.
+l.54 ...from each of the dataset arranged in a 3\x
                                                   3 grid format.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5118,11 +5109,11 @@ gap/s2r-3dfree_Pix3d.pgf)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 266.
+(hyperref)                removing `\gls' on input line 265.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 273.
+(hyperref)                removing `\gls' on input line 272.
 
 \openout7 = `thesis.mw'.
 
@@ -5182,7 +5173,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 280.
+(hyperref)                removing `\gls' on input line 279.
 
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domain
@@ -5199,11 +5190,11 @@ gap/Pix3d_s2r3dfree_chair.pgf)
 gap/Pix3d_chair_DR.pgf)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 314.
+(hyperref)                removing `\gls' on input line 313.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 320.
+(hyperref)                removing `\gls' on input line 319.
 
 \openout7 = `thesis.mw'.
 
@@ -5273,11 +5264,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 325.
+(hyperref)                removing `\gls' on input line 324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 330.
+(hyperref)                removing `\gls' on input line 329.
 
 \openout7 = `thesis.mw'.
 
@@ -5305,223 +5296,223 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/pix3d_1.png, id=2213, 119.44624pt x 103.38625pt>
+ts/pix3d_1.png, id=2214, 119.44624pt x 103.38625pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/pix3d_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/pix3d_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/pix3d_1.png  used on input line 338.
+images/evaluation/datasets/pix3d_1.png  used on input line 337.
 (pdftex.def)             Requested size: 85.35602pt x 81.09369pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/pix3d_2.png, id=2214, 376.40625pt x 285.065pt>
+ts/pix3d_2.png, id=2215, 376.40625pt x 285.065pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/pix3d_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/pix3d_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/pix3d_2.png  used on input line 339.
+images/evaluation/datasets/pix3d_2.png  used on input line 338.
 (pdftex.def)             Requested size: 85.35399pt x 81.08777pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/pix3d_3.jpg, id=2215, 1027.84pt x 770.88pt>
+ts/pix3d_3.jpg, id=2216, 1027.84pt x 770.88pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/pix3d_3.jpg Graphic file (type jpg)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/pix3d_3.jpg>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/pix3d_3.jpg  used on input line 340.
+images/evaluation/datasets/pix3d_3.jpg  used on input line 339.
 (pdftex.def)             Requested size: 85.3499pt x 81.08005pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v1_1.png, id=2217, 1349.04pt x 979.66pt>
+ts/s2r_v1_1.png, id=2218, 1349.04pt x 979.66pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v1_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v1_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v1_1.png  used on input line 342.
+images/evaluation/datasets/s2r_v1_1.png  used on input line 341.
 (pdftex.def)             Requested size: 85.34402pt x 81.08005pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v1_2.png, id=2218, 1487.5575pt x 1001.7425pt>
+ts/s2r_v1_2.png, id=2219, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v1_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v1_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v1_2.png  used on input line 343.
+images/evaluation/datasets/s2r_v1_2.png  used on input line 342.
 (pdftex.def)             Requested size: 85.34549pt x 81.08871pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v1_3.png, id=2219, 1487.5575pt x 1001.7425pt>
+ts/s2r_v1_3.png, id=2220, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v1_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v1_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v1_3.png  used on input line 344.
+images/evaluation/datasets/s2r_v1_3.png  used on input line 343.
 (pdftex.def)             Requested size: 85.34549pt x 81.08871pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v3_1.png, id=2221, 1369.115pt x 1142.2675pt>
+ts/s2r_v3_1.png, id=2222, 1369.115pt x 1142.2675pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v3_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v3_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v3_1.png  used on input line 346.
+images/evaluation/datasets/s2r_v3_1.png  used on input line 345.
 (pdftex.def)             Requested size: 81.07791pt x 85.35263pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v3_2.png, id=2222, 1523.6925pt x 1078.0275pt>
+ts/s2r_v3_2.png, id=2223, 1523.6925pt x 1078.0275pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v3_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v3_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v3_2.png  used on input line 347.
+images/evaluation/datasets/s2r_v3_2.png  used on input line 346.
 (pdftex.def)             Requested size: 85.34944pt x 81.07886pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_v3_3.png, id=2223, 1369.115pt x 1053.9375pt>
+ts/s2r_v3_3.png, id=2224, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_v3_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_v3_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_v3_3.png  used on input line 348.
+images/evaluation/datasets/s2r_v3_3.png  used on input line 347.
 (pdftex.def)             Requested size: 85.33968pt x 81.08427pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_1.png, id=2224, 1449.415pt x 1053.9375pt>
+ts/s2r_textureless_1.png, id=2225, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_1.png  used on input line 358.
+images/evaluation/datasets/s2r_textureless_1.png  used on input line 357.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_2.png, id=2225, 1449.415pt x 1053.9375pt>
+ts/s2r_textureless_2.png, id=2226, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_2.png  used on input line 359.
+images/evaluation/datasets/s2r_textureless_2.png  used on input line 358.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_3.png, id=2226, 1449.415pt x 1053.9375pt>
+ts/s2r_textureless_3.png, id=2227, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_3.png  used on input line 360.
+images/evaluation/datasets/s2r_textureless_3.png  used on input line 359.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_light_1.png, id=2227, 1369.115pt x 1053.9375pt>
+ts/s2r_textureless_light_1.png, id=2228, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_light_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_light_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_light_1.png  used on input line 362.
+images/evaluation/datasets/s2r_textureless_light_1.png  used on input line 361.
 
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_light_2.png, id=2228, 1369.115pt x 1053.9375pt>
+ts/s2r_textureless_light_2.png, id=2229, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_light_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_light_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_light_2.png  used on input line 363.
+images/evaluation/datasets/s2r_textureless_light_2.png  used on input line 362.
 
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textureless_light_3.png, id=2229, 1369.115pt x 1053.9375pt>
+ts/s2r_textureless_light_3.png, id=2230, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textureless_light_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textureless_light_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textureless_light_3.png  used on input line 364.
+images/evaluation/datasets/s2r_textureless_light_3.png  used on input line 363.
 
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_1.png, id=2230, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_1.png, id=2231, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_1.png  used on input line 366.
+images/evaluation/datasets/s2r_textured_1.png  used on input line 365.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_2.png, id=2231, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_2.png, id=2232, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_2.png  used on input line 367.
+images/evaluation/datasets/s2r_textured_2.png  used on input line 366.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_3.png, id=2232, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_3.png, id=2233, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_3.png  used on input line 368.
+images/evaluation/datasets/s2r_textured_3.png  used on input line 367.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_light_1.png, id=2233, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_light_1.png, id=2234, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_light_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_light_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_light_1.png  used on input line 370.
+images/evaluation/datasets/s2r_textured_light_1.png  used on input line 369.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_light_2.png, id=2234, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_light_2.png, id=2235, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_light_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_light_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_light_2.png  used on input line 371.
+images/evaluation/datasets/s2r_textured_light_2.png  used on input line 370.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_textured_light_4.png, id=2235, 1369.115pt x 1053.9375pt>
+ts/s2r_textured_light_4.png, id=2236, 1369.115pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_textured_light_4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_textured_light_4.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_textured_light_4.png  used on input line 372.
+images/evaluation/datasets/s2r_textured_light_4.png  used on input line 371.
 (pdftex.def)             Requested size: 85.35696pt x 65.69403pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_chair_1.png, id=2236, 1449.415pt x 1053.9375pt>
+ts/s2r_chair_1.png, id=2237, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_chair_1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_chair_1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_chair_1.png  used on input line 374.
+images/evaluation/datasets/s2r_chair_1.png  used on input line 373.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_chair_2.png, id=2237, 1449.415pt x 1053.9375pt>
+ts/s2r_chair_2.png, id=2238, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_chair_2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_chair_2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_chair_2.png  used on input line 375.
+images/evaluation/datasets/s2r_chair_2.png  used on input line 374.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datase
-ts/s2r_chair_3.png, id=2238, 1449.415pt x 1053.9375pt>
+ts/s2r_chair_3.png, id=2239, 1449.415pt x 1053.9375pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/d
 atasets/s2r_chair_3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/da
 tasets/s2r_chair_3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/evaluation/datasets/s2r_chair_3.png  used on input line 376.
+images/evaluation/datasets/s2r_chair_3.png  used on input line 375.
 (pdftex.def)             Requested size: 85.35696pt x 62.05954pt.
 \openout7 = `thesis.mw'.
 
@@ -5685,33 +5676,33 @@ mance/baseline_linegraph2.pgf)
 mance/finetuning_linegraph1.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/finetune_parallel_pix2voxpp.pgf)
-./text/evaluation.tex:448: Undefined control sequence.
+./text/evaluation.tex:444: Undefined control sequence.
 <argument> ...f images. The performance of \texbf 
                                                   {pix2vox++} mixed with bot...
-l.448     \todo{running s2rv1}}
-                               
+l.444 ...y pix3d, for majority of the categories.}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:448: Undefined control sequence.
+./text/evaluation.tex:444: Undefined control sequence.
 <argument> ...f images. The performance of \texbf 
                                                   {pix2vox++} mixed with bot...
-l.448     \todo{running s2rv1}}
-                               
+l.444 ...y pix3d, for majority of the categories.}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:448: Undefined control sequence.
+./text/evaluation.tex:444: Undefined control sequence.
 <argument> ...f images. The performance of \texbf 
                                                   {pix2vox++} mixed with bot...
-l.448     \todo{running s2rv1}}
-                               
+l.444 ...y pix3d, for majority of the categories.}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5721,10 +5712,10 @@ and I'll forget about whatever was undefined.
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/finetune_parallel_pix2vox.pgf)
-./text/evaluation.tex:457: Undefined control sequence.
+./text/evaluation.tex:453: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox} trained on (\gls...
-l.457 ...only pix3d, for majority the categories.}
+l.453 ...only pix3d, for majority the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5732,10 +5723,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:457: Undefined control sequence.
+./text/evaluation.tex:453: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox} trained on (\gls...
-l.457 ...only pix3d, for majority the categories.}
+l.453 ...only pix3d, for majority the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5743,10 +5734,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:457: Undefined control sequence.
+./text/evaluation.tex:453: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox} trained on (\gls...
-l.457 ...only pix3d, for majority the categories.}
+l.453 ...only pix3d, for majority the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5754,8 +5745,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:478: Undefined control sequence.
-l.478 ...he majority of the cases we see that \fls
+./text/evaluation.tex:474: Undefined control sequence.
+l.474 ...he majority of the cases we see that \fls
                                                   {iou} of models trained on...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5836,13 +5827,25 @@ mance/mixed_linegraph2.pgf)
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/mixed_parallel_pix2voxpp.pgf)
-./text/evaluation.tex:497: Undefined control sequence.
+./text/evaluation.tex:492: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox++} trained on 50\...
-l.497     }
+l.492     }
            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5850,10 +5853,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:497: Undefined control sequence.
+./text/evaluation.tex:492: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox++} trained on 50\...
-l.497     }
+l.492     }
            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5861,10 +5864,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:497: Undefined control sequence.
+./text/evaluation.tex:492: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox++} trained on 50\...
-l.497     }
+l.492     }
            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5875,10 +5878,10 @@ and I'll forget about whatever was undefined.
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/mixed_parallel_pix2vox.pgf)
-./text/evaluation.tex:506: Undefined control sequence.
+./text/evaluation.tex:501: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox} trained on 50\% ...
-l.506 ...d on only pix3d, for all the categories.}
+l.501 ...d on only pix3d, for all the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5886,10 +5889,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:506: Undefined control sequence.
+./text/evaluation.tex:501: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox} trained on 50\% ...
-l.506 ...d on only pix3d, for all the categories.}
+l.501 ...d on only pix3d, for all the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5897,10 +5900,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:506: Undefined control sequence.
+./text/evaluation.tex:501: Undefined control sequence.
 <argument> ... the \gls {iou} for baseline \texbf 
                                                   {pix2vox} trained on 50\% ...
-l.506 ...d on only pix3d, for all the categories.}
+l.501 ...d on only pix3d, for all the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5977,33 +5980,15 @@ mance/ablation_linegraph1.pgf)
 
 \openout7 = `thesis.mw'.
 
- [55]
-(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
-\openout7 = `thesis.mw'.
-
 \openout7 = `thesis.mw'.
 
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/ablation_linegraph2.pgf)
-./text/evaluation.tex:549: Undefined control sequence.
+./text/evaluation.tex:544: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.549 ...aining negates loss from randomization.]}
+l.544 ...aining negates loss from randomization.]}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6011,10 +5996,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:549: Undefined control sequence.
+./text/evaluation.tex:544: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.549 ...aining negates loss from randomization.]}
+l.544 ...aining negates loss from randomization.]}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6022,10 +6007,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/evaluation.tex:549: Undefined control sequence.
+./text/evaluation.tex:544: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.549 ...aining negates loss from randomization.]}
+l.544 ...aining negates loss from randomization.]}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6036,7 +6021,7 @@ and I'll forget about whatever was undefined.
 )
 \openout7 = `thesis.mw'.
 
- [56] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+ [55] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -6049,6 +6034,12 @@ and I'll forget about whatever was undefined.
 
 \openout7 = `thesis.mw'.
 
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [56]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -6185,33 +6176,33 @@ mance/baseline_dice_linegraph1.pgf)
 mance/finetuning_dice_linegraph1.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/finetune_dice_parallel_pix2voxpp.pgf)
-./text/appendix.tex:53: Undefined control sequence.
+./text/appendix.tex:52: Undefined control sequence.
 <argument> ...f images. The performance of \texbf 
                                                   {pix2vox++} mixed with bot...
-l.53     \todo{running s2rv1}}
-                              
+l.52 ...ly pix3d, for majority of the categories.}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:53: Undefined control sequence.
+./text/appendix.tex:52: Undefined control sequence.
 <argument> ...f images. The performance of \texbf 
                                                   {pix2vox++} mixed with bot...
-l.53     \todo{running s2rv1}}
-                              
+l.52 ...ly pix3d, for majority of the categories.}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:53: Undefined control sequence.
+./text/appendix.tex:52: Undefined control sequence.
 <argument> ...f images. The performance of \texbf 
                                                   {pix2vox++} mixed with bot...
-l.53     \todo{running s2rv1}}
-                              
+l.52 ...ly pix3d, for majority of the categories.}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -6221,10 +6212,10 @@ and I'll forget about whatever was undefined.
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/finetune_dice_parallel_pix2vox.pgf)
-./text/appendix.tex:62: Undefined control sequence.
+./text/appendix.tex:61: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox} trained on (\gls...
-l.62 ... only pix3d, for majority the categories.}
+l.61 ... only pix3d, for majority the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6232,10 +6223,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:62: Undefined control sequence.
+./text/appendix.tex:61: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox} trained on (\gls...
-l.62 ... only pix3d, for majority the categories.}
+l.61 ... only pix3d, for majority the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6243,10 +6234,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:62: Undefined control sequence.
+./text/appendix.tex:61: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox} trained on (\gls...
-l.62 ... only pix3d, for majority the categories.}
+l.61 ... only pix3d, for majority the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6261,10 +6252,10 @@ mance/mixed_dice_linegraph1.pgf)
 mance/mixed_dice_linegraph2.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/mixed_dice_parallel_pix2voxpp.pgf)
-./text/appendix.tex:87: Undefined control sequence.
+./text/appendix.tex:85: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox++} trained on 50\...
-l.87     }
+l.85     }
           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6272,10 +6263,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:87: Undefined control sequence.
+./text/appendix.tex:85: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox++} trained on 50\...
-l.87     }
+l.85     }
           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6283,10 +6274,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:87: Undefined control sequence.
+./text/appendix.tex:85: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox++} trained on 50\...
-l.87     }
+l.85     }
           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6297,10 +6288,10 @@ and I'll forget about whatever was undefined.
 
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/mixed_dice_parallel_pix2vox.pgf)
-./text/appendix.tex:96: Undefined control sequence.
+./text/appendix.tex:94: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox} trained on 50\% ...
-l.96 ...ed on only pix3d, for all the categories.}
+l.94 ...ed on only pix3d, for all the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6308,10 +6299,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:96: Undefined control sequence.
+./text/appendix.tex:94: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox} trained on 50\% ...
-l.96 ...ed on only pix3d, for all the categories.}
+l.94 ...ed on only pix3d, for all the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6319,10 +6310,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:96: Undefined control sequence.
+./text/appendix.tex:94: Undefined control sequence.
 <argument> ...r the \gls {f1} for baseline \texbf 
                                                   {pix2vox} trained on 50\% ...
-l.96 ...ed on only pix3d, for all the categories.}
+l.94 ...ed on only pix3d, for all the categories.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6499,8 +6490,8 @@ and I'll forget about whatever was undefined.
 \openout7 = `thesis.mw'.
 
 
-./text/appendix.tex:107: Undefined control sequence.
-l.107 ...irs, with textureless chair we get a \gks
+./text/appendix.tex:105: Undefined control sequence.
+l.105 ...irs, with textureless chair we get a \gks
                                                   {f1} of 0.4879.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6513,10 +6504,10 @@ and I'll forget about whatever was undefined.
 mance/ablation_dice_linegraph1.pgf)
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/ablation_dice_linegraph2.pgf)
-./text/appendix.tex:122: Undefined control sequence.
+./text/appendix.tex:120: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.122 ...raining negates loss from randomization.}
+l.120 ...raining negates loss from randomization.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6524,10 +6515,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:122: Undefined control sequence.
+./text/appendix.tex:120: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.122 ...raining negates loss from randomization.}
+l.120 ...raining negates loss from randomization.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6535,10 +6526,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./text/appendix.tex:122: Undefined control sequence.
+./text/appendix.tex:120: Undefined control sequence.
 <argument> ...atio of 50\%. Observe that the \fls 
                                                   {IoU} is consistent for al...
-l.122 ...raining negates loss from randomization.}
+l.120 ...raining negates loss from randomization.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6547,62 +6538,62 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp1.pn
-g, id=2496, 1102.1175pt x 1001.7425pt>
+g, id=2497, 1102.1175pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp1.png  used on input line 135.
+images/appendix/hdrp1.png  used on input line 133.
 (pdftex.def)             Requested size: 170.70872pt x 128.03pt.
 
-./text/appendix.tex:136: Package xkeyval Error: `valign' undefined in families 
+./text/appendix.tex:134: Package xkeyval Error: `valign' undefined in families 
 `Gin'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 ...onstruction/report/images/appendix/hdrp2}
+l.134 ...onstruction/report/images/appendix/hdrp2}
                                                   \\
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp2.pn
-g, id=2497, 1102.1175pt x 1001.7425pt>
+g, id=2498, 1102.1175pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp2.png  used on input line 136.
+images/appendix/hdrp2.png  used on input line 134.
 (pdftex.def)             Requested size: 170.70872pt x 128.03pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp3.pn
-g, id=2498, 1487.5575pt x 1001.7425pt>
+g, id=2499, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp3.png  used on input line 138.
+images/appendix/hdrp3.png  used on input line 136.
 (pdftex.def)             Requested size: 170.71368pt x 128.03pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp4.pn
-g, id=2499, 1487.5575pt x 1001.7425pt>
+g, id=2500, 1487.5575pt x 1001.7425pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
 p4.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
 4.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/hdrp4.png  used on input line 139.
+images/appendix/hdrp4.png  used on input line 137.
 (pdftex.def)             Requested size: 170.71368pt x 128.03pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/s
-urvey_section1.png, id=2505, 882.29625pt x 575.14874pt>
+urvey_section1.png, id=2506, 882.29625pt x 575.14874pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/sur
 vey/survey_section1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/surv
 ey/survey_section1.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/survey/survey_section1.png  used on input line 159.
+images/appendix/survey/survey_section1.png  used on input line 157.
 (pdftex.def)             Requested size: 426.79135pt x 278.21838pt.
 \openout7 = `thesis.mw'.
 
@@ -6680,22 +6671,22 @@ images/appendix/survey/survey_section1.png  used on input line 159.
 \openout7 = `thesis.mw'.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/s
-urvey_section2.png, id=2516, 885.3075pt x 536.0025pt>
+urvey_section2.png, id=2517, 885.3075pt x 536.0025pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/sur
 vey/survey_section2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/surv
 ey/survey_section2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/survey/survey_section2.png  used on input line 166.
+images/appendix/survey/survey_section2.png  used on input line 164.
 (pdftex.def)             Requested size: 426.79135pt x 258.39876pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/s
-urvey_section3.png, id=2517, 663.47874pt x 703.62875pt>
+urvey_section3.png, id=2518, 663.47874pt x 703.62875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/sur
 vey/survey_section3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/surv
 ey/survey_section3.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
-images/appendix/survey/survey_section3.png  used on input line 173.
+images/appendix/survey/survey_section3.png  used on input line 171.
 (pdftex.def)             Requested size: 426.79135pt x 452.61847pt.
 )
 \openout7 = `thesis.mw'.
@@ -8771,22 +8762,14 @@ No complaints by nag.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 \openout7 = `thesis.out'.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: AB6D6518315461562F7B0DB7AB71FCC3;20907.
 \openout7 = `thesis.brf'.
 
-
-Package rerunfilecheck Warning: File `thesis.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `thesis.brf':
-(rerunfilecheck)             Before: 38725B62F7A915CACE03E4CE8643ED01;11341
-(rerunfilecheck)             After:  4F16CE0619FF57072A8C7F9CCA1A07B1;11341.
+Package rerunfilecheck Info: File `thesis.brf' has not changed.
+(rerunfilecheck)             Checksum: 4F16CE0619FF57072A8C7F9CCA1A07B1;11341.
 \openout7 = `thesis.idx'.
 
 \openout7 = `thesis.glo'.
@@ -8805,10 +8788,10 @@ Package rerunfilecheck Info: Checksums for `thesis.brf':
 
  ) 
 Here is how much of TeX's memory you used:
- 54337 strings out of 478994
- 1261928 string characters out of 5858185
- 2917800 words of memory out of 5000000
- 69072 multiletter control sequences out of 15000+600000
+ 54336 strings out of 478994
+ 1261907 string characters out of 5858185
+ 2920165 words of memory out of 5000000
+ 69071 multiletter control sequences out of 15000+600000
  554455 words of font info for 728 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,13n,116p,1157b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -8834,10 +8817,10 @@ live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
 ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
 e/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
 Output written on /Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.pdf
- (111 pages, 115966398 bytes).
+ (111 pages, 115964302 bytes).
 PDF statistics:
- 3059 PDF objects out of 3580 (max. 8388607)
- 2650 compressed objects within 27 object streams
+ 3060 PDF objects out of 3580 (max. 8388607)
+ 2651 compressed objects within 27 object streams
  458 named destinations out of 1000 (max. 500000)
  129558 words of extra memory for PDF output out of 154059 (max. 10000000)
 

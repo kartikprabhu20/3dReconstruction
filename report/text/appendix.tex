@@ -49,8 +49,7 @@ We see the same results in \autoref{fig:finetuning_dice2} and \autoref{fig:finet
     \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_dice_parallel_pix2voxpp.pgf}}
     \caption{Parallel coordinate plot for the \gls{f1} for baseline pix2vox++ trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
     The categories are listed along with the number of images.
-    The performance of \texbf{pix2vox++} mixed with both the synthetic dataset is less than model trained on only pix3d, for majority of the categories.
-    \todo{running s2rv1}}
+    The performance of \texbf{pix2vox++} mixed with both the synthetic dataset is less than model trained on only pix3d, for majority of the categories.}
     \label{fig:finetuning_dice2}
 \end{figure}
 
@@ -83,7 +82,6 @@ The results are consistent with previous experiment as seen in \autoref{fig:mixe
     \caption{Parallel coordinate plot for the \gls{f1} for baseline \texbf{pix2vox++} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
     The categories are listed along with the number of images.
     The performance of pix2vox++ mixed with both the synthetic dataset is more than model trained on only pix3d, for most of the categories.
-%    \todo{running s2rv1}
     }
     \label{fig:mixed_dice2}
 \end{figure}
@@ -276,27 +274,27 @@ In this section we display a sample each for all the 3 sections from the collect
         \hline
         Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
         \hline\hline
-        Pix3D & 0.2887 &0.6782	&0.1888 &0.3739 &0.2112 &0.618 &0.291 &\textbf{0.3443} \\
+        Pix3D & 0.2887 &0.6782	&0.1888 &0.3739 &0.2112 &0.618 &0.291 &0.3443 \\
         \hline
         \gls{s2rv1}+0.15\%  &0.2972	&0.7229 &\textbf{0.2008} &0.3591 &0.2394	&0.6011	&0.2789	&0.3479\\
         \hline
-        \gls{s2rv1}+0.25\% &	& & & & & &	&\\
+        \gls{s2rv1}+0.25\% &\textbf{0.3114}	&0.6989	&0.1956	&\textbf{0.4034}	&0.2338	&0.6304	&0.2599	&\textbf{0.3607}\\
         \hline
-        \gls{s2rv1}+0.5\% &	& & & & & &	&\\
+        \gls{s2rv1}+0.5\% &0.3063	&0.7219	&0.1964	&0.397	&0.2533	&\textbf{0.6401}	&0.3051	&0.3636\\
         \hline
         \gls{s2rv1}+0.75\% &0.3005	&0.6787	&0.1797	&0.3867	&0.2241	&0.6168	&0.3049 &0.3498\\
         \hline
-        \gls{s2rv1}+0.90\% &0.2933	&0.6514	&0.1901	&0.3692	&0.2135	&\textbf{0.6388}	&0.3021	&0.3499\\
+        \gls{s2rv1}+0.90\% &0.2933	&0.6514	&0.1901	&0.3692	&0.2135	&0.6388	&0.3021	&0.3499\\
         \hline
         \gls{s2rv2}+0.15\%  &0.2559	&0.7651	&0.1708	&0.3042	&0.2297	&0.554	&0.3159	&0.3134 \\
         \hline
         \gls{s2rv2}+0.25\% &0.3017	&0.7221	&0.1897	&0.3649	&0.2606	&0.6138	&0.372	&0.3556 \\
         \hline
-        \gls{s2rv2}+0.5\% &\textbf{0.3077}	&0.7582	&0.1859	&0.3493	&\textbf{0.2664}	&0.6194	&\textbf{0.3874}	&\textbf{0.3587} \\
+        \gls{s2rv2}+0.5\% &0.3077	&0.7582	&0.1859	&0.3493	&\textbf{0.2664}	&0.6194	&\textbf{0.3874}	&0.3587 \\
         \hline
         \gls{s2rv2}+0.75\% &0.2944	&\textbf{0.7697} &0.1872 &0.3712	&0.2527	&0.6013	&0.3291	&0.3494 \\
         \hline
-        \gls{s2rv2}+0.90\% &0.2947	&0.6893	&0.1794	&\textbf{0.4013}	&0.1914	&0.6139	&0.3558	&0.3482\\
+        \gls{s2rv2}+0.90\% &0.2947	&0.6893	&0.1794	&0.4013	&0.1914	&0.6139	&0.3558	&0.3482\\
         \hline
     \end{tabular}%
     }
@@ -477,23 +475,23 @@ In this section we display a sample each for all the 3 sections from the collect
             \hline
             Dataset & Chair & Wardrobe & Table & Bed &	Desk & Sofa & Bookcase & Avg.\\ [0.5ex]
             \hline\hline
-            Pix3D & 0.4016 &\textbf{0.7452} &0.251 &0.4783 &0.2973 &0.7234 &0.3881 &0.4421 \\
+            Pix3D & 0.4016 &0.7452 &0.251 &0.4783 &0.2973 &0.7234 &0.3881 &0.4421 \\
             \hline
             \gls{s2rv1}+0.15\%  &0.4178	&0.7787	&\textbf{0.2638}	&0.4618	&0.3278	&0.7116	&0.3711	&0.4493 \\
             \hline
-            \gls{s2rv1}+0.25\% &	& & & & & &	&\\
+            \gls{s2rv1}+0.25\% &\textbf{0.4326}	&0.7635	&0.2551	&\textbf{0.5076}	&0.3193	&0.7364	&0.3483	&0.4608\\
             \hline
-            \gls{s2rv1}+0.5\% &	& & & & & &	&\\
+            \gls{s2rv1}+0.5\% &0.4253	&0.789	&0.2564	&0.5056	&0.3429	&\textbf{0.7468}	&0.4066	&\textbf{0.4644}\\
             \hline
             \gls{s2rv1}+0.75\% &0.4057	&0.7329	&0.2278	&0.3303	&0.2946	&0.7145	&0.3931	&0.4377 \\
             \hline
-            \gls{s2rv1}+0.90\% &0.4091	&0.7212	&0.2495	&0.4719	&0.2952	&\textbf{0.7413}	&0.3968	&0.4472\\
+            \gls{s2rv1}+0.90\% &0.4091	&0.7212	&0.2495	&0.4719	&0.2952	&0.7413	&0.3968	&0.4472\\
             \hline
             \gls{s2rv2}+0.15\%  &0.3712	&0.8269	&0.2378	&0.4067	&0.3212	&0.6659	&0.4105	&0.4142 \\
             \hline
             \gls{s2rv2}+0.25\% &0.415	&0.6844	&0.2440	&0.4689	&0.3459	&0.7157	&0.4692	&0.4511 \\
             \hline
-            \gls{s2rv2}+0.5\% &\textbf{0.4211}	&0.8135	&0.2422	&0.4485	&\textbf{0.3535} &0.7222	&\textbf{0.485}	&\textbf{0.4543}\\
+            \gls{s2rv2}+0.5\% &0.4211	&0.8135	&0.2422	&0.4485	&\textbf{0.3535} &0.7222	&\textbf{0.485}	&0.4543\\
             \hline
             \gls{s2rv2}+0.75\% &0.4089	&\textbf{0.8313}	&0.249	&0.4747	&0.3384	&0.709	&0.4273	&0.4479 \\
             \hline
