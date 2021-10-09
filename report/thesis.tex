@@ -64,20 +64,18 @@
 \newacronym{s2rv2}{S2R\_V2}{S2R:3DFREE Version 2}
 \newacronym{tsne}{t-SNE}{t-Distributed Stochastic Neighbor Embedding }
 \newacronym{f1}{F1 Score}{Dice Coefficient/Dice Score/F Score}
-
-
 % For some theses a list of symbols can be nice. For example usage, see below.
 \newcommand{\category}[3]{\newglossaryentry{_#2}{type=symbol, name={#3}, description={}, sort={#1}}}
 \newcommand{\sym}[5]{\newglossaryentry{#3}{type=symbol, name={\ensuremath{#4}}, sort={#2}, description={#5}, parent=_#1}}
-\newcommand{\makesymbols}{
-    \category{1}{general}{General}
-    \category{2}{logic}{First-Order and Dynamic Logic}
-    \sym{general}{1}{subst}{\alpha[x \backslash y]}{Substitution of $x$ in $\alpha$ with $y$}
-    \sym{general}{2}{power}{\mathcal{P}(A)}{Power set of a set $A$}
-    \sym{general}{3}{restrict}{f|_{A'}}{Restriction of a function $f \colon A \to B$ to a smaller domain $A' \subseteq A$}
-    \sym{logic}{1}{pand}{A \pand B}{Formalization of the sentence ``\emph{P} and \emph{Q}''}
-    % ...
-}
+%\newcommand{\makesymbols}{
+%    \category{1}{general}{General}
+%    \category{2}{logic}{First-Order and Dynamic Logic}
+%    \sym{general}{1}{subst}{\alpha[x \backslash y]}{Substitution of $x$ in $\alpha$ with $y$}
+%    \sym{general}{2}{power}{\mathcal{P}(A)}{Power set of a set $A$}
+%    \sym{general}{3}{restrict}{f|_{A'}}{Restriction of a function $f \colon A \to B$ to a smaller domain $A' \subseteq A$}
+%    \sym{logic}{1}{pand}{A \pand B}{Formalization of the sentence ``\emph{P} and \emph{Q}''}
+%    % ...
+%}
 
 % These are custom commands (or macros). They are useful for example for mathematical notations that you use often.
 \newcommand{\todots}{\todo{[...]}} % mark as todo
@@ -233,7 +231,7 @@ Thank you for teaching me to enjoy life!
 % remove this if you do not want a list of figures, tables, or listings
 \listoffigures
 \listoftables
-\lstlistoflistings
+%\lstlistoflistings
 % remove this if you do not want a list of symbols or acronyms
 \glsaddall[types={symbol}]
 \printglossary[type=acronym,
@@ -253,7 +251,6 @@ Thank you for teaching me to enjoy life!
 \include{text/conclusion}
 \appendix
 \include{text/appendix}
-
 % Usually, you will create your bibliography with BibTeX files, which can be exported from many literature management tools. For an example, see thesis.bib.
 \cleardoublepage
 \phantomsection

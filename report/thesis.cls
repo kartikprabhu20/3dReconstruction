@@ -78,21 +78,21 @@
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
 
-\iftoggle{german}{
-	\labelformat{lstlisting}{Quelltext~#1}
-}{
-	\labelformat{lstlisting}{Listing~#1}
-}
+%\iftoggle{german}{
+%	\labelformat{lstlisting}{Quelltext~#1}
+%}{
+%	\labelformat{lstlisting}{Listing~#1}
+%}
 
 \usepackage[notindex,nottoc]{tocbibind}
-\iftoggle{german}{
-	\renewcommand{\lstlistingname}{Quelltextverzeichnis}
-}{
-	\renewcommand{\lstlistingname}{List of Code Listings}
-}
-\renewcommand{\lstlistoflistings}{\begingroup
-	\tocfile{\lstlistingname}{lol}
-\endgroup}
+%\iftoggle{german}{
+%	\renewcommand{\lstlistingname}{Quelltextverzeichnis}
+%}{
+%	\renewcommand{\lstlistingname}{List of Code Listings}
+%}
+%\renewcommand{\lstlistoflistings}{\begingroup
+%	\tocfile{\lstlistingname}{lol}
+%\endgroup}
 
 \usepackage{url}
 \expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks

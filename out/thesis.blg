@@ -36,45 +36,45 @@ Warning--empty booktitle in LiSilhouetteAssisted3O
 Warning--empty year in LiSilhouetteAssisted3O
 Warning--empty year in LiSilhouetteAssisted3O
 Warning--empty journal in McCormac:etal:ICCV2017
-You've used 95 entries,
+You've used 99 entries,
             2773 wiz_defined-function locations,
-            1064 strings with 26051 characters,
-and the built_in function-call counts, 57542 in all, are:
-= -- 4557
-> -- 5247
-< -- 37
-+ -- 1760
-- -- 1661
-* -- 5089
-:= -- 8979
-add.period$ -- 273
-call.type$ -- 95
-change.case$ -- 833
-chr.to.int$ -- 91
-cite$ -- 207
-duplicate$ -- 2013
-empty$ -- 3599
-format.name$ -- 1771
-if$ -- 11857
+            1088 strings with 26842 characters,
+and the built_in function-call counts, 59734 in all, are:
+= -- 4752
+> -- 5394
+< -- 39
++ -- 1809
+- -- 1706
+* -- 5270
+:= -- 9313
+add.period$ -- 288
+call.type$ -- 99
+change.case$ -- 860
+chr.to.int$ -- 95
+cite$ -- 215
+duplicate$ -- 2109
+empty$ -- 3761
+format.name$ -- 1822
+if$ -- 12322
 int.to.chr$ -- 5
 int.to.str$ -- 1
-missing$ -- 55
-newline$ -- 469
-num.names$ -- 372
-pop$ -- 1892
+missing$ -- 59
+newline$ -- 492
+num.names$ -- 388
+pop$ -- 1945
 preamble$ -- 1
-purify$ -- 741
+purify$ -- 764
 quote$ -- 0
-skip$ -- 1996
+skip$ -- 2076
 stack$ -- 0
-substring$ -- 1067
-swap$ -- 328
-text.length$ -- 20
+substring$ -- 1142
+swap$ -- 344
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1035
+type$ -- 1079
 warning$ -- 14
-while$ -- 328
+while$ -- 344
 width$ -- 0
-write$ -- 1149
+write$ -- 1205
 (There were 20 warnings)

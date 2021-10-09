@@ -72,11 +72,39 @@ middleware library~\footnote{https://magnum.graphics/}, which supports cross-pla
 
 In \autoref{fig:photorealistic images comparison}, we can see samples from each of the datasets claimed to be photorealistic.
 The images from these datasets are used in a research survey to determine the perception of humans about photorealism.
+We define "Automated dataset" as a dataset which had no or limited user or professional designer inputs.
+Only the 3D furntiure models assets might have been designed by professionals, but the properties of the room like lights, textures, etc, were generated automatically.
 Among the datasets under consideration,
-OpenRooms, SceneNet, BlenderProc are all automated datasets with no manual inputs from a professional designer.
+OpenRooms, SceneNet, BlenderProc are all automated datasets, including the proposed \gls{free} dataset.
 Hyperism, \gls{ai2thor}, InteriorNet, and \gls{front} were manually configured and designed by professional architects.
 
-%\todo{A table to explain diffs between various methods( only if 3D-FREE has more advantage)}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c |c |c |c|}
+        \hline
+        Dataset & Year & Automated \\ [0.5ex]
+        \hline\hline
+        Openrooms & 2020 & YES \\
+        \hline
+        \gls{ai2thor} & 2017 & NO \\
+        \hline
+        BlenderProc & 2019 & YES \\
+        \hline
+        Hyperism & 2020 & NO \\
+        \hline
+        \gls{front} & 2020 & NO \\
+        \hline
+        InteriorNet & 2018 & NO \\
+        \hline
+        SceneNet & 2015 & YES \\
+        \hline
+        \gls{free} & 2021 & YES \\[1ex]
+        \hline
+    \end{tabular}
+    \caption{Table represents synthetic datasets and year of release, and if they are automated(i.e. created with no or limited inputs from professional designers.)}
+    \label{tab:dataset_comparison}
+\end{table}
 
 \begin{figure}
 \begin{tabular}{llll}

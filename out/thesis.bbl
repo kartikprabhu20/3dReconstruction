@@ -1,4 +1,4 @@
-\begin{thebibliography}{95}
+\begin{thebibliography}{99}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -223,6 +223,14 @@ Kaiming He, X.~Zhang, Shaoqing Ren, and Jian Sun.
 Paul Henderson and Vittorio Ferrari.
 \newblock Learning single-image 3d reconstruction by generative modelling of
   shape, pose and shading, 2019.
+
+\bibitem[Heusel et~al.(2017)Heusel, Ramsauer, Unterthiner, Nessler, and
+  Hochreiter]{Heusel2017GANsTB}
+Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, and Sepp
+  Hochreiter.
+\newblock Gans trained by a two time-scale update rule converge to a local nash
+  equilibrium.
+\newblock In \emph{NIPS}, 2017.
 
 \bibitem[Hinterstoisser et~al.(2019)Hinterstoisser, Pauly, Heibel, Marek, and
   Bokeloh]{hinterstoisser2019annotation}
@@ -517,6 +525,14 @@ Xingyuan Sun, Jiajun Wu, Xiuming Zhang, Zhoutong Zhang, Chengkai Zhang, Tianfan
 \newblock In \emph{IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, 2018.
 
+\bibitem[Szegedy et~al.(2016)Szegedy, Vanhoucke, Ioffe, Shlens, and
+  Wojna]{Szegedy2016RethinkingTI}
+Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, and
+  Zbigniew Wojna.
+\newblock Rethinking the inception architecture for computer vision.
+\newblock \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, pages 2818--2826, 2016.
+
 \bibitem[Tatarchenko et~al.(2017)Tatarchenko, Dosovitskiy, and
   Brox]{tatarchenko2017octree}
 Maxim Tatarchenko, Alexey Dosovitskiy, and Thomas Brox.
@@ -553,6 +569,13 @@ Jonathan Tremblay, Thang To, and Stan Birchfield.
 \newblock Falling things: A synthetic dataset for 3d object detection and pose
   estimation, 2018{\natexlab{b}}.
 
+\bibitem[van~der Maaten and Hinton(2008)]{vanDerMaaten2008}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using {t-SNE}.
+\newblock \emph{Journal of Machine Learning Research}, 9:\penalty0 2579--2605,
+  2008.
+\newblock URL \url{http://www.jmlr.org/papers/v9/vandermaaten08a.html}.
+
 \bibitem[Wang and Deng(2018)]{DBLP:journals/corr/abs-1802-03601}
 Mei Wang and Weihong Deng.
 \newblock Deep visual domain adaptation: {A} survey.
@@ -572,6 +595,14 @@ T.~Wang, Ming-Yu Liu, Jun-Yan Zhu, Andrew Tao, J.~Kautz, and Bryan Catanzaro.
   conditional gans.
 \newblock \emph{2018 IEEE/CVF Conference on Computer Vision and Pattern
   Recognition}, pages 8798--8807, 2018{\natexlab{b}}.
+
+\bibitem[Wattenberg et~al.(2016)Wattenberg, Viégas, and
+  Johnson]{wattenberg2016how}
+Martin Wattenberg, Fernanda Viégas, and Ian Johnson.
+\newblock How to use t-sne effectively.
+\newblock \emph{Distill}, 2016.
+\newblock \doi{10.23915/distill.00002}.
+\newblock URL \url{http://distill.pub/2016/misread-tsne}.
 
 \bibitem[Wu et~al.(2017{\natexlab{a}})Wu, Wang, Xue, Sun, Freeman, and
   Tenenbaum]{wu2017marrnet}

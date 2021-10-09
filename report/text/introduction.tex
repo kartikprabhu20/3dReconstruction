@@ -57,19 +57,12 @@ In this case, some layers get overwritten by fine-tuning the features learned fr
 Domain adaptation is a field of study in machine learning where training data distribution differs from testing or target distribution.
 One shallow approach is, as mentioned above,
 re-weighting the network with testing data to adapt to the problem domain~\cite{Li2017PredictionRF}.
-”Deep domain adaptation methods leverage deep networks to learn more transferable representations by embedding domain adaptation in the pipeline of
-deep learning”~\cite{DBLP:journals/corr/abs-1802-03601}.
+\”Deep domain adaptation methods leverage deep networks to learn more transferable representations by embedding domain adaptation in the pipeline of
+deep learning\”~\cite{DBLP:journals/corr/abs-1802-03601}.
 For this thesis, domain adaptation is relevant as the synthetic dataset might not represent the real or target domain, leading to a drop in performance.
 
-Domain randomization, on the other hand, is improving data quality such that the target domain distribution is included in the training domain.
-This is mainly used to bridge the 'reality gap' as termed in~\cite{tobin2017domain}, between simulated environment and real images.
-This is achieved by randomizing the rendering of objects in the synthetic data.
-The key concept here is that by rendering objects with large variance, the real-world distribution will appear to be just a variation in the dataset.
-Some features that can be randomized in a synthetic dataset are textures, brightness, shadows, camera settings, and object pose.
-Domain randomization will be further discussed in \autoref{ch:concept}.
-
 Domain randomization, on the other hand, is improving data quality such that the training domain includes that the target domain distribution.
-The ’reality gap’~\cite{tobin2017domain} gets negated with this approach between simulated environment and natural images.
+The \’reality gap\’~\cite{tobin2017domain} gets negated with this approach between simulated environment and natural images.
 This is achievable by randomizing the rendering of objects in the synthetic data.
 The key concept here is that the real-world distribution will appear to be just a variation in the dataset by rendering objects with significant variance.
 Textures, brightness, shadows, camera settings, and object pose are some of the features that can be randomized.
@@ -83,8 +76,13 @@ However, unlike 2D, 3D data can be represented in various formats like voxels, m
 Each of the representations has its own sets of advantages and disadvantages.
 Voxels, which is short for Volumetric Pixels, is a 3D grid of pixels of constant size.
 As indicated in~\cite{li2016fpnn}, the main advantage of voxels is that Convolution Neural Networks can be easily applied to 3-Dimensions as in 2-Dimensions.
-Since most of the 3D geometry is surface-based, it can be wasteful and computationally expensive. Mesh is composed of vertices, edges, and faces in 3D space that indicates the formation of 3D objects. This form of representation is far more compact at a granular level, depending on the resolution. On the other hand, point clouds are collections of 3D points with (x,y,z) coordinates on the surface of the object. The collection of points determines detailing the 3D object representation.
-In both these cases, \gls{cnn} is not directly applicable.
+Since most of the 3D geometry is surface-based, it can be wasteful and computationally expensive.
+Mesh is composed of vertices, edges, and faces in 3D space that indicates the formation of 3D objects.
+This form of representation is far more compact at a granular level, depending on the resolution.
+On the other hand, point clouds are collections of 3D points with (x,y,z) coordinates on the surface of the object.
+The collection of points determines detailing the 3D object representation.
+In both these cases, \gls{cnn} is not directly applicable which is a direct disadvantage.
+However, since mesh and point clouds are surface-based, the memory consumption is less than voxels and thereby lesser computation time, which is their advantage over voxels.
 In this thesis, we opt for voxel-based models as the focus is on the performance of synthetic data rather than the model or the 3d representation itself.
 
 \begin{figure}
@@ -159,7 +157,7 @@ In answering the research questions formulated in \autoref{sec:goal}, this thesi
     \item Provide a focused synthetic chair dataset created with different parameters of domain randomization.
     A case study was conducted to check the influence of each component of domain randomization.
     \item A case study to understand the impact of mixed training.
-    Synthetic and real image datasets are mixed in different ratios to check the performance of the 3D reconstruction task.
+    Synthetic and real image datasets are mixed in different ratios in each mini-batch to check the performance of the 3D reconstruction task.
     \item Fine-tuning models trained on a synthetic dataset with a small real dataset.
 \end{itemize}
 

@@ -1,4 +1,4 @@
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{x}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{ix}
 \glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{x}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{x}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{x}
@@ -6,7 +6,7 @@
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{x}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{x}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{x}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{xi}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{x}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{xiv}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{xiv}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{xiv}
@@ -22,12 +22,15 @@
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{xv}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xv}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xv}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xv}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xv}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xv}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xv}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xv}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xv}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvi}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvi}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
@@ -37,55 +40,66 @@
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvi}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvi}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xvi}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{xvii}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvii}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvii}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvii}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvii}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvii}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xvii}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xix}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xx}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xx}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xx}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xx}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xx}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xx}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{xviii}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxi}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xxii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xxii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xxii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xxii}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xxii}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{xxii}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{xxii}
 \glossaryentry{CNN?\glossentry{cnn}|setentrycounter[]{page}\glsnumberformat}{4}
 \glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{7}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{8}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{9}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{9}
 \glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{9}
 \glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{9}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{9}
 \glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{10}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{10}
-\glossaryentry{RNN?\glossentry{rnn}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{11}
+\glossaryentry{RNN?\glossentry{rnn}|setentrycounter[]{page}\glsnumberformat}{12}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{15}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{19}
@@ -99,245 +113,273 @@
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{20}
 \glossaryentry{ResNet?\glossentry{resnet}|setentrycounter[]{page}\glsnumberformat}{20}
 \glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{22}
 \glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{22}
-\glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{22}
 \glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{23}
 \glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{23}
 \glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{23}
 \glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{35}
 \glossaryentry{ResNet?\glossentry{resnet}|setentrycounter[]{page}\glsnumberformat}{35}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{36}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{36}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{36}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{MSE?\glossentry{mse}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{37}
-\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{38}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{38}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{38}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{38}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{39}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{MSE?\glossentry{mse}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{39}
 \glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{39}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{39}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{39}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{39}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{39}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{40}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{40}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{41}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{41}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{42}
+\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{41}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{42}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{42}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{42}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{43}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{43}
-\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{43}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{44}
+\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{44}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{44}
+\glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{44}
+\glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{44}
+\glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{44}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{44}
-\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{45}
-\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{44}
+\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{44}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{45}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{46}
 \glossaryentry{MSE?\glossentry{mse}|setentrycounter[]{page}\glsnumberformat}{46}
 \glossaryentry{FID?\glossentry{fid}|setentrycounter[]{page}\glsnumberformat}{46}
 \glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{46}
 \glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{46}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{46}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{47}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{47}
+\glossaryentry{AI2THOR?\glossentry{ai2thor}|setentrycounter[]{page}\glsnumberformat}{47}
+\glossaryentry{3DFRONT?\glossentry{front}|setentrycounter[]{page}\glsnumberformat}{47}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{47}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{48}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{48}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{48}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{49}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{49}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{50}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{VGG?\glossentry{vgg}|setentrycounter[]{page}\glsnumberformat}{48}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{49}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{49}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{50}
 \glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{50}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{51}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{50}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{50}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{50}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{51}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{51}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{51}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{52}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{52}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{52}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{52}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{52}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{52}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{53}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{53}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{53}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{53}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{54}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{54}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{54}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{54}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{54}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{54}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{54}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{55}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{55}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{55}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{56}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{61}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{55}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{56}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{57}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{t-SNE?\glossentry{tsne}|setentrycounter[]{page}\glsnumberformat}{60}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{60}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{61}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{61}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{61}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{62}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{62}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{62}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{62}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{62}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{63}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{63}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{63}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{63}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{63}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{63}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{64}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{64}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{64}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{64}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{64}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{65}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{66}
-\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{66}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{67}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{67}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{67}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{67}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{70}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{64}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{71}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{71}
 \glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{72}
-\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{72}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{72}
 \glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{73}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{74}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{75}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{76}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{76}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{77}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{77}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{78}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{79}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{79}
+\glossaryentry{HDRP?\glossentry{hdrp}|setentrycounter[]{page}\glsnumberformat}{80}
+\glossaryentry{HDRP?\glossentry{hdrp}|setentrycounter[]{page}\glsnumberformat}{80}
+\glossaryentry{HDRP?\glossentry{hdrp}|setentrycounter[]{page}\glsnumberformat}{80}
+\glossaryentry{HDRP?\glossentry{hdrp}|setentrycounter[]{page}\glsnumberformat}{80}
+\glossaryentry{S2R:3DFREE?\glossentry{free}|setentrycounter[]{page}\glsnumberformat}{82}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{85}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{86}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{87}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V1?\glossentry{s2rv1}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{S2R\_V2?\glossentry{s2rv2}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{IoU?\glossentry{iou}|setentrycounter[]{page}\glsnumberformat}{88}
+\glossaryentry{F1 Score?\glossentry{f1}|setentrycounter[]{page}\glsnumberformat}{89}
