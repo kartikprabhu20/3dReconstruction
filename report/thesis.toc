@@ -1,0 +1,156 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{List of Figures}{ix}{chapter*.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{List of Tables}{xiii}{chapter*.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{List of Code Listings}{xv}{chapter*.6}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {1.1}Domain Adaptation vs Domain randomisation}{3}{section.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {1.2}Volumetric representations of 3D shapes}{3}{section.1.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {1.3}GameEngines}{4}{section.1.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {1.4}Background and motivation}{4}{section.1.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {1.5}Goal of this Thesis}{5}{section.1.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {1.6}Contributions of this Thesis}{5}{section.1.6}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {1.7}Structure of this Thesis}{6}{section.1.7}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{\numberline {2}Related Work}{7}{chapter.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {2.1}Indoor datasets}{7}{section.2.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {2.1.1}Indoor synthetic datasets}{7}{subsection.2.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {2.1.2}Tools to create synthetic datasets}{9}{subsection.2.1.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {2.2}State of the art for 3d-reconstruction}{11}{section.2.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {2.3}Mitigating domain shift}{12}{section.2.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{\numberline {3}Concept}{15}{chapter.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.1}Pix3D: A large-scale benchmark}{15}{section.3.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {3.1.1}Disadvantages of Pix3D}{15}{subsection.3.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {3.1.2}Why Pix3D?}{16}{subsection.3.1.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.2}Role of SceneNet}{16}{section.3.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.3}Unity based pipeline}{16}{section.3.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {3.3.1}Domain Randomisation with Unity Engine}{17}{subsection.3.3.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {3.3.1.1}Scenes from scenenet}{17}{subsubsection.3.3.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {3.3.1.2}Camera Viewpoints}{18}{subsubsection.3.3.1.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {3.3.1.3}Lighting and shadows}{18}{subsubsection.3.3.1.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {3.3.1.4}Randomised textures}{18}{subsubsection.3.3.1.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {3.3.1.5}Replacing target objects}{18}{subsubsection.3.3.1.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.4}S2R:3D-FREE, a Pix3D based sythetic dataset}{18}{section.3.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.5}3D reconstruction}{19}{section.3.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.6}3D reconstruction pipeline}{19}{section.3.6}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {3.6.1}Pix2Vox and Pix2Vox++}{19}{subsection.3.6.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {3.6.1.1}Why Pix2Vox?}{20}{subsubsection.3.6.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.7}Domain adaptation with Gan {\color {red} \emph {if we decide to go with this approach}}}{20}{section.3.7}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {3.8}Training}{20}{section.3.8}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{\numberline {4}Implementation}{23}{chapter.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {4.1}3D-Scene framework}{23}{section.4.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {4.1.1}Modes of operations}{23}{subsection.4.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {4.1.2}Scenes from SceneNet}{24}{subsection.4.1.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {4.1.3}Camera ViewPoints}{24}{subsection.4.1.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {4.1.4}Lightings and Shadows}{26}{subsection.4.1.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {4.1.5}Randomised Texture}{27}{subsection.4.1.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {4.1.6}Replacing target Objects}{27}{subsection.4.1.6}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {4.1.7}Snapshots with ML-ImageSynthesis}{28}{subsection.4.1.7}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {4.2}3d-Reconstruction framework}{29}{section.4.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{\numberline {5}Evaluation}{33}{chapter.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {5.1}A survey on photorealism}{33}{section.5.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.1.1}Survey results}{34}{subsection.5.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.1.1.1}Section 1: Real or Not}{34}{subsubsection.5.1.1.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.1.1.2}Section 2: Likert Scale}{34}{subsubsection.5.1.1.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.1.1.3}Section 3: Rank by comparison}{35}{subsubsection.5.1.1.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.1.1.4}Summary for survey}{35}{subsubsection.5.1.1.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {5.2}Domain gaps}{38}{section.5.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.2.1}Qualitative}{38}{subsection.5.2.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.2.2}Quantitative}{38}{subsection.5.2.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {5.3}Datasets}{39}{section.5.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.3.1}Pix3D}{39}{subsection.5.3.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.3.2}S2R:3DFREE Version 1}{39}{subsection.5.3.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.3.3}S2R:3DFREE Version 2}{39}{subsection.5.3.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.3.4}S2R:3DFREE Ablation}{39}{subsection.5.3.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.3.4.1}2R:3DFREE\_Textureless}{39}{subsubsection.5.3.4.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.3.4.2}S2R:3DFREE\_Textureless\_Light}{39}{subsubsection.5.3.4.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.3.4.3}S2R:3DFREE\_Textured}{40}{subsubsection.5.3.4.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.3.4.4}S2R:3DFREE\_Textured\_Light}{40}{subsubsection.5.3.4.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsubsection}{\numberline {5.3.4.5}S2R:3DFREE\_Chair}{40}{subsubsection.5.3.4.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {5.4}Baseline}{40}{section.5.4}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {5.5}Fine Tuning}{42}{section.5.5}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {5.6}Mixed Training}{42}{section.5.6}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {5.7}Ablation study on chairs}{44}{section.5.7}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.7.1}Domain randomisation on chair dataset}{44}{subsection.5.7.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {subsection}{\numberline {5.7.2}Domain randomisation with Mixed training}{44}{subsection.5.7.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{\numberline {6}Conclusion}{47}{chapter.6}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {6.1}Summary}{47}{section.6.1}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {6.2}Limitations of game engines}{47}{section.6.2}%
+\defcounter {refsection}{0}\relax
+\contentsline {section}{\numberline {6.3}Future Work}{47}{section.6.3}%
+\defcounter {refsection}{0}\relax
+\contentsline {chapter}{Appendix}{49}{appendix*.39}%

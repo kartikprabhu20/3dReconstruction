@@ -1,23 +1,23 @@
 \chapter{\iftoggle{german}{Konzept}{Concept}}\label{ch:concept}
 
-In this chapter, we discuss the key datasets used to create a new synthetic dataset and the reason for their selection.
+In this chapter, we discuss the critical datasets used to create a new synthetic dataset and the reason for their selection.
 Furthermore, how we combine multiple datasets to our advantage of creating new datasets in the Ersatz environment.
 The rationale in choosing Unity as a framework to build the pipeline \autoref{sec:unity-based-pipeline}.
 We will also discuss domain randomization  \autoref{subsec:domain-randomisation-with-unity-engine} and each of its parameters.
-We will introduce the proposed \gls{free} \autoref{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset} dataset that is used for the 3D-reconstruction task.
+In \autoref{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}, we will introduce the proposed \gls{free} dataset used for the 3D-reconstruction task.
 
-In the Deep Learning domain, we explore what 3D-reconstruction is and how it can be achieved in \autoref{sec:3D reconstruction}.
-In \autoref{subsec:pix2vox-and-pix2vox++}, the state-of-the-art models for 3D- reconstruction on voxel representation and reason for selecting the sibling models as baselines.
+In the Deep Learning domain(\autoref{sec:3D reconstruction}), we explore what 3D-reconstruction is and how to achieve it.
+In \autoref{subsec:pix2vox-and-pix2vox++}, the state-of-the-art models for 3D-Reconstruction on voxel representation and reason for selecting the sibling models as baselines are discussed.
 
 \section{Pix3D: A large-scale benchmark}\label{sec:pix3d}
 ~\cite{pix3d}introduces a large-scale benchmark for 2D-3D alignment.
-The raw images from web search engines were collected, and labeled key points were used to align the 2D images with the corresponding 3D shapes .
+The raw images from web search engines were collected, and labeled key points were used to align the 2D images with the corresponding 3D shapes.
 The 3D models extend the IKEA dataset~\cite{Lim2013ParsingIO}, a collection of high-quality IKEA furniture.
 The dataset also provides a binary mask and the key points for the object under observation.
 To add more images to the IKEA dataset, the authors of~\cite{pix3d} conducted a manual web search on Google, Bing, and Baidu, using the IKEA model name as keywords.
 This search led to around 104,220 images which were further filtered by removing irrelevant images with the help of Amazon Mechanical Turk (AMT) workers.
 After this manual experiment, the total images in Pix3D, only 14,600 images were selected for the 219 Ikea models.
-For our synthetic to real dataset experiment, we chose to select only furniture classes from Pix3D, leaving out ”misc and tools” classes, which were significantly less in comparison.
+For our synthetic to real dataset experiment, we chose to select only furniture classes from Pix3D, leaving out \”misc and tools\” classes, which were significantly less in comparison.
 
 
 \subsection{Disadvantages of Pix3D}\label{subsec:disadvantages-of-pix3d}
@@ -29,7 +29,7 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
 \begin{enumerate}
     \item For Deep Learning approaches, we need large-scale data, and 14,600 might not be sufficient.
     \item The orientation of an object is not randomized.
-    \item The dataset does not provide 2.5D information (i.e.,depth maps and normals),which can crucial for 3D learning.
+    \item The dataset does not provide 2.5D information (i.e., depth maps and normals), which can be crucial for 3D learning.
 \end{enumerate}
 
 \begin{figure}[!ht]
@@ -67,35 +67,36 @@ Each scene includes initial Shapenet models with furniture placement.
 We then replace the class under observation with a corresponding model from Pix3D.
 
 \section{Unity-based pipeline}\label{sec:unity-based-pipeline}
-Unity game engine is used for creating the synthetic dataset.
+To create the synthetic dataset, we use Unity Game Engine.
 The reasons for selecting Unity as our platform for the application are:
 \begin{enumerate}
-    \item Cross-platform game engine and hence can be used on an Operating system.
+    \item Cross-platform game engine and hence usable on any Operating system.
     \item The basic version is available for free.
     \item Provides all the necessary tools to create an ersatz environment with well-maintained documentation.
     \item An active developer community.
 \end{enumerate}
 
 There is no official comparison between Unreal Engine and Unity engine to have a deciding factor.
-The selection of the unity engine was a purely individual choice and ease of use.
-However, both these game engines can create realistic-looking scenes that can be used for synthetic dataset generation.
+The selection of the Unity engine was a purely individual choice and ease of use.
+However, both these game engines can create realistic-looking scenes that are usable for synthetic dataset generation.
 With the Unity game engine, the available scenes from the Scenenet and 3D models from pix3d can be imported to form an ersatz environment.
 Further domain randomization can be applied to create a dataset of photorealistic images and 2.5D data like normals, depth maps, masks.
 
 \subsection{Domain Randomisation with Unity Engine}\label{subsec:domain-randomisation-with-unity-engine}
 In this section, we discuss what kind of domain randomization we apply for dataset creation.
-\subsubsection{Scenes from scenenet}\label{subsubsec:scenes-from-scenenet}
+
+\subsubsection{Scenes from SceneNet}\label{subsubsec:scenes-from-scenenet}
 As discussed in \autoref{sec:role-of-scenenet}, SceneNet provides a wide variety of indoor scenes, including bedrooms, bathrooms, living rooms, kitchens, and offices.
 We did not consider the bathroom for our case, as the categories under observations are furniture which we rarely see in the bathroom.
 For the rest of the scenes, we have a pre-determined setup given by SceneNet.
-We use 25 scenes in total as basic rooms for our target object to be inserted.
-Moreover, we feel this should be sufficient to check if unity can produce a helpful dataset with further randomization.
+We use 25 scenes in total as basic rooms to insert our target object.
+Moreover, we feel this should be sufficient to check if Unity can produce a helpful dataset with further randomization.
 
 \subsubsection{Camera Viewpoints}
 The position and orientation of the camera give us the most randomization in this setup.
-The user can choose the minimum and maximum distance for the camera to be placed from the target object.
-A random point can be selected in this range as the position for the camera.
-As for the camera's orientation, we can make the camera always look at the target object, irrespective of the position.
+The user can choose the minimum and maximum distance to place the camera from the target object.
+A random point is selected in this range as the position for the camera.
+The camera is oriented such that it always looks at the target object, irrespective of its position.
 With this, we achieved different backgrounds for the target object, and the target object appears to be indifferent positions and orientations.
 
 \subsubsection{Lighting and shadows}
@@ -105,22 +106,21 @@ Unity offers a wide variety of lighting like global light, which acts like sunli
 Ideally, we should make the luminous objects like lamps, chandeliers, bulbs, etc.,
 the source of light for indoor scenes, but we observed that the room does not light up uniformly,
 making it less photorealistic.
-Hence we use some pre-determined lighting settings, which will be further discussed in implementation\autoref{sec:3d-scene-framework}.
+Hence we use some pre-determined lighting settings, discussed further in implementation(\autoref{sec:3d-scene-framework}).
 
 \subsubsection{Randomised textures}
 SceneNet~\cite{McCormac:etal:ICCV2017} also provide textures for different categories in the scene.
-We further increase the texture database by adding a few more textures from ambientCG.com, which provides free licenses.
+We further increase the texture database by adding more textures from ambientCG.com, which provides free licenses.
 We randomly allocate textures to each object, ensuring that each category has the same texture to make the scene more uniform.
 
 \subsubsection{Replacing target objects}
 To further randomize the scene, the category of target objects is replaced by the object under observation.
-When there is more than one object of the same category, we randomize the selection of which object is to be replaced,
-which further randomizes the captured data.
-The scale of the target object is matched with the scale of the category object in the scene in the least dimension.
+When more than one object of the same category is present, we randomize the object to be replaced, further randomizing the captured data.
+The target object is scaled such that the least dimension of the target object matches the least dimension of the category object in the scene.
 For example, if the length of the category object in the scene is the most petite amount length, width, and height, then the target object is scaled to match this length.
 The rescaling makes the target object blend in with the scene.
 
-\section{\gls{free}, a Pix3D based sythetic dataset}\label{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}
+\section{\gls{free}, a Pix3D based synthetic dataset}\label{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}
 
 \gls{free} dataset, which stands for Synth2Real: 3-Dimensional Furniture Reconstruction from Ersatz Environment, combines SceneNet and Pix3D dataset.
 We utilize the availability of 3D models of rooms and pieces of furniture from these two datasets to create an ersatz environment using Unity as our framework.
@@ -129,21 +129,21 @@ The other option would have been to use the ShapeNet as the target model, but we
 Ideally, a model trained on ShapeNet should also perform well with a real dataset like pix3d, but we decided to have a synthetic dataset based on pix3d itself for better comparison.
 
 \section{3D reconstruction}\label{sec:3D reconstruction}
-Now that we discussed how the dataset would be created, we move to the Deep Learning aspect of this thesis.
+Now that we discussed the method to create the dataset, we move to the Deep Learning aspect of this thesis.
 3D reconstruction is converting a 2-Dimensional RGB image into an available 3D representation of the model under observation.
-For voxel-based approach, the 3D model space is discretized to obtain a 3D voxel grid $X$.
-Let $I = \{I_k \mid k = 1,2,\dots n\}$ with n$\geq$1 be a set of single view RGB images with at least one object $X$.
-3D reconstruction can be defined as a task to learn a function $f(\theta)$ such that the objective function $L(I) = d(f(\theta),X)$ is minimised.
-$\theta$ is the parameters of predictor function $f$., \b($d$) is a distance measure between real shape X and shape predicted by $f(\theta)$,
+
+The training examples are of the form  $\{(x_1,y_1),(x_2,y_2) \dots(x_n,y_n)\}$ where $x_k$ are 2D images, and $y_k$ are 3D model discretized to obtain a 3D voxel grid.
+3D reconstruction is a learning task which seeks $g: X \to Y$, where $X$ is 2D input space and $Y$ is 3D output space.
+The task minimizes an objective function $Obj(g) = \frac{1}{N} \sum_i L(y_i, g(x_i))$, where $L$ is a loss function.
 
 In this thesis, we consider an architecture that consists of an encoder and decoder.
 ~\cite{Han2021ImageBased3O} discussed that an encoder maps a 2D image into a latent space by converting pixel grid into feature vectors.
-If we formulate the problem, feature vector $v= Enc(I) \in X$, where $Enc$ is the encoder function, $I$ is the input image, and $X$ is the latent space.
-An encoder is a good mapping function if for the given set of images of same category $I = \{I_k \mid k = 1,2,\dots c\}$, the feature vectors $v = \{v_k \mid k = 1,2,\dots c\}$ are close together in given latent space $X$
-irrespective of the extrinsic parameters like textures,background, camera positions,etc.
+If we formulate the problem, $Enc: X \to V$, where $Enc$ is the encoder function, $X$ is the input image space, and $V$ is the latent space.
+An encoder is a good mapping function if for the given set of images of same category $x = \{x_k \mid k = 1,2,\dots c\}$, the corresponding feature vectors $v = \{v_k \mid k = 1,2,\dots c\}$ are close together in given latent space $V$
+irrespective of the extrinsic parameters like textures, background, camera positions,etc.
 
 The decoder is an expansive network, which converts a feature vector from the latent space into a 3D voxel grid.
-$V = \{g(x_k) \forall k \in X$\}, for any vector in latent space $X$, the decoder should be able to create a 3D voxel model from $V$.
+$Dec: V \to Y$, i.e. for any vector in latent space $V$, the decoder function \textbf{$Dec$} should be able to create a 3D voxel grid in $Y$.
 If the images are encoded perfectly, a slight change in the feature vector will give a slight variation in the 3D voxel.
 
 \section{3D reconstruction pipeline}\label{sec:3D reconstruction pipeline}
@@ -154,8 +154,8 @@ In this section, we discuss the model used as a base and the rationale behind it
 \subsection{Pix2Vox and Pix2Vox++}\label{subsec:pix2vox-and-pix2vox++}
 The architecture of pix2vox~\cite{Xie_2019} is as shown in \autoref{fig:architectures}(a).
 The network consists of 4 modules: Encoder, Decoder, Merger, and Refiner.
-Merger plays a significant part when it comes to the multi-view reconstruction, of 3d objects.
-As we focus on single-view 3d reconstruction the merger module will not influence the output significantly.
+Merger plays a significant part when it comes to the multi-view reconstruction of 3d objects.
+As we focus on single-view 3d reconstruction, the merger module will not influence the output significantly.
 As an encoder, pix2vox has utilized \gls{vgg}16 network~\cite{simonyan2015deep} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
 The decoder is an expansive network that converts 2D embeddings to a 3D voxel grid.
 The refiner is an auto-encoder that takes the 3D output from the merger and produces a more refined final output.
@@ -166,17 +166,17 @@ The extended work replaces \gls{vgg} encoder~\cite{simonyan2015deep} with \gls{r
 Pix2Vox has been used as a baseline by most of the research-oriented to 3D reconstruction.
 This network is one of the few networks to be tested on the pix3d dataset.
 According to the survey conducted by~\cite{Han2021ImageBased3O}, the performance of pix2vox~\cite{Xie_2019}
-has been noted to be significantly higher compared to previous work \todo{cite other papers} as shown in \autoref{fig:survey on 3d reconstruction}.
+is significantly higher compared to previous work(\cite{DBLP:journals/corr/TulsianiZEM17,tatarchenko2016multiview,richter2018matryoshka,gwak2017weakly,8265323}), as shown in \autoref{fig:survey on 3d reconstruction}.
 At the same time, this comparison was made on 3d reconstruction of the ShapeNet dataset since pix3d was not available when previous work was published.
 From our survey, only CoReNet~\cite{popov2020corenet} had a slight gain in performance compared to pix2vox.
 When trained on ShapeNet and tested with pix3d, CoReNet gave a result of 29.7\% \gls{iou} while Pix2Vox gave a result of 28.8\% \gls{iou}  and Pix2Vox++ a result of 29.2\% \gls{iou}\@.
-Since the difference in the performance was not statistically significant, we decided to stick with the baseline model.
+Since the difference in the performance was not significant, we decided to stick with the baseline model.
 Another reason for selecting the pix2vox model is that the backbone of the architecture is pre-trained with ImageNet.
 Hence, the embeddings generated from this encoder can help visualize the domain space of both Pix3D (real images)  and \gls{free}(synthetic images).
 As mentioned above, for pix2vox++, the \gls{resnet} is the backbone encoder with 25\% lesser parameters and 5\% lesser inference time than \gls{vgg}\@.
 In addition, the author even proved that Pix2vox++ performs 1.5\% better than pix2vox.
 The architecture of pix2vox++ is as shown in \autoref{fig:architectures}(b).
-Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the model, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
+Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the furnitures, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
 Hence the selection of the model was not of utmost importance.
 However, since the two architectures are relatable, it would be interesting to compare the results for the 3D Reconstruction task.
 
@@ -215,13 +215,13 @@ However, since the two architectures are relatable, it would be interesting to c
 
 \section{Domain space}\label{sec:domain-space}
 
-Since this thesis includes image datasets from different domains, it is important to understand the domain space of these datasets.
-In this section we discuss how we intend to visualize the domain space and a quantitative measure to indicate the difference between the domains.
+Since this thesis includes image datasets from different domains, it is essential to understand the domain space of these datasets.
+This section discusses how we intend to visualize the domain space and a quantitative measure to indicate the difference between the domains.
 
 \subsection{Visualizing with \gls{tsne}}\label{subsec:visualizing-with-tsne}
-\gls{tsne} stands for t-Distributed Stochastic Neighbor Embedding~\cite{vanDerMaaten2008}; is a tool to visualize a high dimensional space in a low dimension space while retaining the information of high dimension as much as possible.
-In our case the images are embedded using \gls{vgg}16 network with output dimension of 1000.
-This is converted to two-dimension for better visualisation of the embedding space.
+\gls{tsne} stands for t-Distributed Stochastic Neighbor Embedding~\cite{vanDerMaaten2008}; it is a tool to visualize a high dimensional space in a low dimension space while retaining the information of high dimension as much as possible.
+In our case, the images are embedded using a \gls{vgg}16 network with an output dimension of 1000.
+This multi-dimensional output is converted to two-dimension for better visualization of the embedding space.
 
 In this segment, we briefly explain how \gls{tsne} works.
 
@@ -241,7 +241,7 @@ In this segment, we briefly explain how \gls{tsne} works.
         \label{eq:equation2}
     \end{equation}
 
-    \item \textbf{Step 2}: Using a random point dataset on a lower dimension with same number of points in higher dimension, a Joint probability distribution is created but with a Student-t distribution instead of Gausisian.
+    \item \textbf{Step 2}: Using a random point dataset on a lower dimension with same number of points in higher dimension, a Joint probability distribution is created but with a Student-t distribution instead of Gaussian.
     This is represented by \autoref{eq:equation3}.
     t-distribution makes sure that the projection in low dimension is not concentrated on a single point.
     \begin{equation}
@@ -249,9 +249,9 @@ In this segment, we briefly explain how \gls{tsne} works.
         \label{eq:equation3}
     \end{equation}
 
-    \item \textbf{Step 3}: Learn to represent the high dimension space in low dimension, by making the Joint distribution of lower dimension as close as possible to that of higher dimension.
+    \item \textbf{Step 3}: Learn to represent the high dimension space in low dimension by making the Joint distribution of the lower dimension as close as possible to that of the higher dimension.
     For this Kullback-Leiber divergence\cite{Joyce2011} is used to compare the similarity between the two distributions as in \autoref{eq:equation4}.
-    Using gradient descent the cost function based on KL-divergence (\autoref{eq:equation5}) is minimised to make the points fall in place.
+    Using gradient descent, the cost function based on KL-divergence (\autoref{eq:equation5}) is minimized to make the points fall in place.
 
     \begin{equation}
         D_{\mathrm{KL}}(P \| Q)=\sum_{x \in \mathcal{X}} P(x) \log \left(\frac{P(x)}{Q(x)}\right)
@@ -264,12 +264,12 @@ In this segment, we briefly explain how \gls{tsne} works.
     \end{equation}
 \end{enumerate}
 
-Perplexity is a parameter which informs the algorithm on how much attention needs to be given to local and global features.
+Perplexity is a parameter that informs the algorithm on how much attention to give the local and global features.
 The publication~\cite{vanDerMaaten2008} indicates the values between 5 and 50 to be a good initialization.
-An article on \gls{tsne} interpretation~\cite{wattenberg2016how}, informs us to have a perplexity value lesser than the total number of points.
-    It also notes that the cluster distance may not be as the intuition suggests, i,e. greater distance may not necessarily mean good seperation, or lesser distance does not necessarrily mean closer similarity for well seperated clusters.
-    However, \gls{tsne} still can be used to visualize if the cluster are overlapping or have a common embedding space or not.
-    Hence, we will use \gls{tsne} just as a medium to visualize the embedding space, without giving importance to the distance or the scale of the plots.
+An article on \gls{tsne} interpretation~\cite{wattenberg2016how} informs us to have a perplexity value lesser than the total number of points.
+    It also notes that the cluster distance may not be as the intuition suggests, i.e., greater distance may not necessarily mean good separation, or lesser distance does not inevitably mean closer similarity for well-separated clusters.
+    However, \gls{tsne} can still visualize if the clusters are overlapping or have a shared embedding space or not.
+    Hence, we will use \gls{tsne} as a medium to visualize the embedding space without giving importance to the distance or the scale of the plots.
 
 %\subsection{Maximum Mean Discrepancy(MMD)}
 \subsection{Fr\'echet Inception Distance(FID))}\label{subsec:fr'echet-inception-distance)}
@@ -278,8 +278,8 @@ For quantitative measure, we use \gls{fid}
 The core idea behind \gls{fid} was to evaluate the generated synthetic images using the statistics collected from both synthetic and real images.
 Lower the value of \gls{fid} better the quality of the images.
 
-The embeddings of the images are calculated by passing it through a Inception v3 model~\cite{Szegedy2016RethinkingTI} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
-The output layer is removed and activations from the penultimate pooling layer is used to get the embedding vector.
+The embeddings of the images are calculated by passing it through an Inception v3 model~\cite{Szegedy2016RethinkingTI} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
+The output layer is removed, and the penultimate pooling layer activations are used to get the embedding vector.
 This vector has a dimension of 2048.
 The images from both synthetic and real datasets are passed through the model, and the obtained statistics is used to calculated the \gls{fid} as in \autoref{eq:fid}.
 
@@ -289,7 +289,7 @@ The images from both synthetic and real datasets are passed through the model, a
 \end{equation}
 
 In the above \autoref{eq:fid}, $\mu_r$ and $\mu_s$ are feature-wise mean for real and synthetic images, $C_r$ and $C_s$ are respective covariance matrices.
-$Tr$ is the Trace linear algebra operation, which is sum of main diagonal elements.
+$Tr$ is the Trace linear algebra operation, which is the sum of main diagonal elements.
 
 
 

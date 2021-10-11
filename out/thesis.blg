@@ -21,7 +21,7 @@ Warning--I'm ignoring 9210569's extra "key" field
 Warning--I'm ignoring 9210569's extra "key" field
 --line 326 of file literature/thesis.bib
 Warning--entry type for "unrealengine" isn't style-file defined
---line 846 of file literature/thesis.bib
+--line 909 of file literature/thesis.bib
 Warning--to sort, need author or key in Evermotion
 Warning--to sort, need author or key in TurboSquid
 Warning--to sort, need author or key in 2018LearningIC
@@ -36,45 +36,45 @@ Warning--empty booktitle in LiSilhouetteAssisted3O
 Warning--empty year in LiSilhouetteAssisted3O
 Warning--empty year in LiSilhouetteAssisted3O
 Warning--empty journal in McCormac:etal:ICCV2017
-You've used 99 entries,
+You've used 105 entries,
             2773 wiz_defined-function locations,
-            1088 strings with 26842 characters,
-and the built_in function-call counts, 59734 in all, are:
-= -- 4752
-> -- 5394
-< -- 39
-+ -- 1809
-- -- 1706
-* -- 5270
-:= -- 9313
-add.period$ -- 288
-call.type$ -- 99
-change.case$ -- 860
-chr.to.int$ -- 95
-cite$ -- 215
-duplicate$ -- 2109
-empty$ -- 3761
-format.name$ -- 1822
-if$ -- 12322
-int.to.chr$ -- 5
+            1110 strings with 27895 characters,
+and the built_in function-call counts, 62737 in all, are:
+= -- 4994
+> -- 5637
+< -- 41
++ -- 1891
+- -- 1781
+* -- 5523
+:= -- 9772
+add.period$ -- 304
+call.type$ -- 105
+change.case$ -- 903
+chr.to.int$ -- 100
+cite$ -- 227
+duplicate$ -- 2225
+empty$ -- 3977
+format.name$ -- 1905
+if$ -- 12950
+int.to.chr$ -- 6
 int.to.str$ -- 1
-missing$ -- 59
-newline$ -- 492
-num.names$ -- 388
-pop$ -- 1945
+missing$ -- 61
+newline$ -- 520
+num.names$ -- 412
+pop$ -- 2046
 preamble$ -- 1
-purify$ -- 764
+purify$ -- 801
 quote$ -- 0
-skip$ -- 2076
+skip$ -- 2190
 stack$ -- 0
-substring$ -- 1142
-swap$ -- 344
-text.length$ -- 21
+substring$ -- 1182
+swap$ -- 362
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1079
+type$ -- 1145
 warning$ -- 14
-while$ -- 344
+while$ -- 364
 width$ -- 0
-write$ -- 1205
+write$ -- 1275
 (There were 20 warnings)

@@ -38,9 +38,9 @@ Hence, we cannot perform the tasks related to  3D reconstruction.
 \cite{zheng2020structured3d} have also demonstrated that combining synthetic and real dataset deep learning tasks for room layout estimation improved performance on benchmark datasets.
 This dataset focuses more on room layout estimation and not 3D reconstruction, but with few modifications, it may well support to 3d furniture reconstruction tasks.
 
-Openrooms~\cite{li2021openrooms} use Scannet~\cite{dai2017scannet} as their layout foundation, retrieve corresponding models from shapenet~\cite{chang2015shapenet}
+Openrooms~\cite{li2021openrooms} use Scannet~\cite{dai2017scannet} as their layout foundation, retrieve corresponding models from Shapenet~\cite{chang2015shapenet}
 and then replace the CAD model with a retrieved model with proper alignment.
-They further add the reflectance and illumination properties to compose photo-realistic images.
+They further add the reflectance and illumination properties to compose photorealistic images.
 As of August 2021, only the dataset has been made public, not the generation tool or CAD models.
 The underlying concept of Openrooms is to convert existing scans into photorealistic synthetic images.
 We consider them our counterparts in the output images, as the framework can produce normals, depth maps, instance segmentation, and masks the same as we do.
@@ -52,13 +52,13 @@ The dataset includes images, 3D assets, semantic instance segmentation, and a di
 Even though the 3d triangle meshes for each asset is available online, we have to purchase them to create a custom dataset.
 They also admit that the cost to generate the dataset is expensive \{approximately \$57K~\cite{Roberts2020HypersimAP}\}.
 
-InteriorNet~\cite{InteriorNet18} claims to be a photo-realistic indoor scene simulator with realistic lighting and scenes which change over time.
+InteriorNet~\cite{InteriorNet18} claims to be a photorealistic indoor scene simulator with realistic lighting and scenes which change over time.
 The image dataset includes RGB, depth, and semantic segmentation.
 Along with images, they also provide synthesized realistic trajectories at a video-frame rate with various motion patterns.
 The simulator also supports scenes from~\cite{McCormac:etal:ICCV2017} and~\cite{Song2017SemanticSC} along with their database.
 
 Another simulated framework for visual research is House Of inteRactions (THOR) was introduced in \gls{ai2thor}~\cite{kolve2019ai2thor}.
-This dataset is again an Agent focused photo-realistic dataset with the critical factor being actionable objects so that agents can interact with the objects or manipulate them.
+This dataset is again an Agent focused photorealistic dataset with the critical factor being actionable objects so that agents can interact with the objects or manipulate them.
 The underlying renderer for this framework is the Unity game engine.
 RoboThor~\cite{Deitke2020RoboTHORAO} is built upon \gls{ai2thor}, consisting of real scenes and its corresponding synthetic equivalent.
 It helps study agents' behavior in the real world when trained on synthetic data.
@@ -214,7 +214,7 @@ Many new architectures have also been proposed to overcome the memory issues cau
 These are approaches that are based out of oct-tree, meshes, occupancy of a voxel.
 Occupancy networks are an implicit way of representing 3D surfaces as decision boundaries using the network as a deep learning classifier.
 For mesh-based reconstruction, a template mesh such as an ellipsoid is deformed to get the structure of the 3D model.
-For the Oct-tree-based reconstruction, as the name suggest, instead of 3D voxels, the models are discretized in Oct-Tree representation.
+For the Oct-tree-based reconstruction, as the name suggests, instead of 3D voxels, the models are discretized in Oct-Tree representation.
 Oct-tree can further make the process memory and compute efficient, providing higher resolution than 3D voxel representation.
 
 Supervision is another factor to consider for 3D reconstruction tasks.
@@ -232,7 +232,7 @@ Thus, testing with real-world images should give a comparable performance.
 ~\cite{tobin2017domain} used this principle for small objects detection tasks used for robotics.
 This paper tries different parameters in domain randomization like lights, camera viewpoints, and textures and combines domain randomization with domain adaptation.
 
-~\cite{prakash2020structured} introduced Structured domain randomisation, where the structure and context are preserved for the problem while creating synthetic images.
+~\cite{prakash2020structured} introduced Structured domain randomization, where the structure and context are preserved for the problem while creating synthetic images.
 Example: A road is randomly placed with parameters like curvature, lighting, and camera position.
 With this as context, they generate pedestrian walk, road lanes, etc.
 After these two steps, the objects such as cars, cyclists, houses, buildings are placed on the scene.
@@ -243,18 +243,18 @@ The objects are cropped and placed on the background with semantic information a
 Similar to the above works, the author also provides an ablation study with different ratios of synthetic to the real dataset for mixed training.
 
 Domain randomization and adaptation techniques are not the only ways to mitigate the domain shift.
-With the advent of Generative Adversarial Networks~\cite{Goodfellow2014GenerativeAN},synthetic to real image conversions have become possible and lead to better performance on given tasks.
+With the advent of Generative Adversarial Networks~\cite{Goodfellow2014GenerativeAN}, synthetic to real image conversions have become possible and lead to better performance on given tasks.
 ~\cite{Richter_2021, CycleGAN2017, park2020cut,isola2017image, dundar2018domain,Wang2018HighResolutionIS} are some successful attempts to reduce the gap between simulated environment and reality.
-Intel in~\cite{Richter_2021} uses GTA V dataset with G-buffers(depth, normals, segmentations, Albedo, glossiness, etc.) to enhance the photorealism of synthetic images.
+Intel in~\cite{Richter_2021} uses the GTA V dataset with G-buffers(depth, normals, segmentations, Albedo, glossiness, etc.) to enhance the photorealism of synthetic images.
 ~\cite{park2020cut} use a patchwise contrastive loss to retrain the content of the input image.
 They minimize the loss such that corresponding patches retain high mutual values.
 
 Another exciting way to reduce the domain gap is using domain adversarial training~\cite{ganin2016domainadversarial}.
 Along with the task under observation, a branched network from the feature extractor is used as a classifier for the domains.
 This acts like a multi-learning task where the feature extractor is the common branch.
-In one branch the model learns to perform a specific task like segmentation or classification.
+In one branch, the model learns to perform a specific task like segmentation or classification.
 The other branch classifies if the dataset is real or synthetic.
-~\cite{pinheiro2019domainadaptive} implements the same principle on complex 3D reconstruction tasks by predicting voxels and classifying the image domain.
+~\cite{pinheiro2019domainadaptive} implement the same principle on complex 3D reconstruction tasks by predicting voxels and classifying the image domain.
 
 \subsection{Training with synthetic dataset}\label{subsec:training-with-synthetic-dataset}
 The research questions, as stated in \autoref{sec:goal} aims to check if a synthetic dataset can deliver as a standalone dataset.

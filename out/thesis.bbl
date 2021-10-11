@@ -1,4 +1,4 @@
-\begin{thebibliography}{99}
+\begin{thebibliography}{105}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -198,6 +198,13 @@ Y.~Guo, Juyong Zhang, Jianfei Cai, Boyi Jiang, and Jianmin Zheng.
   photo-realistic face images.
 \newblock 2017.
 
+\bibitem[Gwak et~al.(2017)Gwak, Choy, Garg, Chandraker, and
+  Savarese]{gwak2017weakly}
+JunYoung Gwak, Christopher~B. Choy, Animesh Garg, Manmohan Chandraker, and
+  Silvio Savarese.
+\newblock Weakly supervised 3d reconstruction with adversarial constraint,
+  2017.
+
 \bibitem[Han et~al.(2021)Han, Laga, and Bennamoun]{Han2021ImageBased3O}
 Xian-Feng Han, Hamid Laga, and M.~Bennamoun.
 \newblock Image-based 3d object reconstruction: State-of-the-art and trends in
@@ -274,6 +281,16 @@ You-Cyuan Jhang, Adam Palmar, Bowen Li, Saurav Dhakad, Sanjay~Kumar
 \newblock
   \url{https://blogs.unity3d.com/2020/09/17/training-a-performant-object-detection-ml-model-on-synthetic-data-using-unity-computer-vision-tools/},
   Sep 2020.
+
+\bibitem[Johnston et~al.(2017)Johnston, Garg, Carneiro, Reid, and van~den
+  Hengel]{8265323}
+Adrian Johnston, Ravi Garg, Gustavo Carneiro, Ian Reid, and Anton van~den
+  Hengel.
+\newblock Scaling cnns for high resolution volumetric reconstruction from a
+  single image.
+\newblock In \emph{2017 IEEE International Conference on Computer Vision
+  Workshops (ICCVW)}, pages 930--939, 2017.
+\newblock \doi{10.1109/ICCVW.2017.114}.
 
 \bibitem[Joyce(2011)]{Joyce2011}
 James~M. Joyce.
@@ -455,11 +472,16 @@ Elad Richardson, Matan Sela, Roy Or-El, and R.~Kimmel.
 \newblock \emph{2017 IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, pages 5553--5562, 2017.
 
-\bibitem[Richter and Roth(2018)]{Richter2018MatryoshkaNP}
+\bibitem[Richter and Roth(2018{\natexlab{a}})]{Richter2018MatryoshkaNP}
 Stephan~R. Richter and S.~Roth.
 \newblock Matryoshka networks: Predicting 3d geometry via nested shape layers.
 \newblock \emph{2018 IEEE/CVF Conference on Computer Vision and Pattern
-  Recognition}, pages 1936--1944, 2018.
+  Recognition}, pages 1936--1944, 2018{\natexlab{a}}.
+
+\bibitem[Richter and Roth(2018{\natexlab{b}})]{richter2018matryoshka}
+Stephan~R. Richter and Stefan Roth.
+\newblock Matryoshka networks: Predicting 3d geometry via nested shape layers,
+  2018{\natexlab{b}}.
 
 \bibitem[Richter et~al.(2021)Richter, AlHaija, and Koltun]{Richter_2021}
 Stephan~R. Richter, Hassan~Abu AlHaija, and Vladlen Koltun.
@@ -533,11 +555,23 @@ Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, and
 \newblock \emph{2016 IEEE Conference on Computer Vision and Pattern Recognition
   (CVPR)}, pages 2818--2826, 2016.
 
+\bibitem[Tatarchenko et~al.(2016)Tatarchenko, Dosovitskiy, and
+  Brox]{tatarchenko2016multiview}
+Maxim Tatarchenko, Alexey Dosovitskiy, and Thomas Brox.
+\newblock Multi-view 3d models from single images with a convolutional network,
+  2016.
+
 \bibitem[Tatarchenko et~al.(2017)Tatarchenko, Dosovitskiy, and
   Brox]{tatarchenko2017octree}
 Maxim Tatarchenko, Alexey Dosovitskiy, and Thomas Brox.
 \newblock Octree generating networks: Efficient convolutional architectures for
   high-resolution 3d outputs, 2017.
+
+\bibitem[Tatarchenko et~al.(2019)Tatarchenko, Richter, Ranftl, Li, Koltun, and
+  Brox]{tatarchenko2019singleview}
+Maxim Tatarchenko, Stephan~R. Richter, René Ranftl, Zhuwen Li, Vladlen Koltun,
+  and Thomas Brox.
+\newblock What do single-view 3d reconstruction networks learn?, 2019.
 
 \bibitem[To et~al.(2018)To, Tremblay, McKay, Yamaguchi, Leung, Balanon, Cheng,
   Hodge, and Birchfield]{to2018ndds}
@@ -568,6 +602,14 @@ Jonathan Tremblay, Aayush Prakash, David Acuna, M.~Brophy, V.~Jampani, Cem
 Jonathan Tremblay, Thang To, and Stan Birchfield.
 \newblock Falling things: A synthetic dataset for 3d object detection and pose
   estimation, 2018{\natexlab{b}}.
+
+\bibitem[Tulsiani et~al.(2017)Tulsiani, Zhou, Efros, and
+  Malik]{DBLP:journals/corr/TulsianiZEM17}
+Shubham Tulsiani, Tinghui Zhou, Alexei~A. Efros, and Jitendra Malik.
+\newblock Multi-view supervision for single-view reconstruction via
+  differentiable ray consistency.
+\newblock \emph{CoRR}, abs/1704.06254, 2017.
+\newblock URL \url{http://arxiv.org/abs/1704.06254}.
 
 \bibitem[van~der Maaten and Hinton(2008)]{vanDerMaaten2008}
 Laurens van~der Maaten and Geoffrey Hinton.

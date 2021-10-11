@@ -5,14 +5,14 @@
 
 \section{Study with F-Score}\label{sec:study-with-f-score}
 
-In this section we conduct a contemporary study on the performance on Deep Learning models using \gls{f1} as evaluation measure instead of \gls{iou}.
-\gls{iou} tends to penalize a single bad classification more than Dice score, and hence we can say that \gls{f1} gives a measure which is closer to the average, where as \gls{iou}
-gives a score for the worst possible scenario.
+In this section, we conduct a contemporary study on the performance of Deep Learning models using the \gls{f1} as an evaluation measure instead of \gls{iou}.
+\gls{iou} tends to penalize a single wrong classification more than Dice score, and hence we can say that the \gls{f1} gives a measure that is closer to the average,
+whereas \gls{iou} gives a score for the worst possible scenario.
 Even though both \gls{iou} and \gls{f1} are positively correlated, a study with \gls{f1} might prove the better dataset on an average.
 
 \subsection{Baseline}\label{subsec:baseline_dice}
-The set up for this experiment is explain in \autoref{sec:baseline}, where the evaluation was done using \gls{iou}.
-In \autoref{fig:baseline_dice1} we see the comparison of models trained on real and synthetic dataset.
+The setup for this experiment is explained in \autoref{sec:baseline}, where the evaluation was done using \gls{iou}.
+In \autoref{fig:baseline_dice1}, we see the comparison of models trained on a real and a synthetic dataset.
 The performance is similar to what we see in \autoref{fig:baseline1}.
 
 \begin{figure}[ht]
@@ -23,9 +23,9 @@ The performance is similar to what we see in \autoref{fig:baseline1}.
     \label{fig:baseline_dice1}
 \end{figure}
 
-There is a difference of 6.39\% and 1.94\% for Pix2vox++ and Pix2vox, when trained with and without 2D augmentation, which shows its importance.
-There is a huge dip in performance when we train the models only on proposed synthetic dataset (\gls(s2rv1) and \gls(s2rv2)).
-Among the 2 versions, \gls(s2rv2) 6.8\% and 1.6\% more than \gls{s2rv1}, for pix2vox++ and pix2vox respectively, proving that multi-object is the better dataset.
+There is a difference of 6.39\% and 1.94\% for Pix2vox++ and Pix2vox when trained with and without 2D augmentation, which shows its importance.
+There is a massive dip in performance when we train the models only on the proposed synthetic dataset (\gls(s2rv1) and \gls(s2rv2)).
+Among the two versions, \gls(s2rv2) 6.8\% and 1.6\% more than \gls{s2rv1}, for pix2vox++ and pix2vox, respectively, proving that multi-object is the better dataset.
 %
 %\begin{figure}
 %    \centering
@@ -37,13 +37,13 @@ Among the 2 versions, \gls(s2rv2) 6.8\% and 1.6\% more than \gls{s2rv1}, for pix
 
 \subsection{Fine-Tuning}\label{subsec:fine-tuning-dice}
 
-This section is the contemporary of what we experimented in \autoref{sec:fine-tuning}.
-\autoref{fig:finetuning_dice1} shows comparison of models trained with and without fine-tuning with real dataset and with models trained on only real dataset.
+This section is contemporary of what we experimented in \autoref{sec:fine-tuning}.
+\autoref{fig:finetuning_dice1} compares models trained with and without fine-tuning with real datasets and models trained on only a real dataset.
 We see an increment of only 0.3\% for pix2vox trained on \gls{s2rv2} and fine-tuned with Pix3d.
-In all other cases the performance is decreased instead of improving.
+In all other cases, the performance is decreased instead of improving.
 
-We see the same results in \autoref{fig:finetuning_dice2} and \autoref{fig:finetuning_dice3},
-where in \gls{f1} for each category with fine-tuned models is less than the models trained only on real dataset.
+We see the same results in  \autoref{fig:finetuning_dice2} and \autoref{fig:finetuning_dice3},
+where the \gls{f1} for each category with fine-tuned models is less than the models trained only on the real dataset.
 %
 %\begin{figure}
 %    \centering
@@ -82,9 +82,10 @@ where in \gls{f1} for each category with fine-tuned models is less than the mode
 
 \subsection{Mixed training}\label{subsec:mixed-training-dice}
 
-Similar to the experiments conducted in \autoref{sec:mixed-training}, here too we note the \gls{f1} for training executed with different mixing ration per mini-batch.
-The results in \autoref{fig:mixed_dice1} are consistent with previous experiment(\autoref{fig:mixed1}), where the performance increase slightly with increase in ratio of real data in mini-batch and decreases gradually till it is 100\% real dataset.
-\autoref{fig:mixed_dice2} and \autoref{fig:mixed_dice3} are \gls{f1} per category when trained with ratio of 50\% of real data per mini-batch, on pix2vox++ and pix2vox respectively.
+Similar to the experiments conducted in \autoref{sec:mixed-training}, we also note the \gls{f1} for training executed with different mixing ratios per mini-batch.
+The results in \autoref{fig:mixed_dice1} are consistent with previous experiment(\autoref{fig:mixed1}).
+The performance increases slightly with an increase in the ratio of real data in mini-batch and decreases performance gradually until it is 100\% real dataset.
+\autoref{fig:mixed_dice2} and \autoref{fig:mixed_dice3} are \gls{f1} per category when trained with a ratio of 50\% of real data per mini-batch, on pix2vox++ and pix2vox, respectively.
 %\begin{figure}
 %    \centering
 %    \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_linegraph1.pgf}}
@@ -124,9 +125,9 @@ The results in \autoref{fig:mixed_dice1} are consistent with previous experiment
 
 \subsection{Ablation study on chairs}\label{subsec:ablation-study-on-chairs}
 
-For ablation study on chairs, we created different datasets with different domain randomization components as in \autoref{subsec:s2r:3dfree-ablation}
-\autoref{fig:ablation_dice1} shows the performance of baseline models with each of the randomization component.
-Pix2Vox++ seem to give a \gls{f1} closer to the real dataset when trained on \gls{s2rv2} than Pix2vox.
+For the ablation study on chairs, we created different datasets with different domain randomization components as in \autoref{subsec:s2r:3dfree-ablation}.
+\autoref{fig:ablation_dice1} shows the performance of baseline models with each of the randomization components.
+Pix2Vox++ seems to give a \gls{f1} closer to the real dataset when trained on \gls{s2rv2} than Pix2vox.
 Overall the performance still does not match the real dataset on its own.
 
 \begin{figure}[ht]
@@ -137,9 +138,9 @@ Overall the performance still does not match the real dataset on its own.
     \label{fig:ablation_dice1}
 \end{figure}
 
-To further improve the performance(as in \autoref{fig:ablation_dice2}), we do a mixed training with 50\% of real data per mini-batch to witness an increment of average \gls{f1} in the range of 3 to 7\%
-While the baseline Pix2vox++ give a \gls{f1} of 0.4175 on real chairs, with textureless chair we get a \gks{f1} of 0.4879.
-For pix2vox the difference is slightly lesser, as it is 0.4547 and 0.4659 on real and textureless chairs.
+To further improve the performance(as in \autoref{fig:ablation_dice2}), we do a mixed training with 50\% of real data per mini-batch to witness an increment of average \gls{f1} in the range of 3 to 7\%,
+While the baseline Pix2vox++ give a \gls{f1} of 0.4175 on real chairs, with the textureless chair we get a \gks{f1} of 0.4879.
+For pix2vox, the difference is slightly lesser, as it is 0.4547 and 0.4659 on real and textureless chairs.
 
 %\begin{figure}
 %    \centering
@@ -167,10 +168,10 @@ For pix2vox the difference is slightly lesser, as it is 0.4547 and 0.4659 on rea
 
 \section{Additional outputs}\label{sec:additional-outputs}
 
-In this section we display more outputs discussed in \autoref{sec:baseline}, \autoref{sec:fine-tuning} and \autoref{sec:mixed-training}.
-The models trained on only synthetic dataset fail to reconstruct 3D voxels as seen in \autoref{fig:baseline_more_images1}.
-By fine-tuning the models with real dataset the 3D reconstruction improves as seen in \autoref{fig:finetuning_more_images1}.
-Mixed training further improves the models output as seem in \autoref{fig:mixed_more_images1}.
+This section displays more outputs discussed in \autoref{sec:baseline}, \autoref{sec:fine-tuning}, and \autoref{sec:mixed-training}.
+The models trained on only synthetic datasets fail to reconstruct 3D voxels as seen in \autoref{fig:baseline_more_images1}.
+By fine-tuning the models with a real dataset, the 3D reconstruction improves, as seen \autoref{fig:finetuning_more_images1}.
+MMixed training further improves the model's output, as seen in \autoref{fig:mixed_more_images1}.
 
 \begin{figure}
     \begin{tabular}{llll}
@@ -274,16 +275,16 @@ Mixed training further improves the models output as seem in \autoref{fig:mixed_
 
 \section{Additional attempts}\label{sec:some-failed-attempts}
 
-In this section we briefly discuss other attempts made to solve the research question related to this thesis.
+This section briefly discusses other attempts made to solve the research question related to this thesis.
 
 \subsection{High Definition Render Pipeline(HDRP)}\label{subsec:high-definition-render-pipeline(hdrp)}
 
-Unity provides 3 types of rendering pipelines, namely : Built-in Render Pipeline, Universal Render Pipeline and High Definition Render pipeline (\gls{hdrp}).
-Among the 3 \gls{hdrp} has high-fidelity and high graphics, and hence needs compatible GPU and other hardware and software requirements.
-Each of the pipelines is not compatible with the other, and hence the developer has to pre-decide which pipeline to use.
-Even the assets, and the materials are dependent on the pipeline, and hence assets of one pipeline can not be used in the other.
-In \autoref{fig:hdrp} we can see the furnitures not being able to render in \gls{hdrp}.
-Using \gls{hdrp} to improve the rendering would be an interesting future work.
+Unity provides three types of rendering pipelines: Built-in Render Pipeline, Universal Render Pipeline and \gls{hdrp}.
+\gls{hdrp} has high-fidelity and high graphics and hence needs compatible GPU and other hardware and software requirements.
+Each pipeline is not compatible with the other, and hence the developer has to pre-decide which pipeline to use.
+Even the assets and the materials are dependent on the pipeline, and hence assets of one pipeline can not be used in the other.
+In \autoref{fig:hdrp} we can see the furniture not being able to render in \gls{hdrp}.
+Using \gls{hdrp} to improve the rendering would be interesting future work.
 
 \begin{figure}[ht]
     \centering
@@ -300,12 +301,12 @@ Using \gls{hdrp} to improve the rendering would be an interesting future work.
 %\subsection{Different loss functions}
 
 \subsection{Empty image test}\label{subsec:empty-image-test}
-In all the experiments conducted so far, the 2D image always had a furniture model in the frame.
-In this section, we find out if the model predicts something when there are no furniture in the frame, with an empty room.
+In all the experiments conducted, the 2D image always had a furniture model in the frame.
+This section determines if the model predicts something when there is no furniture in the frame, with an empty room.
 This is just an attempt to see if the model hallucinates any furniture in an empty room.
 
-Though a furniture is not reconstructed with complete detail, we see that models do predict voxels that resemble furniture category.
-We can imagine some of them to be bed, sofa, bookshelf and table.
+Though a piece of furniture is not reconstructed with complete detail, models predict voxels that resemble the furniture category.
+We can imagine some of them to be bed, sofa, bookshelf, and table.
 
 \begin{figure}
     \begin{tabular}{llll}
@@ -336,10 +337,10 @@ We can imagine some of them to be bed, sofa, bookshelf and table.
 \clearpage
 \newpage
 \section{Samples from Survey}\label{sec:samples-from-survey}
-We conducted a survey to realise the photorealism of proposed \gls{free} dataset with other proclaimed photorealistic dataset.
+We surveyed to realize the photorealism of the proposed \gls{free} dataset with other proclaimed photorealistic datasets.
 The survey is discussed in detail in \autoref{subsec:survey-results}.
-In this section we display a sample each for all the 3 sections from the collection.
-\autoref{fig:survey_sample_section1}, \autoref{fig:survey_sample_section2}, \autoref{fig:survey_sample_section3} are one example from each section.
+In this section, we display a sample each for all three sections from the collection.
+\autoref{fig:survey_sample_section1}, \autoref{fig:survey_sample_section2}, \autoref{fig:survey_sample_section3} are one examples from each section.
 
 \begin{figure}[ht]
     \centering
