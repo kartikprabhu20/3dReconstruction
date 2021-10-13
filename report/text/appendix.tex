@@ -8,7 +8,7 @@
 In this section, we conduct a contemporary study on the performance of Deep Learning models using the \gls{f1} as an evaluation measure instead of \gls{iou}.
 \gls{iou} tends to penalize a single wrong classification more than Dice score, and hence we can say that the \gls{f1} gives a measure that is closer to the average,
 whereas \gls{iou} gives a score for the worst possible scenario.
-Even though both \gls{iou} and \gls{f1} are positively correlated, a study with \gls{f1} might prove the better dataset on an average.
+Even though both \gls{iou} and \gls{f1} are positively correlated, a study with \gls{f1} might support the dataset with better average.
 
 \subsection{Baseline}\label{subsec:baseline_dice}
 The setup for this experiment is explained in \autoref{sec:baseline}, where the evaluation was done using \gls{iou}.
@@ -139,8 +139,9 @@ Overall the performance still does not match the real dataset on its own.
 \end{figure}
 
 To further improve the performance(as in \autoref{fig:ablation_dice2}), we do a mixed training with 50\% of real data per mini-batch to witness an increment of average \gls{f1} in the range of 3 to 7\%,
-While the baseline Pix2vox++ give a \gls{f1} of 0.4175 on real chairs, with the textureless chair we get a \gks{f1} of 0.4879.
-For pix2vox, the difference is slightly lesser, as it is 0.4547 and 0.4659 on real and textureless chairs.
+While the baseline Pix2vox++ give a \gls{f1} of 0.4547 on real chairs, with the textureless chair we get a \gks{f1} of 0.4879.
+For Pix2Vox, the difference is slightly lesser, as it is 0.4175and 0.4659 on real and textureless chairs.
+With the combined dataset we see that Pix2Vox++ has \gls{f1} of 0.4962 and Pix2Vox has 0.4812, which is 4.15\% and 6.37\% improvement over real dataset.
 
 %\begin{figure}
 %    \centering
@@ -746,15 +747,17 @@ In this section, we display a sample each for all three sections from the collec
             \hline
             Pix3D Chair &\textbf{0.4175} &\textbf{0.4547} & x & x\\
             \hline
-            S2R\textunderscore Textureless  &0.2933 &0.1365 &\textbf{0.4879} &0.4659\\
+            S2R\textunderscore Textureless  &0.2933 &0.1365 &0.4879 &0.4659\\
             \hline
             S2R \textunderscore Textureless\textunderscore Light &0.242 &0.1795 &0.4821  &0.4641\\
             \hline
-            S2R\textunderscore Textured  &0.3513 &0.1959 &0.4671 &\textbf{0.4672}\\
+            S2R\textunderscore Textured  &0.3513 &0.1959 &0.4671 &0.4672\\
             \hline
             S2R\textunderscore Textured\textunderscore Light &0.35197 &0.1769 &0.4369 &0.4548\\
             \hline
             S2R\textunderscore Multi\textunderscore Object &0.3705 &0.168 &0.4364 &0.4665\\
+            \hline
+            S2R\textunderscore Combined &0.3851 &0.2289 &\textbf{0.4962} &\textbf{0.4812}\\
             \hline
         \end{tabular}%
     }

@@ -127,7 +127,7 @@ Further, we can check if these photorealistic synthetic data are useful for 3D r
 
 The following we will answer the following research questions:
 \begin{enumerate}
-    \item Are the game engines an excellent medium to create photorealistic synthetic datasets?
+    \item Are game engines a reliable medium for creating a photorealistic synthetic dataset?
 
     The photorealism of the images will be evaluated with a survey to compare images from the real dataset and generate datasets, and other proclaimed natural-looking datasets.
 
@@ -135,14 +135,13 @@ The following we will answer the following research questions:
 
     Using the dataset created with the Unity game engine, a single-view image to 3d reconstruction of furniture will be trained and tested on a real image dataset.
 
-    \item To what extent can the performance of model Pre-trained with real dataset be improved with Synthetic dataset from game engine, with the size of synthetic dataset being ten times that of the real dataset?
-%    \todo: dont forget to change times
+    \item Can we improve the performance of a model using a blend of real and synthetic datasets?
+    To what extent does the performance enhance when the synthetic dataset is more than ten times of a real dataset?
 
     We use the dataset created using the Unity game engine to train a single-view image to 3d reconstruction of furniture and further fine-tune it with the real dataset to know if the performance is enhanced.
     Further an ablation study on chair dataset to check the effects domain randomization parameters.
     This experiment will also answer whether augmenting images with domain randomization with real data during training improves the performance?
 
-%    \item \todo{(optional: Can the photorealism of synthetic image further be enhanced using domain adaptation/GAN techniques?)}
 \end{enumerate}
 
 \section{Contributions of this Thesis}\label{sec:contributions}

@@ -162,13 +162,14 @@ Samples for different skyboxes are shown in \autoref{fig:skybox samples}.
     \label{fig:Lighting and shadows}
 \end{figure}
 
-\subsection{Randomised Texture}\label{subsec:randomised-texture}
+\subsection{Randomized Texture}\label{subsec:randomised-texture}
 
 The objects in the scene are renamed to standard objects seen in day-to-day life.
 The textures are grouped together to these names as folder names.
 A total of 982 texture images with 58 regular object categories, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement, and roughness.
 This makes the textures more realistic.
-The distribution of the top 40 texture categories used for randomization of scenes is as shown in \autoref{fig:Distribution of textures}, with categories of Pix3d having a higher number of images.
+The distribution of the top 40 texture categories used for randomization of scenes is as shown in \autoref{fig:Distribution of textures}, with categories of Pix3D
+having a higher number of images.
 Each scene is randomized for every snap taken of the target object.
 Samples of texture randomization of background in the scene with the target object in focus are shown in \autoref{fig:Texture Randomisation}.
 Randomizing the outdoor environment is important in cases where we have open doors and windows.
@@ -340,7 +341,7 @@ The key features of this pipeline are as follows:
     \item Allows users to configure the parameter using a config file which includes dataset paths, root paths, output path, parameters for 2D augmentations, etc.
     \item Allows users to select a train, validate, test with real data, an empty image test.
     \item Allows users to select the pipeline type(3d-reconstruction, cyclegan~\cite{CycleGAN2017}, autoencoder)
-    \item Allows users to select the dataset(Pix3d, \gls(free), Mixed), with a further option to add new datasets.
+    \item Allows users to select the dataset(Pix3D, \gls(free), Mixed), with a further option to add new datasets.
     \item Allows users to collect graphs, images per epoch using Tensorboard~\cite{tensorflow2015-whitepaper}.
 \end{enumerate}
 

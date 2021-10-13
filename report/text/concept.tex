@@ -22,7 +22,7 @@ For our synthetic to real dataset experiment, we chose to select only furniture 
 
 \subsection{Disadvantages of Pix3D}\label{subsec:disadvantages-of-pix3d}
 
-The distribution of models in pix3d is as shown in \autoref{fig:pix3d_histogram}.
+The distribution of models in Pix3D is as shown in \autoref{fig:pix3d_histogram}.
 As we can see, the dataset distribution is uneven across classes, and more than 50\% of classes have less than 1000 images.
 
 Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of using this real dataset.
@@ -35,7 +35,7 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
 \begin{figure}[!ht]
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_histogram.pgf}}
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_models_histogram.pgf}}
-    \caption{Distribution of pix3D~\cite{pix3d} images(left), unique models(right)}
+    \caption{Distribution of Pix3D~\cite{pix3d} images(left), unique models(right)}
     \label{fig:pix3d_histogram}
 \end{figure}
 
@@ -79,10 +79,10 @@ The reasons for selecting Unity as our platform for the application are:
 There is no official comparison between Unreal Engine and Unity engine to have a deciding factor.
 The selection of the Unity engine was a purely individual choice and ease of use.
 However, both these game engines can create realistic-looking scenes that are usable for synthetic dataset generation.
-With the Unity game engine, the available scenes from the Scenenet and 3D models from pix3d can be imported to form an ersatz environment.
+With the Unity game engine, the available scenes from the Scenenet and 3D models from Pix3D can be imported to form an ersatz environment.
 Further domain randomization can be applied to create a dataset of photorealistic images and 2.5D data like normals, depth maps, masks.
 
-\subsection{Domain Randomisation with Unity Engine}\label{subsec:domain-randomisation-with-unity-engine}
+\subsection{Domain Randomization with Unity Engine}\label{subsec:domain-randomisation-with-unity-engine}
 In this section, we discuss what kind of domain randomization we apply for dataset creation.
 
 \subsubsection{Scenes from SceneNet}\label{subsubsec:scenes-from-scenenet}
@@ -108,7 +108,7 @@ the source of light for indoor scenes, but we observed that the room does not li
 making it less photorealistic.
 Hence we use some pre-determined lighting settings, discussed further in implementation(\autoref{sec:3d-scene-framework}).
 
-\subsubsection{Randomised textures}
+\subsubsection{Randomized textures}
 SceneNet~\cite{McCormac:etal:ICCV2017} also provide textures for different categories in the scene.
 We further increase the texture database by adding more textures from ambientCG.com, which provides free licenses.
 We randomly allocate textures to each object, ensuring that each category has the same texture to make the scene more uniform.
@@ -126,28 +126,10 @@ The rescaling makes the target object blend in with the scene.
 We utilize the availability of 3D models of rooms and pieces of furniture from these two datasets to create an ersatz environment using Unity as our framework.
 We randomize the indoor scenes from SceneNet~\cite{McCormac:etal:ICCV2017} and textures provided by them with some additional complex textures.
 The other option would have been to use the ShapeNet as the target model, but we would not have a real dataset to compare to this case.
-Ideally, a model trained on ShapeNet should also perform well with a real dataset like pix3d, but we decided to have a synthetic dataset based on pix3d itself for better comparison.
-
-\section{3D reconstruction}\label{sec:3D reconstruction}
-Now that we discussed the method to create the dataset, we move to the Deep Learning aspect of this thesis.
-3D reconstruction is converting a 2-Dimensional RGB image into an available 3D representation of the model under observation.
-
-The training examples are of the form  $\{(x_1,y_1),(x_2,y_2) \dots(x_n,y_n)\}$ where $x_k$ are 2D images, and $y_k$ are 3D model discretized to obtain a 3D voxel grid.
-3D reconstruction is a learning task which seeks $g: X \to Y$, where $X$ is 2D input space and $Y$ is 3D output space.
-The task minimizes an objective function $Obj(g) = \frac{1}{N} \sum_i L(y_i, g(x_i))$, where $L$ is a loss function.
-
-In this thesis, we consider an architecture that consists of an encoder and decoder.
-~\cite{Han2021ImageBased3O} discussed that an encoder maps a 2D image into a latent space by converting pixel grid into feature vectors.
-If we formulate the problem, $Enc: X \to V$, where $Enc$ is the encoder function, $X$ is the input image space, and $V$ is the latent space.
-An encoder is a good mapping function if for the given set of images of same category $x = \{x_k \mid k = 1,2,\dots c\}$, the corresponding feature vectors $v = \{v_k \mid k = 1,2,\dots c\}$ are close together in given latent space $V$
-irrespective of the extrinsic parameters like textures, background, camera positions,etc.
-
-The decoder is an expansive network, which converts a feature vector from the latent space into a 3D voxel grid.
-$Dec: V \to Y$, i.e. for any vector in latent space $V$, the decoder function \textbf{$Dec$} should be able to create a 3D voxel grid in $Y$.
-If the images are encoded perfectly, a slight change in the feature vector will give a slight variation in the 3D voxel.
+Ideally, a model trained on ShapeNet should also perform well with a real dataset like Pix3D, but we decided to have a synthetic dataset based on Pix3D itself for better comparison.
 
 \section{3D reconstruction pipeline}\label{sec:3D reconstruction pipeline}
-We create a pipeline for processing the above-mentioned 3D reconstruction task.
+We create a pipeline for processing the 3D reconstruction task.
 The backbone of the pipeline is the base model and the dataset being used to train.
 In this section, we discuss the model used as a base and the rationale behind its selection.
 
@@ -162,19 +144,28 @@ The refiner is an auto-encoder that takes the 3D output from the merger and prod
 A second paper based on pix2vox was titled Pix2Vox++~\cite{Xie_2020}.
 The extended work replaces \gls{vgg} encoder~\cite{simonyan2015deep} with \gls{resnet}~\cite{He2016DeepRL}.
 
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox}}\quad
+    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2voxpp}}\\
+    \caption{Network architectures used as a baselines (a)Pix2Vox (b)Pix2Vox++}
+    \label{fig:architectures}
+\end{figure}
+
 \subsection{Why Pix2Vox?}\label{subsec:why-pix2vox?}
 Pix2Vox has been used as a baseline by most of the research-oriented to 3D reconstruction.
-This network is one of the few networks to be tested on the pix3d dataset.
+This network is one of the few networks to be tested on the Pix3D dataset.
 According to the survey conducted by~\cite{Han2021ImageBased3O}, the performance of pix2vox~\cite{Xie_2019}
 is significantly higher compared to previous work(\cite{DBLP:journals/corr/TulsianiZEM17,tatarchenko2016multiview,richter2018matryoshka,gwak2017weakly,8265323}), as shown in \autoref{fig:survey on 3d reconstruction}.
-At the same time, this comparison was made on 3d reconstruction of the ShapeNet dataset since pix3d was not available when previous work was published.
+At the same time, this comparison was made on 3d reconstruction of the ShapeNet dataset since Pix3D was not available when previous work was published.
 From our survey, only CoReNet~\cite{popov2020corenet} had a slight gain in performance compared to pix2vox.
-When trained on ShapeNet and tested with pix3d, CoReNet gave a result of 29.7\% \gls{iou} while Pix2Vox gave a result of 28.8\% \gls{iou}  and Pix2Vox++ a result of 29.2\% \gls{iou}\@.
+When trained on ShapeNet and tested with Pix3D, CoReNet gave a result of 29.7\% \gls{iou} while Pix2Vox gave a result of 28.8\% \gls{iou}  and Pix2Vox++ a result of 29.2\% \gls{iou}\@.
 Since the difference in the performance was not significant, we decided to stick with the baseline model.
 Another reason for selecting the pix2vox model is that the backbone of the architecture is pre-trained with ImageNet.
 Hence, the embeddings generated from this encoder can help visualize the domain space of both Pix3D (real images)  and \gls{free}(synthetic images).
 As mentioned above, for pix2vox++, the \gls{resnet} is the backbone encoder with 25\% lesser parameters and 5\% lesser inference time than \gls{vgg}\@.
-In addition, the author even proved that Pix2vox++ performs 1.5\% better than pix2vox.
+In addition, the author even demonstrated that Pix2vox++ performs 1.5\% better than pix2vox.
 The architecture of pix2vox++ is as shown in \autoref{fig:architectures}(b).
 Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the furnitures, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
 Hence the selection of the model was not of utmost importance.
@@ -194,19 +185,10 @@ However, since the two architectures are relatable, it would be interesting to c
 %    \label{fig:pix2voxpp architecture}
 %\end{figure}
 
-
-\begin{figure}[!ht]
-    \centering
-    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox}}\quad
-    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2voxpp}}\\
-    \caption{Network architectures used as a baselines (a)Pix2Vox (b)Pix2Vox++}
-    \label{fig:architectures}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/survey}
-    \caption{A survey conducted by~\cite{Han2021ImageBased3O}, proves that Pix2Vox is considerably a good 3D reconstruction model.
+    \caption{A survey conducted by~\cite{Han2021ImageBased3O}, demonstrates that Pix2Vox is considerably a good 3D reconstruction model.
     The values are from 3D reconstruction of ShapeNet~\cite{chang2015shapenet} since Pix3D was not published by then.}
     \label{fig:survey on 3d reconstruction}
 \end{figure}

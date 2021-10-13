@@ -30,10 +30,10 @@
 \newcommand{\theforename}{Kartik}
 \newcommand{\thesurname}{Prabhu}
 \newcommand{\thetitle}{Synth2Real : 3D-Furniture Reconstruction in Ersatz Environment \\ (S2R:3D-FREE)}
-\newcommand{\thedate}{October 15, 2021}
+\newcommand{\thedate}{October 18, 2021}
 \newcommand{\theyear}{2021}
 \newcommand{\signatureplace}{Magdeburg}
-\newcommand{\signaturedate}{15th October 2021}
+\newcommand{\signaturedate}{18th October 2021}
 
 % Here, you can define acronyms for consistent usage in your text like this:
 % \acro{key}{XYZ}{Correctly Capitalized Acronym}{all lowercase acronym}
@@ -187,18 +187,18 @@ The real-world dataset is cost-ineffective, time-consuming, difficult to obtain,
 Synthetic data are easier to create and automate.
 This thesis aims to check if images created using game engines(Unity) are photorealistic and valuable in  3D reconstruction tasks using Deep Neural Networks.
 To achieve this, we contribute the following:
-(a)A Unity-based application to create synthetic images of furniture in an indoor environment.
+(a)A Unity-based application to create synthetic furniture images in an ersatz\footnote{Ersatz = made or used as a substitute, typically an inferior one, for something else.} indoor environment.
 (b)We use the new synthetic dataset as a benchmark for the 3D reconstruction task.
-(c) A comprehensive study on domain adaptation and domain randomization.
+(c)A comprehensive study on domain adaptation and domain randomization.
 
 We conducted a user survey with the proposed synthetic dataset, a real dataset, and seven other proclaimed photorealistic synthetic datasets to check the photorealism.
-We see that the proposed dataset got the most votes to be 'Real' among the automated datasets.
+We see that the proposed dataset failed to highlight itself as a standalone photorealistic dataset but faired against other automated datasets.
 We compare the performance of baseline models with transfer learning and mixed training to check the influence of the synthetic dataset.
 We check domain randomization by creating a synthetic chair dataset with different parameters like light, textures, camera position, etc.
-The domain gap between real and synthetic datasets is visualized using T-SNE and quantitatively measured with the FID score.
-Finally, these experimental results prove that the proposed dataset enhances the performances of Deep Neural Net models for the 3D reconstruction task.
+The domain gap between real and synthetic datasets is visualized using \gls{tsne} and quantitatively measured with the \gls{fid} score.
+Finally, these experimental results demonstrates that the proposed dataset enhances the performances of Deep Neural Net models for the 3D reconstruction task.
 
-\textbf{ \emph{keywords}}: \emph{Synthetic dataset, 3D reconstruction, Domain adaptation, Domain randomisation, Mixed training}
+\textbf{ \emph{keywords}}: \emph{Synthetic dataset, 3D reconstruction, Domain adaptation, Domain randomization, Mixed training}
 
 %Abstracts typically follow the same structure.
 %You start by describing the research area as well as the general and the specific problem you are focusing on.
@@ -215,7 +215,7 @@ First and foremost, I would like to express my supervisors Marco Filax and Konst
 for their expert guidance, constant support, encouragement, and patience right from the beginning of the thesis.
 I would especially like to thank them for accepting the thesis proposal and helping me fine-tune the research question,
 and making sure that I do not divert from the topic at hand.
-The discussions we had throughout the thesis helped me think differently and tackle and make tough decisions in a limited time interval.
+The discussions we had throughout the thesis helped bring in a varied dimension of thoughts and broadened my horizon to tackle and make tough decisions in a limited time interval.
 
 I would also like to extend my gratitude to Prof.Dr.Frank Ortmeier for accepting my thesis research topic and taking me under his banner.
 I sincerely thank him for providing an excellent research environment and all the required resources to complete the thesis.

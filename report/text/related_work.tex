@@ -188,6 +188,25 @@ Along with this limitation, the plugin only creates depth maps, normals, and seg
 Another tool based on the Unreal engine is UnrealROX+\cite{martinezgonzalez2021unrealrox}.
 This plugin design is based on UnrealCV and provides similar data.
 
+
+\section{3D reconstruction}\label{sec:3D reconstruction}
+Now that we discussed the method to create the dataset, we move to the Deep Learning aspect of this thesis.
+3D reconstruction is converting a 2-Dimensional RGB image into an available 3D representation of the model under observation.
+
+The training examples are of the form  $\{(x_1,y_1),(x_2,y_2) \dots(x_n,y_n)\}$ where $x_k$ are 2D images, and $y_k$ are 3D model discretized to obtain a 3D voxel grid.
+3D reconstruction is a learning task which seeks $g: X \to Y$, where $X$ is 2D input space and $Y$ is 3D output space.
+The task minimizes an objective function $Obj(g) = \frac{1}{N} \sum_i L(y_i, g(x_i))$, where $L$ is a loss function.
+
+In this thesis, we consider an architecture that consists of an encoder and decoder.
+~\cite{Han2021ImageBased3O} discussed that an encoder maps a 2D image into a latent space by converting pixel grid into feature vectors.
+If we formulate the problem, $Enc: X \to V$, where $Enc$ is the encoder function, $X$ is the input image space, and $V$ is the latent space.
+An encoder is a good mapping function if for the given set of images of same category $x = \{x_k \mid k = 1,2,\dots c\}$, the corresponding feature vectors $v = \{v_k \mid k = 1,2,\dots c\}$ are close together in given latent space $V$
+irrespective of the extrinsic parameters like textures, background, camera positions,etc.
+
+The decoder is an expansive network, which converts a feature vector from the latent space into a 3D voxel grid.
+$Dec: V \to Y$, i.e. for any vector in latent space $V$, the decoder function \textbf{$Dec$} should be able to create a 3D voxel grid in $Y$.
+If the images are encoded perfectly, a slight change in the feature vector will give a slight variation in the 3D voxel.
+
 \section{State of the art for 3d-reconstruction}\label{sec:state_of_the_art}
 
 3D reconstruction task is on the rise with improvements in technologies like Augmented and virtual reality.

@@ -3,7 +3,6 @@
 \RequirePackage[l2tabu, orthodox]{nag} % shows warnings for common LaTeX code smells
 \ProvidesClass{thesis}
 \LoadClass[12pt,titlepage]{book}
-
 % These packages are loaded by default. Some settings below depend on these packages (e.g. etoolbox for options), some are generally useful (e.g. microtype).
 % The first few packages are must-haves:
 \usepackage[T1]{fontenc}
