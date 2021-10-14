@@ -1,4 +1,4 @@
-\chapter{\iftoggle{german}{Verwandte Arbeiten}{Related Work}}\label{ch:related_work}
+\chapter{\iftoggle{german}{Verwandte Arbeiten}{Background and Related Work}}\label{ch:related_work}
 
 This chapter discusses the previous contributions to indoor synthetic datasets in ~\autoref{subsec:indoor-synthetic-datasets},
 what tasks each dataset supports, and some disadvantages.
@@ -47,7 +47,7 @@ We consider them our counterparts in the output images, as the framework can pro
 
 Hypermism~\cite{Roberts2020HypersimAP} is Apple's repository for holistic indoor scene understanding.
 It is a collection of synthetic scenes created with the help of a professional artist.
-Evermotion ~\cite{Evermotion} was the starting point for the dataset for which assets were purchased from TurboSquid~\cite{TurboSquid}.
+Evermotion ~\footnote{https://evermotion.org/} was the starting point for the dataset for which assets were purchased from TurboSquid~\footnote{http://www.turbosquid.com}.
 The dataset includes images, 3D assets, semantic instance segmentation, and a disentangled image representation with diffused lighting and shading.
 Even though the 3d triangle meshes for each asset is available online, we have to purchase them to create a custom dataset.
 They also admit that the cost to generate the dataset is expensive \{approximately \$57K~\cite{Roberts2020HypersimAP}\}.
@@ -207,7 +207,7 @@ The decoder is an expansive network, which converts a feature vector from the la
 $Dec: V \to Y$, i.e. for any vector in latent space $V$, the decoder function \textbf{$Dec$} should be able to create a 3D voxel grid in $Y$.
 If the images are encoded perfectly, a slight change in the feature vector will give a slight variation in the 3D voxel.
 
-\section{State of the art for 3d-reconstruction}\label{sec:state_of_the_art}
+\subsection{State of the art for 3d-reconstruction}\label{sec:state_of_the_art}
 
 3D reconstruction task is on the rise with improvements in technologies like Augmented and virtual reality.
 Scene understanding becomes essential for these technologies to succeed.
@@ -243,6 +243,105 @@ For all these architectures, it is necessary to either have the 3D voxel grid or
 For models described in~\cite{Lunz2020InverseGG,henderson2019learning},the 3D reconstruction only needs 2D supervision like a silhouette.
 One might argue that for 3D supervision, we need a large number of 3D models designed and created by professional artists
 With the advent of Virtual and Augmented realities, 3D models available to the public is increasing exponentially, which might resolve the issue.
+
+\subsection{Pix2Vox and Pix2Vox++}\label{subsec:pix2vox-and-pix2vox++}
+The architecture of pix2vox~\cite{Xie_2019} is as shown in \autoref{fig:architectures}(a).
+The network consists of 4 modules: Encoder, Decoder, Merger, and Refiner.
+Merger plays a significant part when it comes to the multi-view reconstruction of 3d objects.
+As we focus on single-view 3d reconstruction, the merger module will not influence the output significantly.
+As an encoder, pix2vox has utilized \gls{vgg}16 network~\cite{simonyan2015deep} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
+The decoder is an expansive network that converts 2D embeddings to a 3D voxel grid.
+The refiner is an auto-encoder that takes the 3D output from the merger and produces a more refined final output.
+A second paper based on pix2vox was titled Pix2Vox++~\cite{Xie_2020}.
+The extended work replaces \gls{vgg} encoder~\cite{simonyan2015deep} with \gls{resnet}~\cite{He2016DeepRL}.
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox}}\quad
+    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2voxpp}}\\
+    \caption{Network architectures used as a baselines (a)Pix2Vox~\cite{Xie_2019} (b)Pix2Vox++~\cite{Xie_2020}.
+    The critical difference between the two architectures is the Encoder. Pix2Vox uses \gls{vgg} while Pix2Vox++ uses \gls{resnet}.}
+    \label{fig:architectures}
+\end{figure}
+
+\section{Domain space}\label{sec:domain-space}
+
+Since this thesis includes image datasets from different domains, it is essential to understand the domain space of these datasets.
+This section discusses how we intend to visualize the domain space and a quantitative measure to indicate the difference between the domains.
+
+\subsection{Visualizing with \gls{tsne}}\label{subsec:visualizing-with-tsne}
+\gls{tsne} stands for t-Distributed Stochastic Neighbor Embedding~\cite{vanDerMaaten2008}; it is a tool to visualize a high dimensional space in a low dimension space while retaining the information of high dimension as much as possible.
+In our case, the images are embedded using a \gls{vgg}16 network with an output dimension of 1000.
+This multi-dimensional output is converted to two-dimension for better visualization of the embedding space.
+
+In this segment, we briefly explain how \gls{tsne} works.
+
+\begin{enumerate}
+    \item \textbf{Step 1}: Calculate the similarity between points in high dimensional space using a joint probability distribution.
+    To achieve this, the Euclidean distances between each point is transformed into conditional probability distribution as in \autoref{eq:equation1}, which represents similarity between a pair of points.
+    The conditional probability of a point $x_i$ with point $x_j$ to be located next to it, is represented by a Gaussian with center at $x_i$.
+    Normalising is done to handle the different cluster densities.
+    Conditional probability is converted to Joint probability using \autoref{eq:equation2}.
+    \begin{equation}
+        p_{j \mid i}=\frac{\exp \left(-\left\|x_{i}-x_{j}\right\|^{2} / 2 \sigma_{i}^{2}\right)}{\sum_{k \neq i} \exp \left(-\left\|x_{i}-x_{k}\right\|^{2} / 2 \sigma_{i}^{2}\right)}
+        \label{eq:equation1}
+    \end{equation}
+
+    \begin{equation}
+        p_{i j}=\frac{p_{j \mid i}+p_{i \mid j}}{2 n}
+        \label{eq:equation2}
+    \end{equation}
+
+    \item \textbf{Step 2}: Using a random point dataset on a lower dimension with same number of points in higher dimension, a Joint probability distribution is created but with a Student-t distribution instead of Gaussian.
+    This is represented by \autoref{eq:equation3}.
+    t-distribution makes sure that the projection in low dimension is not concentrated on a single point.
+    \begin{equation}
+        q_{ij} = \frac{(1+\left \| y_{i}-y_{j} \right \|^{2})^{-1}}{\sum _{k\neq l} (1+\left \| y_{k}-y_{l} \right \|^{2})^{-1}}
+        \label{eq:equation3}
+    \end{equation}
+
+    \item \textbf{Step 3}: Learn to represent the high dimension space in low dimension by making the Joint distribution of the lower dimension as close as possible to that of the higher dimension.
+    For this Kullback-Leiber divergence\cite{Joyce2011} is used to compare the similarity between the two distributions as in \autoref{eq:equation4}.
+    Using gradient descent, the cost function based on KL-divergence (\autoref{eq:equation5}) is minimized to make the points fall in place.
+
+    \begin{equation}
+        D_{\mathrm{KL}}(P \| Q)=\sum_{x \in \mathcal{X}} P(x) \log \left(\frac{P(x)}{Q(x)}\right)
+        \label{eq:equation4}
+    \end{equation}
+
+    \begin{equation}
+        C=K L(P \| Q)=\sum_{i} \sum_{j} p_{i j} \log \frac{p_{i j}}{q_{i j}}
+        \label{eq:equation5}
+    \end{equation}
+\end{enumerate}
+
+Perplexity is a parameter that informs the algorithm on how much attention to give the local and global features.
+The publication~\cite{vanDerMaaten2008} indicates the values between 5 and 50 to be a good initialization.
+An article on \gls{tsne} interpretation~\cite{wattenberg2016how} informs us to have a perplexity value lesser than the total number of points.
+It also notes that the cluster distance may not be as the intuition suggests, i.e., greater distance may not necessarily mean good separation, or lesser distance does not inevitably mean closer similarity for well-separated clusters.
+However, \gls{tsne} can still visualize if the clusters are overlapping or have a shared embedding space or not.
+Hence, we will use \gls{tsne} as a medium to visualize the embedding space without giving importance to the distance or the scale of the plots.
+
+%\subsection{Maximum Mean Discrepancy(MMD)}
+\subsection{Fr\'echet Inception Distance(FID))}\label{subsec:fr'echet-inception-distance)}
+For quantitative measure, we use \gls{fid}
+\gls{fid} \cite{Heusel2017GANsTB} was specifically formulated to evaluate the performance of Generative Adversarial Networks \cite{Goodfellow2014GenerativeAN}.
+The core idea behind \gls{fid} was to evaluate the generated synthetic images using the statistics collected from both synthetic and real images.
+Lower the value of \gls{fid} better the quality of the images.
+
+The embeddings of the images are calculated by passing it through an Inception v3 model~\cite{Szegedy2016RethinkingTI} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
+The output layer is removed, and the penultimate pooling layer activations are used to get the embedding vector.
+This vector has a dimension of 2048.
+The images from both synthetic and real datasets are passed through the model, and the obtained statistics is used to calculated the \gls{fid} as in \autoref{eq:fid}.
+
+\begin{equation}
+    d^{2}\left((\boldsymbol{\mu}_{r}, \boldsymbol{C}_{r}),\left(\boldsymbol{\mu}_{s}, \boldsymbol{C}_{s}\right)\right)=\left\|\boldsymbol{\mu}_{r}-\boldsymbol{\mu}_{s}\right\|^{2}+\operatorname{Tr}\left(\boldsymbol{C}_{r}+\boldsymbol{C}_{s}-2\left(\boldsymbol{C}_{w} {C}_{w}\right)^{1 / 2}\right)
+    \label{eq:fid}
+\end{equation}
+
+In the above \autoref{eq:fid}, $\mu_r$ and $\mu_s$ are feature-wise mean for real and synthetic images, $C_r$ and $C_s$ are respective covariance matrices.
+$Tr$ is the Trace linear algebra operation, which is the sum of main diagonal elements.
+
 
 \section{Mitigating domain shift}\label{sec:mitigating_domain_shift}
 

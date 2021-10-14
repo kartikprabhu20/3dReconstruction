@@ -608,7 +608,7 @@
 \pgfpathlineto{\pgfqpoint{1.434737in}{4.527651in}}%
 \pgfpathlineto{\pgfqpoint{2.261403in}{1.467294in}}%
 \pgfpathlineto{\pgfqpoint{3.088070in}{2.543811in}}%
-\pgfpathlineto{\pgfqpoint{3.914737in}{1.713853in}}%
+\pgfpathlineto{\pgfqpoint{3.914737in}{1.713336in}}%
 \pgfpathlineto{\pgfqpoint{4.741403in}{4.167951in}}%
 \pgfpathlineto{\pgfqpoint{5.568070in}{1.655216in}}%
 \pgfusepath{stroke}%

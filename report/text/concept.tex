@@ -27,7 +27,7 @@ As we can see, the dataset distribution is uneven across classes, and more than 
 
 Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of using this real dataset.
 \begin{enumerate}
-    \item For Deep Learning approaches, we need large-scale data, and 14,600 might not be sufficient.
+    \item For Deep Learning approaches, we need large-scale data, and 14,600 images for 9 categories might not be sufficient.
     \item The orientation of an object is not randomized.
     \item The dataset does not provide 2.5D information (i.e., depth maps and normals), which can be crucial for 3D learning.
 \end{enumerate}
@@ -82,43 +82,181 @@ However, both these game engines can create realistic-looking scenes that are us
 With the Unity game engine, the available scenes from the Scenenet and 3D models from Pix3D can be imported to form an ersatz environment.
 Further domain randomization can be applied to create a dataset of photorealistic images and 2.5D data like normals, depth maps, masks.
 
-\subsection{Domain Randomization with Unity Engine}\label{subsec:domain-randomisation-with-unity-engine}
-In this section, we discuss what kind of domain randomization we apply for dataset creation.
 
-\subsubsection{Scenes from SceneNet}\label{subsubsec:scenes-from-scenenet}
-As discussed in \autoref{sec:role-of-scenenet}, SceneNet provides a wide variety of indoor scenes, including bedrooms, bathrooms, living rooms, kitchens, and offices.
-We did not consider the bathroom for our case, as the categories under observations are furniture which we rarely see in the bathroom.
-For the rest of the scenes, we have a pre-determined setup given by SceneNet.
-We use 25 scenes in total as basic rooms to insert our target object.
-Moreover, we feel this should be sufficient to check if Unity can produce a helpful dataset with further randomization.
+\section{3D-Scene framework}\label{sec:3d-scene-framework}
+3D-Scene is a Unity-based application created as proof of concept for tool to generate photorealistic images using Game engine.
+The core pipeline and the workflow is as shown in \autoref{fig:pipeline process}.
+For an automation-based pipeline, the process loops through each step, while in the manual pipeline, the user decides which block to execute.
+In this section, each of the blocks are explained briefly.
+The implementation of the blocks will be discussed in \autoref{ch:implementation}.
 
-\subsubsection{Camera Viewpoints}
-The position and orientation of the camera give us the most randomization in this setup.
-The user can choose the minimum and maximum distance to place the camera from the target object.
-A random point is selected in this range as the position for the camera.
-The camera is oriented such that it always looks at the target object, irrespective of its position.
-With this, we achieved different backgrounds for the target object, and the target object appears to be indifferent positions and orientations.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/process}
+    \caption{An overview of pipeline for image generation with different blocks and external libraries.}
+    \label{fig:pipeline process}
+\end{figure}
 
-\subsubsection{Lighting and shadows}
-Lighting plays a vital role in photorealism.
-If the lighting is not set up correctly, the synthetic dataset will never seem to be photorealistic.
-Unity offers a wide variety of lighting like global light, which acts like sunlight, and various indoor lighting systems.
-Ideally, we should make the luminous objects like lamps, chandeliers, bulbs, etc.,
-the source of light for indoor scenes, but we observed that the room does not light up uniformly,
-making it less photorealistic.
-Hence we use some pre-determined lighting settings, discussed further in implementation(\autoref{sec:3d-scene-framework}).
+\subsection{Scenes from SceneNet}\label{subsec:scenes-from-scenenet}
+We utilize scenes provided by SceneNet~\cite{McCormac:etal:ICCV2017} for the rooms in our ersatz environments.
+All the catagories from Pix3D are also present in ShapeNet which are used to fill the space in SceneNet.
+The distribution of furniture matching the category of Pix3D in the scenes is as shown in \autoref{fig:distribution of scenes}.
+The application modifies each scene for every snap we take for the dataset we create at random.
 
-\subsubsection{Randomized textures}
+SceneNet has made 25 rooms available to the public.
+We only use scenes of type Bedroom(11), Kitchen(1), Living room(6), and office(7).
+We did not consider the bathroom for our case, as the categories under observations are furniture which we rarely see in the bathroom
+\autoref{fig:Scene Types} shows different types of scenes utilized to generate a synthetic dataset.
+These scenes are further modified by adding a few more objects of categories present in Pix3D to get more variations in the dataset.
+
+\begin{figure}[!ht]
+    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes.pgf}}
+    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet.pgf}}
+    \caption{(Left)Distribution of types of scenes, (Right) Distribution of objects matching the categories of pix3d in scenes.
+    The chair category has most number of possible positions, while wardrobe has the least.}
+    \label{fig:distribution of scenes}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_bedroom}}\quad
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_livingroom}}\\
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_kitchen}}\quad
+    \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_office}}
+    \caption{The top view of sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office}
+    \label{fig:Scene Types}
+\end{figure}
+
+\subsection{Randomized Texture}\label{subsec:randomised-texture}
+
 SceneNet~\cite{McCormac:etal:ICCV2017} also provide textures for different categories in the scene.
 We further increase the texture database by adding more textures from ambientCG.com, which provides free licenses.
-We randomly allocate textures to each object, ensuring that each category has the same texture to make the scene more uniform.
+A total of 982 texture images with 58 regular object categories, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement, and roughness.
+This makes the textures more realistic.
+The distribution of the top 40 texture categories used for randomization of scenes is as shown in \autoref{fig:Distribution of textures}, with categories of Pix3D
+having a higher number of images.
+Each scene is randomized for every snap taken of the target object.
+Samples of texture randomization of background in the scene with the target object in focus are shown in \autoref{fig:Texture Randomisation}.
 
-\subsubsection{Replacing target objects}
+Randomizing the outdoor environment is important in cases where we have open doors and windows.
+Unity provides a wrapper for scenes called \emph{Skyboxes}.
+This is spherical texture around the room under observation.
+This gives us a varying outdoor environment for the scene with the scenery at the horizon.
+We randomize ten open license skyboxes\footnote{https://polyhaven.com/hdris/outdoor} to achieve this.
+Samples of the skybox are shown in \autoref{fig:skybox samples}.
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture2}\\
+    \vspace{0.1cm}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture3}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture4}\\
+    \caption{Sample images with different textures for same scene.}
+    \label{fig:Texture Randomisation}
+\end{figure}
+
+
+%\begin{figure}[!ht]
+%        \centering
+%        \includegraphics[width=\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures}
+%        \caption{Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.}
+%        \label{fig:Distribution of textures}
+%\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures.pgf}}
+    \caption{Distribution of textures used on scenes. The categories of pix3d(target furniture) have higher number of images.}
+    \label{fig:Distribution of textures}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_2} \\
+    \vspace{0.1cm}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_3}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_4}\\
+    \caption{Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.}
+    \label{fig:skybox samples}
+\end{figure}
+
+\subsection{Replacing target Objects}\label{subsec:replacing-target-objects}
+
 To further randomize the scene, the category of target objects is replaced by the object under observation.
 When more than one object of the same category is present, we randomize the object to be replaced, further randomizing the captured data.
 The target object is scaled such that the least dimension of the target object matches the least dimension of the category object in the scene.
 For example, if the length of the category object in the scene is the most petite amount length, width, and height, then the target object is scaled to match this length.
 The rescaling makes the target object blend in with the scene.
+Samples for replacing a target object from an original scene from Scenenet are shown in \autoref{fig:replace model}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_1-1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_1-2} \\
+    \vspace{0.1cm}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_2-1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_2-2}\\
+    \caption{Samples for object replacement. The Left column shows a scene from SceneNet, while the right column shows an object being replaced in original scene.}
+    \label{fig:replace model}
+\end{figure}
+
+
+\subsection{Camera ViewPoints}\label{subsec:camera-viewpoints}
+
+We randomize camera position with some constraints such that we get different orientations of the target object with different backgrounds.
+The constraints will include height of the camera,minimum and maximum distance to the target object.
+A random point is selected within this bound for the camera position.
+We make sure that the target object is within the camera frame and is visible.
+\autoref{fig:Camera viewpoints} shows samples of different camera viewpoints on a constant object and scene.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera2}\\
+    \vspace{0.1cm}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera3}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera4}\\
+    \caption{Sample images with different camera viewpoints of same object with a constant scene.}
+    \label{fig:Camera viewpoints}
+\end{figure}
+
+\subsection{Lightings and Shadows}\label{subsec:lightings-and-shadows}
+
+Lighting plays a vital role in photorealism.
+The shadows formed with different lighting conditions enhance the photorealism of the images.
+Unity offers a wide variety of lighting like global light, which acts like sunlight, and various indoor lighting systems.
+Ideally, we should make the luminous objects like lamps, chandeliers, bulbs, etc.,
+the source of light for indoor scenes, but we observed that the room does not light up uniformly, making it less photorealistic.
+Hence we use some pre-determined lighting settings, discussed further in implementation(Section 4.1).
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1}
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2}\\
+%    \vspace{0.1cm}
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting3}
+%    \includegraphics[width=.3\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting4}\\
+%    \caption{Sample images with different lighting and shadows conditions}
+%    \label{fig:Lighting and shadows}
+%\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1}
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2}
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting3}
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting4}\\
+    \vspace{0.1cm}
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting5}
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting6}
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting7}
+    \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting8}\\
+    \caption{Sample images with different lighting and shadows conditions.First row is samples for light with different intensity and direction. Second row is differnt color for light.}
+    \label{fig:Lighting and shadows}
+\end{figure}
 
 \section{\gls{free}, a Pix3D based synthetic dataset}\label{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}
 
@@ -128,32 +266,11 @@ We randomize the indoor scenes from SceneNet~\cite{McCormac:etal:ICCV2017} and t
 The other option would have been to use the ShapeNet as the target model, but we would not have a real dataset to compare to this case.
 Ideally, a model trained on ShapeNet should also perform well with a real dataset like Pix3D, but we decided to have a synthetic dataset based on Pix3D itself for better comparison.
 
-\section{3D reconstruction pipeline}\label{sec:3D reconstruction pipeline}
-We create a pipeline for processing the 3D reconstruction task.
+\section{3D reconstruction pipeline: Why Pix2Vox?}\label{sec:3D reconstruction pipeline}
+We create a Deep Learning pipeline for processing the 3D reconstruction task.
 The backbone of the pipeline is the base model and the dataset being used to train.
 In this section, we discuss the model used as a base and the rationale behind its selection.
 
-\subsection{Pix2Vox and Pix2Vox++}\label{subsec:pix2vox-and-pix2vox++}
-The architecture of pix2vox~\cite{Xie_2019} is as shown in \autoref{fig:architectures}(a).
-The network consists of 4 modules: Encoder, Decoder, Merger, and Refiner.
-Merger plays a significant part when it comes to the multi-view reconstruction of 3d objects.
-As we focus on single-view 3d reconstruction, the merger module will not influence the output significantly.
-As an encoder, pix2vox has utilized \gls{vgg}16 network~\cite{simonyan2015deep} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
-The decoder is an expansive network that converts 2D embeddings to a 3D voxel grid.
-The refiner is an auto-encoder that takes the 3D output from the merger and produces a more refined final output.
-A second paper based on pix2vox was titled Pix2Vox++~\cite{Xie_2020}.
-The extended work replaces \gls{vgg} encoder~\cite{simonyan2015deep} with \gls{resnet}~\cite{He2016DeepRL}.
-
-
-\begin{figure}[!ht]
-    \centering
-    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox}}\quad
-    \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2voxpp}}\\
-    \caption{Network architectures used as a baselines (a)Pix2Vox (b)Pix2Vox++}
-    \label{fig:architectures}
-\end{figure}
-
-\subsection{Why Pix2Vox?}\label{subsec:why-pix2vox?}
 Pix2Vox has been used as a baseline by most of the research-oriented to 3D reconstruction.
 This network is one of the few networks to be tested on the Pix3D dataset.
 According to the survey conducted by~\cite{Han2021ImageBased3O}, the performance of pix2vox~\cite{Xie_2019}
@@ -167,7 +284,7 @@ Hence, the embeddings generated from this encoder can help visualize the domain 
 As mentioned above, for pix2vox++, the \gls{resnet} is the backbone encoder with 25\% lesser parameters and 5\% lesser inference time than \gls{vgg}\@.
 In addition, the author even demonstrated that Pix2vox++ performs 1.5\% better than pix2vox.
 The architecture of pix2vox++ is as shown in \autoref{fig:architectures}(b).
-Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the furnitures, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
+Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the furniture, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
 Hence the selection of the model was not of utmost importance.
 However, since the two architectures are relatable, it would be interesting to compare the results for the 3D Reconstruction task.
 
@@ -193,85 +310,126 @@ However, since the two architectures are relatable, it would be interesting to c
     \label{fig:survey on 3d reconstruction}
 \end{figure}
 
-%\section{Domain adaptation with Gan \todo{if we decide to go with this approach}}
 
-\section{Domain space}\label{sec:domain-space}
+\section{Datasets}\label{sec:datasets}
+In this section, we describe the datasets used for the evaluations.
+Datasets intend to have variations in domain randomization to check their performance on the 3D reconstruction tasks.
 
-Since this thesis includes image datasets from different domains, it is essential to understand the domain space of these datasets.
-This section discusses how we intend to visualize the domain space and a quantitative measure to indicate the difference between the domains.
+\subsection{Pix3D}\label{subsec:pix3d}
+As mentioned in \autoref{subsec:why-pix3d?}, we use a real dataset from~\cite{pix3d}, a collection of indoor scenes.
+The two classes ’misc’ and ’tools’ are eliminated to focus only on furniture.
+The total images after the reduction are 9954 with 354 unique models.
+The dataset is divided into 70:30, giving us 6814 images from training and 3140 images for validation/test.
+We do not have a test set only for this dataset since it is already limited, and the validation set is used as a test set while testing with synthetic data.
+Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
-\subsection{Visualizing with \gls{tsne}}\label{subsec:visualizing-with-tsne}
-\gls{tsne} stands for t-Distributed Stochastic Neighbor Embedding~\cite{vanDerMaaten2008}; it is a tool to visualize a high dimensional space in a low dimension space while retaining the information of high dimension as much as possible.
-In our case, the images are embedded using a \gls{vgg}16 network with an output dimension of 1000.
-This multi-dimensional output is converted to two-dimension for better visualization of the embedding space.
+\subsection{\gls{s2rv1}}\label{subsec:gls{free}-version-1}
+Version 1 of \gls{free} was created by keeping the models in the center of a default 3D room.
+The camera distance was randomized between 1 and 2.5 meters from the model.
+The camera viewpoints and textures were randomized.
+A total of 70000 images were synthetically generated using the \gls{free} 'Single Room pipeline' with 10000 images per category.
+Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
-In this segment, we briefly explain how \gls{tsne} works.
+\subsection{\gls{s2rv2}}\label{subsec:gls{free}-version-2}
+Version 1 of \gls{free} was created by keeping the models in the center of a defualt 3D room.
+The distance of the camera was randomly chosen between 1 and 2.5 meters from the model.
+The camera view points and textures were randomized.
+A total of 21000 images were synthetically generated using the \gls{free} 'Multi-Object pipeline' with 3000 images per category.
+Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
-\begin{enumerate}
-    \item \textbf{Step 1}: Calculate the similarity between points in high dimensional space using a joint probability distribution.
-        To achieve this, the Euclidean distances between each point is transformed into conditional probability distribution as in \autoref{eq:equation1}, which represents similarity between a pair of points.
-        The conditional probability of a point $x_i$ with point $x_j$ to be located next to it, is represented by a Gaussian with center at $x_i$.
-        Normalising is done to handle the different cluster densities.
-        Conditional probability is converted to Joint probability using \autoref{eq:equation2}.
-    \begin{equation}
-        p_{j \mid i}=\frac{\exp \left(-\left\|x_{i}-x_{j}\right\|^{2} / 2 \sigma_{i}^{2}\right)}{\sum_{k \neq i} \exp \left(-\left\|x_{i}-x_{k}\right\|^{2} / 2 \sigma_{i}^{2}\right)}
-        \label{eq:equation1}
-    \end{equation}
+\begin{figure}[ht]
+    \centering
+    \begin{tabular}{llll}
+        Pix3D & \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_1} &
+        \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_2} &
+        \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/pix3d_3}\\
 
-    \begin{equation}
-        p_{i j}=\frac{p_{j \mid i}+p_{i \mid j}}{2 n}
-        \label{eq:equation2}
-    \end{equation}
+        \gls{s2rv1} & \includegraphics[width=.2\textwidth, height =.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_1} &
+        \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_2} &
+        \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v1_3}\\
 
-    \item \textbf{Step 2}: Using a random point dataset on a lower dimension with same number of points in higher dimension, a Joint probability distribution is created but with a Student-t distribution instead of Gaussian.
-    This is represented by \autoref{eq:equation3}.
-    t-distribution makes sure that the projection in low dimension is not concentrated on a single point.
-    \begin{equation}
-        q_{ij} = \frac{(1+\left \| y_{i}-y_{j} \right \|^{2})^{-1}}{\sum _{k\neq l} (1+\left \| y_{k}-y_{l} \right \|^{2})^{-1}}
-        \label{eq:equation3}
-    \end{equation}
+        \gls{s2rv2} & \includegraphics[width=.19\textwidth, height =.2\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_1} &
+        \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_2} &
+        \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_3}\\
 
-    \item \textbf{Step 3}: Learn to represent the high dimension space in low dimension by making the Joint distribution of the lower dimension as close as possible to that of the higher dimension.
-    For this Kullback-Leiber divergence\cite{Joyce2011} is used to compare the similarity between the two distributions as in \autoref{eq:equation4}.
-    Using gradient descent, the cost function based on KL-divergence (\autoref{eq:equation5}) is minimized to make the points fall in place.
+    \end{tabular}
+    \caption{Samples of images from real and synthetic datasets.}
+    \label{fig:samples for synthetic and real comparison}
+\end{figure}
 
-    \begin{equation}
-        D_{\mathrm{KL}}(P \| Q)=\sum_{x \in \mathcal{X}} P(x) \log \left(\frac{P(x)}{Q(x)}\right)
-        \label{eq:equation4}
-    \end{equation}
+\subsection{\gls{free} Ablation}\label{subsec:s2r:3dfree-ablation}
+Pix3D is composed of 3839 chairs which is the maximum among all categories.
+To study the effects of domain randomization, we create multiple chair datasets by omitting randomizing factors one at a time and study the model behavior.
+We divide the datasets into five categories with different randomization parameters.
+The sample images with different randomization are as shown in \autoref{fig:domain_randomisation_for_ablation_study}.
 
-    \begin{equation}
-        C=K L(P \| Q)=\sum_{i} \sum_{j} p_{i j} \log \frac{p_{i j}}{q_{i j}}
-        \label{eq:equation5}
-    \end{equation}
-\end{enumerate}
+\begin{figure}[!ht]
+    \begin{tabular}{llll}
+        Textureless & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_3}\\
 
-Perplexity is a parameter that informs the algorithm on how much attention to give the local and global features.
-The publication~\cite{vanDerMaaten2008} indicates the values between 5 and 50 to be a good initialization.
-An article on \gls{tsne} interpretation~\cite{wattenberg2016how} informs us to have a perplexity value lesser than the total number of points.
-    It also notes that the cluster distance may not be as the intuition suggests, i.e., greater distance may not necessarily mean good separation, or lesser distance does not inevitably mean closer similarity for well-separated clusters.
-    However, \gls{tsne} can still visualize if the clusters are overlapping or have a shared embedding space or not.
-    Hence, we will use \gls{tsne} as a medium to visualize the embedding space without giving importance to the distance or the scale of the plots.
+        Textureless with light & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_light_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_light_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textureless_light_3}\\
 
-%\subsection{Maximum Mean Discrepancy(MMD)}
-\subsection{Fr\'echet Inception Distance(FID))}\label{subsec:fr'echet-inception-distance)}
-For quantitative measure, we use \gls{fid}
-\gls{fid} \cite{Heusel2017GANsTB} was specifically formulated to evaluate the performance of Generative Adversarial Networks \cite{Goodfellow2014GenerativeAN}.
-The core idea behind \gls{fid} was to evaluate the generated synthetic images using the statistics collected from both synthetic and real images.
-Lower the value of \gls{fid} better the quality of the images.
+        Textured & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_3}\\
 
-The embeddings of the images are calculated by passing it through an Inception v3 model~\cite{Szegedy2016RethinkingTI} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
-The output layer is removed, and the penultimate pooling layer activations are used to get the embedding vector.
-This vector has a dimension of 2048.
-The images from both synthetic and real datasets are passed through the model, and the obtained statistics is used to calculated the \gls{fid} as in \autoref{eq:fid}.
+        Textured with light & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_light_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_light_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_textured_light_4}\\
 
-\begin{equation}
-    d^{2}\left((\boldsymbol{\mu}_{r}, \boldsymbol{C}_{r}),\left(\boldsymbol{\mu}_{s}, \boldsymbol{C}_{s}\right)\right)=\left\|\boldsymbol{\mu}_{r}-\boldsymbol{\mu}_{s}\right\|^{2}+\operatorname{Tr}\left(\boldsymbol{C}_{r}+\boldsymbol{C}_{s}-2\left(\boldsymbol{C}_{w} {C}_{w}\right)^{1 / 2}\right)
-    \label{eq:fid}
-\end{equation}
+        Multi-Object & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_1} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_2} &
+        \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_3}\\
 
-In the above \autoref{eq:fid}, $\mu_r$ and $\mu_s$ are feature-wise mean for real and synthetic images, $C_r$ and $C_s$ are respective covariance matrices.
-$Tr$ is the Trace linear algebra operation, which is the sum of main diagonal elements.
+    \end{tabular}
+    \caption{Samples of images used for ablation study on chairs with different parameters of domain randomization.}
+    \label{fig:domain_randomisation_for_ablation_study}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_chair_DR.pgf}}
+%    \caption{A combined \gls{tsne} visualization for chair images from Pix3d and \gls{free} dataset with different parameters for randomization.}
+%    \label{fig:pix3dchair_s2r3dfreechair}
+%\end{figure}
+
+\subsubsection{2R:3DFREE\_Textureless}
+
+The chair models were kept at the center of an un-textured room with a constant light source for the textureless dataset.
+A total of 10000 images were generated from different camera viewpoints.
+
+\subsubsection{\gls{free}\_Textureless\_Light}
+
+Like the textureless dataset, the chair models were kept at the center of an un-textured room for this dataset.
+However, the light source was randomized.
+The light variation was implemented as in \autoref{subsec:lightings-and-shadows}.
+Along with randomized light sources, the camera viewpoints were randomized with a distance in the range of 0.75 to 1.5 meters from the model under observation.
+
+\subsubsection{\gls{free}\_Textured}
+
+As the name suggests, both the model and the single default room were textured randomly for each snapshot, as explained in \autoref{subsec:randomised-texture}.
+Ten thousand snapshots of chair models were taken using different camera viewpoints.
+
+\subsubsection{\gls{free}\_Textured\_Light}
+
+This dataset is an extension of the above mention \gls{free}\_Textured dataset, with randomized light sources.
+The lights are randomized as implemented in \autoref{subsec:lightings-and-shadows}.
+
+\subsubsection{\gls{free}\_Mutli-Object}
+
+\gls{free}\_Mutli-Object dataset was created using 'Multi-Object pipeline' with chair replacing a similar category from the scene as implemented in \autoref{subsec:replacing-target-objects}.
+Both the light and camera viewpoints were randomized, ensuring that the model under observation is not completely occluded.
+
+\subsubsection{\gls{free}\_Combined}
+\gls{free}\_Combined dataset is a combination of all the five types of datasets mentioned above.
+Adding 10,000 images from each dataset, we get a total of 50,000 chair images in this bundle.
+This dataset is an aggregate of all types of domain randomization.
+
+
 
 
 
