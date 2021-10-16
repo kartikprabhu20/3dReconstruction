@@ -1,24 +1,19 @@
 \chapter{\iftoggle{german}{Konzept}{Concept}}\label{ch:concept}
 
-In this chapter, we discuss the critical datasets used to create a new synthetic dataset and the reason for their selection.
+In this chapter, we discuss the critical datasets used to create a new synthetic dataset and the reason for their selection in \autoref{sec:3d-furniture-models-from-pix3d}.
 Furthermore, how we combine multiple datasets to our advantage of creating new datasets in the Ersatz environment.
-The rationale in choosing Unity as a framework to build the pipeline \autoref{sec:unity-based-pipeline}.
-We will also discuss domain randomization  \autoref{subsec:domain-randomisation-with-unity-engine} and each of its parameters.
 In \autoref{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}, we will introduce the proposed \gls{free} dataset used for the 3D-reconstruction task.
 
-In the Deep Learning domain(\autoref{sec:3D reconstruction}), we explore what 3D-reconstruction is and how to achieve it.
-In \autoref{subsec:pix2vox-and-pix2vox++}, the state-of-the-art models for 3D-Reconstruction on voxel representation and reason for selecting the sibling models as baselines are discussed.
+The rationale in choosing Unity as a framework to build the pipeline will be discussed in \autoref{sec:unity-based-pipeline}.
+In \autoref{sec:3d-scene-framework}, we introduce a new tool to create synthetic dataset, and discuss in detail the design of the application and the rationale behind each module.
 
-\section{Pix3D: A large-scale benchmark}\label{sec:pix3d}
-~\cite{pix3d}introduces a large-scale benchmark for 2D-3D alignment.
-The raw images from web search engines were collected, and labeled key points were used to align the 2D images with the corresponding 3D shapes.
-The 3D models extend the IKEA dataset~\cite{Lim2013ParsingIO}, a collection of high-quality IKEA furniture.
-The dataset also provides a binary mask and the key points for the object under observation.
-To add more images to the IKEA dataset, the authors of~\cite{pix3d} conducted a manual web search on Google, Bing, and Baidu, using the IKEA model name as keywords.
-This search led to around 104,220 images which were further filtered by removing irrelevant images with the help of Amazon Mechanical Turk (AMT) workers.
-After this manual experiment, the total images in Pix3D, only 14,600 images were selected for the 219 Ikea models.
-For our synthetic to real dataset experiment, we chose to select only furniture classes from Pix3D, leaving out \”misc and tools\” classes, which were significantly less in comparison.
+In the Deep Learning domain(\autoref{subsec:why-pix3d?}), we explain rationale behind selection of baseline models for 3D-reconstruction task.
 
+\section{A New Dataset for 3D Reconstruction Task}\label{sec:3d-furniture-models-from-pix3d}
+As discussed in \autoref{subsec:indoor-synthetic-datasets}, we have several synthetic datasets.
+However, not many support 3D reconstruction task.
+The dataset which support 3D reconstruction, do not have real-world images to compare the results.
+In this section, we discuss the datasets which we considered for creating a new synthetic dataset, and the reason for the selection.
 
 \subsection{Disadvantages of Pix3D}\label{subsec:disadvantages-of-pix3d}
 
@@ -35,36 +30,40 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
 \begin{figure}[!ht]
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_histogram.pgf}}
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_models_histogram.pgf}}
-    \caption{Distribution of Pix3D~\cite{pix3d} images(left), unique models(right)}
+    \caption{Distribution of Pix3D~\cite{Sun2018} images(left), unique models(right)}
     \label{fig:pix3d_histogram}
 \end{figure}
 
 \subsection{Why Pix3D?}\label{subsec:why-pix3d?}
-Pix3D is a collection of indoor scenes with a complex background, varying light conditions with shadows, reflective surfaces, and even varying occlusion levels.
+We discuss the drawbacks of Pix3D in \autoref{subsec:disadvantages-of-pix3d}.
+Apart from those reasons, Pix3D is a collection of indoor scenes with a complex background, varying light conditions with shadows, reflective surfaces, and even varying occlusion levels.
 Each image comprises a collection of objects in the scene, but only one object from the category is annotated.
 It is a perfect example of having limited real-world data.
 Since 3D models are available for each piece of furniture, synthetic data can be generated in abundance from those models.
-Samples from Pix2D are as shown in \autoref{fig:Pix3D samples}.
+It would be interesting to see if a Game Engine is capable of replicate such complex features of the real-world, or if it can create randomization to an extent where such complex images appear to be a part of randomization.
+A study on Pix3D and synthetic dataset should demonstrate the usefulness of Game Engines.
+For our synthetic to real dataset experiment, we chose to select only furniture classes from Pix3D, leaving out ``misc and tools" classes, which were significantly less in comparison.
 
-\begin{figure}[!ht]
-    \centering
-    \subfloat[][]{\includegraphics[width=.4\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_5}}\quad
-    \subfloat[][]{\includegraphics[width=.4\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2}}\\
-    \subfloat[][]{\includegraphics[width=.4\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6}}\quad
-    \subfloat[][]{\includegraphics[width=.4\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4}}
-    \caption{Sample RGB images from pix3D}
-    \label{fig:Pix3D samples}
-\end{figure}
-
-\section{Role of SceneNet}\label{sec:role-of-scenenet}
-SceneNet~\cite{McCormac:etal:ICCV2017} is an extensive collection of photorealistic indoor scene trajectories.
-The dataset provides images and videos of indoor scenes that can be used for tasks like SLAM,
-semantic and instance segmentation, object detection, and further enhanced for other vision problems like optical flow depth and pose estimation ~\cite{McCormac:etal:ICCV2017}).
-They use ShapeNet~\cite{chang2015shapenet} models to occupy 57 indoor scenes, giving the scene unlimited configurations.
-Unfortunately, there is no mapping from scene to 3D model for tasks like 3D reconstructions.
+\subsection{Role of SceneNet}\label{sec:role-of-scenenet}
+Now that we decided on the 3D furniture models, we need an environment with complex background.
+SceneNet~\cite{McCormac2017} is an extensive collection of photorealistic indoor scene trajectories.
 In our approach, we utilize the scene provided by SceneNet as a layout for our indoor scenes.
 Each scene includes initial Shapenet models with furniture placement.
-We then replace the class under observation with a corresponding model from Pix3D.
+The placement is done such that the context between the furnitures is maintained.
+For example, chairs are placed near the table,
+Sofa and coffee table is place facing towards a television, etc.
+Using these position we will be able to derive sensible images for our synthetic dataset.
+
+\subsection{\gls{free}, a Pix3D based synthetic dataset}\label{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}
+
+\gls{free} dataset, which stands for Synth2Real: 3-Dimensional Furniture Reconstruction from Ersatz Environment, combines SceneNet and Pix3D dataset.
+We utilize the availability of 3D models of rooms and pieces of furniture from these two datasets to create an ersatz environment using Unity as our framework.
+We randomize the indoor scenes from SceneNet~\cite{McCormac2017} and textures provided by them with some additional complex textures.
+The ShapeNet and Pix3D datasets have common categories.
+We replace a 3D furniture in the scene by a model from Pix3D of the same category.
+This process is randomized and will be discussed in \autoref{sec:3d-scene-framework}.
+The other option would have been to use the ShapeNet or \gls{front} as the target model, but we would not have a real dataset to compare to this case.
+Ideally, a model trained on ShapeNet should also perform well with a real dataset like Pix3D, but we decided to have a synthetic dataset based on Pix3D itself for better comparison.
 
 \section{Unity-based pipeline}\label{sec:unity-based-pipeline}
 To create the synthetic dataset, we use Unity Game Engine.
@@ -98,7 +97,7 @@ The implementation of the blocks will be discussed in \autoref{ch:implementation
 \end{figure}
 
 \subsection{Scenes from SceneNet}\label{subsec:scenes-from-scenenet}
-We utilize scenes provided by SceneNet~\cite{McCormac:etal:ICCV2017} for the rooms in our ersatz environments.
+We utilize scenes provided by SceneNet~\cite{McCormac2017} for the rooms in our ersatz environments.
 All the catagories from Pix3D are also present in ShapeNet which are used to fill the space in SceneNet.
 The distribution of furniture matching the category of Pix3D in the scenes is as shown in \autoref{fig:distribution of scenes}.
 The application modifies each scene for every snap we take for the dataset we create at random.
@@ -112,7 +111,7 @@ These scenes are further modified by adding a few more objects of categories pre
 \begin{figure}[!ht]
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes.pgf}}
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet.pgf}}
-    \caption{(Left)Distribution of types of scenes, (Right) Distribution of objects matching the categories of pix3d in scenes.
+    \caption{(Left)Distribution of types of scenes, (Right) Distribution of objects matching the categories of Pix3D in scenes.
     The chair category has most number of possible positions, while wardrobe has the least.}
     \label{fig:distribution of scenes}
 \end{figure}
@@ -129,7 +128,7 @@ These scenes are further modified by adding a few more objects of categories pre
 
 \subsection{Randomized Texture}\label{subsec:randomised-texture}
 
-SceneNet~\cite{McCormac:etal:ICCV2017} also provide textures for different categories in the scene.
+SceneNet~\cite{McCormac2017} also provide textures for different categories in the scene.
 We further increase the texture database by adding more textures from ambientCG.com, which provides free licenses.
 A total of 982 texture images with 58 regular object categories, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement, and roughness.
 This makes the textures more realistic.
@@ -138,6 +137,10 @@ having a higher number of images.
 Each scene is randomized for every snap taken of the target object.
 Samples of texture randomization of background in the scene with the target object in focus are shown in \autoref{fig:Texture Randomisation}.
 
+The textures need to be grouped together into folder with category name.
+Since this library is external to Unity, the users can add or remove textures according to their preferences.
+Even new categories can be added by just creating a new folder.
+
 Randomizing the outdoor environment is important in cases where we have open doors and windows.
 Unity provides a wrapper for scenes called \emph{Skyboxes}.
 This is spherical texture around the room under observation.
@@ -145,8 +148,7 @@ This gives us a varying outdoor environment for the scene with the scenery at th
 We randomize ten open license skyboxes\footnote{https://polyhaven.com/hdris/outdoor} to achieve this.
 Samples of the skybox are shown in \autoref{fig:skybox samples}.
 
-
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture1}
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture2}\\
@@ -157,18 +159,10 @@ Samples of the skybox are shown in \autoref{fig:skybox samples}.
     \label{fig:Texture Randomisation}
 \end{figure}
 
-
-%\begin{figure}[!ht]
-%        \centering
-%        \includegraphics[width=\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures}
-%        \caption{Distribution of textures used on scenes. The categories of pix3d(target furnitures) have higher number of images.}
-%        \label{fig:Distribution of textures}
-%\end{figure}
-
-\begin{figure}[ht]
+\begin{figure}
     \centering
-    \resizebox{\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures.pgf}}
-    \caption{Distribution of textures used on scenes. The categories of pix3d(target furniture) have higher number of images.}
+    \resizebox{0.9\textwidth}{10cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures.pgf}}
+    \caption{Distribution of textures used on scenes. The categories of Pix3D(target furniture) have higher number of images.}
     \label{fig:Distribution of textures}
 \end{figure}
 
@@ -182,6 +176,8 @@ Samples of the skybox are shown in \autoref{fig:skybox samples}.
     \caption{Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.}
     \label{fig:skybox samples}
 \end{figure}
+
+
 
 \subsection{Replacing target Objects}\label{subsec:replacing-target-objects}
 
@@ -258,14 +254,6 @@ Hence we use some pre-determined lighting settings, discussed further in impleme
     \label{fig:Lighting and shadows}
 \end{figure}
 
-\section{\gls{free}, a Pix3D based synthetic dataset}\label{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}
-
-\gls{free} dataset, which stands for Synth2Real: 3-Dimensional Furniture Reconstruction from Ersatz Environment, combines SceneNet and Pix3D dataset.
-We utilize the availability of 3D models of rooms and pieces of furniture from these two datasets to create an ersatz environment using Unity as our framework.
-We randomize the indoor scenes from SceneNet~\cite{McCormac:etal:ICCV2017} and textures provided by them with some additional complex textures.
-The other option would have been to use the ShapeNet as the target model, but we would not have a real dataset to compare to this case.
-Ideally, a model trained on ShapeNet should also perform well with a real dataset like Pix3D, but we decided to have a synthetic dataset based on Pix3D itself for better comparison.
-
 \section{3D reconstruction pipeline: Why Pix2Vox?}\label{sec:3D reconstruction pipeline}
 We create a Deep Learning pipeline for processing the 3D reconstruction task.
 The backbone of the pipeline is the base model and the dataset being used to train.
@@ -273,17 +261,17 @@ In this section, we discuss the model used as a base and the rationale behind it
 
 Pix2Vox has been used as a baseline by most of the research-oriented to 3D reconstruction.
 This network is one of the few networks to be tested on the Pix3D dataset.
-According to the survey conducted by~\cite{Han2021ImageBased3O}, the performance of pix2vox~\cite{Xie_2019}
-is significantly higher compared to previous work(\cite{DBLP:journals/corr/TulsianiZEM17,tatarchenko2016multiview,richter2018matryoshka,gwak2017weakly,8265323}), as shown in \autoref{fig:survey on 3d reconstruction}.
+According to the survey conducted by~\cite{Han2021ImageBased3O}, the performance of Pix2Vox~\cite{Xie_2019}
+is significantly higher compared to previous work(\cite{Tulsiani2017,tatarchenko2016multiview,Roth2018,Gwak2018,Johnston2017}), as shown in \autoref{fig:survey on 3d reconstruction}.
 At the same time, this comparison was made on 3d reconstruction of the ShapeNet dataset since Pix3D was not available when previous work was published.
-From our survey, only CoReNet~\cite{popov2020corenet} had a slight gain in performance compared to pix2vox.
+From our survey, only CoReNet~\cite{popov2020corenet} had a slight gain in performance compared to Pix2Vox.
 When trained on ShapeNet and tested with Pix3D, CoReNet gave a result of 29.7\% \gls{iou} while Pix2Vox gave a result of 28.8\% \gls{iou}  and Pix2Vox++ a result of 29.2\% \gls{iou}\@.
 Since the difference in the performance was not significant, we decided to stick with the baseline model.
-Another reason for selecting the pix2vox model is that the backbone of the architecture is pre-trained with ImageNet.
+Another reason for selecting the Pix2Vox model is that the backbone of the architecture is pre-trained with ImageNet.
 Hence, the embeddings generated from this encoder can help visualize the domain space of both Pix3D (real images)  and \gls{free}(synthetic images).
-As mentioned above, for pix2vox++, the \gls{resnet} is the backbone encoder with 25\% lesser parameters and 5\% lesser inference time than \gls{vgg}\@.
-In addition, the author even demonstrated that Pix2vox++ performs 1.5\% better than pix2vox.
-The architecture of pix2vox++ is as shown in \autoref{fig:architectures}(b).
+As mentioned above, for Pix2Vox++, the \gls{resnet} is the backbone encoder with 25\% lesser parameters and 5\% lesser inference time than \gls{vgg}\@.
+In addition, the author even demonstrated that Pix2vox++ performs 1.5\% better than Pix2Vox.
+The architecture of Pix2Vox++ is as shown in \autoref{fig:architectures}(b).
 Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the furniture, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
 Hence the selection of the model was not of utmost importance.
 However, since the two architectures are relatable, it would be interesting to compare the results for the 3D Reconstruction task.
@@ -306,7 +294,7 @@ However, since the two architectures are relatable, it would be interesting to c
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/survey}
     \caption{A survey conducted by~\cite{Han2021ImageBased3O}, demonstrates that Pix2Vox is considerably a good 3D reconstruction model.
-    The values are from 3D reconstruction of ShapeNet~\cite{chang2015shapenet} since Pix3D was not published by then.}
+    The values are from 3D reconstruction of ShapeNet~\cite{shapenet2015} since Pix3D was not published by then.}
     \label{fig:survey on 3d reconstruction}
 \end{figure}
 
@@ -316,7 +304,7 @@ In this section, we describe the datasets used for the evaluations.
 Datasets intend to have variations in domain randomization to check their performance on the 3D reconstruction tasks.
 
 \subsection{Pix3D}\label{subsec:pix3d}
-As mentioned in \autoref{subsec:why-pix3d?}, we use a real dataset from~\cite{pix3d}, a collection of indoor scenes.
+As mentioned in \autoref{subsec:why-pix3d?}, we use a real dataset from~\cite{Sun2018}, a collection of indoor scenes.
 The two classes ’misc’ and ’tools’ are eliminated to focus only on furniture.
 The total images after the reduction are 9954 with 354 unique models.
 The dataset is divided into 70:30, giving us 6814 images from training and 3140 images for validation/test.
@@ -397,7 +385,7 @@ The sample images with different randomization are as shown in \autoref{fig:doma
 %    \label{fig:pix3dchair_s2r3dfreechair}
 %\end{figure}
 
-\subsubsection{2R:3DFREE\_Textureless}
+\subsubsection{\gls{free}\_Textureless}
 
 The chair models were kept at the center of an un-textured room with a constant light source for the textureless dataset.
 A total of 10000 images were generated from different camera viewpoints.

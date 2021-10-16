@@ -1,116 +1,94 @@
-@article{Heradio2016Bibliometric,
-	author = {Heradio, Ruben and Perez-Morago, Hector and Fernandez-Amoros, David and {Javier Cabrerizo}, Francisco and Herrera-Viedma, Enrique},
-	doi = {10.1016/j.infsof.2015.11.004},
-	journal = {Information and Software Technology},
-	pages = {1--15},
-	title = {{A Bibliometric Analysis of 20 Years of Research on Software Product Lines}},
-	volume = {72},
-	year = {2016}
-}
 
-@misc{gartnerreport,
-	title={{Maverick Research: Forget About Your Real Data – Synthetic Data Is the Future of AI}},
-	author={Leinar Ramos, Jitendra Subramanyam},
-	howpublished={\url{https://www.gartner.com/en/documents/4002912}},
-	month={June},
-	year={2021}
-}
 
 @article{Hoang2019ADL,
-	title={A Deep Learning Method for 3D Object Classification Using the Wave Kernel Signature and A Center Point of the 3D-Triangle Mesh},
-	author={Long Hoang and Suk-Hwan Lee and Oh-Heum Kwon and Ki-Ryong Kwon},
-	journal={Electronics},
-	year={2019},
-	volume={8},
+	abstract = {Computer vision recently has many applications such as smart cars, robot navigation, and computer-aided manufacturing. Object classification, in particular 3D classification, is a major part of computer vision. In this paper, we propose a novel method, wave kernel signature (WKS) and a center point (CP) method, which extracts color and distance features from a 3D model to tackle 3D object classification. The motivation of this idea is from the nature of human vision, which we tend to classify an object based on its color and size. Firstly, we find a center point of the mesh to define distance feature. Secondly, we calculate eigenvalues from the 3D mesh, and WKS values, respectively, to capture color feature. These features will be an input of a 2D convolution neural network (CNN) architecture. We use two large-scale 3D model datasets: ModelNet10 and ModelNet40 to evaluate the proposed method. Our experimental results show more accuracy and efficiency than other methods. The proposed method could apply for actual-world problems like autonomous driving and augmented/virtual reality.},
+	author = {Hoang, Long and Lee, Suk Hwan and Kwon, Oh Heum and Kwon, Ki Ryong},
+	journal = {Electronics (Switzerland)},
+	keywords = {3D object classification,3D triangle mesh,Center point,Convolutional neural networks,Deep learning applications,Wave kernel signature},
+	title = {{A deep learning method for 3D object classification using the wave kernel signature and a center point of the 3D-triangle mesh}},
+	year = {2019},
 	pages={1196}
 }
 
+
 @article{vanDerMaaten2008,
-	added-at = {2015-06-19T12:07:15.000+0200},
-	author = {van der Maaten, Laurens and Hinton, Geoffrey},
-	biburl = {https://www.bibsonomy.org/bibtex/28b9aebb404ad4a4c6a436ea413550b30/lopusz_kdd},
-	interhash = {370ba8b9e1909b61880a6f47c93bcd49},
-	intrahash = {8b9aebb404ad4a4c6a436ea413550b30},
+	abstract = {We present a new technique called "t-SNE" that visualizes high-dimensional data by giving each datapoint a location in a two or three-dimensional map. The technique is a variation of Stochastic Neighbor Embedding (Hinton and Roweis, 2002) that is much easier to optimize, and produces significantly better visualizations by reducing the tendency to crowd points together in the center of the map. t-SNE is better than existing techniques at creating a single map that reveals structure at many different scales. This is particularly important for high-dimensional data that lie on several different, but related, low-dimensional manifolds, such as images of objects from multiple classes seen from multiple viewpoints. For visualizing the structure of very large data sets, we show how t-SNE can use random walks on neighborhood graphs to allow the implicit structure of all of the data to influence the way in which a subset of the data is displayed. We illustrate the performance of t-SNE on a wide variety of data sets and compare it with many other non-parametric visualization techniques, including Sammon mapping, Isomap, and Locally Linear Embedding. The visualizations produced by t-SNE are significantly better than those produced by the other techniques on almost all of the data sets.},
+	author = {{Van Der Maaten}, Laurens and Hinton, Geoffrey},
+	issn = {15324435},
 	journal = {Journal of Machine Learning Research},
-	keywords = {dimensionality_reduction tSNE visualization},
-	pages = {2579--2605},
-	timestamp = {2015-08-19T15:19:11.000+0200},
-	title = {Visualizing Data using {t-SNE} },
-	url = {http://www.jmlr.org/papers/v9/vandermaaten08a.html},
-	volume = 9,
-	year = 2008
+	keywords = {Dimensionality reduction,Embedding algorithms,Manifold learning,Multidimensional scaling,Visualization},
+	title = {{Visualizing data using t-SNE}},
+	year = {2008}
 }
 
 ///////////////////////dataset start
 
-
 @article{Fu20203DFRONT3F,
 	title={3D-FRONT: 3D Furnished Rooms with layOuts and semaNTics},
-	author={Huan Fu and Bowen Cai and Lin Gao and Ling-Xiao Zhang and Cao Li and Zengqi Xun and Chengyue Sun and Yiyun Fei and Yu Zheng and Yunyao Li and Yi Liu and Peng Liu and Lin Ma and Le Weng and Xiaohang Hu and Xin Ma and Qian Qian and Rongfei Jia and Binqiang Zhao and Hao Zhang},
-	journal={ArXiv},
+	author={Fu, Huan and Cai, Bowen and Gao, Lin and Zhang, Lingxiao and Li, Cao and Zeng, Qixun and Sun, Chengyue
+	and Fei, Yiyun and Zheng, Yu and Li, Ying and Liu, Yi and Liu, Peng and Ma, Lin and Weng, Le and Hu, Xiaohang
+	and Ma, Xin and Qian, Qian and Jia, Rongfei and Zhao, Binqiang and Zhang, Hao},
+	journal={arXiv preprint arXiv:2011.09127},
 	year={2020},
 	volume={abs/2011.09127}
 }
 
-@article{Roberts2020HypersimAP,
-	title={Hypersim: A Photorealistic Synthetic Dataset for Holistic Indoor Scene Understanding},
-	author={Mike Roberts and Nathan Paczan},
-	journal={ArXiv},
-	year={2020},
-	volume={abs/2011.02523}
+@inproceedings{Roberts2020HypersimAP,
+	author    = {Mike Roberts AND Jason Ramapuram AND Anurag Ranjan AND Atulit Kumar AND
+                 Miguel Angel Bautista AND Nathan Paczan AND Russ Webb AND Joshua M. Susskind},
+	title     = {{Hypersim}: {A} Photorealistic Synthetic Dataset for Holistic Indoor Scene Understanding},
+	booktitle = {International Conference on Computer Vision (ICCV) 2021},
+	year      = {2021}
 }
 
-@misc{li2021openrooms,
-	title={OpenRooms: An End-to-End Open Framework for Photorealistic Indoor Scene Datasets},
-	author={Zhengqin Li and Ting-Wei Yu and Shen Sang and Sarah Wang and Meng Song and Yuhan Liu and Yu-Ying Yeh and Rui Zhu and Nitesh Gundavarapu and Jia Shi and Sai Bi and Zexiang Xu and Hong-Xing Yu and Kalyan Sunkavalli and Miloš Hašan and Ravi Ramamoorthi and Manmohan Chandraker},
-	year={2021},
-	eprint={2007.12868},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@InProceedings{Li_2021_CVPR,
+	author    = {Li, Zhengqin and Yu, Ting-Wei and Sang, Shen and Wang, Sarah and Song, Meng and Liu, Yuhan and Yeh, Yu-Ying and Zhu, Rui and Gundavarapu, Nitesh and Shi, Jia and Bi, Sai and Yu, Hong-Xing and Xu, Zexiang and Sunkavalli, Kalyan and Hasan, Milos and Ramamoorthi, Ravi and Chandraker, Manmohan},
+	title     = {OpenRooms: An Open Framework for Photorealistic Indoor Scene Datasets},
+	booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+	month     = {June},
+	year      = {2021},
+	pages     = {7190-7199}
 }
 
-@misc{chang2015shapenet,
-	title={ShapeNet: An Information-Rich 3D Model Repository},
-	author={Angel X. Chang and Thomas Funkhouser and Leonidas Guibas and Pat Hanrahan and Qixing Huang and Zimo Li and Silvio Savarese and Manolis Savva and Shuran Song and Hao Su and Jianxiong Xiao and Li Yi and Fisher Yu},
-	year={2015},
-	eprint={1512.03012},
-	archivePrefix={arXiv},
-	primaryClass={cs.GR}
+@techreport{shapenet2015,
+	title       = {{ShapeNet: An Information-Rich 3D Model Repository}},
+	author      = {Chang, Angel X. and Funkhouser, Thomas and Guibas, Leonidas and Hanrahan, Pat and Huang, Qixing and Li, Zimo and Savarese, Silvio and Savva, Manolis and Song, Shuran and Su, Hao and Xiao, Jianxiong and Yi, Li and Yu, Fisher},
+	number      = {arXiv:1512.03012 [cs.GR]},
+	institution = {Stanford University --- Princeton University --- Toyota Technological Institute at Chicago},
+	year        = {2015}
 }
 
-@inproceedings{pix3d,
-	title={Pix3D: Dataset and Methods for Single-Image 3D Shape Modeling},
-	author={Sun, Xingyuan and Wu, Jiajun and Zhang, Xiuming and Zhang, Zhoutong and Zhang, Chengkai and Xue, Tianfan and Tenenbaum, Joshua B and Freeman, William T},
-	booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-	year={2018}
+@inproceedings{Sun2018,
+	abstract = {We study 3D shape modeling from a single image and make contributions to it in three aspects. First, we present Pix3D, a large-scale benchmark of diverse image-shape pairs with pixel-level 2D-3D alignment. Pix3D has wide applications in shape-related tasks including reconstruction, retrieval, viewpoint estimation, etc. Building such a large-scale dataset, however, is highly challenging; existing datasets either contain only synthetic data, or lack precise alignment between 2D images and 3D shapes, or only have a small number of images. Second, we calibrate the evaluation criteria for 3D shape reconstruction through behavioral studies, and use them to objectively and systematically benchmark cutting-edge reconstruction algorithms on Pix3D. Third, we design a novel model that simultaneously performs 3D reconstruction and pose estimation; our multi-task learning approach achieves state-of-the-art performance on both tasks.},
+	author = {Sun, Xingyuan and Wu, Jiajun and Zhang, Xiuming and Zhang, Zhoutong and Zhang, Chengkai and Xue, Tianfan and Tenenbaum, Joshua B. and Freeman, William T.},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{Pix3D: Dataset and Methods for Single-Image 3D Shape Modeling}},
+	year = {2018}
 }
 
-@article{McCormac:etal:ICCV2017,
-	author = {John McCormac and
-			  Ankur Handa and
-		          Stefan Leutenegger and
-		          Andrew J.Davison},
-	title = {SceneNet RGB-D: Can 5M Synthetic Images Beat Generic ImageNet Pre-training on Indoor Segmentation?},
-	booktitle = {ICCV},
+@inproceedings{McCormac2017,
+	abstract = {We introduce SceneNet RGB-D, a dataset providing pixel-perfect ground truth for scene understanding problems such as semantic segmentation, instance segmentation, and object detection. It also provides perfect camera poses and depth data, allowing investigation into geometric computer vision problems such as optical flow, camera pose estimation, and 3D scene labelling tasks. Random sampling permits virtually unlimited scene configurations, and here we provide 5M rendered RGB-D images from 16K randomly generated 3D trajectories in synthetic layouts, with random but physically simulated object configurations. We compare the semantic segmentation performance of network weights produced from pretraining on RGB images from our dataset against generic VGG-16 ImageNet weights. After fine-tuning on the SUN RGB-D and NYUv2 real-world datasets we find in both cases that the synthetically pre-trained network outperforms the VGG-16 weights. When synthetic pre-training includes a depth channel (something ImageNet cannot natively provide) the performance is greater still. This suggests that large-scale high-quality synthetic RGB datasets with task-specific labels can be more useful for pretraining than real-world generic pre-training such as ImageNet. We host the dataset at http://robotvault. bitbucket.io/scenenet-rgbd.html.},
+	author = {McCormac, John and Handa, Ankur and Leutenegger, Stefan and Davison, Andrew J.},
+	booktitle = {Proceedings of the IEEE International Conference on Computer Vision},
+	title = {{SceneNet RGB-D: Can 5M Synthetic Images Beat Generic ImageNet Pre-training on Indoor Segmentation?}},
 	year = {2017}
 }
 
-
-@article{Lim2013ParsingIO,
-	title={Parsing IKEA Objects: Fine Pose Estimation},
-	author={Joseph J. Lim and H. Pirsiavash and A. Torralba},
-	journal={2013 IEEE International Conference on Computer Vision},
-	year={2013},
+@inproceedings{Lim2013,
+	abstract = {We address the problem of localizing and estimating the fine-pose of objects in the image with exact 3D models. Our main focus is to unify contributions from the 1970s with recent advances in object detection: use local keypoint detectors to find candidate poses and score global alignment of each candidate pose to the image. Moreover, we also provide a new dataset containing fine-aligned objects with their exactly matched 3D models, and a set of models for widely used objects. We also evaluate our algorithm both on object detection and fine pose estimation, and show that our method outperforms state-of-the art algorithms. {\textcopyright} 2013 IEEE.},
+	author = {Lim, Joseph J. and Pirsiavash, Hamed and Torralba, Antonio},
+	booktitle = {Proceedings of the IEEE International Conference on Computer Vision},
+	title = {{Parsing IKEA objects: Fine pose estimation}},
+	year = {2013},
 	pages={2992-2999}
 }
 
-@misc{chang2017matterport3d,
-	title={Matterport3D: Learning from RGB-D Data in Indoor Environments},
-	author={Angel Chang and Angela Dai and Thomas Funkhouser and Maciej Halber and Matthias Nießner and Manolis Savva and Shuran Song and Andy Zeng and Yinda Zhang},
-	year={2017},
-	eprint={1709.06158},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Chang2018,
+	abstract = {Access to large, diverse RGB-D datasets is critical for training RGB-D scene understanding algorithms. However, existing datasets still cover only a limited number of views or a restricted scale of spaces. In this paper, we introduce Matterport3D, a large-scale RGB-D dataset containing 10,800 panoramic views from 194,400 RGB-D images of 90 building-scale scenes. Annotations are provided with surface reconstructions, camera poses, and 2D and 3D semantic segmentations. The precise global alignment and comprehensive, diverse panoramic set of views over entire buildings enable a variety of supervised and self-supervised computer vision tasks, including keypoint matching, view overlap prediction, normal prediction from color, semantic segmentation, and region classification.},
+	author = {Chang, Angel and Dai, Angela and Funkhouser, Thomas and Halber, Maciej and Niebner, Matthias and Savva, Manolis and Song, Shuran and Zeng, Andy and Zhang, Yinda},
+	booktitle = {Proceedings - 2017 International Conference on 3D Vision, 3DV 2017},
+	title = {{Matterport3D: Learning from RGB-D data in indoor environments}},
+	year = {2018}
 }
 
 @article{Deng2009ImageNetAL,
@@ -121,59 +99,63 @@
 	pages={248-255}
 }
 
-@misc{dai2017scannet,
-	title={ScanNet: Richly-annotated 3D Reconstructions of Indoor Scenes},
-	author={Angela Dai and Angel X. Chang and Manolis Savva and Maciej Halber and Thomas Funkhouser and Matthias Nießner},
-	year={2017},
-	eprint={1702.04405},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Dai2017,
+	abstract = {A key requirement for leveraging supervised deep learning methods is the availability of large, labeled datasets. Unfortunately, in the context of RGB-D scene understanding, very little data is available - current datasets cover a small range of scene views and have limited semantic annotations. To address this issue, we introduce ScanNet, an RGB-D video dataset containing 2.5M views in 1513 scenes annotated with 3D camera poses, surface reconstructions, and semantic segmentations. To collect this data, we designed an easy-to-use and scalable RGB-D capture system that includes automated surface reconstruction and crowd-sourced semantic annotation. We show that using this data helps achieve state-of-the-art performance on several 3D scene understanding tasks, including 3D object classification, semantic voxel labeling, and CAD model retrieval.},
+	author = {Dai, Angela and Chang, Angel X. and Savva, Manolis and Halber, Maciej and Funkhouser, Thomas and Nie{\ss}ner, Matthias},
+	booktitle = {Proceedings - 30th IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2017},
+	title = {{ScanNet: Richly-annotated 3D reconstructions of indoor scenes}},
+	year = {2017}
 }
 
-@inproceedings{Silberman2012IndoorSA,
-	title={Indoor Segmentation and Support Inference from RGBD Images},
-	author={N. Silberman and Derek Hoiem and P. Kohli and R. Fergus},
-	booktitle={ECCV},
-	year={2012}
+@inproceedings{Silberman2012,
+	abstract = {We present an approach to interpret the major surfaces, objects, and support relations of an indoor scene from an RGBD image. Most existing work ignores physical interactions or is applied only to tidy rooms and hallways. Our goal is to parse typical, often messy, indoor scenes into floor, walls, supporting surfaces, and object regions, and to recover support relationships. One of our main interests is to better understand how 3D cues can best inform a structured 3D interpretation. We also contribute a novel integer programming formulation to infer physical support relations. We offer a new dataset of 1449 RGBD images, capturing 464 diverse indoor scenes, with detailed annotations. Our experiments demonstrate our ability to infer support relations in complex scenes and verify that our 3D scene cues and inferred support lead to better object segmentation. {\textcopyright} 2012 Springer-Verlag.},
+	author = {Silberman, Nathan and Hoiem, Derek and Kohli, Pushmeet and Fergus, Rob},
+	booktitle = {Computer Vision -- ECCV 2012},
+	title = {{Indoor Segmentation and Support Inference from RGBD Images}},
+	year={2012},
+	publisher={Springer Berlin Heidelberg},
+	pages={746--760}
 }
 
 @article{Xiao2013SUN3DAD,
 	title={SUN3D: A Database of Big Spaces Reconstructed Using SfM and Object Labels},
-	author={J. Xiao and Andrew Owens and A. Torralba},
+	author = {Xiao, Jianxiong and Owens, Andrew and Torralba, Antonio},
 	journal={2013 IEEE International Conference on Computer Vision},
 	year={2013},
 	pages={1625-1632}
 }
 
-@article{Hua2016SceneNNAS,
+@inproceedings{Hua2016SceneNNAS,
 	title={SceneNN: A Scene Meshes Dataset with aNNotations},
-	author={Binh-Son Hua and Quang-Hieu Pham and D. Nguyen and Minh-Khoi Tran and Lap-Fai Yu and S. Yeung},
-	journal={2016 Fourth International Conference on 3D Vision (3DV)},
+	author = {Hua, Binh Son and Pham, Quang Hieu and Nguyen, Duc Thanh and Tran, Minh Khoi and Yu, Lap Fai and Yeung, Sai Kit},
+	booktitle={Proceedings - 2016 4th International Conference on 3D Vision, 3DV 2016},
 	year={2016},
 	pages={92-101}
 }
 
-@article{Armeni20163DSP,
+
+@inproceedings{Armeni20163DSP,
 	title={3D Semantic Parsing of Large-Scale Indoor Spaces},
 	author={Iro Armeni and Ozan Sener and A. Zamir and Helen Jiang and I. Brilakis and Martin Fischer and S. Savarese},
-	journal={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
 	year={2016},
 	pages={1534-1543}
 }
 
-@article{Handa2016UnderstandingRI,
+
+@inproceedings{Handa2016UnderstandingRI,
 	title={Understanding RealWorld Indoor Scenes with Synthetic Data},
 	author={A. Handa and Viorica Patraucean and Vijay Badrinarayanan and Simon Stent and R. Cipolla},
-	journal={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
 	year={2016},
 	pages={4077-4085}
 }
 
-@inproceedings { InteriorNet18,
+@inproceedings {InteriorNet18,
 	author = { Wenbin Li and Sajad Saeedi and John McCormac and Ronald Clark and
 	Dimos Tzoumanikas and Qing Ye and Yuzhong Huang and Rui Tang and
 	Stefan Leutenegger },
-	booktitle = { British Machine Vision Conference (BMVC) },
+	booktitle = {British Machine Vision Conference 2018, BMVC 2018},
 	title = { InteriorNet: Mega-scale Multi-sensor Photo-realistic Indoor Scenes Dataset },
 	year = { 2018 }
 }
@@ -185,6 +167,13 @@
 	eprint={1908.00222},
 	archivePrefix={arXiv},
 	primaryClass={cs.CV}
+}
+
+@inproceedings{Structured3D,
+	title     = {Structured3D: A Large Photo-realistic Dataset for Structured 3D Modeling},
+	author    = {Jia Zheng and Junfei Zhang and Jing Li and Rui Tang and Shenghua Gao and Zihan Zhou},
+	booktitle = {Proceedings of The European Conference on Computer Vision (ECCV)},
+	year      = {2020}
 }
 
 @misc{Evermotion,
@@ -199,61 +188,68 @@
 	note = {Accessed: 2021-08-16}
 }
 
-@misc{kolve2019ai2thor,
-	title={AI2-THOR: An Interactive 3D Environment for Visual AI},
-	author={Eric Kolve and Roozbeh Mottaghi and Winson Han and Eli VanderBilt and Luca Weihs and Alvaro Herrasti and Daniel Gordon and Yuke Zhu and Abhinav Gupta and Ali Farhadi},
-	year={2019},
-	eprint={1712.05474},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@article{ai2thor,
+	author={Eric Kolve and Roozbeh Mottaghi and Winson Han and
+          Eli VanderBilt and Luca Weihs and Alvaro Herrasti and
+          Daniel Gordon and Yuke Zhu and Abhinav Gupta and
+          Ali Farhadi},
+	title={{AI2-THOR: An Interactive 3D Environment for Visual AI}},
+	journal={arXiv},
+	year={2017}
 }
 
-@article{Deitke2020RoboTHORAO,
-	title={RoboTHOR: An Open Simulation-to-Real Embodied AI Platform},
-	author={Matt Deitke and Winson Han and Alvaro Herrasti and Aniruddha Kembhavi and Eric Kolve and R. Mottaghi and Jordi Salvador and Dustin Schwenk and Eli VanderBilt and Matthew Wallingford and Luca Weihs and Mark Yatskar and Ali Farhadi},
-	journal={2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+@inproceedings{robothor,
+	author={Matt Deitke and Winson Han and Alvaro Herrasti and
+          Aniruddha Kembhavi and Eric Kolve and Roozbeh Mottaghi and
+          Jordi Salvador and Dustin Schwenk and Eli VanderBilt and
+          Matthew Wallingford and Luca Weihs and Mark Yatskar and
+          Ali Farhadi},
+	title={{RoboTHOR: An Open Simulation-to-Real Embodied AI Platform}},
+	booktitle={CVPR},
 	year={2020},
 	pages={3161-3171}
 }
 
-@misc{savva2019habitat,
-	title={Habitat: A Platform for Embodied AI Research},
-	author={Manolis Savva and Abhishek Kadian and Oleksandr Maksymets and Yili Zhao and Erik Wijmans and Bhavana Jain and Julian Straub and Jia Liu and Vladlen Koltun and Jitendra Malik and Devi Parikh and Dhruv Batra},
-	year={2019},
-	eprint={1904.01201},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Savva2019,
+	abstract = {We present Habitat, a platform for research in embodied artificial intelligence (AI). Habitat enables training embodied agents (virtual robots) in highly efficient photorealistic 3D simulation. Specifically, Habitat consists of: (i) Habitat-Sim: A flexible, high-performance 3D simulator with configurable agents, sensors, and generic 3D dataset handling. Habitat-Sim is fast - when rendering a scene from Matterport3D, it achieves several thousand frames per second (fps) running single-threaded, and can reach over 10,000 fps multi-process on a single GPU. (ii) Habitat-API: A modular high-level library for end-to-end development of embodied AI algorithms - defining tasks (e.g., navigation, instruction following, question answering), configuring, training, and benchmarking embodied agents. These large-scale engineering contributions enable us to answer scientific questions requiring experiments that were till now impracticable or 'merely' impractical. Specifically, in the context of point-goal navigation: (1) we revisit the comparison between learning and SLAM approaches from two recent works and find evidence for the opposite conclusion - that learning outperforms SLAM if scaled to an order of magnitude more experience than previous investigations, and (2) we conduct the first cross-dataset generalization experiments {\{}train, test{\}} x {\{}Matterport3D, Gibson{\}} for multiple sensors {\{}blind, RGB, RGBD, D{\}} and find that only agents with depth (D) sensors generalize across datasets. We hope that our open-source platform and these findings will advance research in embodied AI.},
+	author = {Savva, Manolis and Kadian, Abhishek and Maksymets, Oleksandr and Zhao, Yili and Wijmans, Erik and Jain, Bhavana and Straub, Julian and Liu, Jia and Koltun, Vladlen and Malik, Jitendra and Parikh, Devi and Batra, Dhruv},
+	booktitle = {Proceedings of the IEEE International Conference on Computer Vision},
+	title = {{Habitat: A platform for embodied AI research}},
+	year = {2019}
 }
+
 
 ///////////////////////dataset end
 
 ///////////////////////dataset creation start
 
-@article{denninger2019blenderproc,
-	title={BlenderProc},
-	author={Denninger, Maximilian and Sundermeyer, Martin and Winkelbauer, Dominik and Zidan, Youssef and Olefir, Dmitry and Elbadrawy, Mohamad and Lodhi, Ahsan and Katam, Harinandan},
-	journal={arXiv preprint arXiv:1911.01911},
-	year={2019}
+@inproceedings{dlr139317,
+	journal = {International Conference on Robotics: Sciene and Systems, RSS 2020},
+	year = {2020},
+	booktitle = {Robotics: Science and Systems (RSS)},
+	title = {BlenderProc: Reducing the Reality Gap with Photorealistic Rendering},
+	author = {Maximilian Denninger and Martin Sundermeyer and Dominik Winkelbauer and Dmitry Olefir and Tomas Hodan and Youssef Zidan and Mohamad Elbadrawy and Markus Knauer and Harinandan Katam and Ahsan Lodhi},
+	month = {July},
+	abstract = {BlenderProc is an open-source and modular pipeline for rendering photorealistic images of procedurally generated 3D scenes which can be used for training data-hungry deep learning models. The presented results on the tasks of instance segmentation and surface normal estimation suggest that our photorealistic training images reduce the gap between the synthetic training and real test domains, compared to less realistic training images combined with domain randomization. BlenderProc can be used to train models for various computer vision tasks such as semantic segmentation or estimation of depth, optical flow, and object pose. By offering standard modules for parameterizing and sampling materials, objects, cameras and lights, BlenderProc can simulate various real-world scenarios and provide means to systematically investigate the essential factors for sim2real transfer.},
 }
 
 @misc{synthdet2020,
 	title={Training a performant object detection {ML} model on synthetic data using {U}nity {P}erception tools},
 	author={You-Cyuan Jhang and Adam Palmar and Bowen Li and Saurav Dhakad and Sanjay Kumar Vishwakarma and Jonathan Hogins and Adam Crespi and Chris Kerr and Sharmila Chockalingam and Cesar Romero and Alex Thaman and Sujoy Ganguly},
-	howpublished = {\url{https://blogs.unity3d.com/2020/09/17/training-a-performant-object-detection-ml-model-on-synthetic-data-using-unity-computer-vision-tools/}},
 	journal={Unity Technologies Blog},
 	publisher={Unity Technologies},
 	year={2020},
 	month={Sep}
 }
 
-@misc{xia2018gibson,
-	title={Gibson Env: Real-World Perception for Embodied Agents},
-	author={Fei Xia and Amir Zamir and Zhi-Yang He and Alexander Sax and Jitendra Malik and Silvio Savarese},
-	year={2018},
-	eprint={1808.10654},
-	archivePrefix={arXiv},
-	primaryClass={cs.AI}
+@inproceedings{Xia2018,
+	abstract = {Developing visual perception models for active agents and sensorimotor control in the physical world are cumbersome as existing algorithms are too slow to efficiently learn in real-time and robots are fragile and costly. This has given rise to learning-in-simulation which consequently casts a question on whether the results transfer to real-world. In this paper, we investigate developing real-world perception for active agents, propose Gibson Environment for this purpose, and showcase a set of perceptual tasks learned therein. Gibson is based upon virtualizing real spaces, rather than artificially designed ones, and currently includes over 1400 floor spaces from 572 full buildings. The main characteristics of Gibson are: I. being from the real-world and reflecting its semantic complexity, II. having an internal synthesis mechanism 'Goggles' enabling deploying the trained models in real-world without needing domain adaptation, III. embodiment of agents and making them subject to constraints of physics and space.},
+	author = {Xia, Fei and Zamir, Amir R. and He, Zhiyang and Sax, Alexander and Malik, Jitendra and Savarese, Silvio},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{Gibson Env: Real-World Perception for Embodied Agents}},
+	year = {2018}
 }
+
 
 @article{Straub2019TheRD,
 	title={The Replica Dataset: A Digital Replica of Indoor Spaces},
@@ -270,29 +266,29 @@
 	Year = 2018
 }
 
-@misc{tremblay2018falling,
-	title={Falling Things: A Synthetic Dataset for 3D Object Detection and Pose Estimation},
-	author={Jonathan Tremblay and Thang To and Stan Birchfield},
-	year={2018},
-	eprint={1804.06534},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Tremblay2018,
+	abstract = {We present a new dataset, called Falling Things (FAT), for advancing the state-of-the-art in object detection and 3D pose estimation in the context of robotics.1 By synthetically combining object models and backgrounds of complex composition and high graphical quality, we are able to generate photorealistic images with accurate 3D pose annotations for all objects in all images. Our dataset contains 60k annotated photos of 21 household objects taken from the YCB dataset [2]. For each image, we provide the 3D poses, per-pixel class segmentation, and 2D/3D bounding box coordinates for all objects. To facilitate testing different input modalities, we provide mono and stereo RGB images, along with registered dense depth images. We describe in detail the generation process and statistical analysis of the data.},
+	author = {Tremblay, Jonathan and To, Thang and Birchfield, Stan},
+	booktitle = {IEEE Computer Society Conference on Computer Vision and Pattern Recognition Workshops},
+	title = {{Falling things: A synthetic dataset for 3D object detection and pose estimation}},
+	year = {2018}
 }
 
-@article{qiu2017unrealcv,
-	Author = {Weichao Qiu},
-	Journal = {ACM Multimedia Open Source Software Competition},
-	Title = {UnrealCV: Virtual Worlds for Computer Vision},
-	Year = {2017}
+@inproceedings{Qiu2017,
+	abstract = {UnrealCV1 is a project to help computer vision researchers build virtual worlds using Unreal Engine 4 (UE4). It extends UE4 with a plugin by providing (1) A set of UnrealCV commands to interact with the virtual world. (2) Communication between UE4 and an external program, such as Caffe. UnrealCV can be used in two ways. The first one is using a compiled game binary with UnrealCV embedded. This is as simple as running a game, no knowledge of Unreal Engine is required. The second is installing UnrealCV plugin to Unreal Engine 4 (UE4) and use the editor of UE4 to build a new virtual world. UnrealCV is an open-source software under the MIT license. Since the initial release in September 2016, it has gathered an active community of users, including students and researchers.},
+	author = {Qiu, Weichao and Zhong, Fangwei and Zhang, Yi and Qiao, Siyuan and Xiao, Zihao and Kim, Tae Soo and Wang, Yizhou and Yuille, Alan},
+	booktitle = {MM 2017 - Proceedings of the 2017 ACM Multimedia Conference},
+	title = {{UnrealCV: Virtual worlds for computer vision}},
+	year = {2017}
 }
+
 
 @Manual{blender,
-title = {Blender - a 3D modelling and rendering package},
-author = {Blender Online Community},
-organization = {Blender Foundation},
-address = {Stichting Blender Foundation, Amsterdam},
-year = {2018},
-url = {http://www.blender.org},
+	abstract = {(2018). Blender - a 3D modelling and rendering package. Stichting Blender Foundation, Amsterdam. Retrieved from http://www.blender.org},
+	author = {{Blender Online Community}},
+	booktitle = {Blender Foundation},
+	title = {{Blender - a 3D modelling and rendering package.}},
+	year = {2018}
 }
 
 @misc{martinezgonzalez2021unrealrox,
@@ -310,29 +306,27 @@ url = {http://www.blender.org},
 @inproceedings{deng2019accurate,
 	title={Accurate 3D Face Reconstruction with Weakly-Supervised Learning: From Single Image to Image Set},
 	author={Yu Deng and Jiaolong Yang and Sicheng Xu and Dong Chen and Yunde Jia and Xin Tong},
-	booktitle={IEEE Computer Vision and Pattern Recognition Workshops},
+	booktitle = {IEEE Computer Society Conference on Computer Vision and Pattern Recognition Workshops},
 	year={2019}
 }
 
-
-@ARTICLE{9210569,
-	author={Afzal, H. M. Rehan and Luo, Suhuai and Afzal, M. Kamran and Chaudhary, Gopal and Khari, Manju and Kumar, Sathish A. P.},
-	journal={IEEE Access},
-	key = {value},title={3D Face Reconstruction From Single 2D Image Using Distinctive Features},
-	key = {value},year={2020},
-	key = {value},volume={8},
-	key = {value},number={},
-	key = {value},pages={180681-180689},
-	key = {value},doi={10.1109/ACCESS.2020.3028106}}
-
-@misc{richardson20163d,
-	title={3D Face Reconstruction by Learning from Synthetic Data},
-	author={Elad Richardson and Matan Sela and Ron Kimmel},
-	year={2016},
-	eprint={1609.04387},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@article{Afzal2020,
+	abstract = {3D face reconstruction is considered to be a useful computer vision tool, though it is difficult to build. This paper proposes a 3D face reconstruction method, which is easy to implement and computationally efficient. It takes a single 2D image as input, and gives 3D reconstructed images as output. Our method primarily consists of three main steps: feature extraction, depth calculation, and creation of a 3D image from the processed image using a Basel face model (BFM). First, the features of a single 2D image are extracted using a two-step process. Before distinctive-features extraction, a face must be detected to confirm whether one is present in the input image or not. For this purpose, facial features like eyes, nose, and mouth are extracted. Then, distinctive features are mined by using scale-invariant feature transform (SIFT), which will be used for 3D face reconstruction at a later stage. Second step comprises of depth calculation, to assign the image a third dimension. Multivariate Gaussian distribution helps to find the third dimension, which is further tuned using shading cues that are obtained by the shape from shading (SFS) technique. Thirdly, the data obtained from the above two steps will be used to create a 3D image using BFM. The proposed method does not rely on multiple images, lightening the computation burden. Experiments were carried out on different 2D images to validate the proposed method and compared its performance to those of the latest approaches. Experiment results demonstrate that the proposed method is time efficient and robust in nature, and it outperformed all of the tested methods in terms of detail recovery and accuracy.},
+	author = {Afzal, H. M.Rehan and Luo, Suhuai and Afzal, M. Kamran and Chaudhary, Gopal and Khari, Manju and Kumar, Sathish A.P.},
+	journal = {IEEE Access},
+	keywords = {3D face reconstruction,facial modeling,feature extraction,gaussian distribution},
+	title = {{3D Face Reconstruction from Single 2D Image Using Distinctive Features}},
+	year = {2020}
 }
+
+@inproceedings{Richardson2016,
+	abstract = {Fast and robust three-dimensional reconstruction of facial geometric structure from a single image is a challenging task with numerous applications. Here, we introduce a learning-based approach for reconstructing a three-dimensional face from a single image. Recent face recovery methods rely on accurate localization of key characteristic points. In contrast, the proposed approach is based on a Convolutional-Neural-Network (CNN) which extracts the face geometry directly from its image. Although such deep architectures outperform other models in complex computer vision problems, training them properly requires a large dataset of annotated examples. In the case of three-dimensional faces, currently, there are no large volume data sets, while acquiring such big-data is a tedious task. As an alternative, we propose to generate random, yet nearly photo-realistic, facial images for which the geometric form is known. The suggested model successfully recovers facial shapes from real images, even for faces with extreme expressions and under various lighting conditions.},
+	author = {Richardson, Elad and Sela, Matan and Kimmel, Ron},
+	booktitle = {Proceedings - 2016 4th International Conference on 3D Vision, 3DV 2016},
+	title = {{3D face reconstruction by learning from synthetic data}},
+	year = {2016}
+}
+
 @article{Richardson2017LearningDF,
 	title={Learning Detailed Face Reconstruction from a Single Image},
 	author={Elad Richardson and Matan Sela and Roy Or-El and R. Kimmel},
@@ -341,10 +335,14 @@ url = {http://www.blender.org},
 	pages={5553-5562}
 }
 
-@inproceedings{Guo20173DFaceNetRD,
-	title={3DFaceNet: Real-time Dense Face Reconstruction via Synthesizing Photo-realistic Face Images},
-	author={Y. Guo and Juyong Zhang and Jianfei Cai and Boyi Jiang and Jianmin Zheng},
-	year={2017}
+@article{Guo20193DFace,
+	author = {Yudong Guo and Juyong Zhang and Jianfei Cai and Boyi Jiang and Jianmin Zheng},
+	title = {CNN-based Real-time Dense Face Reconstruction with Inverse-rendered Photo-realistic Face Images},
+	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	volume = {41},
+	number = {6},
+	pages = {1294-1307},
+	year = {2019}
 }
 ///////////////////////Face reconstuction end
 
@@ -354,9 +352,11 @@ url = {http://www.blender.org},
 
 @inproceedings{Denninger20203DSR,
 	title={3D Scene Reconstruction from a Single Viewport},
-	author={Maximilian Denninger and Rudolph Triebel},
-	booktitle={ECCV},
-	year={2020}
+	author={Denninger, Maximilian and Triebel, Rudolph},
+	booktitle={Computer Vision -- ECCV 2020},
+	publisher={Springer International Publishing},
+	year={2020},
+	pages = {51--67},
 }
 
 @article{Song2017SemanticSC,
@@ -367,9 +367,13 @@ url = {http://www.blender.org},
 	pages={190-198}
 }
 
-@inproceedings{LiSilhouetteAssisted3O,
-	title={Silhouette-Assisted 3D Object Instance Reconstruction from a Cluttered Scene},
-	author={Lin Li}
+@inproceedings{Li2019,
+	abstract = {The objective of our work is to reconstruct 3D object instances from a single RGB image of a cluttered scene. 3D object instance reconstruction is an ill-posed problem due to the presence of heavily occluded and truncated objects, and self-occlusions that lead to substantial regions of unseen areas. Previous works for 3D reconstruction take clues from object silhouettes to carve reconstructed outputs. In this paper, we explore two ways to include silhouette learnable in the network for 3D instance reconstruction from a single cluttered scene image. To this end, in the first approach, we automatically generate instance-specific silhouettes that are compactly encoded within our network design and used to improve the reconstructed 3D shapes; in the second approach, we find an efficient design to regularize object reconstruction explicitly. Experimental results on the SUNCG dataset show that our methods have better performance than the state-of-the-art.},
+	author = {Li, Lin and Khan, Salman and Barnes, Nick},
+	booktitle = {Proceedings - 2019 International Conference on Computer Vision Workshop, ICCVW 2019},
+	keywords = {3D reconstruction from single image,Explicit silhouette,Implicit silhouette,Perspective projection},
+	title = {{Silhouette-assisted 3D object instance reconstruction from a cluttered scene}},
+	year = {2019}
 }
 
 @article{Shin20193DSR,
@@ -380,90 +384,75 @@ url = {http://www.blender.org},
 	pages={2172-2182}
 }
 
-@article{DBLP:journals/corr/TulsianiZEM17,
-	author    = {Shubham Tulsiani and
-               Tinghui Zhou and
-               Alexei A. Efros and
-               Jitendra Malik},
-	title     = {Multi-view Supervision for Single-view Reconstruction via Differentiable
-               Ray Consistency},
-	journal   = {CoRR},
-	volume    = {abs/1704.06254},
-	year      = {2017},
-	url       = {http://arxiv.org/abs/1704.06254},
-	eprinttype = {arXiv},
-	eprint    = {1704.06254},
-	timestamp = {Mon, 13 Aug 2018 16:47:44 +0200},
-	biburl    = {https://dblp.org/rec/journals/corr/TulsianiZEM17.bib},
-	bibsource = {dblp computer science bibliography, https://dblp.org}
+@inproceedings{Tulsiani2017,
+	abstract = {We study the notion of consistency between a 3D shape and a 2D observation and propose a differentiable formulation which allows computing gradients of the 3D shape given an observation from an arbitrary view. We do so by reformulating view consistency using a differentiable ray consistency (DRC) term. We show that this formulation can be incorporated in a learning framework to leverage different types of multi-view observations e.g. foreground masks, depth, color images, semantics etc. as supervision for learning single-view 3D prediction. We present empirical analysis of our technique in a controlled setting. We also show that this approach allows us to improve over existing techniques for single-view reconstruction of objects from the PASCAL VOC dataset.},
+	author = {Tulsiani, Shubham and Zhou, Tinghui and Efros, Alexei A. and Malik, Jitendra},
+	booktitle = {Proceedings - 30th IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2017},
+	title = {{Multi-view supervision for single-view reconstruction via differentiable ray consistency}},
+	year = {2017}
 }
 
-@misc{tatarchenko2016multiview,
+@InProceedings{tatarchenko2016multiview,
 	title={Multi-view 3D Models from Single Images with a Convolutional Network},
 	author={Maxim Tatarchenko and Alexey Dosovitskiy and Thomas Brox},
 	year={2016},
-	eprint={1511.06702},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	booktitle = {European Conference on Computer Vision (ECCV)},
 }
 
-@misc{richter2018matryoshka,
-	title={Matryoshka Networks: Predicting 3D Geometry via Nested Shape Layers},
-	author={Stephan R. Richter and Stefan Roth},
-	year={2018},
-	eprint={1804.10975},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Roth2018,
+	abstract = {In this paper, we develop novel, efficient 2D encodings for 3D geometry, which enable reconstructing full 3D shapes from a single image at high resolution. The key idea is to pose 3D shape reconstruction as a 2D prediction problem. To that end, we first develop a simple baseline network that predicts entire voxel tubes at each pixel of a reference view. By leveraging well-proven architectures for 2D pixel-prediction tasks, we attain state-of-the-art results, clearly outperforming purely voxel-based approaches. We scale this baseline to higher resolutions by proposing a memory-efficient shape encoding, which recursively decomposes a 3D shape into nested shape layers, similar to the pieces of a Matryoshka doll. This allows reconstructing highly detailed shapes with complex topology, as demonstrated in extensive experiments; we clearly outperform previous octree-based approaches despite having a much simpler architecture using standard network components. Our Matryoshka networks further enable reconstructing shapes from IDs or shape similarity, as well as shape sampling.},
+	author = {Roth, Stefan and Richter, Stephan R.},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{Matryoshka Networks: Predicting 3D Geometry via Nested Shape Layers}},
+	year = {2018},
+	pages={1936-1944}
 }
 
-@misc{gwak2017weakly,
-	title={Weakly supervised 3D Reconstruction with Adversarial Constraint},
-	author={JunYoung Gwak and Christopher B. Choy and Animesh Garg and Manmohan Chandraker and Silvio Savarese},
-	year={2017},
-	eprint={1705.10904},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Gwak2018,
+	abstract = {Supervised 3D reconstruction has witnessed a significant progress through the use of deep neural networks. However, this increase in performance requires large scale annotations of 2D/3D data. In this paper, we explore inexpensive 2D supervision as an alternative for expensive 3D CAD annotation. Specifically, we use foreground masks as weak supervision through a raytrace pooling layer that enables perspective projection and backpropagation. Additionally, since the 3D reconstruction from masks is an ill posed problem, we propose to constrain the 3D reconstruction to the manifold of unlabeled realistic 3D shapes that match mask observations. We demonstrate that learning a log-barrier solution to this constrained optimization problem resembles the GAN objective, enabling the use of existing tools for training GANs. We evaluate and analyze the manifold constrained reconstruction on various datasets for single and multi-view reconstruction of both synthetic and real images.},
+	author = {Gwak, Junyoung and Choy, Christopher B. and Chandraker, Manmohan and Garg, Animesh and Savarese, Silvio},
+	booktitle = {Proceedings - 2017 International Conference on 3D Vision, 3DV 2017},
+	title = {{Weakly supervised 3d reconstruction with adversarial constraint}},
+	year = {2018}
 }
 
-@INPROCEEDINGS{8265323,
-	author={Johnston, Adrian and Garg, Ravi and Carneiro, Gustavo and Reid, Ian and van den Hengel, Anton},
-	booktitle={2017 IEEE International Conference on Computer Vision Workshops (ICCVW)},
-	title={Scaling CNNs for High Resolution Volumetric Reconstruction from a Single Image},
-	year={2017},
-	volume={},
-	number={},
-	pages={930-939},
-	doi={10.1109/ICCVW.2017.114}}
-
-@misc{tatarchenko2019singleview,
-	title={What Do Single-view 3D Reconstruction Networks Learn?},
-	author={Maxim Tatarchenko and Stephan R. Richter and René Ranftl and Zhuwen Li and Vladlen Koltun and Thomas Brox},
-	year={2019},
-	eprint={1905.03678},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Johnston2017,
+	abstract = {One of the long-standing tasks in computer vision is to use a single 2-D view of an object in order to produce its 3-D shape. Recovering the lost dimension in this process has been the goal of classic shape-from-X methods, but often the assumptions made in those works are quite limiting to be useful for general 3-D objects. This problem has been recently addressed with deep learning methods containing a 2-D (convolution) encoder followed by a 3-D (deconvolution) decoder. These methods have been reasonably successful, but memory and run time constraints impose a strong limitation in terms of the resolution of the reconstructed 3-D shapes. In particular, state-of-the-art methods are able to reconstruct 3-D shapes represented by volumes of at most 323 voxels using state-of-the-art desktop computers. In this work, we present a scalable 2-D single view to 3-D volume reconstruction deep learning method, where the 3-D (deconvolution) decoder is replaced by a simple inverse discrete cosine transform (IDCT) decoder. Our simpler architecture has an order of magnitude faster inference when reconstructing 3-D volumes compared to the convolution-deconvolutional model, an exponentially smaller memory complexity while training and testing, and a sub-linear run-time training complexity with respect to the output volume size. We show on benchmark datasets that our method can produce high-resolution reconstructions with state of the art accuracy.},
+	author = {Johnston, Adrian and Garg, Ravi and Carneiro, Gustavo and Reid, Ian and {Van Den Hengel}, Anton},
+	booktitle = {Proceedings - 2017 IEEE International Conference on Computer Vision Workshops, ICCVW 2017},
+	title = {{Scaling CNNs for High Resolution Volumetric Reconstruction from a Single Image}},
+	year = {2017}
 }
+
+@inproceedings{Tatarchenko2019,
+	abstract = {Convolutional networks for single-view object reconstruction have shown impressive performance and have become a popular subject of research. All existing techniques are united by the idea of having an encoder-decoder network that performs non-trivial reasoning about the 3D structure of the output space. In this work, we set up two alternative approaches that perform image classification and retrieval respectively. These simple baselines yield better results than state-of-the-art methods, both qualitatively and quantitatively. We show that encoder-decoder methods are statistically indistinguishable from these baselines, thus indicating that the current state of the art in single-view object reconstruction does not actually perform reconstruction but image classification. We identify aspects of popular experimental procedures that elicit this behavior and discuss ways to improve the current state of research.},
+	author = {Tatarchenko, Maxim and Richter, Stephan R. and Ranftl, Rene and Li, Zhuwen and Koltun, Vladlen and Brox, Thomas},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{What do single-view 3D reconstruction networks learn?}},
+	year = {2019}
+}
+
 ///////////////////////3d scene reconstruction  end
 
 
 ///////////////////////2d pose estimation start
-@misc{cao2017realtime,
-	title={Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields},
-	author={Zhe Cao and Tomas Simon and Shih-En Wei and Yaser Sheikh},
-	year={2017},
-	eprint={1611.08050},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+
+@inproceedings{Cao2017,
+	abstract = {We present an approach to efficiently detect the 2D pose of multiple people in an image. The approach uses a non-parametric representation, which we refer to as Part Affinity Fields (PAFs), to learn to associate body parts with individuals in the image. The architecture encodes global context, allowing a greedy bottom-up parsing step that maintains high accuracy while achieving realtime performance, irrespective of the number of people in the image. The architecture is designed to jointly learn part locations and their association via two branches of the same sequential prediction process. Our method placed first in the inaugural COCO 2016 keypoints challenge, and significantly exceeds the previous state-of-the-art result on the MPII MultiPerson benchmark, both in performance and efficiency.},
+	author = {Cao, Zhe and Simon, Tomas and Wei, Shih En and Sheikh, Yaser},
+	booktitle = {Proceedings - 30th IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2017},
+	title = {{Realtime multi-person 2D pose estimation using part affinity fields}},
+	year = {2017}
 }
 
-@misc{he2018mask,
-	title={Mask R-CNN},
-	author={Kaiming He and Georgia Gkioxari and Piotr Dollár and Ross Girshick},
-	year={2018},
-	eprint={1703.06870},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@article{He2020,
+	abstract = {We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without bells and whistles, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code has been made available at: https://github.com/facebookresearch/Detectron.},
+	author = {He, Kaiming and Gkioxari, Georgia and Doll{\'{a}}r, Piotr and Girshick, Ross},
+	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	title = {{Mask R-CNN}},
+	year = {2020}
 }
+
 
 @article{Toshev_2014,
 	title={DeepPose: Human Pose Estimation via Deep Neural Networks},
@@ -488,11 +477,12 @@ url = {http://www.blender.org},
 	pages={4455-4465}
 }
 
-@inproceedings{Kar2017LearningAM,
-	title={Learning a Multi-View Stereo Machine},
-	author={Abhishek Kar and Christian H{\"a}ne and Jitendra Malik},
-	booktitle={NIPS},
-	year={2017}
+@inproceedings{Kar2017,
+	abstract = {We present a learnt system for multi-view stereopsis. In contrast to recent learning based methods for 3D reconstruction, we leverage the underlying 3D geometry of the problem through feature projection and unprojection along viewing rays. By formulating these operations in a differentiable manner, we are able to learn the system end-to-end for the task of metric 3D reconstruction. End-to-end learning allows us to jointly reason about shape priors while conforming to geometric constraints, enabling reconstruction from much fewer images (even a single image) than required by classical approaches as well as completion of unseen surfaces. We thoroughly evaluate our approach on the ShapeNet dataset and demonstrate the benefits over classical approaches and recent learning based methods.},
+	author = {Kar, Abhishek and H{\"{a}}ne, Christian and Malik, Jitendra},
+	booktitle = {Advances in Neural Information Processing Systems},
+	title = {{Learning a multi-view stereo machine}},
+	year = {2017}
 }
 
 @inproceedings{choy20163d,
@@ -505,9 +495,6 @@ url = {http://www.blender.org},
 @article{Yang_2019,
 	title={Robust Attentional Aggregation of Deep Feature Sets for Multi-view 3D Reconstruction},
 	volume={128},
-	ISSN={1573-1405},
-	url={http://dx.doi.org/10.1007/s11263-019-01217-w},
-	DOI={10.1007/s11263-019-01217-w},
 	number={1},
 	journal={International Journal of Computer Vision},
 	publisher={Springer Science and Business Media LLC},
@@ -516,13 +503,13 @@ url = {http://www.blender.org},
 	month={Aug},
 	pages={53–73}
 }
-@misc{huang2018deepmvs,
-	title={DeepMVS: Learning Multi-view Stereopsis},
-	author={Po-Han Huang and Kevin Matzen and Johannes Kopf and Narendra Ahuja and Jia-Bin Huang},
-	year={2018},
-	eprint={1804.00650},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+
+@inproceedings{Huang2018,
+	abstract = {We present DeepMVS, a deep convolutional neural network (ConvNet) for multi-view stereo reconstruction. Taking an arbitrary number of posed images as input, we first produce a set of plane-sweep volumes and use the proposed DeepMVS network to predict high-quality disparity maps. The key contributions that enable these results are (1) supervised pretraining on a photorealistic synthetic dataset, (2) an effective method for aggregating information across a set of unordered images, and (3) integrating multi-layer feature activations from the pre-trained VGG-19 network. We validate the efficacy of DeepMVS using the ETH3D Benchmark. Our results show that DeepMVS compares favorably against state-of-the-art conventional MVS algorithms and other ConvNet based methods, particularly for near-textureless regions and thin structures.},
+	author = {Huang, Po Han and Matzen, Kevin and Kopf, Johannes and Ahuja, Narendra and Huang, Jia Bin},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{DeepMVS: Learning Multi-view Stereopsis}},
+	year = {2018}
 }
 
 @article{Paschalidou2018RayNetLV,
@@ -533,95 +520,73 @@ url = {http://www.blender.org},
 	pages={3897-3906}
 }
 
-@misc{wu2017marrnet,
-	title={MarrNet: 3D Shape Reconstruction via 2.5D Sketches},
-	author={Jiajun Wu and Yifan Wang and Tianfan Xue and Xingyuan Sun and William T Freeman and Joshua B Tenenbaum},
-	year={2017},
-	eprint={1711.03129},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Wu2017,
+	abstract = {3D object reconstruction from a single image is a highly under-determined problem, requiring strong prior knowledge of plausible 3D shapes. This introduces challenges for learning-based approaches, as 3D object annotations are scarce in real images. Previous work chose to train on synthetic data with ground truth 3D information, but suffered from domain adaptation when tested on real data. In this work, we propose MarrNet, an end-to-end trainable model that sequentially estimates 2.5D sketches and 3D object shape. Our disentangled, two-step formulation has three advantages. First, compared to full 3D shape, 2.5D sketches are much easier to be recovered from a 2D image; models that recover 2.5D sketches are also more likely to transfer from synthetic to real data. Second, for 3D reconstruction from 2.5D sketches, systems can learn purely from synthetic data. This is because we can easily render realistic 2.5D sketches without modeling object appearance variations in real images, including lighting, texture, etc. This further relieves the domain adaptation problem. Third, we derive differentiable projective functions from 3D shape to 2.5D sketches; the framework is therefore end-to-end trainable on real images, requiring no human annotations. Our model achieves state-of-the-art performance on 3D shape reconstruction.},
+	author = {Wu, Jiajun and Wang, Yifan and Xue, Tianfan and Sun, Xingyuan and Freeman, William T. and Tenenbaum, Joshua B.},
+	booktitle = {Advances in Neural Information Processing Systems},
+	title = {{MarrNet: 3D shape reconstruction via 2.5D sketches}},
+	year = {2017}
 }
+
 
 @InProceedings{z-gan,
-	author="Knyaz, Vladimir A.
+	author={Knyaz, Vladimir A.
 and Kniaz, Vladimir V.
-and Remondino, Fabio",
-	editor="Leal-Taix{\'e}, Laura
-and Roth, Stefan",
-	title="Image-to-Voxel Model Translation with Conditional Adversarial Networks",
-	booktitle="Computer Vision -- ECCV 2018 Workshops",
-	year="2019",
-	publisher="Springer International Publishing",
-	address="Cham",
+and Remondino, Fabio},
+	title={Image-to-Voxel Model Translation with Conditional Adversarial Networks},
+	booktitle={Computer Vision -- ECCV 2018 Workshops},
+	year={2019},
+	publisher={Springer International Publishing},
 	pages="601--618",
 	abstract="We present a single-view voxel model prediction method that uses generative adversarial networks. Our method utilizes correspondences between 2D silhouettes and slices of a camera frustum to predict a voxel model of a scene with multiple object instances. We exploit pyramid shaped voxel and a generator network with skip connections between 2D and 3D feature maps. We collected two datasets VoxelCity and VoxelHome to train our framework with 36,416 images of 28 scenes with ground-truth 3D models, depth maps, and 6D object poses. We made the datasets publicly available (http://www.zefirus.org/Z{\_}GAN). We evaluate our framework on 3D shape datasets to show that it delivers robust 3D scene reconstruction results that compete with and surpass state-of-the-art in a scene reconstruction with multiple non-rigid objects.",
-	isbn="978-3-030-11009-3"
 }
 
-@article{Yang_219,
-	title={Dense 3D Object Reconstruction from a Single Depth View},
-	volume={41},
-	ISSN={1939-3539},
-	url={http://dx.doi.org/10.1109/TPAMI.2018.2868195},
-	DOI={10.1109/tpami.2018.2868195},
-	number={12},
-	journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-	publisher={Institute of Electrical and Electronics Engineers (IEEE)},
-	author={Yang, Bo and Rosa, Stefano and Markham, Andrew and Trigoni, Niki and Wen, Hongkai},
-	year={2019},
-	month={Dec},
-	pages={2820–2834}
+@article{Yang2019,
+	abstract = {In this paper, we propose a novel approach, 3D-RecGAN++, which reconstructs the complete 3D structure of a given object from a single arbitrary depth view using generative adversarial networks. Unlike existing work which typically requires multiple views of the same object or class labels to recover the full 3D geometry, the proposed 3D-RecGAN++ only takes the voxel grid representation of a depth view of the object as input, and is able to generate the complete 3D occupancy grid with a high resolution of {\$}\backslashboldsymbol{\{}256{\^{}}3{\}}{\$}2563 by recovering the occluded/missing regions. The key idea is to combine the generative capabilities of 3D encoder-decoder and the conditional adversarial networks framework, to infer accurate and fine-grained 3D structures of objects in high-dimensional voxel space. Extensive experiments on large synthetic datasets and real-world Kinect datasets show that the proposed 3D-RecGAN++ significantly outperforms the state of the art in single view 3D object reconstruction, and is able to reconstruct unseen types of objects.},
+	author = {Yang, Bo and Rosa, Stefano and Markham, Andrew and Trigoni, Niki and Wen, Hongkai},
+	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	title = {{Dense 3D Object Reconstruction from a Single Depth View}},
+	year = {2019}
 }
 
-@misc{wu2018learning,
-	title={Learning Shape Priors for Single-View 3D Completion and Reconstruction},
-	author={Jiajun Wu and Chengkai Zhang and Xiuming Zhang and Zhoutong Zhang and William T. Freeman and Joshua B. Tenenbaum},
-	year={2018},
-	eprint={1809.05068},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Wu2018,
+	abstract = {The problem of single-view 3D shape completion or reconstruction is challenging, because among the many possible shapes that explain an observation, most are implausible and do not correspond to natural objects. Recent research in the field has tackled this problem by exploiting the expressiveness of deep convolutional networks. In fact, there is another level of ambiguity that is often overlooked: among plausible shapes, there are still multiple shapes that fit the 2D image equally well; i.e., the ground truth shape is non-deterministic given a single-view input. Existing fully supervised approaches fail to address this issue, and often produce blurry mean shapes with smooth surfaces but no fine details. In this paper, we propose ShapeHD, pushing the limit of single-view shape completion and reconstruction by integrating deep generative models with adversarially learned shape priors. The learned priors serve as a regularizer, penalizing the model only if its output is unrealistic, not if it deviates from the ground truth. Our design thus overcomes both levels of ambiguity aforementioned. Experiments demonstrate that ShapeHD outperforms state of the art by a large margin in both shape completion and shape reconstruction on multiple real datasets.},
+	author = {Wu, Jiajun and Zhang, Chengkai and Zhang, Xiuming and Zhang, Zhoutong and Freeman, William T. and Tenenbaum, Joshua B.},
+	booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+	title = {{Learning Shape Priors for Single-View 3D Completion And Reconstruction}},
+	year = {2018}
 }
 
-@inproceedings{Goodfellow2014GenerativeAN,
-	title={Generative Adversarial Nets},
-	author={I. Goodfellow and Jean Pouget-Abadie and Mehdi Mirza and Bing Xu and David Warde-Farley and Sherjil Ozair and Aaron C. Courville and Yoshua Bengio},
-	booktitle={NIPS},
-	year={2014}
+@inproceedings{Goodfellow2014,
+	abstract = {We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D, a unique solution exists, with G recovering the training data distribution and D equal to {\textless}sup{\textgreater}1{\textless}/sup{\textgreater}/{\textless}inf{\textgreater}2{\textless}/inf{\textgreater} everywhere. In the case where G and D are defined by multilayer perceptrons, the entire system can be trained with backpropagation. There is no need for any Markov chains or unrolled approximate inference networks during either training or generation of samples. Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples.},
+	author = {Goodfellow, Ian J. and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+	booktitle = {Advances in Neural Information Processing Systems},
+	title = {{Generative adversarial nets}},
+	year = {2014}
 }
 
-@misc{wu2017learning,
-	title={Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling},
-	author={Jiajun Wu and Chengkai Zhang and Tianfan Xue and William T. Freeman and Joshua B. Tenenbaum},
-	year={2017},
-	eprint={1610.07584},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Wu2016,
+	abstract = {We study the problem of 3D object generation. We propose a novel framework, namely 3D Generative Adversarial Network (3D-GAN), which generates 3D objects from a probabilistic space by leveraging recent advances in volumetric convo-lutional networks and generative adversarial nets. The benefits of our model are three-fold: first, the use of an adversarial criterion, instead of traditional heuristic criteria, enables the generator to capture object structure implicitly and to synthesize high-quality 3D objects; second, the generator establishes a mapping from a low-dimensional probabilistic space to the space of 3D objects, so that we can sample objects without a reference image or CAD models, and explore the 3D object manifold; third, the adversarial discriminator provides a powerful 3D shape descriptor which, learned without supervision, has wide applications in 3D object recognition. Experiments demonstrate that our method generates high-quality 3D objects, and our unsupervisedly learned features achieve impressive performance on 3D object recognition, comparable with those of supervised learning methods.},
+	author = {Wu, Jiajun and Zhang, Chengkai and Xue, Tianfan and Freeman, William T. and Tenenbaum, Joshua B.},
+	booktitle = {Advances in Neural Information Processing Systems},
+	title = {{Learning a probabilistic latent space of object shapes via 3D generative-adversarial modeling}},
+	year = {2016}
 }
 
-@misc{kingma2014autoencoding,
-	title={Auto-Encoding Variational Bayes},
-	author={Diederik P Kingma and Max Welling},
-	year={2014},
-	eprint={1312.6114},
-	archivePrefix={arXiv},
-	primaryClass={stat.ML}
+@inproceedings{Kingma2014,
+	abstract = {How can we perform efficient inference and learning in directed probabilistic models, in the presence of continuous latent variables with intractable posterior distributions, and large datasets? We introduce a stochastic variational inference and learning algorithm that scales to large datasets and, under some mild differentiability conditions, even works in the intractable case. Our contributions is two-fold. First, we show that a reparameterization of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient methods. Second, we show that for i.i.d. datasets with continuous latent variables per datapoint, posterior inference can be made especially efficient by fitting an approximate inference model (also called a recognition model) to the intractable posterior using the proposed lower bound estimator. Theoretical advantages are reflected in experimental results.},
+	author = {Kingma, Diederik P. and Welling, Max},
+	booktitle = {2nd International Conference on Learning Representations, ICLR 2014 - Conference Track Proceedings},
+	title = {{Auto-encoding variational bayes}},
+	year = {2014}
 }
+
 
 @misc{tatarchenko2017octree,
 	title={Octree Generating Networks: Efficient Convolutional Architectures for High-resolution 3D Outputs},
 	author={Maxim Tatarchenko and Alexey Dosovitskiy and Thomas Brox},
 	year={2017},
-	eprint={1703.09438},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
-}
-
-@article{Richter2018MatryoshkaNP,
-	title={Matryoshka Networks: Predicting 3D Geometry via Nested Shape Layers},
-	author={Stephan R. Richter and S. Roth},
-	journal={2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-	year={2018},
-	pages={1936-1944}
+	booktitle={IEEE International Conference on Computer Vision (ICCV)}
 }
 
 @article{Gkioxari2019MeshR,
@@ -635,10 +600,8 @@ and Roth, Stefan",
 @misc{wang2018pixel2mesh,
 	title={Pixel2Mesh: Generating 3D Mesh Models from Single RGB Images},
 	author={Nanyang Wang and Yinda Zhang and Zhuwen Li and Yanwei Fu and Wei Liu and Yu-Gang Jiang},
-	year={2018},
-	eprint={1804.01654},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	booktitle={European Conference on Computer Vision},
+	year={2018}
 }
 
 @article{Lunz2020InverseGG,
@@ -650,40 +613,46 @@ and Roth, Stefan",
 }
 
 @misc{groueix2018atlasnet,
-	title={AtlasNet: A Papier-M\^ach\'e Approach to Learning 3D Surface Generation},
-	author={Thibault Groueix and Matthew Fisher and Vladimir G. Kim and Bryan C. Russell and Mathieu Aubry},
-	year={2018},
-	eprint={1802.05384},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	abstract = {We introduce a method for learning to generate the surface of 3D shapes. Our approach represents a 3D shape as a collection ofparametric surface elements and, in contrast to methods generating voxel grids or point clouds, naturally infers a surface representation ofthe shape. Beyond its novelty, our new shape generation framework, AtlasNet, comes with significant advantages, such as improved precision and generalization capabilities, and the possibility to generate a shape ofarbitrary resolution without memory issues. We demonstrate these benefits and compare to strong baselines on the ShapeNet benchmark for two applications: (i) auto-encoding shapes, and (ii) single-view reconstruction from a still image. We also provide results showing its potential for other applications, such as morphing, parametrization, super-resolution, matching, and co-segmentation.},
+	author = {Groueix, Thibault and Fisher, Matthew and Kim, Vladimir G. and Russell, Bryan C. and Aubry, Mathieu},
+	booktitle = {Computer Vision and Pattern Recognition},
+	title = {{AtlasNet: A Papier-M{\^{a}}ch{\'{e}} Approach to Learning 3D Surface Generation}},
+	year = {2018}
 }
 
 @misc{pan2019deep,
-	title={Deep Mesh Reconstruction from Single RGB Images via Topology Modification Networks},
-	author={Junyi Pan and Xiaoguang Han and Weikai Chen and Jiapeng Tang and Kui Jia},
-	year={2019},
-	eprint={1909.00321},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	abstract = {Reconstructing the 3D mesh of a general object from a single image is now possible thanks to the latest advances of deep learning technologies. However, due to the nontrivial difficulty of generating a feasible mesh structure, the state-of-the-art approaches often simplify the problem by learning the displacements of a template mesh that deforms it to the target surface. Though reconstructing a 3D shape with complex topology can be achieved by deforming multiple mesh patches, it remains difficult to stitch the results to ensure a high meshing quality. In this paper, we present an end-to-end single-view mesh reconstruction framework that is able to generate high-quality meshes with complex topologies from a single genus-0 template mesh. The key to our approach is a novel progressive shaping framework that alternates between mesh deformation and topology modification. While a deformation network predicts the per-vertex translations that reduce the gap between the reconstructed mesh and the ground truth, a novel topology modification network is employed to prune the error-prone faces, enabling the evolution of topology. By iterating over the two procedures, one can progressively modify the mesh topology while achieving higher reconstruction accuracy. Moreover, a boundary refinement network is designed to refine the boundary conditions to further improve the visual quality of the reconstructed mesh. Extensive experiments demonstrate that our approach outperforms the current state-of-the-art methods both qualitatively and quantitatively, especially for the shapes with complex topologies.},
+	author = {Pan, Junyi and Han, Xiaoguang and Chen, Weikai and Tang, Jiapeng and Jia, Kui},
+	booktitle = {Proceedings of the IEEE International Conference on Computer Vision},
+	title = {{Deep mesh reconstruction from single rgb images via topology modification networks}},
+	year = {2019}
 }
 
-@misc{chen2019learning,
-	title={Learning Implicit Fields for Generative Shape Modeling},
-	author={Zhiqin Chen and Hao Zhang},
-	year={2019},
-	eprint={1812.02822},
-	archivePrefix={arXiv},
-	primaryClass={cs.GR}
+@inproceedings{chen2019learning,
+	abstract = {We advocate the use of implicit fields for learning generative models of shapes and introduce an implicit field decoder, called IM-NET, for shape generation, aimed at improving the visual quality of the generated shapes. An implicit field assigns a value to each point in 3D space, so that a shape can be extracted as an iso-surface. IM-NET is trained to perform this assignment by means of a binary classifier. Specifically, it takes a point coordinate, along with a feature vector encoding a shape, and outputs a value which indicates whether the point is outside the shape or not. By replacing conventional decoders by our implicit decoder for representation learning (via IM-AE) and shape generation (via IM-GAN), we demonstrate superior results for tasks such as generative shape modeling, interpolation, and single-view 3D reconstruction, particularly in terms of visual quality. Code and supplementary material are available at https://github.com/czq142857/implicit-decoder.},
+	author = {Chen, Zhiqin and Zhang, Hao},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{Learning implicit fields for generative shape modeling}},
+	year = {2019}
+}
+
+@inproceedings{Chen2019,
+	abstract = {We advocate the use of implicit fields for learning generative models of shapes and introduce an implicit field decoder, called IM-NET, for shape generation, aimed at improving the visual quality of the generated shapes. An implicit field assigns a value to each point in 3D space, so that a shape can be extracted as an iso-surface. IM-NET is trained to perform this assignment by means of a binary classifier. Specifically, it takes a point coordinate, along with a feature vector encoding a shape, and outputs a value which indicates whether the point is outside the shape or not. By replacing conventional decoders by our implicit decoder for representation learning (via IM-AE) and shape generation (via IM-GAN), we demonstrate superior results for tasks such as generative shape modeling, interpolation, and single-view 3D reconstruction, particularly in terms of visual quality. Code and supplementary material are available at https://github.com/czq142857/implicit-decoder.},
+	author = {Chen, Zhiqin and Zhang, Hao},
+	booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{Learning implicit fields for generative shape modeling}},
+	year = {2019}
 }
 
 @misc{henderson2019learning,
-	title={Learning single-image 3D reconstruction by generative modelling of shape, pose and shading},
+	abstract = {We present a unified framework tackling two problems: class-specific 3D reconstruction from a single image, and generation of new 3D shape samples. These tasks have received considerable attention recently; however, most existing approaches rely on 3D supervision, annotation of 2D images with keypoints or poses, and/or training with multiple views of each object instance. Our framework is very general: it can be trained in similar settings to existing approaches, while also supporting weaker supervision. Importantly, it can be trained purely from 2D images, without pose annotations, and with only a single view per instance. We employ meshes as an output representation, instead of voxels used in most prior work. This allows us to reason over lighting parameters and exploit shading information during training, which previous 2D-supervised methods cannot. Thus, our method can learn to generate and reconstruct concave object classes. We evaluate our approach in various settings, showing that: (i) it learns to disentangle shape from pose and lighting; (ii) using shading in the loss improves performance compared to just silhouettes; (iii) when using a standard single white light, our model outperforms state-of-the-art 2D-supervised methods, both with and without pose supervision, thanks to exploiting shading cues; (iv) performance improves further when using multiple coloured lights, even approaching that of state-of-the-art 3D-supervised methods; (v) shapes produced by our model capture smooth surfaces and fine details better than voxel-based approaches; and (vi) our approach supports concave classes such as bathtubs and sofas, which methods based on silhouettes cannot learn.},
+	journal = {International Journal of Computer Vision},
 	author={Paul Henderson and Vittorio Ferrari},
-	year={2019},
-	eprint={1901.06447},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	title = {{Learning Single-Image 3D Reconstruction by Generative Modelling of Shape, Pose and Shading}},
+	year = {2020}
 }
+
+
 
 ///////////////////////reconstruction end
 
@@ -697,12 +666,11 @@ and Roth, Stefan",
 }
 
 @misc{tobin2017domain,
-	title={Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World},
-	author={Josh Tobin and Rachel Fong and Alex Ray and Jonas Schneider and Wojciech Zaremba and Pieter Abbeel},
-	year={2017},
-	eprint={1703.06907},
-	archivePrefix={arXiv},
-	primaryClass={cs.RO}
+	abstract = {Bridging the 'reality gap' that separates simulated robotics from experiments on hardware could accelerate robotic research through improved data availability. This paper explores domain randomization, a simple technique for training models on simulated images that transfer to real images by randomizing rendering in the simulator. With enough variability in the simulator, the real world may appear to the model as just another variation. We focus on the task of object localization, which is a stepping stone to general robotic manipulation skills. We find that it is possible to train a real-world object detector that is accurate to 1.5 cm and robust to distractors and partial occlusions using only data from a simulator with non-realistic random textures. To demonstrate the capabilities of our detectors, we show they can be used to perform grasping in a cluttered environment. To our knowledge, this is the first successful transfer of a deep neural network trained only on simulated RGB images (without pre-training on real images) to the real world for the purpose of robotic control.},
+	author = {Tobin, Josh and Fong, Rachel and Ray, Alex and Schneider, Jonas and Zaremba, Wojciech and Abbeel, Pieter},
+	booktitle = {IEEE International Conference on Intelligent Robots and Systems},
+	title = {{Domain randomization for transferring deep neural networks from simulation to the real world}},
+	year = {2017}
 }
 
 @article{Tremblay2018TrainingDN,
@@ -731,37 +699,28 @@ and Roth, Stefan",
 	pages={1682-1695}
 }
 
-@article{DBLP:journals/corr/abs-1802-03601,
-	author    = {Mei Wang and
-               Weihong Deng},
-	title     = {Deep Visual Domain Adaptation: {A} Survey},
-	journal   = {CoRR},
-	volume    = {abs/1802.03601},
-	year      = {2018},
-	url       = {http://arxiv.org/abs/1802.03601},
-	archivePrefix = {arXiv},
-	eprint    = {1802.03601},
-	timestamp = {Mon, 13 Aug 2018 16:49:16 +0200},
-	biburl    = {https://dblp.org/rec/journals/corr/abs-1802-03601.bib},
-	bibsource = {dblp computer science bibliography, https://dblp.org}
+@article{Wang2018,
+	abstract = {Deep domain adaptation has emerged as a new learning technique to address the lack of massive amounts of labeled data. Compared to conventional methods, which learn shared feature subspaces or reuse important source instances with shallow representations, deep domain adaptation methods leverage deep networks to learn more transferable representations by embedding domain adaptation in the pipeline of deep learning. There have been comprehensive surveys for shallow domain adaptation, but few timely reviews the emerging deep learning based methods. In this paper, we provide a comprehensive survey of deep domain adaptation methods for computer vision applications with four major contributions. First, we present a taxonomy of different deep domain adaptation scenarios according to the properties of data that define how two domains are diverged. Second, we summarize deep domain adaptation approaches into several categories based on training loss, and analyze and compare briefly the state-of-the-art methods under these categories. Third, we overview the computer vision applications that go beyond image classification, such as face recognition, semantic segmentation and object detection. Fourth, some potential deficiencies of current methods and several future directions are highlighted.},
+	author = {Wang, Mei and Deng, Weihong},
+	journal = {Neurocomputing},
+	title = {{Deep visual domain adaptation: A survey}},
+	year = {2018}
 }
 
 @misc{prakash2020structured,
-	title={Structured Domain Randomization: Bridging the Reality Gap by Context-Aware Synthetic Data},
-	author={Aayush Prakash and Shaad Boochoon and Mark Brophy and David Acuna and Eric Cameracci and Gavriel State and Omer Shapira and Stan Birchfield},
-	year={2020},
-	eprint={1810.10093},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	abstract = {We present structured domain randomization (SDR), a variant of domain randomization (DR) that takes into account the structure of the scene in order to add context to the generated data. In contrast to DR, which places objects and distractors randomly according to a uniform probability distribution, SDR places objects and distractors randomly according to probability distributions that arise from the specific problem at hand. In this manner, SDR-generated imagery enables the neural network to take the context around an object into consideration during detection. We demonstrate the power of SDR for the problem of 2D bounding box car detection, achieving competitive results on real data after training only on synthetic data. On the KITTI easy, moderate, and hard tasks, we show that SDR outperforms other approaches to generating synthetic data (VKITTI, Sim 200k, or DR), as well as real data collected in a different domain (BDD100K). Moreover, synthetic SDR data combined with real KITTI data outperforms real KITTI data alone.11Video is at http://youtu.be/1WdjWJYx9AY.},
+	author = {Prakash, Aayush and Boochoon, Shaad and Brophy, Mark and Acuna, David and Cameracci, Eric and State, Gavriel and Shapira, Omer and Birchfield, Stan},
+	booktitle = {Proceedings - IEEE International Conference on Robotics and Automation},
+	title = {{Structured domain randomization: Bridging the reality gap by context-aware synthetic data}},
+	year = {2019}
 }
 
 @misc{georgakis2017synthesizing,
-	title={Synthesizing Training Data for Object Detection in Indoor Scenes},
-	author={Georgios Georgakis and Arsalan Mousavian and Alexander C. Berg and Jana Kosecka},
-	year={2017},
-	eprint={1702.07836},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	abstract = {Detection of objects in cluttered indoor environments is one of the key enabling functionalities for service robots. The best performing object detection approaches in computer vision exploit deep Convolutional Neural Networks (CNN) to simultaneously detect and categorize the objects of interest in cluttered scenes. Training of such models typically requires large amounts of annotated training data which is time consuming and costly to obtain. In this work we explore the ability of using synthetically generated composite images for training state-of-the-art object detectors, especially for object instance detection. We superimpose 2D images of textured object models into images of real environments at variety of locations and scales. Our experiments evaluate different superimposition strategies ranging from purely image-based blending all the way to depth and semantics informed positioning of the object models into real scenes. We demonstrate the effectiveness of these object detector training strategies on two publicly available datasets, the GMUKitchens [5] and the Washington RGB-D Scenes v2 [11]. As one observation, augmenting some hand-labeled training data with synthetic examples carefully composed onto scenes yields object detectors with comparable performance to using much more hand-labeled data. Broadly, this work charts new opportunities for training detectors for new objects by exploiting existing object model repositories in either a purely automatic fashion or with only a very small number of human-annotated examples.},
+	author = {Georgakis, Georgios and Mousavian, Arsalan and Berg, Alexander C. and Ko{\v{s}}eck{\'{a}}, Jana},
+	booktitle = {Robotics: Science and Systems},
+	title = {{Synthesizing training data for object detection in indoor scenes}},
+	year = {2017}
 }
 
 @article{Wang2018HighResolutionIS,
@@ -772,56 +731,59 @@ and Roth, Stefan",
 	pages={8798-8807}
 }
 
-@misc{pinheiro2019domainadaptive,
-	title={Domain-Adaptive Single-View 3D Reconstruction},
-	author={Pedro O. Pinheiro and Negar Rostamzadeh and Sungjin Ahn},
-	year={2019},
-	eprint={1812.01742},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{Pinheiro2019,
+	abstract = {Single-view 3D shape reconstruction is an important but challenging problem, mainly for two reasons. First, as shape annotation is very expensive to acquire, current methods rely on synthetic data, in which ground-truth 3D annotation is easy to obtain. However, this results in domain adaptation problem when applied to natural images. The second challenge is that there are multiple shapes that can explain a given 2D image. In this paper, we propose a framework to improve over these challenges using adversarial training. On one hand, we impose domain confusion between natural and synthetic image representations to reduce the distribution gap. On the other hand, we impose the reconstruction to be 'realistic' by forcing it to lie on a (learned) manifold of realistic object shapes. Our experiments show that these constraints improve performance by a large margin over baseline reconstruction models. We achieve results competitive with the state of the art with a much simpler architecture.},
+	author = {Pinheiro, Pedro O. and Rostamzadeh, Negar and Ahn, Sungjin},
+	booktitle = {Proceedings of the IEEE International Conference on Computer Vision},
+	title = {{Domain-adaptive single-view 3D reconstruction}},
+	year = {2019}
 }
 
-@misc{ganin2016domainadversarial,
-	title={Domain-Adversarial Training of Neural Networks},
-	author={Yaroslav Ganin and Evgeniya Ustinova and Hana Ajakan and Pascal Germain and Hugo Larochelle and François Laviolette and Mario Marchand and Victor Lempitsky},
-	year={2016},
-	eprint={1505.07818},
-	archivePrefix={arXiv},
-	primaryClass={stat.ML}
+@inproceedings{Ganin2017,
+	abstract = {We introduce a representation learning approach for domain adaptation, in which data at training and test time come from similar but different distributions. Our approach is directly inspired by the theory on domain adaptation suggesting that, for effective domain transfer to be achieved, predictions must be made based on features that cannot discriminate between the training (source) and test (target) domains. The approach implements this idea in the context of neural network architectures that are trained on labeled data from the source domain and unlabeled data from the target domain (no labeled target-domain data is necessary). As the training progresses, the approach promotes the emergence of features that are (i) discriminative for the main learning task on the source domain and (ii) indiscriminate with respect to the shift between the domains. We show that this adaptation behavior can be achieved in almost any feed-forward model by augmenting it with few standard layers and a new Gradient Reversal Layer. The resulting augmented architecture can be trained using standard backpropagation, and can thus be implemented with little effort using any of the deep learning packages. We demonstrate the success of our approach for image classification, where state-of-the-art domain adaptation performance on standard benchmarks is achieved. We also validate the approach for descriptor learning task in the context of person re-identification application.},
+	author = {Ganin, Yaroslav and Ustinova, Evgeniya and Ajakan, Hana and Germain, Pascal and Larochelle, Hugo and Laviolette, Fran{\c{c}}ois and Marchand, Mario and Lempitsky, Victor},
+	booktitle = {Advances in Computer Vision and Pattern Recognition},
+	title = {{Domain-adversarial training of neural networks}},
+	year = {2017}
 }
+
 
 ///////////////////////Domain adaptation synth to real  end
 
 ///////////////////////Gameengine start
 
-@book{10.5555/983334,
-	author = {Gold, Julian},
-	title = {Object-Oriented Game Development},
-	year = {2004},
-	isbn = {032117660X},
+@article{Ee2005,
+	abstract = {1. Introduction -- 2. The game development process -- 3. Software engineering for games -- 4. Object-oriented design for games -- 5. The component model for game development -- 6. Cross-platform development -- 7. Game objects -- 8. Design-driven control -- 9. Iterative development techniques -- 10. Game development roles -- 11. Case study : Cordite.},
+	author = {Carmark, John and Romero, John and Gold, Julian},
+	journal = {Physics},
+	title = {{Object-Oriented Game Development}},
+	year = {2005},
 	publisher = {Pearson Addison Wesley}
 }
+
 ///////////////////////Gameengine end
 
 
 ///////////////////////etc start
 
-@misc{hinterstoisser2019annotation,
-	title={An Annotation Saved is an Annotation Earned: Using Fully Synthetic Training for Object Instance Detection},
-	author={Stefan Hinterstoisser and Olivier Pauly and Hauke Heibel and Martina Marek and Martin Bokeloh},
-	year={2019},
-	eprint={1902.09967},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@article{hinterstoisser2019annotation,
+	author    = {Stefan Hinterstoisser and
+               Olivier Pauly and
+               Hauke Heibel and
+               Martina Marek and
+               Martin Bokeloh},
+	title     = {An Annotation Saved is an Annotation Earned: Using Fully Synthetic
+               Training for Object Instance Detection},
+	journal   = {CoRR},
+	year      = {2019}
 }
 
 @misc{li2016fpnn,
-	title={FPNN: Field Probing Neural Networks for 3D Data},
-	author={Yangyan Li and Soeren Pirk and Hao Su and Charles R. Qi and Leonidas J. Guibas},
-	year={2016},
-	eprint={1605.06240},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	abstract = {Building discriminative representations for 3D data has been an important task in computer graphics and computer vision research. Convolutional Neural Networks (CNNs) have shown to operate on 2D images with great success for a variety of tasks. Lifting convolution operators to 3D (3DCNNs) seems like a plausible and promising next step. Unfortunately, the computational complexity of 3D CNNs grows cubically with respect to voxel resolution. Moreover, since most 3D geometry representations are boundary based, occupied regions do not increase proportionately with the size of the discretization, resulting in wasted computation. In this work, we represent 3D spaces as volumetric fields, and propose a novel design that employs field probing filters to efficiently extract features from them. Each field probing filter is a set of probing points - sensors that perceive the space. Our learning algorithm optimizes not only the weights associated with the probing points, but also their locations, which deforms the shape of the probing filters and adaptively distributes them in 3D space. The optimized probing points sense the 3D space "intelligently", rather than operating blindly over the entire domain. We show that field probing is significantly more efficient than 3DCNNs, while providing state-of-the-art performance, on classification tasks for 3D object recognition benchmark datasets.},
+	author = {Li, Yangyan and Pirk, S{\"{o}}ren and Su, Hao and Qi, Charles R. and Guibas, Leonidas J.},
+	booktitle = {Advances in Neural Information Processing Systems},
+	title = {{FPNN: Field probing neural networks for 3D data}},
+	year = {2016}
 }
 
 ///////////////////////etc end
@@ -830,24 +792,16 @@ and Roth, Stefan",
 
 
 @article{Xie_2019,
-	title={Pix2Vox: Context-Aware 3D Reconstruction From Single and Multi-View Images},
-	ISBN={9781728148038},
-	url={http://dx.doi.org/10.1109/ICCV.2019.00278},
-	DOI={10.1109/iccv.2019.00278},
-	journal={2019 IEEE/CVF International Conference on Computer Vision (ICCV)},
-	publisher={IEEE},
-	author={Xie, Haozhe and Yao, Hongxun and Sun, Xiaoshuai and Zhou, Shangchen and Zhang, Shengping},
-	year={2019},
-	month={Oct}
+	abstract = {Recovering the 3D representation of an object from single-view or multi-view RGB images by deep neural networks has attracted increasing attention in the past few years. Several mainstream works (e.g., 3D-R2N2) use recurrent neural networks (RNNs) to fuse multiple feature maps extracted from input images sequentially. However, when given the same set of input images with different orders, RNN-based approaches are unable to produce consistent reconstruction results. Moreover, due to long-term memory loss, RNNs cannot fully exploit input images to refine reconstruction results. To solve these problems, we propose a novel framework for single-view and multi-view 3D reconstruction, named Pix2Vox. By using a well-designed encoder-decoder, it generates a coarse 3D volume from each input image. Then, a context-aware fusion module is introduced to adaptively select high-quality reconstructions for each part (e.g., table legs) from different coarse 3D volumes to obtain a fused 3D volume. Finally, a refiner further refines the fused 3D volume to generate the final output. Experimental results on the ShapeNet and Pix3D benchmarks indicate that the proposed Pix2Vox outperforms state-of-the-arts by a large margin. Furthermore, the proposed method is 24 times faster than 3D-R2N2 in terms of backward inference time. The experiments on ShapeNet unseen 3D categories have shown the superior generalization abilities of our method.},
+	author = {Xie, Haozhe and Yao, Hongxun and Sun, Xiaoshuai and Zhou, Shangchen and Zhang, Shengping},
+	journal = {Proceedings of the IEEE International Conference on Computer Vision},
+	title = {{Pix2Vox: Context-aware 3D reconstruction from single and multi-view images}},
+	year = {2019}
 }
 
 @article{Xie_2020,
 	title={Pix2Vox++: Multi-scale Context-aware 3D Object Reconstruction from Single and Multiple Images},
 	volume={128},
-	ISSN={1573-1405},
-	url={http://dx.doi.org/10.1007/s11263-020-01347-6},
-	DOI={10.1007/s11263-020-01347-6},
-	number={12},
 	journal={International Journal of Computer Vision},
 	publisher={Springer Science and Business Media LLC},
 	author={Xie, Haozhe and Yao, Hongxun and Zhang, Shengping and Zhou, Shangchen and Sun, Wenxiu},
@@ -857,20 +811,20 @@ and Roth, Stefan",
 }
 
 @article{He2016DeepRL,
-	title={Deep Residual Learning for Image Recognition},
-	author={Kaiming He and X. Zhang and Shaoqing Ren and Jian Sun},
-	journal={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-	year={2016},
+	abstract = {Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers - 8× deeper than VGG nets [40] but still having lower complexity. An ensemble of these residual nets achieves 3.57{\%} error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28{\%} relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC {\&} COCO 2015 competitions1, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.},
+	author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+	journal = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{Deep residual learning for image recognition}},
+	year = {2016},
 	pages={770-778}
 }
 
-@misc{simonyan2015deep,
-	title={Very Deep Convolutional Networks for Large-Scale Image Recognition},
-	author={Karen Simonyan and Andrew Zisserman},
-	year={2015},
-	eprint={1409.1556},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+@inproceedings{simonyan2015deep,
+	abstract = {In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3 × 3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16–19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.},
+	author = {Simonyan, Karen and Zisserman, Andrew},
+	booktitle = {3rd International Conference on Learning Representations, ICLR 2015 - Conference Track Proceedings},
+	title = {{Very deep convolutional networks for large-scale image recognition}},
+	year = {2015}
 }
 
 @article{Han2021ImageBased3O,
@@ -883,12 +837,10 @@ and Roth, Stefan",
 }
 
 @misc{popov2020corenet,
-	title={CoReNet: Coherent 3D scene reconstruction from a single RGB image},
-	author={Stefan Popov and Pablo Bauszat and Vittorio Ferrari},
+	title={CoReNet: Coherent 3D Scene Reconstruction from a Single RGB Image},
+	author={Popov, Stefan and Bauszat, Pablo and Ferrari, Vittorio},
 	year={2020},
-	eprint={2004.12989},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	booktitle={Computer Vision -- ECCV 2020}
 }
 
 //////////////////////architecture end
@@ -904,7 +856,6 @@ and Roth, Stefan",
 	howpublished = {\url{https://github.com/zigurous/unity-cc0textures-importer}},
 	commit = {bdd5a58d4dfc97a5a4bb500efb0aa218ee77158f}
 }
-
 
 @software{unrealengine,
 	author = {{Epic Games}},
@@ -941,6 +892,7 @@ and Roth, Stefan",
 	year={2017}
 }
 
+
 @inproceedings{park2020cut,
 	title={Contrastive Learning for Unpaired Image-to-Image Translation},
 	author={Taesung Park and Alexei A. Efros and Richard Zhang and Jun-Yan Zhu},
@@ -958,10 +910,8 @@ and Roth, Stefan",
 @misc{dundar2018domain,
 	title={Domain Stylization: A Strong, Simple Baseline for Synthetic to Real Image Domain Adaptation},
 	author={Aysegul Dundar and Ming-Yu Liu and Ting-Chun Wang and John Zedlewski and Jan Kautz},
-	year={2018},
-	eprint={1807.09384},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	journal={ArXiv},
+	year={2018}
 }
 
 //////////////////////gan end
@@ -972,9 +922,7 @@ and Roth, Stefan",
 	title={How much real data do we actually need: Analyzing object detection performance using synthetic and real data},
 	author={Farzan Erlik Nowruzi and Prince Kapoor and Dhanvin Kolhatkar and Fahed Al Hassanat and Robert Laganiere and Julien Rebut},
 	year={2019},
-	eprint={1907.07061},
-	archivePrefix={arXiv},
-	primaryClass={cs.CV}
+	journal={ArXiv}
 }
 
 @misc{seib2020mixing,
@@ -986,10 +934,34 @@ and Roth, Stefan",
 	primaryClass={cs.CV}
 }
 
-@inproceedings{2018LearningIC,
-	title={Learning image classifiers from (limited) real and (abundant) synthetic data},
-	author={},
-	year={2018}
+@INPROCEEDINGS{synthia,
+	author={Ros, German and Sellart, Laura and Materzynska, Joanna and Vazquez, David and Lopez, Antonio M.},
+	booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	title={The SYNTHIA Dataset: A Large Collection of Synthetic Images for Semantic Segmentation of Urban Scenes},
+	year={2016},
+	pages={3234-3243}}
+
+@article{Russell2008,
+	abstract = {We seek to build a large collection of images with ground truth labels to be used for object detection and recognition research. Such data is useful for supervised learning and quantitative evaluation. To achieve this, we developed a web-based tool that allows easy image annotation and instant sharing of such annotations. Using this annotation tool, we have collected a large dataset that spans many object categories, often containing multiple instances over a wide variety of images. We quantify the contents of the dataset and compare against existing state of the art datasets used for object recognition and detection. Also, we show how to extend the dataset to automatically enhance object labels with WordNet, discover object parts, recover a depth ordering of objects in a scene, and increase the number of labels using minimal user supervision and images from the web. {\textcopyright} 2007 Springer Science+Business Media, LLC.},
+	author = {Russell, Bryan C. and Torralba, Antonio and Murphy, Kevin P. and Freeman, William T.},
+	journal = {International Journal of Computer Vision},
+	title = {{LabelMe: A database and web-based tool for image annotation}},
+	year = {2008}
+}
+
+@INPROCEEDINGS{Geiger2012CVPR,
+	author = {Andreas Geiger and Philip Lenz and Raquel Urtasun},
+	title = {Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite},
+	booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+	year = {2012}
+}
+
+@inproceedings{BrostowSFC:ECCV08,
+	author    = {Gabriel J. Brostow and Jamie Shotton and Julien Fauqueur and Roberto Cipolla},
+	title     = {Segmentation and Recognition Using Structure from Motion Point Clouds},
+	booktitle = {Proceedings of The European Conference on Computer Vision (ECCV)},
+	year      = {2008},
+	pages     = {44-57}
 }
 
 //////////////////evaluation end
@@ -1014,7 +986,6 @@ and Roth, Stefan",
 	pages = {8024--8035},
 	year = {2019},
 	publisher = {Curran Associates, Inc.},
-	url = {http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf}
 }
 
 @book{van1995python,
@@ -1073,24 +1044,20 @@ and Roth, Stefan",
 }
 
 @inproceedings{Glorot2010UnderstandingTD,
-	title={Understanding the difficulty of training deep feedforward neural networks},
-	author={Xavier Glorot and Yoshua Bengio},
-	booktitle={AISTATS},
-	year={2010}
+	abstract = {Whereas before 2006 it appears that deep multilayer neural networks were not successfully trained, since then several algorithms have been shown to successfully train them, with experimental results showing the superiority of deeper vs less deep architectures. All these experimental results were obtained with new initialization or training mechanisms. Our objective here is to understand better why standard gradient descent from random initialization is doing so poorly with deep neural networks, to better understand these recent relative successes and help design better algorithms in the future. We first observe the influence of the non-linear activations functions. We find that the logistic sigmoid activation is unsuited for deep networks with random initialization because of its mean value, which can drive especially the top hidden layer into saturation. Surprisingly, we find that saturated units can move out of saturation by themselves, albeit slowly, and explaining the plateaus sometimes seen when training neural networks. We find that a new non-linearity that saturates less can often be beneficial. Finally, we study how activations and gradients vary across layers and during training, with the idea that training may be more difficult when the singular values of the Jacobian associated with each layer are far from 1. Based on these considerations, we propose a new initialization scheme that brings substantially faster convergence. Copyright 2010 by the authors.},
+	author = {Glorot, Xavier and Bengio, Yoshua},
+	booktitle = {Journal of Machine Learning Research},
+	title = {{Understanding the difficulty of training deep feedforward neural networks}},
+	year = {2010}
 }
 
 @Inbook{Joyce2011,
-	author="Joyce, James M.",
-	editor="Lovric, Miodrag",
-	title="Kullback-Leibler Divergence",
-	bookTitle="International Encyclopedia of Statistical Science",
-	year="2011",
-	publisher="Springer Berlin Heidelberg",
-	address="Berlin, Heidelberg",
-	pages="720--722",
-	isbn="978-3-642-04898-2",
-	doi="10.1007/978-3-642-04898-2_327",
-	url="https://doi.org/10.1007/978-3-642-04898-2_327"
+	abstract = {Theory and Practice Using MATLAB},
+	author = {Joyce, James M.},
+	booktitle = {International Encyclopedia of Statistical Science},
+	title = {{Kullback-Leibler Divergence}},
+	year = {2011},
+	publisher={Springer Berlin Heidelberg},
 }
 
 @article{wattenberg2016how,
@@ -1103,16 +1070,18 @@ and Roth, Stefan",
 }
 
 @inproceedings{Heusel2017GANsTB,
-	title={GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium},
-	author={Martin Heusel and Hubert Ramsauer and Thomas Unterthiner and Bernhard Nessler and Sepp Hochreiter},
-	booktitle={NIPS},
-	year={2017}
+	abstract = {Generative Adversarial Networks (GANs) excel at creating realistic images with complex models for which maximum likelihood is infeasible. However, the convergence of GAN training has still not been proved. We propose a two time-scale update rule (TTUR) for training GANs with stochastic gradient descent on arbitrary GAN loss functions. TTUR has an individual learning rate for both the discriminator and the generator. Using the theory of stochastic approximation, we prove that the TTUR converges under mild assumptions to a stationary local Nash equilibrium. The convergence carries over to the popular Adam optimization, for which we prove that it follows the dynamics of a heavy ball with friction and thus prefers flat minima in the objective landscape. For the evaluation of the performance of GANs at image generation, we introduce the 'Fr{\'{e}}chet Inception Distance" (FID) which captures the similarity of generated images to real ones better than the Inception Score. In experiments, TTUR improves learning for DCGANs and Improved Wasserstein GANs (WGAN-GP) outperforming conventional GAN training on CelebA, CIFAR-10, SVHN, LSUN Bedrooms, and the One Billion Word Benchmark.},
+	author = {Heusel, Martin and Ramsauer, Hubert and Unterthiner, Thomas and Nessler, Bernhard and Hochreiter, Sepp},
+	booktitle = {Advances in Neural Information Processing Systems},
+	title = {{GANs trained by a two time-scale update rule converge to a local Nash equilibrium}},
+	year = {2017}
 }
 
 @article{Szegedy2016RethinkingTI,
-	title={Rethinking the Inception Architecture for Computer Vision},
-	author={Christian Szegedy and Vincent Vanhoucke and Sergey Ioffe and Jonathon Shlens and Zbigniew Wojna},
-	journal={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-	year={2016},
+	abstract = {Convolutional networks are at the core of most state of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we are exploring ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21:2{\%} top-1 and 5:6{\%} top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3:5{\%} top-5 error and 17:3{\%} top-1 error on the validation set and 3:6{\%} top-5 error on the official test set.},
+	author = {Szegedy, Christian and Vanhoucke, Vincent and Ioffe, Sergey and Shlens, Jon and Wojna, Zbigniew},
+	journal = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+	title = {{Rethinking the Inception Architecture for Computer Vision}},
+	year = {2016},
 	pages={2818-2826}
 }

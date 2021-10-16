@@ -10,20 +10,20 @@
 % Change this to your needs.
 \newcommand{\university}{Otto-von-Guericke University Magdeburg}
 \newcommand{\school}{Faculty of Computer Science}
-\newcommand{\logo}{\includegraphics[trim=0mm 0mm 50mm 0mm,clip,height=3cm]{ovgu}}
+\newcommand{\logo}{\centering\includegraphics[width=0.9\linewidth]{fin-en}}
 \newcommand{\advisorone}{Marco Filax}
 \newcommand{\departmentone}{Chair of Software Engineering}
 \newcommand{\universityone}{Otto-von-Guericke University, Magdeburg}
 \newcommand{\advisortwo}{Konstantin Kirchheim}
 \newcommand{\departmenttwo}{Chair of Software Engineering}
 \newcommand{\universitytwo}{Otto-von-Guericke University, Magdeburg}
-\newcommand{\supervisorone}{Prof.Dr.Frank Ortmeier}
+\newcommand{\supervisorone}{Prof.Dr. Frank Ortmeier}
 \newcommand{\sdepartmentone}{Chair of Software Engineering}
 \newcommand{\suniversityone}{Otto-von-Guericke University, Magdeburg}
-\newcommand{\supervisortwo}{xxx}
-\newcommand{\sdepartmenttwo}{xxx xxx}
-\newcommand{\suniversitytwo}{Otto-von-Guericke University, Magdeburg}
-\newcommand{\advisorthree}{}
+%\newcommand{\supervisortwo}{xxx}
+%\newcommand{\sdepartmenttwo}{xxx xxx}
+%\newcommand{\suniversitytwo}{Otto-von-Guericke University, Magdeburg}
+%\newcommand{\advisorthree}{}
 \newcommand{\departmentthree}{}
 \newcommand{\universitythree}{}
 \newcommand{\thesiskind}{Master's Thesis}
@@ -114,18 +114,18 @@
 \begin{titlepage}
     \thispagestyle{empty}
     \begin{center}
-        {\university}\\[0.4cm]
-        {\school}\\[2.0cm]
+%        {\school}\\[2.0cm]
         \hbox{}\hfill
         \begin{minipage}[t]{\textwidth}
             \begin{center}
                 \logo
             \end{center}
         \end{minipage}
-        \hfill\hbox{}
+        \hfill\hbox{}\\[0.4cm]
+        {\large\university}\\[0.4cm]
         \ \\[0.4cm]
         {\large \thesiskind \\[1cm]}
-        {\LARGE\bfseries\biolinum \thetitle \\[1cm]}
+        {\LARGE\bfseries \thetitle \\[1cm]}
         {\iftoggle{german}{Autor}{Author}:}\\[0.4cm]
         {\large \theauthor}\\[0.8cm]
         {\large\thedate}\\[0.8cm]
@@ -144,12 +144,12 @@
 
     \vspace{1cm}
 
-    \begin{tabular}{cc}
-        \multicolumn{2}{c}{\small Supervisors:} \\[1mm]
+    \begin{tabular}{c}
+        {\small Supervisors:} \\[1mm]
 %        {\small Supervisor} & {\small Supervisor} \\
-        {\large \supervisorone} & {\large \supervisortwo} \\[2mm]
-        {\small \sdepartmentone} 			 & {\small \sdepartmenttwo} \\
-        {\small \suniversityone} 			 & {\small \suniversitytwo} 	\\
+        {\large \supervisorone}\\ %& {\large \supervisortwo} \\[2mm]
+        {\small \sdepartmentone}\\% 			 & {\small \sdepartmenttwo} \\
+        {\small \suniversityone}\\%			 & {\small \suniversitytwo} 	\\
 %        {\small \myunistreet} 		 & {\small \myunistreet} \\
 %        {\small \myunizipcity}		 & {\small \myunizipcity}
     \end{tabular}
@@ -217,7 +217,7 @@ I would especially like to thank them for accepting the thesis proposal and help
 and making sure that I do not divert from the topic at hand.
 The discussions we had throughout the thesis helped bring in a varied dimension of thoughts and broadened my horizon to tackle and make tough decisions in a limited time interval.
 
-I would also like to extend my gratitude to Prof.Dr.Frank Ortmeier for accepting my thesis research topic and taking me under his banner.
+I would also like to extend my gratitude to Prof.Dr. Frank Ortmeier for accepting my thesis research topic and taking me under his banner.
 I sincerely thank him for providing an excellent research environment and all the required resources to complete the thesis.
 The active research under the Chair of Software Engineering Workgroup urged me to take up the thesis under the same department.
 

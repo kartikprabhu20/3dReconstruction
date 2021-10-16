@@ -116,7 +116,7 @@ This is achieved by casting a ray from the camera using \emph{Physics.Linecast},
 To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera position and make sure that the camera is in front of the target object within an angle of 60 degrees.
 
 \subsection{Replacing target Objects}\label{subsec:implementation_replacing-target-objects}
-Once the room is set up using SceneNet~\cite{McCormac:etal:ICCV2017}, which contains objects from ShapeNet~\cite{chang2015shapenet}, the objects are renamed such that it matches the classes for the Pix3D dataset.
+Once the room is set up using SceneNet~\cite{McCormac2017}, which contains objects from ShapeNet~\cite{shapenet2015}, the objects are renamed such that it matches the classes for the Pix3D dataset.
 Since a given scene can have more than one category under observation, a single model is chosen randomly out of all the present models.
 The chosen model is replaced with a model in Pix3D of the same category, by making it invisible using \emph{GameObject.SetActive}.
 In case the replaced model is intersecting with any other models in the scene, we make it invisible.
@@ -145,13 +145,13 @@ For our environment this acts a natural Sun Light.
 This is specifically effective when the room has windows forming more realistic shadows.
 In this case, we modulate the brightness, and the angle at which the rays are emitted, which simulates different times of the day.
 Additional to these different types of light, we give ceilings the property of light with limited brightness as we observed that the entire room does not light up for a single light source.
-This is similar to what BlenderProc~\cite{denninger2019blenderproc} do for all scenarios.
+This is similar to what BlenderProc~\cite{dlr139317} do for all scenarios.
 Samples of different lighting conditions and shadows with varying colors are displayed in \autoref{fig:Lighting and shadows}.
 
 
 \subsection{Snapshots with ML-ImageSynthesis}\label{subsec:snapshots-with-ml-imagesynthesis}
 
-ML-ImageSynthesis~\footnote{https://bitbucket.org/Unity-Technologies/ml-ima gesynthesis} is a library provided by Unity to support synthetic dataset creation.
+ML-ImageSynthesis~\footnote{https://bitbucket.org/Unity-Technologies/ml-imagesynthesis} is a library provided by Unity to support synthetic dataset creation.
 It supports the following G-buffers Image segmentation, Object categorization, Optical flow, Depth, Normals, etc.
 G-buffers is basically a collective term to represent light properties that are aggregated to give the final rendering.
 In image segmentation, each object is assigned a unique color.
@@ -316,7 +316,7 @@ In the validation step, we compute the average ~\gls{iou} for each of the batche
 In the case where the value increases, we replace the best value and save the model state as the best model.
 No thresholding is done during the validation step to apply binary cross-entropy.
 
-As illustrated by~\cite{tatarchenko2019singleview}, mean \gls{iou} as a standalone measure might be misleading.
+As illustrated by~\cite{Tatarchenko2019}, mean \gls{iou} as a standalone measure might be misleading.
 Since the voxel-based representation is volumetric, even with high \gls{iou}, we may see a bad reconstruction.
 For this reason, we use the \gls{f1} as our second measure of evaluation, for which we dedicate \autoref{sec:study-with-f-score}.
 \gls{f1} is the harmonic mean between precision and recall.

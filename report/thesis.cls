@@ -173,8 +173,8 @@
 
 \newglossary[slg]{symbol}{sot}{stn}{\iftoggle{german}{Symbolverzeichnis}{List of Symbols}}
 
-\newcommand{\headfont}{\biolinum}
-\newcommand{\chapterheadfont}{\biolinum}
+\newcommand{\headfont}{}
+\newcommand{\chapterheadfont}{}
 
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}

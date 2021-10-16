@@ -10,71 +10,46 @@ A level-1 auxiliary file: text/conclusion.aux
 A level-1 auxiliary file: text/appendix.aux
 The style file: literature/plainnat.bst
 Database file #1: literature/thesis.bib
-Warning--I'm ignoring 9210569's extra "key" field
---line 322 of file literature/thesis.bib
-Warning--I'm ignoring 9210569's extra "key" field
---line 323 of file literature/thesis.bib
-Warning--I'm ignoring 9210569's extra "key" field
---line 324 of file literature/thesis.bib
-Warning--I'm ignoring 9210569's extra "key" field
---line 325 of file literature/thesis.bib
-Warning--I'm ignoring 9210569's extra "key" field
---line 326 of file literature/thesis.bib
-Warning--entry type for "unrealengine" isn't style-file defined
---line 909 of file literature/thesis.bib
-Warning--to sort, need author or key in Evermotion
-Warning--to sort, need author or key in TurboSquid
-Warning--to sort, need author or key in 2018LearningIC
-Warning--empty year in Evermotion
-Warning--empty year in TurboSquid
-Warning--empty author in 2018LearningIC
-Warning--empty booktitle in 2018LearningIC
-Warning--empty year in unrealengine
-Warning--empty booktitle in Guo20173DFaceNetRD
-Warning--can't use both author and editor fields in Joyce2011
-Warning--empty booktitle in LiSilhouetteAssisted3O
-Warning--empty year in LiSilhouetteAssisted3O
-Warning--empty year in LiSilhouetteAssisted3O
-Warning--empty journal in McCormac:etal:ICCV2017
-You've used 105 entries,
+Warning--empty chapter and pages in Joyce2011
+You've used 101 entries,
             2773 wiz_defined-function locations,
-            1110 strings with 27895 characters,
-and the built_in function-call counts, 62737 in all, are:
-= -- 4994
-> -- 5637
-< -- 41
-+ -- 1891
-- -- 1781
-* -- 5523
-:= -- 9772
-add.period$ -- 304
-call.type$ -- 105
-change.case$ -- 903
-chr.to.int$ -- 100
-cite$ -- 227
-duplicate$ -- 2225
-empty$ -- 3977
-format.name$ -- 1905
-if$ -- 12950
-int.to.chr$ -- 6
+            1100 strings with 28112 characters,
+and the built_in function-call counts, 62536 in all, are:
+= -- 4929
+> -- 5548
+< -- 38
++ -- 1853
+- -- 1749
+* -- 5468
+:= -- 9696
+add.period$ -- 294
+call.type$ -- 101
+change.case$ -- 882
+chr.to.int$ -- 98
+cite$ -- 203
+duplicate$ -- 2423
+empty$ -- 4104
+format.name$ -- 1868
+if$ -- 12996
+int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 61
-newline$ -- 520
-num.names$ -- 412
-pop$ -- 2046
+missing$ -- 84
+newline$ -- 500
+num.names$ -- 406
+pop$ -- 2003
 preamble$ -- 1
-purify$ -- 801
+purify$ -- 783
 quote$ -- 0
-skip$ -- 2190
+skip$ -- 2171
 stack$ -- 0
-substring$ -- 1182
-swap$ -- 362
-text.length$ -- 22
+substring$ -- 1179
+swap$ -- 424
+text.length$ -- 27
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1145
-warning$ -- 14
+type$ -- 1106
+warning$ -- 1
 while$ -- 364
 width$ -- 0
-write$ -- 1275
-(There were 20 warnings)
+write$ -- 1232
+(There was 1 warning)

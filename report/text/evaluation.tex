@@ -31,8 +31,8 @@ A total of 72 participants responded to the survey.
 The survey was created using Google Forms, and the link was distributed.
 The participants either used a mobile phone or a desktop to respond to the survey.
 The survey constituted a total of 9 datasets.
-\gls{front}~\cite{Fu20203DFRONT3F}, Hypersim~\cite{Roberts2020HypersimAP}, InteriorNet~\cite{InteriorNet18}, SceneNet~\cite{McCormac:etal:ICCV2017}, BlenderProc~\cite{denninger2019blenderproc},
-\gls{ai2thor}~\cite{kolve2019ai2thor}, Openroom~\cite{li2021openrooms}, Pix3D~\cite{pix3d} and proposed \gls{free} dataset.
+\gls{front}~\cite{Fu20203DFRONT3F}, Hypersim~\cite{Roberts2020HypersimAP}, InteriorNet~\cite{InteriorNet18}, SceneNet~\cite{McCormac2017}, BlenderProc~\cite{dlr139317},
+\gls{ai2thor}~\cite{ai2thor}, Openroom~\cite{Li_2021_CVPR}, Pix3D~\cite{Sun2018} and proposed \gls{free} dataset.
 Only Pix3D was a real dataset, while all others are synthetic datasets proclaimed to be photorealistic.
 
 The survey was composed of 3 sections.
@@ -54,12 +54,12 @@ The survey was composed of 3 sections.
     The users ranked them in the increasing order of the photorealism.
 \end{enumerate}
 
-\subsection{Survey results}\label{subsec:survey-results}
-In this segment, we discuss the results of the survey collected from participants.
+%\subsection{Survey results}\label{subsec:survey-results}
+%In this segment, we discuss the results of the survey collected from participants.
 
-\subsubsection{Section 1: Real or Not}
+\subsection{Section 1: Real or Not}
 In section 1, the participants had only two options to select from independently.
-\autoref{fig:question1} shows that the real dataset Pix3D~\cite{pix3d} was rightly recognized as real.
+\autoref{fig:question1} shows that the real dataset Pix3D~\cite{Sun2018} was rightly recognized as real.
 77\% of the real images that belonged to Pix3D were perceived to be real.
 This shows that the participants were not convinced even with the real images, as 23\% were still recognized as not real.
 Hyeperism~\cite{Roberts2020HypersimAP} got the best results of 59.7\% identified as real among the synthetic datasets,.
@@ -81,7 +81,7 @@ which has a Unity-based framework to generate images and was manually configured
     \label{fig:question1}
 \end{figure}
 
-\subsubsection{Section 2: Likert Scale}
+\subsection{Section 2: Likert Scale}
 In section 2, the participants could select ratings from 1 to 10 (1 being the least photorealistic).
 The distribution of values for each dataset can be seen in \autoref{fig:question2}, and the average ratings are as seen in \autoref{fig:question2_2}.
 If we consider the scale of 1, which is the least rating given to the image, \gls{ai2thor} has the most votes.
@@ -109,7 +109,7 @@ Even though \gls{free} has the least average, it is still comparable to other au
     \label{fig:question2_2}
 \end{figure}
 
-\subsubsection{Section 3: Rank by comparison}
+\subsection{Section 3: Rank by comparison}
 In section 3 of the survey, the users compared all nine datasets and ranked them according to their photorealism(1 being the best rank).
 \autoref{fig:question3} and \autoref{fig:question3_2} show distribution and average ranking for each of the datasets.
 The real dataset Pix3D got the highest number of votes for rank 1, while \gls{free} got the least.
@@ -133,7 +133,7 @@ However, \gls{free} breaks the boundary to be in the top 5 most times.
     \label{fig:question3_2}
 \end{figure}
 
-\subsubsection{Summary for survey}
+\subsection{Summary for survey}
 In the survey, we observe Pix3D was rightly chosen as a photorealistic image because it is a real-world image collection.
 Though the proposed \gls{free} dataset falls behind in comparison to manually designed images from Hyperism, InteriorNet, and \gls{front},
 it is comparable to automated datasets from Blenderproc, OpenRooms and SceneNet.
@@ -289,11 +289,26 @@ establishing that \gls{ai2thor} is closer to the real dataset, contrary to what 
         \gls{free} & 178.83 \\[1ex]
         \hline
     \end{tabular}
-    \caption{Table represents quantitative - \gls{fid} measure to compare synthetic dataset distribution with the real dataset(Pix3D)}
+    \caption{Table represents quantitative - \gls{fid} measure to compare synthetic dataset distribution with the real dataset(Pix3D).
+    InteriorNet has the least \gls{fid} and hence the most similarity to real dataset distribution.}
     \label{tab:quantitative-dataset-comparison}
 \end{table}
 
 \subsection{Domain gap for \gls{free} ablation datasets}
+
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textureless.pgf}}
+    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textureless_light.pgf}}\\
+    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textured.pgf}}
+    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textured_light.pgf}}\\
+    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_multi-object.pgf}}
+    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_chair_DR.pgf}}\\
+    \caption{\gls{tsne} visualization for images from individual synthetic chair dataset with different domain randomization parameter compared with Pix3D chair latent space.
+        (Left to right, top to bottom) Textureless, Textureless with light, Textured, Textured with light, Multi-Object and Combined.}
+    \label{fig:tsne per chair dataset}
+\end{figure}
 
 \autoref{fig:tsne per chair dataset} represents latent space for each variation of domain randomization for chairs compared to chairs from the real dataset(Pix3D).
 Two hundred images were randomly sampled from each dataset and embedded using pre-trained \gls{vgg} as in \autoref{subsec:qualitative}.
@@ -324,23 +339,10 @@ Multi-Object dataset has the best similarity with least \gls{fid} of 123.45, whi
         Multi-Object & 123.45 \\[1ex]
         \hline
     \end{tabular}
-    \caption{Table represents quantitative - \gls{fid} measure to compare chair synthetic dataset distribution with the real dataset(Pix3D)}
+    \caption{Table represents quantitative - \gls{fid} measure to compare chair synthetic dataset distribution with the real dataset(Pix3D).
+    Multi-Object dataset has the least \gls{fid} and hence is most similar to real dataset.}
     \label{tab:quantitative-dataset-comparison-chair-dataset}
 \end{table}
-
-\begin{figure}[!ht]
-    \centering
-    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textureless.pgf}}
-    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textureless_light.pgf}}\\
-    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textured.pgf}}
-    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_textured_light.pgf}}\\
-    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_s2r3dfree_multi-object.pgf}}
-    \resizebox{0.49\linewidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_chair_DR.pgf}}\\
-    \caption{\gls{tsne} visualization for images from individual synthetic chair dataset with different domain randomization parameter compared with Pix3D chair latent space.
-        (Left to right, top to bottom) Textureless, Textureless with light, Textured, Textured with light, Multi-Object and Combined}
-    \label{fig:tsne per chair dataset}
-\end{figure}
-
 
 \section{Baseline}\label{sec:baseline}
 
@@ -357,23 +359,34 @@ The models are trained on 70\% of the data for the synthetic dataset, and 30\% i
 For testing, we use the same 30\% of real data from the Pix3D dataset.
 For the real dataset, the models are trained on 70\% of data and validated/tested on the same 30\% used in testing models trained on synthetic data.
 
-\begin{figure}[ht]
+%\begin{figure}[ht]
+%    \centering
+%    \resizebox{0.49\linewidth}{0.5\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_barplot1.pgf}}
+%    \resizebox{0.49\linewidth}{0.5\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_barplot2.pgf}}
+%    \caption{Bar plot for the \gls{iou}  for \textbf{baselines} trained on real and synthetic datasets, with and without 2D augmentation.
+%        (left)The checkpoint was saved using real dataset for validation and test, (right) the checkpoint was saved using corresponding synthetic data for validation step and tested with real data.
+%        In both the cases we see that ~\gls{free} does not perform adequately on its own. \gls{s2rv2} contributes better than \gls{s2rv1}.}
+%    \label{fig:baseline1}
+%\end{figure}
+
+
+\begin{figure}[!ht]
     \centering
-    \resizebox{0.49\linewidth}{0.5\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_barplot1.pgf}}
-    \resizebox{0.49\linewidth}{0.5\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_barplot2.pgf}}
+    \subfloat[][]{\resizebox{0.75\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_barplot1.pgf}}}\\
+    \subfloat[][]{\resizebox{0.75\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_barplot2.pgf}}}\\
     \caption{Bar plot for the \gls{iou}  for \textbf{baselines} trained on real and synthetic datasets, with and without 2D augmentation.
-        (left)The checkpoint was saved using real dataset for validation and test, (right) the checkpoint was saved using corresponding synthetic data for validation step and tested with real data.
+        (a)The checkpoint was saved using real dataset for validation and test, (b) The checkpoint was saved using corresponding synthetic data for validation step and tested with real data.
         In both the cases we see that ~\gls{free} does not perform adequately on its own. \gls{s2rv2} contributes better than \gls{s2rv1}.}
     \label{fig:baseline1}
 \end{figure}
 
-\autoref{fig:baseline1} is a comparison of models trained with 2D augmentation, synthetic dataset, and real dataset.
+\autoref{fig:baseline1}(a) is a comparison of models trained with 2D augmentation, synthetic dataset, and real dataset.
 For models validated with the real dataset, it is seen that 2D augmentation improves \gls{iou}  by 8.06\% for Pix3D on Pix2Vox++ and 1.22\% on Pix2Vox.
 In the case of the synthetic dataset, 2D augmentation increases the \gls{iou}  by 1.42\% and 6.66\% for Pix2Vox++ and Pix2Vox, respectively.
 When it comes to whether a synthetic dataset gives an equivalent performance as a real dataset, we can see a dip in the performance, demonstrating that there is a domain gap between real and synthetic data.
 Out of the two synthetic datasets, \gls{s2rv2} gives better results than \gls{s2rv1} when tested with real data.
 We hypothesize that since Pix3D has multi-objects in the scenes, same as \gls{s2rv2}, it performs better than single object images from \gls{s2rv1}.
-A similar observation is seen when a checkpoint is saved with the synthetic dataset itself being the validation set as in \autoref{fig:baseline1}(right).
+A similar observation is seen when a checkpoint is saved with the synthetic dataset itself being the validation set as in \autoref{fig:baseline1}(b).
 
 
 \begin{figure}[!ht]
@@ -442,30 +455,29 @@ For \gls{s2rv2}, a decrement of 3.54\% on Pix2Vox++, but an increment of 0.8\% o
     \label{fig:finetuning1}
 \end{figure}
 
+In \autoref{fig:finetuning2} and \autoref{fig:finetuning3}, we observe the \gls{iou} for each category, for Pix2Vox++ and Pix2Vox, respectively.
+We can see that model trained on only Pix3D has more \gls{iou} for majority of the categories on average.
+For Pix2Vox, \gls{s2rv2} has a slight gain over Pix3D in some categories.
+Overall, fine-tuning is not helping in increasing the performance of the baseline models.
+
 
 \begin{figure}[!ht]
     \centering
-    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_barplot_pix2voxpp.pgf}}
+    \resizebox{0.65\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_barplot_pix2voxpp.pgf}}
     \caption{Bar plot for the \gls{iou} for baseline \texbf{Pix2Vox++} trained on (\gls{s2rv1}, \gls{s2rv2}) and \textbf{fine-tuned} with Pix3D.
     The categories are listed along with the number of images.
     The performance of \texbf{Pix2Vox++} mixed with both the synthetic dataset is less than model trained on only Pix3D, for majority of the categories.}
     \label{fig:finetuning2}
 \end{figure}
 
-\begin{figure}[!ht]c
+\begin{figure}[!ht]
     \centering
-    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_barplot_pix2vox.pgf}}
+    \resizebox{0.65\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_barplot_pix2vox.pgf}}
     \caption{Bar plot for the \gls{iou} for baseline \texbf{Pix2Vox} trained on (\gls{s2rv1}, \gls{s2rv2}) and \texbf{fine-tuned} with Pix3D.
     The categories are listed along with the number of images.
     The performance of \textbf{Pix2Vox} mixed with both the synthetic dataset is less than model trained on only Pix3D, for majority the categories.}
     \label{fig:finetuning3}
 \end{figure}
-
-In \autoref{fig:finetuning2} and \autoref{fig:finetuning3}, we observe the \gls{iou} for each category, for Pix2Vox++ and Pix2Vox, respectively.
-We can see that model trained on only Pix3D has more \gls{iou} for majority of the categories on average.
-For Pix2Vox, \gls{s2rv2} has a slight gain over Pix3D in some categories.
-Overall, fine-tuning is not helping in increasing the performance of the baseline models.
-
 
 \begin{figure}[!ht]
     \begin{tabular}{llll}
@@ -515,49 +527,26 @@ When compared to models trained on only real dataset as in \autoref{fig:finetuni
 
 
 \section{Mixed Training}\label{sec:mixed-training}
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[][]{\resizebox{0.75\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot1.pgf}}}\\
+    \subfloat[][]{\resizebox{0.75\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot2.pgf}}}\\
+    \caption{Bar plot for the \gls{iou} for baselines trained on different ratios of synthetic and real dataset per mini-batch.(a)\textbf{Mixed training on Pix2Vox++}, (b)\textbf{Mixed training on Pix2Vox}.
+    In both cases we see a slight increase in \gls{iou} with addition of real data, and a gradual decrease till it reaches 100\% real data}
+    \label{fig:mixed1}
+\end{figure}
+
 For mixed training, we mix synthetic and real datasets with a fixed ratio in each mini-batch.
 The ratios used were \emph{0.15, 0.25, 0.5, 0.75 and 0.9}.
 The higher the ratio, the closer the mixed dataset becomes a real dataset.
 Both the real and synthetic datasets were drawn according to these ratios for each mini-batch.
 The synthetic dataset is much more abundant than the real, so the real dataset will be oversampled to achieve the mentioned ratios.
 
-In \autoref{fig:mixed1}, models trained with each of the ratios have better performance than the baseline of 0.3443 for Pix2Vox++,
-except for a ratio of 15\%, which in some cases has a slightly lower \gls{iou}  value.
-The most significant difference is seen at 50\% using the \gls{s2rv2} dataset with an increase of 3.04\%.
-We saw an increase in \gls{iou} for Pix2Vox rather than Pix2Vox++.
-An increase of 2.62\% is noted for the 25\% mix with \gls{s2rv2} on Pix2Vox.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
-    \resizebox{0.49\linewidth}{0.45\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot1.pgf}}
-    \resizebox{0.49\linewidth}{0.45\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot2.pgf}}
-    \caption{Bar plot for the \gls{iou} for baselines trained on different ratios of synthetic and real dataset per mini-batch.(left)\textbf{Mixed training on Pix2Vox++}, (right)\textbf{Mixed training on Pix2Vox}.
-    In both cases we see a slight increase in \gls{iou} with addition of real data, and a gradual decrease till it reaches 100\% real data}
-    \label{fig:mixed1}
-\end{figure}
-
-\autoref{fig:mixed2} and \autoref{fig:mixed3}, represent \gls{iou} per category present in the Pix3D and \gls{free}.
-The number of images per category is also mentioned on the x-label.
-We see that table and desk are most difficult to reconstruct as the \gls{iou} is least, while the wardrobe is the easiest category to reconstruct and gets the most points.
-In the majority of the cases, we see that \fls{iou} of models trained on mixed data achieves higher performance than models trained on only real dataset.
-
-In \autoref{fig:mixed_images1}, we see the 3D reconstruction output for models mixed trained with 50\% synthetic and real data per mini-batch.
-The outputs were collected for images from the real dataset with the threshold which gave the best \gls{iou}.
-The output of models is less noisy than models fine-tuned, as in \autoref{fig:finetuning_images1}, for most reconstructions.
-The models seem to have much better details as well.
-
-%\begin{figure}
-%    \centering
-%    \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_linegraph1.pgf}}
-%    \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_linegraph2.pgf}}
-%    \caption{Line plot for the \gls{iou}  for baselines trained on different ratios of synthetic and real dataset.
-%        (Left)Mixed training on Pix2Vox++, (right)Mixed training on Pix2Vox. In both cases we see a slight increase in \gls{iou} with addition of real data, and a gradual decrease till it reaches 100\% real data}
-%    \label{fig:mixed1}
-%\end{figure}
-
-\begin{figure}
-    \centering
-    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot_pix2voxpp.pgf}}
+    \resizebox{0.65\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot_pix2voxpp.pgf}}
     \caption{Bar plot for the \gls{iou} for baseline \texbf{Pix2Vox++} trained on 50\% of \textbf{mixed dataset}(\gls{s2rv1}, \gls{s2rv2}) and with Pix3D.
     The categories are listed along with the number of images.
     The performance of Pix2Vox++ mixed with both the synthetic dataset is more than model trained on only Pix3D, for majority of the categories.
@@ -565,10 +554,9 @@ The models seem to have much better details as well.
     \label{fig:mixed2}
 \end{figure}
 
-
-\begin{figure}
+\begin{figure}[!ht]
     \centering
-    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot_pix2vox.pgf}}
+    \resizebox{0.65\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot_pix2vox.pgf}}
     \caption{Bar plot for the \gls{iou} for baseline \texbf{Pix2Vox} trained on 50\% of \textbf{mixed dataset}(\gls{s2rv1}, \gls{s2rv2}) and with Pix3D.
     The categories are listed along with the number of images.
     The performance of Pix2Vox mixed with both the synthetic dataset is more than model trained on only Pix3D, for all the categories.}
@@ -576,15 +564,16 @@ The models seem to have much better details as well.
 \end{figure}
 
 
-\begin{figure}
+
+\begin{figure}[!ht]
     \begin{tabular}{llll}
         Pix3D images & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/bed1} &
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/sofa1} &
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/table2}\\
 
-        Ground Truth & \includegraphics[trim={0 0 {.1\width} 0},clip,width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/mixed/bed1_original} &
-        \includegraphics[trim={0 0 {.1\width} 0},clip,width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/mixed/sofa1_original} &
-        \includegraphics[trim={0 0 {.1\width} 0},clip,width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/mixed/table2_original}\\
+        Ground Truth & \includegraphics[trim={0 0 {.1\width} 0},clip,width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/bed1_original} &
+        \includegraphics[trim={0 0 {.1\width} 0},clip,width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/sofa1_original} &
+        \includegraphics[trim={0 0 {.1\width} 0},clip,width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/table2_original}\\
 
         Output1 & \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/mixed/mixed1_p2vpp_bed1} &
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/mixed/mixed1_p2vpp_sofa1} &
@@ -608,14 +597,57 @@ The models seem to have much better details as well.
     \label{fig:mixed_images1}
 \end{figure}
 
+In \autoref{fig:mixed1}, models trained with each of the ratios have better performance than the baseline of 0.3443 for Pix2Vox++,
+except for a ratio of 15\%, which in some cases has a slightly lower \gls{iou}  value.
+The most significant difference is seen at 50\% using the \gls{s2rv2} dataset with an increase of 3.04\%.
+We saw an increase in \gls{iou} for Pix2Vox rather than Pix2Vox++.
+An increase of 2.62\% is noted for the 25\% mix with \gls{s2rv2} on Pix2Vox.
+
+
+%\begin{figure}[ht]
+%    \centering
+%    \resizebox{0.49\linewidth}{0.45\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot1.pgf}}
+%    \resizebox{0.49\linewidth}{0.45\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_barplot2.pgf}}
+%    \caption{Bar plot for the \gls{iou} for baselines trained on different ratios of synthetic and real dataset per mini-batch.(left)\textbf{Mixed training on Pix2Vox++}, (right)\textbf{Mixed training on Pix2Vox}.
+%    In both cases we see a slight increase in \gls{iou} with addition of real data, and a gradual decrease till it reaches 100\% real data}
+%    \label{fig:mixed1}
+%\end{figure}
+
+\autoref{fig:mixed2} and \autoref{fig:mixed3}, represent \gls{iou} per category present in the Pix3D and \gls{free}.
+The number of images per category is also mentioned on the x-label.
+We see that table and desk are most difficult to reconstruct as the \gls{iou} is least, while the wardrobe is the easiest category to reconstruct and gets the most points.
+In the majority of the cases, we see that \fls{iou} of models trained on mixed data achieves higher performance than models trained on only real dataset.
+
+In \autoref{fig:mixed_images1}, we see the 3D reconstruction output for models mixed trained with 50\% synthetic and real data per mini-batch.
+The outputs were collected for images from the real dataset with the threshold which gave the best \gls{iou}.
+The output of models is less noisy than models fine-tuned, as in \autoref{fig:finetuning_images1}, for most reconstructions.
+The models seem to have much better details as well.
+
+%\begin{figure}
+%    \centering
+%    \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_linegraph1.pgf}}
+%    \resizebox{0.49\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_linegraph2.pgf}}
+%    \caption{Line plot for the \gls{iou}  for baselines trained on different ratios of synthetic and real dataset.
+%        (Left)Mixed training on Pix2Vox++, (right)Mixed training on Pix2Vox. In both cases we see a slight increase in \gls{iou} with addition of real data, and a gradual decrease till it reaches 100\% real data}
+%    \label{fig:mixed1}
+%\end{figure}
+
 \section{Ablation study on chairs}\label{sec:ablation-study-on-chairs}
 In this section, we conduct ablation study on chairs by changing domain randomization property.
-The dataset used for the study is explained in \autoref{subsec:s2r:3dfree-ablation}, samples of which can be found in \autoref{fig:domain randomisation for ablation study}.
-The samples for  each of the datasets used is as shown in \autoref{fig:domain randomisation for ablation study}.
+The dataset used for the study is explained in \autoref{subsec:s2r:3dfree-ablation}, samples of which can be found in \autoref{fig:domain_randomisation_for_ablation_study}.
+
 \subsection{Domain randomization on chair dataset}\label{subsec:domain-randomisation-on-chair-dataset}
 For comparison with the real dataset, we extract only the chair models from Pix3D and compare the results  with and without 2D augmentation on the synthetic dataset.
 In \autoref{fig:ablation1}, we see that the textureless chair dataset outperforms the rest of the dataset.
 The hypothesis is that the more domain randomization, the better the performance.
+
+\begin{figure}[ht]
+    \centering
+    \resizebox{0.9\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_barplot1.pgf}}
+    \caption{Bar plot for the \gls{iou} for \textbf{baseline} trained on chair dataset with different domain randomization parameters and tested on real dataset.
+    We see a dip in performance near textureless dataset, but it gradually increases with addition of domain randomization parameter.}
+    \label{fig:ablation1}
+\end{figure}
 
 The baseline on real chair dataset from Pix3D is 0.2797 and 0.2916, without and with 2D augmentations on Pix2Vox++.
 For Pix2Vox we observe 0.2694 and 0.3305 for the same 2 set up.
@@ -626,14 +658,6 @@ The textureless dataset seems to have more overlap in latent space compared to t
 In \autoref{fig:ablation1}, we see a slight increase in performance in the 3D reconstruction task, which also holds with \gls{tsne} visualization,
 where we see the latent space occupying common regions.
 The combined dataset of all other domain randomization showed the best performance of the set for both the baseline models.
-
-\begin{figure}[ht]
-    \centering
-    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_barplot1.pgf}}
-    \caption{Bar plot for the \gls{iou} for \textbf{baseline} trained on chair dataset with different domain randomization parameters and tested on real dataset.
-    We see a dip in performance near textureless dataset, but it gradually increases with addition of domain randomization parameter.}
-    \label{fig:ablation1}
-\end{figure}
 
 \begin{figure}[!ht]
     \begin{tabular}{llll}
