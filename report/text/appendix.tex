@@ -18,7 +18,7 @@ The performance is similar to what we see in \autoref{fig:baseline1}.
 \begin{figure}[ht]
     \centering
     \resizebox{0.75\linewidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/baseline_dice_barplot1.pgf}}
-    \caption{Bar plot for the \gls{f1}  for baselines trained on real and synthetic datasets, with and without 2D augmentation.
+    \caption[\gls{f1} Comparison for Baselines]{Bar plot for the \gls{f1}  for baselines trained on real and synthetic datasets, with and without 2D augmentation.
     We see that ~\gls{free} does not perform adequately on its own. \gls{s2rv2} contributes slightly better than \gls{s2rv1}.}
     \label{fig:baseline_dice1}
 \end{figure}
@@ -57,15 +57,15 @@ where the \gls{f1} for each category with fine-tuned models is less than the mod
 \begin{figure}[ht]
     \centering
     \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetuning_dice_barplot1.pgf}}
-    \caption{Bar plot for the \gls{f1} for baseline models(Pix2Vox++ and Pix2Vox) trained on synthetic and fine-tuned with real dataset.
+    \caption[\gls{f1} Comparison for Fine-Tuned Baselines]{Bar plot for the \gls{f1} for baseline models(Pix2Vox++ and Pix2Vox) trained on synthetic and fine-tuned with real dataset.
     We see that even after fine-tuning both the models do not perform as good as models trained on only real dataset.}
     \label{fig:finetuning_dice1}
 \end{figure}
 
 \begin{figure}
     \centering
-    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_dice_barplot_pix2voxpp.pgf}}
-    \caption{Bar plot for the \gls{f1} for baseline pix2vox++ trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
+    \resizebox{0.65\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_dice_barplot_pix2voxpp.pgf}}
+    \caption[\gls{f1} Comparison for Each Category from Fine-Tuned Pix2Vox++.]{Bar plot for the \gls{f1} for baseline pix2vox++ trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
     The categories are listed along with the number of images.
     The performance of \texbf{pix2vox++} mixed with both the synthetic dataset is less than model trained on only pix3d, for majority of the categories.}
     \label{fig:finetuning_dice2}
@@ -73,14 +73,14 @@ where the \gls{f1} for each category with fine-tuned models is less than the mod
 
 \begin{figure}
     \centering
-    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_dice_barplot_pix2vox.pgf}}
-    \caption{Bar plot for the \gls{f1} for baseline \texbf{pix2vox} trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
+    \resizebox{0.65\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/finetune_dice_barplot_pix2vox.pgf}}
+    \caption[\gls{f1} Comparison for Each Category from Fine-Tuned Pix2Vox.]{Bar plot for the \gls{f1} for baseline \texbf{pix2vox} trained on (\gls{s2rv1}, \gls{s2rv2}) and fine-tuned with pix3d.
     The categories are listed along with the number of images.
     The performance of pix2vox mixed with both the synthetic dataset is less than model trained on only pix3d, for majority the categories.}
     \label{fig:finetuning_dice3}
 \end{figure}
 
-\subsection{Mixed training}\label{subsec:mixed-training-dice}
+\subsection{Mixed Training}\label{subsec:mixed-training-dice}
 
 Similar to the experiments conducted in \autoref{sec:mixed-training}, we also note the \gls{f1} for training executed with different mixing ratios per mini-batch.
 The results in \autoref{fig:mixed_dice1} are consistent with previous experiment(\autoref{fig:mixed1}).
@@ -99,7 +99,7 @@ The performance increases slightly with an increase in the ratio of real data in
     \centering
     \resizebox{0.49\linewidth}{0.45\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_barplot1.pgf}}
     \resizebox{0.49\linewidth}{0.45\linewidth}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_barplot2.pgf}}
-    \caption{Bar plot for the \gls{f1}  for baselines trained on different ratios of synthetic and real dataset.
+    \caption[\gls{f1} Comparison for Mix-Trained Baselines.]{Bar plot for the \gls{f1}  for baselines trained on different ratios of synthetic and real dataset.
         (left)Mixed training on Pix2Vox++, (right)Mixed training on Pix2Vox. In both cases we see a slight increase in \gls{f1} with addition of real data, and a gradual decrease till it reaches 100\% real data}
     \label{fig:mixed_dice1}
 \end{figure}
@@ -107,7 +107,7 @@ The performance increases slightly with an increase in the ratio of real data in
 \begin{figure}
     \centering
     \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_barplot_pix2voxpp.pgf}}
-    \caption{Bar plot for the \gls{f1} for baseline \texbf{pix2vox++} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
+    \caption[\gls{f1} Comparison for Each Category from Mix-Trained Pix2Vox++.]{Bar plot for the \gls{f1} for baseline \texbf{pix2vox++} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
     The categories are listed along with the number of images.
     The performance of pix2vox++ mixed with both the synthetic dataset is more than model trained on only pix3d, for most of the categories.
     }
@@ -117,13 +117,13 @@ The performance increases slightly with an increase in the ratio of real data in
 \begin{figure}
     \centering
     \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/mixed_dice_barplot_pix2vox.pgf}}
-    \caption{Bar plot for the \gls{f1} for baseline \texbf{pix2vox} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
+    \caption[\gls{f1} Comparison for Each Category from Mix-Trained Pix2Vox.]{Bar plot for the \gls{f1} for baseline \texbf{pix2vox} trained on 50\% of mixed dataset(\gls{s2rv1}, \gls{s2rv2}) and with pix3d.
     The categories are listed along with the number of images.
     The performance of pix2vox mixed with both the synthetic dataset is more than model trained on only pix3d, for all the categories.}
     \label{fig:mixed_dice3}
 \end{figure}
 
-\subsection{Ablation study on chairs}\label{subsec:ablation-study-on-chairs}
+\subsection{Ablation Study on Chairs}\label{subsec:ablation-study-on-chairs}
 
 For the ablation study on chairs, we created different datasets with different domain randomization components as in \autoref{subsec:s2r:3dfree-ablation}.
 \autoref{fig:ablation_dice1} shows the performance of baseline models with each of the randomization components.
@@ -132,8 +132,8 @@ Overall the performance still does not match the real dataset on its own.
 
 \begin{figure}[ht]
     \centering
-    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_dice_barplot1.pgf}}
-    \caption{Bar plot for the \gls{f1}  for baseline trained on chair dataset with different domain randomization parameters and tested on real dataset.
+    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_dice_barplot1.pgf}}
+    \caption[\gls{f1} Comparison for Ablation Datasets.]{Bar plot for the \gls{f1}  for baseline trained on chair dataset with different domain randomization parameters and tested on real dataset.
     We see a dip in performance near textureless dataset, but it gradually increases with addition of domain randomization parameter.}
     \label{fig:ablation_dice1}
 \end{figure}
@@ -161,13 +161,13 @@ With the combined dataset we see that Pix2Vox++ has \gls{f1} of 0.4962 and Pix2V
 %\end{figure}
 \begin{figure}[ht]
     \centering
-    \resizebox{0.7\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_dice_barplot2.pgf}}
-    \caption{Bar plot for the \gls{f1}  for baseline trained by mixing chair dataset from real and synthetic dataset with ratio of 50\%.
+    \resizebox{0.75\textwidth}{!}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/performance/ablation_dice_barplot2.pgf}}
+    \caption[\gls{f1} Comparison for Ablation Datasets with Mixed Training.]{Bar plot for the \gls{f1}  for baseline trained by mixing chair dataset from real and synthetic dataset with ratio of 50\%.
     Observe that the \fls{IoU} is consistent for all types of randomization proving that mixed training negates loss from randomization.}
     \label{fig:ablation_dice2}
 \end{figure}
 
-\section{Additional outputs}\label{sec:additional-outputs}
+\section{Additional Outputs}\label{sec:additional-outputs}
 
 This section displays more outputs discussed in \autoref{sec:baseline}, \autoref{sec:fine-tuning}, and \autoref{sec:mixed-training}.
 The models trained on only synthetic datasets fail to reconstruct 3D voxels as seen in \autoref{fig:baseline_more_images1}.
@@ -201,7 +201,7 @@ MMixed training further improves the model's output, as seen in \autoref{fig:mix
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/s2rv3_p2v_desk1}\\
 
     \end{tabular}
-    \caption{3D reconstruction outputs for models trained on \textbf{only real dataset}, and \textbf{only synthetic dataset}. Output1-2: Pix2Vox++ and Pix2Vox trained on Pix3D(real dataset).
+    \caption[Additional 3D Reconstruction Outputs from Baselines]{3D reconstruction outputs for models trained on \textbf{only real dataset}, and \textbf{only synthetic dataset}. Output1-2: Pix2Vox++ and Pix2Vox trained on Pix3D(real dataset).
     Output3-4: Pix2Vox++ and Pix2Vox trained with only \gls{s2rv2} synthetic dataset. This corresponds to the bad \gls{iou} when trained on only synthetic dataset.}
     \label{fig:baseline_more_images1}
 \end{figure}
@@ -234,7 +234,7 @@ MMixed training further improves the model's output, as seen in \autoref{fig:mix
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/finetuning/s2rv3_p2v_desk1}\\
 
     \end{tabular}
-    \caption{3D reconstruction outputs for models trained on real dataset and synthetic datasets with \textbf{fine-tuning}. Output1-2: Pix2Vox++ and Pix2Vox trained on Pix3D(real dataset).
+    \caption[Additional 3D Reconstruction Outputs from Fine-Tuned Baselines]{3D reconstruction outputs for models trained on real dataset and synthetic datasets with \textbf{fine-tuning}. Output1-2: Pix2Vox++ and Pix2Vox trained on Pix3D(real dataset).
     Output3-4: Pix2Vox++ and Pix2Vox pre-trained with only \gls{s2rv2} synthetic dataset and then fine-tuned with Pix3d. The reconstruction is better than models trained on only synthetic dataset.}
     \label{fig:finetuning_more_images1}
 \end{figure}
@@ -267,14 +267,14 @@ MMixed training further improves the model's output, as seen in \autoref{fig:mix
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/mixed/mixed2_p2v_desk1}\\
 
     \end{tabular}
-    \caption{3D reconstruction outputs for best \textbf{mixed training}(50\% per mini-batch) models. Output1-2: Pix2Vox++ and Pix2Vox mixed trained with \gls{s2rv1}.
+    \caption[Additional 3D Reconstruction Outputs from Mix-Trained Baselines]{3D reconstruction outputs for best \textbf{mixed training}(50\% per mini-batch) models. Output1-2: Pix2Vox++ and Pix2Vox mixed trained with \gls{s2rv1}.
     Output3-4:Pix2Vox++ and Pix2Vox mixed trained with \gls{s2rv2}}
     \label{fig:mixed_more_images1}
 \end{figure}
 
 \clearpage
 
-\section{Additional attempts}\label{sec:some-failed-attempts}
+\section{Additional Attempts}\label{sec:some-failed-attempts}
 
 This section briefly discusses other attempts made to solve the research question related to this thesis.
 
@@ -294,14 +294,14 @@ Using \gls{hdrp} to improve the rendering would be interesting future work.
     \vspace{0.1cm}
     \includegraphics[width=.4\textwidth, height = .3\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp3}
     \includegraphics[width=.4\textwidth, height = .3\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp4}\\
-    \caption{Sample images for models rendered in High Definition Render Pipeline of Unity}
+    \caption[Samples for \gls{hdrp} with Pix3D]{Sample images for models rendered in High Definition Render Pipeline of Unity}
     \label{fig:hdrp}
 \end{figure}
 
 
 %\subsection{Different loss functions}
 
-\subsection{Empty image test}\label{subsec:empty-image-test}
+\subsection{Empty Image Test}\label{subsec:empty-image-test}
 In all the experiments conducted, the 2D image always had a furniture model in the frame.
 This section determines if the model predicts something when there is no furniture in the frame, with an empty room.
 This is just an attempt to see if the model hallucinates any furniture in an empty room.
@@ -330,7 +330,7 @@ We can imagine some of them to be bed, sofa, bookshelf, and table.
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/empty/p2v_empty_output_5}\\
 
     \end{tabular}
-    \caption{3D reconstruction outputs for best \textbf{mixed training}(50\% per mini-batch) models for empty rooms.
+    \caption[3D Reconstruction Output for Empty Room.]{3D reconstruction outputs for best \textbf{mixed training}(50\% per mini-batch) models for empty rooms.
     We do not see a detailed reconstruction, but some of them resemble furniture category.}
     \label{fig:empty_images1}
 \end{figure}
@@ -339,28 +339,28 @@ We can imagine some of them to be bed, sofa, bookshelf, and table.
 \newpage
 \section{Samples from Survey}\label{sec:samples-from-survey}
 We surveyed to realize the photorealism of the proposed \gls{free} dataset with other proclaimed photorealistic datasets.
-The survey is discussed in detail in \autoref{subsec:survey-results}.
+The survey is discussed in detail in \autoref{sec:a-survey-on-photorealism}.
 In this section, we display a sample each for all three sections from the collection.
-\autoref{fig:survey_sample_section1}, \autoref{fig:survey_sample_section2}, \autoref{fig:survey_sample_section3} are one examples from each section.
+\autoref{fig:survey_sample_section1}, \autoref{fig:survey_sample_section2}, \autoref{fig:survey_sample_section3} are one example from each section.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section1}
-    \caption{A sample question used for survey section 1. For section 1, participants were asked to select 'Real' or 'Not real' for 27 images, 3 images per dataset.}
+    \includegraphics[width=0.8\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section1}
+    \caption[Sample of Survey:Section 1.]{A sample question used for survey section 1. For section 1, participants were asked to select 'Real' or 'Not real' for 27 images, 3 images per dataset.}
     \label{fig:survey_sample_section1}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section2}
-    \caption{A sample question used for survey section 2. For section 2, participants were asked rate the 27 images from 1 to 10. We had 3 images per dataset.}
+    \includegraphics[width=0.8\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section2}
+    \caption[Sample of Survey:Section 2.]{A sample question used for survey section 2. For section 2, participants were asked rate the 27 images from 1 to 10. We had 3 images per dataset.}
     \label{fig:survey_sample_section2}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/survey_section3}
-    \caption{A sample question used for survey section 3. For section 3, the users were shown 9 images together and asked to rank them on descending order of photorealism. }
+    \caption[Sample of Survey:Section 3.]{A sample question used for survey section 3. For section 3, the users were shown 9 images together and asked to rank them on descending order of photorealism. }
     \label{fig:survey_sample_section3}
 \end{figure}
 
@@ -388,7 +388,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
+    \caption[\gls{iou} for Each Category From Pix2Vox++]{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
     The models trained on synthetic data is significantly bad when tested on real-data.}
     \label{tab:baseline_categories_all_iou_pix2voxpp}
 \end{table}
@@ -413,7 +413,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    \caption[\gls{iou} for Each Category From Pix2Vox]{Table represents \gls{iou} values for each category when trained on Pix2Vox.
     The models trained on synthetic data is significantly bad when tested on real-data.}
     \label{tab:baseline_categories_all_iou_pix2vox}
 \end{table}
@@ -435,7 +435,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
+    \caption[\gls{iou} for Each Category from Fine-Tuned Pix2Vox++]{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
     The models trained on synthetic data and then fine-tuned with real data. No improvement is seen with fine-tuning.}
     \label{tab:finetuning_categories_all_iou_pix2voxpp}
 \end{table}
@@ -456,7 +456,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    \caption[\gls{iou} for Each Category from Fine-Tuned Pix2Vox]{Table represents \gls{iou} values for each category when trained on Pix2Vox.
     The models trained on synthetic dataand fine-tuned with real-data. A slight improvement is seen in some of the categories and the average \gls{iou}}
     \label{tab:finetuning_categories_all_iou_pix2vox}
 \end{table}
@@ -492,7 +492,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
+    \caption[\gls{iou} for Each Category from Mix-Trained Pix2Vox++]{Table represents \gls{iou} values for each category when trained on Pix2Vox++.
     The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
     \label{tab:mixed_categories_all_iou_pix2voxpp}
 \end{table}
@@ -528,7 +528,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    \caption[\gls{iou} for Each Category from Mix-Trained Pix2Vox]{Table represents \gls{iou} values for each category when trained on Pix2Vox.
     The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
     \label{tab:mixed_categories_all_iou_pix2vox}
 \end{table}
@@ -558,8 +558,8 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each of the dataset created with different domain randomization component.
-    The last 2 colums is mixed training with 50\% of mini-batches being Pix3D.
+    \caption[\gls{iou} values for Ablation Datasets.]{Table represents \gls{iou} values for each of the dataset created with different domain randomization component.
+    The last 2 columns is mix-trained with 50\% of mini-batches being Pix3D.
     We see that mixed training consistently increases the performance of the models.}
     \label{tab:ablation1}
 \end{table}
@@ -587,7 +587,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
+    \caption[\gls{f1} for Each Category from Pix2Vox++]{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
     The models trained on synthetic data is significantly bad when tested on real-data.}
     \label{tab:baseline_categories_all_f1_pix2voxpp}
 \end{table}
@@ -612,7 +612,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox.
+    \caption[\gls{f1} for Each Category from Pix2Vox]{Table represents \gls{f1} values for each category when trained on Pix2Vox.
     The models trained on synthetic data is significantly bad when tested on real-data.}
     \label{tab:baseline_categories_all_f1_pix2vox}
 \end{table}
@@ -634,12 +634,10 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
+    \caption[\gls{f1} for Each Category from Fine-Tuned Pix2Vox]{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
     The models trained on synthetic data and then fine-tuned with real data. No improvement is seen with fine-tuning.}
     \label{tab:finetuning_categories_all_f1_pix2voxpp}
 \end{table}
-
-
 
 \begin{table}[ht]
     \centering
@@ -657,8 +655,8 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox.
-    The models trained on synthetic dataand fine-tuned with real-data. A slight improvement is seen in some of the categories and the average \gls{iou}}
+    \caption[\gls{f1} for Each Category from Fine-Tuned Pix2Vox]{Table represents \gls{f1} values for each category when trained on Pix2Vox.
+    The models trained on synthetic data and fine-tuned with real-data. A slight improvement is seen in some of the categories and the average \gls{iou}}
     \label{tab:finetuning_categories_all_f1_pix2vox}
 \end{table}
 
@@ -693,7 +691,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
+    \caption[\gls{f1} for Each Category from Fine-Tuned Pix2Vox++]{Table represents \gls{f1} values for each category when trained on Pix2Vox++.
     The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
     \label{tab:mixed_categories_all_f1_pix2voxpp}
 \end{table}
@@ -729,7 +727,7 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{iou} values for each category when trained on Pix2Vox.
+    \caption[\gls{f1} for Each Category from Fine-Tuned Pix2Vox]{Table represents \gls{iou} values for each category when trained on Pix2Vox.
     The first column indicates the synthetic dataset and ratio of real data used in each mini-batch.}
     \label{tab:mixed_categories_all_f1_pix2vox}
 \end{table}
@@ -761,8 +759,8 @@ In this section, we display a sample each for all three sections from the collec
             \hline
         \end{tabular}%
     }
-    \caption{Table represents \gls{f1} values for each of the dataset created with different domain randomization component.
-    The last 2 colums is mixed training with 50\% of mini-batches being Pix3D.
+    \caption[\gls{f1} values for Ablation Datasets.]{Table represents \gls{f1} values for each of the dataset created with different domain randomization component.
+    The last 2 columns is mixed training with 50\% of mini-batches being Pix3D.
     We see that mixed training consistently increases the performance of the models.}
     \label{tab:ablation1_f1}
 \end{table}

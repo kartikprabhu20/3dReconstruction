@@ -38,8 +38,9 @@ def get_histogram(fileName):
     names = ["LivingRoom","Kitchen","Bedroom", "Office"]
     quantity = [7,1,11,6]
 
-    plt.bar(names, quantity, color='b')
+    plt.bar(names, quantity)
     plt.title("Type of scenes")
+    plt.tick_params(labelsize=14)
     # plt.xticks(xticks, model_names)
     # plt.legend(['Mode'])
     plt.savefig(fileName, bbox_inches='tight',format='pgf')
@@ -49,8 +50,9 @@ def get_histogram_2(fileName):
     names =["chair","bed","desk","bookcase","sofa","table","wardrobe"]
     quantity = [113,24,37,20,23,34,11,]
 
-    plt.bar(names, quantity, color='b')
+    plt.bar(names, quantity)
     plt.title("Pix3D Categories in SceneNet")
+    plt.tick_params(labelsize=14)
     # plt.xticks(xticks, model_names)
     # plt.legend(['Mode'])
     plt.savefig(fileName, bbox_inches='tight',format='pgf')
@@ -78,7 +80,7 @@ def get_histogram_texture(texturepath,fileName):
     sortedNames = names[inds][::-1][0:40]
     sortedquantity = quantity[inds][::-1][0:40]
 
-    plt.bar(sortedNames, sortedquantity, color='b')
+    plt.bar(sortedNames, sortedquantity)
     plt.title("Distribution of textures")
     plt.xticks(rotation=90)
     plt.savefig(fileName, bbox_inches='tight',format='pgf')

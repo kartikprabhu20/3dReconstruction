@@ -16,16 +16,24 @@ from utils import load_mat_pix3d
 from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
 
-def getHistogram(root_path):
+def getHistogram(root_path,fileName="test"):
+    plt.clf()
     labels = get_classes(root_path)
     xticks = [i for i in range(len(labels))]
     y = []
     for label in labels:
         y.append(len(os.listdir(os.path.join(root_path, label))))
 
-    plt.bar(xticks, height=y)
+    print(labels)
+    print(y)
+    # rects1 = ax.bar(x - width/2, bar_data1, width, label=barlabels[0])
+
+    plt.bar(xticks,height=y)
     plt.xticks(xticks, labels)
+    plt.tick_params(labelsize=14)
+    # plt.xticks(rotation=45)
     plt.show()
+    # plt.savefig(fileName, bbox_inches='tight',format='pgf')
 
 
 def get_occluded_Histogram(root_path):
@@ -41,7 +49,7 @@ def get_occluded_Histogram(root_path):
 
 def get_classes(root_path):
     # return ["bed","bookcase","chair","desk","sofa","table","wardrobe"]
-    return [class_folder for class_folder in os.listdir(root_path+'/model/') if not class_folder.startswith('.')]
+    return [class_folder for class_folder in os.listdir(root_path) if not class_folder.startswith('.')]
 
 def split_to_classes(json_path, root_path):
     labels = get_classes(root_path)
@@ -70,7 +78,8 @@ def get_all_model_names(json_path):
 
     model_names = set()
     for i in range(0, len(y)):
-        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        # if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        if y[i]['category']=='chair':
             mode_name = y[i]['model'].split("/")[2]
             model_names.add(y[i]['category']+"/"+mode_name)
 
@@ -79,17 +88,19 @@ def get_all_model_names(json_path):
     return model_names
 
 def get_model_names_histogram(json_path):
+    plt.clf()
     y = json.load(open(json_path))
     model_names = list(get_all_model_names(json_path))
     model_list = [0] * len(model_names)
 
     for i in range(len(y)):
-        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        # if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        if y[i]['category']=='chair':
              model_list[model_names.index(y[i]['category']+"/"+ y[i]['model'].split("/")[2])] += 1
 
     xticks = [i for i in range(len(model_names))]
     plt.bar(xticks, model_list, color='b')
-    plt.title("Models in pix3D")
+    plt.title("Chair Models in pix3D")
     # plt.xticks(xticks, model_names)
     # plt.legend(['Mode'])
     plt.show()
@@ -102,7 +113,7 @@ def get_all_indices_grouped(json_path):
     for model_name in model_names:
         model_indices = []
         for i in range(len(y)):
-             if model_name.split("/")[1] == y[i]['model'].split("/")[2]:
+            if model_name.split("/")[1] == y[i]['model'].split("/")[2] and model_name.split("/")[0] == y[i]['category']:
                 model_indices.append(i)
 
         indices_list.append(model_indices)
@@ -130,9 +141,9 @@ def train_test_split_json(json_path):
     print(test_indices)
 
 
-    with open('/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3d/splits/pix3d_train_2.npy', 'wb') as f:
+    with open('/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3d/splits/pix3d_train_chair.npy', 'wb') as f:
         np.save(f, np.array(train_indices))
-    with open('/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3d/splits/pix3d_test_2.npy', 'wb') as f:
+    with open('/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3d/splits/pix3d_test_chair.npy', 'wb') as f:
         np.save(f, np.array(test_indices))
 
 
@@ -366,13 +377,16 @@ def get_train_test_splits(json_path,train_file, test_file):
     test_category_list = []
 
     for i in train:
-        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        # if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        if y[i]['category']=='chair':
             train_img_list.append(y[i]['img'])
             train_model_list.append(y[i]['voxel'])
             train_category_list.append(y[i]['category'])
 
     for i in test:
-        if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        # if not(y[i]['category']=='misc' or y[i]['category']=='tool'):
+        if y[i]['category']=='chair':
+
             test_img_list.append(y[i]['img'])
             test_model_list.append(y[i]['voxel'])
             test_category_list.append(y[i]['category'])
@@ -390,7 +404,8 @@ if __name__ == '__main__':
     # split_to_classes(pix3d_json_path,root_path)
 
     ##Histogram test
-    # getHistogram("/Users/apple/OVGU/Thesis/Dataset/pix3d/img/")
+    # getHistogram("/Users/apple/OVGU/Thesis/Dataset/pix3d/img/",fileName = "/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_histogram.pgf")
+    getHistogram("/Users/apple/OVGU/Thesis/Dataset/pix3d/model/",fileName = "/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_models_histogram.pgf")
 
     #Save occluded json
     # save_occluded_json(root_path)
@@ -428,12 +443,12 @@ if __name__ == '__main__':
 
 ##############################################################################################
     # get_model_names_histogram(pix3d_json_path)
-    # # train_test_split_json(pix3d_json_path)
-    # get_train_test_model_names_histogram(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_train_2.npy'),
-    #                                      os.path.join(os.path.dirname(__file__),'splits/pix3d_test_2.npy'))
+    # train_test_split_json(pix3d_json_path)
+    # get_train_test_model_names_histogram(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_train_chair.npy'),
+    #                                      os.path.join(os.path.dirname(__file__),'splits/pix3d_test_chair.npy'))
 
-    get_train_test_model_names_histogram_json(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_train.json'),
-                                         os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'))
-
-    get_train_test_histogram_json(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_train.json'),
-                                  os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'), upsample=False)
+    # get_train_test_model_names_histogram_json(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_train.json'),
+    #                                      os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'))
+    #
+    # get_train_test_histogram_json(pix3d_json_path,os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_train.json'),
+    #                               os.path.join(os.path.dirname(__file__),'splits/pix3d_s2_test.json'), upsample=False)

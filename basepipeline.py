@@ -122,7 +122,7 @@ class BasePipeline:
                 np.save(self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original.npy", local_labels[0].cpu().data.numpy())
 
                 save_count = min(self.config.save_count,self.config.batch_size)
-                for i in range(0,save_count):
+                for i in range(0,save_count-1):
                     self.gen_plot(local_labels[i],savefig=True,path = self.checkpoint_path + self.config.main_name+"_"+ str(training_batch_index)+"_"+process+"_original_"+str(i)+".png")
                     output_np = outputs[i].detach().cpu().numpy()
                     output_np = (output_np > (threshold_otsu(output_np) if threshold==0 else threshold)).astype(int)
@@ -130,9 +130,11 @@ class BasePipeline:
                     self.gen_plot(output, savefig=True, path =self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_output_" + str(i) + ".png")
 
                     save_image(input_images[i][0],self.checkpoint_path + self.config.main_name + "_" + str(training_batch_index) + "_" + process + "_input_" + str(i) + ".png")
-        except:
+        except Exception as ex:
+            print(local_labels.shape)
             print(save_count)
             print("exception while save_intermediate_obj")
+            print(ex)
             # mesh_np = np.load(output_path)
             # thresh = threshold_otsu(mesh_np)
             # print(thresh)

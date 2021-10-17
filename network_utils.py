@@ -52,16 +52,23 @@ def save_checkpoints(cfg, file_path, epoch_idx, encoder, encoder_solver, decoder
 
     torch.save(checkpoint,  file_path + 'checkpoint_' + epoch_idx + '.pth')
 
-def load_checkpoint(cfg,encoder,encoder_solver,decoder,decoder_solver,
+def load_checkpoint(cfg,pix2vox,encoder,encoder_solver,decoder,decoder_solver,
                     refiner=None,refiner_solver=None,merger=None,merger_solver=None):
     checkpoint = torch.load(cfg.pretrained_checkpoint_path+'checkpoint_best.pth',map_location=torch.device('cpu'))
     encoder.load_state_dict(checkpoint['encoder_state_dict'])
     # encoder_solver.load_state_dict(checkpoint['encoder_solver_state_dict'])
-    decoder.load_state_dict(checkpoint['decoder_state_dict'])
+    try:
+        decoder.load_state_dict(checkpoint['decoder_state_dict'])
+    except:
+        decoder = pix2vox.decoder2
+
     # decoder_solver.load_state_dict(checkpoint['decoder_solver_state_dict'])
 
-    if cfg.pix2vox_refiner:
-        refiner.load_state_dict(checkpoint['refiner_state_dict'])
+    try:
+        if cfg.pix2vox_refiner:
+            refiner.load_state_dict(checkpoint['refiner_state_dict'])
+    except:
+        refiner = pix2vox.refiner2
         # refiner_solver.load_state_dict(checkpoint['refiner_solver_state_dict'])
     if cfg.pix2vox_merger:
         merger.load_state_dict(checkpoint['merger_state_dict'])

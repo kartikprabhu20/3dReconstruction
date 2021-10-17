@@ -9,7 +9,7 @@ We demo the application in \autoref{sec:demo}.
 \autoref{sec:3d-reconstruction-framework} discusses the Deep Learning framework used to train and evaluate the 3D reconstruction task.
 We discuss the underlying libraries and hyperparameters used for the evaluation of the models.
 
-\section{3D-Scene framework}\label{sec:implementation_3d-scene-framework}
+\section{3D-Scene Framework}\label{sec:implementation_3d-scene-framework}
 3D-Scene is an application built in Unity using Csharp as programming language.
 The application runs in editor mode, so that the users can manually make some changes if needed.
 The application's first step is to import existing .obj files for 3D models and 3D models of rooms.
@@ -22,7 +22,7 @@ The workflow of the implementation is as shown in \autoref{fig:flowchart}.
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.9\textwidth, height =1.45\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/flowchart}
-    \caption{Flowchart for the 3D-Scene Pipeline. The pipeline iterates through the steps till a specified count is reached.}
+    \caption[Flowchart for the 3D-Scene Pipeline]{Flowchart for the 3D-Scene Pipeline. The pipeline iterates through the steps till a specified count is reached.}
     \label{fig:flowchart}
 \end{figure}
 
@@ -33,7 +33,7 @@ The parameters includes room object path, texture path, model/furniture path and
 It also includes the categories and total number of required images per category.
 The user can also configure camera parameters which include the minimum and macimum distance from the target object and the minimum height of the camera.
 
-\subsection{Modes of operations}\label{subsec:modes-of-operations}
+\subsection{Modes of Operations}\label{subsec:modes-of-operations}
 The creation of a dataset can either be automated or by manual intervention.
 Automated images may not give us the perfect images that we expect.
 There can be some bad lighting, unexpected intersections with other objects, unforeseen camera angles, etc.
@@ -110,12 +110,12 @@ As a device through which the users can visualize the ersatz environment we util
 We use a single camera whose coordinates or transforms can be changed at runtime.
 Few of the camera parameters like height of the camera, minimum and maximum distance from the target object, can be decided by the user in the initial configuration.
 A CameraHelper class, which has both the main camera and the target object as its parameter then selects a random point in the space with these constraints for the camera to be placed.
-The camera is then rotated towards the target object using the `Transform.LookAt' API.
+The camera is then rotated towards the target object using the \emph{Transform.LookAt} API.
 The next step is the check if the target object is still within the frame.
 This is achieved by casting a ray from the camera using \emph{Physics.Linecast}, which tells us if the ray is intersecting a collider object.
 To make the frame realistic, we avoid unrelatable views by applying a constraint on the camera position and make sure that the camera is in front of the target object within an angle of 60 degrees.
 
-\subsection{Replacing target Objects}\label{subsec:implementation_replacing-target-objects}
+\subsection{Replacing Target Objects}\label{subsec:implementation_replacing-target-objects}
 Once the room is set up using SceneNet~\cite{McCormac2017}, which contains objects from ShapeNet~\cite{shapenet2015}, the objects are renamed such that it matches the classes for the Pix3D dataset.
 Since a given scene can have more than one category under observation, a single model is chosen randomly out of all the present models.
 The chosen model is replaced with a model in Pix3D of the same category, by making it invisible using \emph{GameObject.SetActive}.
@@ -210,12 +210,12 @@ Samples of G-buffer collected for the dataset are as shown in \autoref{fig:G-buf
         \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_id}
         \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_layer}
         \includegraphics[width=.19\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/gbuffers/6_normals}\\
-    \caption{Samples for G-buffers collected from ImageSynthesis as part of the dataset. In the figure,
+    \caption[Samples for G-buffers from ML-ImageSynthesis.]{Samples for G-buffers collected from ImageSynthesis as part of the dataset. In the figure,
         (From left to right) RGB image, Depth map, Instance segmentation, Semantic Segmentation and Normal map}
     \label{fig:G-buffers-samples}
 \end{figure}
 
-\section{Demo for the application}\label{sec:demo}
+\section{Demo for the Application}\label{sec:demo}
 
 The researchers are provided source code for the Unity-based application~\footnote{https://github.com/kartikprabhu20/3dScene}, which was used to create the synthetic datasets.
 The application allows the users to provide paths for the 3D models, 3D rooms, textures, and output.
@@ -228,18 +228,18 @@ For the manual mode, the user can randomize one or more parameters and take the 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/demo/demo}
-    \caption{A screenshot of the Unity based application developed for proof of concept to create synthetic dataset.}
+    \caption[User Interface for 3D-Scene Tool.]{A screenshot of the Unity based application developed for proof of concept to create synthetic dataset.}
     \label{fig:demo1}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/demo/demo2}
-    \caption{A screenshot of the Unity based application in action, the user is able to configure the pipeline using GUI and take snapshots either automatically or manually.}
+    \caption[Demo for 3D-Scene Tool.]{A screenshot of the Unity based application in action, the user is able to configure the pipeline using GUI and take snapshots either automatically or manually.}
     \label{fig:demo2}
 \end{figure}
 
-\section{3d-Reconstruction framework}\label{sec:3d-reconstruction-framework}
+\section{3D-Reconstruction Framework}\label{sec:3d-reconstruction-framework}
 
 In this section, we discuss the pipeline used for the 3D reconstruction~\footnote{https://github.com/kartikprabhu20/3dReconstruction} tasks using Deep Learning.
 The discussion will revolve around the implementation of models and the training parameters.
@@ -250,7 +250,7 @@ The key features of this pipeline are as follows:
 \begin{enumerate}
     \item Allows users to configure the parameter using a config file which includes dataset paths, root paths, output path, parameters for 2D augmentations, etc.
     \item Allows users to select a train, validate, test with real data, an empty image test.
-    \item Allows users to select the pipeline type(3d-reconstruction, cyclegan~\cite{CycleGAN2017}, autoencoder)
+    \item Allows users to select the pipeline type(3D-reconstruction, cyclegan~\cite{CycleGAN2017}, autoencoder)
     \item Allows users to select the dataset(Pix3D, \gls(free), Mixed), with a further option to add new datasets.
     \item Allows users to collect graphs, images per epoch using Tensorboard~\footnote{https://www.tensorflow.org/}.
 \end{enumerate}
@@ -282,7 +282,7 @@ The model took up to 96 hours to train.
 
 
 The users could decide when to write the training values in the Tensorboard in the config file.
-The Tensorboard saves the loss values for not only each epoch but also the images of the 3d models for the configured epochs.
+The Tensorboard saves the loss values for not only each epoch but also the images of the 3D models for the configured epochs.
 Tensorboard also has the capability to save 3D models, but we observed that the interface freezes and also occupies a larger storge.
 Hence, we convert the 3D models into 2D images for visualization using Matplotlib.
 
@@ -305,7 +305,7 @@ Hence, we convert the 3D models into 2D images for visualization using Matplotli
         Loss & Binary Crossentropy\\
         \hline
     \end{tabular}
-    \caption{Hyperparameters used for training 3d reconstruction models.}
+    \caption{Hyperparameters used for training 3D reconstruction models.}
     \label{tab:hyperparameter}
 \end{table}
 

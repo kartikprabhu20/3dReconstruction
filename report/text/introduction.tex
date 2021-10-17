@@ -17,8 +17,8 @@ The progression of synthetic data generation is predicted to be as shown in \aut
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-chart_2}
-    \caption{A graph showing how synthetic dataset will evolve overtime. The research graph shows that synthetic dataset will overshadow the existing real dataset\textsuperscript{\ref{gartnerreport}}.
+    \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/Gartner-chart_3}
+    \caption[Evolution of Synthetic Datasets Over Time.]{A graph showing how synthetic dataset will evolve overtime. The research graph shows that synthetic dataset will overshadow the existing real dataset\textsuperscript{\ref{gartnerreport}}.
     Source: Research article from Gartner on "Synthetic Data Is the Future of AI"\textsuperscript{\ref{gartnerreport}}}
     \label{fig:Gartner research on synthetic dataset}
 \end{figure}
@@ -46,7 +46,7 @@ generic object mesh reconstruction with textures are some of the advancements we
 Here comes the challenge;3D data is not easy to collect.
 3D data is not just limited but also noisy and expensive to collect.
 
-\section{Domain Adaptation vs. Domain randomization} \label{sec:da vs dr}
+\section{Domain Adaptation vs. Domain Randomization} \label{sec:da vs dr}
 
 As mentioned earlier, the success of Convolutional Neural Networks depends highly on the training data.
 As it so happens, not every task will have abundant data to train.
@@ -68,7 +68,7 @@ Textures, brightness, shadows, camera settings, and object pose are some of the 
 In \autoref{ch:concept} we will discuss domain randomization.
 
 
-\section{Volumetric representations of 3D shapes} \label{sec:Volumetric representation}
+\section{Volumetric Representations of 3D Shapes} \label{sec:Volumetric representation}
 The universal representation of images in computer graphics is via pixels.
 However, unlike 2D, 3D data can be represented in various formats like voxels, mesh and point clouds.
 \autoref{fig:3d representation} presents the representation of these three formats.
@@ -82,12 +82,12 @@ On the other hand, point clouds are collections of 3D points with (x,y,z) coordi
 The collection of points determines detailing the 3D object representation.
 In both these cases, \gls{cnn} is not directly applicable which is a direct disadvantage.
 However, since mesh and point clouds are surface-based, the memory consumption is less than voxels and thereby lesser computation time, which is their advantage over voxels.
-In this thesis, we opt for voxel-based models as the focus is on the performance of synthetic data rather than the model or the 3d representation itself.
+In this thesis, we opt for voxel-based models as the focus is on the performance of synthetic data rather than the model or the 3D representation itself.
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/intro/3drepresentation}
-    \caption{3D representation of Standford bunny model.(left to right) Point cloud, voxel and mesh~\cite{Hoang2019ADL}
+    \caption[Types of 3D Representations]{3D representation of Standford bunny model.(left to right) Point cloud, voxel and mesh~\cite{Hoang2019ADL}
     \label{fig:3d representation}}
 \end{figure}
 
@@ -99,7 +99,7 @@ Unreal Engine, Unity, GameMaker, Amazon Lumberyard, and CryEngine are popular ga
 Over time, the graphics in each game engine have improved to an extent where visually, we cannot differentiate between reality and graphics.
 These use object-oriented techniques, which help in modularity.
 Also, they are GUI-oriented and hence are user-friendly and accessible even to a novice programmer.
-The critical component in game engines that we will be focusing on is the ’Rendering engine’.
+The critical component in game engines that we will be focusing on is the `Rendering engine’.
 3D-Rendering is the means of converting 3D data into 2D images.
 Rendering can either be real-time or offline/pre-rendering.
 Game engines aim to make photorealism at the highest level with the least possible rendering time.
@@ -130,14 +130,14 @@ We will answer the following research questions:
 
     The photorealism of the images will be evaluated with a survey to compare images from the real dataset and generate datasets, and other proclaimed natural-looking datasets.
 
-    \item Can Ersatz environment from a game engine like Unity replace real-world data for training in 3d reconstruction tasks?
+    \item Can Ersatz environment from a game engine like Unity replace real-world data for training in 3D reconstruction tasks?
 
-    Using the dataset created with the Unity game engine, a single-view image to 3d reconstruction of furniture will be trained and tested on a real image dataset.
+    Using the dataset created with the Unity game engine, a single-view image to 3D reconstruction of furniture will be trained and tested on a real image dataset.
 
     \item Can we improve the performance of a model using a blend of real and synthetic datasets?
     To what extent does the performance enhance when the synthetic dataset is more than ten times of a real dataset?
 
-    We use the dataset created using the Unity game engine to train a single-view image to 3d reconstruction of furniture and further fine-tune it with the real dataset to know if the performance is enhanced.
+    We use the dataset created using the Unity game engine to train a single-view image to 3D reconstruction of furniture and further fine-tune it with the real dataset to know if the performance is enhanced.
     Further an ablation study on chair dataset to check the effects domain randomization parameters.
     This experiment will also answer whether augmenting images with domain randomization with real data during training improves the performance?
 
@@ -150,7 +150,7 @@ In answering the research questions formulated in \autoref{sec:goal}, this thesi
     \item A Unity-based framework to create a synthetic dataset with domain randomization.
     The tool supports both automated and manual image creation.
     \item A survey of photorealism to check whether Game engines produce quality synthetic datasets comparable with other proclaimed benchmarked photorealistic indoor datasets
-    \item Provide a new dataset related to 3d reconstruction tasks or Synthetic to real domain adaptation tasks.
+    \item Provide a new dataset related to 3D reconstruction tasks or Synthetic to real domain adaptation tasks.
     The dataset includes G-buffers like RGB, normals, depth maps, and semantic segmentation images.
     \item Provide a focused synthetic chair dataset created with different parameters of domain randomization.
     A case study was conducted to check the influence of each component of domain randomization.
@@ -165,9 +165,9 @@ In answering the research questions formulated in \autoref{sec:goal}, this thesi
 The rest of this thesis is structured as follows:
 
 \begin{itemize}
-    \item In \autoref{ch:related_work}, we visit some related work on synthetic data generation and benchmark 3d reconstruction networks.
+    \item In \autoref{ch:related_work}, we visit some related work on synthetic data generation and benchmark 3D reconstruction networks.
     \item \autoref{ch:concept} deals with concepts and design choices.
-    We will discuss in detail the choices for the dataset and model selection for 3d reconstruction.
+    We will discuss in detail the choices for the dataset and model selection for 3D reconstruction.
     \item In \autoref{ch:implementation},discusses the 3DScene tool developed using the Unity game engine to create an ersatz environment.
     On the Deep learning side, we will discuss the pipeline design for the 3D reconstruction task.
     \item We dedicate \autoref{ch:evaluation} to reviewing and discussing evaluation results obtained by comparing the synthetic and real dataset from the survey conducted and Deep learning based on the 3D reconstruction task.

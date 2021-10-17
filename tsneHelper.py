@@ -110,7 +110,7 @@ def computeTSNEProjectionOfLatentSpace(X, encoder, display=True, zoom= 0.3, tran
         return
 
 # Show dataset images with T-sne projection of latent space encoding
-def computeTSNEProjectionOfLatentSpace_targets(X,Y, encoder,title ="T-SNE", transform=None, classes=7):
+def computeTSNEProjectionOfLatentSpace_targets(X,Y, encoder,title ="t-SNE", transform=None, classes=7):
     # Compute latent space representation
     print("Computing latent space projection...")
     X_encoded = encoder(transform(X))
@@ -132,7 +132,8 @@ def computeTSNEProjectionOfLatentSpace_targets(X,Y, encoder,title ="T-SNE", tran
     plt.show()
 
     # Show dataset images with T-sne projection of latent space encoding
-def computeTSNEProjectionOfLatentSpace_targets_2(X,Y, encoder,title ="T-SNE", transform=None, classes=7, images_per_cat =10, fileName=None):
+def computeTSNEProjectionOfLatentSpace_targets_2(X,Y, encoder,title ="t-SNE", transform=None, classes=7, images_per_cat =10, fileName=None,anchor_outside=True):
+    plt.clf()
     # Compute latent space representation
     print("Computing latent space projection...")
     X_encoded = encoder(transform(X))
@@ -152,8 +153,9 @@ def computeTSNEProjectionOfLatentSpace_targets_2(X,Y, encoder,title ="T-SNE", tr
         centroid.append(sum(X_tsne[i*images_per_cat:i*images_per_cat+images_per_cat, 1]) / images_per_cat)
         centroids.append(centroid)
 
-    plt.figure(figsize=(12, 10))
-
+    # plt.figure(figsize=(12, 10))
+    # plt.xlabel(fontsize=10)
+    # plt.ylabel(fontsize=10)
     print(centroids)
 
     for i in range(classes):
@@ -161,29 +163,109 @@ def computeTSNEProjectionOfLatentSpace_targets_2(X,Y, encoder,title ="T-SNE", tr
         for j in range(images_per_cat):
             x = [X_tsne[i*images_per_cat+j, 0], centroids[i][0]]
             y = [X_tsne[i*images_per_cat+j, 1], centroids[i][1]]
-            plt.plot(x, y, c=color, alpha=0.8 if i==classes-1 or i==classes-2 else 0.2)
+            plt.plot(x, y, c=color, alpha=0.2 if i==classes-1 or i==classes-2 else 0.2)
+
+    if anchor_outside:
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=10)
+    else:
+        plt.legend(fontsize=10)
 
     sns.scatterplot(x=X_tsne[:,0], y=X_tsne[:,1], hue=Y, legend='full', palette=pallete).set(title=title)
-    plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    # plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=10)
     plt.savefig(fileName, bbox_inches='tight',format='pgf')
     # plt.show()
 
     return centroids
 
-def computeTSNEProjectionOfLatentSpace_targets_3(X,Y, encoder,title ="T-SNE", transform=None, classes=7, images_per_cat =10, fileName=None):
-    # Compute latent space representation
 
+def computeTSNEProjectionOfLatentSpace_targets_4(X,Y, encoder,title ="t-SNE", transform=None, classes=7,
+                                                 images_per_cat =10, fileName=None,anchor_outside=True):
+    plt.clf()
+
+    # Compute latent space representation
     plt.clf()
     print("Computing latent space projection...")
     X_encoded = encoder(transform(X))
     print(X_encoded.shape)
     # Compute t-SNE embedding of latent space
     print("Computing t-SNE embedding...")
-    pallete =["#A1C9F4", "#FFB482", "#8DE5A1", "#FF9F9B", "#D0BBFF",
-              "#DEBB9B", "#FAB0E4","#B8850A", "#006374"][0: classes]
+    # pallete =["#A1C9F4", "#FFB482", "#8DE5A1", "#FF9F9B", "#D0BBFF",
+    #           "#DEBB9B", "#FAB0E4","#B8850A", "#006374"][0: classes]
+    pallete =["#FFB482", "#A1C9F4", "#A1C9F4", "#A1C9F4", "#A1C9F4",
+              "#A1C9F4", "#A1C9F4","#B8850A", "#006374"][0: classes]
 
     tsne = manifold.TSNE(n_components=2, init='pca', random_state=0,perplexity=40.0)
-    X_tsne = tsne.fit_transform(X_encoded.detach().cpu().numpy())
+    X_tsne = tsne.fit_transform(X_encoded.detach().numpy())
+    print(X_tsne.shape)
+    centroids = []
+    # for i in range(classes):
+    #     centroid =[]
+    #     centroid.append(sum(X_tsne[i*images_per_cat:i*images_per_cat+images_per_cat, 0]) / images_per_cat)
+    #     centroid.append(sum(X_tsne[i*images_per_cat:i*images_per_cat+images_per_cat, 1]) / images_per_cat)
+    #     centroids.append(centroid)
+    centroid =[]
+    centroid.append(sum(X_tsne[0:200, 0]) / 200)
+    centroid.append(sum(X_tsne[0:200, 1]) / 200)
+    centroids.append(centroid)
+
+    centroid =[]
+    centroid.append(sum(X_tsne[200:len(X_tsne[:,0]), 0]) / (len(X_tsne[:,0]-200)))
+    centroid.append(sum(X_tsne[200:len(X_tsne[:,0]), 1]) / (len(X_tsne[:,0]-200)))
+    centroids.append(centroid)
+
+    # plt.figure(figsize=(12, 10))
+    # plt.xticks(fontsize=10)
+    # plt.yticks(fontsize=10)
+    # pallete = sns.color_palette("pastel", classes)[0:7]
+    # pallete.append(sns.color_palette("dark", classes)[7:9])
+
+    print(centroids)
+    for i in range(classes):
+        color = pallete[i]
+        # for j in range(images_per_cat):
+        #     x = [X_tsne[i*images_per_cat+j, 0], centroids[i][0]]
+        #     y = [X_tsne[i*images_per_cat+j, 1], centroids[i][1]]
+        #     plt.plot(x, y, c=color, alpha=0.8 if i==0 else 0.2)
+        if i==1:
+            for j in range(200,len(X_tsne[:,0])):
+                x = [X_tsne[j, 0], centroids[i][0]]
+                y = [X_tsne[j, 1], centroids[i][1]]
+                plt.plot(x, y, c=color, alpha=0.2)
+        else:
+            for j in range(200):
+                x = [X_tsne[j, 0], centroids[i][0]]
+                y = [X_tsne[j, 1], centroids[i][1]]
+                plt.plot(x, y, c=color, alpha=0.8)
+
+    sns.scatterplot(x=X_tsne[:,0], y=X_tsne[:,1], hue=Y, legend='full', palette=pallete).set(title=title)
+    if anchor_outside:
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=10)
+    else:
+        plt.legend(fontsize=10)
+
+    plt.savefig(fileName, bbox_inches='tight',format='pgf')
+    # plt.show()
+
+    return centroids
+
+def computeTSNEProjectionOfLatentSpace_targets_3(X,Y, encoder,title ="t-SNE", transform=None, classes=7,
+                                                 images_per_cat =10, fileName=None,anchor_outside=True):
+    plt.clf()
+
+    # Compute latent space representation
+    plt.clf()
+    print("Computing latent space projection...")
+    X_encoded = encoder(transform(X))
+    print(X_encoded.shape)
+    # Compute t-SNE embedding of latent space
+    print("Computing t-SNE embedding...")
+    # pallete =["#A1C9F4", "#FFB482", "#8DE5A1", "#FF9F9B", "#D0BBFF",
+    #           "#DEBB9B", "#FAB0E4","#B8850A", "#006374"][0: classes]
+    pallete =["#FFB482", "#A1C9F4", "#A1C9F4", "#A1C9F4", "#A1C9F4",
+              "#A1C9F4", "#A1C9F4","#B8850A", "#006374"][0: classes]
+
+    tsne = manifold.TSNE(n_components=2, init='pca', random_state=0,perplexity=40.0)
+    X_tsne = tsne.fit_transform(X_encoded.detach().numpy())
     print(X_tsne.shape)
     centroids = []
     for i in range(classes):
@@ -192,23 +274,25 @@ def computeTSNEProjectionOfLatentSpace_targets_3(X,Y, encoder,title ="T-SNE", tr
         centroid.append(sum(X_tsne[i*images_per_cat:i*images_per_cat+images_per_cat, 1]) / images_per_cat)
         centroids.append(centroid)
 
-    plt.figure(figsize=(12, 10))
+    # plt.figure(figsize=(12, 10))
+    # plt.xticks(fontsize=10)
+    # plt.yticks(fontsize=10)
     # pallete = sns.color_palette("pastel", classes)[0:7]
     # pallete.append(sns.color_palette("dark", classes)[7:9])
 
-
-
     print(centroids)
-
-    # for i in range(classes):
-    #     color = pallete[i]
-    #     for j in range(images_per_cat):
-    #         x = [X_tsne[i*images_per_cat+j, 0], centroids[i][0]]
-    #         y = [X_tsne[i*images_per_cat+j, 1], centroids[i][1]]
-    #         plt.plot(x, y, c=color, alpha=0.8 if i==classes-1 or i==classes-2 else 0.2)
+    for i in range(classes):
+        color = pallete[i]
+        for j in range(images_per_cat):
+            x = [X_tsne[i*images_per_cat+j, 0], centroids[i][0]]
+            y = [X_tsne[i*images_per_cat+j, 1], centroids[i][1]]
+            plt.plot(x, y, c=color, alpha=0.8 if i==0 else 0.2)
 
     sns.scatterplot(x=X_tsne[:,0], y=X_tsne[:,1], hue=Y, legend='full', palette=pallete).set(title=title)
-    plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    if anchor_outside:
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5),fontsize=10)
+    else:
+        plt.legend(fontsize=10)
 
     plt.savefig(fileName, bbox_inches='tight',format='pgf')
     # plt.show()
@@ -252,8 +336,6 @@ if __name__ == '__main__':
 
     pretrained_model = models.vgg16(pretrained = True)
 
-
-
     transform1 = transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
@@ -267,13 +349,11 @@ if __name__ == '__main__':
     ])
 
     config = Baseconfig.config
-    if config.platform != "darwin":
-        pretrained_model = pretrained_model.cuda()
 
     images_per_category = 50
 
 
-    config.dataset_path ='/Users/apple/OVGU/Thesis/Dataset/pix3d' if config.platform == "darwin" else '/nfs1/kprabhu/pix3d/'
+    config.dataset_path ='/Users/apple/OVGU/Thesis/Dataset/pix3d'
     pix3dtestdataset = Pix3dDataset(config).get_img_trainset(transform1,images_per_category=images_per_category)
     pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=images_per_category * len(pix3dtestdataset.unique_labels()), shuffle=True,
                                            num_workers=0)
@@ -297,21 +377,21 @@ if __name__ == '__main__':
     # computeTSNEProjectionOfLatentSpace_targets(images,labels,pretrained_model,title="S2R:3D-FREE + Pix3D", transform= transform,classes=14)
 
 ##############################################################################################################################
-#     # # Load in the images
-#     root_path ='/Users/apple/OVGU/Thesis/images/survey'
-#     images_per_cat=28
-#     photoRealistDataset = PhotoRealDataset(root_path,transforms=transform1,images_per_cat=images_per_cat)
-#     photorealistic_loader = torch.utils.data.DataLoader(photoRealistDataset, batch_size=photoRealistDataset.__len__(), shuffle=False,
-#                                                     num_workers=0)
-#     print(photoRealistDataset.__len__())
-#     photoIter =  iter(photorealistic_loader)
-#     photorealistic_images, labels = next(photoIter)
-#     print(labels)
-#     uniq_labels = photoRealistDataset.get_unique_labels()
-#     print(uniq_labels)
-#     centroids = computeTSNEProjectionOfLatentSpace_targets_2(photorealistic_images, labels, pretrained_model, title="Photo-Realistic Images",
-#                                                              transform= transform, classes=len(uniq_labels), images_per_cat=images_per_cat,
-#                                                              fileName='/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/photorealisitic_dataset_2.pgf')
+    # # Load in the images
+    # root_path ='/Users/apple/OVGU/Thesis/images/survey'
+    images_per_cat=28
+    # photoRealistDataset = PhotoRealDataset(root_path,transforms=transform1,images_per_cat=images_per_cat)
+    # photorealistic_loader = torch.utils.data.DataLoader(photoRealistDataset, batch_size=photoRealistDataset.__len__(), shuffle=False,
+    #                                                 num_workers=0)
+    # print(photoRealistDataset.__len__())
+    # photoIter =  iter(photorealistic_loader)
+    # photorealistic_images, labels = next(photoIter)
+    # print(labels)
+    # uniq_labels = photoRealistDataset.get_unique_labels()
+    # print(uniq_labels)
+    # centroids = computeTSNEProjectionOfLatentSpace_targets_2(photorealistic_images, labels, pretrained_model, title="Photo-Realistic Images",
+    #                                                          transform= transform, classes=len(uniq_labels), images_per_cat=images_per_cat,
+    #                                                          fileName='/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/photorealisitic_dataset_2.pgf')
 # # ##############################################################################################################################
 #     photoRealistDataset1 = PhotoRealDataset('/Users/apple/OVGU/Thesis/images/survey1',transforms=transform1,images_per_cat=images_per_cat)
 #     photorealistic_loader1 = torch.utils.data.DataLoader(photoRealistDataset1, batch_size=photoRealistDataset1.__len__(), shuffle=False,
@@ -335,113 +415,106 @@ if __name__ == '__main__':
 #         local_labels = labels[i*images_per_cat: i*images_per_cat+images_per_cat]
 #         all_labels = local_labels + lab
 #
-#         centroids = computeTSNEProjectionOfLatentSpace_targets_3(imgs, all_labels, pretrained_model, title="Photo-Realistic Images",
+#         centroids = computeTSNEProjectionOfLatentSpace_targets_2(imgs, all_labels, pretrained_model, title="t-SNE for pix3d and "+local_labels[0],
 #                                                              transform= transform, classes=2, images_per_cat=images_per_cat,
-#                                                              fileName='/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/'+local_labels[0]+'_Pix3d'+'.pgf')
+#                                                              fileName='/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/'+local_labels[0]+'_Pix3d'+'.pgf',
+#                                                                  anchor_outside=False)
+# #
+# ##############################################################################################################################
+#     config = Baseconfig.config
+#     images_per_cat = 40
+#     batch_size = 7*images_per_cat
 #
-# ##############################################################################################################################
-    config = Baseconfig.config
-    images_per_cat = 40
-    batch_size = 7*images_per_cat
-
-
-    config.dataset_path = '/Users/apple/OVGU/Thesis/Dataset/pix3d' if config.platform == "darwin" else '/nfs1/kprabhu/pix3d/'
-    config.pix3d.train_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_train_2.npy'
-    config.pix3d.test_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_test_2.npy'
-
-    pix3dtestdataset = Pix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
-    pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=batch_size, shuffle=True,
-                                                num_workers=0)
-
-    config.dataset_path ='/Users/apple/OVGU/Thesis/s2r3dfree_v3' if config.platform == "darwin" else '/nfs1/kprabhu/s2r3dfree_v3/'
-    config.s2r3dfree.train_test_split = config.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_v3.p"
-
-    synthtestdataset = SyntheticPix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
-    s2r_test_loader = torch.utils.data.DataLoader(synthtestdataset, batch_size=batch_size, shuffle=True,
-                                                num_workers=0)
-
-
-    pix3d, pix3d_labels = next(iter(pix3d_test_loader))
-    s2r, s2r_labels = next(iter(s2r_test_loader))
-    if config.platform != "darwin":
-        pix3d= pix3d.cuda()
-    if config.platform != "darwin":
-        s2r= s2r.cuda()
-    print(pix3d.shape)
-    print(s2r.shape)
-
-    imgs = torch.cat([pix3d,s2r], dim=0)
-    print(imgs.shape)
-
-    all_labels = ['Pix3D'] * len(pix3d_labels) + ['S2R:3DFREE'] * len(s2r_labels)
-
-    fileName = '/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/s2r3dfree_Pix3d'+str(batch_size)+'.pgf' if config.platform == "darwin" \
-        else'/nfs1/kprabhu/outputs/tsne/s2r3dfree_Pix3d'+str(batch_size)+'.pgf'
-    centroids = computeTSNEProjectionOfLatentSpace_targets_3(imgs, all_labels, pretrained_model, title="T-SNE for Pix3D and S2R:3DFREE",
-                                                             transform= transform, classes=2, images_per_cat=batch_size,
-                                                             fileName=fileName)
+#
+#     config.dataset_path = '/Users/apple/OVGU/Thesis/Dataset/pix3d' if config.platform == "darwin" else '/nfs1/kprabhu/pix3d/'
+#     config.pix3d.train_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_train_2.npy'
+#     config.pix3d.test_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_test_2.npy'
+#
+#     pix3dtestdataset = Pix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
+#     pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=batch_size, shuffle=True,
+#                                                 num_workers=0)
+#
+#     config.dataset_path ='/Users/apple/OVGU/Thesis/s2r3dfree_v3' if config.platform == "darwin" else '/nfs1/kprabhu/s2r3dfree_v3/'
+#     config.s2r3dfree.train_test_split = config.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_v3.p"
+#
+#     synthtestdataset = SyntheticPix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
+#     s2r_test_loader = torch.utils.data.DataLoader(synthtestdataset, batch_size=batch_size, shuffle=True,
+#                                                 num_workers=0)
+#
+#
+#     pix3d, pix3d_labels = next(iter(pix3d_test_loader))
+#     s2r, s2r_labels = next(iter(s2r_test_loader))
+#
+#     print(pix3d.shape)
+#     print(s2r.shape)
+#
+#     imgs = torch.cat([s2r,pix3d], dim=0)
+#     print(imgs.shape)
+#
+#     all_labels = ['S2R:3DFREE'] * len(s2r_labels) + ['Pix3D'] * len(pix3d_labels)
+#
+#     fileName = '/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/s2r3dfree_Pix3d'+str(batch_size)+'.pgf' if config.platform == "darwin" \
+#         else'/nfs1/kprabhu/outputs/tsne/s2r3dfree_Pix3d'+str(batch_size)+'.pgf'
+#     centroids = computeTSNEProjectionOfLatentSpace_targets_2(imgs, all_labels, pretrained_model, title="t-SNE for Pix3D and S2R:3DFREE",
+#                                                              transform= transform, classes=2, images_per_cat=batch_size,
+#                                                              fileName=fileName)
 
 # ##############################################################################################################################
-    config = Baseconfig.config
-    images_per_cat = 50
-    batch_size = images_per_cat
-
-    config.dataset_path ='/Users/apple/OVGU/Thesis/Dataset/pix3d' if config.platform == "darwin" else '/nfs1/kprabhu/pix3d/'
-    config.pix3d.train_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_train_chair.npy'
-    config.pix3d.test_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_test_chair.npy'
-
-    pix3dtestdataset = Pix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
-    pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=batch_size, shuffle=True,
-                                                num_workers=0)
-    pix3d, pix3d_labels = next(iter(pix3d_test_loader))
-    if config.platform != "darwin":
-        pix3d= pix3d.cuda()
-    config.s2r3dfree.train_test_split = config.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_chair_10000.p"
-
-    datasets = ['s2r3dfree_textureless','s2r3dfree_textureless_light','s2r3dfree_background','s2r3dfree_background_light2','s2r3dfree_chair']
-    for data in datasets:
-
-        config.dataset_path ='/Users/apple/OVGU/Thesis/'+data if config.platform == "darwin" else '/nfs1/kprabhu/'+data
-
-        synthtestdataset = SyntheticPix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
-        s2r_test_loader = torch.utils.data.DataLoader(synthtestdataset, batch_size=batch_size, shuffle=True,
-                                              num_workers=0)
-
-
-        s2r, s2r_labels = next(iter(s2r_test_loader))
-        if config.platform != "darwin":
-            s2r = s2r.cuda()
-        print(pix3d.shape)
-        print(s2r.shape)
-
-        imgs = torch.cat([pix3d,s2r], dim=0)
-        print(imgs.shape)
-
-        all_labels = ['Pix3D'] * len(pix3d_labels) + [data] * len(s2r_labels)
-        fileName = '/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_'+data+'.pgf' if config.platform == "darwin" \
-            else'/nfs1/kprabhu/outputs/tsne/Pix3d_'+data+'.pgf'
-        centroids = computeTSNEProjectionOfLatentSpace_targets_3(imgs, all_labels, pretrained_model, title="T-SNE for chair images "+"("+data+")",
-                                                         transform= transform, classes=2, images_per_cat=images_per_category,
-                                                         fileName=fileName)
+#     config = Baseconfig.config
+#     images_per_cat = 200
+#     batch_size = images_per_cat
+#
+#     config.dataset_path ='/Users/apple/OVGU/Thesis/Dataset/pix3d' if config.platform == "darwin" else '/nfs1/kprabhu/pix3d/'
+#     config.pix3d.train_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_train_chair.npy'
+#     config.pix3d.test_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_test_chair.npy'
+#
+#     pix3dtestdataset = Pix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
+#     pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=batch_size, shuffle=True,
+#                                                 num_workers=0)
+#     pix3d, pix3d_labels = next(iter(pix3d_test_loader))
+#     config.s2r3dfree.train_test_split = config.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_chair_10000.p"
+#
+#     datasets = ['s2r3dfree_textureless','s2r3dfree_textureless_light','s2r3dfree_textured','s2r3dfree_textured_light','s2r3dfree_multi-object']
+#     for data in datasets:
+#
+#         config.dataset_path ='/Users/apple/OVGU/Thesis/'+data if config.platform == "darwin" else '/nfs1/kprabhu/'+data
+#
+#         synthtestdataset = SyntheticPix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
+#         s2r_test_loader = torch.utils.data.DataLoader(synthtestdataset, batch_size=batch_size, shuffle=True,
+#                                               num_workers=0)
+#
+#         s2r, s2r_labels = next(iter(s2r_test_loader))
+#
+#         print(pix3d.shape)
+#         print(s2r.shape)
+#
+#         imgs = torch.cat([pix3d,s2r], dim=0)
+#         print(imgs.shape)
+#
+#         all_labels = ['Pix3D'] * len(pix3d_labels) + [data] * len(s2r_labels)
+#         fileName = '/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_'+data+'.pgf' if config.platform == "darwin" \
+#             else'/nfs1/kprabhu/outputs/tsne/Pix3d_'+data+'.pgf'
+#         centroids = computeTSNEProjectionOfLatentSpace_targets_3(imgs, all_labels, pretrained_model, title="t-SNE for chair images "+"("+data+")",
+#                                                          transform= transform, classes=2, images_per_cat=images_per_cat,
+#                                                          fileName=fileName,anchor_outside=False)
 
 ###############################################################################################################################
 
     config = Baseconfig.config
-    images_per_cat = 50
+    images_per_cat = 100
     batch_size = images_per_cat
 
     config.dataset_path ='/Users/apple/OVGU/Thesis/Dataset/pix3d' if config.platform == "darwin" else '/nfs1/kprabhu/pix3d/'
     config.pix3d.train_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_train_chair.npy'
     config.pix3d.test_indices = config.root_path + '/Datasets/pix3d/splits/pix3d_test_chair.npy'
 
-    pix3dtestdataset = Pix3dDataset(config).get_img_testset(transform1,images_per_category=images_per_cat)
-    pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=batch_size, shuffle=True,
+    pix3dtestdataset = Pix3dDataset(config).get_img_testset(transform1,images_per_category=200)
+    pix3d_test_loader = torch.utils.data.DataLoader(pix3dtestdataset, batch_size=200, shuffle=True,
                                                     num_workers=0)
     pix3d, pix3d_labels = next(iter(pix3d_test_loader))
     config.s2r3dfree.train_test_split = config.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_chair_10000.p"
-    if config.platform != "darwin":
-        pix3d = pix3d.cuda()
-    datasets = ['s2r3dfree_textureless','s2r3dfree_textureless_light','s2r3dfree_background','s2r3dfree_background_light2','s2r3dfree_chair']
+
+    datasets = ['s2r3dfree_textureless','s2r3dfree_textureless_light','s2r3dfree_textured','s2r3dfree_textured_light','s2r3dfree_multi-object']
 
     all_labels = ['Pix3D'] * len(pix3d_labels)
     imgs = pix3d
@@ -455,15 +528,14 @@ if __name__ == '__main__':
                                                       num_workers=0)
 
         s2r, s2r_labels = next(iter(s2r_test_loader))
-        if config.platform != "darwin":
-            s2r = s2r.cuda()
         imgs = torch.cat([imgs,s2r], dim=0)
+        data = 's2r:3dfree_combined'
         all_labels = all_labels + [data] * len(s2r_labels)
 
     fileName = '/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/domaingap/Pix3d_chair_DR.pgf' if config.platform == "darwin" \
         else'/nfs1/kprabhu/outputs/tsne/Pix3d_chair_DR.pgf'
-    centroids = computeTSNEProjectionOfLatentSpace_targets_3(imgs, all_labels, pretrained_model, title="T-SNE for chair images with domain randomisation",
-                                                                 transform= transform, classes=len(datasets)+1, images_per_cat=images_per_category,
-                                                                 fileName=fileName)
+    centroids = computeTSNEProjectionOfLatentSpace_targets_4(imgs, all_labels, pretrained_model, title="t-SNE for chair images(s2r3dfree_combined)",
+                                                                 transform= transform, classes=2, images_per_cat=images_per_cat,
+                                                                 fileName=fileName,anchor_outside=False)
 
 ###############################################################################################################################

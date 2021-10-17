@@ -14,14 +14,14 @@ from PipelineManager import PipelineType
 cfg = edict()
 config = cfg
 
-cfg.main_name = 'test_67'
-cfg.pretrained_name = 'test_67'
+cfg.main_name = 'test_159'
+cfg.pretrained_name = 'test_159'
 cfg.platform = platform
 cfg.apex = False
 cfg.apex_mode = "O2"
 cfg.load_model = False #For direct testing
 
-cfg.num_epochs = 800
+cfg.num_epochs = 400
 cfg.learning_rate = 0.001
 
 ####### INPUT-OUTPUT CONFIG #######
@@ -57,8 +57,9 @@ cfg.DATASET.STD                             = [0.229, 0.224, 0.225]
 
 cfg.pipeline_type = PipelineType.RECONSTRUCTION
 cfg.dataset_type = DatasetType.MIXEDPIX3D
-cfg.model_type = ModelType.PIX2VOXELPP
+cfg.model_type = ModelType.PIX2VOXEL
 cfg.optimizer_type = OptimizerType.ADAM
+cfg.apply_augmentation = True
 
 cfg.pix2vox_pretrained_encoder = True
 cfg.pix2vox_update_vgg = True
@@ -120,11 +121,9 @@ if platform == "darwin": #local mac
     cfg.apex = False
 else:
     cfg.root_path ='/nfs1/kprabhu/3dReconstruction1/'
-    cfg.dataset_path ='/nfs1/kprabhu/s2r3dfree_v3/' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/nfs1/kprabhu/pix3d/'
+    cfg.dataset_path ='/nfs1/kprabhu/s2r3dfree_chair_light' if cfg.dataset_type == DatasetType.PIX3DSYNTHETIC1 else '/nfs1/kprabhu/pix3d/'
     cfg.output_path = "/nfs1/kprabhu/outputs/"
     cfg.home_path = "/nfs1/kprabhu/"
-    cfg.checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.main_name +"/"
-    cfg.pretrained_checkpoint_path = "/nfs1/kprabhu/outputs/" + cfg.pretrained_name +"/"
     cfg.empty_data_path = "/nfs1/kprabhu/empty_room_img/"
     cfg.real_data_path = '/nfs1/kprabhu/pix3d/'
     cfg.num_workers = 8
@@ -141,15 +140,19 @@ cfg.pix3d.train_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_train_2.
 cfg.pix3d.test_indices = cfg.root_path + '/Datasets/pix3d/splits/pix3d_test_2.npy'
 cfg.upsample = False
 
-cfg.s2r3dfree                                   = edict()
-cfg.s2r3dfree.train_test_split = cfg.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_v3.p"
+cfg.s2r3dfree                                  = edict()
+cfg.s2r3dfree.train_test_split = cfg.root_path+"/Datasets/pix3dsynthetic/splits/train_test_split_modelwise_v3_2.p"
 
 cfg.mixedtrain                                    = edict()
-cfg.mixedtrain.ratio                              = 0.25
+cfg.mixedtrain.ratio                              = 0.9
 if platform == "darwin": #local mac
     cfg.mixedtrain.real_dataset_path = "/Users/apple/OVGU/Thesis/Dataset/pix3d/"
-    cfg.mixedtrain.synth_dataset_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v3'
+    cfg.mixedtrain.synth_dataset_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v4'
 else:
     cfg.mixedtrain.real_dataset_path = '/nfs1/kprabhu/pix3d/'
-    cfg.mixedtrain.synth_dataset_path = '/nfs1/kprabhu/s2r3dfree_v1/'
+    cfg.mixedtrain.synth_dataset_path = '/nfs1/kprabhu/s2r3dfree_v3_2/'
+
+
+
+
 

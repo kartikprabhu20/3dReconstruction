@@ -106,9 +106,9 @@ class ReconstructionPipeline(BasePipeline):
             raise Exception('[FATAL] %s Unknown optimizer %s.' % (dt.now(), self.config.TRAIN.POLICY))
 
         if load_model:
-            self.encoder,self.encoder_solver,self.decoder,self.decoder_solver,\
-            self.refiner,self.refiner_solver,self.merger,self.merger_solver = network_utils.load_checkpoint(self.config,self.encoder,self.encoder_solver,self.decoder,
-                                                                                  self.decoder_solver,self.refiner,self.refiner_solver,self.merger,self.merger_solver)
+            self.encoder,self.encoder_solver,self.decoder,self.decoder_solver, \
+            self.refiner,self.refiner_solver,self.merger,self.merger_solver = network_utils.load_checkpoint(cfg=self.config,pix2vox=self.pix2vox,encoder=self.encoder,encoder_solver=self.encoder_solver,decoder=self.decoder,
+                                                                                                            decoder_solver=self.decoder_solver,refiner=self.refiner,refiner_solver=self.refiner_solver,merger=self.merger,merger_solver=self.merger_solver)
 
     def train(self):
         self.logger.debug("Training...")
@@ -117,17 +117,17 @@ class ReconstructionPipeline(BasePipeline):
 
         # Set up learning rate scheduler to decay learning rates dynamically
         encoder_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.encoder_solver,
-                                                                milestones=self.config.TRAIN.ENCODER_LR_MILESTONES,
-                                                                gamma=self.config.TRAIN.GAMMA)
+                                                                    milestones=self.config.TRAIN.ENCODER_LR_MILESTONES,
+                                                                    gamma=self.config.TRAIN.GAMMA)
         decoder_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.decoder_solver,
-                                                                milestones=self.config.TRAIN.DECODER_LR_MILESTONES,
-                                                                gamma=self.config.TRAIN.GAMMA)
+                                                                    milestones=self.config.TRAIN.DECODER_LR_MILESTONES,
+                                                                    gamma=self.config.TRAIN.GAMMA)
         refiner_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.refiner_solver,
-                                                                milestones=self.config.TRAIN.REFINER_LR_MILESTONES,
-                                                                gamma=self.config.TRAIN.GAMMA)
+                                                                    milestones=self.config.TRAIN.REFINER_LR_MILESTONES,
+                                                                    gamma=self.config.TRAIN.GAMMA)
         merger_lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(self.merger_solver,
-                                                               milestones=self.config.TRAIN.MERGER_LR_MILESTONES,
-                                                               gamma=self.config.TRAIN.GAMMA)
+                                                                   milestones=self.config.TRAIN.MERGER_LR_MILESTONES,
+                                                                   gamma=self.config.TRAIN.GAMMA)
 
         if torch.cuda.is_available():
             self.encoder = self.encoder.cuda()
@@ -200,8 +200,8 @@ class ReconstructionPipeline(BasePipeline):
                     self.logger.info("Epoch:" + str(epoch) + " Batch_Index:" + str(batch_index) + " Training..." +
                                      "\n Training_loss("+self.config.train_loss_type+"):" + str(training_loss))
                     self.write_summary(self.writer_training, index=training_batch_index, input_image=local_batch[0][0],
-                                        input_voxel= local_labels[0], output_voxel=dec_generated_volumes[0],
-                                           bceloss=bceloss,diceLoss=diceloss,diceScore=dicescore,iou=iou, writeMesh=False)
+                                       input_voxel= local_labels[0], output_voxel=dec_generated_volumes[0],
+                                       bceloss=bceloss,diceLoss=diceloss,diceScore=dicescore,iou=iou, writeMesh=False)
 
                 if self.config.platform == "darwin": #debug
                     if training_batch_index % 20 == 0:
@@ -257,7 +257,7 @@ class ReconstructionPipeline(BasePipeline):
 
             # Print every epoch
             self.logger.info("Epoch:" + str(epoch) + " Average Training..." +
-                         "\n total_training_loss:" + str(total_training_loss))
+                             "\n total_training_loss:" + str(total_training_loss))
             print("Epoch:" + str(epoch) + " Average Training..." +
                   "\n total_training_loss:" + str(total_training_loss))
 
@@ -371,11 +371,11 @@ class ReconstructionPipeline(BasePipeline):
         jaccardIndex = jaccardIndex / n_samples
         process = ' Validation' if validation else ' Testing'
         self.logger.info("Epoch:" + str(epoch) + process + "..." +
-                "\n focalTverskyLoss:" + str(floss) +
-                "\n binloss:" + str(bceloss) +
-                "\n DiceLoss:" + str(dloss) +
-                "\n DiceScore:" + str(dscore) +
-                "\n IOU:" + str(jaccardIndex))
+                         "\n focalTverskyLoss:" + str(floss) +
+                         "\n binloss:" + str(bceloss) +
+                         "\n DiceLoss:" + str(dloss) +
+                         "\n DiceScore:" + str(dscore) +
+                         "\n IOU:" + str(jaccardIndex))
 
         print("Epoch:" + str(epoch) + process + "..." +
               "\n focalTverskyLoss:" + str(floss) +
@@ -404,26 +404,26 @@ class ReconstructionPipeline(BasePipeline):
             # 'optimizer': self.optimizer.state_dict()
             # })
             network_utils.save_checkpoints(self.config, self.checkpoint_path,
-                                                 'last', encoder, encoder_solver, decoder, decoder_solver,
-                                                 refiner, refiner_solver, merger, merger_solver, best_iou, best_epoch)
+                                           'last', encoder, encoder_solver, decoder, decoder_solver,
+                                           refiner, refiner_solver, merger, merger_solver, best_iou, best_epoch)
 
 
 
         if best_iou < jaccardIndex:  # Save best metric evaluation weights
-                best_iou = jaccardIndex
-                best_epoch = epoch
-                self.logger.info('Best metric... @ epoch:' + str(epoch) + ' Current Lowest loss:' + str(LOWEST_LOSS))
-                self.logger.info('Best metric... @ epoch:' + str(epoch) + ' Current best_iou:' + str(best_iou))
+            best_iou = jaccardIndex
+            best_epoch = epoch
+            self.logger.info('Best metric... @ epoch:' + str(epoch) + ' Current Lowest loss:' + str(LOWEST_LOSS))
+            self.logger.info('Best metric... @ epoch:' + str(epoch) + ' Current best_iou:' + str(best_iou))
 
 
-                network_utils.save_checkpoints(self.config, self.checkpoint_path,
-                                               'best', encoder, encoder_solver, decoder, decoder_solver,
-                                               refiner, refiner_solver, merger, merger_solver, best_iou, best_epoch)
+            network_utils.save_checkpoints(self.config, self.checkpoint_path,
+                                           'best', encoder, encoder_solver, decoder, decoder_solver,
+                                           refiner, refiner_solver, merger, merger_solver, best_iou, best_epoch)
 
-                # self.save_model(self.checkpoint_path, {
-                # 'epoch': 'best',
-                # 'state_dict': self.model.state_dict(),
-                # 'optimizer': self.optimizer.state_dict()}, best_metric=True)
+            # self.save_model(self.checkpoint_path, {
+            # 'epoch': 'best',
+            # 'state_dict': self.model.state_dict(),
+            # 'optimizer': self.optimizer.state_dict()}, best_metric=True)
 
         del batch, labels,dloss,dscore,jaccardIndex,bceloss,floss  # garbage collection, else training wont have any memory left
 
@@ -494,7 +494,7 @@ class ReconstructionPipeline(BasePipeline):
         dataset = self.datasetManager.get_dataset(self.config.dataset_type)
         testdataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
         data_loader = torch.utils.data.DataLoader(testdataset, batch_size=self.config.batch_size, shuffle=False,
-                                               num_workers=self.config.num_workers)
+                                                  num_workers=self.config.num_workers)
 
         n_samples = len(data_loader)
         # Switch models to evaluation mode
@@ -570,12 +570,58 @@ class ReconstructionPipeline(BasePipeline):
         for mi in mean_iou:
             self.logger.info('%.4f \t' % mi)
 
+    def save_test_Images(self):
+
+        self.config.dataset_path = self.config.real_data_path
+        dataset = self.datasetManager.get_dataset(DatasetType.PIX3D)
+        dataset = dataset.get_testset(transforms=self.test_transforms,images_per_category=self.config.save_count/7)
+        data_loader = torch.utils.data.DataLoader(dataset, batch_size=self.config.batch_size, shuffle=False,
+                                                  num_workers=self.config.num_workers)
+        n_samples = 0
+        # Switch models to evaluation mode
+        self.encoder.eval()
+        self.decoder.eval()
+        self.refiner.eval()
+        self.merger.eval()
+
+        self.logger.info('============================ REAL DATA RESULTS ============================')
+
+        bceloss,floss,dloss,dscore,jaccardIndex = 0,0,0,0,0
+
+        test_dict = dict()
+        all_iou_values = []
+        all_dice_values = []
+        all_taxonomies = []
+
+        with torch.no_grad():
+            for index, (taxonomy_ids, batch, labels) in enumerate(data_loader):
+                # Transfer to GPU
+                if torch.cuda.is_available():#no nvidia on mac!!!
+                    batch, labels = batch.cuda(), labels.cuda()
+
+                n_samples += 1
+
+                image_features = self.encoder(batch)
+                raw_features, generated_volume = self.decoder(image_features)
+
+                if self.config.pix2vox_merger:
+                    generated_volume = self.merger(raw_features, generated_volume)
+                else:
+                    generated_volume = torch.mean(generated_volume, dim=1)
+
+                if self.config.pix2vox_refiner:
+                    generated_volume = self.refiner(generated_volume)
+
+                outputs = generated_volume
+
+                self.save_intermediate_obj(training_batch_index=index,input_images=batch, local_labels=labels, outputs=outputs, process = "test", threshold=self.config.TEST.VOXEL_THRESH_IMAGE)
+
     def empty_test(self):
 
         empty_dataset = self.datasetManager.get_dataset(DatasetType.EMPTY)
         emptydataset = empty_dataset.get_img_testset(transforms=self.test_transforms,images_per_category=self.config.test_images_per_category)
-        data_loader = torch.utils.data.DataLoader(emptydataset, batch_size=self.config.batch_size, shuffle=False,
-                                                        num_workers=self.config.num_workers, pin_memory=True)
+        data_loader = torch.utils.data.DataLoader(emptydataset, batch_size=1, shuffle=False,
+                                                  num_workers=1, pin_memory=True)
 
         # Switch models to evaluation mode
         self.encoder.eval()
@@ -617,7 +663,7 @@ class ReconstructionPipeline(BasePipeline):
         dataset = dataset.get_testset(transforms=self.test_transforms)
         data_loader = torch.utils.data.DataLoader(dataset, batch_size=self.config.batch_size, shuffle=False,
                                                   num_workers=self.config.num_workers)
-        n_samples = len(data_loader)
+        n_samples = 0
         # Switch models to evaluation mode
         self.encoder.eval()
         self.decoder.eval()
@@ -628,12 +674,18 @@ class ReconstructionPipeline(BasePipeline):
 
         bceloss,floss,dloss,dscore,jaccardIndex = 0,0,0,0,0
 
-        test_iou_dict = dict()
+        test_dict = dict()
+        all_iou_values = []
+        all_dice_values = []
+        all_taxonomies = []
+
         with torch.no_grad():
             for index, (taxonomy_ids, batch, labels) in enumerate(data_loader):
                 # Transfer to GPU
                 if torch.cuda.is_available():#no nvidia on mac!!!
                     batch, labels = batch.cuda(), labels.cuda()
+
+                n_samples += 1
 
                 image_features = self.encoder(batch)
                 raw_features, generated_volume = self.decoder(image_features)
@@ -657,14 +709,24 @@ class ReconstructionPipeline(BasePipeline):
 
                 for i in range(0, batch.shape[0]):
                     sample_iou = []
+                    sample_dice = []
+                    k = 0
                     for th in self.config.TEST.VOXEL_THRESH:
                         _volume = torch.ge(outputs[i], th).float()
                         sample_iou.append(self.iou(_volume, labels[i]).item())
+                        dl = self.dice(_volume, labels[i])
+                        ds = self.dice.get_dice_score()
+                        sample_dice.append(ds.item())
+                        all_iou_values.append(sample_iou)
+                        all_dice_values.append(sample_dice)
+                        all_taxonomies.append(taxonomy_ids[i])
 
-                    if taxonomy_ids[i] not in test_iou_dict:
-                        test_iou_dict[taxonomy_ids[i]] = {'n_samples': 0, 'iou': [0] * len(self.config.TEST.VOXEL_THRESH)}
-                    test_iou_dict[taxonomy_ids[i]]['n_samples'] += 1
-                    test_iou_dict[taxonomy_ids[i]]['iou']  = [a + b for a, b in zip(test_iou_dict[taxonomy_ids[i]]['iou'], sample_iou)]
+                    if taxonomy_ids[i] not in test_dict:
+                        test_dict[taxonomy_ids[i]] = {'n_samples': 0, 'iou': [0] * len(self.config.TEST.VOXEL_THRESH),'dice': [0] * len(self.config.TEST.VOXEL_THRESH)}
+
+                    test_dict[taxonomy_ids[i]]['n_samples'] += 1
+                    test_dict[taxonomy_ids[i]]['iou']  = [a + b for a, b in zip(test_dict[taxonomy_ids[i]]['iou'], sample_iou)]
+                    test_dict[taxonomy_ids[i]]['dice']  = [c + d for c, d in zip(test_dict[taxonomy_ids[i]]['dice'], sample_dice)]
 
         #Average the losses
         bceloss = bceloss/n_samples
@@ -687,8 +749,9 @@ class ReconstructionPipeline(BasePipeline):
               "\n IOU:" + str(jaccardIndex))
 
         # Output testing results
-        for taxonomy_id in test_iou_dict:
-            test_iou_dict[taxonomy_id]['iou']  = np.divide(test_iou_dict[taxonomy_id]['iou'], test_iou_dict[taxonomy_id]['n_samples'])
+        for taxonomy_id in test_dict:
+            test_dict[taxonomy_id]['iou']  = np.divide(test_dict[taxonomy_id]['iou'], test_dict[taxonomy_id]['n_samples'])
+            test_dict[taxonomy_id]['dice']  = np.divide(test_dict[taxonomy_id]['dice'], test_dict[taxonomy_id]['n_samples'])
             # print(test_iou_dict[taxonomy_id]['iou'])
             # print("\n")
 
@@ -700,27 +763,73 @@ class ReconstructionPipeline(BasePipeline):
         # Print body
 
         total_samples = 0
-        for taxonomy_id in test_iou_dict:
+        for taxonomy_id in test_dict:
             self.logger.info(taxonomy_id+":\t")
-            self.logger.info('%d \t' % test_iou_dict[taxonomy_id]['n_samples'])
-            total_samples += test_iou_dict[taxonomy_id]['n_samples']
-            for ti in test_iou_dict[taxonomy_id]['iou']:
-                self.logger.info('%.4f \t' % ti)
+            self.logger.info('%d \t' % test_dict[taxonomy_id]['n_samples'])
+            total_samples += test_dict[taxonomy_id]['n_samples']
+
+            print_iou = ""
+            print_dice = ""
+            for ti,di in zip(test_dict[taxonomy_id]['iou'], test_dict[taxonomy_id]['dice']):
+                # self.logger.info("iou:")
+                # self.logger.info('%.4f \t' % ti)
+                # self.logger.info("dice:")
+                # self.logger.info('%.4f \t' % di)
+                print_iou += ","+ str(ti)
+                print_dice += ","+str(di)
+
+            self.logger.info("iou:"+print_iou)
+            self.logger.info("dice:"+print_dice)
             self.logger.info(" ======================================================================")
+
+
+        self.logger.info("Standard Deviations")
+        for taxonomy_id in test_dict:
+            self.logger.info(taxonomy_id)
+            self.logger.info('%d \t' % n_samples)
+
+            print_std_iou = ""
+            print_std_dice = ""
+            for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
+                sum_deviation_iou = 0
+                sum_deviation_dice = 0
+                for taxonomy,local_iou,local_dice in zip(all_taxonomies,all_iou_values,all_iou_values):
+                    if taxonomy==taxonomy_id:
+                        sum_deviation_iou += (local_iou[i] - test_dict[taxonomy_id]['iou'][i]) ** 2
+                        sum_deviation_dice += (local_dice[i] - test_dict[taxonomy_id]['dice'][i]) ** 2
+
+                print_std_iou += ","+ str(np.sqrt(sum_deviation_iou / test_dict[taxonomy_id]['n_samples']))
+                print_std_dice +=","+ str(np.sqrt(sum_deviation_dice / test_dict[taxonomy_id]['n_samples']))
+
+            self.logger.info('std iou:'+ print_std_iou)
+            self.logger.info('std dice:'+ print_std_dice)
 
         # Print mean IoU for each threshold
         sum_iou = [0] * len(self.config.TEST.VOXEL_THRESH)
+        sum_dice = [0] * len(self.config.TEST.VOXEL_THRESH)
         self.logger.info('Real Overall:\t')
         self.logger.info('%d \t' % n_samples)
         for i in range(0,len(self.config.TEST.VOXEL_THRESH)):
-            for taxonomy_id in test_iou_dict:
-                sum_iou[i] += test_iou_dict[taxonomy_id]['iou'][i] * test_iou_dict[taxonomy_id]['n_samples']
+            for taxonomy_id in test_dict:
+                sum_iou[i] += test_dict[taxonomy_id]['iou'][i] * test_dict[taxonomy_id]['n_samples']
+                sum_dice[i] += test_dict[taxonomy_id]['dice'][i] * test_dict[taxonomy_id]['n_samples']
 
         current_best = -1
         mean_iou  = np.divide(sum_iou, total_samples)
-        for mi in mean_iou:
+        mean_dice  = np.divide(sum_dice, total_samples)
+
+        print_iou = ""
+        print_dice = ""
+        for mi,di in zip(mean_iou,mean_dice):
             current_best = mi if current_best < mi else current_best
-            self.logger.info('%.4f \t' % mi)
+            # self.logger.info("iou:")
+            # self.logger.info('%.4f \t' % ti)
+            # self.logger.info("dice:")
+            # self.logger.info('%.4f \t' % di)
+            print_iou += ","+ str(mi)
+            print_dice += ","+str(di)
+        self.logger.info("iou:"+print_iou)
+        self.logger.info("dice:"+print_dice)
 
         global best_real_iou
         global best_real_epoch
@@ -730,12 +839,12 @@ class ReconstructionPipeline(BasePipeline):
             best_real_iou = current_best
             best_real_epoch = epoch
             self.logger.info('Real Best metric... @ epoch:' + str(best_real_epoch) + ' Current Lowest loss:' + str(LOWEST_LOSS))
-            self.logger.info('Real Best metric... @ epoch:' + str(best_real_epoch) + ' Current best_iou:' + str(best_iou))
+            self.logger.info('Real Best metric... @ epoch:' + str(best_real_epoch) + ' Current best_iou:' + str(best_real_iou))
 
 
             network_utils.save_checkpoints(self.config, self.checkpoint_path,
                                            'real', self.encoder, self.encoder_solver, self.decoder, self.decoder_solver,
-                                           self.refiner, self.refiner_solver, self.merger, self.merger_solver, best_iou, best_epoch)
+                                           self.refiner, self.refiner_solver, self.merger, self.merger_solver, best_real_iou, best_real_epoch)
 
 
 

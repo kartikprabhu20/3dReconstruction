@@ -224,7 +224,7 @@ def get_train_test_split(filePath):
 
     return x,y,xt,yt
 
-def get_train_test_histogram(root_path,train_img_list,test_img_list):
+def get_train_test_histogram(root_path,train_img_list,test_img_list,fileName = "test"):
     labels = get_classes(root_path)
 
     train_list = [0] * len(get_classes(root_path))
@@ -240,9 +240,10 @@ def get_train_test_histogram(root_path,train_img_list,test_img_list):
     plt.bar(xticks, train_list, color='b', width=0.9)
     plt.bar(xticks, test_list, bottom=train_list, color='g', width=0.9)
     plt.xticks(xticks, labels)
-    plt.title("Train-Test split of Models in S2R:3DFREE_V1")
+    plt.title("Train-Test split of Models in S2R:3DFREE_Chair_final")
     plt.legend(['train','test'])
-    plt.show()
+    plt.savefig(fileName,format='pgf')
+    # plt.show()
 
 
 def get_all_model_names(root_path):
@@ -292,7 +293,7 @@ def get_all_models_grouped(root_path):
     # print(indices_list)
     return labels_list,models_list
 
-def get_train_test_model_names_histogram(root_path,train_model_list,test_model_list):
+def get_train_test_model_names_histogram(root_path,train_model_list,test_model_list,fileName="test"):
 
     model_names = list(get_all_model_names(root_path))
 
@@ -307,16 +308,17 @@ def get_train_test_model_names_histogram(root_path,train_model_list,test_model_l
     for model in test_model_list:
         test_list[model_names.index(model)] += 1
 
-    print(len(train_list))
-    print(len(test_list))
+    print(train_list)
+    print(test_list)
 
     xticks = [i for i in range(len(model_names))]
     plt.bar(xticks, train_list, color='b')
     plt.bar(xticks, test_list, bottom=train_list, color='g')
     # plt.xticks(xticks, model_names)
-    plt.title("Train-Test split of Models in S2R:3DFREE_V1")
+    plt.title("Train-Test split of Chair Models in S2R:3DFREE")
     plt.legend(['train','test'])
-    plt.show()
+    plt.savefig(fileName,format='pgf')
+    # plt.show()
 
 if __name__ == '__main__':
     # depth = np.clip(np.load("/Users/apple/OVGU/Thesis/images/pix3dsynthetic/test_depth.png"), 1.0, 10.0) / 10 * 255
@@ -385,41 +387,46 @@ if __name__ == '__main__':
 
 #########################################################
 
-    root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1/'
-    print(get_all_model_names(root_path))
+    # root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1/'
+    # print(get_all_model_names(root_path))
     # get_model_names_histogram(root_path)
 
 
 #########################################################
     # root_path = '/Volumes/Prabhu/thesis/s2r3dfree_v1/'
-    # root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v1/'
-    # label_list, model_list = get_all_models_classwise(root_path)
-    # x,y,xt,yt = split_dataset(model_list,label_list)
-    # file_name = "model_split_v1.p"
-    # save_model_split(x,y,xt,yt, file_name)
-    #
-    # model_train,label_train,models_test,labels_test = get_model_split(file_name) # gives only model, to get images of each model next line
-    # x,y,xt,yt = generate_train_test_split(root_path,model_train,label_train,models_test,labels_test)
-    # save_train_test_split(x,y,xt,yt,"train_test_split_classeswise_v1.p")
-    #
-    # train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
-    #     "/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3dsynthetic/train_test_split_classeswise_v1.p")
-    # print(train_img_list[0])
-    # print(train_model_list[0])
-    # get_train_test_histogram(root_path,train_img_list,test_img_list)
-    # get_train_test_model_names_histogram(root_path,train_model_list,test_model_list)
+    # root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_v3_2/'
+    root_path = '/Users/apple/OVGU/Thesis/s2r3dfree_chair_light/'
+    label_list, model_list = get_all_models_classwise(root_path)
+    x,y,xt,yt = split_dataset(model_list,label_list)
+    file_name = "splits/train_test_split_classwise_chair_light_10000.p"
+    save_model_split(x,y,xt,yt, file_name)
+
+    model_train,label_train,models_test,labels_test = get_model_split(file_name) # gives only model, to get images of each model next line
+    x,y,xt,yt = generate_train_test_split(root_path,model_train,label_train,models_test,labels_test)
+    save_train_test_split(x,y,xt,yt,"splits/train_test_split_classwise_chair_light_10000.p")
+
+    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+        "splits/train_test_split_classwise_chair_light_10000.p")
+    print(train_img_list[0])
+    print(train_model_list[0])
+    # get_train_test_histogram(root_path,train_img_list,test_img_list,fileName='histogram_classwise_chair_final.pgf')
+    # get_train_test_model_names_histogram(root_path,train_model_list,test_model_list,fileName='classwisewise_chair_final.pgf')
 
 #########################################################
 
-    # label_list, img_list = get_all_models_grouped(root_path)
-    # x,y,xt,yt = split_dataset(img_list,label_list)
-    # x,y,xt,yt = generate_train_test_split_modelwise(root_path,x,y,xt,yt)
-    # save_train_test_split(x,y,xt,yt,"train_test_split_modelwise_v1.p")
-    #
-    # train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
-    #     "/Users/apple/OVGU/Thesis/code/3dReconstruction/Datasets/pix3dsynthetic/train_test_split_modelwise_v1.p")
-    #
-    # get_train_test_histogram(root_path,train_img_list,test_img_list)
-    # get_train_test_model_names_histogram(root_path,train_model_list,test_model_list)
+    label_list, img_list = get_all_models_grouped(root_path)
+    x,y,xt,yt = split_dataset(img_list,label_list)
+    x,y,xt,yt = generate_train_test_split_modelwise(root_path,x,y,xt,yt)
+    save_train_test_split(x,y,xt,yt,"splits/train_test_split_modelwise_chair_light_10000.p")
+
+    train_img_list,train_model_list,test_img_list,test_model_list = get_train_test_split(
+        "splits/train_test_split_modelwise_chair_light_10000.p")
+
+    print(len(train_model_list))
+    print(len(test_model_list))
+
+
+    # get_train_test_histogram(root_path,train_img_list,test_img_list,fileName='histogram_modelwise_chair_final.pgf')
+    # get_train_test_model_names_histogram(root_path,train_model_list,test_model_list,fileName='modelwise_chair_final.pgf')
 
     #########################################################

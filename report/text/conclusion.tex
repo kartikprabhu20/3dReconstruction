@@ -1,8 +1,8 @@
 \chapter{\iftoggle{german}{Fazit}{Conclusion}}\label{ch:conclusion}
 
 This chapter summarizes(\autoref{sec:Summary}) the entire thesis and answers the research questions discussed in \autoref{sec:goal}.
-We will further discuss the limitation of the work indulged in this thesis in \auto{sec:limitations-of-game-engines2}.
-We will also mention possible future scopes and ideas which we came across while conducting this thesis.
+We will further discuss the limitation of the work indulged in this thesis in \autoref{sec:limitations-of-game-engines2}.
+We will also mention possible future scopes and ideas which we came across while conducting this thesis in \autoref{sec:Future_scope}.
 
 
 \section{\iftoggle{german}{Zukünftige Arbeiten}{Summary}}\label{sec:Summary}
@@ -32,7 +32,7 @@ Then we see the Deep Learning framework and its configurations.
 We dedicate \autoref{ch:evaluation} for experiments and evaluation.
 We evaluate the photorealism of datasets compared to the real dataset(Pix3D) from a survey.
 The survey answers our first research question: \textbf{\emph{Are game engines a reliable medium for creating a photorealistic synthetic dataset?}}
-The survey results discussed in \autoref{subsec:survey-results} concluded that the proposed dataset using unity game engine,
+The survey results discussed in \autoref{sec:a-survey-on-photorealism} concluded that the proposed dataset using unity game engine,
 although comparable with other automated dataset collections,
 still lags the photorealism from real datasets or even the manually created datasets by architects.
 The \gls{free} dataset outperformed some synthetic datasets regarding the individual rating but was in the top 5 out of 9 datasets while conducting a comparative study.
@@ -75,10 +75,16 @@ Comparing this to Blenderproc, which takes 20 minutes for a single image on CPU,
 Blenderproc has python as its underlying framework and hence can access GPUs easily
 
 \subsection{Configuring synthetic dataset generation pipeline}\label{subsec:configuring-synthetic-dataset-generation-pipeline}
-We had to try different configurations to try to get the optimum solution manually.
+We had to try different configurations to get the optimum solution manually.
 Moreover, since the shader layers used by unity are not differentiable, we can not train a model to optimize the input parameters like light intensity, light color, the darkness of shadow, texture colors, texture brightness, etc.
 These parameters are randomized and not fine-tuned to increase the performance.
 Though Blenderproc also does not do this, users may optimize these parameters since it uses python.
+
+\subsection{Hallucination for Empty Room}\label{subsec:hallucination-for-empty-room}
+Ideally we would want the Deep Learning model to predict furniture only if one exists in 2D images.
+We experimented with empty room as input image as in \autoref{subsec:empty-image-test}, and the model predicted some voxels which resembles 3D furnitures.
+The reason could be that we did not teach the model not to predict anything with empty samples.
+All the samples from both Pix3D and \gls{free} always had a furniture model in the input image.
 
 \subsection{High Definition Render Pipeline}\label{subsec:high-definition-render-pipeline}
 Unity has introduced' High Definition Render Pipeline' (HDRP), which provides more realistic lighting and natural-looking scenes.

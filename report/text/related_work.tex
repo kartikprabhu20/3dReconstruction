@@ -10,12 +10,12 @@ what tasks each dataset supports, and some disadvantages.
 Further, we discuss the available tools which support the creation of indoor dataset \autoref{subsec:tools-to-create-synthetic} on different platforms and frameworks.
 
 We then discuss about Domain space in \autoref{sec:domain-space}, how we visualize it qualitatively and quantitatively.
-We will also discuss ways to mitigate the domain gap in \autoref{sec:mitigating_domain_shift}.
-This section will include traditional techniques like transfer learning or fine-tuning and mixed training.
+We will also discuss ways to mitigate the domain gap in \autoref{sec:mitigating_domain_shift} and \autoref{subsec:training-with-synthetic-dataset}.
+These section will include traditional techniques like transfer learning or fine-tuning and mixed training.
 Recent trends in Generative models to transfer the style of the real image onto synthetically generated images is also briefly discussed.
 
-\section{3D reconstruction}\label{sec:3D_reconstruction}
-The main task of this thesis is the reconstruct a furniture from RGB image.
+\section{3D Reconstruction}\label{sec:3D_reconstruction}
+The main task of this thesis is tp reconstruct a furniture from RGB image.
 For this purpose, we take a Deep Learning approach for 3D-Reconstruction.
 3D reconstruction is converting a 2-Dimensional RGB image into an available 3D representation of the model under observation.
 
@@ -33,7 +33,7 @@ The decoder is an expansive network, which converts a feature vector from the la
 $Dec: V \to Y$, i.e. for any vector in latent space $V$, the decoder function \textbf{$Dec$} should be able to create a 3D voxel grid in $Y$.
 If the images are encoded perfectly, a slight change in the feature vector will give a slight variation in the 3D voxel.
 
-\subsection{State of the art for 3d-reconstruction}\label{sec:state_of_the_art}
+\subsection{State of the Art for 3D-Reconstruction}\label{sec:state_of_the_art}
 
 3D reconstruction task is on the rise with improvements in technologies like Augmented and virtual reality.
 Scene understanding becomes essential for these technologies to succeed.
@@ -63,8 +63,8 @@ For the Oct-tree-based reconstruction, as the name suggests, instead of 3D voxel
 Oct-tree can further make the process memory and compute efficient, providing higher resolution than 3D voxel representation.
 
 Supervision is another factor to consider for 3D reconstruction tasks.
-There are methods based on \b{3D-Supervision or 2D-Supervision}.
-~\cite{Xie_2019,Xie_2020,Wu2017,groueix2018atlasnet,pan2019deep, chen2019learning} are few of the 3D-supervision based architecture.
+There are methods based on 3D-Supervision or 2D-Supervision.
+\cite{Xie_2019,Xie_2020,Wu2017,groueix2018atlasnet,pan2019deep, chen2019learning} are few of the 3D-supervision based architecture.
 For all these architectures, it is necessary to either have the 3D voxel grid or 3D mesh for supervised training.
 For models described in~\cite{Lunz2020InverseGG,henderson2019learning},the 3D reconstruction only needs 2D supervision like a silhouette.
 One might argue that for 3D supervision, we need a large number of 3D models designed and created by professional artists
@@ -85,12 +85,12 @@ The extended work replaces \gls{vgg} encoder~\cite{simonyan2015deep} with \gls{r
     \centering
     \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2vox}}\quad
     \subfloat[][]{\includegraphics[angle=-90,width=0.45\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/pix2voxpp}}\\
-    \caption{Network architectures used as a baselines (a)Pix2Vox~\cite{Xie_2019} (b)Pix2Vox++~\cite{Xie_2020}.
+    \caption[Network Architecture for Baselines.]{Network architectures used as a baselines (a)Pix2Vox~\cite{Xie_2019} (b)Pix2Vox++~\cite{Xie_2020}.
     The critical difference between the two architectures is the Encoder. Pix2Vox uses \gls{vgg} while Pix2Vox++ uses \gls{resnet}.}
     \label{fig:architectures}
 \end{figure}
 
-\section{Indoor datasets}\label{sec:indoor-dataset}
+\section{Indoor Datasets}\label{sec:indoor-dataset}
 
 Now that we know what task we will be performing, lets look into existing datasets for indoor environment.
 Indoor scene dataset has been on the rise with increasing interest in scene processing understanding~\cite{Dai2017,Silberman2012,Xiao2013SUN3DAD,Hua2016SceneNNAS,Armeni20163DSP,Chang2018,Handa2016UnderstandingRI,InteriorNet18,Li_2021_CVPR,zheng2020structured3d,Roberts2020HypersimAP,McCormac2017}.
@@ -100,8 +100,8 @@ While~\cite{Dai2017, Lim2013, Sun2018} are real-world datasets,~\cite{Fu20203DFR
 Live scans help to gather real-world datasets.
 The synthetic dataset can be manually configured by a professional or automated by a programmer using a tool.
 
-\subsection{Pix3D: A large-scale benchmark}\label{sec:pix3d}
-~\cite{Sun2018}introduces a large-scale benchmark for 2D-3D alignment.
+\subsection{Pix3D: A Large-Scale Benchmark}\label{sec:pix3d}
+~\cite{Sun2018} introduces a large-scale benchmark for 2D-3D alignment.
 The raw images from web search engines were collected, and labeled key points were used to align the 2D images with the corresponding 3D shapes.
 The 3D models extend the IKEA dataset~\cite{Lim2013}, a collection of high-quality IKEA furniture.
 The dataset also provides a binary mask and the key points for the object under observation.
@@ -116,12 +116,12 @@ Samples from Pix2D are as shown in \autoref{fig:Pix3D samples}.
     \subfloat[][]{\includegraphics[width=.4\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_2}}\\
     \subfloat[][]{\includegraphics[width=.4\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_6}}\quad
     \subfloat[][]{\includegraphics[width=.4\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_4}}
-    \caption{Sample RGB images from pix3D}
+    \caption[Samples from Pix3D.]{Sample RGB images from pix3D}
     \label{fig:Pix3D samples}
 \end{figure}
 
-\subsection{Indoor synthetic datasets}\label{subsec:indoor-synthetic-datasets}
-Alibaba group introduced \gls{front}~\cite{Fu20203DFRONT3F} which stands for 3D Furnished Rooms with layOuts and semaNTics dataset which comprises
+\subsection{Indoor Synthetic Datasets}\label{subsec:indoor-synthetic-datasets}
+Alibaba group introduced \gls{front} \cite{Fu20203DFRONT3F} which stands for 3D Furnished Rooms with layOuts and semaNTics dataset which comprises
 synthetic indoor scenes designed under the supervision of professionals.
 It consists of 18,968 rooms and 13,151 textured pieces of furniture.
 
@@ -178,7 +178,7 @@ middleware library~\footnote{https://magnum.graphics/}, which supports cross-pla
 
 In \autoref{fig:photorealistic images comparison}, we can see samples from each of the datasets claimed to be photorealistic.
 The images from these datasets are used in a research survey to determine the perception of humans about photorealism.
-We define``Automated dataset" as a dataset which had no or limited user or professional designer inputs.
+We define ``Automated dataset" as a dataset which had no or limited user or professional designer inputs.
 Only the 3D furntiure models assets might have been designed by professionals, but the properties of the room like lights, textures, etc, were generated automatically.
 Among the datasets under consideration,
 OpenRooms, SceneNet, BlenderProc are all automated datasets, including the proposed \gls{free} dataset.
@@ -191,26 +191,26 @@ Hyperism, \gls{ai2thor}, InteriorNet, and \gls{front} were manually configured a
         \hline
         Dataset & Year & Automated \\ [0.5ex]
         \hline\hline
-        Pix3D & 2018 & NO \\
-        \hline
-        Openrooms & 2020 & YES \\
+        SceneNet & 2015 & YES \\
         \hline
         \gls{ai2thor} & 2017 & NO \\
         \hline
+        InteriorNet & 2018 & NO \\
+        \hline
+        Pix3D & 2018 & NO \\
+        \hline
         BlenderProc & 2019 & YES \\
+        \hline
+        Openrooms & 2020 & YES \\
         \hline
         Hyperism & 2020 & NO \\
         \hline
         \gls{front} & 2020 & NO \\
         \hline
-        InteriorNet & 2018 & NO \\
-        \hline
-        SceneNet & 2015 & YES \\
-        \hline
         \gls{free} & 2021 & YES \\[1ex]
         \hline
     \end{tabular}
-    \caption{Table represents synthetic datasets and year of release, and if they are automated(i.e. created with no or limited inputs from professional designers.)}
+    \caption[Synthetic Datasets]{Table represents synthetic datasets and year of release, and if they are automated(i.e. created with no or limited inputs from professional designers.)}
     \label{tab:dataset_comparison}
 \end{table}
 
@@ -241,18 +241,18 @@ Hyperism, \gls{ai2thor}, InteriorNet, and \gls{front} were manually configured a
     \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/scenenet_3}\\
 
 \end{tabular}
-\caption{A collection of photorealistic synthetic datasets. The first column of each row indicates the dataset name followed by randomly selected images from the same dataset.}
+\caption[Samples from Photorealistic Synthetic Datasets.]{A collection of photorealistic synthetic datasets. The first column of each row indicates the dataset name followed by randomly selected images from the same dataset.}
 \label{fig:photorealistic images comparison}
 \end{figure}
 
-\subsection{Tools to create synthetic datasets}\label{subsec:tools-to-create-synthetic}
+\subsection{Tools to Create Synthetic Datasets}\label{subsec:tools-to-create-synthetic}
 
 ``BlenderProc: Reducing the Reality Gap with Photorealistic Rendering" by ~\cite{dlr139317} is a python based pipeline to create a synthetic dataset.
 As the name suggests, the underlying framework is Blender~\cite{blender}, which is a 3D modeling and rendering package.
 Like most synthetic data generation tools, it provides RGB, depth maps, normals, and semantic segmentation.
 \autoref{fig:Blenderproc samples} is a collection of sample images generated using BlenderPoc.
 We searched for synthetic data generation tools, Blenderproc supports a maximum number of existing datasets.
-Ikea~\cite{Lim2013}, Pix3d~\cite{Sun2018}, Shapenet~\cite{shapenet2015}, \gls{front}~\cite{Fu20203DFRONT3F}, Replica~\cite{Straub2019TheRD}, SunCG~\cite{Xiao2013SUN3DAD} are some of the popular datasets it supports.
+Ikea~\cite{Lim2013}, Pix3D~\cite{Sun2018}, Shapenet~\cite{shapenet2015}, \gls{front}~\cite{Fu20203DFRONT3F}, Replica~\cite{Straub2019TheRD}, SunCG~\cite{Xiao2013SUN3DAD} are some of the popular datasets it supports.
 It also has some combinations of these datasets like ShapeNet with SunCG or SceneNet.
 Even though it supports the rendering of the Pix3D dataset, the model is rendered without any background.
 One extreme advantage of this toolkit is that it is open source and a more comprehensive open community to contribute.
@@ -276,7 +276,7 @@ One extreme advantage of this toolkit is that it is open source and a more compr
 %        \includegraphics[width=.2\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/realistic_images_relatedwork/blenderproc_normal_3}\\
 
     \end{tabular}
-    \caption{Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.}
+    \caption[Samples from BlenderProc.]{Sample images created from BlenderProc using SceneNet dataset.(Left to right) RGB images, Depth Maps, Instance Segmenatations and Normals. Each row is an independent sample.}
     \label{fig:Blenderproc samples}
 \end{figure}
 
@@ -293,10 +293,10 @@ With domain randomization, the author of~\cite{hinterstoisser2019annotation} pro
 UnrealCV~\cite{Qiu2017} is an open-source project built upon Unreal Engine 4 (UE4)\footnote{Epic Games, Unreal Engine:https://www.unrealengine.com}).
 It supports some pre-built indoor architectures available on the asset store, which are unfortunately paid versions.
 Along with this limitation, the plugin only creates depth maps, normals, and segmentation masks, with no mapping to 3D models.
-Another tool based on the Unreal engine is UnrealROX+\cite{martinezgonzalez2021unrealrox}.
+Another tool based on the Unreal engine is UnrealROX+~\cite{martinezgonzalez2021unrealrox}.
 This plugin design is based on UnrealCV and provides similar data.
 
-\section{Domain space}\label{sec:domain-space}
+\section{Domain Space}\label{sec:domain-space}
 
 Since this thesis includes image datasets from different domains, it is essential to understand the domain space of these datasets.
 When two or more datasets originate from different sources we say the datasets belong to different domains.
@@ -369,7 +369,7 @@ This vector has a dimension of 2048.
 The images from both synthetic and real datasets are passed through the model, and the obtained statistics is used to calculated the \gls{fid} as in \autoref{eq:fid}.
 
 \begin{equation}
-    d^{2}\left((\boldsymbol{\mu}_{r}, \boldsymbol{C}_{r}),\left(\boldsymbol{\mu}_{s}, \boldsymbol{C}_{s}\right)\right)=\left\|\boldsymbol{\mu}_{r}-\boldsymbol{\mu}_{s}\right\|^{2}+\operatorname{Tr}\left(\boldsymbol{C}_{r}+\boldsymbol{C}_{s}-2\left(\boldsymbol{C}_{w} {C}_{w}\right)^{1 / 2}\right)
+    d^{2}\left((\boldsymbol{\mu}_{r}, \boldsymbol{C}_{r}),\left(\boldsymbol{\mu}_{s}, \boldsymbol{C}_{s}\right)\right)=\left\|\boldsymbol{\mu}_{r}-\boldsymbol{\mu}_{s}\right\|^{2}+\operatorname{Tr}\left(\boldsymbol{C}_{r}+\boldsymbol{C}_{s}-2\left(\boldsymbol{C}_{r} {C}_{s}\right)^{1 / 2}\right)
     \label{eq:fid}
 \end{equation}
 
@@ -377,7 +377,7 @@ In the above \autoref{eq:fid}, $\mu_r$ and $\mu_s$ are feature-wise mean for rea
 $Tr$ is the Trace linear algebra operation, which is the sum of main diagonal elements.
 
 
-\section{Mitigating domain shift}\label{sec:mitigating_domain_shift}
+\section{Mitigating Domain Shift}\label{sec:mitigating_domain_shift}
 
 The idea of domain randomization is that real images appear to be one of the many variations among training images from synthetic datasets.
 Thus, testing with real-world images should give a comparable performance.
@@ -408,7 +408,7 @@ In one branch, the model learns to perform a specific task like segmentation or 
 The other branch classifies if the dataset is real or synthetic.
 ~\cite{Pinheiro2019} implement the same principle on complex 3D reconstruction tasks by predicting voxels and classifying the image domain.
 
-\subsection{Training with synthetic dataset}\label{subsec:training-with-synthetic-dataset}
+\section{Training with Synthetic Dataset}\label{subsec:training-with-synthetic-dataset}
 The research questions, as stated in \autoref{sec:goal} aims to check if a synthetic dataset can deliver as a standalone dataset.
 If it does not, then techniques like fine-tuning will be helpful.
 Another way to use the large synthetic datasets is using mixed training.
@@ -420,7 +420,7 @@ Another study was conducted by fine-tuning a model pre-trained on a synthetic da
 They observed that fine-tuning with a limited real dataset is better than mixed training with a synthetic dataset.
 
 ~\cite{Tremblay2018TrainingDN}  explore domain randomization on real-world object detection.
-The author also proposes a new approach of domain randomization, wherein random 3d objects called ”flying distractors” are randomly placed in the scene;
+The author also proposes a new approach of domain randomization, wherein random 3D objects called ``flying distractors” are randomly placed in the scene;
 the model learns to ignore objects that are not of interest.
 A focused ablation study with individual domain randomization parameters was also conducted to understand the contribution of each component.
 The parameters included lights, textures, data augmentation, and flying distractor, as mentioned above.

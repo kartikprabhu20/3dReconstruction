@@ -9,6 +9,9 @@ In \autoref{sec:3d-scene-framework}, we introduce a new tool to create synthetic
 
 In the Deep Learning domain(\autoref{subsec:why-pix3d?}), we explain rationale behind selection of baseline models for 3D-reconstruction task.
 
+In \autoref{sec:datasets} we describe various synthetic dataset created using 3D-Scene Tool for 3D-Reconstruction tasks.
+The collection will also contain chair datasets that will be used to study effect of domain randomization.
+
 \section{A New Dataset for 3D Reconstruction Task}\label{sec:3d-furniture-models-from-pix3d}
 As discussed in \autoref{subsec:indoor-synthetic-datasets}, we have several synthetic datasets.
 However, not many support 3D reconstruction task.
@@ -16,7 +19,6 @@ The dataset which support 3D reconstruction, do not have real-world images to co
 In this section, we discuss the datasets which we considered for creating a new synthetic dataset, and the reason for the selection.
 
 \subsection{Disadvantages of Pix3D}\label{subsec:disadvantages-of-pix3d}
-
 The distribution of models in Pix3D is as shown in \autoref{fig:pix3d_histogram}.
 As we can see, the dataset distribution is uneven across classes, and more than 50\% of classes have less than 1000 images.
 
@@ -30,7 +32,7 @@ Though Pix3D set a benchmark for 2D-3D alignment, here are few disadvantages of 
 \begin{figure}[!ht]
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_histogram.pgf}}
     \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/pix3d/pix3d_models_histogram.pgf}}
-    \caption{Distribution of Pix3D~\cite{Sun2018} images(left), unique models(right)}
+    \caption[Distribution of Pix3D.]{Distribution of Pix3D~\cite{Sun2018} images(left), unique models(right)}
     \label{fig:pix3d_histogram}
 \end{figure}
 
@@ -54,7 +56,7 @@ For example, chairs are placed near the table,
 Sofa and coffee table is place facing towards a television, etc.
 Using these position we will be able to derive sensible images for our synthetic dataset.
 
-\subsection{\gls{free}, a Pix3D based synthetic dataset}\label{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}
+\subsection{\gls{free}, a Pix3D Based Synthetic Dataset}\label{sec:s2r:3d-free-a-pix3d-based-synthetic-dataset}
 
 \gls{free} dataset, which stands for Synth2Real: 3-Dimensional Furniture Reconstruction from Ersatz Environment, combines SceneNet and Pix3D dataset.
 We utilize the availability of 3D models of rooms and pieces of furniture from these two datasets to create an ersatz environment using Unity as our framework.
@@ -65,7 +67,7 @@ This process is randomized and will be discussed in \autoref{sec:3d-scene-framew
 The other option would have been to use the ShapeNet or \gls{front} as the target model, but we would not have a real dataset to compare to this case.
 Ideally, a model trained on ShapeNet should also perform well with a real dataset like Pix3D, but we decided to have a synthetic dataset based on Pix3D itself for better comparison.
 
-\section{Unity-based pipeline}\label{sec:unity-based-pipeline}
+\section{Unity-Based Pipeline}\label{sec:unity-based-pipeline}
 To create the synthetic dataset, we use Unity Game Engine.
 The reasons for selecting Unity as our platform for the application are:
 \begin{enumerate}
@@ -82,7 +84,7 @@ With the Unity game engine, the available scenes from the Scenenet and 3D models
 Further domain randomization can be applied to create a dataset of photorealistic images and 2.5D data like normals, depth maps, masks.
 
 
-\section{3D-Scene framework}\label{sec:3d-scene-framework}
+\section{3D-Scene Framework}\label{sec:3d-scene-framework}
 3D-Scene is a Unity-based application created as proof of concept for tool to generate photorealistic images using Game engine.
 The core pipeline and the workflow is as shown in \autoref{fig:pipeline process}.
 For an automation-based pipeline, the process loops through each step, while in the manual pipeline, the user decides which block to execute.
@@ -92,9 +94,16 @@ The implementation of the blocks will be discussed in \autoref{ch:implementation
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/process}
-    \caption{An overview of pipeline for image generation with different blocks and external libraries.}
+    \caption[Overview of 3D-Scene Tool]{An overview of pipeline for image generation with different blocks and external libraries.
+    Each block is discussed in sections mentioned in the figure.}
     \label{fig:pipeline process}
 \end{figure}
+
+\subsection{Furniture Models from Pix3D}\label{subsec:furniture-models-from-pix3d}
+As discussed in \autoref{subsec:why-pix3d?}, we utilize 3D furniture models from Pix3D.
+Pix3D provides 381 models for furnitures with 7 categories(Bed, Bookcase, Chair, Desk, Sofa, Table, Wardrobe).
+Most of the models have default textures, while some do not.
+These textures will be changed randomly within the pipeline.
 
 \subsection{Scenes from SceneNet}\label{subsec:scenes-from-scenenet}
 We utilize scenes provided by SceneNet~\cite{McCormac2017} for the rooms in our ersatz environments.
@@ -102,19 +111,20 @@ All the catagories from Pix3D are also present in ShapeNet which are used to fil
 The distribution of furniture matching the category of Pix3D in the scenes is as shown in \autoref{fig:distribution of scenes}.
 The application modifies each scene for every snap we take for the dataset we create at random.
 
+\begin{figure}[!ht]
+    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes.pgf}}
+    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet.pgf}}
+    \caption[Distribution of SceneNet.]{(Left)Distribution of types of scenes, (Right) Distribution of objects matching the categories of Pix3D in scenes.
+    The chair category has most number of possible positions, while wardrobe has the least.}
+    \label{fig:distribution of scenes}
+\end{figure}
+
 SceneNet has made 25 rooms available to the public.
 We only use scenes of type Bedroom(11), Kitchen(1), Living room(6), and office(7).
 We did not consider the bathroom for our case, as the categories under observations are furniture which we rarely see in the bathroom
 \autoref{fig:Scene Types} shows different types of scenes utilized to generate a synthetic dataset.
 These scenes are further modified by adding a few more objects of categories present in Pix3D to get more variations in the dataset.
 
-\begin{figure}[!ht]
-    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/types_of_scenes.pgf}}
-    \resizebox{0.49\textwidth}{6cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_categories_scenenet.pgf}}
-    \caption{(Left)Distribution of types of scenes, (Right) Distribution of objects matching the categories of Pix3D in scenes.
-    The chair category has most number of possible positions, while wardrobe has the least.}
-    \label{fig:distribution of scenes}
-\end{figure}
 
 \begin{figure}[!ht]
     \centering
@@ -122,7 +132,7 @@ These scenes are further modified by adding a few more objects of categories pre
     \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_livingroom}}\\
     \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_kitchen}}\quad
     \subfloat[][]{\includegraphics[width=.35\textwidth, height = .35\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/scene_office}}
-    \caption{The top view of sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office}
+    \caption[Top View for SceneNet Layouts]{The top view of sample scene layouts from SceneNet. Types: (a)Bedroom, (b)LivingRoom, (c)Kitchen and (d)Office.}
     \label{fig:Scene Types}
 \end{figure}
 
@@ -130,7 +140,7 @@ These scenes are further modified by adding a few more objects of categories pre
 
 SceneNet~\cite{McCormac2017} also provide textures for different categories in the scene.
 We further increase the texture database by adding more textures from ambientCG.com, which provides free licenses.
-A total of 982 texture images with 58 regular object categories, some of which are just JPG or PNG images, while there are few textures from cctextures.com with more details like normals, displacement, and roughness.
+A total of 982 texture images with 58 regular object categories, some of which are just JPG or PNG images, while there are few textures from cgtextures\footnote{https://www.textures.com/} with more details like normals, displacement, and roughness.
 This makes the textures more realistic.
 The distribution of the top 40 texture categories used for randomization of scenes is as shown in \autoref{fig:Distribution of textures}, with categories of Pix3D
 having a higher number of images.
@@ -141,6 +151,24 @@ The textures need to be grouped together into folder with category name.
 Since this library is external to Unity, the users can add or remove textures according to their preferences.
 Even new categories can be added by just creating a new folder.
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture1}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture2}\\
+    \vspace{0.1cm}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture3}
+    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture4}\\
+    \caption[Samples for Different Textures.]{Sample images with different textures for same scene.}
+    \label{fig:Texture Randomisation}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{\textwidth}{11.5cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures.pgf}}
+    \caption[Distribution of Textures.]{Distribution of textures used on scenes. The categories of Pix3D(target furniture) have higher number of images.}
+    \label{fig:Distribution of textures}
+\end{figure}
+
 Randomizing the outdoor environment is important in cases where we have open doors and windows.
 Unity provides a wrapper for scenes called \emph{Skyboxes}.
 This is spherical texture around the room under observation.
@@ -148,23 +176,6 @@ This gives us a varying outdoor environment for the scene with the scenery at th
 We randomize ten open license skyboxes\footnote{https://polyhaven.com/hdris/outdoor} to achieve this.
 Samples of the skybox are shown in \autoref{fig:skybox samples}.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture1}
-    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture2}\\
-    \vspace{0.1cm}
-    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture3}
-    \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/background_texture4}\\
-    \caption{Sample images with different textures for same scene.}
-    \label{fig:Texture Randomisation}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \resizebox{0.9\textwidth}{10cm}{\input{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/scenenet_scenes/distribution_of_textures.pgf}}
-    \caption{Distribution of textures used on scenes. The categories of Pix3D(target furniture) have higher number of images.}
-    \label{fig:Distribution of textures}
-\end{figure}
 
 \begin{figure}
     \centering
@@ -173,13 +184,13 @@ Samples of the skybox are shown in \autoref{fig:skybox samples}.
     \vspace{0.1cm}
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_3}
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/skybox_4}\\
-    \caption{Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.}
+    \caption[Samples for Skyboxes.]{Samples for different skyboxes which change the outdoor environment for the scenes. In the figure we see an open window with changing skybox.}
     \label{fig:skybox samples}
 \end{figure}
 
 
 
-\subsection{Replacing target Objects}\label{subsec:replacing-target-objects}
+\subsection{Replacing Target Objects}\label{subsec:replacing-target-objects}
 
 To further randomize the scene, the category of target objects is replaced by the object under observation.
 When more than one object of the same category is present, we randomize the object to be replaced, further randomizing the captured data.
@@ -195,7 +206,7 @@ Samples for replacing a target object from an original scene from Scenenet are s
     \vspace{0.1cm}
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_2-1}
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/replace_2-2}\\
-    \caption{Samples for object replacement. The Left column shows a scene from SceneNet, while the right column shows an object being replaced in original scene.}
+    \caption[Samples for Object Replacement]{Samples for object replacement. The Left column shows a scene from SceneNet, while the right column shows an object being replaced in original scene.}
     \label{fig:replace model}
 \end{figure}
 
@@ -215,7 +226,7 @@ We make sure that the target object is within the camera frame and is visible.
     \vspace{0.1cm}
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera3}
     \includegraphics[width=.4\textwidth, height = .3\textwidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/camera4}\\
-    \caption{Sample images with different camera viewpoints of same object with a constant scene.}
+    \caption[Samples for Camera ViewPoints.]{Sample images with different camera viewpoints of same object with a constant scene.}
     \label{fig:Camera viewpoints}
 \end{figure}
 
@@ -239,7 +250,7 @@ Hence we use some pre-determined lighting settings, discussed further in impleme
 %    \label{fig:Lighting and shadows}
 %\end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting1}
     \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting2}
@@ -250,11 +261,11 @@ Hence we use some pre-determined lighting settings, discussed further in impleme
     \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting6}
     \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting7}
     \includegraphics[width=.24\linewidth,valign=m]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/implementation/randomisation/lighting8}\\
-    \caption{Sample images with different lighting and shadows conditions.First row is samples for light with different intensity and direction. Second row is differnt color for light.}
+    \caption[Samples for Lightings and Shadows.]{Sample images with different lighting and shadows conditions.First row is samples for light with different intensity and direction. Second row is differnt color for light.}
     \label{fig:Lighting and shadows}
 \end{figure}
 
-\section{3D reconstruction pipeline: Why Pix2Vox?}\label{sec:3D reconstruction pipeline}
+\section{3D Reconstruction Pipeline: Why Pix2Vox?}\label{sec:3D reconstruction pipeline}
 We create a Deep Learning pipeline for processing the 3D reconstruction task.
 The backbone of the pipeline is the base model and the dataset being used to train.
 In this section, we discuss the model used as a base and the rationale behind its selection.
@@ -263,7 +274,7 @@ Pix2Vox has been used as a baseline by most of the research-oriented to 3D recon
 This network is one of the few networks to be tested on the Pix3D dataset.
 According to the survey conducted by~\cite{Han2021ImageBased3O}, the performance of Pix2Vox~\cite{Xie_2019}
 is significantly higher compared to previous work(\cite{Tulsiani2017,tatarchenko2016multiview,Roth2018,Gwak2018,Johnston2017}), as shown in \autoref{fig:survey on 3d reconstruction}.
-At the same time, this comparison was made on 3d reconstruction of the ShapeNet dataset since Pix3D was not available when previous work was published.
+At the same time, this comparison was made on 3D reconstruction of the ShapeNet dataset since Pix3D was not available when previous work was published.
 From our survey, only CoReNet~\cite{popov2020corenet} had a slight gain in performance compared to Pix2Vox.
 When trained on ShapeNet and tested with Pix3D, CoReNet gave a result of 29.7\% \gls{iou} while Pix2Vox gave a result of 28.8\% \gls{iou}  and Pix2Vox++ a result of 29.2\% \gls{iou}\@.
 Since the difference in the performance was not significant, we decided to stick with the baseline model.
@@ -272,7 +283,7 @@ Hence, the embeddings generated from this encoder can help visualize the domain 
 As mentioned above, for Pix2Vox++, the \gls{resnet} is the backbone encoder with 25\% lesser parameters and 5\% lesser inference time than \gls{vgg}\@.
 In addition, the author even demonstrated that Pix2vox++ performs 1.5\% better than Pix2Vox.
 The architecture of Pix2Vox++ is as shown in \autoref{fig:architectures}(b).
-Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the furniture, but to check if game engines can produce photorealistic images usable for 3d reconstruction.
+Furthermore, the focus of this thesis is not to check which is the best model to reconstruct the furniture, but to check if game engines can produce photorealistic images usable for 3D reconstruction.
 Hence the selection of the model was not of utmost importance.
 However, since the two architectures are relatable, it would be interesting to compare the results for the 3D Reconstruction task.
 
@@ -293,7 +304,7 @@ However, since the two architectures are relatable, it would be interesting to c
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/concept/survey}
-    \caption{A survey conducted by~\cite{Han2021ImageBased3O}, demonstrates that Pix2Vox is considerably a good 3D reconstruction model.
+    \caption[Survey Results for 3D-Reconstruction.]{A survey conducted by~\cite{Han2021ImageBased3O}, demonstrates that Pix2Vox is considerably a good 3D reconstruction model.
     The values are from 3D reconstruction of ShapeNet~\cite{shapenet2015} since Pix3D was not published by then.}
     \label{fig:survey on 3d reconstruction}
 \end{figure}
@@ -315,14 +326,14 @@ Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 Version 1 of \gls{free} was created by keeping the models in the center of a default 3D room.
 The camera distance was randomized between 1 and 2.5 meters from the model.
 The camera viewpoints and textures were randomized.
-A total of 70000 images were synthetically generated using the \gls{free} 'Single Room pipeline' with 10000 images per category.
+A total of 70000 images were synthetically generated using the \gls{free} `Single Room pipeline' with 10000 images per category.
 Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
 \subsection{\gls{s2rv2}}\label{subsec:gls{free}-version-2}
 Version 1 of \gls{free} was created by keeping the models in the center of a defualt 3D room.
 The distance of the camera was randomly chosen between 1 and 2.5 meters from the model.
 The camera view points and textures were randomized.
-A total of 21000 images were synthetically generated using the \gls{free} 'Multi-Object pipeline' with 3000 images per category.
+A total of 21000 images were synthetically generated using the \gls{free} `Multi-Object pipeline' with 3000 images per category.
 Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
 
 \begin{figure}[ht]
@@ -341,7 +352,7 @@ Samples are as shown in \autoref{fig:samples for synthetic and real comparison}.
         \includegraphics[width=.2\textwidth, height=.19\textwidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_v3_3}\\
 
     \end{tabular}
-    \caption{Samples of images from real and synthetic datasets.}
+    \caption[Samples for Real and Synthetic Datasets]{Samples of images from real and synthetic datasets.}
     \label{fig:samples for synthetic and real comparison}
 \end{figure}
 
@@ -374,7 +385,7 @@ The sample images with different randomization are as shown in \autoref{fig:doma
         \includegraphics[width=.2\linewidth]{/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/datasets/s2r_chair_3}\\
 
     \end{tabular}
-    \caption{Samples of images used for ablation study on chairs with different parameters of domain randomization.}
+    \caption[Samples for Datasets Used for Ablastion Study.]{Samples of images used for ablation study on chairs with different parameters of domain randomization.}
     \label{fig:domain_randomisation_for_ablation_study}
 \end{figure}
 

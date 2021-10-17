@@ -168,7 +168,7 @@ class SyntheticPix3d(Dataset):
             img = cv2.imread(path, cv2.IMREAD_UNCHANGED).astype(np.float32)
 
             if self.resize:
-                img = cv2.resize(img, (self.size[0], self.size[1]), interpolation=cv2.INTER_AREA)
+                img = cv2.resize(img, (self.size[0], self.size[1]), interpolation=cv2.INTER_AREA)/255.
 
             if len(img.shape) > 1:
                 img = img / 255.

@@ -1,19 +1,22 @@
 name: kaolin
 channels:
   - pytorch
+  - anaconda
   - conda-forge
   - defaults
 dependencies:
   - absl-py=0.12.0=py37hecd8cb5_0
   - alabaster=0.7.12=py37_0
   - babel=2.9.0=pyhd3eb1b0_0
+  - backports=1.0=pyhd3eb1b0_2
+  - backports.lzma=0.0.14=py37hb10d4a3_0
   - blas=1.0=mkl
   - blinker=1.4=py37hecd8cb5_0
   - brotlipy=0.7.0=py37h9ed2024_1003
   - c-ares=1.17.1=h9ed2024_0
-  - ca-certificates=2021.4.13=hecd8cb5_1
+  - ca-certificates=2021.5.25=hecd8cb5_1
   - cachetools=4.1.0=py_1
-  - certifi=2020.12.5=py37hecd8cb5_0
+  - certifi=2021.5.30=py37hecd8cb5_0
   - cffi=1.14.5=py37h2125817_0
   - chardet=4.0.0=py37hecd8cb5_1003
   - click=7.1.2=pyhd3eb1b0_0
@@ -22,9 +25,12 @@ dependencies:
   - cycler=0.10.0=py37_0
   - cython=0.29.23=py37h23ab428_0
   - docutils=0.17=py37hecd8cb5_1
+  - expat=2.3.0=h23ab428_2
   - freetype=2.10.4=ha233b18_0
   - fvcore=0.1.2.post20210128=pyhd8ed1ab_0
+  - gettext=0.21.0=h7535e17_0
   - google-auth-oauthlib=0.4.4=pyhd3eb1b0_0
+  - icu=58.2=h0a44026_3
   - idna=2.10=pyhd3eb1b0_0
   - imagesize=1.2.0=pyhd3eb1b0_0
   - intel-openmp=2021.2.0=hecd8cb5_564
@@ -35,10 +41,14 @@ dependencies:
   - lcms2=2.12=hf1fd2bf_0
   - libcxx=10.0.0=1
   - libffi=3.3=hb1e8313_2
+  - libgfortran=3.0.1=h93005f0_2
+  - libiconv=1.16=h1de35cc_0
   - libpng=1.6.37=ha441bb4_0
   - libprotobuf=3.14.0=h2842e9f_0
   - libtiff=4.1.0=hcb84e12_1
   - libuv=1.40.0=haf1e3a3_0
+  - libxml2=2.9.10=h7cdb67c_3
+  - llvm-openmp=10.0.0=h28b9765_0
   - lz4-c=1.9.3=h23ab428_0
   - markdown=3.3.4=py37hecd8cb5_0
   - markupsafe=1.1.1=py37h1de35cc_0
@@ -66,6 +76,7 @@ dependencies:
   - pysocks=1.7.1=py37hecd8cb5_0
   - python=3.7.9=h26836e1_0
   - python-dateutil=2.8.1=pyhd3eb1b0_0
+  - python.app=2=py37_10
   - pytorch=1.7.0=py3.7_0
   - pytz=2021.1=pyhd3eb1b0_0
   - pyyaml=5.4.1=py37h9ed2024_1
@@ -73,6 +84,7 @@ dependencies:
   - requests=2.25.1=pyhd3eb1b0_0
   - requests-oauthlib=1.3.0=py_0
   - rsa=4.7.2=pyhd3eb1b0_1
+  - seaborn=0.11.1=pyhd3eb1b0_0
   - setuptools=52.0.0=py37hecd8cb5_0
   - six=1.15.0=py37hecd8cb5_0
   - snowballstemmer=2.1.0=pyhd3eb1b0_0
@@ -106,6 +118,7 @@ dependencies:
     - easydict==1.9
     - flatbuffers==1.12
     - gast==0.3.3
+    - glcontext==2.3.3
     - google-auth==1.30.0
     - google-pasta==0.2.0
     - grpcio==1.32.0
@@ -117,6 +130,8 @@ dependencies:
     - iopath==0.1.8
     - keras-nightly==2.6.0.dev2021050500
     - keras-preprocessing==1.1.2
+    - moderngl==5.6.4
+    - multipledispatch==0.6.0
     - networkx==2.5
     - numpy==1.19.5
     - opencv-python==4.5.1.48
@@ -124,16 +139,20 @@ dependencies:
     - packaging==20.8
     - pillow==8.0.1
     - pluggy==0.13.1
+    - plyfile==0.7.4
     - protobuf==3.15.8
     - py==1.10.0
     - pyasn1-modules==0.2.8
     - pyglet==1.5.13
+    - pyrr==0.10.3
     - pytest==6.2.2
-    - orpytch3d==0.4.0
+    - python-graphviz==0.16
+    - pytorch3d==0.4.0
     - pywavelets==1.1.1
     - scikit-image==0.18.1
     - scikit-learn==0.24.1
     - scipy==1.4.1
+    - simple-3dviz==0.3.0
     - sklearn==0.0
     - tensorboard==2.5.0
     - tensorboard-data-server==0.6.1
@@ -145,9 +164,11 @@ dependencies:
     - toml==0.10.2
     - torch==1.7.1
     - torchvision==0.8.2
+    - torchviz==0.0.2
     - tqdm==4.54.1
     - trimesh==3.8.19
     - usd-core==20.11
     - wrapt==1.12.1
+    - wxpython==4.1.1
     - zipp==3.4.0
 prefix: /Users/apple/opt/anaconda3/envs/kaolin
