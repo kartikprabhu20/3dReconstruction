@@ -1,21 +1,21 @@
 \chapter{\iftoggle{german}{Verwandte Arbeiten}{Background and Related Work}}\label{ch:related_work}
 
-In this chapter, we discuss the task we will evaluate and the previous work related to the task.
+This chapter discusses the task we will evaluate and the previous work related to the task.
 In \autoref{sec:3D_reconstruction}, we define the 3D reconstruction tasks.
 \autoref{sec:state_of_the_art} will contain state-of-the-art 3D Reconstruction techniques used with different model representations(Voxels, Mesh, Point Clouds).
-We then discuss the baseline models in \autoref{subsec:pix2vox-and-pix2vox++} which will be used in \autoref{ch:evaluation}.
+We then discuss the baseline models in \autoref{subsec:pix2vox-and-pix2vox++}, which will be used in \autoref{ch:evaluation}.
 
 We will also discuss the previous contributions to indoor datasets in \autoref{sec:indoor-dataset},
 what tasks each dataset supports, and some disadvantages.
 Further, we discuss the available tools which support the creation of indoor dataset \autoref{subsec:tools-to-create-synthetic} on different platforms and frameworks.
 
-We then discuss about Domain space in \autoref{sec:domain-space}, how we visualize it qualitatively and quantitatively.
+We then discuss Domain space in \autoref{sec:domain-space}, how we visualize it qualitatively and quantitatively.
 We will also discuss ways to mitigate the domain gap in \autoref{sec:mitigating_domain_shift} and \autoref{subsec:training-with-synthetic-dataset}.
-These section will include traditional techniques like transfer learning or fine-tuning and mixed training.
-Recent trends in Generative models to transfer the style of the real image onto synthetically generated images is also briefly discussed.
+This section will include traditional techniques like transfer learning or fine-tuning and mixed training.
+Recent trends in Generative models to transfer the style of the real image onto synthetically generated images are also briefly discussed.
 
 \section{3D Reconstruction}\label{sec:3D_reconstruction}
-The main task of this thesis is tp reconstruct a furniture from RGB image.
+The main task of this thesis is to reconstruct furniture from RGB images.
 For this purpose, we take a Deep Learning approach for 3D-Reconstruction.
 3D reconstruction is converting a 2-Dimensional RGB image into an available 3D representation of the model under observation.
 
@@ -40,7 +40,7 @@ Scene understanding becomes essential for these technologies to succeed.
 As discussed in \autoref{sec:Volumetric representation}, 3D models have voxels, meshes, and point clouds as representations.
 Each of the representations has been explored for reconstruction, and this section explores some approaches.
 
-The task can either be applied to \b{a multi-view, or a single view image}.
+The task can either be applied to a multi-view or a single view image.
 ~\cite{Kar2017, choy20163d, Yang_2019, Huang2018, Paschalidou2018RayNetLV, Xie_2019, Xie_2020},
 are architectures based on multiple input images of the same images from different views to learn the underlying 3D structure.
 ~\cite{Kar2017, choy20163d} are architectures based on Recurrent Neural Networks (\gls{rnn}) and have the disadvantage of memory,
@@ -64,10 +64,10 @@ Oct-tree can further make the process memory and compute efficient, providing hi
 
 Supervision is another factor to consider for 3D reconstruction tasks.
 There are methods based on 3D-Supervision or 2D-Supervision.
-\cite{Xie_2019,Xie_2020,Wu2017,groueix2018atlasnet,pan2019deep, chen2019learning} are few of the 3D-supervision based architecture.
+\cite{Xie_2019,Xie_2020,Wu2017,groueix2018atlasnet,pan2019deep, chen2019learning} are a few of the 3D-supervision based architecture.
 For all these architectures, it is necessary to either have the 3D voxel grid or 3D mesh for supervised training.
-For models described in~\cite{Lunz2020InverseGG,henderson2019learning},the 3D reconstruction only needs 2D supervision like a silhouette.
-One might argue that for 3D supervision, we need a large number of 3D models designed and created by professional artists
+For models described in~\cite{Lunz2020InverseGG,henderson2019learning}, the 3D reconstruction only needs 2D supervision like a silhouette.
+One might argue that for 3D supervision, we need a large number of 3D models designed and created by professional artists.
 With the advent of Virtual and Augmented realities, 3D models available to the public is increasing exponentially, which might resolve the issue.
 
 \subsection{Pix2Vox and Pix2Vox++}\label{subsec:pix2vox-and-pix2vox++}
@@ -92,7 +92,7 @@ The extended work replaces \gls{vgg} encoder~\cite{simonyan2015deep} with \gls{r
 
 \section{Indoor Datasets}\label{sec:indoor-dataset}
 
-Now that we know what task we will be performing, lets look into existing datasets for indoor environment.
+Now that we know what task we will be performing, let`s look into existing datasets for the indoor environment.
 Indoor scene dataset has been on the rise with increasing interest in scene processing understanding~\cite{Dai2017,Silberman2012,Xiao2013SUN3DAD,Hua2016SceneNNAS,Armeni20163DSP,Chang2018,Handa2016UnderstandingRI,InteriorNet18,Li_2021_CVPR,zheng2020structured3d,Roberts2020HypersimAP,McCormac2017}.
 The use of synthetic datasets is not something new in the world of machine learning.
 As researchers realized the disadvantages of a real dataset, the focus shifted towards the synthetic dataset.
@@ -121,7 +121,7 @@ Samples from Pix2D are as shown in \autoref{fig:Pix3D samples}.
 \end{figure}
 
 \subsection{Indoor Synthetic Datasets}\label{subsec:indoor-synthetic-datasets}
-Alibaba group introduced \gls{front} \cite{Fu20203DFRONT3F} which stands for 3D Furnished Rooms with layOuts and semaNTics dataset which comprises
+\gls{front}~\cite{Fu20203DFRONT3F} was introduced by Alibaba group, which comprises
 synthetic indoor scenes designed under the supervision of professionals.
 It consists of 18,968 rooms and 13,151 textured pieces of furniture.
 
@@ -170,16 +170,16 @@ RoboThor~\cite{robothor} is built upon \gls{ai2thor}, consisting of real scenes 
 It helps study agents' behavior in the real world when trained on synthetic data.
 Architects manually designed the scenes by taking references from photos of the real world.
 
-Habitat: A Platform for Embodied AI Research~\cite{Savva2019} is a photorealistic 3D simulation used for training virtual agents for tasks like navigation, question answering, instruction following..
+Habitat: A Platform for Embodied AI Research~\cite{Savva2019} is a photorealistic 3D simulation used for training virtual agents for tasks like navigation, question answering, instruction following.
 The paper introduces Habitat-Sim, which renders scenes from Matterport3d~\cite{Chang2018}, Gibson~\cite{Xia2018}, Replica~\cite{Straub2019TheRD}, and some other datasets.
 The focus of the simulator is providing the agent with sensor data and allowing additional sensors as plugins.
 At the foundation level, Habitat-sim uses Magnum graphics
-middleware library~\footnote{https://magnum.graphics/}, which supports cross-platform on the various hardware configuration.
+middleware library\footnote{https://magnum.graphics/}, which supports cross-platform on the various hardware configuration.
 
 In \autoref{fig:photorealistic images comparison}, we can see samples from each of the datasets claimed to be photorealistic.
 The images from these datasets are used in a research survey to determine the perception of humans about photorealism.
-We define ``Automated dataset" as a dataset which had no or limited user or professional designer inputs.
-Only the 3D furntiure models assets might have been designed by professionals, but the properties of the room like lights, textures, etc, were generated automatically.
+We define an ``Automated dataset" as a dataset that had no or limited user or professional designer inputs.
+Professionals might have designed only the 3D furniture model assets, but the properties of the room, like lights, textures, etc, were generated automatically.
 Among the datasets under consideration,
 OpenRooms, SceneNet, BlenderProc are all automated datasets, including the proposed \gls{free} dataset.
 Hyperism, \gls{ai2thor}, InteriorNet, and \gls{front} were manually configured and designed by professional architects.
@@ -210,7 +210,7 @@ Hyperism, \gls{ai2thor}, InteriorNet, and \gls{front} were manually configured a
         \gls{free} & 2021 & YES \\[1ex]
         \hline
     \end{tabular}
-    \caption[Synthetic Datasets]{Table represents synthetic datasets and year of release, and if they are automated(i.e. created with no or limited inputs from professional designers.)}
+    \caption[Synthetic Datasets]{Table represents synthetic datasets and the year of release, and if they are automated(i.e. created with no or limited inputs from professional designers.)}
     \label{tab:dataset_comparison}
 \end{table}
 
@@ -299,7 +299,7 @@ This plugin design is based on UnrealCV and provides similar data.
 \section{Domain Space}\label{sec:domain-space}
 
 Since this thesis includes image datasets from different domains, it is essential to understand the domain space of these datasets.
-When two or more datasets originate from different sources we say the datasets belong to different domains.
+When two or more datasets originate from different sources, we say the datasets belong to different domains.
 Synthetic and Real datasets are collected or generated using different methods, and hence they have a different domain space.
 This section discusses how we intend to visualize the domain space and a quantitative measure to indicate the difference between the domains.
 
@@ -312,9 +312,9 @@ In this segment, we briefly explain how \gls{tsne} works.
 
 \begin{enumerate}
     \item \textbf{Step 1}: Calculate the similarity between points in high dimensional space using a joint probability distribution.
-    To achieve this, the Euclidean distances between each point is transformed into conditional probability distribution as in \autoref{eq:equation1}, which represents similarity between a pair of points.
-    The conditional probability of a point $x_i$ with point $x_j$ to be located next to it, is represented by a Gaussian with center at $x_i$.
-    Normalising is done to handle the different cluster densities.
+    To achieve this, the Euclidean distances between each point are transformed into conditional probability distribution as in \autoref{eq:equation1}, which represents the similarity between a pair of points.
+    The conditional probability of a point $x_i$ with point $x_j$ to be located next to it is represented by a Gaussian with a center at $x_i$.
+    Normalizing is done to handle the different cluster densities.
     Conditional probability is converted to Joint probability using \autoref{eq:equation2}.
     \begin{equation}
         p_{j \mid i}=\frac{\exp \left(-\left\|x_{i}-x_{j}\right\|^{2} / 2 \sigma_{i}^{2}\right)}{\sum_{k \neq i} \exp \left(-\left\|x_{i}-x_{k}\right\|^{2} / 2 \sigma_{i}^{2}\right)}
@@ -335,7 +335,7 @@ In this segment, we briefly explain how \gls{tsne} works.
     \end{equation}
 
     \item \textbf{Step 3}: Learn to represent the high dimension space in low dimension by making the Joint distribution of the lower dimension as close as possible to that of the higher dimension.
-    For this Kullback-Leiber divergence\cite{Joyce2011} is used to compare the similarity between the two distributions as in \autoref{eq:equation4}.
+    For this Kullback-Leiber divergence~\cite{Joyce2011} is used to compare the similarity between the two distributions as in \autoref{eq:equation4}.
     Using gradient descent, the cost function based on KL-divergence (\autoref{eq:equation5}) is minimized to make the points fall in place.
 
     \begin{equation}
@@ -352,12 +352,12 @@ In this segment, we briefly explain how \gls{tsne} works.
 Perplexity is a parameter that informs the algorithm on how much attention to give the local and global features.
 The publication~\cite{vanDerMaaten2008} indicates the values between 5 and 50 to be a good initialization.
 An article on \gls{tsne} interpretation~\cite{wattenberg2016how} informs us to have a perplexity value lesser than the total number of points.
-It also notes that the cluster distance may not be as the intuition suggests, i.e., greater distance may not necessarily mean good separation, or lesser distance does not inevitably mean closer similarity for well-separated clusters.
+It also notes that the cluster distance may not be as the intuition suggests, i.e.,the greater distance may not necessarily mean good separation, or lesser distance does not inevitably mean closer similarity for well-separated clusters.
 However, \gls{tsne} can still visualize if the clusters are overlapping or have a shared embedding space or not.
 Hence, we will use \gls{tsne} as a medium to visualize the embedding space without giving importance to the distance or the scale of the plots.
 
 %\subsection{Maximum Mean Discrepancy(MMD)}
-\subsection{Fr\'echet Inception Distance(FID))}\label{subsec:fr'echet-inception-distance)}
+\subsection{Fr\'echet Inception Distance(FID)}\label{subsec:fr'echet-inception-distance)}
 For quantitative measure, we use \gls{fid}
 \gls{fid} \cite{Heusel2017GANsTB} was specifically formulated to evaluate the performance of Generative Adversarial Networks \cite{Goodfellow2014}.
 The core idea behind \gls{fid} was to evaluate the generated synthetic images using the statistics collected from both synthetic and real images.
@@ -380,7 +380,7 @@ $Tr$ is the Trace linear algebra operation, which is the sum of main diagonal el
 \section{Mitigating Domain Shift}\label{sec:mitigating_domain_shift}
 
 The idea of domain randomization is that real images appear to be one of the many variations among training images from synthetic datasets.
-Thus, testing with real-world images should give a comparable performance.
+Thus, testing with real-world images should give comparable performance.
 ~\cite{tobin2017domain} used this principle for small objects detection tasks used for robotics.
 This paper tries different parameters in domain randomization like lights, camera viewpoints, and textures and combines domain randomization with domain adaptation.
 
@@ -390,7 +390,7 @@ With this as context, they generate pedestrian walk, road lanes, etc.
 After these two steps, the objects such as cars, cyclists, houses, buildings are placed on the scene.
 As an ablation study, the author changes domain randomization parameters and checks the performance of the car detection task.
 
-~\cite{georgakis2017synthesizing} proposed domain randomization-based synthetic images generation to detect objects found in the kitchen.
+~\cite{georgakis2017synthesizing} proposed domain randomization-based synthetic image generation to detect kitchen objects.
 The objects are cropped and placed on the background with semantic information and geometry with proper scale.
 Similar to the above works, the author also provides an ablation study with different ratios of synthetic to the real dataset for mixed training.
 
@@ -409,7 +409,7 @@ The other branch classifies if the dataset is real or synthetic.
 ~\cite{Pinheiro2019} implement the same principle on complex 3D reconstruction tasks by predicting voxels and classifying the image domain.
 
 \section{Training with Synthetic Dataset}\label{subsec:training-with-synthetic-dataset}
-The research questions, as stated in \autoref{sec:goal} aims to check if a synthetic dataset can deliver as a standalone dataset.
+As stated in \autoref{sec:goal} , the research questions aim to check if a synthetic dataset can deliver as a standalone dataset.
 If it does not, then techniques like fine-tuning will be helpful.
 Another way to use the large synthetic datasets is using mixed training.
 
@@ -428,7 +428,6 @@ Also, object detection is trained with varying dataset sizes to learn its impact
 They also conducted a study of the dataset size needed to fine-tune a pre-trained model optimally.
 
 \cite{synthia} is a synthetic dataset for semantic segmentation of urban scenes with 13 classes.
-In this paper, the author combines the proposed synthetic dataset and the real dataset from~\cite{Geiger2012CVPR,Russell2008,BrostowSFC:ECCV08} to show boost in performance of semantic segmentation task.
+In this paper, the author combines the proposed synthetic dataset and the real dataset from~\cite{Geiger2012CVPR,Russell2008,BrostowSFC:ECCV08} to show a boost in the performance of semantic segmentation task.
 The mixing ratio is 60\% per min-batch.
-The author also notes that only 33\% of real dataset was required with combination of synthetic dataset to get a performance equivalent to model trained on only real dataset.
-
+The author also notes that only 33\% of the real dataset was required with a synthetic dataset to get a performance equivalent to a model trained on only the real dataset.

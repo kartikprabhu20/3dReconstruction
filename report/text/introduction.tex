@@ -1,7 +1,7 @@
 \chapter{\iftoggle{german}{Einführung}{Introduction}}\label{ch:introduction}
 
 As the Deep Learning field goes deeper and broader, data on large scales has become an essential requirement.
-The performance of computer vision based on deep learning models heavily depends on the consistency of labeled images.
+The performance of computer vision tasks based on deep learning models heavily depends on the consistency of labeled images.
 In practice, collecting data manually is time-consuming, expensive, and needs much effort.
 As a solution, we can train models on a synthetic dataset and deploy the models to real-world problems.
 Unfortunately, with supervised learning, the model does not generalize when the distributions of the dataset diverge.
@@ -10,7 +10,7 @@ Hence, a model trained on a synthetic dataset may not perform consistently with 
 Synthetic data can be defined as data created artificially using computer simulations or algorithms and not from real-world events.
 These data can be created in abundance and hence are frontrunners for Deep Learning training.
 Synthetic approaches are also means of getting data that might be difficult to collect and annotate in the real world.
-Furthermore, companies have realized that synthetic data are necessary not just for the task that is inconvenient to annotate,
+Furthermore, companies have realized that synthetic data are necessary not just for the task that is inconvenient to annotate
 but also for improving the performance of existing models.
 In a research article published by Gartner\footnote{\label{gartnerreport}https://www.gartner.com/en/documents/4002912}, they claim that by 2030, synthetic datasets will overshadow a real dataset in all domains.
 The progression of synthetic data generation is predicted to be as shown in \autoref{fig:Gartner research on synthetic dataset}.
@@ -22,18 +22,18 @@ The progression of synthetic data generation is predicted to be as shown in \aut
     Source: Research article from Gartner on "Synthetic Data Is the Future of AI"\textsuperscript{\ref{gartnerreport}}}
     \label{fig:Gartner research on synthetic dataset}
 \end{figure}
-
-Deep Learning has made leaps and bounds in solving 2D-image tasks like classification, segmentation, object detection, etc.
-It has now entered the realm of Three-Dimension.
-An image is a 3D objects projects onto a 2D surface.
-While doing so, some data from the higher dimension is being lost in the lower dimension.
-This inverse ability to reconstruct 3D objects from 2D images has a wide-scale application in computer vision and robotics.
-Tasks like human body shapes and face reconstructions~\cite{deng2019accurate,Guo20193DFace,Afzal2020,Richardson2016,Richardson2017LearningDF},
-3D-Scene reconstructions~\cite{Denninger20203DSR,Song2017SemanticSC,Li2019,Shin20193DSR}, generic object mesh reconstruction with textures are some of the advancements we had over recent years.
-Here comes the challenge;3D data is not easy to collect.
-3D data is not just limited but also noisy and expensive to collect.
-The results of models depend on the consistency of the labeled data.
-In this thesis, we discuss how game engines can contribute to generating quality-labeled datasets for 3D reconstruction tasks.
+%
+%Deep Learning has made leaps and bounds in solving 2D-image tasks like classification, segmentation, object detection, etc.
+%It has now entered the realm of Three-Dimension.
+%An image is the projection of a 3D object onto a 2D surface.
+%While doing so, some data from the higher dimension is being lost in the lower dimension.
+%This inverse ability to reconstruct 3D objects from 2D images has a wide-scale application in computer vision and robotics.
+%Tasks like human body shapes and face reconstructions~\cite{deng2019accurate,Guo20193DFace,Afzal2020,Richardson2016,Richardson2017LearningDF},
+%3D-Scene reconstructions~\cite{Denninger20203DSR,Song2017SemanticSC,Li2019,Shin20193DSR}, generic object mesh reconstruction with textures are some of the advancements we had over recent years.
+%Here comes the challenge;3D data is not easy to collect.
+%3D data is not just limited but also noisy and expensive to collect.
+%The results of models depend on the consistency of the labeled data.
+%In this thesis, we discuss how game engines can contribute to generating quality-labeled datasets for 3D reconstruction tasks.
 
 Deep Learning has made leaps and bounds in solving 2D-image tasks like classification, segmentation, object detection, and many more.
 It has now entered the realm of Three-Dimension.
@@ -45,6 +45,9 @@ Tasks like human body shapes and face reconstructions~\cite{deng2019accurate,Guo
 generic object mesh reconstruction with textures are some of the advancements we had over recent years.
 Here comes the challenge;3D data is not easy to collect.
 3D data is not just limited but also noisy and expensive to collect.
+The results of models depend on the consistency of the labeled data.
+In this thesis, we discuss how game engines can contribute to generating quality-labeled datasets for 3D reconstruction tasks.
+
 
 \section{Domain Adaptation vs. Domain Randomization} \label{sec:da vs dr}
 
@@ -76,11 +79,12 @@ Each of the representations has its own sets of advantages and disadvantages.
 Voxels, which is short for Volumetric Pixels, is a 3D grid of pixels of constant size.
 As indicated in~\cite{li2016fpnn}, the main advantage of voxels is that Convolution Neural Networks can be easily applied to 3-Dimensions as in 2-Dimensions.
 Since most of the 3D geometry is surface-based, it can be wasteful and computationally expensive.
-Mesh is composed of vertices, edges, and faces in 3D space that indicates the formation of 3D objects.
+Mesh is composed of vertices, edges, and faces in 3D space that indicate the formation of 3D objects.
 This form of representation is far more compact at a granular level, depending on the resolution.
-On the other hand, point clouds are collections of 3D points with (x,y,z) coordinates on the surface of the object.
+
+On the other hand, point clouds are collections of 3D points with (x,y,z) coordinates on the object`s surface.
 The collection of points determines detailing the 3D object representation.
-In both these cases, \gls{cnn} is not directly applicable which is a direct disadvantage.
+In both these cases, \gls{cnn} is not directly applicable, which is an immediate disadvantage.
 However, since mesh and point clouds are surface-based, the memory consumption is less than voxels and thereby lesser computation time, which is their advantage over voxels.
 In this thesis, we opt for voxel-based models as the focus is on the performance of synthetic data rather than the model or the 3D representation itself.
 
@@ -116,7 +120,7 @@ Also, searching for real-world examples or creating a set-up scene and then labe
 A solution to this problem is automating the task of generating synthetic data which can produce pixel-perfect annotations.
 Automation can solve the human-in-the-loop problem, and while time gets saved, it facilitates the generation of a large quantity of data.
 However, quantity should not be the only focus while creating the data;
-we should also give priority to the quality of the data.
+we should also prioritize the quality of the data.
 Game engines have come a long way from just supporting 2D to supporting games with photorealistic rendering.
 Even though game engines have grown to be successful, few tools use them as the base framework.
 As 3D models are available, we can import these models into the game engine and create an ersatz environment to generate a photorealistic dataset.
@@ -132,13 +136,13 @@ We will answer the following research questions:
 
     \item Can Ersatz environment from a game engine like Unity replace real-world data for training in 3D reconstruction tasks?
 
-    Using the dataset created with the Unity game engine, a single-view image to 3D reconstruction of furniture will be trained and tested on a real image dataset.
+    Using the dataset created with the Unity game engine, a single-view image to a 3D reconstruction of furniture will be trained and tested on a real image dataset.
 
     \item Can we improve the performance of a model using a blend of real and synthetic datasets?
     To what extent does the performance enhance when the synthetic dataset is more than ten times of a real dataset?
 
     We use the dataset created using the Unity game engine to train a single-view image to 3D reconstruction of furniture and further fine-tune it with the real dataset to know if the performance is enhanced.
-    Further an ablation study on chair dataset to check the effects domain randomization parameters.
+    Additionally, an ablation study on chair dataset to check the effects domain randomization parameters.
     This experiment will also answer whether augmenting images with domain randomization with real data during training improves the performance?
 
 \end{enumerate}
@@ -168,7 +172,7 @@ The rest of this thesis is structured as follows:
     \item In \autoref{ch:related_work}, we visit some related work on synthetic data generation and benchmark 3D reconstruction networks.
     \item \autoref{ch:concept} deals with concepts and design choices.
     We will discuss in detail the choices for the dataset and model selection for 3D reconstruction.
-    \item In \autoref{ch:implementation},discusses the 3DScene tool developed using the Unity game engine to create an ersatz environment.
+    \item \autoref{ch:implementation} discusses the 3DScene tool developed using the Unity game engine to create an ersatz environment.
     On the Deep learning side, we will discuss the pipeline design for the 3D reconstruction task.
     \item We dedicate \autoref{ch:evaluation} to reviewing and discussing evaluation results obtained by comparing the synthetic and real dataset from the survey conducted and Deep learning based on the 3D reconstruction task.
     \item Finally, in \autoref{ch:conclusion}, we conclude this thesis with the study results, highlight few limitations and discuss future improvements.
