@@ -30,7 +30,7 @@ An encoder is a good mapping function if for the given set of images of same cat
 irrespective of the extrinsic parameters like textures, background, camera positions,etc.
 
 The decoder is an expansive network, which converts a feature vector from the latent space into a 3D voxel grid.
-$Dec: V \to Y$, i.e. for any vector in latent space $V$, the decoder function \textbf{$Dec$} should be able to create a 3D voxel grid in $Y$.
+$Dec: V \to Y$, i.e., for any vector in latent space $V$, the decoder function \textbf{$Dec$} should be able to create a 3D voxel grid in $Y$.
 If the images are encoded perfectly, a slight change in the feature vector will give a slight variation in the 3D voxel.
 
 \subsection{State of the Art for 3D-Reconstruction}\label{sec:state_of_the_art}
@@ -179,7 +179,7 @@ middleware library\footnote{https://magnum.graphics/}, which supports cross-plat
 In \autoref{fig:photorealistic images comparison}, we can see samples from each of the datasets claimed to be photorealistic.
 The images from these datasets are used in a research survey to determine the perception of humans about photorealism.
 We define an ``Automated dataset" as a dataset that had no or limited user or professional designer inputs.
-Professionals might have designed only the 3D furniture model assets, but the properties of the room, like lights, textures, etc, were generated automatically.
+Professionals might have designed only the 3D furniture model assets, but the properties of the room, like lights, textures, etc., were generated automatically.
 Among the datasets under consideration,
 OpenRooms, SceneNet, BlenderProc are all automated datasets, including the proposed \gls{free} dataset.
 Hyperism, \gls{ai2thor}, InteriorNet, and \gls{front} were manually configured and designed by professional architects.
@@ -326,7 +326,7 @@ In this segment, we briefly explain how \gls{tsne} works.
         \label{eq:equation2}
     \end{equation}
 
-    \item \textbf{Step 2}: Using a random point dataset on a lower dimension with same number of points in higher dimension, a Joint probability distribution is created but with a Student-t distribution instead of Gaussian.
+    \item \textbf{Step 2}: Using a random point dataset on a lower dimension with the same number of points in higher dimension, a Joint probability distribution is created but with a Student-t distribution instead of Gaussian.
     This is represented by \autoref{eq:equation3}.
     t-distribution makes sure that the projection in low dimension is not concentrated on a single point.
     \begin{equation}
@@ -366,7 +366,7 @@ Lower the value of \gls{fid} better the quality of the images.
 The embeddings of the images are calculated by passing it through an Inception v3 model~\cite{Szegedy2016RethinkingTI} pre-trained on ImageNet~\cite{Deng2009ImageNetAL}.
 The output layer is removed, and the penultimate pooling layer activations are used to get the embedding vector.
 This vector has a dimension of 2048.
-The images from both synthetic and real datasets are passed through the model, and the obtained statistics is used to calculated the \gls{fid} as in \autoref{eq:fid}.
+The images from both synthetic and real datasets are passed through the model, and the obtained statistics are used to calculate the \gls{fid} as in \autoref{eq:fid}.
 
 \begin{equation}
     d^{2}\left((\boldsymbol{\mu}_{r}, \boldsymbol{C}_{r}),\left(\boldsymbol{\mu}_{s}, \boldsymbol{C}_{s}\right)\right)=\left\|\boldsymbol{\mu}_{r}-\boldsymbol{\mu}_{s}\right\|^{2}+\operatorname{Tr}\left(\boldsymbol{C}_{r}+\boldsymbol{C}_{s}-2\left(\boldsymbol{C}_{r} {C}_{s}\right)^{1 / 2}\right)
@@ -429,5 +429,5 @@ They also conducted a study of the dataset size needed to fine-tune a pre-traine
 
 \cite{synthia} is a synthetic dataset for semantic segmentation of urban scenes with 13 classes.
 In this paper, the author combines the proposed synthetic dataset and the real dataset from~\cite{Geiger2012CVPR,Russell2008,BrostowSFC:ECCV08} to show a boost in the performance of semantic segmentation task.
-The mixing ratio is 60\% per min-batch.
+The mixing ratio is 60\% per mini-batch.
 The author also notes that only 33\% of the real dataset was required with a synthetic dataset to get a performance equivalent to a model trained on only the real dataset.

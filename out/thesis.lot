@@ -1,0 +1,25 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Synthetic Datasets}}{13}{table.caption.12}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Hyperparameters used for training 3D reconstruction models.\relax }}{43}{table.caption.32}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces \gls {fid} Comparison for Synthetic Datasets with Real Dataset.}}{53}{table.caption.41}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces \gls {fid} Comparison for Synthetic Chair Datasets with Real Dataset.}}{55}{table.caption.43}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces \gls {iou} for Each Category From Pix2Vox++}}{88}{table.caption.78}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces \gls {iou} for Each Category From Pix2Vox}}{88}{table.caption.79}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces \gls {iou} for Each Category from Fine-Tuned Pix2Vox++}}{88}{table.caption.80}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces \gls {iou} for Each Category from Fine-Tuned Pix2Vox}}{89}{table.caption.81}%
+\contentsline {table}{\numberline {A.5}{\ignorespaces \gls {iou} for Each Category from Mix-Trained Pix2Vox++}}{89}{table.caption.82}%
+\contentsline {table}{\numberline {A.6}{\ignorespaces \gls {iou} for Each Category from Mix-Trained Pix2Vox}}{89}{table.caption.83}%
+\contentsline {table}{\numberline {A.7}{\ignorespaces \gls {iou} values for Ablation Datasets.}}{90}{table.caption.84}%
+\contentsline {table}{\numberline {A.8}{\ignorespaces \gls {f1} for Each Category from Pix2Vox++}}{90}{table.caption.85}%
+\contentsline {table}{\numberline {A.9}{\ignorespaces \gls {f1} for Each Category from Pix2Vox}}{90}{table.caption.86}%
+\contentsline {table}{\numberline {A.10}{\ignorespaces \gls {f1} for Each Category from Fine-Tuned Pix2Vox}}{90}{table.caption.87}%
+\contentsline {table}{\numberline {A.11}{\ignorespaces \gls {f1} for Each Category from Fine-Tuned Pix2Vox}}{91}{table.caption.88}%
+\contentsline {table}{\numberline {A.12}{\ignorespaces \gls {f1} for Each Category from Fine-Tuned Pix2Vox++}}{91}{table.caption.89}%
+\contentsline {table}{\numberline {A.13}{\ignorespaces \gls {f1} for Each Category from Fine-Tuned Pix2Vox}}{91}{table.caption.90}%
+\contentsline {table}{\numberline {A.14}{\ignorespaces \gls {f1} values for Ablation Datasets.}}{92}{table.caption.91}%

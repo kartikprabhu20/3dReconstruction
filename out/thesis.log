@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  17 OCT 2021 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.1)  18 OCT 2021 00:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4962,23 +4962,14 @@ n/demo/demo2.png>
 Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/implementation/demo/demo2.png  used on input line 237.
 (pdftex.def)             Requested size: 426.79135pt x 276.81505pt.
+\openout7 = `thesis.mw'.
 
-
-./text/implementation.tex:254: Package glossaries Error: Glossary entry `(' has
- not been defined.
-
-See the glossaries package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.254 ...users to select the dataset(Pix3D, \gls(f
-                                                  ree), Mixed), with a furth...
-
-You need to define a glossary entry before you can use it.
+ [40]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
 
-[40] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
 \openout7 = `thesis.mw'.
 
 \openout7 = `thesis.mw'.
@@ -5631,7 +5622,7 @@ LaTeX Font Info:    Font shape `T1/aess/b/n' in size <14> not available
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/baseline_barplot2.pgf)
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/bed1.png, id=2306, 566.115pt x 558.085pt>
+truction/baseline/bed1.png, id=2307, 566.115pt x 558.085pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5640,7 +5631,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/evaluation/reconstruction/baseline/bed1.png  used on input line 396.
 (pdftex.def)             Requested size: 85.35696pt x 84.14343pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/sofa1.png, id=2307, 501.875pt x 501.875pt>
+truction/baseline/sofa1.png, id=2308, 501.875pt x 501.875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5649,7 +5640,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/evaluation/reconstruction/baseline/sofa1.png  used on input line 397.
 (pdftex.def)             Requested size: 85.35696pt x 85.3559pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/table2.png, id=2308, 501.875pt x 501.875pt>
+truction/baseline/table2.png, id=2309, 501.875pt x 501.875pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5670,7 +5661,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/bed1_original.png, id=2309, 236.3229pt x 211.7511pt>
+truction/baseline/bed1_original.png, id=2310, 236.3229pt x 211.7511pt>
 ./text/evaluation.tex:400: Undefined control sequence.
 \Gin@vurx ->.1\width 
                      
@@ -5702,7 +5693,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/sofa1_original.png, id=2311, 200.1879pt x 182.8431pt>
+truction/baseline/sofa1_original.png, id=2312, 200.1879pt x 182.8431pt>
 ./text/evaluation.tex:401: Undefined control sequence.
 \Gin@vurx ->.1\width 
                      
@@ -5734,7 +5725,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/table2_original.png, id=2313, 239.2137pt x 182.8431pt>
+truction/baseline/table2_original.png, id=2314, 239.2137pt x 182.8431pt>
 ./text/evaluation.tex:402: Undefined control sequence.
 \Gin@vurx ->.1\width 
                      
@@ -5755,7 +5746,7 @@ images/evaluation/reconstruction/baseline/table2_original.png  used on input li
 ne 402.
 (pdftex.def)             Requested size: 85.35696pt x 65.26825pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/pix3d_p2vpp_bed1_output.png, id=2315, 241.3818pt x 211.7511pt
+truction/baseline/pix3d_p2vpp_bed1_output.png, id=2316, 241.3818pt x 211.7511pt
 >
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/pix3d_p2vpp_bed1_output.png Graphic file (type png)
@@ -5766,7 +5757,7 @@ images/evaluation/reconstruction/baseline/pix3d_p2vpp_bed1_output.png  used on
 input line 404.
 (pdftex.def)             Requested size: 85.35696pt x 74.87975pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/pix3d_p2vpp_sofa1_output.png, id=2316, 210.3057pt x 187.902pt
+truction/baseline/pix3d_p2vpp_sofa1_output.png, id=2317, 210.3057pt x 187.902pt
 >
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/pix3d_p2vpp_sofa1_output.png Graphic file (type png)
@@ -5777,7 +5768,7 @@ images/evaluation/reconstruction/baseline/pix3d_p2vpp_sofa1_output.png  used on
  input line 405.
 (pdftex.def)             Requested size: 85.35696pt x 76.2633pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/pix3d_p2vpp_table2.png, id=2317, 232.7094pt x 204.5241pt>
+truction/baseline/pix3d_p2vpp_table2.png, id=2318, 232.7094pt x 204.5241pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/pix3d_p2vpp_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5787,7 +5778,7 @@ images/evaluation/reconstruction/baseline/pix3d_p2vpp_table2.png  used on input
  line 406.
 (pdftex.def)             Requested size: 85.35696pt x 75.02048pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/pix3d_p2v_bed1.png, id=2318, 211.7511pt x 190.7928pt>
+truction/baseline/pix3d_p2v_bed1.png, id=2319, 211.7511pt x 190.7928pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/pix3d_p2v_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5797,7 +5788,7 @@ images/evaluation/reconstruction/baseline/pix3d_p2v_bed1.png  used on input lin
 e 408.
 (pdftex.def)             Requested size: 85.35696pt x 76.90674pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/pix3d_p2v_sofa1.png, id=2319, 217.5327pt x 170.5572pt>
+truction/baseline/pix3d_p2v_sofa1.png, id=2320, 217.5327pt x 170.5572pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/pix3d_p2v_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5807,7 +5798,7 @@ images/evaluation/reconstruction/baseline/pix3d_p2v_sofa1.png  used on input li
 ne 409.
 (pdftex.def)             Requested size: 85.35696pt x 66.92302pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/pix3d_p2v_table2.png, id=2320, 211.7511pt x 190.7928pt>
+truction/baseline/pix3d_p2v_table2.png, id=2321, 211.7511pt x 190.7928pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/pix3d_p2v_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5817,7 +5808,7 @@ images/evaluation/reconstruction/baseline/pix3d_p2v_table2.png  used on input l
 ine 410.
 (pdftex.def)             Requested size: 85.35696pt x 76.90674pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/s2rv3_p2vpp_bed1.png, id=2321, 236.3229pt x 231.264pt>
+truction/baseline/s2rv3_p2vpp_bed1.png, id=2322, 236.3229pt x 231.264pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/s2rv3_p2vpp_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5827,7 +5818,7 @@ images/evaluation/reconstruction/baseline/s2rv3_p2vpp_bed1.png  used on input l
 ine 412.
 (pdftex.def)             Requested size: 85.35696pt x 83.53021pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/s2rv3_p2vpp_sofa1.png, id=2322, 264.5082pt x 239.9364pt>
+truction/baseline/s2rv3_p2vpp_sofa1.png, id=2323, 264.5082pt x 239.9364pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/s2rv3_p2vpp_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5837,7 +5828,7 @@ images/evaluation/reconstruction/baseline/s2rv3_p2vpp_sofa1.png  used on input
 line 413.
 (pdftex.def)             Requested size: 85.35696pt x 77.42923pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/s2rv3_p2vpp_table2.png, id=2323, 237.7683pt x 272.4579pt>
+truction/baseline/s2rv3_p2vpp_table2.png, id=2324, 237.7683pt x 272.4579pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/s2rv3_p2vpp_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5847,7 +5838,7 @@ images/evaluation/reconstruction/baseline/s2rv3_p2vpp_table2.png  used on input
  line 414.
 (pdftex.def)             Requested size: 85.35696pt x 97.81036pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/s2rv3_p2v_bed1.png, id=2324, 234.8775pt x 233.4321pt>
+truction/baseline/s2rv3_p2v_bed1.png, id=2325, 234.8775pt x 233.4321pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/s2rv3_p2v_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5857,7 +5848,7 @@ images/evaluation/reconstruction/baseline/s2rv3_p2v_bed1.png  used on input lin
 e 416.
 (pdftex.def)             Requested size: 85.35696pt x 84.82979pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/s2rv3_p2v_sofa1.png, id=2325, 226.9278pt x 214.6419pt>
+truction/baseline/s2rv3_p2v_sofa1.png, id=2326, 226.9278pt x 214.6419pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/s2rv3_p2v_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -5867,7 +5858,7 @@ images/evaluation/reconstruction/baseline/s2rv3_p2v_sofa1.png  used on input li
 ne 417.
 (pdftex.def)             Requested size: 85.35696pt x 80.73615pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/baseline/s2rv3_p2v_table2.png, id=2326, 218.9781pt x 218.2554pt>
+truction/baseline/s2rv3_p2v_table2.png, id=2327, 218.9781pt x 218.2554pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/baseline/s2rv3_p2v_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6260,7 +6251,7 @@ images/evaluation/reconstruction/baseline/pix3d_p2v_table2.png  used on input l
 ine 502.
 (pdftex.def)             Requested size: 85.35696pt x 76.90674pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/finetuning/s2rv3_p2vpp_bed1.png, id=2403, 214.6419pt x 208.8603pt>
+truction/finetuning/s2rv3_p2vpp_bed1.png, id=2404, 214.6419pt x 208.8603pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/finetuning/s2rv3_p2vpp_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6270,7 +6261,7 @@ images/evaluation/reconstruction/finetuning/s2rv3_p2vpp_bed1.png  used on input
  line 504.
 (pdftex.def)             Requested size: 85.35696pt x 83.05502pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/finetuning/s2rv3_p2vpp_sofa1.png, id=2404, 207.4149pt x 185.0112pt>
+truction/finetuning/s2rv3_p2vpp_sofa1.png, id=2405, 207.4149pt x 185.0112pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/finetuning/s2rv3_p2vpp_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6280,7 +6271,7 @@ images/evaluation/reconstruction/finetuning/s2rv3_p2vpp_sofa1.png  used on inpu
 t line 505.
 (pdftex.def)             Requested size: 85.35696pt x 76.13455pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/finetuning/s2rv3_p2vpp_table2.png, id=2405, 223.3143pt x 190.0701pt>
+truction/finetuning/s2rv3_p2vpp_table2.png, id=2406, 223.3143pt x 190.0701pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/finetuning/s2rv3_p2vpp_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6290,7 +6281,7 @@ images/evaluation/reconstruction/finetuning/s2rv3_p2vpp_table2.png  used on inp
 ut line 506.
 (pdftex.def)             Requested size: 85.35696pt x 72.6479pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/finetuning/s2rv3_p2v_bed1.png, id=2406, 234.8775pt x 192.9609pt>
+truction/finetuning/s2rv3_p2v_bed1.png, id=2407, 234.8775pt x 192.9609pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/finetuning/s2rv3_p2v_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6300,7 +6291,7 @@ images/evaluation/reconstruction/finetuning/s2rv3_p2v_bed1.png  used on input l
 ine 508.
 (pdftex.def)             Requested size: 85.35696pt x 70.12245pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/finetuning/s2rv3_p2v_sofa1.png, id=2407, 217.5327pt x 187.902pt>
+truction/finetuning/s2rv3_p2v_sofa1.png, id=2408, 217.5327pt x 187.902pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/finetuning/s2rv3_p2v_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6310,7 +6301,7 @@ images/evaluation/reconstruction/finetuning/s2rv3_p2v_sofa1.png  used on input
 line 509.
 (pdftex.def)             Requested size: 85.35696pt x 73.72874pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/finetuning/s2rv3_p2v_table2.png, id=2408, 219.7008pt x 189.3474pt>
+truction/finetuning/s2rv3_p2v_table2.png, id=2409, 219.7008pt x 189.3474pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/finetuning/s2rv3_p2v_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6604,7 +6595,7 @@ images/evaluation/reconstruction/baseline/table2_original.png  used on input li
 ne 580.
 (pdftex.def)             Requested size: 85.35696pt x 65.26825pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed1_p2vpp_bed1.png, id=2456, 223.3143pt x 233.4321pt>
+truction/mixed/mixed1_p2vpp_bed1.png, id=2457, 223.3143pt x 233.4321pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed1_p2vpp_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6614,7 +6605,7 @@ images/evaluation/reconstruction/mixed/mixed1_p2vpp_bed1.png  used on input lin
 e 582.
 (pdftex.def)             Requested size: 85.35696pt x 89.22159pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed1_p2vpp_sofa1.png, id=2457, 193.6836pt x 174.8934pt>
+truction/mixed/mixed1_p2vpp_sofa1.png, id=2458, 193.6836pt x 174.8934pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed1_p2vpp_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6624,7 +6615,7 @@ images/evaluation/reconstruction/mixed/mixed1_p2vpp_sofa1.png  used on input li
 ne 583.
 (pdftex.def)             Requested size: 85.35696pt x 77.07608pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed1_p2vpp_table2.png, id=2458, 209.583pt x 185.7339pt>
+truction/mixed/mixed1_p2vpp_table2.png, id=2459, 209.583pt x 185.7339pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed1_p2vpp_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6634,7 +6625,7 @@ images/evaluation/reconstruction/mixed/mixed1_p2vpp_table2.png  used on input l
 ine 584.
 (pdftex.def)             Requested size: 85.35696pt x 75.64409pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed1_p2v_bed1.png, id=2459, 218.9781pt x 182.8431pt>
+truction/mixed/mixed1_p2v_bed1.png, id=2460, 218.9781pt x 182.8431pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed1_p2v_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6644,7 +6635,7 @@ images/evaluation/reconstruction/mixed/mixed1_p2v_bed1.png  used on input line
 586.
 (pdftex.def)             Requested size: 85.35696pt x 71.26945pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed1_p2v_sofa1.png, id=2460, 196.5744pt x 179.9523pt>
+truction/mixed/mixed1_p2v_sofa1.png, id=2461, 196.5744pt x 179.9523pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed1_p2v_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6654,7 +6645,7 @@ images/evaluation/reconstruction/mixed/mixed1_p2v_sofa1.png  used on input line
  587.
 (pdftex.def)             Requested size: 85.35696pt x 78.13857pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed1_p2v_table2.png, id=2461, 225.4824pt x 168.3891pt>
+truction/mixed/mixed1_p2v_table2.png, id=2462, 225.4824pt x 168.3891pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed1_p2v_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6664,7 +6655,7 @@ images/evaluation/reconstruction/mixed/mixed1_p2v_table2.png  used on input lin
 e 588.
 (pdftex.def)             Requested size: 85.35696pt x 63.74442pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed2_p2vpp_bed1.png, id=2462, 221.1462pt x 203.0787pt>
+truction/mixed/mixed2_p2vpp_bed1.png, id=2463, 221.1462pt x 203.0787pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed2_p2vpp_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6674,7 +6665,7 @@ images/evaluation/reconstruction/mixed/mixed2_p2vpp_bed1.png  used on input lin
 e 590.
 (pdftex.def)             Requested size: 85.35696pt x 78.38231pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed2_p2vpp_sofa1.png, id=2463, 201.6333pt x 175.6161pt>
+truction/mixed/mixed2_p2vpp_sofa1.png, id=2464, 201.6333pt x 175.6161pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed2_p2vpp_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6684,7 +6675,7 @@ images/evaluation/reconstruction/mixed/mixed2_p2vpp_sofa1.png  used on input li
 ne 591.
 (pdftex.def)             Requested size: 85.35696pt x 74.34511pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed2_p2vpp_table2.png, id=2464, 218.2554pt x 172.0026pt>
+truction/mixed/mixed2_p2vpp_table2.png, id=2465, 218.2554pt x 172.0026pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed2_p2vpp_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6694,7 +6685,7 @@ images/evaluation/reconstruction/mixed/mixed2_p2vpp_table2.png  used on input l
 ine 592.
 (pdftex.def)             Requested size: 85.35696pt x 67.26707pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed2_p2v_bed1.png, id=2465, 257.2812pt x 205.9695pt>
+truction/mixed/mixed2_p2v_bed1.png, id=2466, 257.2812pt x 205.9695pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed2_p2v_bed1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6704,7 +6695,7 @@ images/evaluation/reconstruction/mixed/mixed2_p2v_bed1.png  used on input line
 594.
 (pdftex.def)             Requested size: 85.35696pt x 68.3347pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed2_p2v_sofa1.png, id=2466, 222.5916pt x 169.1118pt>
+truction/mixed/mixed2_p2v_sofa1.png, id=2467, 222.5916pt x 169.1118pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed2_p2v_sofa1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6714,7 +6705,7 @@ images/evaluation/reconstruction/mixed/mixed2_p2v_sofa1.png  used on input line
  595.
 (pdftex.def)             Requested size: 85.35696pt x 64.84889pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/mixed/mixed2_p2v_table2.png, id=2467, 227.6505pt x 179.2296pt>
+truction/mixed/mixed2_p2v_table2.png, id=2468, 227.6505pt x 179.2296pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/mixed/mixed2_p2v_table2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6842,7 +6833,7 @@ rt/images/evaluation/reconstruction/mixed/mixed2_p2v_table2.png>]
 (/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
 mance/ablation_barplot1.pgf)
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/chair1.png, id=2520, 3035.34pt x 4047.12pt>
+truction/ablation/chair1.png, id=2521, 3035.34pt x 4047.12pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/chair1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6851,7 +6842,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/evaluation/reconstruction/ablation/chair1.png  used on input line 659.
 (pdftex.def)             Requested size: 85.35696pt x 113.75085pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/chair2.png, id=2521, 3035.34pt x 4047.12pt>
+truction/ablation/chair2.png, id=2522, 3035.34pt x 4047.12pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/chair2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6860,7 +6851,7 @@ Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
 images/evaluation/reconstruction/ablation/chair2.png  used on input line 660.
 (pdftex.def)             Requested size: 85.35696pt x 113.75085pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/chair3.png, id=2522, 3035.34pt x 4047.12pt>
+truction/ablation/chair3.png, id=2523, 3035.34pt x 4047.12pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/chair3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6881,7 +6872,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/chair1_original.png, id=2523, 248.6088pt x 252.2223pt>
+truction/ablation/chair1_original.png, id=2524, 248.6088pt x 252.2223pt>
 ./text/evaluation.tex:663: Undefined control sequence.
 \Gin@vurx ->.1\width 
                      
@@ -6913,7 +6904,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/chair2_original.png, id=2525, 222.5916pt x 231.264pt>
+truction/ablation/chair2_original.png, id=2526, 222.5916pt x 231.264pt>
 ./text/evaluation.tex:664: Undefined control sequence.
 \Gin@vurx ->.1\width 
                      
@@ -6945,7 +6936,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/chair3_original.png, id=2527, 195.8517pt x 208.8603pt>
+truction/ablation/chair3_original.png, id=2528, 195.8517pt x 208.8603pt>
 ./text/evaluation.tex:665: Undefined control sequence.
 \Gin@vurx ->.1\width 
                      
@@ -6966,7 +6957,7 @@ images/evaluation/reconstruction/ablation/chair3_original.png  used on input li
 ne 665.
 (pdftex.def)             Requested size: 85.35696pt x 91.0734pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/pix3d_p2vpp_chair1.png, id=2529, 174.8934pt x 179.9523pt>
+truction/ablation/pix3d_p2vpp_chair1.png, id=2530, 174.8934pt x 179.9523pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/pix3d_p2vpp_chair1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6976,7 +6967,7 @@ images/evaluation/reconstruction/ablation/pix3d_p2vpp_chair1.png  used on input
  line 667.
 (pdftex.def)             Requested size: 85.35696pt x 87.82591pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/pix3d_p2vpp_chair2.png, id=2530, 183.5658pt x 190.0701pt>
+truction/ablation/pix3d_p2vpp_chair2.png, id=2531, 183.5658pt x 190.0701pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/pix3d_p2vpp_chair2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6986,7 +6977,7 @@ images/evaluation/reconstruction/ablation/pix3d_p2vpp_chair2.png  used on input
  line 668.
 (pdftex.def)             Requested size: 85.35696pt x 88.38167pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/pix3d_p2vpp_chair3.png, id=2531, 168.3891pt x 179.9523pt>
+truction/ablation/pix3d_p2vpp_chair3.png, id=2532, 168.3891pt x 179.9523pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/pix3d_p2vpp_chair3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -6996,7 +6987,7 @@ images/evaluation/reconstruction/ablation/pix3d_p2vpp_chair3.png  used on input
  line 669.
 (pdftex.def)             Requested size: 85.35696pt x 91.21979pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/pix3d_p2v_chair1.png, id=2532, 198.7425pt x 211.0284pt>
+truction/ablation/pix3d_p2v_chair1.png, id=2533, 198.7425pt x 211.0284pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/pix3d_p2v_chair1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -7006,7 +6997,7 @@ images/evaluation/reconstruction/ablation/pix3d_p2v_chair1.png  used on input l
 ine 671.
 (pdftex.def)             Requested size: 85.35696pt x 90.63417pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/pix3d_p2v_chair2.png, id=2533, 198.7425pt x 210.3057pt>
+truction/ablation/pix3d_p2v_chair2.png, id=2534, 198.7425pt x 210.3057pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/pix3d_p2v_chair2.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -7016,7 +7007,7 @@ images/evaluation/reconstruction/ablation/pix3d_p2v_chair2.png  used on input l
 ine 672.
 (pdftex.def)             Requested size: 85.35696pt x 90.32378pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/pix3d_p2v_chair3.png, id=2534, 191.5155pt x 190.7928pt>
+truction/ablation/pix3d_p2v_chair3.png, id=2535, 191.5155pt x 190.7928pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/pix3d_p2v_chair3.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -7026,7 +7017,7 @@ images/evaluation/reconstruction/ablation/pix3d_p2v_chair3.png  used on input l
 ine 673.
 (pdftex.def)             Requested size: 85.35696pt x 85.03789pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/ablataion_p2vpp_chair1.png, id=2535, 223.3143pt x 226.2051pt>
+truction/ablation/ablataion_p2vpp_chair1.png, id=2536, 223.3143pt x 226.2051pt>
 
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/ablataion_p2vpp_chair1.png Graphic file (type png)
@@ -7037,7 +7028,7 @@ images/evaluation/reconstruction/ablation/ablataion_p2vpp_chair1.png  used on i
 nput line 675.
 (pdftex.def)             Requested size: 85.35696pt x 86.4593pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/ablataion_p2vpp_chair2.png, id=2536, 226.2051pt x 221.1462pt>
+truction/ablation/ablataion_p2vpp_chair2.png, id=2537, 226.2051pt x 221.1462pt>
 
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/ablataion_p2vpp_chair2.png Graphic file (type png)
@@ -7048,7 +7039,7 @@ images/evaluation/reconstruction/ablation/ablataion_p2vpp_chair2.png  used on i
 nput line 676.
 (pdftex.def)             Requested size: 85.35696pt x 83.44589pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/ablataion_p2vpp_chair3.png, id=2537, 221.1462pt x 223.3143pt>
+truction/ablation/ablataion_p2vpp_chair3.png, id=2538, 221.1462pt x 223.3143pt>
 
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/ablataion_p2vpp_chair3.png Graphic file (type png)
@@ -7059,7 +7050,7 @@ images/evaluation/reconstruction/ablation/ablataion_p2vpp_chair3.png  used on i
 nput line 677.
 (pdftex.def)             Requested size: 85.35696pt x 86.19263pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/ablation/ablation_p2v_chair1.png, id=2538, 202.356pt x 196.5744pt>
+truction/ablation/ablation_p2v_chair1.png, id=2539, 202.356pt x 196.5744pt>
 File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
 econstruction/ablation/ablation_p2v_chair1.png Graphic file (type png)
 <use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
@@ -7069,4 +7060,4248 @@ images/evaluation/reconstruction/ablation/ablation_p2v_chair1.png  used on inpu
 t line 679.
 (pdftex.def)             Requested size: 85.35696pt x 82.91762pt.
 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
-truction/
+truction/ablation/ablation_p2v_chair2.png, id=2540, 195.8517pt x 198.0198pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/ablation_p2v_chair2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/ablation_p2v_chair2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/ablation_p2v_chair2.png  used on inpu
+t line 680.
+(pdftex.def)             Requested size: 85.35696pt x 86.3041pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/ablation/ablation_p2v_chair3.png, id=2541, 208.1376pt x 203.0787pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/ablation_p2v_chair3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/ablation_p2v_chair3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/ablation_p2v_chair3.png  used on inpu
+t line 681.
+(pdftex.def)             Requested size: 85.35696pt x 83.28139pt.
+\openout7 = `thesis.mw'.
+
+[64] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+
+LaTeX Warning: Text page 65 contains only floats.
+
+\openout7 = `thesis.mw'.
+
+[65 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair1_original.png> </Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/evaluation/reconstruction/ablation/chair2_original.pn
+g> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/rec
+onstruction/ablation/chair3_original.png> </Users/apple/OVGU/Thesis/code/3dReco
+nstruction/report/images/evaluation/reconstruction/ablation/chair1.png (PNG cop
+y)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dR
+econstruction/report/images/evaluation/reconstruction/ablation/chair3.png (PNG 
+copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation
+/reconstruction/ablation/pix3d_p2vpp_chair1.png> </Users/apple/OVGU/Thesis/code
+/3dReconstruction/report/images/evaluation/reconstruction/ablation/pix3d_p2vpp_
+chair2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evalu
+ation/reconstruction/ablation/pix3d_p2vpp_chair3.png> </Users/apple/OVGU/Thesis
+/code/3dReconstruction/report/images/evaluation/reconstruction/ablation/pix3d_p
+2v_chair1.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/ev
+aluation/reconstruction/ablation/pix3d_p2v_chair2.png> </Users/apple/OVGU/Thesi
+s/code/3dReconstruction/report/images/evaluation/reconstruction/ablation/pix3d_
+p2v_chair3.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/e
+valuation/reconstruction/ablation/ablataion_p2vpp_chair1.png> </Users/apple/OVG
+U/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/ablation
+/ablataion_p2vpp_chair2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/re
+port/images/evaluation/reconstruction/ablation/ablataion_p2vpp_chair3.png> </Us
+ers/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruc
+tion/ablation/ablation_p2v_chair1.png> </Users/apple/OVGU/Thesis/code/3dReconst
+ruction/report/images/evaluation/reconstruction/ablation/ablation_p2v_chair2.pn
+g> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/rec
+onstruction/ablation/ablation_p2v_chair3.png>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/ablation_barplot2.pgf)
+./text/evaluation.tex:720: Undefined control sequence.
+<argument> ...atio of 50\%. Observe that the \fls 
+                                                  {IoU} is consistent for al...
+l.720 ...raining negates loss from randomization.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/evaluation.tex:720: Undefined control sequence.
+<argument> ...atio of 50\%. Observe that the \fls 
+                                                  {IoU} is consistent for al...
+l.720 ...raining negates loss from randomization.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/chair1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/chair1.png  used on input line 727.
+(pdftex.def)             Requested size: 85.35696pt x 113.75085pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/chair2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/chair2.png  used on input line 728.
+(pdftex.def)             Requested size: 85.35696pt x 113.75085pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/chair3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/chair3.png  used on input line 729.
+(pdftex.def)             Requested size: 85.35696pt x 113.75085pt.
+./text/evaluation.tex:731: Undefined control sequence.
+<argument> .1\width 
+                    
+l.731 .../reconstruction/ablation/chair1_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/evaluation.tex:731: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.731 .../reconstruction/ablation/chair1_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/chair1_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair1_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/chair1_original.png  used on input li
+ne 731.
+(pdftex.def)             Requested size: 85.35696pt x 86.63193pt.
+./text/evaluation.tex:732: Undefined control sequence.
+<argument> .1\width 
+                    
+l.732 .../reconstruction/ablation/chair2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/evaluation.tex:732: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.732 .../reconstruction/ablation/chair2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/chair2_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair2_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/chair2_original.png  used on input li
+ne 732.
+(pdftex.def)             Requested size: 85.35696pt x 88.72461pt.
+./text/evaluation.tex:733: Undefined control sequence.
+<argument> .1\width 
+                    
+l.733 .../reconstruction/ablation/chair3_original}
+                                                  \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/evaluation.tex:733: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.733 .../reconstruction/ablation/chair3_original}
+                                                  \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/chair3_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/chair3_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/chair3_original.png  used on input li
+ne 733.
+(pdftex.def)             Requested size: 85.35696pt x 91.0734pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/pix3d_p2vpp_chair1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/pix3d_p2vpp_chair1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/pix3d_p2vpp_chair1.png  used on input
+ line 735.
+(pdftex.def)             Requested size: 85.35696pt x 87.82591pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/pix3d_p2vpp_chair2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/pix3d_p2vpp_chair2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/pix3d_p2vpp_chair2.png  used on input
+ line 736.
+(pdftex.def)             Requested size: 85.35696pt x 88.38167pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/pix3d_p2vpp_chair3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/pix3d_p2vpp_chair3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/pix3d_p2vpp_chair3.png  used on input
+ line 737.
+(pdftex.def)             Requested size: 85.35696pt x 91.21979pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/pix3d_p2v_chair1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/pix3d_p2v_chair1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/pix3d_p2v_chair1.png  used on input l
+ine 739.
+(pdftex.def)             Requested size: 85.35696pt x 90.63417pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/pix3d_p2v_chair2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/pix3d_p2v_chair2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/pix3d_p2v_chair2.png  used on input l
+ine 740.
+(pdftex.def)             Requested size: 85.35696pt x 90.32378pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/pix3d_p2v_chair3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/pix3d_p2v_chair3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/pix3d_p2v_chair3.png  used on input l
+ine 741.
+(pdftex.def)             Requested size: 85.35696pt x 85.03789pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/ablation/mixed_p2vpp_chair1.png, id=2581, 208.1376pt x 208.8603pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/mixed_p2vpp_chair1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/mixed_p2vpp_chair1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/mixed_p2vpp_chair1.png  used on input
+ line 743.
+(pdftex.def)             Requested size: 85.35696pt x 85.65239pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/ablation/mixed_p2vpp_chair2.png, id=2582, 212.4738pt x 206.6922pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/mixed_p2vpp_chair2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/mixed_p2vpp_chair2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/mixed_p2vpp_chair2.png  used on input
+ line 744.
+(pdftex.def)             Requested size: 85.35696pt x 83.03494pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/ablation/mixed_p2vpp_chair3.png, id=2583, 207.4149pt x 198.0198pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/mixed_p2vpp_chair3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/mixed_p2vpp_chair3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/mixed_p2vpp_chair3.png  used on input
+ line 745.
+(pdftex.def)             Requested size: 85.35696pt x 81.48776pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/ablation/mixed_p2v_chair1.png, id=2584, 211.0284pt x 227.6505pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/mixed_p2v_chair1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/mixed_p2v_chair1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/mixed_p2v_chair1.png  used on input l
+ine 747.
+(pdftex.def)             Requested size: 85.35696pt x 92.07983pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/ablation/mixed_p2v_chair2.png, id=2585, 213.9192pt x 218.2554pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/mixed_p2v_chair2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/mixed_p2v_chair2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/mixed_p2v_chair2.png  used on input l
+ine 748.
+(pdftex.def)             Requested size: 85.35696pt x 87.08746pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/ablation/mixed_p2v_chair3.png, id=2586, 217.5327pt x 205.2468pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/ablation/mixed_p2v_chair3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/mixed_p2v_chair3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/ablation/mixed_p2v_chair3.png  used on input l
+ine 749.
+(pdftex.def)             Requested size: 85.35696pt x 80.53448pt.
+\openout7 = `thesis.mw'.
+
+[66] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+
+LaTeX Warning: Text page 67 contains only floats.
+
+\openout7 = `thesis.mw'.
+
+[67 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/ablation/mixed_p2vpp_chair1.png> </Users/apple/OVGU/Thesis/code/3d
+Reconstruction/report/images/evaluation/reconstruction/ablation/mixed_p2vpp_cha
+ir2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluati
+on/reconstruction/ablation/mixed_p2vpp_chair3.png> </Users/apple/OVGU/Thesis/co
+de/3dReconstruction/report/images/evaluation/reconstruction/ablation/mixed_p2v_
+chair1.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evalu
+ation/reconstruction/ablation/mixed_p2v_chair2.png> </Users/apple/OVGU/Thesis/c
+ode/3dReconstruction/report/images/evaluation/reconstruction/ablation/mixed_p2v
+_chair3.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/interesting/p2ppp_table_input.png, id=2620, 236.885pt x 355.3275pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/interesting/p2ppp_table_input.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/interesting/p2ppp_table_input.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/interesting/p2ppp_table_input.png  used on inp
+ut line 801.
+(pdftex.def)             Requested size: 128.0387pt x 192.06374pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/interesting/p2ppp_table1_original.png, id=2621, 218.9781pt x 208.1376p
+t>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/interesting/p2ppp_table1_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/interesting/p2ppp_table1_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/interesting/p2ppp_table1_original.png  used on
+ input line 802.
+(pdftex.def)             Requested size: 128.0387pt x 121.70442pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/interesting/p2ppp_table1_output.png, id=2622, 223.3143pt x 212.4738pt>
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/interesting/p2ppp_table1_output.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/interesting/p2ppp_table1_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/interesting/p2ppp_table1_output.png  used on i
+nput line 803.
+(pdftex.def)             Requested size: 128.0387pt x 121.82132pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/interesting/p2ppp_table2_input.png, id=2623, 738.76pt x 984.67876pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/interesting/p2ppp_table2_input.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/interesting/p2ppp_table2_input.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/interesting/p2ppp_table2_input.png  used on in
+put line 814.
+(pdftex.def)             Requested size: 128.0387pt x 170.65358pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/interesting/p2ppp_table1_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/interesting/p2ppp_table1_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/interesting/p2ppp_table1_original.png  used on
+ input line 815.
+(pdftex.def)             Requested size: 128.0387pt x 121.70442pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/interesting/p2ppp_table2_output.png, id=2624, 224.037pt x 216.0873pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/interesting/p2ppp_table2_output.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/interesting/p2ppp_table2_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/interesting/p2ppp_table2_output.png  used on i
+nput line 816.
+(pdftex.def)             Requested size: 128.0387pt x 123.49745pt.
+)
+\openout7 = `thesis.mw'.
+
+
+[68] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [69 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/interesting/p2ppp_table_input.png (PNG copy)> </Users/apple/OVGU/
+Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/interestin
+g/p2ppp_table1_original.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/re
+port/images/evaluation/reconstruction/interesting/p2ppp_table1_output.png> </Us
+ers/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruc
+tion/interesting/p2ppp_table2_input.png (PNG copy)> </Users/apple/OVGU/Thesis/c
+ode/3dReconstruction/report/images/evaluation/reconstruction/interesting/p2ppp_
+table2_output.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.
+mw)
+\openout7 = `thesis.mw'.
+
+\openout2 = `text/conclusion.aux'.
+
+
+(./text/conclusion.tex
+\openout7 = `thesis.mw'.
+
+ [70
+
+
+
+
+]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+
+Chapter 6.
+\openout7 = `thesis.mw'.
+
+[71] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+
+./text/conclusion.tex:51: Package glossaries Error: Glossary entry `(' has not 
+been defined.
+
+See the glossaries package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 We see an improvement in \gls(i
+                                    ou) of 1.93\% and 2.64\% on the baselines.
+You need to define a glossary entry before you can use it.
+
+\openout7 = `thesis.mw'.
+
+[72] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [73]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+\openout7 = `thesis.mw'.
+
+ [74]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout2 = `text/appendix.aux'.
+
+
+(./text/appendix.tex
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/baseline_dice_barplot1.pgf
+LaTeX Font Info:    Font shape `T1/aess/b/n' in size <10> not available
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 380.
+)
+
+./text/appendix.tex:27: Package glossaries Error: Glossary entry `(' has not be
+en defined.
+
+See the glossaries package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 ... on the proposed synthetic dataset (\gls(s
+                                                  2rv1) and \gls(s2rv2)).
+You need to define a glossary entry before you can use it.
+
+
+./text/appendix.tex:27: Package glossaries Error: Glossary entry `(' has not be
+en defined.
+
+See the glossaries package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 ... synthetic dataset (\gls(s2rv1) and \gls(s
+                                                  2rv2)).
+You need to define a glossary entry before you can use it.
+
+
+./text/appendix.tex:28: Package glossaries Error: Glossary entry `(' has not be
+en defined.
+
+See the glossaries package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 Among the two versions, \gls(s
+                                   2rv2) 6.8\% and 1.6\% more than \gls{s2rv...
+
+You need to define a glossary entry before you can use it.
+
+\openout7 = `thesis.mw'.
+
+[75
+
+
+
+
+] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/finetuning_dice_barplot1.pgf)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/finetune_dice_barplot_pix2voxpp.pgf)
+./text/appendix.tex:70: Undefined control sequence.
+<argument> ...f images. The performance of \texbf 
+                                                  {pix2vox++} mixed with bot...
+l.70 ...ly pix3d, for majority of the categories.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:70: Undefined control sequence.
+<argument> ...f images. The performance of \texbf 
+                                                  {pix2vox++} mixed with bot...
+l.70 ...ly pix3d, for majority of the categories.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/finetune_dice_barplot_pix2vox.pgf)
+./text/appendix.tex:79: Undefined control sequence.
+<argument> ...r the \gls {f1} for baseline \texbf 
+                                                  {pix2vox} trained on (\gls...
+l.79 ... only pix3d, for majority the categories.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:79: Undefined control sequence.
+<argument> ...r the \gls {f1} for baseline \texbf 
+                                                  {pix2vox} trained on (\gls...
+l.79 ... only pix3d, for majority the categories.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/mixed_dice_barplot1.pgf)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/mixed_dice_barplot2.pgf)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/mixed_dice_barplot_pix2voxpp.pgf)
+./text/appendix.tex:113: Undefined control sequence.
+<argument> ...r the \gls {f1} for baseline \texbf 
+                                                  {pix2vox++} trained on 50\...
+l.113     }
+           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:113: Undefined control sequence.
+<argument> ...r the \gls {f1} for baseline \texbf 
+                                                  {pix2vox++} trained on 50\...
+l.113     }
+           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/mixed_dice_barplot_pix2vox.pgf)
+./text/appendix.tex:122: Undefined control sequence.
+<argument> ...r the \gls {f1} for baseline \texbf 
+                                                  {pix2vox} trained on 50\% ...
+l.122 ...d on only pix3d, for all the categories.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:122: Undefined control sequence.
+<argument> ...r the \gls {f1} for baseline \texbf 
+                                                  {pix2vox} trained on 50\% ...
+l.122 ...d on only pix3d, for all the categories.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\openout7 = `thesis.mw'.
+
+[76] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [77]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [78]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/ablation_dice_barplot1.pgf)
+./text/appendix.tex:142: Undefined control sequence.
+l.142 ... with the textureless chair we get a \gks
+                                                  {f1} of 0.4879.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/perfor
+mance/ablation_dice_barplot2.pgf)
+./text/appendix.tex:166: Undefined control sequence.
+<argument> ...atio of 50\%. Observe that the \fls 
+                                                  {IoU} is consistent for al...
+l.166 ...raining negates loss from randomization.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:166: Undefined control sequence.
+<argument> ...atio of 50\%. Observe that the \fls 
+                                                  {IoU} is consistent for al...
+l.166 ...raining negates loss from randomization.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/bookcase2.png, id=2793, 316.18124pt x 316.18124pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/bookcase2.png  used on input line 179
+.
+(pdftex.def)             Requested size: 85.35696pt x 85.35559pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/sofa2.png, id=2794, 699.61375pt x 524.96124pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/sofa2.png  used on input line 180.
+(pdftex.def)             Requested size: 85.35696pt x 64.04196pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/desk1.png, id=2795, 738.76pt x 984.67876pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/desk1.png  used on input line 181.
+(pdftex.def)             Requested size: 85.35696pt x 113.76906pt.
+./text/appendix.tex:183: Undefined control sequence.
+<argument> .1\width 
+                    
+l.183 ...construction/baseline/bookcase2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/bookcase2_original.png, id=2796, 182.8431pt x 188.6247pt>
+./text/appendix.tex:183: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.183 ...construction/baseline/bookcase2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/bookcase2_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/bookcase2_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/bookcase2_original.png  used on input
+ line 183.
+(pdftex.def)             Requested size: 85.35696pt x 88.10388pt.
+./text/appendix.tex:184: Undefined control sequence.
+<argument> .1\width 
+                    
+l.184 ...n/reconstruction/baseline/sofa2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/sofa2_original.png, id=2798, 205.2468pt x 190.7928pt>
+./text/appendix.tex:184: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.184 ...n/reconstruction/baseline/sofa2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/sofa2_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/sofa2_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/sofa2_original.png  used on input lin
+e 184.
+(pdftex.def)             Requested size: 85.35696pt x 79.38422pt.
+./text/appendix.tex:185: Undefined control sequence.
+<argument> .1\width 
+                    
+l.185 ...n/reconstruction/baseline/desk1_original}
+                                                  \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/desk1_original.png, id=2800, 223.3143pt x 219.7008pt>
+./text/appendix.tex:185: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.185 ...n/reconstruction/baseline/desk1_original}
+                                                  \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/desk1_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/desk1_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/desk1_original.png  used on input lin
+e 185.
+(pdftex.def)             Requested size: 85.35696pt x 84.01349pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/pix3d_p2vpp_bookcase2_output.png, id=2802, 169.8345pt x 227.6
+505pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2vpp_bookcase2_output.png Graphic file (type png)
+
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2vpp_bookcase2_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2vpp_bookcase2_output.png  use
+d on input line 187.
+(pdftex.def)             Requested size: 85.35696pt x 114.41548pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/pix3d_p2vpp_sofa2_output.png, id=2803, 220.4235pt x 190.0701p
+t>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2vpp_sofa2_output.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2vpp_sofa2_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2vpp_sofa2_output.png  used on
+ input line 188.
+(pdftex.def)             Requested size: 85.35696pt x 73.60208pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/pix3d_p2vpp_desk1_output.png, id=2804, 204.5241pt x 217.5327p
+t>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2vpp_desk1_output.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2vpp_desk1_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2vpp_desk1_output.png  used on
+ input line 189.
+(pdftex.def)             Requested size: 85.35696pt x 90.78554pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/pix3d_p2v_bookcase2.png, id=2805, 147.4308pt x 196.5744pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2v_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2v_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2v_bookcase2.png  used on inpu
+t line 191.
+(pdftex.def)             Requested size: 85.35696pt x 113.80927pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/pix3d_p2v_sofa2.png, id=2806, 216.0873pt x 192.9609pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2v_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2v_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2v_sofa2.png  used on input li
+ne 192.
+(pdftex.def)             Requested size: 85.35696pt x 76.22018pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/pix3d_p2v_desk1.png, id=2807, 208.1376pt x 195.8517pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2v_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2v_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2v_desk1.png  used on input li
+ne 193.
+(pdftex.def)             Requested size: 85.35696pt x 80.31764pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/s2rv3_p2vpp_bookcase2.png, id=2808, 231.9867pt x 252.2223pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/s2rv3_p2vpp_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/s2rv3_p2vpp_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/s2rv3_p2vpp_bookcase2.png  used on in
+put line 195.
+(pdftex.def)             Requested size: 85.35696pt x 92.80122pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/s2rv3_p2vpp_sofa2.png, id=2809, 260.8947pt x 224.7597pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/s2rv3_p2vpp_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/s2rv3_p2vpp_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/s2rv3_p2vpp_sofa2.png  used on input 
+line 196.
+(pdftex.def)             Requested size: 85.35696pt x 73.53302pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/s2rv3_p2vpp_desk1.png, id=2810, 243.5499pt x 249.3315pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/s2rv3_p2vpp_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/s2rv3_p2vpp_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/s2rv3_p2vpp_desk1.png  used on input 
+line 197.
+(pdftex.def)             Requested size: 85.35696pt x 87.38145pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/s2rv3_p2v_bookcase2.png, id=2811, 238.491pt x 227.6505pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/s2rv3_p2v_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/s2rv3_p2v_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/s2rv3_p2v_bookcase2.png  used on inpu
+t line 199.
+(pdftex.def)             Requested size: 85.35696pt x 81.47821pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/s2rv3_p2v_sofa2.png, id=2812, 205.9695pt x 198.7425pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/s2rv3_p2v_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/s2rv3_p2v_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/s2rv3_p2v_sofa2.png  used on input li
+ne 200.
+(pdftex.def)             Requested size: 85.35696pt x 82.36136pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/s2rv3_p2v_desk1.png, id=2813, 217.5327pt x 223.3143pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/s2rv3_p2v_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/s2rv3_p2v_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/s2rv3_p2v_desk1.png  used on input li
+ne 201.
+(pdftex.def)             Requested size: 85.35696pt x 87.62378pt.
+
+LaTeX Warning: Float too large for page by 16.0662pt on input line 207.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/bookcase2.png  used on input line 212
+.
+(pdftex.def)             Requested size: 85.35696pt x 85.35559pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/sofa2.png  used on input line 213.
+(pdftex.def)             Requested size: 85.35696pt x 64.04196pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/desk1.png  used on input line 214.
+(pdftex.def)             Requested size: 85.35696pt x 113.76906pt.
+./text/appendix.tex:216: Undefined control sequence.
+<argument> .1\width 
+                    
+l.216 ...construction/baseline/bookcase2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:216: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.216 ...construction/baseline/bookcase2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/bookcase2_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/bookcase2_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/bookcase2_original.png  used on input
+ line 216.
+(pdftex.def)             Requested size: 85.35696pt x 88.10388pt.
+./text/appendix.tex:217: Undefined control sequence.
+<argument> .1\width 
+                    
+l.217 ...n/reconstruction/baseline/sofa2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:217: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.217 ...n/reconstruction/baseline/sofa2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/sofa2_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/sofa2_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/sofa2_original.png  used on input lin
+e 217.
+(pdftex.def)             Requested size: 85.35696pt x 79.38422pt.
+./text/appendix.tex:218: Undefined control sequence.
+<argument> .1\width 
+                    
+l.218 ...n/reconstruction/baseline/desk1_original}
+                                                  \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./text/appendix.tex:218: Undefined control sequence.
+\Gin@vurx ->.1\width 
+                     
+l.218 ...n/reconstruction/baseline/desk1_original}
+                                                  \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/desk1_original.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/desk1_original.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/desk1_original.png  used on input lin
+e 218.
+(pdftex.def)             Requested size: 85.35696pt x 84.01349pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2vpp_bookcase2_output.png Graphic file (type png)
+
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2vpp_bookcase2_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2vpp_bookcase2_output.png  use
+d on input line 220.
+(pdftex.def)             Requested size: 85.35696pt x 114.41548pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2vpp_sofa2_output.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2vpp_sofa2_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2vpp_sofa2_output.png  used on
+ input line 221.
+(pdftex.def)             Requested size: 85.35696pt x 73.60208pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2vpp_desk1_output.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2vpp_desk1_output.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2vpp_desk1_output.png  used on
+ input line 222.
+(pdftex.def)             Requested size: 85.35696pt x 90.78554pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2v_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2v_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2v_bookcase2.png  used on inpu
+t line 224.
+(pdftex.def)             Requested size: 85.35696pt x 113.80927pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2v_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2v_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2v_sofa2.png  used on input li
+ne 225.
+(pdftex.def)             Requested size: 85.35696pt x 76.22018pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/pix3d_p2v_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/pix3d_p2v_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/pix3d_p2v_desk1.png  used on input li
+ne 226.
+(pdftex.def)             Requested size: 85.35696pt x 80.31764pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/finetuning/s2rv3_p2vpp_bookcase2.png, id=2821, 169.1118pt x 205.9695pt
+>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/finetuning/s2rv3_p2vpp_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/finetuning/s2rv3_p2vpp_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/finetuning/s2rv3_p2vpp_bookcase2.png  used on 
+input line 228.
+(pdftex.def)             Requested size: 85.35696pt x 103.95876pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/finetuning/s2rv3_p2vpp_sofa2.png, id=2822, 223.3143pt x 206.6922pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/finetuning/s2rv3_p2vpp_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/finetuning/s2rv3_p2vpp_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/finetuning/s2rv3_p2vpp_sofa2.png  used on inpu
+t line 229.
+(pdftex.def)             Requested size: 85.35696pt x 79.00114pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/finetuning/s2rv3_p2vpp_desk1.png, id=2823, 222.5916pt x 195.8517pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/finetuning/s2rv3_p2vpp_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/finetuning/s2rv3_p2vpp_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/finetuning/s2rv3_p2vpp_desk1.png  used on inpu
+t line 230.
+(pdftex.def)             Requested size: 85.35696pt x 75.10278pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/finetuning/s2rv3_p2v_bookcase2.png, id=2824, 202.356pt x 213.9192pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/finetuning/s2rv3_p2v_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/finetuning/s2rv3_p2v_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/finetuning/s2rv3_p2v_bookcase2.png  used on in
+put line 232.
+(pdftex.def)             Requested size: 85.35696pt x 90.23387pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/finetuning/s2rv3_p2v_sofa2.png, id=2825, 224.7597pt x 187.1793pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/finetuning/s2rv3_p2v_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/finetuning/s2rv3_p2v_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/finetuning/s2rv3_p2v_sofa2.png  used on input 
+line 233.
+(pdftex.def)             Requested size: 85.35696pt x 71.08318pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/finetuning/s2rv3_p2v_desk1.png, id=2826, 213.9192pt x 229.8186pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/finetuning/s2rv3_p2v_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/finetuning/s2rv3_p2v_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/finetuning/s2rv3_p2v_desk1.png  used on input 
+line 234.
+(pdftex.def)             Requested size: 85.35696pt x 91.70137pt.
+
+LaTeX Warning: Float too large for page by 45.80132pt on input line 240.
+
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/bookcase2.png  used on input line 245
+.
+(pdftex.def)             Requested size: 85.35696pt x 85.35559pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/sofa2.png  used on input line 246.
+(pdftex.def)             Requested size: 85.35696pt x 64.04196pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/baseline/desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/baseline/desk1.png  used on input line 247.
+(pdftex.def)             Requested size: 85.35696pt x 113.76906pt.
+./text/appendix.tex:249: Undefined control sequence.
+<argument> .1\width 
+                    
+l.249 .../reconstruction/mixed/bookcase2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./text/appendix.tex:249: LaTeX Error: File `/Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/evaluation/reconstruction/mixed/bookcase2_original' n
+ot found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.249 .../reconstruction/mixed/bookcase2_original}
+                                                   &
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./text/appendix.tex:250: Undefined control sequence.
+<argument> .1\width 
+                    
+l.250 ...tion/reconstruction/mixed/sofa2_original}
+                                                   &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./text/appendix.tex:250: LaTeX Error: File `/Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/evaluation/reconstruction/mixed/sofa2_original' not f
+ound.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...tion/reconstruction/mixed/sofa2_original}
+                                                   &
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./text/appendix.tex:251: Undefined control sequence.
+<argument> .1\width 
+                    
+l.251 ...tion/reconstruction/mixed/desk2_original}
+                                                  \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./text/appendix.tex:251: LaTeX Error: File `/Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/evaluation/reconstruction/mixed/desk2_original' not f
+ound.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.251 ...tion/reconstruction/mixed/desk2_original}
+                                                  \\
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed1_p2vpp_bookcase2.png, id=2829, 148.8762pt x 183.5658pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed1_p2vpp_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed1_p2vpp_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed1_p2vpp_bookcase2.png  used on inpu
+t line 253.
+(pdftex.def)             Requested size: 85.35696pt x 105.2442pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed1_p2vpp_sofa2.png, id=2830, 199.4652pt x 189.3474pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed1_p2vpp_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed1_p2vpp_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed1_p2vpp_sofa2.png  used on input li
+ne 254.
+(pdftex.def)             Requested size: 85.35696pt x 81.02774pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed1_p2vpp_desk1.png, id=2831, 206.6922pt x 199.4652pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed1_p2vpp_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed1_p2vpp_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed1_p2vpp_desk1.png  used on input li
+ne 255.
+(pdftex.def)             Requested size: 85.35696pt x 82.3717pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed1_p2v_bookcase2.png, id=2832, 156.1032pt x 203.0787pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed1_p2v_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed1_p2v_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed1_p2v_bookcase2.png  used on input 
+line 257.
+(pdftex.def)             Requested size: 85.35696pt x 111.0429pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed1_p2v_sofa2.png, id=2833, 219.7008pt x 173.448pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed1_p2v_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed1_p2v_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed1_p2v_sofa2.png  used on input line
+ 258.
+(pdftex.def)             Requested size: 85.35696pt x 67.38773pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed1_p2v_desk1.png, id=2834, 200.1879pt x 190.0701pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed1_p2v_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed1_p2v_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed1_p2v_desk1.png  used on input line
+ 259.
+(pdftex.def)             Requested size: 85.35696pt x 81.04408pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed2_p2vpp_bookcase2.png, id=2835, 189.3474pt x 214.6419pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed2_p2vpp_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed2_p2vpp_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed2_p2vpp_bookcase2.png  used on inpu
+t line 261.
+(pdftex.def)             Requested size: 85.35696pt x 96.75827pt.
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed2_p2vpp_sofa1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed2_p2vpp_sofa1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed2_p2vpp_sofa1.png  used on input li
+ne 262.
+(pdftex.def)             Requested size: 85.35696pt x 74.34511pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed2_p2vpp_desk1.png, id=2836, 209.583pt x 206.6922pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed2_p2vpp_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed2_p2vpp_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed2_p2vpp_desk1.png  used on input li
+ne 263.
+(pdftex.def)             Requested size: 85.35696pt x 84.1798pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed2_p2v_bookcase2.png, id=2837, 161.8848pt x 199.4652pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed2_p2v_bookcase2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed2_p2v_bookcase2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed2_p2v_bookcase2.png  used on input 
+line 265.
+(pdftex.def)             Requested size: 85.35696pt x 105.17123pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed2_p2v_sofa2.png, id=2838, 224.7597pt x 195.8517pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed2_p2v_sofa2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed2_p2v_sofa2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed2_p2v_sofa2.png  used on input line
+ 266.
+(pdftex.def)             Requested size: 85.35696pt x 74.37659pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/mixed/mixed2_p2v_desk1.png, id=2839, 227.6505pt x 212.4738pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed2_p2v_desk1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed2_p2v_desk1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/mixed/mixed2_p2v_desk1.png  used on input line
+ 267.
+(pdftex.def)             Requested size: 85.35696pt x 79.6645pt.
+\openout7 = `thesis.mw'.
+
+[79] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [80]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [81 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/baseline/bookcase2_original.png> </Users/apple/OVGU/Thesis/code/3
+dReconstruction/report/images/evaluation/reconstruction/baseline/sofa2_original
+.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/
+reconstruction/baseline/desk1_original.png> </Users/apple/OVGU/Thesis/code/3dRe
+construction/report/images/evaluation/reconstruction/baseline/bookcase2.png (PN
+G copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluati
+on/reconstruction/baseline/sofa2.png (PNG copy)> </Users/apple/OVGU/Thesis/code
+/3dReconstruction/report/images/evaluation/reconstruction/baseline/desk1.png (P
+NG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluat
+ion/reconstruction/baseline/pix3d_p2vpp_bookcase2_output.png> </Users/apple/OVG
+U/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/baseline
+/pix3d_p2vpp_sofa2_output.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/
+report/images/evaluation/reconstruction/baseline/pix3d_p2vpp_desk1_output.png> 
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/baseline/pix3d_p2v_bookcase2.png> </Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/evaluation/reconstruction/baseline/pix3d_p2v_sofa2.pn
+g> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/rec
+onstruction/baseline/pix3d_p2v_desk1.png> </Users/apple/OVGU/Thesis/code/3dReco
+nstruction/report/images/evaluation/reconstruction/baseline/s2rv3_p2vpp_bookcas
+e2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluatio
+n/reconstruction/baseline/s2rv3_p2vpp_sofa2.png> </Users/apple/OVGU/Thesis/code
+/3dReconstruction/report/images/evaluation/reconstruction/baseline/s2rv3_p2vpp_
+desk1.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evalua
+tion/reconstruction/baseline/s2rv3_p2v_bookcase2.png> </Users/apple/OVGU/Thesis
+/code/3dReconstruction/report/images/evaluation/reconstruction/baseline/s2rv3_p
+2v_sofa2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/eva
+luation/reconstruction/baseline/s2rv3_p2v_desk1.png>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [82 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/finetuning/s2rv3_p2vpp_bookcase2.png> </Users/apple/OVGU/Thesis/c
+ode/3dReconstruction/report/images/evaluation/reconstruction/finetuning/s2rv3_p
+2vpp_sofa2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/e
+valuation/reconstruction/finetuning/s2rv3_p2vpp_desk1.png> </Users/apple/OVGU/T
+hesis/code/3dReconstruction/report/images/evaluation/reconstruction/finetuning/
+s2rv3_p2v_bookcase2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report
+/images/evaluation/reconstruction/finetuning/s2rv3_p2v_sofa2.png> </Users/apple
+/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/fine
+tuning/s2rv3_p2v_desk1.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/ou
+t/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+[83 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/mixed/mixed1_p2vpp_bookcase2.png> </Users/apple/OVGU/Thesis/code/3
+dReconstruction/report/images/evaluation/reconstruction/mixed/mixed1_p2vpp_sofa
+2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation
+/reconstruction/mixed/mixed1_p2vpp_desk1.png> </Users/apple/OVGU/Thesis/code/3d
+Reconstruction/report/images/evaluation/reconstruction/mixed/mixed1_p2v_bookcas
+e2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluatio
+n/reconstruction/mixed/mixed1_p2v_sofa2.png> </Users/apple/OVGU/Thesis/code/3dR
+econstruction/report/images/evaluation/reconstruction/mixed/mixed1_p2v_desk1.pn
+g> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/rec
+onstruction/mixed/mixed2_p2vpp_bookcase2.png> </Users/apple/OVGU/Thesis/code/3d
+Reconstruction/report/images/evaluation/reconstruction/mixed/mixed2_p2vpp_desk1
+.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/
+reconstruction/mixed/mixed2_p2v_bookcase2.png> </Users/apple/OVGU/Thesis/code/3
+dReconstruction/report/images/evaluation/reconstruction/mixed/mixed2_p2v_sofa2.
+png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/mixed/mixed2_p2v_desk1.png>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp1.pn
+g, id=2910, 1102.1175pt x 1001.7425pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
+p1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
+1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/appendix/hdrp1.png  used on input line 292.
+(pdftex.def)             Requested size: 170.70872pt x 128.03pt.
+
+
+./text/appendix.tex:293: Package xkeyval Error: `valign' undefined in families 
+`Gin'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.293 ...onstruction/report/images/appendix/hdrp2}
+                                                  \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp2.pn
+g, id=2911, 1102.1175pt x 1001.7425pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
+p2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
+2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/appendix/hdrp2.png  used on input line 293.
+(pdftex.def)             Requested size: 170.70872pt x 128.03pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp3.pn
+g, id=2912, 1487.5575pt x 1001.7425pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
+p3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
+3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/appendix/hdrp3.png  used on input line 295.
+(pdftex.def)             Requested size: 170.71368pt x 128.03pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp4.pn
+g, id=2913, 1487.5575pt x 1001.7425pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdr
+p4.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp
+4.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/appendix/hdrp4.png  used on input line 296.
+(pdftex.def)             Requested size: 170.71368pt x 128.03pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/empty_room_2.jpg, id=2914, 883.3pt x 659.46375pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/empty_room_2.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/empty_room_2.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/empty_room_2.jpg  used on input line 315
+.
+(pdftex.def)             Requested size: 85.35696pt x 63.7264pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/empty_room_3.jpg, id=2915, 122.6181pt x 81.6651pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/empty_room_3.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/empty_room_3.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/empty_room_3.jpg  used on input line 316
+.
+(pdftex.def)             Requested size: 85.35696pt x 56.84865pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/empty_room_4.jpg, id=2916, 851.18pt x 567.11874pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/empty_room_4.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/empty_room_4.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/empty_room_4.jpg  used on input line 317
+.
+(pdftex.def)             Requested size: 85.35696pt x 56.87096pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/empty_room_5.jpg, id=2917, 803.0pt x 534.99875pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/empty_room_5.jpg Graphic file (type jpg)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/empty_room_5.jpg>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/empty_room_5.jpg  used on input line 318
+.
+(pdftex.def)             Requested size: 85.35696pt x 56.86633pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2vpp_empty_output_2.png, id=2918, 220.4235pt x 187.1793pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2vpp_empty_output_2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2vpp_empty_output_2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2vpp_empty_output_2.png  used on input 
+line 321.
+(pdftex.def)             Requested size: 85.35696pt x 72.48267pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2vpp_empty_output_3.png, id=2919, 192.2382pt x 187.902pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2vpp_empty_output_3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2vpp_empty_output_3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2vpp_empty_output_3.png  used on input 
+line 322.
+(pdftex.def)             Requested size: 85.35696pt x 83.43118pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2vpp_empty_output_4.png, id=2920, 201.6333pt x 196.5744pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2vpp_empty_output_4.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2vpp_empty_output_4.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2vpp_empty_output_4.png  used on input 
+line 323.
+(pdftex.def)             Requested size: 85.35696pt x 83.21756pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2vpp_empty_output_5.png, id=2921, 204.5241pt x 185.0112pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2vpp_empty_output_5.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2vpp_empty_output_5.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2vpp_empty_output_5.png  used on input 
+line 324.
+(pdftex.def)             Requested size: 85.35696pt x 77.21295pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2v_empty_output_2.png, id=2922, 205.2468pt x 190.0701pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2v_empty_output_2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2v_empty_output_2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2v_empty_output_2.png  used on input li
+ne 327.
+(pdftex.def)             Requested size: 85.35696pt x 79.04582pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2v_empty_output_3.png, id=2923, 199.4652pt x 179.2296pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2v_empty_output_3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2v_empty_output_3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2v_empty_output_3.png  used on input li
+ne 328.
+(pdftex.def)             Requested size: 85.35696pt x 76.69801pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2v_empty_output_4.png, id=2924, 206.6922pt x 199.4652pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2v_empty_output_4.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2v_empty_output_4.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2v_empty_output_4.png  used on input li
+ne 329.
+(pdftex.def)             Requested size: 85.35696pt x 82.3717pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/recons
+truction/empty/p2v_empty_output_5.png, id=2925, 228.3732pt x 207.4149pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/p2v_empty_output_5.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/re
+construction/empty/p2v_empty_output_5.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2v_empty_output_5.png  used on input li
+ne 330.
+(pdftex.def)             Requested size: 85.35696pt x 77.52403pt.
+\openout7 = `thesis.mw'.
+
+[84
+
+ </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/hdrp1.p
+ng (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/ap
+pendix/hdrp2.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dReconstruction/re
+port/images/appendix/hdrp3.png (PNG copy)> </Users/apple/OVGU/Thesis/code/3dRec
+onstruction/report/images/appendix/hdrp4.png (PNG copy)>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [85 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/r
+econstruction/empty/empty_room_2.jpg> </Users/apple/OVGU/Thesis/code/3dReconstr
+uction/report/images/evaluation/reconstruction/empty/empty_room_3.jpg> </Users/
+apple/OVGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction
+/empty/empty_room_4.jpg> </Users/apple/OVGU/Thesis/code/3dReconstruction/report
+/images/evaluation/reconstruction/empty/empty_room_5.jpg> </Users/apple/OVGU/Th
+esis/code/3dReconstruction/report/images/evaluation/reconstruction/empty/p2vpp_
+empty_output_2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/imag
+es/evaluation/reconstruction/empty/p2vpp_empty_output_3.png> </Users/apple/OVGU
+/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/empty/p2v
+pp_empty_output_4.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/i
+mages/evaluation/reconstruction/empty/p2vpp_empty_output_5.png> </Users/apple/O
+VGU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/empty/
+p2v_empty_output_2.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/evaluation/reconstruction/empty/p2v_empty_output_3.png> </Users/apple/OV
+GU/Thesis/code/3dReconstruction/report/images/evaluation/reconstruction/empty/p
+2v_empty_output_4.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/i
+mages/evaluation/reconstruction/empty/p2v_empty_output_5.png>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/s
+urvey_section1.png, id=2948, 882.29625pt x 575.14874pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/sur
+vey/survey_section1.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/surv
+ey/survey_section1.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/appendix/survey/survey_section1.png  used on input line 348.
+(pdftex.def)             Requested size: 341.43437pt x 222.56944pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/s
+urvey_section2.png, id=2949, 885.3075pt x 536.0025pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/sur
+vey/survey_section2.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/surv
+ey/survey_section2.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/appendix/survey/survey_section2.png  used on input line 355.
+(pdftex.def)             Requested size: 341.43437pt x 206.71738pt.
+</Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/s
+urvey_section3.png, id=2950, 663.47874pt x 703.62875pt>
+File: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/sur
+vey/survey_section3.png Graphic file (type png)
+<use /Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/surv
+ey/survey_section3.png>
+Package pdftex.def Info: /Users/apple/OVGU/Thesis/code/3dReconstruction/report/
+images/appendix/survey/survey_section3.png  used on input line 362.
+(pdftex.def)             Requested size: 426.79135pt x 452.61847pt.
+\openout7 = `thesis.mw'.
+
+ [86
+
+ </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/survey/
+survey_section1.png> </Users/apple/OVGU/Thesis/code/3dReconstruction/report/ima
+ges/appendix/survey/survey_section2.png>]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [87 </Users/apple/OVGU/Thesis/code/3dReconstruction/report/images/appendix/sur
+vey/survey_section3.png>] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/t
+hesis.mw)
+\openout7 = `thesis.mw'.
+
+)
+\openout7 = `thesis.mw'.
+
+
+[88
+
+] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [89]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [90]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [91]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [92]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.bbl
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.brf)
+\tf@brf=\write28
+\openout7 = `thesis.brf'.
+
+\openout7 = `thesis.mw'.
+
+ [93
+
+
+
+
+]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [94]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [95]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [96]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [97]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 4
+18.
+LaTeX Font Info:    No file TS1aer.fd. on input line 418.
+
+
+LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 418.
+
+\openout7 = `thesis.mw'.
+
+[98] (/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [99]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [100]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+ [101]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+)
+\openout7 = `thesis.mw'.
+
+ [102]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.ind)
+\openout7 = `thesis.mw'.
+
+ [103
+
+
+]
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.mw)
+\openout7 = `thesis.mw'.
+
+
+No complaints by nag.
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/introduction.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/related_work.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/concept.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/implementation.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/evaluation.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/conclusion.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+(/Users/apple/OVGU/Thesis/code/3dReconstruction/out/text/appendix.aux
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+\openout7 = `thesis.mw'.
+
+\openout7 = `thesis.mw'.
+
+)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+\openout7 = `thesis.out'.
+
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: F2C82AE0ABCDE93828A1A18AC9917EE4;21436.
+\openout7 = `thesis.brf'.
+
+
+Package rerunfilecheck Warning: File `thesis.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `thesis.brf':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  892CA8D86408EF2239781B0168A0DCBD;10683.
+\openout7 = `thesis.idx'.
+
+\openout7 = `thesis.glo'.
+
+\openout7 = `thesis.acn'.
+
+\openout7 = `thesis.stn'.
+
+\openout7 = `thesis.toc'.
+
+\openout7 = `thesis.lof'.
+
+\openout7 = `thesis.lot'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 55563 strings out of 478994
+ 1364335 string characters out of 5858185
+ 4385830 words of memory out of 5000000
+ 69825 multiletter control sequences out of 15000+600000
+ 561743 words of font info for 914 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 117i,13n,116p,1010b,703s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.
+pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pf
+b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pf
+b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
+/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texl
+ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
+/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/
+2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on /Users/apple/OVGU/Thesis/code/3dReconstruction/out/thesis.pdf
+ (121 pages, 179674633 bytes).
+PDF statistics:
+ 3305 PDF objects out of 3580 (max. 8388607)
+ 2594 compressed objects within 26 object streams
+ 498 named destinations out of 1000 (max. 500000)
+ 222417 words of extra memory for PDF output out of 266212 (max. 10000000)
+

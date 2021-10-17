@@ -81,13 +81,13 @@ These parameters are randomized and not fine-tuned to increase the performance.
 Though Blenderproc also does not do this, users may optimize these parameters since it uses python.
 
 \subsection{Hallucination for Empty Room}\label{subsec:hallucination-for-empty-room}
-Ideally we would want the Deep Learning model to predict furniture only if one exists in 2D images.
-We experimented with empty room as input image as in \autoref{subsec:empty-image-test}, and the model predicted some voxels which resembles 3D furnitures.
+Ideally, we would want the Deep Learning model to predict furniture only if one exists in 2D images.
+We experimented with an empty room as an input image as in \autoref{subsec:empty-image-test}, and the model predicted some voxels which resemblee a 3D furniture.
 The reason could be that we did not teach the model not to predict anything with empty samples.
 All the samples from both Pix3D and \gls{free} always had a furniture model in the input image.
 
 \subsection{High Definition Render Pipeline}\label{subsec:high-definition-render-pipeline}
-Unity has introduced' High Definition Render Pipeline' (HDRP), which provides more realistic lighting and natural-looking scenes.
+Unity has introduced `High Definition Render Pipeline' (HDRP), which provides more realistic lighting and natural-looking scenes.
 However, this pipeline is not cross-compatible, and the models/assets which are not generated for HDRP do not get rendered, as shown in \autoref{fig:hdrp}.
 The shaders are not made public either and hence can not be assigned to models at runtime.
 To use this pipeline, we will have to modify the models and make them compatible manually.
